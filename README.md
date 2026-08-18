@@ -1,6 +1,6 @@
 # BillFit
 
-BillFit is a local-first Codex plugin that compares supported PG&E residential electricity plans and screens common bill-assistance options.
+BillFit is a local-first Codex plugin and self-contained AI skill that compares supported PG&E residential electricity plans and screens common bill-assistance options.
 
 ## What it does
 
@@ -18,7 +18,7 @@ Calculations are deterministic and use the official-source snapshots documented 
 - Python 3.11 or later
 - An individually metered PG&E residential bundled-electric account for personalized rate comparisons
 
-BillFit uses only the Python standard library.
+BillFit uses only the Python standard library. The packaged skill can run its deterministic calculator directly, while the full plugin also exposes the same engine through a bundled MCP server.
 
 ## Install from GitHub
 
@@ -30,15 +30,13 @@ codex plugin marketplace add ValerianXXX/billfit --ref main
 
 Restart the ChatGPT desktop app, open the Plugins Directory, choose the **BillFit** source, and install **BillFit**.
 
-Because this repository is private, GitHub access is required when the marketplace is added.
-
 ## Example requests
 
 - `Compare my PG&E plan using my Green Button file.`
 - `Check whether my household may qualify for CARE or FERA.`
 - `Tell me what BillFit still needs from me.`
 
-A synthetic usage file is included at `plugins/billfit/examples/demo_usage.csv`.
+A synthetic usage file is included at `plugins/billfit/skills/billfit/examples/demo_usage.csv`.
 
 ## Privacy and limits
 
@@ -47,6 +45,8 @@ BillFit reads supplied files locally. It does not need utility passwords, Social
 The MVP does not support solar or net export, CCA or Direct Access charges, master-metered service, gas, taxes, local surcharges, Climate Credits, or account-specific adjustments. Always confirm the current tariff before acting.
 
 BillFit is an independent project and is not affiliated with or endorsed by PG&E or the California Public Utilities Commission.
+
+See the [Privacy Policy](PRIVACY.md), [Terms of Use](TERMS.md), and [Support Guide](SUPPORT.md).
 
 ## Test
 
