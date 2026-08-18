@@ -1,0 +1,121 @@
+{
+  "schema_version": "1.0",
+  "utility": "Pacific Gas and Electric Company",
+  "utility_code": "PGE",
+  "service": "bundled residential electricity",
+  "effective_from": "2026-03-01",
+  "effective_to": null,
+  "verified_on": "2026-08-18",
+  "status": "official-current-page",
+  "source": {
+    "page_url": "https://www.pge.com/tariffs/en/rate-information/electric-rates.html",
+    "workbook_url": "https://www.pge.com/assets/rates/tariffs/res-inclu-tou-current.xlsx",
+    "workbook_label": "Residential Inclu TOU (MAR 1, 2026 - Present)",
+    "workbook_sha256": "e071be6fd457a92da60637fc529c1e4c7a5620ffd83d3ae221819f7e4866995d"
+  },
+  "limitations": [
+    "Rates are total bundled rates and do not model Community Choice Aggregation or Direct Access generation charges.",
+    "California Climate Credit, local taxes, surcharges, one-time adjustments, and non-electric charges are excluded.",
+    "The official tariff controls if this comparison differs from a PG&E bill.",
+    "Solar, NEM, battery export, master-metered service, and separately metered EV-B are outside the MVP scope."
+  ],
+  "base_services_charge_per_day": {
+    "care": 0.19713,
+    "fera": 0.39688,
+    "standard": 0.79343
+  },
+  "assistance_volumetric_discount": {
+    "care": 0.35,
+    "fera": 0.18,
+    "none": 0.0
+  },
+  "plans": {
+    "E-1": {
+      "name": "Tiered Rate Plan",
+      "kind": "tiered",
+      "requires_baseline": true,
+      "eligibility": "general",
+      "tier_1": 0.32561,
+      "tier_2": 0.40702
+    },
+    "E-TOU-C": {
+      "name": "Time-of-Use 4-9 p.m. Every Day",
+      "kind": "tou_baseline_credit",
+      "requires_baseline": true,
+      "eligibility": "general",
+      "baseline_credit": 0.0814,
+      "summer": {
+        "peak": 0.5224,
+        "off_peak": 0.3994
+      },
+      "winter": {
+        "peak": 0.39757,
+        "off_peak": 0.36757
+      }
+    },
+    "E-TOU-D": {
+      "name": "Time-of-Use 5-8 p.m. Weekdays",
+      "kind": "tou",
+      "requires_baseline": false,
+      "eligibility": "general",
+      "summer": {
+        "peak": 0.47708,
+        "off_peak": 0.34212
+      },
+      "winter": {
+        "peak": 0.38747,
+        "off_peak": 0.34886
+      }
+    },
+    "EV2-A": {
+      "name": "Home Charging EV2-A",
+      "kind": "tou_three_period",
+      "requires_baseline": false,
+      "eligibility": "electric_vehicle",
+      "summer": {
+        "peak": 0.53809,
+        "partial_peak": 0.4276,
+        "off_peak": 0.22558
+      },
+      "winter": {
+        "peak": 0.41099,
+        "partial_peak": 0.39428,
+        "off_peak": 0.22558
+      }
+    },
+    "E-ELEC": {
+      "name": "Electric Home Rate Plan",
+      "kind": "tou_three_period",
+      "requires_baseline": false,
+      "eligibility": "qualifying_electric_technology",
+      "qualifying_technologies": [
+        "electric_vehicle",
+        "battery_storage",
+        "heat_pump_water",
+        "heat_pump_space"
+      ],
+      "summer": {
+        "peak": 0.55214,
+        "partial_peak": 0.39026,
+        "off_peak": 0.33358
+      },
+      "winter": {
+        "peak": 0.32063,
+        "partial_peak": 0.29854,
+        "off_peak": 0.28468
+      }
+    }
+  },
+  "baseline_daily_kwh": {
+    "P": {"basic": {"summer": 13.5, "winter": 11.0}, "all_electric": {"summer": 15.2, "winter": 26.0}},
+    "Q": {"basic": {"summer": 9.8, "winter": 11.0}, "all_electric": {"summer": 8.5, "winter": 26.0}},
+    "R": {"basic": {"summer": 17.7, "winter": 10.4}, "all_electric": {"summer": 19.9, "winter": 26.7}},
+    "S": {"basic": {"summer": 15.0, "winter": 10.2}, "all_electric": {"summer": 17.8, "winter": 23.7}},
+    "T": {"basic": {"summer": 6.5, "winter": 7.5}, "all_electric": {"summer": 7.1, "winter": 12.9}},
+    "V": {"basic": {"summer": 7.1, "winter": 8.1}, "all_electric": {"summer": 10.4, "winter": 19.1}},
+    "W": {"basic": {"summer": 19.2, "winter": 9.8}, "all_electric": {"summer": 22.4, "winter": 19.0}},
+    "X": {"basic": {"summer": 9.8, "winter": 9.7}, "all_electric": {"summer": 8.5, "winter": 14.6}},
+    "Y": {"basic": {"summer": 10.5, "winter": 11.1}, "all_electric": {"summer": 12.0, "winter": 24.0}},
+    "Z": {"basic": {"summer": 5.9, "winter": 7.8}, "all_electric": {"summer": 6.7, "winter": 15.7}}
+  }
+}

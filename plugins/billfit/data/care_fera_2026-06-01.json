@@ -1,0 +1,64 @@
+{
+  "schema_version": "1.0",
+  "effective_from": "2026-06-01",
+  "effective_to": "2027-05-31",
+  "verified_on": "2026-08-18",
+  "status": "official-current",
+  "source": {
+    "url": "https://www.cpuc.ca.gov/care/",
+    "title": "CARE/FERA Program"
+  },
+  "care_income_upper_limit": {
+    "1": 43280,
+    "2": 43280,
+    "3": 54640,
+    "4": 66000,
+    "5": 77360,
+    "6": 88720,
+    "7": 100080,
+    "8": 111440,
+    "additional_person": 11360
+  },
+  "fera_income_upper_limit": {
+    "1": 54100,
+    "2": 54100,
+    "3": 68300,
+    "4": 82500,
+    "5": 96700,
+    "6": 110900,
+    "7": 125100,
+    "8": 139300,
+    "additional_person": 14200
+  },
+  "care_categorical_programs": [
+    "bureau_of_indian_affairs_general_assistance",
+    "calfresh_snap",
+    "calworks_tanf",
+    "tribal_tanf",
+    "head_start_tribal_only",
+    "liheap",
+    "national_school_lunch_program_free_lunch",
+    "medicaid_medi_cal",
+    "supplemental_security_income",
+    "wic"
+  ],
+  "program_aliases": {
+    "snap": "calfresh_snap",
+    "calfresh": "calfresh_snap",
+    "food stamps": "calfresh_snap",
+    "medi-cal": "medicaid_medi_cal",
+    "medicaid": "medicaid_medi_cal",
+    "ssi": "supplemental_security_income",
+    "wic": "wic",
+    "liheap": "liheap",
+    "tanf": "calworks_tanf",
+    "calworks": "calworks_tanf",
+    "free school lunch": "national_school_lunch_program_free_lunch"
+  },
+  "notes": [
+    "This is a screening result, not an enrollment decision.",
+    "Gross annual household income includes taxable and non-taxable income from household members.",
+    "PG&E may request proof after enrollment.",
+    "Medical Baseline is based on medical need rather than income and requires practitioner certification."
+  ]
+}

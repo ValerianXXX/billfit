@@ -1,0 +1,30 @@
+{
+  "name": "billfit",
+  "version": "0.1.0",
+  "description": "Deterministic PG&E residential rate comparison and assistance screening inside Codex.",
+  "author": {
+    "name": "ValerianXXX",
+    "url": "https://github.com/ValerianXXX"
+  },
+  "homepage": "https://github.com/ValerianXXX/billfit",
+  "repository": "https://github.com/ValerianXXX/billfit",
+  "license": "MIT",
+  "keywords": ["codex-plugin", "energy", "pge", "rate-comparison", "mcp"],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "BillFit",
+    "shortDescription": "Check PG&E rate fit and assistance eligibility.",
+    "longDescription": "BillFit imports residential interval usage, calculates supported PG&E plans with versioned official rate data, screens CARE, FERA, and Medical Baseline, and leaves account access or enrollment to the user.",
+    "developerName": "ValerianXXX",
+    "category": "Productivity",
+    "capabilities": ["Read", "Analyze"],
+    "websiteURL": "https://github.com/ValerianXXX/billfit",
+    "defaultPrompt": [
+      "Compare my PG&E rate plan using my Green Button file.",
+      "Check whether my household may qualify for CARE or FERA.",
+      "Tell me what information BillFit still needs from me."
+    ],
+    "brandColor": "#176B5B"
+  },
+  "mcpServers": "./.mcp.json"
+}

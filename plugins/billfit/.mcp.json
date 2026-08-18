@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "billfit": {
+      "command": "python",
+      "args": ["./scripts/mcp_server.py"],
+      "cwd": ".",
+      "tool_timeout_sec": 60
+    }
+  }
+}

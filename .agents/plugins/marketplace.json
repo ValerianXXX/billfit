@@ -1,0 +1,20 @@
+{
+  "name": "billfit",
+  "interface": {
+    "displayName": "BillFit"
+  },
+  "plugins": [
+    {
+      "name": "billfit",
+      "source": {
+        "source": "local",
+        "path": "./plugins/billfit"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}
