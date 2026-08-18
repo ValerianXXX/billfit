@@ -5,7 +5,19 @@ description: Compare supported PG&E residential electricity plans from Green But
 
 # BillFit
 
-BillFit supplies deterministic, source-dated calculations for a narrow PG&E MVP. Use its MCP tools for every rate, threshold, eligibility, and bill-reconstruction calculation; do not reproduce those calculations with model reasoning.
+BillFit supplies deterministic, source-dated calculations for a narrow PG&E MVP. Use its packaged calculator for every rate, threshold, eligibility, and bill-reconstruction calculation; do not reproduce those calculations with model reasoning.
+
+## Calculator access
+
+Prefer the `billfit_*` MCP tools when they are available. If the skill is installed without MCP, use the self-contained standard-library CLI in this skill folder.
+
+Resolve `<skill-root>` as the directory containing this `SKILL.md`. Run:
+
+```text
+python <skill-root>/scripts/billfit_cli.py <operation> --input-file <request.json>
+```
+
+Supported operations are `scope`, `gates`, `parse`, `compare`, `validate`, and `assistance`. The request file must contain one JSON object whose keys match the corresponding function arguments. Use an empty object for `scope` and `gates`. Prefer a temporary JSON request file instead of interpolating user values into a shell command. The CLI returns one JSON object and never performs account or enrollment actions.
 
 ## Safety and scope
 
@@ -37,7 +49,7 @@ Prefer a user-provided Green Button CSV or XML file. If none is available:
 2. Explain that the user must sign in to PG&E and download Green Button data themselves.
 3. Leave `ACCOUNT_LOGIN` and `REAL_USAGE_FILE` waiting; continue with assistance screening or scope explanation if requested.
 
-When a file is supplied, call `billfit_parse_usage_file` first. Summarize date range, total kWh, coverage, interval size, and warnings without echoing full interval data.
+When a file is supplied, call `billfit_parse_usage_file` or run the CLI `parse` operation first. Summarize date range, total kWh, coverage, interval size, and warnings without echoing full interval data.
 
 ### 3. Collect only facts that materially change the calculation
 
@@ -54,7 +66,7 @@ If unknown, leave `TECHNOLOGY_ELIGIBILITY` waiting. Do not assume eligibility fr
 
 ### 4. Compare and verify
 
-Call `billfit_compare_rate_plans` with the same file path and every confirmed fact. Report:
+Call `billfit_compare_rate_plans` or run the CLI `compare` operation with the same file path and every confirmed fact. Report:
 
 - data-quality level and covered dates
 - rate snapshot effective date and official source
@@ -62,11 +74,11 @@ Call `billfit_compare_rate_plans` with the same file path and every confirmed fa
 - estimated switch savings only when the current plan was supplied and calculated
 - excluded bill components and all returned human gates
 
-If a bill is available, ask only for the line-item energy charge and Base Services Charge, then call `billfit_validate_bill`. Do not validate against the whole amount due. If the reconstruction is outside tolerance, withhold a switching recommendation until the mismatch is explained.
+If a bill is available, ask only for the line-item energy charge and Base Services Charge, then call `billfit_validate_bill` or run the CLI `validate` operation. Do not validate against the whole amount due. If the reconstruction is outside tolerance, withhold a switching recommendation until the mismatch is explained.
 
 ### 5. Screen assistance separately
 
-Call `billfit_screen_assistance` with household size and, if the user chooses to provide it, gross annual household income or names of qualifying public programs. Medical Baseline needs only a yes/no/unknown indication at this stage.
+Call `billfit_screen_assistance` or run the CLI `assistance` operation with household size and, if the user chooses to provide it, gross annual household income or names of qualifying public programs. Medical Baseline needs only a yes/no/unknown indication at this stage.
 
 - Say “likely eligible,” “likely not eligible by the supplied path,” or “needs information,” matching the tool result.
 - Do not say “approved” or “ineligible” as a final determination.
@@ -84,13 +96,13 @@ Use this order:
 
 Keep account-download instructions separate from analytical results. If the user is unavailable, finish every non-interactive calculation and preserve the waiting gates without repeatedly asking.
 
-## Tool routing
+## Calculator routing
 
-- Scope or exclusions: `billfit_get_supported_scope`
-- Pending human actions: `billfit_list_human_gates`
-- File quality and parsing: `billfit_parse_usage_file`
-- Plan comparison: `billfit_compare_rate_plans`
-- Bill-component reconciliation: `billfit_validate_bill`
-- CARE/FERA/Medical Baseline screening: `billfit_screen_assistance`
+- Scope or exclusions: `billfit_get_supported_scope` or CLI `scope`
+- Pending human actions: `billfit_list_human_gates` or CLI `gates`
+- File quality and parsing: `billfit_parse_usage_file` or CLI `parse`
+- Plan comparison: `billfit_compare_rate_plans` or CLI `compare`
+- Bill-component reconciliation: `billfit_validate_bill` or CLI `validate`
+- CARE/FERA/Medical Baseline screening: `billfit_screen_assistance` or CLI `assistance`
 
 Read [references/sources-and-limitations.md](references/sources-and-limitations.md) when explaining official sources, supported rate-plan rules, privacy boundaries, or why a result is not a final utility decision.

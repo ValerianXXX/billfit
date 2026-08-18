@@ -1,6 +1,6 @@
 {
   "name": "billfit",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Deterministic PG&E residential rate comparison and assistance screening inside Codex.",
   "author": {
     "name": "ValerianXXX",
@@ -19,12 +19,16 @@
     "category": "Productivity",
     "capabilities": ["Read", "Analyze"],
     "websiteURL": "https://github.com/ValerianXXX/billfit",
+    "privacyPolicyURL": "https://github.com/ValerianXXX/billfit/blob/main/PRIVACY.md",
+    "termsOfServiceURL": "https://github.com/ValerianXXX/billfit/blob/main/TERMS.md",
     "defaultPrompt": [
       "Compare my PG&E rate plan using my Green Button file.",
       "Check whether my household may qualify for CARE or FERA.",
       "Tell me what information BillFit still needs from me."
     ],
-    "brandColor": "#176B5B"
+    "brandColor": "#176B5B",
+    "composerIcon": "./assets/logo.png",
+    "logo": "./assets/logo.png"
   },
   "mcpServers": "./.mcp.json"
 }

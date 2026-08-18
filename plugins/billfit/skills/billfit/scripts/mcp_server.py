@@ -153,7 +153,7 @@ def _handle(request: dict[str, Any]) -> dict[str, Any] | None:
         result = {
             "protocolVersion": protocol_version,
             "capabilities": {"tools": {"listChanged": False}},
-            "serverInfo": {"name": "billfit", "version": "0.1.0"},
+            "serverInfo": {"name": "billfit", "version": "0.2.0"},
             "instructions": "Use BillFit for deterministic PG&E MVP calculations. Never infer missing eligibility facts, request credentials, or perform external enrollment actions.",
         }
         return {"jsonrpc": "2.0", "id": request_id, "result": result}

@@ -9,3 +9,4 @@ venv/
 Thumbs.db
 .idea/
 .vscode/
+dist/

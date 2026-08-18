@@ -2,7 +2,7 @@
 
 ## Supported population
 
-BillFit 0.1 supports individually metered PG&E residential bundled electric customers without solar/NEM/net export or CCA/Direct Access. It models E-1, E-TOU-C, E-TOU-D, EV2-A, and E-ELEC. EV-B, master-metered service, gas, export compensation, taxes, local surcharges, Climate Credits, and account adjustments are excluded.
+BillFit 0.2 supports individually metered PG&E residential bundled electric customers without solar/NEM/net export or CCA/Direct Access. It models E-1, E-TOU-C, E-TOU-D, EV2-A, and E-ELEC. EV-B, master-metered service, gas, export compensation, taxes, local surcharges, Climate Credits, and account adjustments are excluded.
 
 ## Rate source
 

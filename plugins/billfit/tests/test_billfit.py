@@ -9,7 +9,9 @@ from pathlib import Path
 
 
 PLUGIN_ROOT = Path(__file__).resolve().parents[1]
-SCRIPTS = PLUGIN_ROOT / "scripts"
+SKILL_ROOT = PLUGIN_ROOT / "skills" / "billfit"
+SCRIPTS = SKILL_ROOT / "scripts"
+CLI = SCRIPTS / "billfit_cli.py"
 sys.path.insert(0, str(SCRIPTS))
 
 from billfit_core import (  # noqa: E402
@@ -37,7 +39,7 @@ class BillFitCoreTests(unittest.TestCase):
         )
 
     def test_demo_csv_parses(self) -> None:
-        result = parse_usage_file(str(PLUGIN_ROOT / "examples" / "demo_usage.csv"))
+        result = parse_usage_file(str(SKILL_ROOT / "examples" / "demo_usage.csv"))
         self.assertEqual(result["status"], "parsed")
         self.assertEqual(result["summary"]["interval_count"], 24)
         self.assertAlmostEqual(result["summary"]["total_kwh"], 12.87, places=6)
@@ -217,6 +219,37 @@ class McpProtocolTests(unittest.TestCase):
             responses[2]["result"]["structuredContent"]["fera"]["status"],
             "likely_eligible",
         )
+
+
+class SkillBundleTests(unittest.TestCase):
+    def test_skill_is_self_contained(self) -> None:
+        required = [
+            SKILL_ROOT / "SKILL.md",
+            SKILL_ROOT / "data" / "pge_residential_rates_2026-03-01.json",
+            SKILL_ROOT / "data" / "care_fera_2026-06-01.json",
+            SKILL_ROOT / "scripts" / "billfit_core.py",
+            CLI,
+        ]
+        self.assertTrue(all(path.is_file() for path in required))
+
+    def test_cli_assistance_screen(self) -> None:
+        completed = subprocess.run(
+            [
+                sys.executable,
+                str(CLI),
+                "assistance",
+                "--input-json",
+                json.dumps({"household_size": 4, "gross_annual_household_income": 70000}),
+            ],
+            cwd=str(SKILL_ROOT),
+            capture_output=True,
+            text=True,
+            timeout=10,
+            check=False,
+        )
+        self.assertEqual(completed.returncode, 0, completed.stderr)
+        result = json.loads(completed.stdout)
+        self.assertEqual(result["fera"]["status"], "likely_eligible")
 
 
 if __name__ == "__main__":

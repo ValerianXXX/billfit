@@ -4,11 +4,5 @@ interface:
   brand_color: "#176B5B"
   default_prompt: "Use $billfit to compare my PG&E plan and identify assistance options without taking account actions."
 
-dependencies:
-  tools:
-    - type: "mcp"
-      value: "billfit"
-      description: "Local deterministic PG&E rate and eligibility calculator"
-
 policy:
   allow_implicit_invocation: true
