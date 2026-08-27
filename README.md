@@ -52,6 +52,12 @@ BillFit is an independent project and is not affiliated with or endorsed by PG&E
 
 See the [Privacy Policy](PRIVACY.md), [Terms of Use](TERMS.md), and [Support Guide](SUPPORT.md).
 
+## NeedRadar portfolio relationship
+
+BillFit is a bounded reference implementation in the [NeedRadar evidence-to-execution ecosystem](https://github.com/ValerianXXX/needradar/blob/main/docs/ECOSYSTEM.md). The relationship is descriptive only: BillFit has no NeedRadar runtime dependency, and it is not attached to a current opportunity card without a separate semantic-fit review.
+
+Repository availability and passing tests remain engineering evidence, not adoption or demand validation. The machine-readable boundary is in [`needradar-project.json`](needradar-project.json).
+
 ## Test
 
 From the repository root:
