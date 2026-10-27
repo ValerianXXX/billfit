@@ -12,6 +12,8 @@ BillFit is a local-first Codex plugin and self-contained AI skill that compares 
 
 Calculations are deterministic and use the official-source snapshots documented in [sources and limitations](plugins/billfit/skills/billfit/references/sources-and-limitations.md).
 
+**Verified October 27, 2026:** the official residential workbook is unchanged from the packaged March 1 rates; CARE/FERA thresholds also match current rules. The upgrade adds read-only source/diff checks, stale-guidance protection, optional local PDF/image bill candidates with source locations, and an optional modern MCP SDK profile. [Validation, setup and remaining limits](docs/modernization-2026-10-27.md) include 28 passing tests; image OCR and individual host installation still need external acceptance.
+
 ## Product discovery case
 
 The evidence, rejected concepts, critical-data gap test, product decisions, and validation status behind BillFit are documented in [AI Skill Product Discovery](https://github.com/ValerianXXX/ai-skill-product-discovery/tree/main/cases/billfit).
@@ -22,7 +24,7 @@ The evidence, rejected concepts, critical-data gap test, product decisions, and 
 - Python 3.11 or later
 - An individually metered PG&E residential bundled-electric account for personalized rate comparisons
 
-BillFit uses only the Python standard library. The packaged skill can run its deterministic calculator directly, while the full plugin also exposes the same engine through a bundled MCP server.
+BillFit's calculator uses the Python standard library plus `tzdata` on Windows. Run `python -m pip install -r plugins/billfit/requirements.txt` before the first use in a clean environment. The skill can run directly or through the bundled legacy MCP server. Current MCP discovery and PDF extraction are optional dependency profiles; they do not replace the calculator.
 
 ## Install from GitHub
 

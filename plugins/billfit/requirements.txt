@@ -1,0 +1,2 @@
+# Windows does not normally include the IANA time-zone database needed by zoneinfo.
+tzdata>=2025.2; sys_platform == "win32"

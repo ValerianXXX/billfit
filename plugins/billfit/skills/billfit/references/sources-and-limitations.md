@@ -9,7 +9,7 @@ BillFit 0.2 supports individually metered PG&E residential bundled electric cust
 - PG&E Electric Rates page: https://www.pge.com/tariffs/en/rate-information/electric-rates.html
 - Current residential workbook: https://www.pge.com/assets/rates/tariffs/res-inclu-tou-current.xlsx
 - Snapshot label: `Residential Inclu TOU (MAR 1, 2026 - Present)`
-- BillFit verification date: 2026-08-18
+- BillFit verification date: 2026-10-27 (official workbook byte-identical to the August 18 source record; no numeric change)
 - Packaged workbook SHA-256 record: `e071be6fd457a92da60637fc529c1e4c7a5620ffd83d3ae221819f7e4866995d`
 
 The packaged JSON contains exact values read from the official workbook, not the rounded marketing PDF. The workbook itself says it is for comparison and that current tariffs control. Reconfirm the official page before a user changes plans, especially when the snapshot is more than 45 days old.

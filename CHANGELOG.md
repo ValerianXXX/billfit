@@ -1,5 +1,13 @@
 # Changelog
 
+## Unreleased — 2026-10-27
+
+- Reverify official rate workbook and assistance rules; retain unchanged numerical values with dated source hashes and review history.
+- Separate stale verification from changed rates, withhold stale switching guidance, and reject expired assistance rules and invalid income inputs.
+- Add non-activating candidate validation and winter/summer five-plan regression reports.
+- Fix clean Windows installation with the IANA timezone requirement.
+- Add optional SDK-backed modern MCP transport and local PDF/image bill candidates with user-confirmed evidence. Real image OCR and host installation acceptance remain pending.
+
 ## 0.2.0 - 2026-08-18
 
 - Prepared BillFit for public GitHub and OpenAI plugin submission.

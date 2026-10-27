@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "billfit": {
+      "command": "/absolute/path/to/venv/bin/python",
+      "args": ["/absolute/path/to/billfit/plugins/billfit/skills/billfit/scripts/mcp_server.py", "--sdk"],
+      "tool_timeout_sec": 60
+    }
+  }
+}
