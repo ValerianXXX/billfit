@@ -37,6 +37,8 @@ python plugins/billfit/skills/billfit/scripts/mcp_server.py --sdk
 
 Use `.mcp.sdk.example.json` with absolute interpreter/script paths (Windows interpreter: `.venv\\Scripts\\python.exe`). SDK 2.3.0 owns discovery, envelopes, framing and initialization; tools reuse the same calculator and validate schemas. Current MCP 2026-07-28 and legacy 2025-11-25 were tested through real Windows subprocesses with the official SDK client, including discovery, assistance, rate calculation and malformed arguments. This establishes protocol/client-library compatibility, **not** a completed Hermes desktop/plugin installation.
 
+An additional actual-host check used existing Hermes revision `afe53708ee7400919ae3e17a6dde9b02629e5c87` with its MCP client 1.26.0 in WSL. Its real MCP registry/dispatcher launched the Windows SDK server, discovered all seven BillFit tools and screened a synthetic two-person household with $40,000 gross annual income. CARE returned likely eligible with the verified $43,280 ceiling and non-stale rules; enrollment remained a human gate. No model calls, persistent configuration changes or real account access occurred. [Receipt](../plugins/billfit/skills/billfit/data/verification/hermes-mcp-host-2026-10-27.json). This covers actual host tool invocation, not a full model-driven bill-comparison conversation or permanent plugin installation.
+
 Official protocol/SDK references verified October 27: [versioning](https://modelcontextprotocol.io/docs/2026-07-28/learn/versioning), [Python SDK](https://github.com/modelcontextprotocol/python-sdk). No protocol string was relabelled on the old custom transport.
 
 ## Optional bill input

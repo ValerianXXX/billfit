@@ -1,0 +1,28 @@
+{
+  "host": "Hermes",
+  "hermesRevision": "afe53708ee7400919ae3e17a6dde9b02629e5c87",
+  "hostMcpSdkVersion": "1.26.0",
+  "synthetic": true,
+  "modelCalls": 0,
+  "persistentConfigurationChanged": false,
+  "status": "PASS",
+  "verifiedOn": "2026-10-27",
+  "mode": "ACTUAL_HERMES_TOOL_REGISTRY_DISPATCH",
+  "serverMcpSdkVersion": "2.3.0",
+  "platform": "existing WSL Ubuntu client to Windows stdio server",
+  "limitations": [
+    "No model-driven tool selection",
+    "No production or customer data",
+    "No persistent plugin installation"
+  ],
+  "checks": [
+    "DISCOVERED_SEVEN_BILLFIT_TOOLS",
+    "SYNTHETIC_CARE_SCREEN_CONFIRMED",
+    "ENROLLMENT_REMAINS_HUMAN_GATE"
+  ],
+  "toolCount": 7,
+  "careLimit": 43280,
+  "householdSize": 2,
+  "syntheticGrossIncome": 40000,
+  "stale": false
+}
