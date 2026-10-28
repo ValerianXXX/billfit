@@ -12,7 +12,7 @@ BillFit is a local-first Codex plugin and self-contained AI skill that compares 
 
 Calculations are deterministic and use the official-source snapshots documented in [sources and limitations](plugins/billfit/skills/billfit/references/sources-and-limitations.md).
 
-**Verified October 27, 2026:** the official residential workbook is unchanged from the packaged March 1 rates; CARE/FERA thresholds also match current rules. The upgrade adds read-only source/diff checks, stale-guidance protection, optional local PDF/image bill candidates with source locations, and an optional modern MCP SDK profile. [Validation, setup and remaining limits](docs/modernization-2026-10-27.md) include 28 passing tests; image OCR and individual host installation still need external acceptance.
+**Verified October 27, 2026:** the official residential workbook is unchanged from the packaged March 1 rates; CARE/FERA thresholds also match current rules. The upgrade adds read-only source/diff checks, stale-guidance protection, optional local PDF/image bill candidates with source locations, and an optional modern MCP SDK profile. [Validation, setup and remaining limits](docs/modernization-2026-10-27.md) include 28 passing tests, actual Hermes tool invocation and five correct fields from a clean synthetic image using local Tesseract in WSL. Real customer bills, noisy photographs and native Windows OCR remain unvalidated.
 
 ## Product discovery case
 

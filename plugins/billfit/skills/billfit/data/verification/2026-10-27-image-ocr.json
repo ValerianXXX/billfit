@@ -1,0 +1,134 @@
+{
+  "status": "PASS",
+  "mode": "REAL_LOCAL_OCR_SYNTHETIC_INPUT",
+  "observedAt": "2026-10-28T01:10:18.913966+00:00",
+  "engine": "tesseract 5.5.0",
+  "pythonVersion": "3.11.15",
+  "fixture": "synthetic-bill.png",
+  "expectedFieldCount": 5,
+  "missingFields": [],
+  "wrongFields": [],
+  "bboxWithinFixture": true,
+  "durationMs": 246,
+  "cloudCalls": 0,
+  "actualDollarCost": null,
+  "result": {
+    "status": "REVIEW_REQUIRED",
+    "candidates": [
+      {
+        "field": "current_plan",
+        "value": "E-TOU-D",
+        "status": "NEEDS_USER_CONFIRMATION",
+        "source": {
+          "sha256": "b2b9258e80a95a405fc7e0fb7f5cf1649f5534a8b87800856bd8ad8f889fafb7",
+          "page": 1,
+          "line": 2,
+          "bbox": [
+            58,
+            118,
+            437,
+            143
+          ],
+          "quote": "Rate Schedule: E-TOU-D",
+          "start": 0,
+          "end": 22
+        },
+        "method": "LOCAL_TESSERACT_OCR"
+      },
+      {
+        "field": "reported_energy_charge",
+        "value": "12.34",
+        "status": "NEEDS_USER_CONFIRMATION",
+        "source": {
+          "sha256": "b2b9258e80a95a405fc7e0fb7f5cf1649f5534a8b87800856bd8ad8f889fafb7",
+          "page": 1,
+          "line": 3,
+          "bbox": [
+            58,
+            194,
+            412,
+            227
+          ],
+          "quote": "Energy Charges $12.34",
+          "start": 0,
+          "end": 21
+        },
+        "method": "LOCAL_TESSERACT_OCR"
+      },
+      {
+        "field": "reported_base_services_charge",
+        "value": "0.79",
+        "status": "NEEDS_USER_CONFIRMATION",
+        "source": {
+          "sha256": "b2b9258e80a95a405fc7e0fb7f5cf1649f5534a8b87800856bd8ad8f889fafb7",
+          "page": 1,
+          "line": 4,
+          "bbox": [
+            57,
+            271,
+            486,
+            304
+          ],
+          "quote": "Base Services Charge $0.79",
+          "start": 0,
+          "end": 26
+        },
+        "method": "LOCAL_TESSERACT_OCR"
+      },
+      {
+        "field": "baseline_territory",
+        "value": "X",
+        "status": "NEEDS_USER_CONFIRMATION",
+        "source": {
+          "sha256": "b2b9258e80a95a405fc7e0fb7f5cf1649f5534a8b87800856bd8ad8f889fafb7",
+          "page": 1,
+          "line": 5,
+          "bbox": [
+            57,
+            349,
+            362,
+            381
+          ],
+          "quote": "Baseline Territory: X",
+          "start": 0,
+          "end": 21
+        },
+        "method": "LOCAL_TESSERACT_OCR"
+      },
+      {
+        "field": "total_kwh",
+        "value": "25.5",
+        "status": "NEEDS_USER_CONFIRMATION",
+        "source": {
+          "sha256": "b2b9258e80a95a405fc7e0fb7f5cf1649f5534a8b87800856bd8ad8f889fafb7",
+          "page": 1,
+          "line": 6,
+          "bbox": [
+            58,
+            426,
+            304,
+            458
+          ],
+          "quote": "Usage 25.5 kWh",
+          "start": 0,
+          "end": 14
+        },
+        "method": "LOCAL_TESSERACT_OCR"
+      }
+    ],
+    "missing_fields": [],
+    "conflicting_fields": [],
+    "automatic_calculation": false,
+    "automatic_confirmation": false,
+    "warnings": [
+      "Verify each candidate against the cited page/line before supplying it to validate/compare.",
+      "Total amount due is excluded. A bill's total kWh cannot replace interval usage.",
+      "No eligibility, account number, login, medical data or income is inferred."
+    ]
+  },
+  "limitations": [
+    "One clean digitally rendered synthetic image",
+    "No real customer bill or noisy photograph",
+    "No native Windows OCR binary exercised"
+  ]
+}

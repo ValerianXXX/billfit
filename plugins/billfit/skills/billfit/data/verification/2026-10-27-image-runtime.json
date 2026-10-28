@@ -1,0 +1,55 @@
+{
+  "purpose": "Isolated original synthetic OCR fixture only; not a production runtime distribution",
+  "source": "Official Ubuntu resolute APT package repositories",
+  "systemInstalled": false,
+  "packages": [
+    {
+      "file": "libarchive13t64_3.8.5-1ubuntu2_amd64.deb",
+      "sha256": "b3102c29375ebd01f71243e93cf55525ab3a5b359d07fbf62e995971754596da"
+    },
+    {
+      "file": "libdeflate0_1.23-2ubuntu1_amd64.deb",
+      "sha256": "40ee517cffd3730405be6ae30826533bec0ddf8773bb7ac2cccd22a57acafc25"
+    },
+    {
+      "file": "libgif7_5.2.2-1ubuntu3.2_amd64.deb",
+      "sha256": "fce81875eaab4e01ca97ed7de1cc41e3ab589a09beb95b09c8ddd2caf2581284"
+    },
+    {
+      "file": "libjbig0_2.1-6.1ubuntu3_amd64.deb",
+      "sha256": "bb2ffa4e359ee7a29dab9902b45e5c85de06f019272700cb2538e4762f141ee8"
+    },
+    {
+      "file": "libjpeg-turbo8_2.1.5-4ubuntu4_amd64.deb",
+      "sha256": "07672ce1f4d187e005ea0cc35d03e515ba056f3d3e7a9a25d3ef386e184da8c5"
+    },
+    {
+      "file": "libleptonica6_1.86.0-1_amd64.deb",
+      "sha256": "02cf6d56ec1b2b906a4039e93119ba04a56098efb775ca7c5791528a41ec43f0"
+    },
+    {
+      "file": "liblerc4_4.0.0+ds-5ubuntu2_amd64.deb",
+      "sha256": "29051d37d010a7a0e3b5648f73f30d35eb1e313061137c88f3a2c2078925a36d"
+    },
+    {
+      "file": "libtesseract5_5.5.0-1build1_amd64.deb",
+      "sha256": "67a4c0589b2178ea82db69cb83d0fdcee21f3e509b52819fcc359d8461555d6d"
+    },
+    {
+      "file": "libtiff6_4.7.0-3ubuntu5_amd64.deb",
+      "sha256": "f48cb837a644826b9411ecd9692cbd57fbcb57b5b8fba026652d9204b3acb169"
+    },
+    {
+      "file": "tesseract-ocr-eng_1%3a4.1.0-2build1_all.deb",
+      "sha256": "cfd4055be0740a651c80b82dcddee67d4635510a092a2a4dc86eff54589a557e"
+    },
+    {
+      "file": "tesseract-ocr-osd_1%3a4.1.0-2build1_all.deb",
+      "sha256": "15d2416753d33a247c87a31f91406c2606c00dd378ef69327971a4aaa75bff76"
+    },
+    {
+      "file": "tesseract-ocr_5.5.0-1build1_amd64.deb",
+      "sha256": "b3c3dc68fdc96ddad655f523194bc2a84c243648cffb9dc6a734877acc31ede8"
+    }
+  ]
+}

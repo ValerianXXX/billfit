@@ -6,7 +6,7 @@
 - Separate stale verification from changed rates, withhold stale switching guidance, and reject expired assistance rules and invalid income inputs.
 - Add non-activating candidate validation and winter/summer five-plan regression reports.
 - Fix clean Windows installation with the IANA timezone requirement.
-- Add optional SDK-backed modern MCP transport and local PDF/image bill candidates with user-confirmed evidence. Real image OCR and host installation acceptance remain pending.
+- Add optional SDK-backed modern MCP transport and local PDF/image bill candidates with user-confirmed evidence. Actual Hermes tool invocation and local WSL OCR on an original synthetic image pass; permanent host installation and real customer inputs remain unvalidated.
 
 ## 0.2.0 - 2026-08-18
 
