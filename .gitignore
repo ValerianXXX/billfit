@@ -12,3 +12,4 @@ Thumbs.db
 dist/
 *-tests.log
 dependency-install.log
+reports/*.log
