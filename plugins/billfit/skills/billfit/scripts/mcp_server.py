@@ -25,7 +25,7 @@ TOOLS: list[dict[str, Any]] = [
         "inputSchema": {
             "type": "object",
             "properties": {
-                "usage_file": {"type": "string", "description": "Absolute or local path to a .csv, .xml, or .json usage file."}
+                "usage_file": {"type": "string", "description": "Exact local .csv, .xml, or .json path supplied by the user or client. Preserve it unchanged; do not prepend a guessed directory. Ask for the path when missing."}
             },
             "required": ["usage_file"],
             "additionalProperties": False,
@@ -37,7 +37,7 @@ TOOLS: list[dict[str, Any]] = [
         "inputSchema": {
             "type": "object",
             "properties": {
-                "usage_file": {"type": "string"},
+                "usage_file": {"type": "string", "description": "Exact usage-file path supplied by the user or client; preserve it unchanged and never invent a directory."},
                 "intervals": {
                     "type": "array",
                     "items": {
@@ -81,7 +81,7 @@ TOOLS: list[dict[str, Any]] = [
         "inputSchema": {
             "type": "object",
             "properties": {
-                "usage_file": {"type": "string"},
+                "usage_file": {"type": "string", "description": "Exact usage-file path supplied by the user or client; preserve it unchanged and never invent a directory."},
                 "intervals": {
                     "type": "array",
                     "items": {
@@ -130,7 +130,7 @@ TOOLS: list[dict[str, Any]] = [
 
 PUBLIC_FUNCTIONS = {**PUBLIC_FUNCTIONS, "billfit_extract_bill_fields": extract_bill_fields}
 TOOLS.append({"name": "billfit_extract_bill_fields", "description": "Extract unconfirmed fields from one local PDF/image bill with page/line evidence. No uploads or automatic calculation; verify all fields with the user.",
-              "inputSchema": {"type": "object", "properties": {"bill_file": {"type": "string"}}, "required": ["bill_file"], "additionalProperties": False}})
+              "inputSchema": {"type": "object", "properties": {"bill_file": {"type": "string", "description": "Exact local PDF/image path supplied by the user or client. Use it unchanged, including a supplied relative filename. Never invent or prepend /mnt/data, a home folder or another directory. Ask for the path when missing."}}, "required": ["bill_file"], "additionalProperties": False}})
 
 
 def _send(payload: dict[str, Any]) -> None:

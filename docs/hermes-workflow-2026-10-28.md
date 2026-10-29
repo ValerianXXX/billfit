@@ -43,4 +43,8 @@ No earlier model-driven BillFit observation exists for a controlled before/after
 
 Official [PG&E rate page](https://www.pge.com/tariffs/en/rate-information/electric-rates.html) and [CPUC CARE/FERA page](https://www.cpuc.ca.gov/care/) were re-opened October 28 (America/New_York): their displayed effective windows and the two-person CARE threshold match the existing snapshot. This page check does not re-download/reverify the workbook bytes or reset the packaged October 27 verification date.
 
-Live results are appended only after actual execution; no new model observation is claimed by this protocol commit.
+## Initial actual observation
+
+At `7392a56814e35065ad9e5ad2b44c7238afd5c845`, existing Hermes `afe53708ee7400919ae3e17a6dde9b02629e5c87` / `gpt-5.6-sol` / `openai-codex` completed the two stages in 70,490 ms, with six reported model API calls and 40,690 tokens. Stage 1 failed the file boundary check: its first extraction call did not use the supplied exact filename, and was rejected before any file read. The evaluator did not retain that rejected argument, so its exact value and the reason for the model's choice are unknown. The model subsequently corrected the filename. All final fields and sources, confirmation gates and assistance results were correct. Stage 2 passed all checks, including deterministic totals, limited coverage and the deliberate mismatch. **Overall result: FAILED_CHECKS**, retained unchanged in `hermes-workflow-attempt-1.json`.
+
+The next revision clarifies exact supplied paths in the actual MCP parameter descriptions and skill. The task prompts, model selection, fixtures and pass criteria stay unchanged. It does not weaken the file guard or reclassify the first observation. Any rerun must create a separate receipt. Reported cost status was `included`, estimated cost zero with source `none`; actual billing is unknown.
