@@ -1,0 +1,4 @@
+{
+  "usage_file": "plugins/billfit/skills/billfit/examples/synthetic-dst-usage.json",
+  "candidate_plans": ["E-TOU-D"]
+}

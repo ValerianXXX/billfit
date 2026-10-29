@@ -1,0 +1,7 @@
+{
+  "data_mode": "SYNTHETIC_FIXTURE_NOT_A_CUSTOMER_ACCOUNT",
+  "intervals": [
+    {"start": "2026-11-01T01:15:00-07:00", "duration_minutes": 15, "kwh": 1},
+    {"start": "2026-11-01T01:15:00-08:00", "duration_minutes": 15, "kwh": 1}
+  ]
+}

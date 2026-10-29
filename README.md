@@ -12,6 +12,8 @@ BillFit is a local-first Codex plugin and self-contained AI skill that compares 
 
 Calculations are deterministic and use the official-source snapshots documented in [sources and limitations](plugins/billfit/skills/billfit/references/sources-and-limitations.md).
 
+**October 29 correctness milestone:** local usage parsing now preserves both hours at a daylight-saving overlap, conserves energy across tariff boundaries, removes identical repeats without adding usage, and rejects conflicting/overlapping or invalid records. Insufficient usage withholds switching savings; a bill-component match keeps the usage-review gate. [Reproduction, fixed before/after cases and limitations](docs/interval-correctness-2026-10-29.md) report 28/28 boundary cases after an initial 1/28 and 72 complete local tests. Tariff values and verification dates are unchanged. These changes are on a draft development branch; installing `main` below does not install the draft. Run this checkout's CLI to review it.
+
 **Verified October 27, 2026:** the official residential workbook is unchanged from the packaged March 1 rates; CARE/FERA thresholds also match current rules. The upgrade adds read-only source/diff checks, stale-guidance protection, optional local PDF/image bill candidates with source locations, and an optional modern MCP SDK profile. [Validation, setup and remaining limits](docs/modernization-2026-10-27.md) include 28 passing tests, actual Hermes tool invocation and five correct fields from a clean synthetic image using local Tesseract in WSL. Real customer bills, noisy photographs and native Windows OCR remain unvalidated.
 
 **October 28 follow-up:** a [real model-selected Hermes workflow](docs/hermes-workflow-2026-10-28.md) now covers sourced bill extraction, assistance screening, interval parsing, deterministic comparison and a deliberately mismatched bill. An initial file-argument rejection led to clearer exact-path guidance in the MCP tools and skill; the same two-stage task then passed with five model calls. The 34-test suite and both original observations are retained. This is synthetic analytical acceptance, not utility enrollment, proven household savings or a general model-performance claim.
@@ -71,6 +73,14 @@ From the repository root:
 ```shell
 python -m unittest discover -s plugins/billfit/tests -v
 ```
+
+To exercise the synthetic repeated-hour example from this checkout without credentials or a model:
+
+```shell
+python plugins/billfit/skills/billfit/scripts/billfit_cli.py compare --input-file plugins/billfit/skills/billfit/examples/synthetic-dst-compare.json
+```
+
+The two explicit offsets are distinct intervals. The intentionally sparse fixture is not sufficient for switching advice. No additional dependency or configuration is required for the interval changes.
 
 ## License
 

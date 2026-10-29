@@ -1,5 +1,14 @@
 # Changelog
 
+## Unreleased — 2026-10-29
+
+- Extract local CSV/XML/JSON validation into `billfit_usage.py` with shared domain errors; keep calculator/CLI entry points and transport profiles.
+- Preserve absolute instants across daylight-saving transitions. Detect ambiguous/nonexistent local times, duplicate conflicts, overlaps and unsupported units instead of summing or silently dropping readings.
+- Make duration units explicit, disclose inferred durations, bound file/interval/numeric ranges and conserve energy at actual tariff clock boundaries.
+- Withhold switching savings for insufficient, inferred or coarse usage; retain a usage-review gate even when comparable bill components arithmetically reconcile. Reject non-finite, boolean and negative bill amounts.
+- Keep all five-plan winter/summer component totals unchanged for the original regular-hour fixtures. Frozen boundary result: 1 pass/26 failures/1 error before, 28 passes after. Expanded full suite: 72 passed, including actual SDK subprocess error/recovery in both existing protocol modes.
+- Add an explicit-offset synthetic example and dated official-page observations. No numeric tariff update, verification-date reset, new account scope, model call or production action.
+
 ## Unreleased — 2026-10-28
 
 - Add a reproducible two-stage Hermes acceptance runner using fixed synthetic bill/usage files, real MCP tools, bounded file access and preserved failed observations.

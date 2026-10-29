@@ -7,6 +7,20 @@ from typing import Any
 from billfit_core import BillFitError, PUBLIC_FUNCTIONS, get_supported_scope
 from bill_input import extract_bill_fields
 
+INTERVAL_INPUT = {
+    "type": "array", "minItems": 1, "maxItems": 200000,
+    "items": {
+        "type": "object",
+        "properties": {
+            "start": {"type": "string", "description": "ISO timestamp with an explicit UTC offset at DST overlaps; ambiguous or nonexistent local times are rejected."},
+            "duration_minutes": {"type": "number", "minimum": 1 / 60, "maximum": 1440,
+                                 "description": "Elapsed minutes. Omission is disclosed as inferred and prevents switching guidance."},
+            "kwh": {"type": "number", "minimum": -1e12, "maximum": 1e12},
+        },
+        "required": ["start", "kwh"],
+        "additionalProperties": False,
+    },
+}
 
 TOOLS: list[dict[str, Any]] = [
     {
@@ -33,23 +47,12 @@ TOOLS: list[dict[str, Any]] = [
     },
     {
         "name": "billfit_compare_rate_plans",
-        "description": "Deterministically price supported PG&E residential plans from interval usage. Use real usage_file data when available; inline intervals are for demonstrations and tests. Fails closed for solar and CCA.",
+        "description": "Deterministically price supported PG&E residential plans from interval usage. Use real usage_file data when available; inline intervals are for demonstrations and tests. Conflicts/overlaps fail; identical repeats retain one value. Limited, inferred or coarse usage withholds switching savings. Fails closed for solar and CCA.",
         "inputSchema": {
             "type": "object",
             "properties": {
                 "usage_file": {"type": "string", "description": "Exact usage-file path supplied by the user or client; preserve it unchanged and never invent a directory."},
-                "intervals": {
-                    "type": "array",
-                    "items": {
-                        "type": "object",
-                        "properties": {
-                            "start": {"type": "string", "description": "ISO timestamp, preferably with UTC offset."},
-                            "duration_minutes": {"type": "number", "minimum": 0},
-                            "kwh": {"type": "number"},
-                        },
-                        "required": ["start", "kwh"],
-                    },
-                },
+                "intervals": INTERVAL_INPUT,
                 "current_plan": {"type": "string", "enum": ["E-1", "E-TOU-C", "E-TOU-D", "EV2-A", "E-ELEC"]},
                 "candidate_plans": {
                     "type": "array",
@@ -77,26 +80,15 @@ TOOLS: list[dict[str, Any]] = [
     },
     {
         "name": "billfit_validate_bill",
-        "description": "Reconstruct comparable energy and Base Services Charge components for the current plan. Do not compare against the whole amount due because taxes, credits, gas, and adjustments are excluded.",
+        "description": "Reconstruct comparable energy and Base Services Charge components for the current plan. Arithmetic agreement does not establish sufficient usage evidence; preserve USAGE_QUALITY_REVIEW when returned. Do not compare against the whole amount due because taxes, credits, gas, and adjustments are excluded.",
         "inputSchema": {
             "type": "object",
             "properties": {
                 "usage_file": {"type": "string", "description": "Exact usage-file path supplied by the user or client; preserve it unchanged and never invent a directory."},
-                "intervals": {
-                    "type": "array",
-                    "items": {
-                        "type": "object",
-                        "properties": {
-                            "start": {"type": "string"},
-                            "duration_minutes": {"type": "number"},
-                            "kwh": {"type": "number"},
-                        },
-                        "required": ["start", "kwh"],
-                    },
-                },
+                "intervals": INTERVAL_INPUT,
                 "current_plan": {"type": "string", "enum": ["E-1", "E-TOU-C", "E-TOU-D", "EV2-A", "E-ELEC"]},
-                "reported_energy_charge": {"type": "number"},
-                "reported_base_services_charge": {"type": "number"},
+                "reported_energy_charge": {"type": "number", "minimum": 0},
+                "reported_base_services_charge": {"type": "number", "minimum": 0},
                 "baseline_territory": {"type": "string", "enum": ["P", "Q", "R", "S", "T", "V", "W", "X", "Y", "Z"]},
                 "service_type": {"type": "string", "enum": ["basic", "all_electric"]},
                 "assistance_program": {"type": "string", "enum": ["none", "CARE", "FERA"]},

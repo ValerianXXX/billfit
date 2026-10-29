@@ -1,0 +1,158 @@
+{
+  "observedAt": "2026-10-29T23:20:35.768610+00:00",
+  "baseline": "6e476b2ae1b38e0c0c9359842fba71ef32d41292",
+  "frozenProtocolCommit": "7c16c37",
+  "frozenTestBodyUnchanged": true,
+  "frozenInitial": {
+    "passed": 1,
+    "failed": 26,
+    "errors": 1
+  },
+  "frozenFinal": {
+    "passed": 28,
+    "failed": 0,
+    "errors": 0
+  },
+  "originalFullSuite": {
+    "passed": 34
+  },
+  "finalFullSuite": {
+    "passed": 72,
+    "skipped": 0,
+    "failed": 0,
+    "errors": 0,
+    "seconds": 7.083
+  },
+  "additionalReviewTests": 10,
+  "additionalTestCorrection": "Initial bill-amount subtest scope caused a secondary fixture error after its missing domain rejection. Nesting was corrected to preserve all five expected rejections. Frozen 28-case bodies were not changed.",
+  "regularHourSeasonalFivePlanRegression": "Exact result-object equality with committed October 27 winter/summer fixtures; no universal tariff claim",
+  "actualCli": [
+    {
+      "case": "existing_demo_csv",
+      "exitCode": 0,
+      "summary": {
+        "interval_count": 24,
+        "start": "2026-07-06T00:00:00-07:00",
+        "end": "2026-07-07T00:00:00-07:00",
+        "span_days": 1.0,
+        "billing_days": 1,
+        "total_kwh": 12.87,
+        "median_interval_minutes": 60.0,
+        "max_interval_minutes": 60.0,
+        "coverage_ratio": 1.0,
+        "elapsed_minutes": 1440.0,
+        "gap_minutes": 0,
+        "negative_interval_count": 0,
+        "quality": "limited"
+      }
+    },
+    {
+      "case": "explicit_offset_repeated_hour",
+      "exitCode": 0,
+      "summary": {
+        "interval_count": 2,
+        "start": "2026-11-01T01:15:00-07:00",
+        "end": "2026-11-01T01:30:00-08:00",
+        "span_days": 0.052,
+        "billing_days": 1,
+        "total_kwh": 2.0,
+        "median_interval_minutes": 15.0,
+        "max_interval_minutes": 15.0,
+        "coverage_ratio": 0.4,
+        "elapsed_minutes": 75.0,
+        "gap_minutes": 45.0,
+        "negative_interval_count": 0,
+        "quality": "limited"
+      },
+      "recommendation": {
+        "status": "withheld_pending_usage_quality",
+        "message": "Calculations are illustrative. Confirm units/durations and provide at least 28 days of near-complete supported intervals before switching guidance; no annual saving is established.",
+        "lowest_calculated_plan": "E-TOU-D"
+      },
+      "humanGateIds": [
+        "USAGE_QUALITY_REVIEW"
+      ]
+    },
+    {
+      "case": "conflicting_duplicate",
+      "exitCode": 2,
+      "error": "CONFLICTING_DUPLICATE_INTERVAL"
+    },
+    {
+      "case": "nonfinite_bill_amount",
+      "exitCode": 2,
+      "error": "INVALID_BILL_AMOUNT"
+    }
+  ],
+  "mcp": {
+    "sdk": "2.3.0",
+    "realSubprocessModes": [
+      "2026-07-28",
+      "legacy (2025-11-25)"
+    ],
+    "checks": [
+      "discovery and existing business tools",
+      "conflicting duplicate error",
+      "successful subsequent repeated-hour comparison",
+      "insufficient-usage gate",
+      "negative bill amount schema rejection"
+    ],
+    "newHermesModelRun": false,
+    "newPhysicalHostInstall": false
+  },
+  "environment": {
+    "os": "Windows",
+    "python": "3.11.3"
+  },
+  "unchangedSnapshots": {
+    "pge_residential_rates_2026-03-01.json": {
+      "unchangedFromBaseline": true,
+      "lfSha256": "cff04fb40659084260afab13b99bab5cb6dd3a6a77eb8490b05c0e89bbf7e53b"
+    },
+    "care_fera_2026-06-01.json": {
+      "unchangedFromBaseline": true,
+      "lfSha256": "1ff88ab2bc8f8ebbe12e78a3590d1de1ce54626ff0a2b689fc23774ea4b85618"
+    }
+  },
+  "officialPageReview": {
+    "date": "2026-10-29",
+    "rates": "https://www.pge.com/tariffs/en/rate-information/electric-rates.html",
+    "ratesDisplayedWindow": "March 1, 2026 to present",
+    "assistance": "https://www.cpuc.ca.gov/care/",
+    "assistanceDisplayedWindow": "June 1, 2026 to May 31, 2027",
+    "newWorkbookDownload": false,
+    "verificationMetadataReset": false,
+    "newTariffCellAudit": false
+  },
+  "sourceLFHashes": {
+    "plugins/billfit/skills/billfit/scripts/billfit_core.py": "5f3dff8402dfea64ba0d8d2875573e8e7be4714d3d922f44f8758066d2bae343",
+    "plugins/billfit/skills/billfit/scripts/billfit_usage.py": "ab348c315b98a369d6b951c1347636b601dd2133465c95670541d47aadf30e3b",
+    "plugins/billfit/skills/billfit/scripts/billfit_errors.py": "b09170050614a0fc20331312f3510c19e9e75f66d59b05f69cd0ce0f47e86cd3",
+    "plugins/billfit/skills/billfit/scripts/mcp_server.py": "eb48ec581bdf1297ce21a8364690113ee3157834d8b51256229e081075657116",
+    "plugins/billfit/tests/test_interval_boundaries.py": "a52e05b06ce31b28922c0e9a559a3b6966b621624e8d78104b62bb4cd7cec3c4",
+    "plugins/billfit/tests/test_usage_integration.py": "35af65544d8e5090ceab5fd6f1bae893aa81d4daedd298092f9253c7976870e4",
+    "plugins/billfit/skills/billfit/SKILL.md": "70a9383e7fff54a0fcfcf26fc48a84a60349f441f3eea113d19aca9a2682c979"
+  },
+  "localLogLFHashes": {
+    "reports/interval-baseline-2026-10-29.log": "84636cd686072478282f7d57c55eb21f5e98f93e06dd07985374def7ef4b19e9",
+    "reports/interval-before-2026-10-29.log": "3f36601daccd61771fbf9b12e289f77577a5d9d0511b1e7c726eefd1324fed22",
+    "reports/interval-first-repair-2026-10-29.log": "dbac1bff4056624ec46759996689d51ac3ce0f3ad5e6d6195a66498b200994da",
+    "reports/usage-review-before-2026-10-29.log": "3a202fb53edb9bedd4c3700f1d9815ebaf31d6d864717f422db7407b3a21561c",
+    "reports/usage-review-after-2026-10-29.log": "1527d228c8cd4e6500736c63b75fa08fe31a52011f2de585e17ad5ac27b2061f",
+    "reports/interval-full-final-2026-10-29.log": "a6d92b6afef8e0e6c049382796b15cb81bd26c77726c716368eaf6f944a52f3a",
+    "reports/interval-full-final2-2026-10-29.log": "ea3904122ede9deabddfe1e6eed2221a1188ee902ffbdf017f677e382878a3c9"
+  },
+  "syntheticOnly": true,
+  "liveModelRequests": 0,
+  "productionActions": 0,
+  "schemaMigrationRequired": false,
+  "independentHumanAcceptance": false,
+  "wholeBillFitGoalComplete": false,
+  "remaining": [
+    "Noisy/rotated and duplicate bill extraction",
+    "Comprehensive monetary rounding and bill-period reconciliation",
+    "Reviewed tariff-candidate activation and rollback exercise",
+    "MCP cancellation",
+    "Native Windows OCR and authorized customer/independent acceptance"
+  ]
+}

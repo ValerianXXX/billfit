@@ -55,6 +55,8 @@ Prefer a user-provided Green Button CSV or XML file. If none is available:
 
 When a file is supplied, call `billfit_parse_usage_file` or run the CLI `parse` operation first. Summarize date range, total kWh, coverage, interval size, and warnings without echoing full interval data.
 
+Preserve interval errors and input assumptions. Identical repeated records retain one value with a warning; conflicting duplicates, overlaps, unknown units and ambiguous local daylight-saving times require corrected source data. Do not invent offsets, silently discard a conflicting row or add repeated usage. A generic CSV `duration` column needs explicit minutes/seconds units. Multiple ESPI reading types or usage points need a supported source mapping; do not combine accounts.
+
 ### 3. Collect only facts that materially change the calculation
 
 For E-1 or E-TOU-C, obtain baseline territory P–Z and `basic` versus `all_electric` service. If absent, leave `BASELINE_INFO` waiting; still calculate plans that do not require baseline when possible.
@@ -77,6 +79,8 @@ Call `billfit_compare_rate_plans` or run the CLI `compare` operation with the sa
 - calculated plan ranking and comparable annualized totals
 - estimated switch savings only when the current plan was supplied and calculated
 - excluded bill components and all returned human gates
+
+When `withheld_pending_usage_quality` or `USAGE_QUALITY_REVIEW` is returned, describe the calculation as illustrative and preserve the missing-data requirement. Do not promote a short, gappy, coarse or inferred interval series into an established annual saving. Even a `validated` bill result only reconciles comparable components; check `validation_scope`, `usage_evidence_status` and the remaining gates before describing its evidential strength.
 
 If a bill is available, ask only for the line-item energy charge and Base Services Charge, then call `billfit_validate_bill` or run the CLI `validate` operation. Do not validate against the whole amount due. If the reconstruction is outside tolerance, withhold a switching recommendation until the mismatch is explained.
 
