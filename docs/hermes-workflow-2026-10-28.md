@@ -31,6 +31,8 @@ HERMES_PYTHON scripts/probe_hermes_workflow.py --hermes-root /path/to/hermes-age
 
 The default preflight discovers tools without model calls. A live run requires a clean committed tree and refuses to overwrite an observation. Keep machine-specific configuration outside tracked files. WSL clients can launch a Windows interpreter using its `/mnt/.../python.exe` path and pass the Windows absolute server script path. The evaluator checks that the script resolves to this checkout.
 
+Repository attributes normalize text for both Windows and WSL Git and preserve PDF/PNG fixture bytes as binary. The initial live invocation stopped before model initialization because WSL interpreted the Windows checkout's CRLF text as uncommitted changes. That precondition failure is retained separately; no model call occurred in it.
+
 Original file bytes are parsed locally. The configured model receives the prompt and returned synthetic field values, evidence snippets, income facts, summaries and calculation outputs. Using BillFit with a cloud host can send analogous returned facts to that host's model provider; local file parsing alone does not make the entire model conversation local. This acceptance script accepts only the fixed synthetic inputs.
 
 ## Assessment and limits
