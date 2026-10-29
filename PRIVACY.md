@@ -1,6 +1,6 @@
 # BillFit Privacy Policy
 
-Effective date: August 18, 2026
+Effective date: October 28, 2026
 
 BillFit is an open-source utility-rate comparison and assistance-screening skill. This policy explains the data handled by the BillFit software itself.
 
@@ -9,6 +9,7 @@ BillFit is an open-source utility-rate comparison and assistance-screening skill
 BillFit can process information that a user chooses to provide, including:
 
 - electricity interval-usage files, such as Green Button CSV or XML files;
+- optional local PDF/image bills and extracted candidate fields with source snippets;
 - household size and optional gross annual household income;
 - names of qualifying public-assistance programs;
 - a yes, no, or unknown response about a possible Medical Baseline need; and
@@ -21,6 +22,8 @@ BillFit does not require utility passwords, Social Security numbers, tax returns
 The published BillFit skill has no developer-operated backend, account system, analytics, advertising, cookies, or telemetry. Its calculator runs in the execution environment provided by the user's AI host and reads only the files and facts supplied for the requested analysis. BillFit does not independently transmit or retain that information on a server operated by the developer.
 
 The AI host, source-code host, or device used to run BillFit may process or retain information under its own terms and privacy policy. Users should review those policies before supplying data.
+
+In a cloud-model conversation, the AI host may transmit supplied household facts and the tool's returned field values, evidence snippets and calculation summaries to its configured model provider. BillFit's parser does not upload original PDF/image bytes, but local parsing alone does not make the conversation local. Configure a suitable host/model and review its retention settings before supplying personal information. The repository's acceptance runner uses only fixed synthetic inputs and temporary host state.
 
 ## Sharing
 

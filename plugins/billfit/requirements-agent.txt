@@ -1,0 +1,4 @@
+# Optional MCP profile; the default CLI and legacy transport stay standard-library only.
+-r requirements.txt
+mcp==2.3.0
+jsonschema>=4.25,<5

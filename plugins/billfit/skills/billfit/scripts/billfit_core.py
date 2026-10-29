@@ -131,16 +131,20 @@ def list_human_gates() -> dict[str, Any]:
     }
 
 
-def _freshness(rate: dict[str, Any]) -> dict[str, Any]:
+def _freshness(rate: dict[str, Any], as_of: date | None = None) -> dict[str, Any]:
     verified = date.fromisoformat(rate["verified_on"])
-    today = date.today()
+    today = as_of or date.today()
     age = (today - verified).days
     effective_to = rate.get("effective_to")
     expired = bool(effective_to and today > date.fromisoformat(effective_to))
+    not_yet_effective = today < date.fromisoformat(rate["effective_from"])
     return {
         "verified_on": verified.isoformat(),
         "age_days": age,
-        "stale": age > 45 or expired,
+        "stale": age > 45 or expired or not_yet_effective or age < 0,
+        "verification_overdue": age > 45,
+        "outside_effective_window": expired or not_yet_effective,
+        "rate_changed": None,
         "effective_from": rate["effective_from"],
         "effective_to": effective_to,
     }
@@ -173,6 +177,7 @@ def get_supported_scope() -> dict[str, Any]:
             "source": rates["source"],
         },
         "assistance_snapshot": {
+            "freshness": _freshness(assist),
             "effective_from": assist["effective_from"],
             "effective_to": assist["effective_to"],
             "source": assist["source"],
@@ -814,6 +819,8 @@ def compare_rate_plans(
     if freshness["stale"]:
         gates_by_id["OFFICIAL_RATE_CONFIRMATION"] = HUMAN_GATES["OFFICIAL_RATE_CONFIRMATION"]
         warnings.append("The bundled rate snapshot is older than 45 days or outside its effective window.")
+        recommendation = {**recommendation, "status": "withheld_pending_rate_verification",
+                          "message": "Snapshot verification is stale or outside its effective window; this does not prove rates changed. Confirm official rules before acting."}
     return {
         "status": "compared" if calculated else "needs_human_input",
         "scope": "PG&E bundled, non-solar, individually metered residential electricity",
@@ -878,14 +885,16 @@ def validate_bill(
             "human_gates": [],
         }
     passed = all(check["within_tolerance"] for check in checks)
+    freshness = _freshness(rate_data())
     return {
         "status": "validated" if passed else "mismatch",
         "source": source,
         "checks": checks,
+        "rate_freshness": freshness,
         "simulation": simulated,
         "message": "Comparable components reconcile within tolerance." if passed else "Do not act on the comparison until the mismatch is explained.",
         "warnings": warnings + rate_data()["limitations"],
-        "human_gates": [] if passed else [HUMAN_GATES["OFFICIAL_RATE_CONFIRMATION"]],
+        "human_gates": [] if passed and not freshness["stale"] else [HUMAN_GATES["OFFICIAL_RATE_CONFIRMATION"]],
     }
 
 
@@ -914,6 +923,15 @@ def screen_assistance(
     medical_baseline_need: bool | None = None,
 ) -> dict[str, Any]:
     data = assistance_data()
+    if type(household_size) is not int or household_size < 1:
+        raise BillFitError("INVALID_HOUSEHOLD_SIZE", "household_size must be a positive integer.")
+    if gross_annual_household_income is not None and (type(gross_annual_household_income) not in (int, float) or not math.isfinite(gross_annual_household_income) or gross_annual_household_income < 0):
+        raise BillFitError("INVALID_INCOME", "Income must be a finite nonnegative number.")
+    freshness = _freshness(data)
+    if freshness["outside_effective_window"]:
+        return {"status": "rules_outside_effective_window", "rules_freshness": freshness,
+                "care": {"status": "not_screened"}, "fera": {"status": "not_screened"},
+                "human_gates": [HUMAN_GATES["OFFICIAL_RATE_CONFIRMATION"]], "source": data["source"]}
     size = int(household_size)
     care_limit = _income_limit(data["care_income_upper_limit"], size)
     fera_limit = _income_limit(data["fera_income_upper_limit"], size)
@@ -922,6 +940,8 @@ def screen_assistance(
     }
     matching_programs = sorted(normalized_programs.intersection(data["care_categorical_programs"]))
     gates: list[dict[str, str]] = []
+    if freshness["stale"]:
+        gates.append(HUMAN_GATES["OFFICIAL_RATE_CONFIRMATION"])
 
     if matching_programs:
         care = {
@@ -973,6 +993,7 @@ def screen_assistance(
 
     return {
         "status": "screened",
+        "rules_freshness": freshness,
         "household_size": size,
         "gross_annual_household_income": gross_annual_household_income,
         "care": care,

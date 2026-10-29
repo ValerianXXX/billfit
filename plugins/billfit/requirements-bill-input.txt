@@ -1,0 +1,3 @@
+# Optional local PDF text extraction. Image OCR uses an independently installed Tesseract.
+-r requirements.txt
+pypdf>=6,<7

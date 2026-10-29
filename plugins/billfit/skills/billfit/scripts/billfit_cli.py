@@ -15,6 +15,7 @@ from billfit_core import (
     screen_assistance,
     validate_bill,
 )
+from bill_input import extract_bill_fields
 
 
 OPERATIONS: dict[str, Callable[..., dict[str, Any]]] = {
@@ -24,6 +25,7 @@ OPERATIONS: dict[str, Callable[..., dict[str, Any]]] = {
     "compare": compare_rate_plans,
     "validate": validate_bill,
     "assistance": screen_assistance,
+    "extract-bill": extract_bill_fields,
 }
 
 

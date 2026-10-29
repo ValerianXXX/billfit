@@ -5,6 +5,7 @@ import sys
 from typing import Any
 
 from billfit_core import BillFitError, PUBLIC_FUNCTIONS, get_supported_scope
+from bill_input import extract_bill_fields
 
 
 TOOLS: list[dict[str, Any]] = [
@@ -24,7 +25,7 @@ TOOLS: list[dict[str, Any]] = [
         "inputSchema": {
             "type": "object",
             "properties": {
-                "usage_file": {"type": "string", "description": "Absolute or local path to a .csv, .xml, or .json usage file."}
+                "usage_file": {"type": "string", "description": "Exact local .csv, .xml, or .json path supplied by the user or client. Preserve it unchanged; do not prepend a guessed directory. Ask for the path when missing."}
             },
             "required": ["usage_file"],
             "additionalProperties": False,
@@ -36,7 +37,7 @@ TOOLS: list[dict[str, Any]] = [
         "inputSchema": {
             "type": "object",
             "properties": {
-                "usage_file": {"type": "string"},
+                "usage_file": {"type": "string", "description": "Exact usage-file path supplied by the user or client; preserve it unchanged and never invent a directory."},
                 "intervals": {
                     "type": "array",
                     "items": {
@@ -80,7 +81,7 @@ TOOLS: list[dict[str, Any]] = [
         "inputSchema": {
             "type": "object",
             "properties": {
-                "usage_file": {"type": "string"},
+                "usage_file": {"type": "string", "description": "Exact usage-file path supplied by the user or client; preserve it unchanged and never invent a directory."},
                 "intervals": {
                     "type": "array",
                     "items": {
@@ -125,6 +126,11 @@ TOOLS: list[dict[str, Any]] = [
         },
     },
 ]
+
+
+PUBLIC_FUNCTIONS = {**PUBLIC_FUNCTIONS, "billfit_extract_bill_fields": extract_bill_fields}
+TOOLS.append({"name": "billfit_extract_bill_fields", "description": "Extract unconfirmed fields from one local PDF/image bill with page/line evidence. No uploads or automatic calculation; verify all fields with the user.",
+              "inputSchema": {"type": "object", "properties": {"bill_file": {"type": "string", "description": "Exact local PDF/image path supplied by the user or client. Use it unchanged, including a supplied relative filename. Never invent or prepend /mnt/data, a home folder or another directory. Ask for the path when missing."}}, "required": ["bill_file"], "additionalProperties": False}})
 
 
 def _send(payload: dict[str, Any]) -> None:
@@ -211,8 +217,38 @@ def serve() -> None:
             _send(response)
 
 
+def serve_sdk() -> None:
+    """Optional official SDK owns modern discovery and legacy initialization/framing."""
+    import asyncio
+    import jsonschema
+    import mcp_types as types
+    from mcp.server import Server
+    from mcp.server.stdio import stdio_server
+
+    async def listed(ctx, params):
+        return types.ListToolsResult(tools=[types.Tool.model_validate(tool) for tool in TOOLS])
+
+    async def called(ctx, params):
+        tool = next((item for item in TOOLS if item["name"] == params.name), None)
+        if tool:
+            try:
+                jsonschema.validate(params.arguments or {}, tool["inputSchema"])
+            except jsonschema.ValidationError:
+                return types.CallToolResult.model_validate(_tool_result({"status": "error", "error": {"code": "INVALID_ARGUMENTS", "message": "Arguments do not match the tool schema."}}, True))
+        result = _handle({"id": 1, "method": "tools/call", "params": {"name": params.name, "arguments": params.arguments or {}}})
+        return types.CallToolResult.model_validate(result["result"])
+
+    server = Server("billfit", version="0.2.0", on_list_tools=listed, on_call_tool=called)
+    async def main():
+        async with stdio_server() as (read, write):
+            await server.run(read, write, server.create_initialization_options())
+    asyncio.run(main())
+
+
 if __name__ == "__main__":
     if "--self-test" in sys.argv:
         print(json.dumps(get_supported_scope(), ensure_ascii=False, indent=2))
+    elif "--sdk" in sys.argv:
+        serve_sdk()
     else:
         serve()

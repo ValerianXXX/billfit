@@ -1,0 +1,4 @@
+# Keep Windows and WSL content checks consistent, and never rewrite fixture bytes.
+* text=auto
+*.pdf binary
+*.png binary

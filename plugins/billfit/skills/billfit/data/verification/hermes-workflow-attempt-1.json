@@ -1,0 +1,711 @@
+{
+  "schema_version": 1,
+  "verified_at": "2026-10-29T02:47:16.514756+00:00",
+  "mode": "MODEL_SELECTED_HERMES_BILLFIT_SYNTHETIC",
+  "source_commit": "7392a56814e35065ad9e5ad2b44c7238afd5c845",
+  "runner_sha256_lf": "70c018bce32e463369303e113b0d1e250f548ce044804ced3a1158a630e7887c",
+  "synthetic": true,
+  "persistent_configuration_changed": false,
+  "fixture_hashes": {
+    "synthetic-workflow-bill.pdf": "baa1c513a0914f41d0580e4b2c86ee5c1eff182e5f4a3b36eba8925fade1a9d0",
+    "demo_usage.csv_lf": "8de63202ed5a06dc8de76117dab7401eefc3b6ca1f02808bdb3992cf1187fc8e"
+  },
+  "stages": [
+    {
+      "phase": 1,
+      "status": "FAILED_CHECKS",
+      "duration_ms": 52315,
+      "usage": {
+        "source": "HERMES_SESSION_COUNTERS",
+        "model_api_calls": 3,
+        "prompt_tokens": 19864,
+        "completion_tokens": 1514,
+        "total_tokens": 21378,
+        "estimated_cost_usd": 0.0,
+        "cost_status": "included",
+        "cost_source": "none",
+        "billed_cost_usd": null
+      },
+      "checks": {
+        "tool_boundary_respected": false,
+        "tool_calls_succeeded": true,
+        "no_switch_or_application_claim": true,
+        "required_tools_selected": true,
+        "five_local_fields_exact": true,
+        "unconfirmed_provenance_preserved": true,
+        "no_automatic_confirmation": true,
+        "care_screen_grounded": true,
+        "assistance_source_retained": true,
+        "missing_inputs_retained": true,
+        "application_remains_human": true
+      },
+      "answer": {
+        "fields": [
+          {
+            "field": "current_plan",
+            "value": "E-TOU-D",
+            "status": "NEEDS_USER_CONFIRMATION",
+            "source": {
+              "sha256": "baa1c513a0914f41d0580e4b2c86ee5c1eff182e5f4a3b36eba8925fade1a9d0",
+              "page": 1,
+              "line": 4,
+              "bbox": null,
+              "quote": "Rate Schedule: E-TOU-D",
+              "start": 0,
+              "end": 22
+            }
+          },
+          {
+            "field": "reported_energy_charge",
+            "value": "12.34",
+            "status": "NEEDS_USER_CONFIRMATION",
+            "source": {
+              "sha256": "baa1c513a0914f41d0580e4b2c86ee5c1eff182e5f4a3b36eba8925fade1a9d0",
+              "page": 1,
+              "line": 5,
+              "bbox": null,
+              "quote": "Energy Charges $12.34",
+              "start": 0,
+              "end": 21
+            }
+          },
+          {
+            "field": "reported_base_services_charge",
+            "value": "0.79",
+            "status": "NEEDS_USER_CONFIRMATION",
+            "source": {
+              "sha256": "baa1c513a0914f41d0580e4b2c86ee5c1eff182e5f4a3b36eba8925fade1a9d0",
+              "page": 1,
+              "line": 6,
+              "bbox": null,
+              "quote": "Base Services Charge $0.79",
+              "start": 0,
+              "end": 26
+            }
+          },
+          {
+            "field": "baseline_territory",
+            "value": "X",
+            "status": "NEEDS_USER_CONFIRMATION",
+            "source": {
+              "sha256": "baa1c513a0914f41d0580e4b2c86ee5c1eff182e5f4a3b36eba8925fade1a9d0",
+              "page": 1,
+              "line": 7,
+              "bbox": null,
+              "quote": "Baseline Territory: X",
+              "start": 0,
+              "end": 21
+            }
+          },
+          {
+            "field": "total_kwh",
+            "value": "25.5",
+            "status": "NEEDS_USER_CONFIRMATION",
+            "source": {
+              "sha256": "baa1c513a0914f41d0580e4b2c86ee5c1eff182e5f4a3b36eba8925fade1a9d0",
+              "page": 1,
+              "line": 8,
+              "bbox": null,
+              "quote": "Usage 25.5 kWh",
+              "start": 0,
+              "end": 14
+            }
+          }
+        ],
+        "care_status": "likely_eligible",
+        "care_income_limit": 43280,
+        "assistance_source_url": "https://www.cpuc.ca.gov/care/",
+        "missing_inputs": [
+          "INTERVAL_USAGE",
+          "BILL_FIELD_CONFIRMATION"
+        ],
+        "human_gates": [
+          "ACCOUNT_LOGIN",
+          "REAL_USAGE_FILE",
+          "BASELINE_INFO",
+          "TECHNOLOGY_ELIGIBILITY",
+          "OFFICIAL_RATE_CONFIRMATION",
+          "RATE_PLAN_CHANGE",
+          "ASSISTANCE_APPLICATION",
+          "MEDICAL_CERTIFICATION"
+        ],
+        "switch_recommended": false,
+        "application_submitted": false,
+        "summary_zh": "该账单目前不能支持省电费或换费率判断。工具仅提取出待用户确认的账单候选字段；账单总用电量25.5 kWh不能替代分时用电数据，而且此阶段没有Green Button分时用电文件，因此不能进行费率比较或推荐切换。援助初筛显示：2人家庭、税前年收入40000美元低于当前CARE收入上限43280美元，结果为可能符合CARE资格，但这只是初筛，不是批准决定；CARE申请尚未提交，须由用户自行完成。"
+      },
+      "unparsed_answer": null,
+      "trace": [
+        {
+          "tool": "billfit_screen_assistance",
+          "arguments": {
+            "household_size": 2,
+            "gross_annual_household_income": 40000,
+            "medical_baseline_need": null
+          },
+          "duration_ms": 5,
+          "is_error": false,
+          "result": {
+            "status": "screened",
+            "rules_freshness": {
+              "verified_on": "2026-10-27",
+              "age_days": 1,
+              "stale": false,
+              "verification_overdue": false,
+              "outside_effective_window": false,
+              "rate_changed": null,
+              "effective_from": "2026-06-01",
+              "effective_to": "2027-05-31"
+            },
+            "household_size": 2,
+            "gross_annual_household_income": 40000,
+            "care": {
+              "status": "likely_eligible",
+              "basis": "income",
+              "income_upper_limit": 43280
+            },
+            "fera": {
+              "status": "not_primary_path",
+              "reason": "Income is within the CARE screening range."
+            },
+            "medical_baseline": {
+              "status": "not_screened",
+              "question": "Does a full-time resident rely on electricity for a qualifying medical condition or home medical device?",
+              "income_test": "not_applicable"
+            },
+            "rules_effective": {
+              "from": "2026-06-01",
+              "to": "2027-05-31"
+            },
+            "source": {
+              "url": "https://www.cpuc.ca.gov/care/",
+              "title": "CARE/FERA Program"
+            },
+            "notes": [
+              "This is a screening result, not an enrollment decision.",
+              "Gross annual household income includes taxable and non-taxable income from household members.",
+              "PG&E may request proof after enrollment.",
+              "Medical Baseline is based on medical need rather than income and requires practitioner certification."
+            ],
+            "privacy": "Do not provide SSN, medical records, tax returns, pay stubs, or account credentials to BillFit for this screening.",
+            "human_gates": [
+              {
+                "id": "ASSISTANCE_APPLICATION",
+                "title": "Apply for CARE or FERA",
+                "reason": "BillFit only screens eligibility and does not submit personal or income information.",
+                "user_action": "Review the official requirements and personally complete the PG&E CARE/FERA application.",
+                "status": "waiting_for_user"
+              }
+            ]
+          }
+        },
+        {
+          "tool": "billfit_list_human_gates",
+          "arguments": {},
+          "duration_ms": 3,
+          "is_error": false,
+          "result": {
+            "status": "ok",
+            "policy": "BillFit may analyze user-provided data but never logs in, changes a plan, submits an application, or certifies medical eligibility.",
+            "gates": [
+              {
+                "id": "ACCOUNT_LOGIN",
+                "title": "Download real usage data",
+                "reason": "BillFit does not sign in to a utility account or handle credentials.",
+                "user_action": "Sign in to PG&E, choose Usage and rates, View Usage Details, then Green Button Download my data.",
+                "status": "waiting_for_user"
+              },
+              {
+                "id": "REAL_USAGE_FILE",
+                "title": "Provide a real usage file",
+                "reason": "A personalized comparison needs the customer's own interval usage.",
+                "user_action": "Attach or provide the local path to a PG&E Green Button CSV or XML file.",
+                "status": "waiting_for_user"
+              },
+              {
+                "id": "BASELINE_INFO",
+                "title": "Confirm baseline territory and service type",
+                "reason": "E-1 and E-TOU-C use a location- and heating-dependent baseline allowance.",
+                "user_action": "Provide baseline territory P, Q, R, S, T, V, W, X, Y, or Z and choose basic or all-electric service.",
+                "status": "waiting_for_user"
+              },
+              {
+                "id": "TECHNOLOGY_ELIGIBILITY",
+                "title": "Confirm qualifying electric technology",
+                "reason": "EV2-A and E-ELEC are not available to every residential account.",
+                "user_action": "Confirm whether the home has an EV, battery storage, electric water-heating heat pump, or space-conditioning heat pump.",
+                "status": "waiting_for_user"
+              },
+              {
+                "id": "OFFICIAL_RATE_CONFIRMATION",
+                "title": "Confirm rates before acting",
+                "reason": "Utility rates and tariff rules can change after BillFit's verified snapshot.",
+                "user_action": "Open the cited PG&E rate page and confirm the effective date before changing plans.",
+                "status": "waiting_for_user"
+              },
+              {
+                "id": "RATE_PLAN_CHANGE",
+                "title": "Approve and submit a rate-plan change",
+                "reason": "Changing a utility rate plan is an external account action.",
+                "user_action": "Review the comparison, sign in to PG&E, and personally confirm any plan change.",
+                "status": "waiting_for_user"
+              },
+              {
+                "id": "ASSISTANCE_APPLICATION",
+                "title": "Apply for CARE or FERA",
+                "reason": "BillFit only screens eligibility and does not submit personal or income information.",
+                "user_action": "Review the official requirements and personally complete the PG&E CARE/FERA application.",
+                "status": "waiting_for_user"
+              },
+              {
+                "id": "MEDICAL_CERTIFICATION",
+                "title": "Obtain Medical Baseline certification",
+                "reason": "Medical Baseline eligibility must be certified by an eligible medical practitioner.",
+                "user_action": "Complete the customer portion and ask a qualified practitioner to certify the medical need.",
+                "status": "waiting_for_user"
+              }
+            ]
+          }
+        },
+        {
+          "tool": "billfit_extract_bill_fields",
+          "arguments": {
+            "bill_file": "synthetic-workflow-bill.pdf"
+          },
+          "duration_ms": 144,
+          "is_error": false,
+          "result": {
+            "status": "REVIEW_REQUIRED",
+            "candidates": [
+              {
+                "field": "current_plan",
+                "value": "E-TOU-D",
+                "status": "NEEDS_USER_CONFIRMATION",
+                "source": {
+                  "sha256": "baa1c513a0914f41d0580e4b2c86ee5c1eff182e5f4a3b36eba8925fade1a9d0",
+                  "page": 1,
+                  "line": 4,
+                  "bbox": null,
+                  "quote": "Rate Schedule: E-TOU-D",
+                  "start": 0,
+                  "end": 22
+                },
+                "method": "LOCAL_PDF_TEXT"
+              },
+              {
+                "field": "reported_energy_charge",
+                "value": "12.34",
+                "status": "NEEDS_USER_CONFIRMATION",
+                "source": {
+                  "sha256": "baa1c513a0914f41d0580e4b2c86ee5c1eff182e5f4a3b36eba8925fade1a9d0",
+                  "page": 1,
+                  "line": 5,
+                  "bbox": null,
+                  "quote": "Energy Charges $12.34",
+                  "start": 0,
+                  "end": 21
+                },
+                "method": "LOCAL_PDF_TEXT"
+              },
+              {
+                "field": "reported_base_services_charge",
+                "value": "0.79",
+                "status": "NEEDS_USER_CONFIRMATION",
+                "source": {
+                  "sha256": "baa1c513a0914f41d0580e4b2c86ee5c1eff182e5f4a3b36eba8925fade1a9d0",
+                  "page": 1,
+                  "line": 6,
+                  "bbox": null,
+                  "quote": "Base Services Charge $0.79",
+                  "start": 0,
+                  "end": 26
+                },
+                "method": "LOCAL_PDF_TEXT"
+              },
+              {
+                "field": "baseline_territory",
+                "value": "X",
+                "status": "NEEDS_USER_CONFIRMATION",
+                "source": {
+                  "sha256": "baa1c513a0914f41d0580e4b2c86ee5c1eff182e5f4a3b36eba8925fade1a9d0",
+                  "page": 1,
+                  "line": 7,
+                  "bbox": null,
+                  "quote": "Baseline Territory: X",
+                  "start": 0,
+                  "end": 21
+                },
+                "method": "LOCAL_PDF_TEXT"
+              },
+              {
+                "field": "total_kwh",
+                "value": "25.5",
+                "status": "NEEDS_USER_CONFIRMATION",
+                "source": {
+                  "sha256": "baa1c513a0914f41d0580e4b2c86ee5c1eff182e5f4a3b36eba8925fade1a9d0",
+                  "page": 1,
+                  "line": 8,
+                  "bbox": null,
+                  "quote": "Usage 25.5 kWh",
+                  "start": 0,
+                  "end": 14
+                },
+                "method": "LOCAL_PDF_TEXT"
+              }
+            ],
+            "missing_fields": [],
+            "conflicting_fields": [],
+            "automatic_calculation": false,
+            "automatic_confirmation": false,
+            "warnings": [
+              "Verify each candidate against the cited page/line before supplying it to validate/compare.",
+              "Total amount due is excluded. A bill's total kWh cannot replace interval usage.",
+              "No eligibility, account number, login, medical data or income is inferred."
+            ]
+          }
+        }
+      ],
+      "rejected_tool_calls": [
+        {
+          "tool": "billfit_extract_bill_fields",
+          "code": "SYNTHETIC_FILE_REQUIRED"
+        }
+      ],
+      "error_type": null
+    },
+    {
+      "phase": 2,
+      "status": "PASS",
+      "duration_ms": 14368,
+      "usage": {
+        "source": "HERMES_SESSION_COUNTERS",
+        "model_api_calls": 3,
+        "prompt_tokens": 18605,
+        "completion_tokens": 707,
+        "total_tokens": 19312,
+        "estimated_cost_usd": 0.0,
+        "cost_status": "included",
+        "cost_source": "none",
+        "billed_cost_usd": null
+      },
+      "checks": {
+        "tool_boundary_respected": true,
+        "tool_calls_succeeded": true,
+        "no_switch_or_application_claim": true,
+        "required_tools_selected": true,
+        "interval_data_not_monthly_total": true,
+        "coverage_limit_retained": true,
+        "calculated_totals_grounded": true,
+        "source_and_dates_retained": true,
+        "mismatch_is_not_success": true,
+        "confirmed_components_used": true,
+        "screen_not_treated_as_enrollment": true,
+        "tariff_confirmation_retained": true
+      },
+      "answer": {
+        "interval_count": 24,
+        "total_kwh": 12.87,
+        "covered_days": 1.0,
+        "quality": "limited",
+        "comparable_totals": {
+          "E-TOU-D": 5.69,
+          "E-TOU-C": 5.81
+        },
+        "rate_source_url": "https://www.pge.com/tariffs/en/rate-information/electric-rates.html",
+        "rate_effective_from": "2026-03-01",
+        "rate_verified_on": "2026-10-27",
+        "bill_validation_status": "mismatch",
+        "energy_difference": -7.44,
+        "switch_recommended": false,
+        "application_submitted": false,
+        "human_gates": [
+          "OFFICIAL_RATE_CONFIRMATION"
+        ],
+        "summary_zh": "文件包含24个小时区间，覆盖1天、合计12.87 kWh；数据完整但因不足7天，质量标记为limited。同期可比费用为E-TOU-D 5.69美元、E-TOU-C 5.81美元，当前E-TOU-D更低。账单核对不匹配：计算能源费为4.90美元，报告值为12.34美元，差额（计算值减报告值）为-7.44美元，超出2美元容差；基本服务费0.79美元则完全匹配。因此不能据此建议换计划，应先解释能源费差异并由人工确认PG&E官方费率及生效日期。未提交任何计划变更或申请。"
+      },
+      "unparsed_answer": null,
+      "trace": [
+        {
+          "tool": "billfit_parse_usage_file",
+          "arguments": {
+            "usage_file": "demo_usage.csv"
+          },
+          "duration_ms": 10,
+          "is_error": false,
+          "result": {
+            "status": "parsed",
+            "source": "demo_usage.csv",
+            "summary": {
+              "interval_count": 24,
+              "start": "2026-07-06T00:00:00-07:00",
+              "end": "2026-07-07T00:00:00-07:00",
+              "span_days": 1.0,
+              "billing_days": 1,
+              "total_kwh": 12.87,
+              "median_interval_minutes": 60.0,
+              "coverage_ratio": 1.0,
+              "negative_interval_count": 0,
+              "quality": "limited"
+            },
+            "warnings": [
+              "Timestamps had no UTC offset; BillFit assumed America/Los_Angeles."
+            ],
+            "preview": [
+              {
+                "start": "2026-07-06T00:00:00-07:00",
+                "duration_minutes": 60.0,
+                "kwh": 0.28
+              },
+              {
+                "start": "2026-07-06T01:00:00-07:00",
+                "duration_minutes": 60.0,
+                "kwh": 0.24
+              },
+              {
+                "start": "2026-07-06T02:00:00-07:00",
+                "duration_minutes": 60.0,
+                "kwh": 0.22
+              },
+              {
+                "start": "2026-07-06T21:00:00-07:00",
+                "duration_minutes": 60.0,
+                "kwh": 0.61
+              },
+              {
+                "start": "2026-07-06T22:00:00-07:00",
+                "duration_minutes": 60.0,
+                "kwh": 0.43
+              },
+              {
+                "start": "2026-07-06T23:00:00-07:00",
+                "duration_minutes": 60.0,
+                "kwh": 0.33
+              }
+            ],
+            "next_step": "Call billfit_compare_rate_plans with the same usage_file.",
+            "human_gates": []
+          }
+        },
+        {
+          "tool": "billfit_compare_rate_plans",
+          "arguments": {
+            "usage_file": "demo_usage.csv",
+            "current_plan": "E-TOU-D",
+            "candidate_plans": [
+              "E-TOU-D",
+              "E-TOU-C"
+            ],
+            "baseline_territory": "X",
+            "service_type": "basic",
+            "assistance_program": "none",
+            "qualifying_technologies": [],
+            "solar_or_net_export": false,
+            "cca_or_direct_access": false
+          },
+          "duration_ms": 11,
+          "is_error": false,
+          "result": {
+            "status": "compared",
+            "scope": "PG&E bundled, non-solar, individually metered residential electricity",
+            "source": "demo_usage.csv",
+            "usage_summary": {
+              "interval_count": 24,
+              "start": "2026-07-06T00:00:00-07:00",
+              "end": "2026-07-07T00:00:00-07:00",
+              "span_days": 1.0,
+              "billing_days": 1,
+              "total_kwh": 12.87,
+              "median_interval_minutes": 60.0,
+              "coverage_ratio": 1.0,
+              "negative_interval_count": 0,
+              "quality": "limited"
+            },
+            "rate_snapshot": {
+              "freshness": {
+                "verified_on": "2026-10-27",
+                "age_days": 1,
+                "stale": false,
+                "verification_overdue": false,
+                "outside_effective_window": false,
+                "rate_changed": null,
+                "effective_from": "2026-03-01",
+                "effective_to": null
+              },
+              "source": {
+                "page_url": "https://www.pge.com/tariffs/en/rate-information/electric-rates.html",
+                "workbook_url": "https://www.pge.com/assets/rates/tariffs/res-inclu-tou-current.xlsx",
+                "workbook_label": "Residential Inclu TOU (MAR 1, 2026 - Present)",
+                "workbook_sha256": "e071be6fd457a92da60637fc529c1e4c7a5620ffd83d3ae221819f7e4866995d"
+              }
+            },
+            "results": [
+              {
+                "status": "calculated",
+                "plan": "E-TOU-D",
+                "plan_name": "Time-of-Use 5-8 p.m. Weekdays",
+                "usage_kwh": 12.87,
+                "billing_days": 1,
+                "baseline_kwh": null,
+                "usage_by_period_kwh": {
+                  "summer_off_peak": 9.2,
+                  "summer_peak": 3.67
+                },
+                "raw_energy_charge": 4.9,
+                "assistance_program": "NONE",
+                "assistance_discount": 0.0,
+                "energy_charge_after_discount": 4.9,
+                "base_services_charge": 0.79,
+                "estimated_comparable_total": 5.69,
+                "annualized_comparable_total": 2078.89
+              },
+              {
+                "status": "calculated",
+                "plan": "E-TOU-C",
+                "plan_name": "Time-of-Use 4-9 p.m. Every Day",
+                "usage_kwh": 12.87,
+                "billing_days": 1,
+                "baseline_kwh": 9.8,
+                "usage_by_period_kwh": {
+                  "summer_off_peak": 7.4,
+                  "summer_peak": 5.47
+                },
+                "raw_energy_charge": 5.02,
+                "assistance_program": "NONE",
+                "assistance_discount": 0.0,
+                "energy_charge_after_discount": 5.02,
+                "base_services_charge": 0.79,
+                "estimated_comparable_total": 5.81,
+                "annualized_comparable_total": 2121.62
+              }
+            ],
+            "ranking": [
+              "E-TOU-D",
+              "E-TOU-C"
+            ],
+            "recommendation": {
+              "status": "stay_or_difference_too_small",
+              "current_plan": "E-TOU-D",
+              "lowest_calculated_plan": "E-TOU-D",
+              "estimated_annual_savings": 0.0,
+              "estimated_savings_percent": 0.0,
+              "message": "No alternative clears both BillFit review thresholds."
+            },
+            "warnings": [
+              "Timestamps had no UTC offset; BillFit assumed America/Los_Angeles.",
+              "Less than seven days of near-complete data can produce an unstable annualized comparison.",
+              "Rates are total bundled rates and do not model Community Choice Aggregation or Direct Access generation charges.",
+              "California Climate Credit, local taxes, surcharges, one-time adjustments, and non-electric charges are excluded.",
+              "The official tariff controls if this comparison differs from a PG&E bill.",
+              "Solar, NEM, battery export, master-metered service, and separately metered EV-B are outside the MVP scope."
+            ],
+            "human_gates": []
+          }
+        },
+        {
+          "tool": "billfit_validate_bill",
+          "arguments": {
+            "usage_file": "demo_usage.csv",
+            "current_plan": "E-TOU-D",
+            "reported_energy_charge": 12.34,
+            "reported_base_services_charge": 0.79,
+            "baseline_territory": "X",
+            "service_type": "basic",
+            "assistance_program": "none",
+            "qualifying_technologies": []
+          },
+          "duration_ms": 10,
+          "is_error": false,
+          "result": {
+            "status": "mismatch",
+            "source": "demo_usage.csv",
+            "checks": [
+              {
+                "component": "energy_charge",
+                "reported": 12.34,
+                "calculated": 4.9,
+                "difference": -7.44,
+                "tolerance": 2.0,
+                "within_tolerance": false
+              },
+              {
+                "component": "base_services_charge",
+                "reported": 0.79,
+                "calculated": 0.79,
+                "difference": 0.0,
+                "tolerance": 2.0,
+                "within_tolerance": true
+              }
+            ],
+            "rate_freshness": {
+              "verified_on": "2026-10-27",
+              "age_days": 1,
+              "stale": false,
+              "verification_overdue": false,
+              "outside_effective_window": false,
+              "rate_changed": null,
+              "effective_from": "2026-03-01",
+              "effective_to": null
+            },
+            "simulation": {
+              "status": "calculated",
+              "plan": "E-TOU-D",
+              "plan_name": "Time-of-Use 5-8 p.m. Weekdays",
+              "usage_kwh": 12.87,
+              "billing_days": 1,
+              "baseline_kwh": null,
+              "usage_by_period_kwh": {
+                "summer_off_peak": 9.2,
+                "summer_peak": 3.67
+              },
+              "raw_energy_charge": 4.9,
+              "assistance_program": "NONE",
+              "assistance_discount": 0.0,
+              "energy_charge_after_discount": 4.9,
+              "base_services_charge": 0.79,
+              "estimated_comparable_total": 5.69,
+              "annualized_comparable_total": 2078.89
+            },
+            "message": "Do not act on the comparison until the mismatch is explained.",
+            "warnings": [
+              "Timestamps had no UTC offset; BillFit assumed America/Los_Angeles.",
+              "Rates are total bundled rates and do not model Community Choice Aggregation or Direct Access generation charges.",
+              "California Climate Credit, local taxes, surcharges, one-time adjustments, and non-electric charges are excluded.",
+              "The official tariff controls if this comparison differs from a PG&E bill.",
+              "Solar, NEM, battery export, master-metered service, and separately metered EV-B are outside the MVP scope."
+            ],
+            "human_gates": [
+              {
+                "id": "OFFICIAL_RATE_CONFIRMATION",
+                "title": "Confirm rates before acting",
+                "reason": "Utility rates and tariff rules can change after BillFit's verified snapshot.",
+                "user_action": "Open the cited PG&E rate page and confirm the effective date before changing plans.",
+                "status": "waiting_for_user"
+              }
+            ]
+          }
+        }
+      ],
+      "rejected_tool_calls": [],
+      "error_type": null
+    }
+  ],
+  "model_iteration_limit_per_stage": 4,
+  "tool_call_limit_per_stage": 8,
+  "billed_cost_usd": null,
+  "business_completion": "NO_ACCOUNT_ACTION_REQUESTED_OR_AVAILABLE",
+  "hermes_revision": "afe53708ee7400919ae3e17a6dde9b02629e5c87",
+  "model": "gpt-5.6-sol",
+  "provider": "openai-codex",
+  "hermes_mcp_sdk": "1.26.0",
+  "tools": [
+    "mcp_billfit_synthetic_billfit_compare_rate_plans",
+    "mcp_billfit_synthetic_billfit_extract_bill_fields",
+    "mcp_billfit_synthetic_billfit_get_supported_scope",
+    "mcp_billfit_synthetic_billfit_list_human_gates",
+    "mcp_billfit_synthetic_billfit_parse_usage_file",
+    "mcp_billfit_synthetic_billfit_screen_assistance",
+    "mcp_billfit_synthetic_billfit_validate_bill"
+  ],
+  "temporary_state_removed": true,
+  "duration_ms": 70490,
+  "status": "FAILED_CHECKS"
+}

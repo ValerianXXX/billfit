@@ -1,0 +1,21 @@
+{
+  "reviewed_on": "2026-10-27",
+  "previous_verification": "2026-08-18",
+  "rate_effective_from": "2026-03-01",
+  "rate_effective_to": null,
+  "official_page_label": "Residential Inclu TOU (MAR 1, 2026 - Present)",
+  "workbook_sha256_before_and_after": "e071be6fd457a92da60637fc529c1e4c7a5620ffd83d3ae221819f7e4866995d",
+  "finding": "Verification was overdue; official workbook content is byte-identical. No numeric rate change was observed or activated.",
+  "assistance_effective_from": "2026-06-01",
+  "assistance_effective_to": "2027-05-31",
+  "assistance_review": "CPUC CARE and FERA income limits for all packaged household sizes and additional-person increments match. Medical Baseline remains need-based and requires practitioner certification.",
+  "numeric_data_changes": [],
+  "metadata_changes": ["Both verified_on fields: 2026-08-18 to 2026-10-27"],
+  "external_actions": 0,
+  "sources": [
+    "https://www.pge.com/tariffs/en/rate-information/electric-rates.html",
+    "https://www.pge.com/assets/rates/tariffs/res-inclu-tou-current.xlsx",
+    "https://www.cpuc.ca.gov/care/",
+    "https://www.pge.com/en/account/billing-and-assistance/financial-assistance/medical-baseline-program.html"
+  ]
+}

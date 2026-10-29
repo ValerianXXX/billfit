@@ -17,7 +17,11 @@ Resolve `<skill-root>` as the directory containing this `SKILL.md`. Run:
 python <skill-root>/scripts/billfit_cli.py <operation> --input-file <request.json>
 ```
 
-Supported operations are `scope`, `gates`, `parse`, `compare`, `validate`, and `assistance`. The request file must contain one JSON object whose keys match the corresponding function arguments. Use an empty object for `scope` and `gates`. Prefer a temporary JSON request file instead of interpolating user values into a shell command. The CLI returns one JSON object and never performs account or enrollment actions.
+Supported operations are `scope`, `gates`, `parse`, `compare`, `validate`, `assistance`, and optional `extract-bill`. The request file must contain one JSON object whose keys match the corresponding function arguments. Use an empty object for `scope` and `gates`. Prefer a temporary JSON request file instead of interpolating user values into a shell command. The CLI returns one JSON object and never performs account or enrollment actions.
+
+For a user-supplied PDF/image bill, `extract-bill` accepts `bill_file`. Every returned field is an unconfirmed candidate with source page/line/quote. Show conflicts and missing fields and obtain user confirmation before passing values to the calculator. Never treat total amount due as the comparable energy charge or total kWh as interval usage. PDF extraction needs optional pypdf; image OCR needs a trusted local Tesseract executable. Missing dependencies remain visible; do not upload bills as a fallback. On Windows the calculator also requires the packaged `tzdata` requirement.
+
+Use file paths exactly as supplied by the user or execution client, including relative filenames. Never invent a directory such as `/mnt/data` or convert a filename into an assumed absolute path. If no accessible path was provided, request that missing path; if a read fails, report it instead of guessing other files. Local parsing does not mean a cloud model conversation is local: the host may send returned field values, evidence snippets and calculation results to its configured model provider.
 
 ## Safety and scope
 
