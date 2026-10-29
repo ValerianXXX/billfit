@@ -1,46 +1,19 @@
 from __future__ import annotations
 
-import csv
 import json
 import math
 import re
-import statistics
-import xml.etree.ElementTree as ET
-from dataclasses import dataclass
 from datetime import date, datetime, time, timedelta, timezone
 from functools import lru_cache
 from pathlib import Path
-from typing import Any, Iterable
-from zoneinfo import ZoneInfo
+from typing import Any
+
+from billfit_errors import BillFitError
+from billfit_usage import Interval, PACIFIC, load_usage, usage_summary as _usage_summary, split_interval as _split_interval
 
 
 PLUGIN_ROOT = Path(__file__).resolve().parents[1]
 DATA_ROOT = PLUGIN_ROOT / "data"
-PACIFIC = ZoneInfo("America/Los_Angeles")
-MAX_USAGE_FILE_BYTES = 50 * 1024 * 1024
-SUPPORTED_EXTENSIONS = {".csv", ".xml", ".json"}
-
-
-class BillFitError(Exception):
-    def __init__(self, code: str, message: str, details: dict[str, Any] | None = None):
-        super().__init__(message)
-        self.code = code
-        self.message = message
-        self.details = details or {}
-
-    def as_dict(self) -> dict[str, Any]:
-        return {"code": self.code, "message": self.message, "details": self.details}
-
-
-@dataclass(frozen=True)
-class Interval:
-    start: datetime
-    duration_minutes: float
-    kwh: float
-
-    @property
-    def end(self) -> datetime:
-        return self.start + timedelta(minutes=self.duration_minutes)
 
 
 @lru_cache(maxsize=1)
@@ -83,6 +56,12 @@ HUMAN_GATES: dict[str, dict[str, str]] = {
         "Provide a real usage file",
         "A personalized comparison needs the customer's own interval usage.",
         "Attach or provide the local path to a PG&E Green Button CSV or XML file.",
+    ),
+    "USAGE_QUALITY_REVIEW": _gate(
+        "USAGE_QUALITY_REVIEW",
+        "Review usage coverage and input assumptions",
+        "Incomplete, coarse or inferred usage cannot establish switching savings.",
+        "Confirm source units and durations, resolve gaps, and supply a sufficient usage period.",
     ),
     "BASELINE_INFO": _gate(
         "BASELINE_INFO",
@@ -184,305 +163,6 @@ def get_supported_scope() -> dict[str, Any]:
         },
         "privacy": "Files are read locally. BillFit does not need account credentials, SSN, medical records, or uploaded income documents for screening.",
         "human_gates": [HUMAN_GATES["ACCOUNT_LOGIN"], HUMAN_GATES["REAL_USAGE_FILE"]],
-    }
-
-
-def _normalize_header(value: str) -> str:
-    return re.sub(r"[^a-z0-9]+", "", value.lower().strip())
-
-
-def _first_value(row: dict[str, str], aliases: Iterable[str]) -> str | None:
-    for alias in aliases:
-        value = row.get(_normalize_header(alias))
-        if value is not None and str(value).strip() != "":
-            return str(value).strip()
-    return None
-
-
-def _parse_number(value: str) -> float:
-    text = value.strip().replace(",", "").replace("$", "")
-    if text.startswith("(") and text.endswith(")"):
-        text = f"-{text[1:-1]}"
-    try:
-        return float(text)
-    except ValueError as exc:
-        raise BillFitError("INVALID_USAGE_VALUE", f"Cannot parse usage value: {value!r}") from exc
-
-
-def _parse_datetime_text(value: str, warnings: list[str]) -> datetime:
-    text = value.strip()
-    if text.endswith("Z"):
-        text = f"{text[:-1]}+00:00"
-    parsed: datetime | None = None
-    try:
-        parsed = datetime.fromisoformat(text)
-    except ValueError:
-        pass
-    if parsed is None:
-        formats = (
-            "%m/%d/%Y %H:%M",
-            "%m/%d/%Y %I:%M %p",
-            "%m/%d/%y %H:%M",
-            "%m/%d/%y %I:%M %p",
-            "%Y-%m-%d %H:%M",
-            "%Y-%m-%d %I:%M %p",
-        )
-        for fmt in formats:
-            try:
-                parsed = datetime.strptime(text, fmt)
-                break
-            except ValueError:
-                continue
-    if parsed is None:
-        raise BillFitError("INVALID_TIMESTAMP", f"Cannot parse interval timestamp: {value!r}")
-    if parsed.tzinfo is None:
-        parsed = parsed.replace(tzinfo=PACIFIC)
-        warning = "Timestamps had no UTC offset; BillFit assumed America/Los_Angeles."
-        if warning not in warnings:
-            warnings.append(warning)
-    else:
-        parsed = parsed.astimezone(PACIFIC)
-    return parsed
-
-
-def _date_and_time(date_text: str, time_text: str, warnings: list[str]) -> datetime:
-    return _parse_datetime_text(f"{date_text.strip()} {time_text.strip()}", warnings)
-
-
-def _deduplicate(intervals: list[Interval]) -> list[Interval]:
-    combined: dict[tuple[datetime, float], float] = {}
-    for interval in intervals:
-        key = (interval.start, interval.duration_minutes)
-        combined[key] = combined.get(key, 0.0) + interval.kwh
-    return [
-        Interval(start=key[0], duration_minutes=key[1], kwh=value)
-        for key, value in sorted(combined.items(), key=lambda item: item[0][0])
-    ]
-
-
-def _infer_durations(intervals: list[Interval]) -> list[Interval]:
-    known = [i.duration_minutes for i in intervals if i.duration_minutes > 0]
-    diffs = [
-        (intervals[index + 1].start - intervals[index].start).total_seconds() / 60
-        for index in range(len(intervals) - 1)
-        if 0 < (intervals[index + 1].start - intervals[index].start).total_seconds() / 60 <= 180
-    ]
-    fallback = statistics.median(known or diffs or [15.0])
-    return [
-        Interval(i.start, i.duration_minutes if i.duration_minutes > 0 else fallback, i.kwh)
-        for i in intervals
-    ]
-
-
-def _parse_csv(path: Path) -> tuple[list[Interval], list[str]]:
-    warnings: list[str] = []
-    raw = path.read_text(encoding="utf-8-sig", errors="replace")
-    rows = list(csv.reader(raw.splitlines()))
-    header_index: int | None = None
-    normalized_header: list[str] = []
-    for index, row in enumerate(rows[:50]):
-        normalized = [_normalize_header(cell) for cell in row]
-        has_usage = any(cell in {"usage", "usagekwh", "value", "consumption"} or "usage" in cell for cell in normalized)
-        has_time = any(cell in {"date", "timestamp", "datetime", "starttime", "intervalstart", "start"} for cell in normalized)
-        if has_usage and has_time:
-            header_index = index
-            normalized_header = normalized
-            break
-    if header_index is None:
-        raise BillFitError(
-            "CSV_HEADER_NOT_FOUND",
-            "Could not find a usage and timestamp header in the first 50 CSV rows.",
-            {"supported_example": "DATE,START TIME,END TIME,USAGE,UNITS"},
-        )
-
-    intervals: list[Interval] = []
-    for raw_row in rows[header_index + 1 :]:
-        if not any(str(cell).strip() for cell in raw_row):
-            continue
-        padded = raw_row + [""] * max(0, len(normalized_header) - len(raw_row))
-        row = {normalized_header[i]: padded[i] for i in range(len(normalized_header)) if normalized_header[i]}
-        usage_text = _first_value(row, ["usage", "usage kwh", "consumption", "value", "interval usage"])
-        if usage_text is None:
-            continue
-        units = (_first_value(row, ["units", "unit", "uom"]) or "kWh").lower()
-        if "therm" in units or "gas" in units:
-            continue
-        kwh = _parse_number(usage_text)
-        if "kwh" not in units and re.search(r"(^|\W)wh($|\W)", units):
-            kwh /= 1000.0
-
-        timestamp = _first_value(row, ["timestamp", "datetime", "interval start", "start datetime", "start"])
-        date_text = _first_value(row, ["date", "usage date", "interval date"])
-        start_time = _first_value(row, ["start time", "starttime", "time"])
-        if timestamp:
-            start = _parse_datetime_text(timestamp, warnings)
-        elif date_text and start_time:
-            start = _date_and_time(date_text, start_time, warnings)
-        elif date_text and "t" in date_text.lower():
-            start = _parse_datetime_text(date_text, warnings)
-        else:
-            continue
-
-        duration_minutes = 0.0
-        duration_text = _first_value(row, ["duration minutes", "duration", "interval minutes"])
-        if duration_text:
-            duration_value = _parse_number(duration_text)
-            duration_minutes = duration_value / 60 if duration_value > 240 else duration_value
-        end_text = _first_value(row, ["end timestamp", "interval end", "end datetime"])
-        end_time = _first_value(row, ["end time", "endtime"])
-        if end_text:
-            end = _parse_datetime_text(end_text, warnings)
-            duration_minutes = (end - start).total_seconds() / 60
-        elif date_text and end_time:
-            end = _date_and_time(date_text, end_time, warnings)
-            if end <= start:
-                end += timedelta(days=1)
-            duration_minutes = (end - start).total_seconds() / 60
-        intervals.append(Interval(start, duration_minutes, kwh))
-
-    if not intervals:
-        raise BillFitError("NO_ELECTRIC_INTERVALS", "No electric usage intervals were found in the CSV file.")
-    return _deduplicate(_infer_durations(sorted(intervals, key=lambda item: item.start))), warnings
-
-
-def _local_name(element: ET.Element) -> str:
-    return element.tag.rsplit("}", 1)[-1]
-
-
-def _child_text(element: ET.Element, wanted: str) -> str | None:
-    for child in element.iter():
-        if _local_name(child) == wanted and child.text and child.text.strip():
-            return child.text.strip()
-    return None
-
-
-def _parse_xml(path: Path) -> tuple[list[Interval], list[str]]:
-    warnings: list[str] = []
-    try:
-        root = ET.parse(path).getroot()
-    except ET.ParseError as exc:
-        raise BillFitError("INVALID_XML", "The Green Button XML file is not well formed.") from exc
-
-    multiplier_text = next(
-        (element.text.strip() for element in root.iter() if _local_name(element) == "powerOfTenMultiplier" and element.text),
-        "0",
-    )
-    uom = next(
-        (element.text.strip() for element in root.iter() if _local_name(element) == "uom" and element.text),
-        "72",
-    )
-    try:
-        multiplier = int(multiplier_text)
-    except ValueError:
-        multiplier = 0
-
-    intervals: list[Interval] = []
-    for reading in root.iter():
-        if _local_name(reading) != "IntervalReading":
-            continue
-        start_text = _child_text(reading, "start")
-        duration_text = _child_text(reading, "duration")
-        value_text = _child_text(reading, "value")
-        if not start_text or not value_text:
-            continue
-        try:
-            start = datetime.fromtimestamp(int(start_text), tz=timezone.utc).astimezone(PACIFIC)
-            duration_minutes = int(duration_text or "900") / 60
-            value = float(value_text) * (10**multiplier)
-        except ValueError as exc:
-            raise BillFitError("INVALID_ESPI_VALUE", "An ESPI interval contains an invalid number.") from exc
-        normalized_uom = uom.strip().lower()
-        if normalized_uom in {"72", "wh", "watt-hour", "watt-hours"}:
-            value /= 1000.0
-        elif normalized_uom not in {"kwh", "kilowatt-hour", "kilowatt-hours"}:
-            raise BillFitError("UNSUPPORTED_UOM", f"Unsupported Green Button unit of measure: {uom}")
-        intervals.append(Interval(start, duration_minutes, value))
-    if not intervals:
-        raise BillFitError("NO_ESPI_INTERVALS", "No IntervalReading records were found in the Green Button XML file.")
-    return _deduplicate(_infer_durations(sorted(intervals, key=lambda item: item.start))), warnings
-
-
-def _parse_json(path: Path) -> tuple[list[Interval], list[str]]:
-    warnings: list[str] = []
-    try:
-        payload = json.loads(path.read_text(encoding="utf-8"))
-    except json.JSONDecodeError as exc:
-        raise BillFitError("INVALID_JSON", "The usage JSON file is not valid JSON.") from exc
-    raw_intervals = payload.get("intervals") if isinstance(payload, dict) else payload
-    return _coerce_intervals(raw_intervals, warnings), warnings
-
-
-def _coerce_intervals(raw_intervals: Any, warnings: list[str] | None = None) -> list[Interval]:
-    warnings = warnings if warnings is not None else []
-    if not isinstance(raw_intervals, list) or not raw_intervals:
-        raise BillFitError("INTERVALS_REQUIRED", "Provide a non-empty list of usage intervals.")
-    intervals: list[Interval] = []
-    for index, item in enumerate(raw_intervals):
-        if not isinstance(item, dict):
-            raise BillFitError("INVALID_INTERVAL", f"Interval {index} must be an object.")
-        if "start" not in item or "kwh" not in item:
-            raise BillFitError("INVALID_INTERVAL", f"Interval {index} needs start and kwh fields.")
-        start = _parse_datetime_text(str(item["start"]), warnings)
-        try:
-            kwh = float(item["kwh"])
-            duration = float(item.get("duration_minutes", 0))
-        except (TypeError, ValueError) as exc:
-            raise BillFitError("INVALID_INTERVAL", f"Interval {index} has a non-numeric kwh or duration.") from exc
-        intervals.append(Interval(start, duration, kwh))
-    return _deduplicate(_infer_durations(sorted(intervals, key=lambda interval: interval.start)))
-
-
-def load_usage(
-    usage_file: str | None = None,
-    intervals: list[dict[str, Any]] | None = None,
-) -> tuple[list[Interval], list[str], str]:
-    if bool(usage_file) == bool(intervals):
-        raise BillFitError("ONE_USAGE_SOURCE_REQUIRED", "Provide exactly one of usage_file or intervals.")
-    if intervals:
-        warnings: list[str] = []
-        parsed = _coerce_intervals(intervals, warnings)
-        return parsed, warnings, "inline_intervals"
-    path = Path(str(usage_file)).expanduser().resolve()
-    if not path.is_file():
-        raise BillFitError("USAGE_FILE_NOT_FOUND", f"Usage file not found: {path}")
-    if path.stat().st_size > MAX_USAGE_FILE_BYTES:
-        raise BillFitError("USAGE_FILE_TOO_LARGE", "Usage files larger than 50 MB are not accepted by the MVP.")
-    extension = path.suffix.lower()
-    if extension not in SUPPORTED_EXTENSIONS:
-        raise BillFitError("UNSUPPORTED_FILE_TYPE", f"Supported usage files are: {', '.join(sorted(SUPPORTED_EXTENSIONS))}")
-    parser = {".csv": _parse_csv, ".xml": _parse_xml, ".json": _parse_json}[extension]
-    parsed, warnings = parser(path)
-    return parsed, warnings, str(path)
-
-
-def _usage_summary(intervals: list[Interval]) -> dict[str, Any]:
-    starts = [interval.start for interval in intervals]
-    end = max(interval.end for interval in intervals)
-    total_minutes = sum(max(0.0, interval.duration_minutes) for interval in intervals)
-    span_minutes = max(1.0, (end - min(starts)).total_seconds() / 60)
-    completeness = min(1.0, total_minutes / span_minutes)
-    durations = [interval.duration_minutes for interval in intervals if interval.duration_minutes > 0]
-    days = span_minutes / 1440
-    negative_count = sum(1 for interval in intervals if interval.kwh < 0)
-    if negative_count:
-        quality = "unsupported_net_export"
-    elif days >= 28 and completeness >= 0.95:
-        quality = "good"
-    elif days >= 7 and completeness >= 0.85:
-        quality = "usable_with_caution"
-    else:
-        quality = "limited"
-    return {
-        "interval_count": len(intervals),
-        "start": min(starts).isoformat(),
-        "end": end.isoformat(),
-        "span_days": round(days, 3),
-        "billing_days": max(1, round(days)),
-        "total_kwh": round(sum(interval.kwh for interval in intervals), 6),
-        "median_interval_minutes": round(statistics.median(durations or [15.0]), 3),
-        "coverage_ratio": round(completeness, 4),
-        "negative_interval_count": negative_count,
-        "quality": quality,
     }
 
 
@@ -595,18 +275,6 @@ def _rate_period(plan: str, moment: datetime) -> str:
     raise BillFitError("PLAN_PERIOD_ERROR", f"No time-of-use period rule exists for {plan}.")
 
 
-def _split_interval(interval: Interval, step_minutes: float = 15.0) -> Iterable[tuple[datetime, float, float]]:
-    remaining = max(0.0, interval.duration_minutes)
-    cursor = interval.start
-    if remaining == 0:
-        return
-    while remaining > 1e-9:
-        minutes = min(step_minutes, remaining)
-        yield cursor, minutes, interval.kwh * (minutes / interval.duration_minutes)
-        cursor += timedelta(minutes=minutes)
-        remaining -= minutes
-
-
 def _coverage_minutes_by_day(intervals: list[Interval]) -> dict[date, float]:
     coverage: dict[date, float] = {}
     for interval in intervals:
@@ -632,7 +300,10 @@ def _baseline_allowance(intervals: list[Interval], territory: str, service_type:
         ) from exc
     allowance = 0.0
     for day, minutes in _coverage_minutes_by_day(intervals).items():
-        fraction = min(1.0, minutes / 1440.0)
+        midnight = datetime.combine(day, time.min, PACIFIC)
+        next_midnight = datetime.combine(day + timedelta(days=1), time.min, PACIFIC)
+        day_minutes = (next_midnight.astimezone(timezone.utc) - midnight.astimezone(timezone.utc)).total_seconds() / 60
+        fraction = min(1.0, minutes / day_minutes)
         season = "summer" if 6 <= day.month <= 9 else "winter"
         allowance += baseline[season] * fraction
     return allowance
@@ -717,6 +388,13 @@ def _simulate_plan(
         "estimated_comparable_total": round(total, 2),
         "annualized_comparable_total": round(annualized, 2),
     }
+
+
+def _usage_needs_review(summary: dict[str, Any], warnings: list[str]) -> bool:
+    return summary["quality"] != "good" or any(
+        marker in warning for warning in warnings
+        for marker in ("INFERRED_INTERVAL_DURATION", "ASSUMED_USAGE_UNIT", "COARSE_INTERVAL_ALLOCATION")
+    )
 
 
 def compare_rate_plans(
@@ -815,6 +493,14 @@ def compare_rate_plans(
             "message": "Provide the current plan to calculate switch savings.",
         }
 
+    usage_uncertain = _usage_needs_review(summary, warnings)
+    if best and usage_uncertain:
+        recommendation = {
+            "status": "withheld_pending_usage_quality",
+            "message": "Calculations are illustrative. Confirm units/durations and provide at least 28 days of near-complete supported intervals before switching guidance; no annual saving is established.",
+            "lowest_calculated_plan": best["plan"],
+        }
+        gates_by_id["USAGE_QUALITY_REVIEW"] = HUMAN_GATES["USAGE_QUALITY_REVIEW"]
     freshness = _freshness(rate_data())
     if freshness["stale"]:
         gates_by_id["OFFICIAL_RATE_CONFIRMATION"] = HUMAN_GATES["OFFICIAL_RATE_CONFIRMATION"]
@@ -865,6 +551,12 @@ def validate_bill(
     ):
         if reported is None:
             continue
+        try:
+            amount = float(reported)
+        except (ValueError, TypeError, OverflowError) as exc:
+            raise BillFitError("INVALID_BILL_AMOUNT", "Comparable bill amounts must be finite nonnegative numbers.") from exc
+        if isinstance(reported, bool) or not math.isfinite(amount) or amount < 0:
+            raise BillFitError("INVALID_BILL_AMOUNT", "Comparable bill amounts must be finite nonnegative numbers.")
         difference = calculated - float(reported)
         tolerance = max(2.0, abs(float(reported)) * 0.02)
         checks.append(
@@ -886,15 +578,21 @@ def validate_bill(
         }
     passed = all(check["within_tolerance"] for check in checks)
     freshness = _freshness(rate_data())
+    needs_usage_review = _usage_needs_review(_usage_summary(parsed), warnings)
+    gates = [] if passed and not freshness["stale"] else [HUMAN_GATES["OFFICIAL_RATE_CONFIRMATION"]]
+    if needs_usage_review:
+        gates.append(HUMAN_GATES["USAGE_QUALITY_REVIEW"])
     return {
         "status": "validated" if passed else "mismatch",
+        "validation_scope": "comparable_components_only",
+        "usage_evidence_status": "needs_review" if needs_usage_review else "sufficient_for_current_scope",
         "source": source,
         "checks": checks,
         "rate_freshness": freshness,
         "simulation": simulated,
         "message": "Comparable components reconcile within tolerance." if passed else "Do not act on the comparison until the mismatch is explained.",
         "warnings": warnings + rate_data()["limitations"],
-        "human_gates": [] if passed and not freshness["stale"] else [HUMAN_GATES["OFFICIAL_RATE_CONFIRMATION"]],
+        "human_gates": gates,
     }
 
 

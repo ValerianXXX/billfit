@@ -1,0 +1,160 @@
+{
+  "observedAt": "2026-10-29T23:06:10.999288+00:00",
+  "phase": "before",
+  "syntheticOnly": true,
+  "cases": [
+    {
+      "id": "test_interval_boundaries.IntervalBoundaryTests.test_ambiguous_local_time_needs_explicit_offset",
+      "status": "FAIL",
+      "exception": "AssertionError"
+    },
+    {
+      "id": "test_interval_boundaries.IntervalBoundaryTests.test_boolean_usage_is_rejected",
+      "status": "FAIL",
+      "exception": "AssertionError"
+    },
+    {
+      "id": "test_interval_boundaries.IntervalBoundaryTests.test_conflicting_duplicate_is_rejected",
+      "status": "FAIL",
+      "exception": "AssertionError"
+    },
+    {
+      "id": "test_interval_boundaries.IntervalBoundaryTests.test_duplicate_csv_headers_are_rejected",
+      "status": "FAIL",
+      "exception": "AssertionError"
+    },
+    {
+      "id": "test_interval_boundaries.IntervalBoundaryTests.test_explicit_csv_minutes_are_never_guessed_as_seconds",
+      "status": "FAIL",
+      "exception": "AssertionError"
+    },
+    {
+      "id": "test_interval_boundaries.IntervalBoundaryTests.test_explicit_negative_duration_is_rejected",
+      "status": "FAIL",
+      "exception": "AssertionError"
+    },
+    {
+      "id": "test_interval_boundaries.IntervalBoundaryTests.test_explicit_zero_duration_is_rejected",
+      "status": "FAIL",
+      "exception": "AssertionError"
+    },
+    {
+      "id": "test_interval_boundaries.IntervalBoundaryTests.test_fall_back_explicit_offsets_remain_distinct",
+      "status": "FAIL",
+      "exception": "AssertionError"
+    },
+    {
+      "id": "test_interval_boundaries.IntervalBoundaryTests.test_fall_coverage_counts_both_repeated_hours",
+      "status": "FAIL",
+      "exception": "AssertionError"
+    },
+    {
+      "id": "test_interval_boundaries.IntervalBoundaryTests.test_fall_duration_is_elapsed_time",
+      "status": "FAIL",
+      "exception": "AssertionError"
+    },
+    {
+      "id": "test_interval_boundaries.IntervalBoundaryTests.test_fall_full_calendar_day_preserves_25_readings",
+      "status": "FAIL",
+      "exception": "AssertionError"
+    },
+    {
+      "id": "test_interval_boundaries.IntervalBoundaryTests.test_identical_duplicate_keeps_one_usage_value_and_warning",
+      "status": "FAIL",
+      "exception": "AssertionError"
+    },
+    {
+      "id": "test_interval_boundaries.IntervalBoundaryTests.test_infinite_usage_is_rejected",
+      "status": "FAIL",
+      "exception": "AssertionError"
+    },
+    {
+      "id": "test_interval_boundaries.IntervalBoundaryTests.test_invalid_xml_multiplier_is_not_silently_zero",
+      "status": "FAIL",
+      "exception": "AssertionError"
+    },
+    {
+      "id": "test_interval_boundaries.IntervalBoundaryTests.test_limited_usage_withholds_switch_savings",
+      "status": "FAIL",
+      "exception": "AssertionError"
+    },
+    {
+      "id": "test_interval_boundaries.IntervalBoundaryTests.test_missing_csv_timestamp_cannot_silently_drop_usage",
+      "status": "FAIL",
+      "exception": "AssertionError"
+    },
+    {
+      "id": "test_interval_boundaries.IntervalBoundaryTests.test_missing_duration_is_disclosed",
+      "status": "FAIL",
+      "exception": "AssertionError"
+    },
+    {
+      "id": "test_interval_boundaries.IntervalBoundaryTests.test_missing_xml_duration_is_rejected",
+      "status": "FAIL",
+      "exception": "AssertionError"
+    },
+    {
+      "id": "test_interval_boundaries.IntervalBoundaryTests.test_multiple_xml_reading_types_cannot_share_first_unit",
+      "status": "FAIL",
+      "exception": "AssertionError"
+    },
+    {
+      "id": "test_interval_boundaries.IntervalBoundaryTests.test_nonexistent_local_time_is_rejected",
+      "status": "FAIL",
+      "exception": "AssertionError"
+    },
+    {
+      "id": "test_interval_boundaries.IntervalBoundaryTests.test_nonfinite_duration_is_rejected",
+      "status": "ERROR",
+      "exception": "OverflowError"
+    },
+    {
+      "id": "test_interval_boundaries.IntervalBoundaryTests.test_nonfinite_usage_is_rejected",
+      "status": "FAIL",
+      "exception": "AssertionError"
+    },
+    {
+      "id": "test_interval_boundaries.IntervalBoundaryTests.test_overlapping_intervals_are_rejected",
+      "status": "FAIL",
+      "exception": "AssertionError"
+    },
+    {
+      "id": "test_interval_boundaries.IntervalBoundaryTests.test_spring_duration_is_elapsed_time",
+      "status": "FAIL",
+      "exception": "AssertionError"
+    },
+    {
+      "id": "test_interval_boundaries.IntervalBoundaryTests.test_spring_full_calendar_day_keeps_full_baseline_allowance",
+      "status": "FAIL",
+      "exception": "AssertionError"
+    },
+    {
+      "id": "test_interval_boundaries.IntervalBoundaryTests.test_tariff_boundary_splits_at_clock_boundary",
+      "status": "FAIL",
+      "exception": "AssertionError"
+    },
+    {
+      "id": "test_interval_boundaries.IntervalBoundaryTests.test_unknown_csv_units_are_rejected",
+      "status": "FAIL",
+      "exception": "AssertionError"
+    },
+    {
+      "id": "test_interval_boundaries.IntervalBoundaryTests.test_wh_csv_is_converted_to_kwh",
+      "status": "PASS"
+    }
+  ],
+  "total": 28,
+  "passed": 1,
+  "failed": 26,
+  "errors": 1,
+  "durationSeconds": 0.1799,
+  "sourceLFHashes": {
+    "plugins/billfit/tests/test_interval_boundaries.py": "a52e05b06ce31b28922c0e9a559a3b6966b621624e8d78104b62bb4cd7cec3c4",
+    "plugins/billfit/skills/billfit/scripts/billfit_core.py": "45dc6580f706059d323b130fd582775deaf2aa9bb3cf44a2218fe6868303ca27",
+    "plugins/billfit/skills/billfit/data/verification/interval-protocol-2026-10-29.json": "6af08fa7ff3b547ccfb287ec5e1687975efef0e44a81e608245499069a674ed0"
+  },
+  "localLogLFHash": "3f36601daccd61771fbf9b12e289f77577a5d9d0511b1e7c726eefd1324fed22",
+  "liveModelRequests": 0,
+  "productionActions": 0,
+  "independentHumanAcceptance": false
+}

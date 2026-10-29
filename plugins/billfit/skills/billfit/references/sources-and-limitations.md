@@ -24,6 +24,12 @@ https://www.pge.com/en/save-energy-and-money/energy-usage-and-tips/understand-my
 
 The user must perform the account login and download. BillFit reads a local CSV/XML/JSON file and returns summaries rather than the full interval series.
 
+The October 29 parser uses UTC instants for ordering, duration, duplicate identity and coverage, then converts to Pacific local time for tariff periods. It rejects ambiguous/nonexistent offset-free timestamps. Equal repeated intervals retain one value and a warning; conflicts or overlaps require a corrected source. XML currently requires one ReadingType and no more than one UsagePoint rather than guessing relationships in a multi-meter feed. CSV units are Wh/kWh; a missing unit is an explicit assumption unless the header itself says kWh. Explicit duration fields must name minutes or seconds.
+
+Allocation inside an interval assumes uniform power. Intervals longer than one hour, inferred durations/units and less than 28 days of near-complete data cannot establish switching savings. A complete month still does not prove annual seasonality or actual savings. Daily baseline fractions use the actual local calendar-day length across DST. BillFit's billing-day estimate and excluded bill items still require reconciliation with the actual bill; a component match is not complete-account validation.
+
+Resource limits are 50 MB, 200,000 input intervals, one second through 1,440 minutes per explicit interval, at most 1,098 elapsed days, and at most one trillion absolute kWh in a request. These are calculator safeguards, not utility eligibility criteria. No customer account scope was broadened.
+
 ## Assistance sources
 
 - CPUC CARE/FERA current income rules: https://www.cpuc.ca.gov/care/

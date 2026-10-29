@@ -1,0 +1,22 @@
+{
+  "protocol": "INTERVAL_CORRECTNESS_V1",
+  "baseCommit": "6e476b2ae1b38e0c0c9359842fba71ef32d41292",
+  "frozenBeforeProductChanges": true,
+  "testFile": "plugins/billfit/tests/test_interval_boundaries.py",
+  "expectedCases": 28,
+  "scope": "Synthetic parser, deterministic elapsed-time accounting, tariff boundary allocation and conservative usage-quality gates. No customer bill, new model request, tariff activation or utility account action.",
+  "expectations": [
+    "Identical repeats retain one value with a warning; conflicts and overlaps fail closed",
+    "Explicit DST offsets preserve distinct instants; ambiguous or nonexistent naive times require correction",
+    "Durations and coverage use elapsed UTC time; daily baseline fractions respect local calendar-day length",
+    "Energy is conserved when splitting at actual tariff clock boundaries",
+    "Units, timestamps, durations and finite nonboolean quantities must be validated",
+    "Multiple ESPI reading types require an explicit supported mapping, never a first-global-unit guess",
+    "Insufficient usage may show illustrative calculations but not a definite annual saving or switching recommendation"
+  ],
+  "limits": [
+    "Interval energy split across a rate boundary assumes uniform power within the supplied interval",
+    "This protocol does not prove noisy OCR accuracy, complete bill reconstruction, current tariff-cell correctness or household savings",
+    "Further bill-field, monetary rounding, source-update lifecycle and cancellation checks remain separate"
+  ]
+}
