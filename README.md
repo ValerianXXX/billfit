@@ -14,13 +14,15 @@ Calculations are deterministic and use the official-source snapshots documented 
 
 **Verified October 27, 2026:** the official residential workbook is unchanged from the packaged March 1 rates; CARE/FERA thresholds also match current rules. The upgrade adds read-only source/diff checks, stale-guidance protection, optional local PDF/image bill candidates with source locations, and an optional modern MCP SDK profile. [Validation, setup and remaining limits](docs/modernization-2026-10-27.md) include 28 passing tests, actual Hermes tool invocation and five correct fields from a clean synthetic image using local Tesseract in WSL. Real customer bills, noisy photographs and native Windows OCR remain unvalidated.
 
+**October 28 follow-up:** a [real model-selected Hermes workflow](docs/hermes-workflow-2026-10-28.md) now covers sourced bill extraction, assistance screening, interval parsing, deterministic comparison and a deliberately mismatched bill. An initial file-argument rejection led to clearer exact-path guidance in the MCP tools and skill; the same two-stage task then passed with five model calls. The 34-test suite and both original observations are retained. This is synthetic analytical acceptance, not utility enrollment, proven household savings or a general model-performance claim.
+
 ## Product discovery case
 
 The evidence, rejected concepts, critical-data gap test, product decisions, and validation status behind BillFit are documented in [AI Skill Product Discovery](https://github.com/ValerianXXX/ai-skill-product-discovery/tree/main/cases/billfit).
 
 ## Requirements
 
-- Codex or the ChatGPT desktop app with plugin support
+- Hermes, Codex or another compatible MCP host; the CLI can also run directly
 - Python 3.11 or later
 - An individually metered PG&E residential bundled-electric account for personalized rate comparisons
 
@@ -47,6 +49,8 @@ A synthetic usage file is included at `plugins/billfit/skills/billfit/examples/d
 ## Privacy and limits
 
 BillFit reads supplied files locally. It does not need utility passwords, Social Security numbers, medical records, or income documents. It does not sign in to PG&E, change plans, submit applications, or make final eligibility decisions.
+
+The AI host can send returned field values, evidence snippets, supplied household facts and calculation summaries to its configured model provider. Local parsing does not make a cloud conversation local. Review the host/model settings before supplying real data; the committed evaluation accepts only fixed synthetic inputs.
 
 The MVP does not support solar or net export, CCA or Direct Access charges, master-metered service, gas, taxes, local surcharges, Climate Credits, or account-specific adjustments. Always confirm the current tariff before acting.
 

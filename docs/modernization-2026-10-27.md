@@ -39,6 +39,8 @@ Use `.mcp.sdk.example.json` with absolute interpreter/script paths (Windows inte
 
 An additional actual-host check used existing Hermes revision `afe53708ee7400919ae3e17a6dde9b02629e5c87` with its MCP client 1.26.0 in WSL. Its real MCP registry/dispatcher launched the Windows SDK server, discovered all seven BillFit tools and screened a synthetic two-person household with $40,000 gross annual income. CARE returned likely eligible with the verified $43,280 ceiling and non-stale rules; enrollment remained a human gate. No model calls, persistent configuration changes or real account access occurred. [Receipt](../plugins/billfit/skills/billfit/data/verification/hermes-mcp-host-2026-10-27.json). This covers actual host tool invocation, not a full model-driven bill-comparison conversation or permanent plugin installation.
 
+The [October 28 follow-up](hermes-workflow-2026-10-28.md) adds a real model-selected two-stage synthetic analytical workflow, including a retained first-attempt file-boundary failure and a passing rerun after exact-path guidance. It does not retroactively change the October 27 host receipt or claim a permanent installation or a real utility transaction. The expanded local suite passes 34 tests.
+
 Official protocol/SDK references verified October 27: [versioning](https://modelcontextprotocol.io/docs/2026-07-28/learn/versioning), [Python SDK](https://github.com/modelcontextprotocol/python-sdk). No protocol string was relabelled on the old custom transport.
 
 ## Optional bill input
