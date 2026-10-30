@@ -32,6 +32,28 @@ Allocation inside an interval assumes uniform power. Intervals longer than one h
 
 Resource limits are 50 MB, 200,000 input intervals, one second through 1,440 minutes per explicit interval, at most 1,098 elapsed days, and at most one trillion absolute kWh in a request. These are calculator safeguards, not utility eligibility criteria. No customer account scope was broadened.
 
+## Bill input evidence
+
+The optional local adapter extracts narrow English labels for supported plans,
+energy charges, Base Services Charge, baseline territory and total kWh. It does
+not establish the account type or make total kWh suitable for a time-of-use
+comparison. Unsupported suffixes, malformed comma groups, credits, ranges and
+extra amount text remain unresolved rather than being repaired or truncated.
+No statement dates, household facts or eligibility are inferred.
+
+PDF parsing and image OCR use owned snapshots. Returned source hashes identify
+the parsed bytes; a changed original file rejects the result. OCR boxes use
+original image pixel coordinates, and word confidence is explicitly uncalibrated.
+PDF text has page/line/quote locations, without a fabricated pixel box. A repeated
+page keeps separate evidence; conflicting values are not chosen automatically.
+
+The October 30 synthetic matrix records 6/8 image cases passing, with skewed
+amount/rotated-page failures, and 1/1 repeated-page PDF passing. These are local
+engineering observations, not real-bill accuracy. Native Windows OCR and customer
+input remain untested. Time/output limits and a PDF child process do not impose
+a hard native RAM limit or provide an OS sandbox. See the repository's
+`docs/bill-input-evidence-2026-10-30.md` for exact versions and reproduction.
+
 ## Assistance sources
 
 - CPUC CARE/FERA current income rules: https://www.cpuc.ca.gov/care/

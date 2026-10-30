@@ -12,13 +12,11 @@ BillFit is a local-first Codex plugin and self-contained AI skill that compares 
 
 Calculations are deterministic and use the official-source snapshots documented in [sources and limitations](plugins/billfit/skills/billfit/references/sources-and-limitations.md).
 
-**October 29 CSV follow-up:** a real shared-evidence trial found that the parser rejected a plain `kwh` column. The [focused repair](docs/csv-energy-columns-2026-10-29.md) accepts this explicit energy header and rejects competing usage columns or conflicting units. The original synthetic trial input now parses to four unique hours and 2 kWh through the CLI; switching guidance remains withheld for the short sample. The full existing environment passes 86 tests, including optional SDK checks. This is a draft source change, not a newly published release.
+**Current development checkout, October 30:** usage validation preserves DST hours and rejects conflicting records or units; incomplete usage withholds switching savings. Optional bill extraction binds candidates to source hashes and page/line evidence, exposes ambiguous values and OCR quality, and uses bounded local parser processes. All values still require user confirmation. Installing `main` below does not install these draft changes.
 
-**October 29 correctness milestone:** local usage parsing now preserves both hours at a daylight-saving overlap, conserves energy across tariff boundaries, removes identical repeats without adding usage, and rejects conflicting/overlapping or invalid records. Insufficient usage withholds switching savings; a bill-component match keeps the usage-review gate. [Reproduction, fixed before/after cases and limitations](docs/interval-correctness-2026-10-29.md) report 28/28 boundary cases after an initial 1/28 and 72 complete local tests. Tariff values and verification dates are unchanged. These changes are on a draft development branch; installing `main` below does not install the draft. Run this checkout's CLI to review it.
+The current full local suite passes **117 tests**, including actual SDK error/recovery in both supported transport profiles. The same eight synthetic OCR layouts improved from **3/8 to 6/8** after the input repair; a skewed amount and a rotated page still fail. A repeated two-page PDF keeps ten separate sourced candidates without adding them. [Evidence, setup, failures and rollback](docs/bill-input-evidence-2026-10-30.md) distinguish contract tests, actual local parsers and client calls from real customer acceptance.
 
-**Verified October 27, 2026:** the official residential workbook is unchanged from the packaged March 1 rates; CARE/FERA thresholds also match current rules. The upgrade adds read-only source/diff checks, stale-guidance protection, optional local PDF/image bill candidates with source locations, and an optional modern MCP SDK profile. [Validation, setup and remaining limits](docs/modernization-2026-10-27.md) include 28 passing tests, actual Hermes tool invocation and five correct fields from a clean synthetic image using local Tesseract in WSL. Real customer bills, noisy photographs and native Windows OCR remain unvalidated.
-
-**October 28 follow-up:** a [real model-selected Hermes workflow](docs/hermes-workflow-2026-10-28.md) now covers sourced bill extraction, assistance screening, interval parsing, deterministic comparison and a deliberately mismatched bill. An initial file-argument rejection led to clearer exact-path guidance in the MCP tools and skill; the same two-stage task then passed with five model calls. The 34-test suite and both original observations are retained. This is synthetic analytical acceptance, not utility enrollment, proven household savings or a general model-performance claim.
+Tariff values were last checked against official sources on **October 27, 2026**; this input change does not re-date or activate rate data. Earlier [source verification](docs/modernization-2026-10-27.md), [Hermes synthetic workflow](docs/hermes-workflow-2026-10-28.md), [interval repair](docs/interval-correctness-2026-10-29.md) and [CSV repair](docs/csv-energy-columns-2026-10-29.md) retain their original observations. Customer bills, native Windows OCR and independent user acceptance remain unverified.
 
 ## Product discovery case
 
@@ -75,6 +73,15 @@ From the repository root:
 ```shell
 python -m unittest discover -s plugins/billfit/tests -v
 ```
+
+To try the committed synthetic PDF from this checkout:
+
+```shell
+python -m pip install -r plugins/billfit/requirements-bill-input.txt
+python plugins/billfit/skills/billfit/scripts/billfit_cli.py extract-bill --input-file plugins/billfit/skills/billfit/examples/synthetic-bill-extract.json
+```
+
+Images additionally require an existing trusted Tesseract executable through `BILLFIT_TESSERACT_PATH`; [.env.example](.env.example) documents it. No cloud fallback is configured. The [input guide](docs/bill-input-evidence-2026-10-30.md) explains missing fields, low confidence and recovery.
 
 To exercise the synthetic repeated-hour example from this checkout without credentials or a model:
 
