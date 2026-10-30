@@ -2,6 +2,10 @@
 
 ## Unreleased — 2026-10-29
 
+- Repair the `kwh` CSV header gap discovered by the shared-evidence study. Use one energy-column mapping for detection and reading, preserve explicit units and reject ambiguous energy/unit columns or conflicting kWh/Wh labels.
+- Freeze 14 new input contracts before the repair: 3 passed, 7 failed and 4 errored initially; all 14 now pass unchanged. The complete existing optional-profile environment passes 86 tests. Actual CLI parsing/comparison of the original study input succeeds while withholding a recommendation for insufficient coverage.
+- Add a synthetic CSV, request example, recovery instructions and before/after receipts. Historical research failures and tariff snapshots remain unchanged.
+
 - Extract local CSV/XML/JSON validation into `billfit_usage.py` with shared domain errors; keep calculator/CLI entry points and transport profiles.
 - Preserve absolute instants across daylight-saving transitions. Detect ambiguous/nonexistent local times, duplicate conflicts, overlaps and unsupported units instead of summing or silently dropping readings.
 - Make duration units explicit, disclose inferred durations, bound file/interval/numeric ranges and conserve energy at actual tariff clock boundaries.

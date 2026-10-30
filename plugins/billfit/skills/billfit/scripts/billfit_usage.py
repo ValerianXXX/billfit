@@ -26,6 +26,9 @@ MAX_INTERVAL_MINUTES = 1440
 MAX_USAGE_SPAN_MINUTES = 3 * 366 * 1440
 MAX_TOTAL_ABSOLUTE_KWH = 1e12
 SUPPORTED_EXTENSIONS = {'.csv', '.xml', '.json'}
+CSV_ENERGY_COLUMNS = {'usage': None, 'usagekwh': 'kWh', 'kwh': 'kWh',
+                      'value': None, 'consumption': None, 'intervalusage': None}
+CSV_UNIT_COLUMNS = {'unit', 'units', 'uom'}
 
 
 @dataclass(frozen=True)
@@ -173,7 +176,7 @@ def _parse_csv(path: Path) -> tuple[list[Interval], list[str]]:
     headers = None
     for index, row in enumerate(rows[:50]):
         names = [_header(cell) for cell in row]
-        if any(name in {'usage', 'usagekwh', 'value', 'consumption', 'intervalusage'} for name in names) and any(name in {'date', 'timestamp', 'datetime', 'starttime', 'intervalstart', 'start', 'usagedate'} for name in names):
+        if any(name in CSV_ENERGY_COLUMNS for name in names) and any(name in {'date', 'timestamp', 'datetime', 'starttime', 'intervalstart', 'start', 'usagedate'} for name in names):
             headers = names
             break
     if headers is None:
@@ -181,6 +184,13 @@ def _parse_csv(path: Path) -> tuple[list[Interval], list[str]]:
     nonempty = [name for name in headers if name]
     if len(nonempty) != len(set(nonempty)):
         raise BillFitError('AMBIGUOUS_CSV_HEADER', 'Duplicate normalized CSV headers cannot be resolved safely.')
+    energy_columns = [name for name in headers if name in CSV_ENERGY_COLUMNS]
+    if len(energy_columns) != 1:
+        raise BillFitError('AMBIGUOUS_CSV_ENERGY_COLUMNS', 'Keep one intended energy column in a copy of the CSV; multiple usage/value/kWh columns cannot be selected safely.')
+    if sum(name in CSV_UNIT_COLUMNS for name in headers) > 1:
+        raise BillFitError('AMBIGUOUS_CSV_UNIT_COLUMNS', 'Keep one explicit energy-unit column; multiple unit columns cannot be selected safely.')
+    energy_column = energy_columns[0]
+    header_unit = CSV_ENERGY_COLUMNS[energy_column]
     intervals = []
     ignored_gas = 0
     for raw in rows[index + 1:]:
@@ -191,14 +201,16 @@ def _parse_csv(path: Path) -> tuple[list[Interval], list[str]]:
         if unit and ('therm' in unit.casefold() or unit.casefold() == 'gas'):
             ignored_gas += 1
             continue
-        usage = _value(row, 'usage', 'usage kwh', 'consumption', 'value', 'interval usage')
+        usage = _value(row, energy_column)
         if usage is None:
             raise BillFitError('MISSING_USAGE_VALUE', 'A nonempty electric CSV record has no usage; it cannot be silently dropped.')
         if unit is None:
             unit = 'kWh'
             note = 'ASSUMED_USAGE_UNIT: CSV has no unit; confirm kWh before switching guidance.'
-            if 'usagekwh' not in headers and note not in warnings:
+            if header_unit is None and note not in warnings:
                 warnings.append(note)
+        if header_unit is not None and _energy(1, unit) != _energy(1, header_unit):
+            raise BillFitError('CONFLICTING_USAGE_UNIT', 'The kWh column label conflicts with the row unit; verify the original export before changing either label or values.')
         kwh = _energy(usage, unit)
         start_text = _value(row, 'timestamp', 'datetime', 'interval start', 'start datetime', 'start')
         date_text = _value(row, 'date', 'usage date', 'interval date')
