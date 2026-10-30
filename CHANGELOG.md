@@ -1,5 +1,13 @@
 # Changelog
 
+## Unreleased — 2026-10-30
+
+- Separate candidate extraction, OCR TSV validation, PDF parsing and bounded process capture. Parse owned byte snapshots, retain exact hashes and reject a changed source before returning evidence.
+- Reject malformed number grouping, partial amounts, credits, ranges and unsupported plan suffixes. Preserve source excerpts in `unresolved_fields`; retain repeated/conflicting candidates without summing or confirming them.
+- Validate OCR page geometry, word identity and finite confidence. Expose confidence as an uncalibrated review signal and restrict candidate boxes to contributing words.
+- Isolate PDF diagnostics in a child process after an actual malformed-PDF CLI test exposed source-header text on stderr. Limit parser time and captured output, with fixed errors and owned-child cleanup; this is not a hard memory sandbox.
+- Pass 15 unchanged frozen methods and 117 full tests, including actual process limits, PDF extraction and MCP recovery. Keep both original failure logs and fixed before/after receipts. The unchanged eight-image local OCR matrix improves from 3/8 to 6/8; skewed/rotated failures remain. No tariff activation, new model call, cloud parser, account action or deployment.
+
 ## Unreleased — 2026-10-29
 
 - Repair the `kwh` CSV header gap discovered by the shared-evidence study. Use one energy-column mapping for detection and reading, preserve explicit units and reject ambiguous energy/unit columns or conflicting kWh/Wh labels.

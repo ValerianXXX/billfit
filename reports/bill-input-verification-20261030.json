@@ -1,0 +1,146 @@
+{
+  "observedAt": "2026-10-30T04:36:47.364101+00:00",
+  "baseCommit": "56874a26bea745d5c83fe9f5dd38cd305c1ae3d5",
+  "frozenTestCommit": "e6fece736db8981e79af1110d4d9a12d5c992164",
+  "frozenMatrixCommit": "beec2567ff12116986a8b173a4f6d234acbe264e",
+  "sourceCommit": "c5c9963e4c311e511637d9167c338e92fffd3c9b",
+  "baseline": {
+    "passed": 86,
+    "skipped": 0,
+    "seconds": 7.438
+  },
+  "frozenBefore": {
+    "methods": 15,
+    "passingMethods": 3,
+    "failedAssertionsOrSubtests": 24,
+    "errors": 2
+  },
+  "harnessCorrection": "Same expectations before product edit; avoid secondary caught.exception access after a failed subtest",
+  "frozenAfter": {
+    "methods": 15,
+    "passed": 15,
+    "unchanged": true
+  },
+  "additionalRuntimeTests": {
+    "methods": 16,
+    "originalFailure": "Actual malformed-PDF CLI leaked synthetic header bytes via parser stderr",
+    "fixed": true
+  },
+  "fullSuite": {
+    "tests": 117,
+    "passed": 117,
+    "skipped": 0,
+    "seconds": 15.018,
+    "status": "PASS"
+  },
+  "imageMatrix": {
+    "before": {
+      "cases": 8,
+      "passed": 3,
+      "missing_valid_fields": 6,
+      "unexpected_fields": 3,
+      "total_milliseconds": 1900.473
+    },
+    "after": {
+      "cases": 8,
+      "passed": 6,
+      "missing_valid_fields": 6,
+      "unexpected_fields": 0,
+      "total_milliseconds": 1950.022
+    },
+    "expectedValidFields": 38,
+    "remainingFailures": [
+      "skew-6-degrees",
+      "rotated-90-degrees"
+    ],
+    "recallImprovementClaimed": false
+  },
+  "pdfMatrix": {
+    "beforePassed": 1,
+    "afterPassed": 1,
+    "candidates": 10,
+    "pages": 2,
+    "beforeMilliseconds": 196.617,
+    "afterMilliseconds": 439.632
+  },
+  "runtimes": {
+    "unit_cli_pdf_sdk": {
+      "platform": "Windows",
+      "python": "3.11.3",
+      "pypdf": "6.21.3",
+      "mcp": "2.3.0"
+    },
+    "actual_ocr": {
+      "platform": "existing isolated WSL Ubuntu runtime",
+      "python": "3.14.4",
+      "tesseract": "5.5.0",
+      "leptonica": "1.86.0",
+      "psm": 6,
+      "language": "eng"
+    },
+    "authoringOnly": {
+      "reportlab": "4.4.9",
+      "pypdf": "6.10.0",
+      "renderer": "existing bundled Poppler"
+    }
+  },
+  "actualInterfaceChecks": [
+    "CLI extraction of committed request",
+    "CLI malformed-PDF redaction",
+    "SDK 2026-07-28 and legacy 2025-11-25 PDF error/recovery in real child processes"
+  ],
+  "visualReview": {
+    "images": 8,
+    "repeatedPdfPages": 2,
+    "result": "Readable synthetic markers and intended fields; no clipping observed",
+    "repeatedRenderedPageSha256": "fa41779785bed18f7b05858be6e75f49176ac005702f5de1de582c659f1aaec1"
+  },
+  "sourceLFHashes": {
+    "bill_input.py": "56de7ddc8a7655474ff0c2858ba01b61940dad2f721cc265c1955babe30c1fd2",
+    "bill_ocr.py": "ae802a6028b553b7543bf37f526b46b94544b1dd422523cccda9807332877605",
+    "bill_process.py": "85ee47877851c3b440f047c071c7348a527758a7b95a501c289d0d08331aa21f",
+    "bill_pdf_worker.py": "ba04b073845da74484483d125faeb709c2de447352339a00e2298d5af926ddce"
+  },
+  "frozenLFHashes": {
+    "plugins/billfit/tests/test_bill_input_evidence.py": "c2b2395d0ed484a2c6c1e616c2e59a2d6c71ce353f77bea4caa607fda462b943",
+    "scripts/evaluate-bill-input-matrix.py": "4fc724de88a902c6b5543b930a3f6957cfd29c4e4fc318d20538685bf4fe23ea",
+    "plugins/billfit/tests/fixtures/bill-input-v2/manifest.json": "a1a17439f5ffaba5defce0c5de74085a3852165ff682872a8d62291c28fdb99f"
+  },
+  "runtimeTestsLFHash": "523cea33d8c670e7bf7b64c5f2d20e7f8c1eaacfc58e57ecd08f349c0f67fe77",
+  "localLogLFHashes": {
+    "bill-input-baseline-20261029.log": "b100d226c1e79fe8cf68ccad96f174cddce10709a5612417ea80f6d2eae5ddb3",
+    "bill-input-frozen-before-20261030.log": "082844f0ee03b2c08da8f23c7058adefc218a748456cbe081af9567af73c1f2a",
+    "bill-input-frozen-corrected-before-20261030.log": "2b35ee3061513e5f741b40b7e27ea54279cddb4eccaaac92c96f84e3bee77185",
+    "bill-input-frozen-after-20261030.log": "fb7b325d60b1e5a43214d3d277081d0e8eaeabfe5201988c0a0a51c4c35d187d",
+    "bill-input-runtime-first-20261030.log": "becea2324403afdc40d4424a7cbf8d4fb341ef5199c46f09de3b784bd5c8fc85",
+    "bill-input-related-20261030.log": "62768b44f6902de47d435de1c94b138c2ddb202d75d90de5045298d7eb7b4c6e",
+    "bill-input-full-20261030.log": "43623f48e00f1e34323052d7e8851c5b5db07411fe4b8b04116746fc1efa94f6"
+  },
+  "originalReceiptHashes": {
+    "bill-input-image-before-20261030.json": "c1ff554956d12ee7fa629e62cbfa9bfa5deac70b0331409546e90fcbe75b7196",
+    "bill-input-image-after-20261030.json": "576be4b798a286294bfd5dbfa580cd39219be253616ab8221a060a59cce6cba5",
+    "bill-input-pdf-before-20261030.json": "c82db2bdc141a4e056ddefe96a78b730ab5b80ee46582e9340d92a9e7b27d5b3",
+    "bill-input-pdf-after-20261030.json": "15c37c2d29fef28820da060753b96d4b2b44dd1bf294b3d60a8fef06d820c267"
+  },
+  "tariffDataChanges": false,
+  "verificationDateReset": false,
+  "newDependencies": false,
+  "newModelCalls": 0,
+  "cloudParserCalls": 0,
+  "actualDollarCost": null,
+  "productionActions": 0,
+  "dataMigration": false,
+  "notEstablished": [
+    "General or customer-bill accuracy",
+    "Native Windows Tesseract",
+    "Skew/rotation recovery",
+    "Hard native RAM limit or OS sandbox",
+    "Global concurrency and user cancellation",
+    "New model-selected Hermes workflow",
+    "Independent human acceptance",
+    "Published release"
+  ],
+  "cliExampleOriginalLocalHash": "2c36d6e4e7cfeeb7038ad367581b7d76dc293eb3e9dba95e1cc31a23cf391973",
+  "cliExampleLFHash": "08116d1698bc4578edcb91b3b119aba5b1fd55b98a18f72e4218abc9ed6331bd",
+  "receiptTextNormalization": "CLI receipt CRLF normalized to LF for Git; original local byte hash retained separately; JSON values unchanged"
+}

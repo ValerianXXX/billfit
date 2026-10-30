@@ -2,3 +2,5 @@
 * text=auto
 *.pdf binary
 *.png binary
+reports/bill-input-*.json text eol=lf
+plugins/billfit/tests/fixtures/bill-input-v2/manifest.json text eol=lf

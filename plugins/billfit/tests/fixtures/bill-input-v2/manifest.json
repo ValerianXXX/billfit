@@ -1,0 +1,288 @@
+{
+  "version": 1,
+  "synthetic_only": true,
+  "cases": [
+    {
+      "id": "clean",
+      "file": "clean.png",
+      "kind": "image",
+      "expected": {
+        "current_plan": [
+          "E-TOU-D"
+        ],
+        "reported_energy_charge": [
+          "12.34"
+        ],
+        "reported_base_services_charge": [
+          "0.79"
+        ],
+        "baseline_territory": [
+          "X"
+        ],
+        "total_kwh": [
+          "25.5"
+        ]
+      },
+      "expected_rejected_fields": [],
+      "expected_conflicts": [],
+      "synthetic_only": true,
+      "rotation_degrees": 0,
+      "sha256": "0060f8b7a1fea299dc5b6228580d1badb4a1c3169c2fa75b1ac6c3bfcfd07946",
+      "pixel_size": [
+        1275,
+        1275
+      ]
+    },
+    {
+      "id": "low-contrast-noise",
+      "file": "low-contrast-noise.png",
+      "kind": "image",
+      "expected": {
+        "current_plan": [
+          "E-TOU-D"
+        ],
+        "reported_energy_charge": [
+          "12.34"
+        ],
+        "reported_base_services_charge": [
+          "0.79"
+        ],
+        "baseline_territory": [
+          "X"
+        ],
+        "total_kwh": [
+          "25.5"
+        ]
+      },
+      "expected_rejected_fields": [],
+      "expected_conflicts": [],
+      "synthetic_only": true,
+      "rotation_degrees": 0,
+      "sha256": "c50dba41be5c218898a1d6fccf5f6673a35b0550e0806026fd478405fc27e040",
+      "pixel_size": [
+        1275,
+        1275
+      ]
+    },
+    {
+      "id": "skew-6-degrees",
+      "file": "skew-6-degrees.png",
+      "kind": "image",
+      "expected": {
+        "current_plan": [
+          "E-TOU-D"
+        ],
+        "reported_energy_charge": [
+          "12.34"
+        ],
+        "reported_base_services_charge": [
+          "0.79"
+        ],
+        "baseline_territory": [
+          "X"
+        ],
+        "total_kwh": [
+          "25.5"
+        ]
+      },
+      "expected_rejected_fields": [],
+      "expected_conflicts": [],
+      "synthetic_only": true,
+      "rotation_degrees": 6,
+      "sha256": "d1780d2d51d684b1d8e0710b563c89c87c661fa889b800d3240736045fa8073b",
+      "pixel_size": [
+        1275,
+        1275
+      ]
+    },
+    {
+      "id": "rotated-90-degrees",
+      "file": "rotated-90-degrees.png",
+      "kind": "image",
+      "expected": {
+        "current_plan": [
+          "E-TOU-D"
+        ],
+        "reported_energy_charge": [
+          "12.34"
+        ],
+        "reported_base_services_charge": [
+          "0.79"
+        ],
+        "baseline_territory": [
+          "X"
+        ],
+        "total_kwh": [
+          "25.5"
+        ]
+      },
+      "expected_rejected_fields": [],
+      "expected_conflicts": [],
+      "synthetic_only": true,
+      "rotation_degrees": 90,
+      "sha256": "ea98a54340f474d5ee525b73d42dab517f65c54de19e851cedb0c419888eb845",
+      "pixel_size": [
+        1275,
+        1275
+      ]
+    },
+    {
+      "id": "invalid-comma",
+      "file": "invalid-comma.png",
+      "kind": "image",
+      "expected": {
+        "current_plan": [
+          "E-TOU-D"
+        ],
+        "reported_energy_charge": [],
+        "reported_base_services_charge": [
+          "0.79"
+        ],
+        "baseline_territory": [
+          "X"
+        ],
+        "total_kwh": [
+          "25.5"
+        ]
+      },
+      "expected_rejected_fields": [
+        "reported_energy_charge"
+      ],
+      "expected_conflicts": [],
+      "synthetic_only": true,
+      "rotation_degrees": 0,
+      "sha256": "06ef1318105cc229a12b1383227bb945e4d80acc8ac0d66b8ff207fcbbac84ea",
+      "pixel_size": [
+        1275,
+        1275
+      ]
+    },
+    {
+      "id": "credit",
+      "file": "credit.png",
+      "kind": "image",
+      "expected": {
+        "current_plan": [
+          "E-TOU-D"
+        ],
+        "reported_energy_charge": [],
+        "reported_base_services_charge": [
+          "0.79"
+        ],
+        "baseline_territory": [
+          "X"
+        ],
+        "total_kwh": [
+          "25.5"
+        ]
+      },
+      "expected_rejected_fields": [
+        "reported_energy_charge"
+      ],
+      "expected_conflicts": [],
+      "synthetic_only": true,
+      "rotation_degrees": 0,
+      "sha256": "0ce4c8b98f8b28031a554689b3d7c983e315444b3eb01d4e5cad5d9e3c7a1109",
+      "pixel_size": [
+        1275,
+        1275
+      ]
+    },
+    {
+      "id": "unsupported-plan",
+      "file": "unsupported-plan.png",
+      "kind": "image",
+      "expected": {
+        "current_plan": [],
+        "reported_energy_charge": [
+          "12.34"
+        ],
+        "reported_base_services_charge": [
+          "0.79"
+        ],
+        "baseline_territory": [
+          "X"
+        ],
+        "total_kwh": [
+          "25.5"
+        ]
+      },
+      "expected_rejected_fields": [
+        "current_plan"
+      ],
+      "expected_conflicts": [],
+      "synthetic_only": true,
+      "rotation_degrees": 0,
+      "sha256": "9bae127ce4bb94496348bc8507090b5e8103d027325a82a04cc964c10410f5d4",
+      "pixel_size": [
+        1275,
+        1275
+      ]
+    },
+    {
+      "id": "conflicting-charge",
+      "file": "conflicting-charge.png",
+      "kind": "image",
+      "expected": {
+        "current_plan": [
+          "E-TOU-D"
+        ],
+        "reported_energy_charge": [
+          "12.34",
+          "56.78"
+        ],
+        "reported_base_services_charge": [
+          "0.79"
+        ],
+        "baseline_territory": [
+          "X"
+        ],
+        "total_kwh": [
+          "25.5"
+        ]
+      },
+      "expected_rejected_fields": [],
+      "expected_conflicts": [
+        "reported_energy_charge"
+      ],
+      "synthetic_only": true,
+      "rotation_degrees": 0,
+      "sha256": "00d059c7d8f2c878d9c22bdc1223b95f26fbf4109f2940fca987ff2c2d3c4f85",
+      "pixel_size": [
+        1275,
+        1275
+      ]
+    },
+    {
+      "id": "repeated-pages",
+      "file": "repeated-synthetic-pages.pdf",
+      "kind": "pdf",
+      "expected": {
+        "current_plan": [
+          "E-TOU-D",
+          "E-TOU-D"
+        ],
+        "reported_energy_charge": [
+          "12.34",
+          "12.34"
+        ],
+        "reported_base_services_charge": [
+          "0.79",
+          "0.79"
+        ],
+        "baseline_territory": [
+          "X",
+          "X"
+        ],
+        "total_kwh": [
+          "25.5",
+          "25.5"
+        ]
+      },
+      "expected_rejected_fields": [],
+      "expected_conflicts": [],
+      "synthetic_only": true,
+      "sha256": "cca92a7737ceec04760a43c96b72d5cc04bf3f5a049fa7236262bc0fe1f7e764"
+    }
+  ]
+}

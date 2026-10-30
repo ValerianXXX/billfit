@@ -1,0 +1,196 @@
+{
+  "observedAt": "2026-10-30T04:17:55.115392+00:00",
+  "kind": "pdf",
+  "synthetic_only": true,
+  "python": "3.11.3",
+  "platform": "Windows",
+  "engine": null,
+  "sourceLFHashes": {
+    "bill_input.py": "311cad0df2426f7ae14529ec4cdf76c61f2ea19aba2633ed0b59bc1ba1851d2f"
+  },
+  "manifestSha256": "a1a17439f5ffaba5defce0c5de74085a3852165ff682872a8d62291c28fdb99f",
+  "cases": 1,
+  "passed": 1,
+  "cloud_calls": 0,
+  "actual_dollar_cost": null,
+  "results": [
+    {
+      "id": "repeated-pages",
+      "status": "PASS",
+      "missing": {},
+      "unexpected": {},
+      "evidence_valid": true,
+      "visible_rejections": true,
+      "result": {
+        "status": "REVIEW_REQUIRED",
+        "candidates": [
+          {
+            "field": "current_plan",
+            "value": "E-TOU-D",
+            "status": "NEEDS_USER_CONFIRMATION",
+            "source": {
+              "sha256": "cca92a7737ceec04760a43c96b72d5cc04bf3f5a049fa7236262bc0fe1f7e764",
+              "page": 1,
+              "line": 3,
+              "bbox": null,
+              "quote": "Rate Schedule: E-TOU-D",
+              "start": 0,
+              "end": 22
+            },
+            "method": "LOCAL_PDF_TEXT"
+          },
+          {
+            "field": "reported_energy_charge",
+            "value": "12.34",
+            "status": "NEEDS_USER_CONFIRMATION",
+            "source": {
+              "sha256": "cca92a7737ceec04760a43c96b72d5cc04bf3f5a049fa7236262bc0fe1f7e764",
+              "page": 1,
+              "line": 4,
+              "bbox": null,
+              "quote": "Energy Charges $12.34",
+              "start": 0,
+              "end": 21
+            },
+            "method": "LOCAL_PDF_TEXT"
+          },
+          {
+            "field": "reported_base_services_charge",
+            "value": "0.79",
+            "status": "NEEDS_USER_CONFIRMATION",
+            "source": {
+              "sha256": "cca92a7737ceec04760a43c96b72d5cc04bf3f5a049fa7236262bc0fe1f7e764",
+              "page": 1,
+              "line": 5,
+              "bbox": null,
+              "quote": "Base Services Charge $0.79",
+              "start": 0,
+              "end": 26
+            },
+            "method": "LOCAL_PDF_TEXT"
+          },
+          {
+            "field": "baseline_territory",
+            "value": "X",
+            "status": "NEEDS_USER_CONFIRMATION",
+            "source": {
+              "sha256": "cca92a7737ceec04760a43c96b72d5cc04bf3f5a049fa7236262bc0fe1f7e764",
+              "page": 1,
+              "line": 6,
+              "bbox": null,
+              "quote": "Baseline Territory: X",
+              "start": 0,
+              "end": 21
+            },
+            "method": "LOCAL_PDF_TEXT"
+          },
+          {
+            "field": "total_kwh",
+            "value": "25.5",
+            "status": "NEEDS_USER_CONFIRMATION",
+            "source": {
+              "sha256": "cca92a7737ceec04760a43c96b72d5cc04bf3f5a049fa7236262bc0fe1f7e764",
+              "page": 1,
+              "line": 7,
+              "bbox": null,
+              "quote": "Usage 25.5 kWh",
+              "start": 0,
+              "end": 14
+            },
+            "method": "LOCAL_PDF_TEXT"
+          },
+          {
+            "field": "current_plan",
+            "value": "E-TOU-D",
+            "status": "NEEDS_USER_CONFIRMATION",
+            "source": {
+              "sha256": "cca92a7737ceec04760a43c96b72d5cc04bf3f5a049fa7236262bc0fe1f7e764",
+              "page": 2,
+              "line": 3,
+              "bbox": null,
+              "quote": "Rate Schedule: E-TOU-D",
+              "start": 0,
+              "end": 22
+            },
+            "method": "LOCAL_PDF_TEXT"
+          },
+          {
+            "field": "reported_energy_charge",
+            "value": "12.34",
+            "status": "NEEDS_USER_CONFIRMATION",
+            "source": {
+              "sha256": "cca92a7737ceec04760a43c96b72d5cc04bf3f5a049fa7236262bc0fe1f7e764",
+              "page": 2,
+              "line": 4,
+              "bbox": null,
+              "quote": "Energy Charges $12.34",
+              "start": 0,
+              "end": 21
+            },
+            "method": "LOCAL_PDF_TEXT"
+          },
+          {
+            "field": "reported_base_services_charge",
+            "value": "0.79",
+            "status": "NEEDS_USER_CONFIRMATION",
+            "source": {
+              "sha256": "cca92a7737ceec04760a43c96b72d5cc04bf3f5a049fa7236262bc0fe1f7e764",
+              "page": 2,
+              "line": 5,
+              "bbox": null,
+              "quote": "Base Services Charge $0.79",
+              "start": 0,
+              "end": 26
+            },
+            "method": "LOCAL_PDF_TEXT"
+          },
+          {
+            "field": "baseline_territory",
+            "value": "X",
+            "status": "NEEDS_USER_CONFIRMATION",
+            "source": {
+              "sha256": "cca92a7737ceec04760a43c96b72d5cc04bf3f5a049fa7236262bc0fe1f7e764",
+              "page": 2,
+              "line": 6,
+              "bbox": null,
+              "quote": "Baseline Territory: X",
+              "start": 0,
+              "end": 21
+            },
+            "method": "LOCAL_PDF_TEXT"
+          },
+          {
+            "field": "total_kwh",
+            "value": "25.5",
+            "status": "NEEDS_USER_CONFIRMATION",
+            "source": {
+              "sha256": "cca92a7737ceec04760a43c96b72d5cc04bf3f5a049fa7236262bc0fe1f7e764",
+              "page": 2,
+              "line": 7,
+              "bbox": null,
+              "quote": "Usage 25.5 kWh",
+              "start": 0,
+              "end": 14
+            },
+            "method": "LOCAL_PDF_TEXT"
+          }
+        ],
+        "missing_fields": [],
+        "conflicting_fields": [],
+        "automatic_calculation": false,
+        "automatic_confirmation": false,
+        "warnings": [
+          "Verify each candidate against the cited page/line before supplying it to validate/compare.",
+          "Total amount due is excluded. A bill's total kWh cannot replace interval usage.",
+          "No eligibility, account number, login, medical data or income is inferred."
+        ]
+      },
+      "milliseconds": 196.617
+    }
+  ],
+  "limits": [
+    "Authored synthetic fixtures, not customer bills or population accuracy",
+    "OCR confidence is uncalibrated; all fields still need user confirmation",
+    "No tariff update, calculator activation, account action or deployment"
+  ]
+}
