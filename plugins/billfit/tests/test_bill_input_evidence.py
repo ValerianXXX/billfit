@@ -122,9 +122,10 @@ class BillInputOcrEvidenceTests(unittest.TestCase):
         for left, width in [(-1, 80), (1290, 80), (50, 0)]:
             rows = [*WORDS]
             pieces = rows[-1].split('\t'); pieces[6] = str(left); pieces[8] = str(width); rows[-1] = '\t'.join(pieces)
-            with self.subTest(left=left, width=width), self.assertRaises(BillFitError) as caught:
-                self.run_ocr('\n'.join([HEADER, PAGE, *rows]) + '\n')
-            self.assertEqual(caught.exception.code, 'OCR_OUTPUT_INVALID')
+            with self.subTest(left=left, width=width):
+                with self.assertRaises(BillFitError) as caught:
+                    self.run_ocr('\n'.join([HEADER, PAGE, *rows]) + '\n')
+                self.assertEqual(caught.exception.code, 'OCR_OUTPUT_INVALID')
 
     def test_duplicate_word_identity_with_conflicting_text_is_rejected(self):
         with self.assertRaises(BillFitError) as caught:
@@ -138,15 +139,17 @@ class BillInputOcrEvidenceTests(unittest.TestCase):
 
     def test_nonfinite_or_out_of_range_confidence_is_rejected(self):
         for value in ('nan', '101', '-2'):
-            with self.subTest(value=value), self.assertRaises(BillFitError) as caught:
-                self.run_ocr(TSV.replace('\t32\t', '\t' + value + '\t'))
-            self.assertEqual(caught.exception.code, 'OCR_OUTPUT_INVALID')
+            with self.subTest(value=value):
+                with self.assertRaises(BillFitError) as caught:
+                    self.run_ocr(TSV.replace('\t32\t', '\t' + value + '\t'))
+                self.assertEqual(caught.exception.code, 'OCR_OUTPUT_INVALID')
 
     def test_malformed_tsv_is_not_reported_as_an_empty_readable_bill(self):
         for text in ('not a TSV\n', TSV.replace('conf\ttext', 'conf\tconf'), TSV.replace('\t32\t', '\t32\textra\t')):
-            with self.subTest(text=text[:30]), self.assertRaises(BillFitError) as caught:
-                self.run_ocr(text)
-            self.assertEqual(caught.exception.code, 'OCR_OUTPUT_INVALID')
+            with self.subTest(text=text[:30]):
+                with self.assertRaises(BillFitError) as caught:
+                    self.run_ocr(text)
+                self.assertEqual(caught.exception.code, 'OCR_OUTPUT_INVALID')
 
     def test_process_failure_is_a_fixed_redacted_domain_error(self):
         with self.assertRaises(BillFitError) as caught:
