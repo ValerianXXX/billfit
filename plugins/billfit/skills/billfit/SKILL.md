@@ -23,6 +23,8 @@ For a user-supplied PDF/image bill, `extract-bill` accepts `bill_file`. Every re
 
 Also show relevant `unresolved_fields` and `quality_flags`. OCR confidence is an uncalibrated engine signal, not a probability that an amount is correct; high confidence does not remove review. Do not repair comma groups, credits, ranges or plan suffixes with model guesses. Repeated pages remain separate evidence and are not additional charges. On `BILL_SOURCE_CHANGED`, have the user select the intended version; on time/output/parser errors, request a smaller readable export or manually verified fields. Skewed and rotated images are not reliably supported. Keep the original and let the user provide an upright copy rather than silently transforming or uploading it.
 
+The optional `--sdk` server admits two bill extractions per instance. On `BILL_PARSER_BUSY`, retain the supplied path and wait for an active extraction to complete or be cancelled; do not loop or create another server to bypass the limit. A cancelled call supplies no confirmed fields or successful result. The default synchronous legacy shim does not provide cooperative MCP cancellation. CLI tools retain their existing behavior.
+
 Use file paths exactly as supplied by the user or execution client, including relative filenames. Never invent a directory such as `/mnt/data` or convert a filename into an assumed absolute path. If no accessible path was provided, request that missing path; if a read fails, report it instead of guessing other files. Local parsing does not mean a cloud model conversation is local: the host may send returned field values, evidence snippets and calculation results to its configured model provider.
 
 ## Safety and scope
