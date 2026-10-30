@@ -2,6 +2,8 @@
 
 ## Unreleased — 2026-10-30
 
+- Run bill extraction in an optional SDK worker with cooperative request cancellation. Clean up the owned PDF/OCR child and temporary snapshot before releasing the per-instance parser slot; keep up to two extractions active and reject excess work with `BILL_PARSER_BUSY`.
+- Preserve the standard-library CLI and synchronous legacy shim. Freeze five cancellation/admission contracts before implementation: three missing-interface errors and two real SDK responsiveness timeouts become five passes. Add two request-isolation scenarios; the full local optional-profile suite passes 124 tests. No new dependency, tariff update, model call or OCR accuracy claim.
 - Separate candidate extraction, OCR TSV validation, PDF parsing and bounded process capture. Parse owned byte snapshots, retain exact hashes and reject a changed source before returning evidence.
 - Reject malformed number grouping, partial amounts, credits, ranges and unsupported plan suffixes. Preserve source excerpts in `unresolved_fields`; retain repeated/conflicting candidates without summing or confirming them.
 - Validate OCR page geometry, word identity and finite confidence. Expose confidence as an uncalibrated review signal and restrict candidate boxes to contributing words.

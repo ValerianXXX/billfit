@@ -1,0 +1,116 @@
+{
+  "observedAt": "2026-10-30T13:11:01.802893+00:00",
+  "baseCommit": "ef9bab24be0ac9b098e3361822b4eb2333950af3",
+  "frozenTestCommit": "b1dc06000a36043389bb38e27b29c3eb1b61ea1f",
+  "sourceCommit": "81cf326337916f1c42869b68957da957d28a2cd3",
+  "environment": {
+    "platform": "Windows",
+    "python": "3.11.3",
+    "mcp": "2.3.0",
+    "anyio": "4.15.1",
+    "pypdf": "6.21.3"
+  },
+  "verification": {
+    "baseline": {
+      "path": "reports/parser-cancellation-baseline-20261030.log",
+      "sha256": "337e152c6df63c37ed8ff276026b73f66a98858ad8dd67eb2df5943e1508612a",
+      "tests": 117,
+      "seconds": 15.314,
+      "status": "PASS",
+      "skipped": 0
+    },
+    "frozenBefore": {
+      "path": "reports/parser-cancellation-before-20261030.log",
+      "sha256": "7bd9bfcabfddecea542b8b0457639a77919dff1fff7abc5276e8f84b3aad2a32",
+      "tests": 5,
+      "seconds": 8.322,
+      "status": "FAIL",
+      "skipped": 0
+    },
+    "frozenAfter": {
+      "path": "reports/parser-cancellation-after-20261030.log",
+      "sha256": "d0258297efa2b72505a1555c2da3bfb50a6d81f2a64742c21eb4a32af590ab4e",
+      "tests": 5,
+      "seconds": 5.305,
+      "status": "PASS",
+      "skipped": 0
+    },
+    "fullSuite": {
+      "path": "reports/parser-cancellation-full-20261030.log",
+      "sha256": "65324d683e8dba4bdfee987de6aeee91367634f352f4ee87c27e9274b34fd615",
+      "tests": 124,
+      "seconds": 27.082,
+      "status": "PASS",
+      "skipped": 0
+    }
+  },
+  "frozenBeforeFailureKinds": {
+    "missingCancellationInterface": 3,
+    "actualSdkScopeRequestTimeout": 2
+  },
+  "additionalContracts": {
+    "methods": 2,
+    "purpose": "Cancelling one of two active requests leaves the other running and releases one slot for a real PDF extraction",
+    "modes": [
+      "2026-07-28",
+      "legacy (2025-11-25)"
+    ]
+  },
+  "runtimeBoundary": {
+    "sdkServerOnly": true,
+    "perInstanceParserLimit": 2,
+    "queuedRequests": false,
+    "busyCode": "BILL_PARSER_BUSY",
+    "workerAbandoned": false,
+    "automaticFieldConfirmation": false,
+    "modelRequests": 0,
+    "modelCostComparison": null,
+    "productionChanges": false
+  },
+  "sourceHashes": {
+    "plugins/billfit/skills/billfit/scripts/bill_cancellation.py": {
+      "gitBlobSha256": "2d86f5757a3e67895efa06f8e555d5e039919168d46beb45bd012a7f5292e036",
+      "testedLocalRawSha256": "2d86f5757a3e67895efa06f8e555d5e039919168d46beb45bd012a7f5292e036"
+    },
+    "plugins/billfit/skills/billfit/scripts/bill_process.py": {
+      "gitBlobSha256": "27caf17ab1416ef2272732b05aa53d1a955f218247aea954cd1019e9e1b6e647",
+      "testedLocalRawSha256": "27caf17ab1416ef2272732b05aa53d1a955f218247aea954cd1019e9e1b6e647"
+    },
+    "plugins/billfit/skills/billfit/scripts/bill_input.py": {
+      "gitBlobSha256": "fa9744d7cf6126dd67dfe51039d0fa3ffdc8ac98bf2f8d1b14b01e3c0ee5eeb0",
+      "testedLocalRawSha256": "fa9744d7cf6126dd67dfe51039d0fa3ffdc8ac98bf2f8d1b14b01e3c0ee5eeb0"
+    },
+    "plugins/billfit/skills/billfit/scripts/mcp_server.py": {
+      "gitBlobSha256": "3897bf7c23e3d1234dc9a9d6941ca91dff88e75b3f25300c52604ff0b8832cf6",
+      "testedLocalRawSha256": "3a6ea721cb54c1d30d692f60216157546ea30d171e31a618c782f6caa27b93d8"
+    },
+    "plugins/billfit/tests/test_parser_cancellation.py": {
+      "gitBlobSha256": "dc6f1427b6d6d90ce558ebbb854660be3600eb620c848fcf4f6cd23ba0ce7db6",
+      "testedLocalRawSha256": "dc6f1427b6d6d90ce558ebbb854660be3600eb620c848fcf4f6cd23ba0ce7db6"
+    },
+    "plugins/billfit/tests/fixtures/mcp_cancellation_server.py": {
+      "gitBlobSha256": "8f678aca917c25897f9842c386e8670251c1ebed38e340621284d872b8fa0aee",
+      "testedLocalRawSha256": "8f678aca917c25897f9842c386e8670251c1ebed38e340621284d872b8fa0aee"
+    },
+    ".github/workflows/test.yml": {
+      "gitBlobSha256": "84b603ab87c586fc113ebe1de73dc08bccf93e8bdfd624c1853908a215d0b968",
+      "testedLocalRawSha256": "6f9694952f99f6eb1a1099f25029be20dfb0217c897ff52426eb8e16b903f5f6"
+    }
+  },
+  "limitations": [
+    "No cross-server global admission or hard decoder memory cap",
+    "Default synchronous stdlib shim unchanged",
+    "No new native OCR, Hermes model-selected cancellation or independent user acceptance",
+    "No new OCR recall result; skew and rotation failures remain",
+    "Cooperative checkpoints do not interrupt arbitrary filesystem/native calls",
+    "Only the directly owned parser child is terminated",
+    "Tariff verification remains 2026-10-27"
+  ],
+  "officialSourcesCheckedOn": "2026-10-30",
+  "officialSources": [
+    "https://py.sdk.modelcontextprotocol.io/handlers/cancellation/",
+    "https://py.sdk.modelcontextprotocol.io/migration/#cancelled-requests-are-no-longer-answered"
+  ],
+  "hostedCi": "PENDING_PR_PUSH",
+  "hashNotes": "Git blob SHA256 is portable across checkout line endings. Local raw hashes bind actual tested bytes. Original local logs are not committed; they may contain local paths."
+}

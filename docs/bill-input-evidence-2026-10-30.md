@@ -147,6 +147,12 @@ photographs, varied real bill layouts, native Windows OCR, user cancellation,
 hard memory limits and independent user acceptance remain open. No multi-account,
 credit, export or new-region calculation scope is added.
 
+These are the boundaries of the original input milestone. The subsequent
+[SDK parser cancellation milestone](parser-cancellation-2026-10-30.md) validates
+cooperative cancellation and two-parser admission in both SDK transport profiles.
+The default synchronous shim, hard memory limit and independent user acceptance
+remain outside that follow-up's verified scope.
+
 Official documentation checked on October 30:
 
 - [Tesseract command-line and TSV output](https://tesseract-ocr.github.io/tessdoc/Command-Line-Usage.html):
