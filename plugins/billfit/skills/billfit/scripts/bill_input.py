@@ -15,6 +15,7 @@ import stat
 import sys
 import tempfile
 
+from bill_cancellation import check_cancelled
 from billfit_errors import BillFitError
 from bill_ocr import extract_ocr_spans
 from bill_process import run_bounded
@@ -64,11 +65,14 @@ def _source(span: dict, sha256: str, start: int, end: int) -> tuple[dict, list[s
 
 
 def extract_spans(spans: list[dict], source_sha256: str, method: str) -> dict:
+    check_cancelled()
     candidates, unresolved = [], []
     for span in spans:
+        check_cancelled()
         text = span["text"]
         matches = list(LABEL_RE.finditer(text))
         for index, label in enumerate(matches):
+            check_cancelled()
             field = label.lastgroup
             end = matches[index + 1].start() if index + 1 < len(matches) else len(text)
             separator = text.find(";", label.end(), end)
@@ -91,6 +95,7 @@ def extract_spans(spans: list[dict], source_sha256: str, method: str) -> dict:
                 unresolved.append({"field": field, "reason": "AMBIGUOUS_OR_UNSUPPORTED_VALUE",
                                    "source": source, "quality_flags": flags})
     by_field = {key: [row["value"] for row in candidates if row["field"] == key] for key in LABELS}
+    check_cancelled()
     return {"status": "REVIEW_REQUIRED", "candidates": candidates, "unresolved_fields": unresolved,
             "missing_fields": [key for key, values in by_field.items() if not values],
             "conflicting_fields": [key for key, values in by_field.items() if len(set(values)) > 1],
@@ -107,6 +112,7 @@ def _fingerprint(info: os.stat_result) -> tuple:
 
 
 def _read_source(path: Path) -> tuple[bytes, tuple]:
+    check_cancelled()
     try:
         # Nonblocking avoids opening a FIFO as a bill on supported platforms.
         descriptor = os.open(path, os.O_RDONLY | getattr(os, "O_BINARY", 0) | getattr(os, "O_NONBLOCK", 0))
@@ -119,6 +125,7 @@ def _read_source(path: Path) -> tuple[bytes, tuple]:
                 raise BillFitError("BILL_FILE_LIMIT", "Supply one regular local bill file under 25 MB.")
             if _fingerprint(before) != _fingerprint(os.fstat(handle.fileno())):
                 raise BillFitError("BILL_SOURCE_CHANGED", "The supplied file changed. Select the intended version and retry.")
+            check_cancelled()
             return raw, _fingerprint(before)
     except OSError as exc:
         raise BillFitError("BILL_FILE_UNAVAILABLE", "The supplied local file could not be read.") from exc
@@ -153,6 +160,7 @@ def _pdf_spans(raw: bytes) -> list[dict]:
         if len(spans) > 50_000:
             raise ValueError("Invalid worker response")
         for span in spans:
+            check_cancelled()
             if not isinstance(span, dict) or set(span) != {"text", "page", "line"} or not isinstance(span["text"], str):
                 raise ValueError("Invalid worker response")
             if type(span["page"]) is not int or not 1 <= span["page"] <= 25 or type(span["line"]) is not int or span["line"] < 1:
@@ -163,6 +171,7 @@ def _pdf_spans(raw: bytes) -> list[dict]:
 
 
 def extract_bill_fields(bill_file: str) -> dict:
+    check_cancelled()
     try:
         path = Path(bill_file).expanduser().resolve(strict=True)
     except (OSError, ValueError) as exc:
@@ -189,6 +198,7 @@ def extract_bill_fields(bill_file: str) -> dict:
             if snapshot_raw != raw:
                 raise BillFitError("BILL_SOURCE_CHANGED", "The extraction snapshot changed. Check the configured OCR executable before retrying.")
         method = "LOCAL_TESSERACT_OCR"
+    check_cancelled()
     if sum(len(span["text"]) for span in spans) > MAX_TEXT_CHARS:
         raise BillFitError("BILL_TEXT_LIMIT", "Bill text exceeds the extraction limit.")
     try:
@@ -197,6 +207,7 @@ def extract_bill_fields(bill_file: str) -> dict:
         raise BillFitError("BILL_SOURCE_CHANGED", "The supplied file changed or became unavailable. Select the intended version and retry.") from exc
     if current_fingerprint != fingerprint or current != raw:
         raise BillFitError("BILL_SOURCE_CHANGED", "The supplied file changed. Select the intended version and retry.")
+    check_cancelled()
     result = extract_spans(spans, sha256, method)
     result["source_sha256"] = sha256
     result["method"] = method
@@ -204,4 +215,5 @@ def extract_bill_fields(bill_file: str) -> dict:
         result["warnings"].append("No readable text. For a scanned PDF, export the relevant page to an image and use local OCR.")
     if not result["candidates"]:
         result["warnings"].append("No supported fields were extracted. Check image orientation and legibility, then retry or enter verified fields manually.")
+    check_cancelled()
     return result

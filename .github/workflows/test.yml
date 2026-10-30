@@ -27,3 +27,5 @@ jobs:
         run: python -m unittest discover -s plugins/billfit/tests -p test_usage_integration.py -v
       - name: Verify isolated PDF extraction and MCP recovery
         run: python -m unittest discover -s plugins/billfit/tests -p test_bill_input_runtime.py -v
+      - name: Verify real SDK cancellation and parser admission
+        run: python -m unittest discover -s plugins/billfit/tests -p test_parser_cancellation.py -v

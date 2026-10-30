@@ -212,10 +212,16 @@ def serve() -> None:
 def serve_sdk() -> None:
     """Optional official SDK owns modern discovery and legacy initialization/framing."""
     import asyncio
+    import anyio
     import jsonschema
     import mcp_types as types
+    from bill_cancellation import cancellation_scope
     from mcp.server import Server
     from mcp.server.stdio import stdio_server
+
+    # Per server instance, shared by all connections handled by this instance.
+    # Reject excess work rather than queueing another private bill snapshot.
+    parser_slots = anyio.Semaphore(2)
 
     async def listed(ctx, params):
         return types.ListToolsResult(tools=[types.Tool.model_validate(tool) for tool in TOOLS])
@@ -227,7 +233,28 @@ def serve_sdk() -> None:
                 jsonschema.validate(params.arguments or {}, tool["inputSchema"])
             except jsonschema.ValidationError:
                 return types.CallToolResult.model_validate(_tool_result({"status": "error", "error": {"code": "INVALID_ARGUMENTS", "message": "Arguments do not match the tool schema."}}, True))
-        result = _handle({"id": 1, "method": "tools/call", "params": {"name": params.name, "arguments": params.arguments or {}}})
+        request = {"id": 1, "method": "tools/call", "params": {"name": params.name, "arguments": params.arguments or {}}}
+        if params.name == "billfit_extract_bill_fields":
+            try:
+                parser_slots.acquire_nowait()
+            except anyio.WouldBlock:
+                return types.CallToolResult.model_validate(_tool_result({"status": "error", "error": {
+                    "code": "BILL_PARSER_BUSY", "message": "Two bill extractions are already active. Wait for completion or cancellation before retrying."
+                }}, True))
+
+            def extract():
+                with cancellation_scope(anyio.from_thread.check_cancelled):
+                    return _handle(request)
+
+            try:
+                # Keep the event loop responsive. Do not abandon the worker:
+                # its checkpoints propagate cancellation and its finally blocks
+                # reap the owned child and remove the private snapshot first.
+                result = await anyio.to_thread.run_sync(extract)
+            finally:
+                parser_slots.release()
+        else:
+            result = _handle(request)
         return types.CallToolResult.model_validate(result["result"])
 
     server = Server("billfit", version="0.2.0", on_list_tools=listed, on_call_tool=called)

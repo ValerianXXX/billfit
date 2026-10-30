@@ -4,6 +4,7 @@ import os
 import subprocess
 import threading
 import time
+from bill_cancellation import check_cancelled
 from billfit_errors import BillFitError
 
 
@@ -14,6 +15,7 @@ def run_bounded(command: list[str], *, timeout: float = 30,
     This limits wall time and captured output, not native decoder memory. The
     operator must configure a trusted local executable, not an input-supplied one.
     """
+    check_cancelled()
     started = time.monotonic()
     try:
         process = subprocess.Popen(command, stdin=subprocess.DEVNULL, stdout=subprocess.PIPE,
@@ -53,6 +55,7 @@ def run_bounded(command: list[str], *, timeout: float = 30,
         thread.start()
     try:
         while True:
+            check_cancelled()
             if failed.is_set():
                 code = errors[0]
                 message = f"{kind} output exceeded the limit." if code == f"{kind}_OUTPUT_LIMIT" else f"The local {kind} process could not be read."
@@ -65,9 +68,11 @@ def run_bounded(command: list[str], *, timeout: float = 30,
             failed.wait(min(0.01, remaining))
         if process.returncode != 0:
             raise BillFitError(f"LOCAL_{kind}_FAILED", f"Local {kind} parsing failed. Check the file and local parser installation.")
+        check_cancelled()
         return b"".join(chunks)
     finally:
         # Only this invocation's child is controlled; no process-name scans.
+        failed.set()
         if process.poll() is None:
             process.kill()
         try:

@@ -79,7 +79,7 @@ class ActualSdkCancellationTests(unittest.TestCase):
                 self.fail('Synthetic parser did not reach the required checkpoint in time')
             await asyncio.sleep(.02)
 
-    async def scenario(self, mode):
+    async def scenario(self, mode, cancel_one_only=False):
         from mcp import Client
         from mcp.client.stdio import StdioServerParameters
         fixture = Path(__file__).parent / 'fixtures/mcp_cancellation_server.py'
@@ -104,6 +104,17 @@ class ActualSdkCancellationTests(unittest.TestCase):
                     self.assertEqual(busy.structured_content['error']['code'],'BILL_PARSER_BUSY')
                     self.assertFalse((root/'started-3.json').exists())
                     records=[json.loads((root/f'started-{i}.json').read_text()) for i in (1,2)]
+                    if cancel_one_only:
+                        pending[0].cancel()
+                        await asyncio.gather(pending[0], return_exceptions=True)
+                        await self.until(lambda:(root/'settled-1').exists() and not Path(records[0]['snapshot']).exists())
+                        self.assertFalse((root/'settled-2').exists())
+                        self.assertTrue(Path(records[1]['snapshot']).exists())
+                        self.assertFalse(pending[1].done())
+                        recovered=await asyncio.wait_for(client.call_tool('billfit_extract_bill_fields',{'bill_file':str(pdf)}),5)
+                        self.assertFalse(recovered.is_error)
+                        self.assertEqual(len(recovered.structured_content['candidates']),10)
+                        self.assertFalse((root/'settled-2').exists())
                     for task in pending:
                         task.cancel()
                     await asyncio.gather(*pending,return_exceptions=True)
@@ -127,6 +138,12 @@ class ActualSdkCancellationTests(unittest.TestCase):
 
     def test_legacy_sdk_remains_responsive_bounds_parser_work_and_cleans_cancelled_calls(self):
         asyncio.run(self.scenario('legacy'))
+
+    def test_modern_sdk_cancellation_is_request_local_and_releases_only_one_slot(self):
+        asyncio.run(self.scenario('2026-07-28', cancel_one_only=True))
+
+    def test_legacy_sdk_cancellation_is_request_local_and_releases_only_one_slot(self):
+        asyncio.run(self.scenario('legacy', cancel_one_only=True))
 
 
 if __name__ == '__main__':
