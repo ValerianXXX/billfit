@@ -1,0 +1,67 @@
+{
+  "observedAt": "2026-10-30T01:19:20.844136+00:00",
+  "syntheticOnly": true,
+  "baseCommit": "c8e9c305f048f66561a5312121bca22436417126",
+  "testFreezeCommit": "95396c51d9fb42fa94415dca46c331a33e2f550a",
+  "frozenTestsLfSha256": "2ad28ddb5ba5ef04d22fff467a1335520e0f59d5e107e01e8e85acc66b5b6a52",
+  "before": {
+    "total": 14,
+    "passed": 3,
+    "failures": 7,
+    "errors": 4
+  },
+  "after": {
+    "total": 14,
+    "passed": 14,
+    "failures": 0,
+    "errors": 0
+  },
+  "fullStdlibRun": {
+    "total": 86,
+    "passed": 83,
+    "skipped": 3
+  },
+  "fullExistingVenvRun": {
+    "total": 86,
+    "passed": 86,
+    "skipped": 0
+  },
+  "localLogLfHashes": {
+    "csv-energy-before-20261029.log": "4c4bf7ef8dcd3d69c47955b9fc7d539f5d1009044217d583f3b642c46a373a0d",
+    "csv-energy-after-20261029.log": "b32d831dddcef201a9efc4f36d438b1964133c7bc9157c11c344d3596e652949",
+    "csv-energy-full-20261029.log": "c04a296af7647c19fcdf2cc0243072c3325529738dd629cf9ea50eab805a257a",
+    "csv-energy-full-profiles-20261029.log": "9b7f3d018ffa2a70d4f194b6a87f915ab37872ce012bb9ba7fc976ab584ede1f"
+  },
+  "originalResearchCsvLfSha256": "3fa8a98966f8a77c1a49ba1ef2c9b2d6e22cf06affbe001c88c9838ce262b0dc",
+  "cli": [
+    {
+      "operation": "parse",
+      "exitCode": 0,
+      "intervalCount": 4,
+      "totalKwh": 2.0,
+      "elapsedMinutes": 240.0
+    },
+    {
+      "operation": "compare",
+      "exitCode": 0,
+      "intervalCount": 4,
+      "totalKwh": 2.0,
+      "elapsedMinutes": 240.0,
+      "recommendationStatus": "withheld_pending_usage_quality"
+    },
+    {
+      "operation": "conflicting-unit",
+      "exitCode": 2,
+      "errorCode": "CONFLICTING_USAGE_UNIT"
+    },
+    {
+      "operation": "ambiguous-columns",
+      "exitCode": 2,
+      "errorCode": "AMBIGUOUS_CSV_ENERGY_COLUMNS"
+    }
+  ],
+  "modelCalls": 0,
+  "tariffChanges": false,
+  "independentHumanAcceptance": false,
+  "historicalResearchObservationsUnchanged": true
+}
