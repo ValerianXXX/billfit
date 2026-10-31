@@ -1,0 +1,38 @@
+{
+  "checked_at": "2026-10-31T13:42:51.246051+00:00",
+  "sources": [
+    {
+      "source": "rates_page",
+      "url": "https://www.pge.com/tariffs/en/rate-information/electric-rates.html",
+      "bytes": 484941,
+      "sha256": "8ff355ad1ea4507ecbef543d3ab6c557b179115d27ab40c9a3de6a65fa8ab76a",
+      "status": "RETRIEVED"
+    },
+    {
+      "source": "rates_workbook",
+      "url": "https://www.pge.com/assets/rates/tariffs/res-inclu-tou-current.xlsx",
+      "bytes": 37626,
+      "sha256": "e071be6fd457a92da60637fc529c1e4c7a5620ffd83d3ae221819f7e4866995d",
+      "status": "BYTE_IDENTICAL",
+      "previous_sha256": "e071be6fd457a92da60637fc529c1e4c7a5620ffd83d3ae221819f7e4866995d",
+      "content_changed": false
+    },
+    {
+      "source": "assistance",
+      "url": "https://www.cpuc.ca.gov/care/",
+      "bytes": 60160,
+      "sha256": "83ad480ad3ff2c3108c4ea520295cd7ece340126850c38f804419f5a90c6d967",
+      "status": "RETRIEVED"
+    },
+    {
+      "source": "medical",
+      "url": "https://www.pge.com/en/account/billing-and-assistance/financial-assistance/medical-baseline-program.html",
+      "bytes": 227389,
+      "sha256": "a132ea23da0800233682e711e841f580b4d6bbc546358adf18a24d902d949f52",
+      "status": "RETRIEVED"
+    }
+  ],
+  "rate_change_confirmed": null,
+  "automatic_activation": false,
+  "next_action": "Review the effective date and tariff rules. A changed hash alone does not prove changed rates. No packaged data or verification date was modified."
+}

@@ -40,6 +40,13 @@ Use file paths exactly as supplied by the user or execution client, including re
 - Treat every result as a screening or comparable-charge estimate. The cited official tariff and the utility's decision control.
 - Preserve unknown facts as explicit human gates. Do not invent a baseline territory, heating type, technology, income, current plan, or assistance status.
 
+Maintenance review packages are not calculator activation or release approval.
+`REVIEW_REQUIRED` with matching hashes/replayed calculations still needs source
+mapping, effective-date review and owner approval of an exact published version.
+Do not edit a package's approval/gates or use synthetic counterfactual rates for
+customer advice. The ordinary calculator continues to use its packaged rules;
+no MCP argument selects an unapproved tariff snapshot.
+
 ## Workflow
 
 ### 1. Establish the smallest valid scope
