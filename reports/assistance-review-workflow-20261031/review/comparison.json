@@ -1,0 +1,410 @@
+{
+  "status": "REVIEW_REQUIRED",
+  "automatic_activation": false,
+  "differences": [],
+  "regression_scenarios": [
+    {
+      "season": "winter",
+      "old": [
+        {
+          "status": "calculated",
+          "plan": "E-1",
+          "plan_name": "Tiered Rate Plan",
+          "usage_kwh": 24.0,
+          "billing_days": 1,
+          "baseline_kwh": 7.8,
+          "usage_by_period_kwh": {
+            "tier_1": 7.8,
+            "tier_2": 16.2
+          },
+          "raw_energy_charge": 9.13,
+          "assistance_program": "NONE",
+          "assistance_discount": 0.0,
+          "energy_charge_after_discount": 9.13,
+          "base_services_charge": 0.79,
+          "estimated_comparable_total": 9.93,
+          "annualized_comparable_total": 3625.73
+        },
+        {
+          "status": "calculated",
+          "plan": "E-TOU-C",
+          "plan_name": "Time-of-Use 4-9 p.m. Every Day",
+          "usage_kwh": 24.0,
+          "billing_days": 1,
+          "baseline_kwh": 7.8,
+          "usage_by_period_kwh": {
+            "winter_off_peak": 19.0,
+            "winter_peak": 5.0
+          },
+          "raw_energy_charge": 8.34,
+          "assistance_program": "NONE",
+          "assistance_discount": 0.0,
+          "energy_charge_after_discount": 8.34,
+          "base_services_charge": 0.79,
+          "estimated_comparable_total": 9.13,
+          "annualized_comparable_total": 3334.73
+        },
+        {
+          "status": "calculated",
+          "plan": "E-TOU-D",
+          "plan_name": "Time-of-Use 5-8 p.m. Weekdays",
+          "usage_kwh": 24.0,
+          "billing_days": 1,
+          "baseline_kwh": null,
+          "usage_by_period_kwh": {
+            "winter_off_peak": 21.0,
+            "winter_peak": 3.0
+          },
+          "raw_energy_charge": 8.49,
+          "assistance_program": "NONE",
+          "assistance_discount": 0.0,
+          "energy_charge_after_discount": 8.49,
+          "base_services_charge": 0.79,
+          "estimated_comparable_total": 9.28,
+          "annualized_comparable_total": 3390.14
+        },
+        {
+          "status": "calculated",
+          "plan": "EV2-A",
+          "plan_name": "Home Charging EV2-A",
+          "usage_kwh": 24.0,
+          "billing_days": 1,
+          "baseline_kwh": null,
+          "usage_by_period_kwh": {
+            "winter_off_peak": 15.0,
+            "winter_partial_peak": 4.0,
+            "winter_peak": 5.0
+          },
+          "raw_energy_charge": 7.02,
+          "assistance_program": "NONE",
+          "assistance_discount": 0.0,
+          "energy_charge_after_discount": 7.02,
+          "base_services_charge": 0.79,
+          "estimated_comparable_total": 7.81,
+          "annualized_comparable_total": 2852.25
+        },
+        {
+          "status": "calculated",
+          "plan": "E-ELEC",
+          "plan_name": "Electric Home Rate Plan",
+          "usage_kwh": 24.0,
+          "billing_days": 1,
+          "baseline_kwh": null,
+          "usage_by_period_kwh": {
+            "winter_off_peak": 15.0,
+            "winter_partial_peak": 4.0,
+            "winter_peak": 5.0
+          },
+          "raw_energy_charge": 7.07,
+          "assistance_program": "NONE",
+          "assistance_discount": 0.0,
+          "energy_charge_after_discount": 7.07,
+          "base_services_charge": 0.79,
+          "estimated_comparable_total": 7.86,
+          "annualized_comparable_total": 2871.15
+        }
+      ],
+      "candidate": [
+        {
+          "status": "calculated",
+          "plan": "E-1",
+          "plan_name": "Tiered Rate Plan",
+          "usage_kwh": 24.0,
+          "billing_days": 1,
+          "baseline_kwh": 7.8,
+          "usage_by_period_kwh": {
+            "tier_1": 7.8,
+            "tier_2": 16.2
+          },
+          "raw_energy_charge": 9.13,
+          "assistance_program": "NONE",
+          "assistance_discount": 0.0,
+          "energy_charge_after_discount": 9.13,
+          "base_services_charge": 0.79,
+          "estimated_comparable_total": 9.93,
+          "annualized_comparable_total": 3625.73
+        },
+        {
+          "status": "calculated",
+          "plan": "E-TOU-C",
+          "plan_name": "Time-of-Use 4-9 p.m. Every Day",
+          "usage_kwh": 24.0,
+          "billing_days": 1,
+          "baseline_kwh": 7.8,
+          "usage_by_period_kwh": {
+            "winter_off_peak": 19.0,
+            "winter_peak": 5.0
+          },
+          "raw_energy_charge": 8.34,
+          "assistance_program": "NONE",
+          "assistance_discount": 0.0,
+          "energy_charge_after_discount": 8.34,
+          "base_services_charge": 0.79,
+          "estimated_comparable_total": 9.13,
+          "annualized_comparable_total": 3334.73
+        },
+        {
+          "status": "calculated",
+          "plan": "E-TOU-D",
+          "plan_name": "Time-of-Use 5-8 p.m. Weekdays",
+          "usage_kwh": 24.0,
+          "billing_days": 1,
+          "baseline_kwh": null,
+          "usage_by_period_kwh": {
+            "winter_off_peak": 21.0,
+            "winter_peak": 3.0
+          },
+          "raw_energy_charge": 8.49,
+          "assistance_program": "NONE",
+          "assistance_discount": 0.0,
+          "energy_charge_after_discount": 8.49,
+          "base_services_charge": 0.79,
+          "estimated_comparable_total": 9.28,
+          "annualized_comparable_total": 3390.14
+        },
+        {
+          "status": "calculated",
+          "plan": "EV2-A",
+          "plan_name": "Home Charging EV2-A",
+          "usage_kwh": 24.0,
+          "billing_days": 1,
+          "baseline_kwh": null,
+          "usage_by_period_kwh": {
+            "winter_off_peak": 15.0,
+            "winter_partial_peak": 4.0,
+            "winter_peak": 5.0
+          },
+          "raw_energy_charge": 7.02,
+          "assistance_program": "NONE",
+          "assistance_discount": 0.0,
+          "energy_charge_after_discount": 7.02,
+          "base_services_charge": 0.79,
+          "estimated_comparable_total": 7.81,
+          "annualized_comparable_total": 2852.25
+        },
+        {
+          "status": "calculated",
+          "plan": "E-ELEC",
+          "plan_name": "Electric Home Rate Plan",
+          "usage_kwh": 24.0,
+          "billing_days": 1,
+          "baseline_kwh": null,
+          "usage_by_period_kwh": {
+            "winter_off_peak": 15.0,
+            "winter_partial_peak": 4.0,
+            "winter_peak": 5.0
+          },
+          "raw_energy_charge": 7.07,
+          "assistance_program": "NONE",
+          "assistance_discount": 0.0,
+          "energy_charge_after_discount": 7.07,
+          "base_services_charge": 0.79,
+          "estimated_comparable_total": 7.86,
+          "annualized_comparable_total": 2871.15
+        }
+      ]
+    },
+    {
+      "season": "summer",
+      "old": [
+        {
+          "status": "calculated",
+          "plan": "E-1",
+          "plan_name": "Tiered Rate Plan",
+          "usage_kwh": 24.0,
+          "billing_days": 1,
+          "baseline_kwh": 5.9,
+          "usage_by_period_kwh": {
+            "tier_1": 5.9,
+            "tier_2": 18.1
+          },
+          "raw_energy_charge": 9.29,
+          "assistance_program": "NONE",
+          "assistance_discount": 0.0,
+          "energy_charge_after_discount": 9.29,
+          "base_services_charge": 0.79,
+          "estimated_comparable_total": 10.08,
+          "annualized_comparable_total": 3682.23
+        },
+        {
+          "status": "calculated",
+          "plan": "E-TOU-C",
+          "plan_name": "Time-of-Use 4-9 p.m. Every Day",
+          "usage_kwh": 24.0,
+          "billing_days": 1,
+          "baseline_kwh": 5.9,
+          "usage_by_period_kwh": {
+            "summer_off_peak": 19.0,
+            "summer_peak": 5.0
+          },
+          "raw_energy_charge": 9.72,
+          "assistance_program": "NONE",
+          "assistance_discount": 0.0,
+          "energy_charge_after_discount": 9.72,
+          "base_services_charge": 0.79,
+          "estimated_comparable_total": 10.51,
+          "annualized_comparable_total": 3840.08
+        },
+        {
+          "status": "calculated",
+          "plan": "E-TOU-D",
+          "plan_name": "Time-of-Use 5-8 p.m. Weekdays",
+          "usage_kwh": 24.0,
+          "billing_days": 1,
+          "baseline_kwh": null,
+          "usage_by_period_kwh": {
+            "summer_off_peak": 21.0,
+            "summer_peak": 3.0
+          },
+          "raw_energy_charge": 8.62,
+          "assistance_program": "NONE",
+          "assistance_discount": 0.0,
+          "energy_charge_after_discount": 8.62,
+          "base_services_charge": 0.79,
+          "estimated_comparable_total": 9.41,
+          "annualized_comparable_total": 3436.64
+        },
+        {
+          "status": "calculated",
+          "plan": "EV2-A",
+          "plan_name": "Home Charging EV2-A",
+          "usage_kwh": 24.0,
+          "billing_days": 1,
+          "baseline_kwh": null,
+          "usage_by_period_kwh": {
+            "summer_off_peak": 15.0,
+            "summer_partial_peak": 4.0,
+            "summer_peak": 5.0
+          },
+          "raw_energy_charge": 7.78,
+          "assistance_program": "NONE",
+          "assistance_discount": 0.0,
+          "energy_charge_after_discount": 7.78,
+          "base_services_charge": 0.79,
+          "estimated_comparable_total": 8.58,
+          "annualized_comparable_total": 3133.04
+        },
+        {
+          "status": "calculated",
+          "plan": "E-ELEC",
+          "plan_name": "Electric Home Rate Plan",
+          "usage_kwh": 24.0,
+          "billing_days": 1,
+          "baseline_kwh": null,
+          "usage_by_period_kwh": {
+            "summer_off_peak": 15.0,
+            "summer_partial_peak": 4.0,
+            "summer_peak": 5.0
+          },
+          "raw_energy_charge": 9.33,
+          "assistance_program": "NONE",
+          "assistance_discount": 0.0,
+          "energy_charge_after_discount": 9.33,
+          "base_services_charge": 0.79,
+          "estimated_comparable_total": 10.12,
+          "annualized_comparable_total": 3695.84
+        }
+      ],
+      "candidate": [
+        {
+          "status": "calculated",
+          "plan": "E-1",
+          "plan_name": "Tiered Rate Plan",
+          "usage_kwh": 24.0,
+          "billing_days": 1,
+          "baseline_kwh": 5.9,
+          "usage_by_period_kwh": {
+            "tier_1": 5.9,
+            "tier_2": 18.1
+          },
+          "raw_energy_charge": 9.29,
+          "assistance_program": "NONE",
+          "assistance_discount": 0.0,
+          "energy_charge_after_discount": 9.29,
+          "base_services_charge": 0.79,
+          "estimated_comparable_total": 10.08,
+          "annualized_comparable_total": 3682.23
+        },
+        {
+          "status": "calculated",
+          "plan": "E-TOU-C",
+          "plan_name": "Time-of-Use 4-9 p.m. Every Day",
+          "usage_kwh": 24.0,
+          "billing_days": 1,
+          "baseline_kwh": 5.9,
+          "usage_by_period_kwh": {
+            "summer_off_peak": 19.0,
+            "summer_peak": 5.0
+          },
+          "raw_energy_charge": 9.72,
+          "assistance_program": "NONE",
+          "assistance_discount": 0.0,
+          "energy_charge_after_discount": 9.72,
+          "base_services_charge": 0.79,
+          "estimated_comparable_total": 10.51,
+          "annualized_comparable_total": 3840.08
+        },
+        {
+          "status": "calculated",
+          "plan": "E-TOU-D",
+          "plan_name": "Time-of-Use 5-8 p.m. Weekdays",
+          "usage_kwh": 24.0,
+          "billing_days": 1,
+          "baseline_kwh": null,
+          "usage_by_period_kwh": {
+            "summer_off_peak": 21.0,
+            "summer_peak": 3.0
+          },
+          "raw_energy_charge": 8.62,
+          "assistance_program": "NONE",
+          "assistance_discount": 0.0,
+          "energy_charge_after_discount": 8.62,
+          "base_services_charge": 0.79,
+          "estimated_comparable_total": 9.41,
+          "annualized_comparable_total": 3436.64
+        },
+        {
+          "status": "calculated",
+          "plan": "EV2-A",
+          "plan_name": "Home Charging EV2-A",
+          "usage_kwh": 24.0,
+          "billing_days": 1,
+          "baseline_kwh": null,
+          "usage_by_period_kwh": {
+            "summer_off_peak": 15.0,
+            "summer_partial_peak": 4.0,
+            "summer_peak": 5.0
+          },
+          "raw_energy_charge": 7.78,
+          "assistance_program": "NONE",
+          "assistance_discount": 0.0,
+          "energy_charge_after_discount": 7.78,
+          "base_services_charge": 0.79,
+          "estimated_comparable_total": 8.58,
+          "annualized_comparable_total": 3133.04
+        },
+        {
+          "status": "calculated",
+          "plan": "E-ELEC",
+          "plan_name": "Electric Home Rate Plan",
+          "usage_kwh": 24.0,
+          "billing_days": 1,
+          "baseline_kwh": null,
+          "usage_by_period_kwh": {
+            "summer_off_peak": 15.0,
+            "summer_partial_peak": 4.0,
+            "summer_peak": 5.0
+          },
+          "raw_energy_charge": 9.33,
+          "assistance_program": "NONE",
+          "assistance_discount": 0.0,
+          "energy_charge_after_discount": 9.33,
+          "base_services_charge": 0.79,
+          "estimated_comparable_total": 10.12,
+          "annualized_comparable_total": 3695.84
+        }
+      ]
+    }
+  ],
+  "approval": null
+}

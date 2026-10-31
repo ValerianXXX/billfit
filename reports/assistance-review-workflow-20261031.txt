@@ -1,0 +1,1 @@
+{"status": "PASS", "checks": {"public_screening_unchanged": true, "baseline_screening_still_uses_original_limit": true, "counterfactual_boundary_change_visible": true, "assistance_replay_passed": true, "no_activation_or_approval": true, "overwrite_rejected": true, "packaged_files_unchanged": true}, "screening_scenarios": 168, "changed_fields": 18}

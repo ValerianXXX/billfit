@@ -10,9 +10,12 @@ import stat
 
 import billfit_core as core
 from source_check import _compare_candidate_snapshots
+from assistance_review import _compare_assistance_snapshots
 
 MAX_BYTES = 1_000_000
 FILES = ("baseline.json", "candidate.json", "comparison.json", "rollback-comparison.json")
+ASSISTANCE_FILES = ("assistance-comparison.json", "rollback-assistance-comparison.json")
+ASSISTANCE_POLICY = "REVIEW_CANDIDATE_RULES_WITHOUT_ACTIVATION"
 SCRIPTS = Path(__file__).resolve().parent
 GATES = ("Independent source-to-cell and effective-date review", "Review changed calculations and scope",
          "Explicit owner approval of an exact version before publication", "Release/install and operational rollback acceptance")
@@ -30,7 +33,7 @@ def _sha(raw):
 
 
 def _runtime_hashes():
-    paths = [SCRIPTS / name for name in ("billfit_core.py", "billfit_usage.py", "billfit_errors.py", "billfit_reconciliation.py", "source_check.py", "tariff_review_bundle.py")]
+    paths = [SCRIPTS / name for name in ("billfit_core.py", "billfit_usage.py", "billfit_errors.py", "billfit_reconciliation.py", "source_check.py", "assistance_review.py", "tariff_review_bundle.py")]
     paths += [core.DATA_ROOT / name for name in ("pge_residential_rates_2026-03-01.json", "care_fera_2026-06-01.json")]
     return {path.relative_to(core.PLUGIN_ROOT).as_posix(): _sha(path.read_text(encoding="utf-8").replace("\r\n", "\n").encode()) for path in paths}
 
@@ -54,31 +57,44 @@ def _read(path):
                            parse_constant=lambda _: (_ for _ in ()).throw(ValueError("Nonfinite review value")))
 
 
-def prepare_bundle(candidate: dict, output_dir: Path, *, synthetic_only: bool = False) -> dict:
+def prepare_bundle(candidate: dict | None, output_dir: Path, *, synthetic_only: bool = False,
+                   assistance_candidate: dict | None = None) -> dict:
     if type(synthetic_only) is not bool:
         raise ValueError("synthetic_only must be explicit boolean metadata")
+    if candidate is None and assistance_candidate is None:
+        raise ValueError("Provide a rate or assistance candidate")
     output_dir = Path(output_dir)
     if output_dir.exists():
         raise FileExistsError("Choose a fresh review directory; existing evidence is never overwritten")
     runtime = _runtime_hashes()
     baseline = {"rates": deepcopy(core.rate_data()), "assistance": deepcopy(core.assistance_data())}
-    proposed = {"rates": deepcopy(candidate), "assistance": deepcopy(baseline["assistance"])}
+    has_assistance = assistance_candidate is not None
+    proposed = {"rates": deepcopy(baseline["rates"] if candidate is None else candidate),
+                "assistance": deepcopy(baseline["assistance"] if not has_assistance else assistance_candidate)}
     comparison = _compare_candidate_snapshots(baseline["rates"], proposed["rates"])
     rollback = _compare_candidate_snapshots(baseline["rates"], baseline["rates"])
     if runtime != _runtime_hashes():
         raise ValueError("Calculator or bundled rules changed during review preparation")
     payloads = dict(zip(FILES, (baseline, proposed, comparison, rollback)))
+    if has_assistance:
+        payloads.update(zip(ASSISTANCE_FILES, (
+            _compare_assistance_snapshots(baseline["assistance"], proposed["assistance"]),
+            _compare_assistance_snapshots(baseline["assistance"], baseline["assistance"]))))
+    if runtime != _runtime_hashes():
+        raise ValueError("Calculator or bundled rules changed during review preparation")
     encoded = {name: _bytes(value) for name, value in payloads.items()}
     if any(len(raw) > MAX_BYTES for raw in encoded.values()):
         raise ValueError("Review package exceeds the per-file size limit")
     manifest = {
-        "schema_version": 1, "status": "REVIEW_REQUIRED", "approval": None, "automatic_activation": False,
+        "schema_version": 2 if has_assistance else 1, "status": "REVIEW_REQUIRED", "approval": None, "automatic_activation": False,
         "synthetic_only": synthetic_only, "prepared_at": datetime.now(timezone.utc).isoformat(),
         "files": {name: _sha(raw) for name, raw in encoded.items()}, "runtime_lf_hashes": runtime,
-        "assistance_policy": "PRESERVE_CURRENT_RULES_UNCHANGED",
+        "assistance_policy": ASSISTANCE_POLICY if has_assistance else "PRESERVE_CURRENT_RULES_UNCHANGED",
         "source_verified_on": {"rates": baseline["rates"]["verified_on"], "assistance": baseline["assistance"]["verified_on"]},
         "remaining_gates": list(GATES), "rollback_scope": ROLLBACK_SCOPE,
     }
+    if has_assistance:
+        manifest["candidate_source_verified_on"] = {name: proposed[name]["verified_on"] for name in ("rates", "assistance")}
     output_dir.mkdir()
     # A partial directory has no final manifest and cannot pass verification.
     for name, raw in encoded.items():
@@ -94,12 +110,18 @@ def verify_bundle(directory: Path) -> dict:
     if directory.is_symlink():
         raise ValueError("Review directory must not be a symlink")
     _, manifest = _read(directory / "manifest.json")
-    if (not isinstance(manifest, dict) or set(manifest) != MANIFEST_KEYS
-            or type(manifest.get("schema_version")) is not int or manifest["schema_version"] != 1
+    if not isinstance(manifest, dict):
+        raise ValueError("Unsupported review manifest")
+    has_assistance = manifest.get("schema_version") == 2
+    files = FILES + ASSISTANCE_FILES if has_assistance else FILES
+    keys = MANIFEST_KEYS | {"candidate_source_verified_on"} if has_assistance else MANIFEST_KEYS
+    policy = ASSISTANCE_POLICY if has_assistance else "PRESERVE_CURRENT_RULES_UNCHANGED"
+    if (set(manifest) != keys
+            or type(manifest.get("schema_version")) is not int or manifest["schema_version"] not in (1, 2)
             or manifest.get("status") != "REVIEW_REQUIRED" or manifest.get("approval") is not None
             or manifest.get("automatic_activation") is not False or type(manifest.get("synthetic_only")) is not bool
-            or manifest.get("assistance_policy") != "PRESERVE_CURRENT_RULES_UNCHANGED"
-            or not isinstance(manifest.get("files"), dict) or set(manifest["files"]) != set(FILES)
+            or manifest.get("assistance_policy") != policy
+            or not isinstance(manifest.get("files"), dict) or set(manifest["files"]) != set(files)
             or manifest.get("remaining_gates") != list(GATES) or manifest.get("rollback_scope") != ROLLBACK_SCOPE
             or manifest.get("runtime_lf_hashes") != _runtime_hashes()):
         raise ValueError("Unsupported, approved, stale or altered review manifest")
@@ -110,7 +132,7 @@ def verify_bundle(directory: Path) -> dict:
     except (TypeError, ValueError):
         raise ValueError("Review preparation time must include a timezone") from None
     payloads = {}
-    for name in FILES:
+    for name in files:
         raw, value = _read(directory / name)
         if _sha(raw) != manifest["files"][name]:
             raise ValueError("Review content hash mismatch")
@@ -119,17 +141,24 @@ def verify_bundle(directory: Path) -> dict:
     if (not isinstance(baseline, dict) or set(baseline) != {"rates", "assistance"}
             or not isinstance(candidate, dict) or set(candidate) != {"rates", "assistance"}
             or baseline != {"rates": core.rate_data(), "assistance": core.assistance_data()}
-            or baseline["assistance"] != candidate["assistance"]
+            or (not has_assistance and baseline["assistance"] != candidate["assistance"])
             or manifest["source_verified_on"] != {"rates": baseline["rates"]["verified_on"], "assistance": baseline["assistance"]["verified_on"]}):
         raise ValueError("The review base or supported assistance rules changed")
+    if has_assistance and manifest["candidate_source_verified_on"] != {name: candidate[name]["verified_on"] for name in ("rates", "assistance")}:
+        raise ValueError("The candidate source verification metadata changed")
     forward = _compare_candidate_snapshots(baseline["rates"], candidate["rates"])
     rollback = _compare_candidate_snapshots(baseline["rates"], baseline["rates"])
     if forward != payloads["comparison.json"] or rollback != payloads["rollback-comparison.json"]:
         raise ValueError("Review or rollback arithmetic no longer matches")
+    if has_assistance:
+        if (_compare_assistance_snapshots(baseline["assistance"], candidate["assistance"]) != payloads[ASSISTANCE_FILES[0]]
+                or _compare_assistance_snapshots(baseline["assistance"], baseline["assistance"]) != payloads[ASSISTANCE_FILES[1]]):
+            raise ValueError("Assistance review or rollback screening no longer matches")
     if manifest["runtime_lf_hashes"] != _runtime_hashes():
         raise ValueError("Calculator or bundled rules changed during verification")
     return {"status": "REVIEW_REQUIRED", "approval": None, "automatic_activation": False,
             "synthetic_only": manifest["synthetic_only"], "calculation_replay_matches": True,
+            "assistance_replay_matches": True if has_assistance else None,
             "rollback_snapshot_replay_matches": True, "installed_or_activated": False,
             "snapshot_hashes": {name: manifest["files"][name] for name in ("baseline.json", "candidate.json")},
             "remaining_gates": manifest["remaining_gates"]}
@@ -139,7 +168,8 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     subcommands = parser.add_subparsers(dest="operation", required=True)
     prepare = subcommands.add_parser("prepare")
-    prepare.add_argument("--candidate", type=Path, required=True)
+    prepare.add_argument("--candidate", type=Path)
+    prepare.add_argument("--assistance-candidate", type=Path)
     prepare.add_argument("--output-dir", type=Path, required=True)
     prepare.add_argument("--synthetic", action="store_true")
     verify = subcommands.add_parser("verify")
@@ -147,8 +177,9 @@ def main():
     args = parser.parse_args()
     try:
         if args.operation == "prepare":
-            _, candidate = _read(args.candidate)
-            result = prepare_bundle(candidate, args.output_dir, synthetic_only=args.synthetic)
+            candidate = _read(args.candidate)[1] if args.candidate else None
+            assistance = _read(args.assistance_candidate)[1] if args.assistance_candidate else None
+            result = prepare_bundle(candidate, args.output_dir, synthetic_only=args.synthetic, assistance_candidate=assistance)
         else:
             result = verify_bundle(args.directory)
     except (OSError, UnicodeError, ValueError, TypeError, KeyError, RecursionError):

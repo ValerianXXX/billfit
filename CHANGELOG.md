@@ -2,6 +2,10 @@
 
 ## Unreleased — 2026-10-31
 
+- Prepare optional assistance-rule candidates alongside or independently of rates. Validate complete whole-dollar income tables, household progression, canonical dates and unchanged program/source scope; use detached snapshots without exposing a candidate/date override through public tools.
+- Add version-2 review bundles with old/new assistance screening and baseline replay, explicit date scenarios, hashes and unchanged human release gates. Preserve rate-only version-1 behavior; runtime-bound historical bundles remain historical and are not silently rehashed.
+- Ten pre-implementation contracts move from one pass, one failure and eight errors to ten unchanged passes. Expanded full suite: 190 passed, no skips. A real local five-invocation CLI workflow checks 168 synthetic scenarios and seven conditions. Official CPUC tables are reviewed without changing packaged data or dates. No model, enrollment, activation, operational rollback or independent-user claim.
+
 - Separate bill arithmetic from evidence status. Accept explicit Pacific statement dates with an exclusive end; report missing/extra usage, calendar days and unsupported historical rate periods without clipping, imputing or approving data.
 - Reconcile monetary tolerance in decimal cents. Fix a $4.40/$2.40 boundary mismatch, reject unconfirmed subcent amounts, and preserve the unrounded percentage tolerance. Existing pricing-engine numbers remain unchanged; exact utility rounding is still unverified.
 - Withhold validation when evidence is incomplete and remove savings fields for stale rates or any detected usage gap. Retain stronger replacements for two old one-hour assertions, original failures and one disclosed test-oracle correction. Pass 178 full tests, actual CLI replay and both existing SDK profiles; no model call, rate activation, dependency change or deployment.

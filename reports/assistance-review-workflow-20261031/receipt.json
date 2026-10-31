@@ -1,0 +1,58 @@
+{
+  "observed_at": "2026-10-31T16:38:28.797730+00:00",
+  "synthetic_only": true,
+  "status": "PASS",
+  "checks": {
+    "public_screening_unchanged": true,
+    "baseline_screening_still_uses_original_limit": true,
+    "counterfactual_boundary_change_visible": true,
+    "assistance_replay_passed": true,
+    "no_activation_or_approval": true,
+    "overwrite_rejected": true,
+    "packaged_files_unchanged": true
+  },
+  "cli_operations": [
+    {
+      "operation": "public-before",
+      "exit_code": 0,
+      "elapsed_seconds": 0.342032
+    },
+    {
+      "operation": "prepare",
+      "exit_code": 0,
+      "elapsed_seconds": 0.513256
+    },
+    {
+      "operation": "verify",
+      "exit_code": 0,
+      "elapsed_seconds": 0.497773
+    },
+    {
+      "operation": "public-after",
+      "exit_code": 0,
+      "elapsed_seconds": 0.345745
+    },
+    {
+      "operation": "reject-overwrite",
+      "exit_code": 2,
+      "elapsed_seconds": 0.413498
+    }
+  ],
+  "screening_scenarios": 168,
+  "changed_fields": 18,
+  "bundled_data_sha256": {
+    "care_fera_2026-06-01.json": "087246bab7df312cedcee607c7d880f96604574a35e48f87fb29bf10f2e5b26b",
+    "pge_residential_rates_2026-03-01.json": "2475f673017cfe20d9272c20e1e13e3506da6c47f99bbb685278c029ad25d9b8"
+  },
+  "model_calls": 0,
+  "external_account_actions": 0,
+  "production_activation": false,
+  "operational_rollback": false,
+  "independent_human_acceptance": false,
+  "limits": [
+    "Counterfactual threshold changes are not official rules or eligibility decisions",
+    "Inherited snapshot status/source metadata does not authenticate changed values",
+    "Whole-dollar boundary matrix does not establish fractional-income rounding policy",
+    "Replay checks preserved data; no installed service was switched"
+  ]
+}

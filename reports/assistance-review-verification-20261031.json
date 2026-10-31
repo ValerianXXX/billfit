@@ -1,0 +1,154 @@
+{
+  "observed_at": "2026-10-31T16:42:07.356021+00:00",
+  "status": "LOCAL_ASSISTANCE_REVIEW_VERIFIED_PUBLICATION_AND_CUSTOMER_ACCEPTANCE_OPEN",
+  "branch": "codex/assistance-rule-review-20261031",
+  "baseline_commit": "efd6ec3fd560da85c48021578c7f62824a2765cd",
+  "runtime_commit": "a4a377446cc92f4ba5feddfaf5c8aa0e7cfb39b2",
+  "frozen_test_commit": "7587ee3e7f8f7bc1944c9d3e23594badbf69f62d",
+  "baseline": {
+    "tests": 178,
+    "ci_run": 41208411501,
+    "unchanged_baseline_reused": true
+  },
+  "frozen_before": {
+    "methods": 10,
+    "passed": 1,
+    "failures": 1,
+    "errors": 8
+  },
+  "frozen_after": {
+    "passed": 10,
+    "seconds": 2.389,
+    "all_10_method_asts_unchanged": true
+  },
+  "additional_methods": 2,
+  "full": {
+    "passed": 190,
+    "skipped": 0,
+    "seconds": 56.265,
+    "platform": "Windows",
+    "python": "3.11.3"
+  },
+  "actual_cli_workflow": {
+    "observed_at": "2026-10-31T16:38:28.797730+00:00",
+    "synthetic_only": true,
+    "status": "PASS",
+    "checks": {
+      "public_screening_unchanged": true,
+      "baseline_screening_still_uses_original_limit": true,
+      "counterfactual_boundary_change_visible": true,
+      "assistance_replay_passed": true,
+      "no_activation_or_approval": true,
+      "overwrite_rejected": true,
+      "packaged_files_unchanged": true
+    },
+    "cli_operations": [
+      {
+        "operation": "public-before",
+        "exit_code": 0,
+        "elapsed_seconds": 0.342032
+      },
+      {
+        "operation": "prepare",
+        "exit_code": 0,
+        "elapsed_seconds": 0.513256
+      },
+      {
+        "operation": "verify",
+        "exit_code": 0,
+        "elapsed_seconds": 0.497773
+      },
+      {
+        "operation": "public-after",
+        "exit_code": 0,
+        "elapsed_seconds": 0.345745
+      },
+      {
+        "operation": "reject-overwrite",
+        "exit_code": 2,
+        "elapsed_seconds": 0.413498
+      }
+    ],
+    "screening_scenarios": 168,
+    "changed_fields": 18,
+    "bundled_data_sha256": {
+      "care_fera_2026-06-01.json": "087246bab7df312cedcee607c7d880f96604574a35e48f87fb29bf10f2e5b26b",
+      "pge_residential_rates_2026-03-01.json": "2475f673017cfe20d9272c20e1e13e3506da6c47f99bbb685278c029ad25d9b8"
+    },
+    "model_calls": 0,
+    "external_account_actions": 0,
+    "production_activation": false,
+    "operational_rollback": false,
+    "independent_human_acceptance": false,
+    "limits": [
+      "Counterfactual threshold changes are not official rules or eligibility decisions",
+      "Inherited snapshot status/source metadata does not authenticate changed values",
+      "Whole-dollar boundary matrix does not establish fractional-income rounding policy",
+      "Replay checks preserved data; no installed service was switched"
+    ]
+  },
+  "source_observation": "reports/assistance-source-observation-20261031.json",
+  "logs": {
+    "assistance-review-before-20261031": {
+      "original_sha256": "486fcace4e5588d6c8ee910a551e22fbaedc1a1dfdbf6175a986916e6d78af7e",
+      "portable": "reports/assistance-review-before-20261031.txt",
+      "portable_sha256": "b8caabef2c355597c2740e08cbf8f4b0c53e0275982b1dbef0de6db4613e6562"
+    },
+    "assistance-review-after-20261031": {
+      "original_sha256": "8e66df4c6d0e2a7576bdfba9867ce37e9a93f30f1650111042c5a67e7b55bec2",
+      "portable": "reports/assistance-review-after-20261031.txt",
+      "portable_sha256": "d47a6e0e5c86b322290986f50e005be97f96dd209ed34997c89c7c26644ca03c"
+    },
+    "assistance-review-full-20261031": {
+      "original_sha256": "1749388f53cb03f88671aa2d1966712b2e4d707aaa88005cfb4df4e854473783",
+      "portable": "reports/assistance-review-full-20261031.txt",
+      "portable_sha256": "6c3edacc1d2ff3f47c5ac7c4ceff7fd2d2049a18eaf96010543ccb99ed271c98"
+    },
+    "assistance-review-workflow-20261031": {
+      "original_sha256": "c953e43baa501b093f272c910aaf4dfc6ac9abc540719898059cf76bd92159f0",
+      "portable": "reports/assistance-review-workflow-20261031.txt",
+      "portable_sha256": "514e70ad435bc59a1e9b027b241ee9417f370dff43af783364de8c4de80e5e4c"
+    }
+  },
+  "lf_sha256": {
+    "plugins/billfit/tests/test_assistance_review.py": "1113d53a7aba900b88b8a4de0926649e70db4c07d41380bfe7c817e664616282",
+    "scripts/verify-assistance-review-workflow.py": "d5bed1d5afd3cc0ea0d53ba735ae3c286a6760f3163a7318be7f79f936df0e95",
+    "plugins/billfit/skills/billfit/scripts/assistance_review.py": "3f026f304e62006bcc4005f3dbdbc4ffb23ca70b1b9d1602f834b7082725ee4d",
+    "plugins/billfit/skills/billfit/scripts/tariff_review_bundle.py": "861d17ec9a1f2514e99bbd2665a74c84df8d7d229cf13834d80cedb692291e5c",
+    "plugins/billfit/skills/billfit/scripts/billfit_core.py": "62b5a13891c10aba92ae00096bc0f74ac3b714486f7cf3466fa3e9b179c9ba8d",
+    "reports/assistance-review-before-20261031.txt": "b8caabef2c355597c2740e08cbf8f4b0c53e0275982b1dbef0de6db4613e6562",
+    "reports/assistance-review-after-20261031.txt": "d47a6e0e5c86b322290986f50e005be97f96dd209ed34997c89c7c26644ca03c",
+    "reports/assistance-review-full-20261031.txt": "6c3edacc1d2ff3f47c5ac7c4ceff7fd2d2049a18eaf96010543ccb99ed271c98",
+    "reports/assistance-review-workflow-20261031.txt": "514e70ad435bc59a1e9b027b241ee9417f370dff43af783364de8c4de80e5e4c",
+    "reports/assistance-source-observation-20261031.json": "f3818c03fab9f5857ec43dbd62826db1fa14b821c5e6d5bde6dc38a1a33b32fe",
+    "reports/assistance-review-workflow-20261031/prepare.json": "c87d4a849d15534e4a3b84569cc9d433b7d57e84f21c1c7f4e0cf186d45caa8c",
+    "reports/assistance-review-workflow-20261031/public-after.json": "60b8305ca86c26c68e73f448799298d67b414491e5e2daf55d851bb15d7e13f6",
+    "reports/assistance-review-workflow-20261031/public-before.json": "edf3387c246593d680f92eba143aa22ce05b24dfda218e0767696eda49a0adaf",
+    "reports/assistance-review-workflow-20261031/receipt.json": "6425e0ad1339fe84cf5f31e7dbb511f7d8b5f55319d5ca5e275b38337f447ef2",
+    "reports/assistance-review-workflow-20261031/reject-overwrite.json": "ce29bbf9b1e23947478ff3e48970b471abbbfac1401e23b6b3e330d115206e65",
+    "reports/assistance-review-workflow-20261031/review/assistance-comparison.json": "36a52ba32f92f1fca3f6cd8fd520373670cacdf0d880ad2aadff21140f61367f",
+    "reports/assistance-review-workflow-20261031/review/baseline.json": "b4e584fb4e0c65250d2ce418db1f35ed9362d020ce2b7deb44fe0b962ef16a09",
+    "reports/assistance-review-workflow-20261031/review/candidate.json": "df8a2abb419bc630d97333b42524d7c4c94e4b356ad879de8dcd7a7f09a399d8",
+    "reports/assistance-review-workflow-20261031/review/comparison.json": "7fa8ec608a4e56839da8348c13ed3a2a78bfda82db7c5e5123fc195f53600ee3",
+    "reports/assistance-review-workflow-20261031/review/manifest.json": "ee42d31056a0922c383d03fa5ae1da73583af5c9de425123432bba6018233fae",
+    "reports/assistance-review-workflow-20261031/review/rollback-assistance-comparison.json": "c0af88fc4762125383b60a9ac92985fc9593b7a058fd004eb91f590087adc3a0",
+    "reports/assistance-review-workflow-20261031/review/rollback-comparison.json": "7fa8ec608a4e56839da8348c13ed3a2a78bfda82db7c5e5123fc195f53600ee3",
+    "reports/assistance-review-workflow-20261031/SYNTHETIC-NOT-OFFICIAL-assistance.json": "b40e07a91b32b71e1df31c489000e184202aed673e785422d863c41e2048714a",
+    "reports/assistance-review-workflow-20261031/synthetic-screen-request.json": "92f08729128f33168ec7d49e1f466d8dbc15cdbcb76d00c317c87789fbc5f610",
+    "reports/assistance-review-workflow-20261031/verify.json": "bf76c4e32b3b1e0663d2e34e75427b41c9fb8fff0161d3731ccbc275cf276b62"
+  },
+  "candidate_protocol": "schema 2; schema-1 rate-only interface retained",
+  "public_mcp_schema_changed": false,
+  "dependencies_changed": false,
+  "packaged_data_changed": false,
+  "model_calls": 0,
+  "production_actions": 0,
+  "independent_human_acceptance": false,
+  "remaining": [
+    "Independent source-to-field review and exact-version publication approval",
+    "Installation and operational rollback on a running service",
+    "Fractional-income rounding policy and full official categorical-program coverage",
+    "Real customer bills, exact utility rounding, native Windows OCR and independent acceptance"
+  ],
+  "whole_goal_complete": false
+}
