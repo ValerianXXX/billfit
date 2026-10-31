@@ -1,5 +1,11 @@
 # Changelog
 
+## Unreleased — 2026-10-31
+
+- Add opt-in local image preparation with bounded clockwise rotation, conservative pixel-based deskew and automatic OCR layout. Preserve original bytes, verify derived hashes and map word evidence back to original encoded pixels, including EXIF and TIFF decoder orientation.
+- Keep default extraction and deterministic calculations unchanged. Add an optional Pillow 13 profile, bounded preparation child and shared OCR deadline; all fields remain unconfirmed. No cloud fallback, automatic quarter-turn detector or tariff activation.
+- Pass 143 full local tests and real CLI/MCP parser calls in both existing SDK modes. On the unchanged eight-image development matrix, assisted preparation improves 6/8 to 8/8 and 32/38 to 38/38 valid candidates, with one explicit manual rotation and higher latency. Preserve the unsuccessful first attempt and boundary failures; no real-customer or independent-human claim.
+
 ## Unreleased — 2026-10-30
 
 - Run bill extraction in an optional SDK worker with cooperative request cancellation. Clean up the owned PDF/OCR child and temporary snapshot before releasing the per-instance parser slot; keep up to two extractions active and reject excess work with `BILL_PARSER_BUSY`.

@@ -54,6 +54,15 @@ input remain untested. Time/output limits and a PDF child process do not impose
 a hard native RAM limit or provide an OS sandbox. See the repository's
 `docs/bill-input-evidence-2026-10-30.md` for exact versions and reproduction.
 
+The October 31 optional preparation follow-up passes the same eight synthetic
+images with one explicitly supplied quarter-turn. It adds pixel-based small-angle
+deskew and automatic OCR layout; default extraction remains unchanged. All 38
+returned values require confirmation, and latency increases. Original encoded
+pixel boxes/polygons are distinct from EXIF-oriented display coordinates. Neither
+synthetic success nor a mapped source box establishes real-bill accuracy. See
+`docs/image-preparation-2026-10-31.md` for retained failures, dependencies, actual
+CLI/SDK observations and remaining native Windows/customer/holdout validation.
+
 ## Assistance sources
 
 - CPUC CARE/FERA current income rules: https://www.cpuc.ca.gov/care/

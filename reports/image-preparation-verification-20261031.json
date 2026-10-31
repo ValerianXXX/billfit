@@ -1,0 +1,173 @@
+{
+  "observed_at": "2026-10-31T13:27:40.660427+00:00",
+  "status": "LOCAL_IMPLEMENTATION_VERIFIED_EXTERNAL_ACCEPTANCE_OPEN",
+  "runtime_commit": "fca8831c6c58441b5322eab7c52e20ee537f8a93",
+  "base_commit": "147ff1d2583b2ea3921a50fe5b5b3a7c90b90189",
+  "branch": "codex/image-evidence-transform-20261031",
+  "synthetic_only": true,
+  "baseline": {
+    "passed": 124,
+    "seconds": 29.705
+  },
+  "frozen_contracts": {
+    "methods": 12,
+    "before_failures": 2,
+    "before_errors": 15,
+    "subtests_included": true,
+    "final_all_pass": true
+  },
+  "additional_failure_history": {
+    "decoder_metadata_failures": 13,
+    "decoder_metadata_errors": 1,
+    "layout_failure": 1,
+    "layout_error": 1
+  },
+  "targeted": {
+    "passed": 19,
+    "seconds": 8.029
+  },
+  "full": {
+    "passed": 143,
+    "skipped": 0,
+    "seconds": 37.11,
+    "platform": "Windows",
+    "python": "3.11.3"
+  },
+  "ocr": {
+    "platform": "Linux via WSL",
+    "python": "3.14.4",
+    "pillow": "13.0.0",
+    "tesseract": "5.5.0",
+    "leptonica": "1.86.0",
+    "cases": 8,
+    "before_passed": 6,
+    "first_attempt_passed": 6,
+    "final_assisted_passed": 8,
+    "valid_candidates_before": 32,
+    "valid_candidates_after": 38,
+    "expected_valid_candidates": 38,
+    "unexpected_values_before": 0,
+    "unexpected_values_after": 0,
+    "manual_rotation_choices": 1,
+    "confirmed_fields": 0,
+    "confirmation_required": 38,
+    "ambiguous_deskew_without_correction": 5,
+    "before_total_ms": 2146.418,
+    "after_total_ms": 5914.747,
+    "before_median_ms": 262.38800000000003,
+    "after_median_ms": 731.4300000000001,
+    "blind_holdout": false,
+    "human_review_time_measured": false
+  },
+  "clients": {
+    "status": "PASS",
+    "cli": true,
+    "sdk": "2.3.0",
+    "modes": [
+      "2026-07-28",
+      "legacy"
+    ],
+    "actual_local_ocr": true,
+    "malformed_input_redacted": true,
+    "same_connection_recovery": true,
+    "new_hermes_model_session": false
+  },
+  "dependency_isolation": {
+    "linux_scope_without_site_packages": "PASS",
+    "windows_scope_without_site_packages": "FAILED_EXPECTED_TZDATA_REQUIREMENT",
+    "normal_windows_environment": "PASS"
+  },
+  "visual_inspection": {
+    "status": "PASS",
+    "independent_human": false,
+    "images": [
+      {
+        "path": "docs/images/image-preparation-20261031/rotated-90-degrees-20261031.png",
+        "sha256": "165b44d1b8b3bad195ec56fd03b3449e187f563c9c107295d90ab0c6028187a1"
+      },
+      {
+        "path": "docs/images/image-preparation-20261031/skew-6-degrees-20261031.png",
+        "sha256": "63a1219dc0b589ca128275cd00d44ea054d705a115f03c0873281bef53d7d253"
+      }
+    ]
+  },
+  "source_lf_hashes": {
+    "bill_input.py": "d4c31d5983bcdf5e33110c37672724290b4872fcacf6a23ef45537606c22547e",
+    "bill_ocr.py": "250220f2950627a0166098d3581b56ab640adcf0a756aaeef8d1ac326c7443f3",
+    "bill_process.py": "27caf17ab1416ef2272732b05aa53d1a955f218247aea954cd1019e9e1b6e647",
+    "bill_image.py": "d7dfa49e34f8514e6379fd02b4f357577dc1c4cdee49ba1eda0a6ae439aa4a30",
+    "bill_image_worker.py": "47f2f6878d1dce13948881c829ac540abded7fa4f15588246649b86b393fe349",
+    "bill_image_geometry.py": "5c846e754ec773730f8426b73bc5eef2e96a0f7689eafed57712502e72529b69"
+  },
+  "manifest_sha256": "a1a17439f5ffaba5defce0c5de74085a3852165ff682872a8d62291c28fdb99f",
+  "observation_files": {
+    "image-preparation-ocr-before-20261031.json": "1c9d2502970351e26cf62f526c7c345068b2e149013ac3f1cc37ce258ba7342b",
+    "image-preparation-ocr-after-20261031.json": "6dfc3c28ad35446e822a9826d5e82b73e1fa1d58bae5cefc91c0086dbaae4442",
+    "image-preparation-layout-ocr-after-20261031.json": "a3f854160056137a10704156b3825ddeeb56cd66ad12eef43285d6d0635584f7",
+    "image-preparation-client-20261031.json": "9aae23b202e5ff07be13227aae277b3bf7920f62d91e8279a4f1da719416fdde"
+  },
+  "logs": {
+    "image-preparation-baseline-20261031": {
+      "original_sha256": "3f454a1eaa81783b03ef58250f23255b19bc0c63a6a294bc48afa1c29e7702e2",
+      "portable_path": "reports/image-preparation-baseline-20261031.txt",
+      "portable_sha256": "8d318d029c274e7093b6142c615460b0e322ff4bb67a848a49273e034b6451af"
+    },
+    "image-preparation-frozen-before-20261031": {
+      "original_sha256": "cb6c16353c8e0daa9db0bd04d607c30c6f9a04eb1159052dae57360b40d6cc04",
+      "portable_path": "reports/image-preparation-frozen-before-20261031.txt",
+      "portable_sha256": "977d90bd9f24e9eff818123bac1405676c187dbb0c554c925c6d422d144db618"
+    },
+    "image-preparation-first-implementation-20261031": {
+      "original_sha256": "30770861bdf75cb18239cae9f835b2c5e814150873f7e24cc94188400f0b7d0e",
+      "portable_path": "reports/image-preparation-first-implementation-20261031.txt",
+      "portable_sha256": "3572f1bffc20fd527a101bcc2f2aafa40437c9694f822a7f803a66a92cd79bb3"
+    },
+    "image-preparation-boundary-first-20261031": {
+      "original_sha256": "292f58c73a1e9611deab97c87302d3881e2416486c800e633ca7c4c65d2fe56e",
+      "portable_path": "reports/image-preparation-boundary-first-20261031.txt",
+      "portable_sha256": "401a78ec6cb6d0e6435df7362fba99e5adc2d6cb6f04360226652edd64900c0d"
+    },
+    "image-preparation-layout-before-20261031": {
+      "original_sha256": "bff8808f7ccfc24bebe4b817b552ab85b608e8864a22a9f2a45e0e621d3f9e3b",
+      "portable_path": "reports/image-preparation-layout-before-20261031.txt",
+      "portable_sha256": "00669785048504a1e2635ebd7135143364fa4a9d80f73f56efbdc11ba76efca8"
+    },
+    "image-preparation-layout-after-20261031": {
+      "original_sha256": "2492754befb6abf7bdc0c948dce284e79e8596f6f6e8052622e6862c0e3b4df5",
+      "portable_path": "reports/image-preparation-layout-after-20261031.txt",
+      "portable_sha256": "749a5b1d31b2b29b3ee527d6d7823443b6b3bfb9c1ffcffc8745f2d0a472ec07"
+    },
+    "image-preparation-full-20261031": {
+      "original_sha256": "327c0e77b8b3c59546042436f11274f06ea8373e7c17d5e0a8a3fa4db64de937",
+      "portable_path": "reports/image-preparation-full-20261031.txt",
+      "portable_sha256": "9f99fb87554cce72d617cb7926833bf4d6413ccb49d347d5147e33aeff378e80"
+    },
+    "image-preparation-no-site-20261031": {
+      "original_sha256": "25575e25032123742c8a2d6aadd79a820d8fe1b05095a4678e48fe082717970e",
+      "portable_path": "reports/image-preparation-no-site-20261031.txt",
+      "portable_sha256": "79f9cc004685724cf0df9299b449db8514b55c4f5426087b4f9cf4cb5263bd51"
+    },
+    "image-preparation-no-site-linux-20261031": {
+      "original_sha256": "944a001a1b48ff19b0f27fc84c350fd0f1be0bdbd588343589eb13d9115fc3fe",
+      "portable_path": "reports/image-preparation-no-site-linux-20261031.txt",
+      "portable_sha256": "5a0897873d08e44ff01b7292f2e6d2eadda79d15ee0bcf1382aeaca747dfb8d6"
+    }
+  },
+  "model_calls": 0,
+  "cloud_calls": 0,
+  "actual_dollar_cost": null,
+  "production_actions": false,
+  "tariff_reverified": false,
+  "tariff_verification_date_unchanged": "2026-10-27",
+  "remaining": [
+    "Native Windows Tesseract",
+    "Permissioned customer bills",
+    "Independent held-out layouts and languages",
+    "Measured human review effort",
+    "No automatic quarter-turn detection, scanned-PDF rendering or perspective correction",
+    "Hosted CI at delivery head"
+  ],
+  "rollback": "Omit optional preparation arguments for old extraction path; ordinary reviewed source revert if needed; no database/user-file/tariff migration",
+  "goal_complete": false,
+  "logs_portable_redaction": "Local checkout and user-profile path prefixes replaced; original local-log hashes retained."
+}

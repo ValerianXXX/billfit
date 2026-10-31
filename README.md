@@ -12,11 +12,11 @@ BillFit is a local-first Codex plugin and self-contained AI skill that compares 
 
 Calculations are deterministic and use the official-source snapshots documented in [sources and limitations](plugins/billfit/skills/billfit/references/sources-and-limitations.md).
 
-**Current development checkout, October 30:** usage validation preserves DST hours and rejects conflicting records or units; incomplete usage withholds switching savings. Optional bill extraction binds candidates to source hashes and page/line evidence, exposes ambiguous values and OCR quality, and uses bounded local parser processes. All values still require user confirmation. Installing `main` below does not install these draft changes.
+**Current development checkout, October 31:** usage validation preserves DST hours and rejects conflicting records or units; incomplete usage withholds switching savings. Optional bill extraction binds candidates to source hashes and page/line evidence. An opt-in image path now corrects a specified rotation and small skew locally, with evidence mapped back to original pixels. All values still require user confirmation. Installing `main` below does not install these draft changes.
 
-The current full local suite passes **124 tests**. The optional SDK server keeps its event loop responsive during bill extraction, propagates cancellation to owned parsers and admits at most two extractions per server instance. Excess work returns `BILL_PARSER_BUSY` without queueing it. Actual SDK tests cover both transport profiles, cleanup, request isolation and continued use of the same connection. [Cancellation evidence and setup](docs/parser-cancellation-2026-10-30.md) explain the boundaries; the default synchronous legacy shim does not gain these capabilities.
+The current full local suite passes **143 tests**. The optional SDK server keeps its event loop responsive during bill extraction, propagates cancellation to owned parsers and admits at most two extractions per server instance. Excess work returns `BILL_PARSER_BUSY` without queueing it. Actual SDK tests cover both transport profiles, cleanup, request isolation and continued use of the same connection. [Cancellation evidence and setup](docs/parser-cancellation-2026-10-30.md) explain the boundaries; the default synchronous legacy shim does not gain these capabilities.
 
-The earlier eight-image synthetic OCR comparison improved from **3/8 to 6/8** after the input repair; a skewed amount and a rotated page still fail. A repeated two-page PDF keeps ten separate sourced candidates without adding them. [Input evidence, failures and rollback](docs/bill-input-evidence-2026-10-30.md) distinguish contract tests, actual local parsers and client calls from real customer acceptance. Cancellation does not establish an OCR accuracy improvement.
+The unchanged eight-image synthetic OCR matrix now passes **8/8 with optional preparation**, versus 6/8 without it. One quarter-turn is manually specified; all 38 returned values still need confirmation. Measured total parsing time rises from 2.15 to 5.91 seconds. Real local CLI/MCP calls pass, but these development samples do not establish customer-bill accuracy. [Image evidence, retained failures and rollback](docs/image-preparation-2026-10-31.md) show the scope. The [earlier input study](docs/bill-input-evidence-2026-10-30.md) remains unchanged.
 
 Tariff values were last checked against official sources on **October 27, 2026**; this input change does not re-date or activate rate data. Earlier [source verification](docs/modernization-2026-10-27.md), [Hermes synthetic workflow](docs/hermes-workflow-2026-10-28.md), [interval repair](docs/interval-correctness-2026-10-29.md) and [CSV repair](docs/csv-energy-columns-2026-10-29.md) retain their original observations. Customer bills, native Windows OCR and independent user acceptance remain unverified.
 
@@ -73,6 +73,7 @@ Repository availability and passing tests remain engineering evidence, not adopt
 From the repository root:
 
 ```shell
+python -m pip install -r plugins/billfit/requirements-agent.txt -r plugins/billfit/requirements-image-input.txt
 python -m unittest discover -s plugins/billfit/tests -v
 ```
 
@@ -83,7 +84,7 @@ python -m pip install -r plugins/billfit/requirements-bill-input.txt
 python plugins/billfit/skills/billfit/scripts/billfit_cli.py extract-bill --input-file plugins/billfit/skills/billfit/examples/synthetic-bill-extract.json
 ```
 
-Images additionally require an existing trusted Tesseract executable through `BILLFIT_TESSERACT_PATH`; [.env.example](.env.example) documents it. No cloud fallback is configured. The [input guide](docs/bill-input-evidence-2026-10-30.md) explains missing fields, low confidence and recovery.
+Images additionally require an existing trusted Tesseract executable through `BILLFIT_TESSERACT_PATH`; [.env.example](.env.example) documents it. The optional `requirements-image-input.txt` profile adds Pillow for explicit rotation/deskew; default extraction does not require it. Use the [synthetic request and preparation guide](docs/image-preparation-2026-10-31.md) for setup, original-coordinate evidence and recovery. No cloud fallback is configured.
 
 To exercise the synthetic repeated-hour example from this checkout without credentials or a model:
 

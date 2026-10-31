@@ -1,0 +1,170 @@
+test_cancellation_reaps_preparation_child_removes_temp_and_never_starts_ocr (test_image_preparation_runtime.ImagePreparationRuntimeTests.test_cancellation_reaps_preparation_child_removes_temp_and_never_starts_ocr) ... ok
+test_inconsistent_worker_metadata_is_rejected (test_image_preparation_runtime.ImagePreparationRuntimeTests.test_inconsistent_worker_metadata_is_rejected) ... 
+  test_inconsistent_worker_metadata_is_rejected (test_image_preparation_runtime.ImagePreparationRuntimeTests.test_inconsistent_worker_metadata_is_rejected) (change={'rotation_degrees': False}) ... FAIL
+  test_inconsistent_worker_metadata_is_rejected (test_image_preparation_runtime.ImagePreparationRuntimeTests.test_inconsistent_worker_metadata_is_rejected) (change={'deskew_score_ratio': nan}) ... FAIL
+  test_inconsistent_worker_metadata_is_rejected (test_image_preparation_runtime.ImagePreparationRuntimeTests.test_inconsistent_worker_metadata_is_rejected) (change={'deskew_status': 'APPLIED', 'deskew_degrees': 0}) ... FAIL
+  test_inconsistent_worker_metadata_is_rejected (test_image_preparation_runtime.ImagePreparationRuntimeTests.test_inconsistent_worker_metadata_is_rejected) (change={'deskew_status': 'AMBIGUOUS'}) ... FAIL
+  test_inconsistent_worker_metadata_is_rejected (test_image_preparation_runtime.ImagePreparationRuntimeTests.test_inconsistent_worker_metadata_is_rejected) (change={'deskew_score_ratio': -1}) ... FAIL
+  test_inconsistent_worker_metadata_is_rejected (test_image_preparation_runtime.ImagePreparationRuntimeTests.test_inconsistent_worker_metadata_is_rejected) (change={'prepared_to_source': [True, 0, 0, 0, True, 0]}) ... FAIL
+test_jpeg_orientation_matches_decoded_source_pixels (test_image_preparation_runtime.ImagePreparationRuntimeTests.test_jpeg_orientation_matches_decoded_source_pixels) ... ok
+test_ocr_receives_only_remaining_budget_and_source_polygons (test_image_preparation_runtime.ImagePreparationRuntimeTests.test_ocr_receives_only_remaining_budget_and_source_polygons) ... ok
+test_tiff_orientation_preserves_original_encoded_grid (test_image_preparation_runtime.ImagePreparationRuntimeTests.test_tiff_orientation_preserves_original_encoded_grid) ... 
+  test_tiff_orientation_preserves_original_encoded_grid (test_image_preparation_runtime.ImagePreparationRuntimeTests.test_tiff_orientation_preserves_original_encoded_grid) (orientation=2) ... FAIL
+  test_tiff_orientation_preserves_original_encoded_grid (test_image_preparation_runtime.ImagePreparationRuntimeTests.test_tiff_orientation_preserves_original_encoded_grid) (orientation=3) ... FAIL
+  test_tiff_orientation_preserves_original_encoded_grid (test_image_preparation_runtime.ImagePreparationRuntimeTests.test_tiff_orientation_preserves_original_encoded_grid) (orientation=4) ... FAIL
+  test_tiff_orientation_preserves_original_encoded_grid (test_image_preparation_runtime.ImagePreparationRuntimeTests.test_tiff_orientation_preserves_original_encoded_grid) (orientation=5) ... FAIL
+  test_tiff_orientation_preserves_original_encoded_grid (test_image_preparation_runtime.ImagePreparationRuntimeTests.test_tiff_orientation_preserves_original_encoded_grid) (orientation=6) ... FAIL
+  test_tiff_orientation_preserves_original_encoded_grid (test_image_preparation_runtime.ImagePreparationRuntimeTests.test_tiff_orientation_preserves_original_encoded_grid) (orientation=7) ... FAIL
+  test_tiff_orientation_preserves_original_encoded_grid (test_image_preparation_runtime.ImagePreparationRuntimeTests.test_tiff_orientation_preserves_original_encoded_grid) (orientation=8) ... FAIL
+test_unbounded_integer_is_an_options_error_not_an_overflow (test_image_preparation_runtime.ImagePreparationRuntimeTests.test_unbounded_integer_is_an_options_error_not_an_overflow) ... ERROR
+
+======================================================================
+ERROR: test_unbounded_integer_is_an_options_error_not_an_overflow (test_image_preparation_runtime.ImagePreparationRuntimeTests.test_unbounded_integer_is_an_options_error_not_an_overflow)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<checkout>\plugins\billfit\tests\test_image_preparation_runtime.py", line 71, in test_unbounded_integer_is_an_options_error_not_an_overflow
+    extract_bill_fields("missing.png", ocr_rotation_degrees=10**400)
+  File "<checkout>\plugins\billfit\skills\billfit\scripts\bill_input.py", line 195, in extract_bill_fields
+    rotation, deskew = validate_options(ocr_rotation_degrees, ocr_deskew)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<checkout>\plugins\billfit\skills\billfit\scripts\bill_image_geometry.py", line 10, in validate_options
+    if (type(rotation_degrees) not in (int, float) or not math.isfinite(rotation_degrees)
+                                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+OverflowError: int too large to convert to float
+
+======================================================================
+FAIL: test_inconsistent_worker_metadata_is_rejected (test_image_preparation_runtime.ImagePreparationRuntimeTests.test_inconsistent_worker_metadata_is_rejected) (change={'rotation_degrees': False})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<checkout>\plugins\billfit\tests\test_image_preparation_runtime.py", line 65, in test_inconsistent_worker_metadata_is_rejected
+    with self.assertRaises(BillFitError) as caught:
+AssertionError: BillFitError not raised
+
+======================================================================
+FAIL: test_inconsistent_worker_metadata_is_rejected (test_image_preparation_runtime.ImagePreparationRuntimeTests.test_inconsistent_worker_metadata_is_rejected) (change={'deskew_score_ratio': nan})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<checkout>\plugins\billfit\tests\test_image_preparation_runtime.py", line 65, in test_inconsistent_worker_metadata_is_rejected
+    with self.assertRaises(BillFitError) as caught:
+AssertionError: BillFitError not raised
+
+======================================================================
+FAIL: test_inconsistent_worker_metadata_is_rejected (test_image_preparation_runtime.ImagePreparationRuntimeTests.test_inconsistent_worker_metadata_is_rejected) (change={'deskew_status': 'APPLIED', 'deskew_degrees': 0})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<checkout>\plugins\billfit\tests\test_image_preparation_runtime.py", line 65, in test_inconsistent_worker_metadata_is_rejected
+    with self.assertRaises(BillFitError) as caught:
+AssertionError: BillFitError not raised
+
+======================================================================
+FAIL: test_inconsistent_worker_metadata_is_rejected (test_image_preparation_runtime.ImagePreparationRuntimeTests.test_inconsistent_worker_metadata_is_rejected) (change={'deskew_status': 'AMBIGUOUS'})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<checkout>\plugins\billfit\tests\test_image_preparation_runtime.py", line 65, in test_inconsistent_worker_metadata_is_rejected
+    with self.assertRaises(BillFitError) as caught:
+AssertionError: BillFitError not raised
+
+======================================================================
+FAIL: test_inconsistent_worker_metadata_is_rejected (test_image_preparation_runtime.ImagePreparationRuntimeTests.test_inconsistent_worker_metadata_is_rejected) (change={'deskew_score_ratio': -1})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<checkout>\plugins\billfit\tests\test_image_preparation_runtime.py", line 65, in test_inconsistent_worker_metadata_is_rejected
+    with self.assertRaises(BillFitError) as caught:
+AssertionError: BillFitError not raised
+
+======================================================================
+FAIL: test_inconsistent_worker_metadata_is_rejected (test_image_preparation_runtime.ImagePreparationRuntimeTests.test_inconsistent_worker_metadata_is_rejected) (change={'prepared_to_source': [True, 0, 0, 0, True, 0]})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<checkout>\plugins\billfit\tests\test_image_preparation_runtime.py", line 65, in test_inconsistent_worker_metadata_is_rejected
+    with self.assertRaises(BillFitError) as caught:
+AssertionError: BillFitError not raised
+
+======================================================================
+FAIL: test_tiff_orientation_preserves_original_encoded_grid (test_image_preparation_runtime.ImagePreparationRuntimeTests.test_tiff_orientation_preserves_original_encoded_grid) (orientation=2)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<checkout>\plugins\billfit\tests\test_image_preparation_runtime.py", line 38, in test_tiff_orientation_preserves_original_encoded_grid
+    self.assertEqual(result.tobytes(), expected.tobytes())
+AssertionError: b'\xf[21718 chars]xff\x00\x00\xff\x00\x00\xff\x00\x00\xff\x00\x0[93429 chars]\xff' != b'\xf[21718 chars]xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xf[93429 chars]\xff'
+
+======================================================================
+FAIL: test_tiff_orientation_preserves_original_encoded_grid (test_image_preparation_runtime.ImagePreparationRuntimeTests.test_tiff_orientation_preserves_original_encoded_grid) (orientation=3)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<checkout>\plugins\billfit\tests\test_image_preparation_runtime.py", line 38, in test_tiff_orientation_preserves_original_encoded_grid
+    self.assertEqual(result.tobytes(), expected.tobytes())
+AssertionError: b'\xf[21718 chars]xff\x00\x00\xff\x00\x00\xff\x00\x00\xff\x00\x0[93429 chars]\xff' != b'\xf[21718 chars]xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xf[93429 chars]\xff'
+
+======================================================================
+FAIL: test_tiff_orientation_preserves_original_encoded_grid (test_image_preparation_runtime.ImagePreparationRuntimeTests.test_tiff_orientation_preserves_original_encoded_grid) (orientation=4)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<checkout>\plugins\billfit\tests\test_image_preparation_runtime.py", line 38, in test_tiff_orientation_preserves_original_encoded_grid
+    self.assertEqual(result.tobytes(), expected.tobytes())
+AssertionError: b'\xf[21718 chars]xff\x00\x00\xff\x00\x00\xff\x00\x00\xff\x00\x0[93429 chars]\xff' != b'\xf[21718 chars]xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xf[93429 chars]\xff'
+
+======================================================================
+FAIL: test_tiff_orientation_preserves_original_encoded_grid (test_image_preparation_runtime.ImagePreparationRuntimeTests.test_tiff_orientation_preserves_original_encoded_grid) (orientation=5)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<checkout>\plugins\billfit\tests\test_image_preparation_runtime.py", line 35, in test_tiff_orientation_preserves_original_encoded_grid
+    self.assertEqual(metadata["source_size"], [120, 80])
+AssertionError: Lists differ: [80, 120] != [120, 80]
+
+First differing element 0:
+80
+120
+
+- [80, 120]
++ [120, 80]
+
+======================================================================
+FAIL: test_tiff_orientation_preserves_original_encoded_grid (test_image_preparation_runtime.ImagePreparationRuntimeTests.test_tiff_orientation_preserves_original_encoded_grid) (orientation=6)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<checkout>\plugins\billfit\tests\test_image_preparation_runtime.py", line 35, in test_tiff_orientation_preserves_original_encoded_grid
+    self.assertEqual(metadata["source_size"], [120, 80])
+AssertionError: Lists differ: [80, 120] != [120, 80]
+
+First differing element 0:
+80
+120
+
+- [80, 120]
++ [120, 80]
+
+======================================================================
+FAIL: test_tiff_orientation_preserves_original_encoded_grid (test_image_preparation_runtime.ImagePreparationRuntimeTests.test_tiff_orientation_preserves_original_encoded_grid) (orientation=7)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<checkout>\plugins\billfit\tests\test_image_preparation_runtime.py", line 35, in test_tiff_orientation_preserves_original_encoded_grid
+    self.assertEqual(metadata["source_size"], [120, 80])
+AssertionError: Lists differ: [80, 120] != [120, 80]
+
+First differing element 0:
+80
+120
+
+- [80, 120]
++ [120, 80]
+
+======================================================================
+FAIL: test_tiff_orientation_preserves_original_encoded_grid (test_image_preparation_runtime.ImagePreparationRuntimeTests.test_tiff_orientation_preserves_original_encoded_grid) (orientation=8)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<checkout>\plugins\billfit\tests\test_image_preparation_runtime.py", line 35, in test_tiff_orientation_preserves_original_encoded_grid
+    self.assertEqual(metadata["source_size"], [120, 80])
+AssertionError: Lists differ: [80, 120] != [120, 80]
+
+First differing element 0:
+80
+120
+
+- [80, 120]
++ [120, 80]
+
+----------------------------------------------------------------------
+Ran 6 tests in 2.776s
+
+FAILED (failures=13, errors=1)

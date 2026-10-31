@@ -1,0 +1,162 @@
+test_all_exif_orientations_retain_encoded_pixel_coordinates (test_image_preparation.ImagePreparationTests.test_all_exif_orientations_retain_encoded_pixel_coordinates) ... ERROR
+test_bad_worker_input_is_redacted_and_optional_dependency_is_explicit (test_image_preparation.ImagePreparationTests.test_bad_worker_input_is_redacted_and_optional_dependency_is_explicit) ... 
+  test_bad_worker_input_is_redacted_and_optional_dependency_is_explicit (test_image_preparation.ImagePreparationTests.test_bad_worker_input_is_redacted_and_optional_dependency_is_explicit) (no_site=False) ... FAIL
+  test_bad_worker_input_is_redacted_and_optional_dependency_is_explicit (test_image_preparation.ImagePreparationTests.test_bad_worker_input_is_redacted_and_optional_dependency_is_explicit) (no_site=True) ... FAIL
+test_changed_prepared_file_fails_without_returning_candidates (test_image_preparation.ImagePreparationTests.test_changed_prepared_file_fails_without_returning_candidates) ... ERROR
+test_default_path_does_not_prepare_or_require_pillow (test_image_preparation.ImagePreparationTests.test_default_path_does_not_prepare_or_require_pillow) ... ERROR
+test_deskew_uses_pixels_and_does_not_guess_on_blank_input (test_image_preparation.ImagePreparationTests.test_deskew_uses_pixels_and_does_not_guess_on_blank_input) ... ERROR
+test_invalid_parameters_fail_before_reading_any_file (test_image_preparation.ImagePreparationTests.test_invalid_parameters_fail_before_reading_any_file) ... 
+  test_invalid_parameters_fail_before_reading_any_file (test_image_preparation.ImagePreparationTests.test_invalid_parameters_fail_before_reading_any_file) (options={'ocr_rotation_degrees': True}) ... ERROR
+  test_invalid_parameters_fail_before_reading_any_file (test_image_preparation.ImagePreparationTests.test_invalid_parameters_fail_before_reading_any_file) (options={'ocr_rotation_degrees': 361}) ... ERROR
+  test_invalid_parameters_fail_before_reading_any_file (test_image_preparation.ImagePreparationTests.test_invalid_parameters_fail_before_reading_any_file) (options={'ocr_rotation_degrees': nan}) ... ERROR
+  test_invalid_parameters_fail_before_reading_any_file (test_image_preparation.ImagePreparationTests.test_invalid_parameters_fail_before_reading_any_file) (options={'ocr_rotation_degrees': '90'}) ... ERROR
+  test_invalid_parameters_fail_before_reading_any_file (test_image_preparation.ImagePreparationTests.test_invalid_parameters_fail_before_reading_any_file) (options={'ocr_deskew': 'true'}) ... ERROR
+test_large_pixel_header_is_rejected_before_image_decode (test_image_preparation.ImagePreparationTests.test_large_pixel_header_is_rejected_before_image_decode) ... ERROR
+test_mcp_schema_advertises_only_bounded_optional_controls (test_image_preparation.ImagePreparationTests.test_mcp_schema_advertises_only_bounded_optional_controls) ... ERROR
+test_multiple_tiff_frames_are_not_silently_truncated (test_image_preparation.ImagePreparationTests.test_multiple_tiff_frames_are_not_silently_truncated) ... ERROR
+test_original_candidate_box_is_mapped_from_prepared_pixels (test_image_preparation.ImagePreparationTests.test_original_candidate_box_is_mapped_from_prepared_pixels) ... ERROR
+test_pdf_preparation_is_explicitly_unsupported (test_image_preparation.ImagePreparationTests.test_pdf_preparation_is_explicitly_unsupported) ... ERROR
+test_quarter_rotations_match_independent_pixel_transposes (test_image_preparation.ImagePreparationTests.test_quarter_rotations_match_independent_pixel_transposes) ... ERROR
+
+======================================================================
+ERROR: test_all_exif_orientations_retain_encoded_pixel_coordinates (test_image_preparation.ImagePreparationTests.test_all_exif_orientations_retain_encoded_pixel_coordinates)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<checkout>\plugins\billfit\tests\test_image_preparation.py", line 61, in test_all_exif_orientations_retain_encoded_pixel_coordinates
+    from bill_image import prepare_image
+ModuleNotFoundError: No module named 'bill_image'
+
+======================================================================
+ERROR: test_changed_prepared_file_fails_without_returning_candidates (test_image_preparation.ImagePreparationTests.test_changed_prepared_file_fails_without_returning_candidates)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<checkout>\plugins\billfit\tests\test_image_preparation.py", line 175, in test_changed_prepared_file_fails_without_returning_candidates
+    extract_bill_fields(str(source), ocr_rotation_degrees=90)
+TypeError: extract_bill_fields() got an unexpected keyword argument 'ocr_rotation_degrees'
+
+======================================================================
+ERROR: test_default_path_does_not_prepare_or_require_pillow (test_image_preparation.ImagePreparationTests.test_default_path_does_not_prepare_or_require_pillow)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<checkout>\plugins\billfit\tests\test_image_preparation.py", line 122, in test_default_path_does_not_prepare_or_require_pillow
+    from bill_image import prepare_image
+ModuleNotFoundError: No module named 'bill_image'
+
+======================================================================
+ERROR: test_deskew_uses_pixels_and_does_not_guess_on_blank_input (test_image_preparation.ImagePreparationTests.test_deskew_uses_pixels_and_does_not_guess_on_blank_input)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<checkout>\plugins\billfit\tests\test_image_preparation.py", line 79, in test_deskew_uses_pixels_and_does_not_guess_on_blank_input
+    from bill_image import prepare_image
+ModuleNotFoundError: No module named 'bill_image'
+
+======================================================================
+ERROR: test_invalid_parameters_fail_before_reading_any_file (test_image_preparation.ImagePreparationTests.test_invalid_parameters_fail_before_reading_any_file) (options={'ocr_rotation_degrees': True})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<checkout>\plugins\billfit\tests\test_image_preparation.py", line 135, in test_invalid_parameters_fail_before_reading_any_file
+    extract_bill_fields("missing-synthetic-input.png", **options)
+TypeError: extract_bill_fields() got an unexpected keyword argument 'ocr_rotation_degrees'
+
+======================================================================
+ERROR: test_invalid_parameters_fail_before_reading_any_file (test_image_preparation.ImagePreparationTests.test_invalid_parameters_fail_before_reading_any_file) (options={'ocr_rotation_degrees': 361})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<checkout>\plugins\billfit\tests\test_image_preparation.py", line 135, in test_invalid_parameters_fail_before_reading_any_file
+    extract_bill_fields("missing-synthetic-input.png", **options)
+TypeError: extract_bill_fields() got an unexpected keyword argument 'ocr_rotation_degrees'
+
+======================================================================
+ERROR: test_invalid_parameters_fail_before_reading_any_file (test_image_preparation.ImagePreparationTests.test_invalid_parameters_fail_before_reading_any_file) (options={'ocr_rotation_degrees': nan})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<checkout>\plugins\billfit\tests\test_image_preparation.py", line 135, in test_invalid_parameters_fail_before_reading_any_file
+    extract_bill_fields("missing-synthetic-input.png", **options)
+TypeError: extract_bill_fields() got an unexpected keyword argument 'ocr_rotation_degrees'
+
+======================================================================
+ERROR: test_invalid_parameters_fail_before_reading_any_file (test_image_preparation.ImagePreparationTests.test_invalid_parameters_fail_before_reading_any_file) (options={'ocr_rotation_degrees': '90'})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<checkout>\plugins\billfit\tests\test_image_preparation.py", line 135, in test_invalid_parameters_fail_before_reading_any_file
+    extract_bill_fields("missing-synthetic-input.png", **options)
+TypeError: extract_bill_fields() got an unexpected keyword argument 'ocr_rotation_degrees'
+
+======================================================================
+ERROR: test_invalid_parameters_fail_before_reading_any_file (test_image_preparation.ImagePreparationTests.test_invalid_parameters_fail_before_reading_any_file) (options={'ocr_deskew': 'true'})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<checkout>\plugins\billfit\tests\test_image_preparation.py", line 135, in test_invalid_parameters_fail_before_reading_any_file
+    extract_bill_fields("missing-synthetic-input.png", **options)
+TypeError: extract_bill_fields() got an unexpected keyword argument 'ocr_deskew'
+
+======================================================================
+ERROR: test_large_pixel_header_is_rejected_before_image_decode (test_image_preparation.ImagePreparationTests.test_large_pixel_header_is_rejected_before_image_decode)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<checkout>\plugins\billfit\tests\test_image_preparation.py", line 156, in test_large_pixel_header_is_rejected_before_image_decode
+    from bill_image import prepare_image
+ModuleNotFoundError: No module named 'bill_image'
+
+======================================================================
+ERROR: test_mcp_schema_advertises_only_bounded_optional_controls (test_image_preparation.ImagePreparationTests.test_mcp_schema_advertises_only_bounded_optional_controls)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<checkout>\plugins\billfit\tests\test_image_preparation.py", line 195, in test_mcp_schema_advertises_only_bounded_optional_controls
+    self.assertEqual(schema["properties"]["ocr_rotation_degrees"]["type"], "number")
+                     ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'ocr_rotation_degrees'
+
+======================================================================
+ERROR: test_multiple_tiff_frames_are_not_silently_truncated (test_image_preparation.ImagePreparationTests.test_multiple_tiff_frames_are_not_silently_truncated)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<checkout>\plugins\billfit\tests\test_image_preparation.py", line 147, in test_multiple_tiff_frames_are_not_silently_truncated
+    from bill_image import prepare_image
+ModuleNotFoundError: No module named 'bill_image'
+
+======================================================================
+ERROR: test_original_candidate_box_is_mapped_from_prepared_pixels (test_image_preparation.ImagePreparationTests.test_original_candidate_box_is_mapped_from_prepared_pixels)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<checkout>\plugins\billfit\tests\test_image_preparation.py", line 107, in test_original_candidate_box_is_mapped_from_prepared_pixels
+    result = extract_bill_fields(str(source), ocr_rotation_degrees=90)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: extract_bill_fields() got an unexpected keyword argument 'ocr_rotation_degrees'
+
+======================================================================
+ERROR: test_pdf_preparation_is_explicitly_unsupported (test_image_preparation.ImagePreparationTests.test_pdf_preparation_is_explicitly_unsupported)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<checkout>\plugins\billfit\tests\test_image_preparation.py", line 143, in test_pdf_preparation_is_explicitly_unsupported
+    extract_bill_fields(str(source), ocr_deskew=True)
+TypeError: extract_bill_fields() got an unexpected keyword argument 'ocr_deskew'
+
+======================================================================
+ERROR: test_quarter_rotations_match_independent_pixel_transposes (test_image_preparation.ImagePreparationTests.test_quarter_rotations_match_independent_pixel_transposes)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<checkout>\plugins\billfit\tests\test_image_preparation.py", line 39, in test_quarter_rotations_match_independent_pixel_transposes
+    from bill_image import prepare_image
+ModuleNotFoundError: No module named 'bill_image'
+
+======================================================================
+FAIL: test_bad_worker_input_is_redacted_and_optional_dependency_is_explicit (test_image_preparation.ImagePreparationTests.test_bad_worker_input_is_redacted_and_optional_dependency_is_explicit) (no_site=False)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<checkout>\plugins\billfit\tests\test_image_preparation.py", line 187, in test_bad_worker_input_is_redacted_and_optional_dependency_is_explicit
+    self.assertEqual(completed.returncode, 0)
+AssertionError: 2 != 0
+
+======================================================================
+FAIL: test_bad_worker_input_is_redacted_and_optional_dependency_is_explicit (test_image_preparation.ImagePreparationTests.test_bad_worker_input_is_redacted_and_optional_dependency_is_explicit) (no_site=True)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<checkout>\plugins\billfit\tests\test_image_preparation.py", line 187, in test_bad_worker_input_is_redacted_and_optional_dependency_is_explicit
+    self.assertEqual(completed.returncode, 0)
+AssertionError: 2 != 0
+
+----------------------------------------------------------------------
+Ran 12 tests in 0.231s
+
+FAILED (failures=2, errors=15)
