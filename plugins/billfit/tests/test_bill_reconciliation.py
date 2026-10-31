@@ -87,7 +87,9 @@ class BillReconciliationTests(unittest.TestCase):
         self.assertEqual(result["billing_period"]["missing_minutes"], 1440)
         self.assertIn("INCOMPLETE_BILLING_PERIOD", result["required_reviews"])
         self.assertEqual(result["simulation"]["billing_days"], 31)
-        self.assertEqual(result["simulation"]["base_services_charge"], 24.39)
+        # Oracle correction: the unchanged source snapshot is 0.79343/day,
+        # so 31 days is 24.59633 -> 24.60, not the initial authored 24.39.
+        self.assertEqual(result["simulation"]["base_services_charge"], 24.60)
 
     def test_extra_usage_is_not_silently_clipped_to_the_bill_period(self):
         result = self.matched(hours(count=31 * 24 + 1), billing_period=JULY)

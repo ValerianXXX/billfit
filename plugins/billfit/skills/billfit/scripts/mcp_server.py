@@ -80,7 +80,7 @@ TOOLS: list[dict[str, Any]] = [
     },
     {
         "name": "billfit_validate_bill",
-        "description": "Reconstruct comparable energy and Base Services Charge components for the current plan. Arithmetic agreement does not establish sufficient usage evidence; preserve USAGE_QUALITY_REVIEW when returned. Do not compare against the whole amount due because taxes, credits, gas, and adjustments are excluded.",
+        "description": "Reconcile comparable energy and Base Services Charge components. Supply confirmed statement dates as billing_period with an exclusive end; no dates are inferred from usage or OCR. Missing dates, gaps, assumptions or unsupported rate periods prevent validated status even if arithmetic matches. Preserve required_reviews and human_gates. Whole amount due, taxes, credits, gas and adjustments are excluded.",
         "inputSchema": {
             "type": "object",
             "properties": {
@@ -89,6 +89,15 @@ TOOLS: list[dict[str, Any]] = [
                 "current_plan": {"type": "string", "enum": ["E-1", "E-TOU-C", "E-TOU-D", "EV2-A", "E-ELEC"]},
                 "reported_energy_charge": {"type": "number", "minimum": 0},
                 "reported_base_services_charge": {"type": "number", "minimum": 0},
+                "billing_period": {
+                    "type": "object",
+                    "description": "Confirmed Pacific calendar dates for this statement. Convert an inclusive printed end only after confirming its convention with the user. No default is inferred.",
+                    "properties": {
+                        "start_date": {"type": "string", "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"},
+                        "end_date_exclusive": {"type": "string", "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"},
+                    },
+                    "required": ["start_date", "end_date_exclusive"], "additionalProperties": False,
+                },
                 "baseline_territory": {"type": "string", "enum": ["P", "Q", "R", "S", "T", "V", "W", "X", "Y", "Z"]},
                 "service_type": {"type": "string", "enum": ["basic", "all_electric"]},
                 "assistance_program": {"type": "string", "enum": ["none", "CARE", "FERA"]},

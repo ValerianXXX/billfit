@@ -176,7 +176,10 @@ class BillFitCoreTests(unittest.TestCase):
             reported_energy_charge=plan["energy_charge_after_discount"],
             reported_base_services_charge=plan["base_services_charge"],
         )
-        self.assertEqual(validation["status"], "validated")
+        self.assertEqual(validation["status"], "needs_review")
+        self.assertEqual(validation["arithmetic_status"], "matched")
+        self.assertTrue(all(row["within_tolerance"] for row in validation["checks"]))
+        self.assertIn("BILLING_PERIOD_REQUIRED", validation["required_reviews"])
 
 
 class McpProtocolTests(unittest.TestCase):

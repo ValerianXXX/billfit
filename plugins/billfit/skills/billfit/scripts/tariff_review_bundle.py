@@ -30,7 +30,7 @@ def _sha(raw):
 
 
 def _runtime_hashes():
-    paths = [SCRIPTS / name for name in ("billfit_core.py", "billfit_usage.py", "billfit_errors.py", "source_check.py", "tariff_review_bundle.py")]
+    paths = [SCRIPTS / name for name in ("billfit_core.py", "billfit_usage.py", "billfit_errors.py", "billfit_reconciliation.py", "source_check.py", "tariff_review_bundle.py")]
     paths += [core.DATA_ROOT / name for name in ("pge_residential_rates_2026-03-01.json", "care_fera_2026-06-01.json")]
     return {path.relative_to(core.PLUGIN_ROOT).as_posix(): _sha(path.read_text(encoding="utf-8").replace("\r\n", "\n").encode()) for path in paths}
 
