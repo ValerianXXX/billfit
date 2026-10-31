@@ -2,6 +2,13 @@
 
 ## Unreleased — 2026-10-31
 
+- Keep fractional income between the published CARE maximum and whole-dollar
+  FERA minimum unresolved, with an explicit official-confirmation gate and no
+  rounding. Preserve categorical eligibility, medical need and stale/expired
+  rule behavior. Add fractional old/new candidate-review cases and actual local
+  CLI/SDK checks; no threshold, verification date, account action or model change.
+  [Boundary behavior and evidence](docs/assistance-income-boundaries-2026-10-31.md).
+
 - Prepare optional assistance-rule candidates alongside or independently of rates. Validate complete whole-dollar income tables, household progression, canonical dates and unchanged program/source scope; use detached snapshots without exposing a candidate/date override through public tools.
 - Add version-2 review bundles with old/new assistance screening and baseline replay, explicit date scenarios, hashes and unchanged human release gates. Preserve rate-only version-1 behavior; runtime-bound historical bundles remain historical and are not silently rehashed.
 - Ten pre-implementation contracts move from one pass, one failure and eight errors to ten unchanged passes. Expanded full suite: 190 passed, no skips. A real local five-invocation CLI workflow checks 168 synthetic scenarios and seven conditions. Official CPUC tables are reviewed without changing packaged data or dates. No model, enrollment, activation, operational rollback or independent-user claim.

@@ -113,10 +113,18 @@ If a bill is available, obtain its line-item energy charge and/or Base Services 
 
 Call `billfit_screen_assistance` or run the CLI `assistance` operation with household size and, if the user chooses to provide it, gross annual household income or names of qualifying public programs. Medical Baseline needs only a yes/no/unknown indication at this stage.
 
-- Say “likely eligible,” “likely not eligible by the supplied path,” or “needs information,” matching the tool result.
+- Say “likely eligible,” “likely not eligible by the supplied path,” “needs information,” or “needs official confirmation,” matching the tool result.
 - Do not say “approved” or “ineligible” as a final determination.
 - If CARE or FERA looks likely, leave `ASSISTANCE_APPLICATION` for the user.
 - If a medical need is indicated, leave `MEDICAL_CERTIFICATION` for the user and practitioner.
+
+For `FRACTIONAL_INCOME_BOUNDARY`, preserve the user's original amount and the
+`INCOME_BOUNDARY_CONFIRMATION` gate. The result falls between the published
+whole-dollar CARE maximum and FERA minimum; the maintained sources do not
+establish a rounding rule. Do not round it, call it likely eligible or denied,
+or turn a model's interpretation into utility policy. Ask the user to confirm
+the boundary with PG&E using the cited official program information. Existing
+categorical-program and Medical Baseline paths remain separate.
 
 ### 6. Present a compact result
 

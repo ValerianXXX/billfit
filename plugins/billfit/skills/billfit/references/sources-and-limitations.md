@@ -72,6 +72,15 @@ CLI/SDK observations and remaining native Windows/customer/holdout validation.
 
 CARE/FERA rules packaged in BillFit are effective 2026-06-01 through 2027-05-31. The result is a screen, because address, account-holder, dependency, household-income, documentation, and utility-review requirements remain external.
 
+Checked October 31, 2026: the CPUC table displays CARE maxima and FERA minima
+one whole dollar apart. The PG&E [CARE income guidance](https://www.pge.com/en/account/billing-and-assistance/financial-assistance/california-alternate-rates-for-energy-program.html)
+and [FERA eligibility guidance](https://www.pge.com/en/account/billing-and-assistance/financial-assistance/fera-eligibility.html)
+ask for gross household income. These checked pages do not establish how to
+round fractional income in that displayed gap. BillFit returns
+`needs_official_confirmation`, retains the exact supplied numeric amount and
+does not infer a rounding rule or final eligibility. This source observation
+does not change packaged `verified_on` dates or approve new program rules.
+
 Medical Baseline is not income-based. A user-reported medical need can only produce a possible-candidate result; an eligible medical practitioner must certify it.
 
 ## Human boundary
