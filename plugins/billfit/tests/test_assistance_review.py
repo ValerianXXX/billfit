@@ -202,6 +202,30 @@ class AssistanceReviewTests(unittest.TestCase):
             self.assertFalse(path.exists())
         self.assertEqual({p.name: p.read_bytes() for p in files}, before)
 
+    def test_combined_candidates_preserve_rate_and_assistance_differences(self):
+        from tariff_review_bundle import prepare_bundle, verify_bundle
+        rates = core.rate_data()
+        rates["plans"]["E-TOU-D"]["summer"]["peak"] += .05
+        with tempfile.TemporaryDirectory(prefix="billfit-combined-review-") as temporary:
+            path = Path(temporary) / "review"
+            prepare_bundle(rates, path, assistance_candidate=candidate_rules(), synthetic_only=True)
+            candidate = json.loads((path / "candidate.json").read_text())
+            self.assertEqual(candidate["rates"], rates)
+            self.assertEqual(candidate["assistance"], candidate_rules())
+            self.assertEqual(len(json.loads((path / "comparison.json").read_text())["differences"]), 1)
+            result = verify_bundle(path)
+            self.assertTrue(result["calculation_replay_matches"])
+            self.assertTrue(result["assistance_replay_matches"])
+            self.assertIsNone(result["approval"])
+
+    def test_missing_both_candidates_is_not_a_review(self):
+        from tariff_review_bundle import prepare_bundle
+        with tempfile.TemporaryDirectory(prefix="billfit-missing-review-") as temporary:
+            path = Path(temporary) / "review"
+            with self.assertRaises(ValueError):
+                prepare_bundle(None, path, synthetic_only=True)
+            self.assertFalse(path.exists())
+
     def test_actual_cli_prepares_assistance_only_and_redacts_invalid_input(self):
         with tempfile.TemporaryDirectory(prefix="billfit-assistance-cli-") as temporary:
             root = Path(temporary)

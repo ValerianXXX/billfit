@@ -665,12 +665,25 @@ def screen_assistance(
     enrolled_public_programs: list[str] | None = None,
     medical_baseline_need: bool | None = None,
 ) -> dict[str, Any]:
-    data = assistance_data()
+    return _screen_assistance_snapshot(assistance_data(), household_size,
+        gross_annual_household_income, enrolled_public_programs, medical_baseline_need)
+
+
+def _screen_assistance_snapshot(
+    snapshot: dict[str, Any],
+    household_size: int,
+    gross_annual_household_income: float | None = None,
+    enrolled_public_programs: list[str] | None = None,
+    medical_baseline_need: bool | None = None,
+    *, as_of: date | None = None,
+) -> dict[str, Any]:
+    """Internal review seam; public tools cannot select unapproved rules or a date."""
+    data = deepcopy(snapshot)
     if type(household_size) is not int or household_size < 1:
         raise BillFitError("INVALID_HOUSEHOLD_SIZE", "household_size must be a positive integer.")
     if gross_annual_household_income is not None and (type(gross_annual_household_income) not in (int, float) or not math.isfinite(gross_annual_household_income) or gross_annual_household_income < 0):
         raise BillFitError("INVALID_INCOME", "Income must be a finite nonnegative number.")
-    freshness = _freshness(data)
+    freshness = _freshness(data, as_of)
     if freshness["outside_effective_window"]:
         return {"status": "rules_outside_effective_window", "rules_freshness": freshness,
                 "care": {"status": "not_screened"}, "fera": {"status": "not_screened"},
