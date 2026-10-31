@@ -21,11 +21,21 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--kind', required=True, choices=['image', 'pdf'])
     parser.add_argument('--output', required=True, type=Path)
+    parser.add_argument('--image-preparation', action='store_true',
+                        help='Use the committed assisted preparation profile; does not alter fixture gold.')
     args = parser.parse_args()
     handle = args.output.open('x', encoding='utf-8', newline='\n')
     directory = ROOT / 'plugins/billfit/tests/fixtures/bill-input-v2'
     manifest = json.loads((directory / 'manifest.json').read_text(encoding='utf-8'))
     assert manifest['synthetic_only'] is True
+    profile = None
+    if args.image_preparation:
+        if args.kind != 'image':
+            parser.error('--image-preparation requires --kind image')
+        profile_path = ROOT / 'plugins/billfit/tests/fixtures/bill-image-preparation-v1.json'
+        profile = json.loads(profile_path.read_text(encoding='utf-8'))
+        assert profile['synthetic_only'] is True
+        assert hashlib.sha256((directory/'manifest.json').read_bytes()).hexdigest() == profile['manifest_sha256']
     engine = None
     if args.kind == 'image':
         command = os.environ.get('BILLFIT_TESSERACT_PATH', '')
@@ -39,7 +49,8 @@ def main():
             assert hashlib.sha256(fixture.read_bytes()).hexdigest() == case['sha256']
             started = time.perf_counter()
             try:
-                result = extract_bill_fields(str(fixture))
+                options = {**profile['default_options'], **profile['case_options'].get(case['id'], {})} if profile else {}
+                result = extract_bill_fields(str(fixture), **options)
                 actual = {key: Counter(row['value'] for row in result['candidates'] if row['field'] == key) for key in case['expected']}
                 missing = {key: list((Counter(expected) - actual[key]).elements()) for key, expected in case['expected'].items()}
                 unexpected = {key: list((actual[key] - Counter(expected)).elements()) for key, expected in case['expected'].items()}
@@ -57,11 +68,12 @@ def main():
                 passed = not missing and not unexpected and evidence and sorted(result['conflicting_fields']) == sorted(case['expected_conflicts'])
                 passed = passed and visible_rejections and not result['automatic_confirmation'] and not result['automatic_calculation']
                 rows.append({'id': case['id'], 'status': 'PASS' if passed else 'FAILED', 'missing': missing,
-                             'unexpected': unexpected, 'evidence_valid': evidence, 'visible_rejections': visible_rejections, 'result': result})
+                             'unexpected': unexpected, 'evidence_valid': evidence, 'visible_rejections': visible_rejections,
+                             'options': options, 'result': result})
             except BillFitError as error:
                 rows.append({'id': case['id'], 'status': 'BLOCKED', 'code': error.code})
             rows[-1]['milliseconds'] = round((time.perf_counter() - started) * 1000, 3)
-        files = ['bill_input.py', 'bill_ocr.py']
+        files = ['bill_input.py', 'bill_ocr.py', 'bill_process.py', 'bill_image.py', 'bill_image_worker.py', 'bill_image_geometry.py']
         hashes = {name: hashlib.sha256((SCRIPTS/name).read_text(encoding='utf-8').replace('\r\n', '\n').encode()).hexdigest()
                   for name in files if (SCRIPTS/name).exists()}
         receipt = {'observedAt': datetime.now(timezone.utc).isoformat(), 'kind': args.kind, 'synthetic_only': True,
@@ -69,6 +81,7 @@ def main():
                    'sourceLFHashes': hashes, 'manifestSha256': hashlib.sha256((directory/'manifest.json').read_bytes()).hexdigest(),
                    'cases': len(rows), 'passed': sum(row['status'] == 'PASS' for row in rows),
                    'cloud_calls': 0, 'actual_dollar_cost': None, 'results': rows,
+                   'preparation_profile': profile,
                    'limits': ['Authored synthetic fixtures, not customer bills or population accuracy',
                               'OCR confidence is uncalibrated; all fields still need user confirmation',
                               'No tariff update, calculator activation, account action or deployment']}
