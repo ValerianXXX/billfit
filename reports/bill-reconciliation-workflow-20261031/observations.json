@@ -1,0 +1,1045 @@
+[
+  {
+    "case": "exact_two_dollar_boundary",
+    "operation": "validate",
+    "request_sha256": "9a23bddd44ebbaf073300ee4e3d926879198685d46af8b7fad8bd3fdc5bf43b5",
+    "before": {
+      "exit_code": 0,
+      "seconds": 0.542882,
+      "stderr_empty": true,
+      "result": {
+        "status": "mismatch",
+        "validation_scope": "comparable_components_only",
+        "usage_evidence_status": "needs_review",
+        "source": "inline_intervals",
+        "checks": [
+          {
+            "component": "energy_charge",
+            "reported": 2.4,
+            "calculated": 4.4,
+            "difference": 2.0,
+            "tolerance": 2.0,
+            "within_tolerance": false
+          }
+        ],
+        "rate_freshness": {
+          "verified_on": "2026-10-27",
+          "age_days": 4,
+          "stale": false,
+          "verification_overdue": false,
+          "outside_effective_window": false,
+          "rate_changed": null,
+          "effective_from": "2026-03-01",
+          "effective_to": null
+        },
+        "simulation": {
+          "status": "calculated",
+          "plan": "E-TOU-D",
+          "plan_name": "Time-of-Use 5-8 p.m. Weekdays",
+          "usage_kwh": 9.23,
+          "billing_days": 1,
+          "baseline_kwh": null,
+          "usage_by_period_kwh": {
+            "summer_peak": 9.23
+          },
+          "raw_energy_charge": 4.4,
+          "assistance_program": "NONE",
+          "assistance_discount": 0.0,
+          "energy_charge_after_discount": 4.4,
+          "base_services_charge": 0.79,
+          "estimated_comparable_total": 5.2,
+          "annualized_comparable_total": 1898.12
+        },
+        "message": "Do not act on the comparison until the mismatch is explained.",
+        "warnings": [
+          "Rates are total bundled rates and do not model Community Choice Aggregation or Direct Access generation charges.",
+          "California Climate Credit, local taxes, surcharges, one-time adjustments, and non-electric charges are excluded.",
+          "The official tariff controls if this comparison differs from a PG&E bill.",
+          "Solar, NEM, battery export, master-metered service, and separately metered EV-B are outside the MVP scope."
+        ],
+        "human_gates": [
+          {
+            "id": "OFFICIAL_RATE_CONFIRMATION",
+            "title": "Confirm rates before acting",
+            "reason": "Utility rates and tariff rules can change after BillFit's verified snapshot.",
+            "user_action": "Open the cited PG&E rate page and confirm the effective date before changing plans.",
+            "status": "waiting_for_user"
+          },
+          {
+            "id": "USAGE_QUALITY_REVIEW",
+            "title": "Review usage coverage and input assumptions",
+            "reason": "Incomplete, coarse or inferred usage cannot establish switching savings.",
+            "user_action": "Confirm source units and durations, resolve gaps, and supply a sufficient usage period.",
+            "status": "waiting_for_user"
+          }
+        ]
+      }
+    },
+    "after": {
+      "exit_code": 0,
+      "seconds": 0.38491,
+      "stderr_empty": true,
+      "result": {
+        "status": "needs_review",
+        "arithmetic_status": "matched",
+        "validation_scope": "comparable_components_only",
+        "usage_evidence_status": "needs_review",
+        "required_reviews": [
+          "BILLING_PERIOD_REQUIRED"
+        ],
+        "billing_period": {
+          "status": "needs_confirmation",
+          "calendar_days": null,
+          "required_reviews": [
+            "BILLING_PERIOD_REQUIRED"
+          ]
+        },
+        "comparison_policy": {
+          "currency": "USD",
+          "precision": "decimal cents",
+          "tolerance": "max(2.00, reported * 0.02), compared before display rounding",
+          "pricing_rounding_certified": false
+        },
+        "source": "inline_intervals",
+        "checks": [
+          {
+            "component": "energy_charge",
+            "reported": 2.4,
+            "calculated": 4.4,
+            "difference": 2.0,
+            "tolerance": 2.0,
+            "tolerance_unrounded": "2.00",
+            "within_tolerance": true
+          }
+        ],
+        "rate_freshness": {
+          "verified_on": "2026-10-27",
+          "age_days": 4,
+          "stale": false,
+          "verification_overdue": false,
+          "outside_effective_window": false,
+          "rate_changed": null,
+          "effective_from": "2026-03-01",
+          "effective_to": null
+        },
+        "rate_snapshot": {
+          "freshness": {
+            "verified_on": "2026-10-27",
+            "age_days": 4,
+            "stale": false,
+            "verification_overdue": false,
+            "outside_effective_window": false,
+            "rate_changed": null,
+            "effective_from": "2026-03-01",
+            "effective_to": null
+          },
+          "source": {
+            "page_url": "https://www.pge.com/tariffs/en/rate-information/electric-rates.html",
+            "workbook_url": "https://www.pge.com/assets/rates/tariffs/res-inclu-tou-current.xlsx",
+            "workbook_label": "Residential Inclu TOU (MAR 1, 2026 - Present)",
+            "workbook_sha256": "e071be6fd457a92da60637fc529c1e4c7a5620ffd83d3ae221819f7e4866995d"
+          }
+        },
+        "simulation": {
+          "status": "calculated",
+          "plan": "E-TOU-D",
+          "plan_name": "Time-of-Use 5-8 p.m. Weekdays",
+          "usage_kwh": 9.23,
+          "billing_days": 1,
+          "baseline_kwh": null,
+          "usage_by_period_kwh": {
+            "summer_peak": 9.23
+          },
+          "raw_energy_charge": 4.4,
+          "assistance_program": "NONE",
+          "assistance_discount": 0.0,
+          "energy_charge_after_discount": 4.4,
+          "base_services_charge": 0.79,
+          "estimated_comparable_total": 5.2,
+          "annualized_comparable_total": 1898.12,
+          "billing_days_basis": "usage_span_estimate"
+        },
+        "message": "Comparable components match arithmetically, but period, usage or rate evidence still needs review. This is not a validated bill.",
+        "warnings": [
+          "Rates are total bundled rates and do not model Community Choice Aggregation or Direct Access generation charges.",
+          "California Climate Credit, local taxes, surcharges, one-time adjustments, and non-electric charges are excluded.",
+          "The official tariff controls if this comparison differs from a PG&E bill.",
+          "Solar, NEM, battery export, master-metered service, and separately metered EV-B are outside the MVP scope."
+        ],
+        "human_gates": [
+          {
+            "id": "BILLING_PERIOD_REVIEW",
+            "title": "Confirm the statement period and matching usage",
+            "reason": "An arithmetic match cannot establish that the usage covers the bill being checked.",
+            "user_action": "Confirm the Pacific start date and exclusive end date from the statement convention; provide complete matching intervals without extra records.",
+            "status": "waiting_for_user"
+          },
+          {
+            "id": "USAGE_QUALITY_REVIEW",
+            "title": "Review usage coverage and input assumptions",
+            "reason": "Incomplete, coarse or inferred usage cannot establish switching savings.",
+            "user_action": "Confirm source units and durations, resolve gaps, and supply a sufficient usage period.",
+            "status": "waiting_for_user"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "case": "one_hour_match_without_dates",
+    "operation": "validate",
+    "request_sha256": "9c1086ab9cd7d903a6f884f60ba51fcf0bbc6a996cebf10ded29ea4400271bb6",
+    "before": {
+      "exit_code": 0,
+      "seconds": 0.385538,
+      "stderr_empty": true,
+      "result": {
+        "status": "validated",
+        "validation_scope": "comparable_components_only",
+        "usage_evidence_status": "needs_review",
+        "source": "inline_intervals",
+        "checks": [
+          {
+            "component": "energy_charge",
+            "reported": 0.48,
+            "calculated": 0.48,
+            "difference": 0.0,
+            "tolerance": 2.0,
+            "within_tolerance": true
+          }
+        ],
+        "rate_freshness": {
+          "verified_on": "2026-10-27",
+          "age_days": 4,
+          "stale": false,
+          "verification_overdue": false,
+          "outside_effective_window": false,
+          "rate_changed": null,
+          "effective_from": "2026-03-01",
+          "effective_to": null
+        },
+        "simulation": {
+          "status": "calculated",
+          "plan": "E-TOU-D",
+          "plan_name": "Time-of-Use 5-8 p.m. Weekdays",
+          "usage_kwh": 1.0,
+          "billing_days": 1,
+          "baseline_kwh": null,
+          "usage_by_period_kwh": {
+            "summer_peak": 1.0
+          },
+          "raw_energy_charge": 0.48,
+          "assistance_program": "NONE",
+          "assistance_discount": 0.0,
+          "energy_charge_after_discount": 0.48,
+          "base_services_charge": 0.79,
+          "estimated_comparable_total": 1.27,
+          "annualized_comparable_total": 464.04
+        },
+        "message": "Comparable components reconcile within tolerance.",
+        "warnings": [
+          "Rates are total bundled rates and do not model Community Choice Aggregation or Direct Access generation charges.",
+          "California Climate Credit, local taxes, surcharges, one-time adjustments, and non-electric charges are excluded.",
+          "The official tariff controls if this comparison differs from a PG&E bill.",
+          "Solar, NEM, battery export, master-metered service, and separately metered EV-B are outside the MVP scope."
+        ],
+        "human_gates": [
+          {
+            "id": "USAGE_QUALITY_REVIEW",
+            "title": "Review usage coverage and input assumptions",
+            "reason": "Incomplete, coarse or inferred usage cannot establish switching savings.",
+            "user_action": "Confirm source units and durations, resolve gaps, and supply a sufficient usage period.",
+            "status": "waiting_for_user"
+          }
+        ]
+      }
+    },
+    "after": {
+      "exit_code": 0,
+      "seconds": 0.392298,
+      "stderr_empty": true,
+      "result": {
+        "status": "needs_review",
+        "arithmetic_status": "matched",
+        "validation_scope": "comparable_components_only",
+        "usage_evidence_status": "needs_review",
+        "required_reviews": [
+          "BILLING_PERIOD_REQUIRED"
+        ],
+        "billing_period": {
+          "status": "needs_confirmation",
+          "calendar_days": null,
+          "required_reviews": [
+            "BILLING_PERIOD_REQUIRED"
+          ]
+        },
+        "comparison_policy": {
+          "currency": "USD",
+          "precision": "decimal cents",
+          "tolerance": "max(2.00, reported * 0.02), compared before display rounding",
+          "pricing_rounding_certified": false
+        },
+        "source": "inline_intervals",
+        "checks": [
+          {
+            "component": "energy_charge",
+            "reported": 0.48,
+            "calculated": 0.48,
+            "difference": 0.0,
+            "tolerance": 2.0,
+            "tolerance_unrounded": "2.00",
+            "within_tolerance": true
+          }
+        ],
+        "rate_freshness": {
+          "verified_on": "2026-10-27",
+          "age_days": 4,
+          "stale": false,
+          "verification_overdue": false,
+          "outside_effective_window": false,
+          "rate_changed": null,
+          "effective_from": "2026-03-01",
+          "effective_to": null
+        },
+        "rate_snapshot": {
+          "freshness": {
+            "verified_on": "2026-10-27",
+            "age_days": 4,
+            "stale": false,
+            "verification_overdue": false,
+            "outside_effective_window": false,
+            "rate_changed": null,
+            "effective_from": "2026-03-01",
+            "effective_to": null
+          },
+          "source": {
+            "page_url": "https://www.pge.com/tariffs/en/rate-information/electric-rates.html",
+            "workbook_url": "https://www.pge.com/assets/rates/tariffs/res-inclu-tou-current.xlsx",
+            "workbook_label": "Residential Inclu TOU (MAR 1, 2026 - Present)",
+            "workbook_sha256": "e071be6fd457a92da60637fc529c1e4c7a5620ffd83d3ae221819f7e4866995d"
+          }
+        },
+        "simulation": {
+          "status": "calculated",
+          "plan": "E-TOU-D",
+          "plan_name": "Time-of-Use 5-8 p.m. Weekdays",
+          "usage_kwh": 1.0,
+          "billing_days": 1,
+          "baseline_kwh": null,
+          "usage_by_period_kwh": {
+            "summer_peak": 1.0
+          },
+          "raw_energy_charge": 0.48,
+          "assistance_program": "NONE",
+          "assistance_discount": 0.0,
+          "energy_charge_after_discount": 0.48,
+          "base_services_charge": 0.79,
+          "estimated_comparable_total": 1.27,
+          "annualized_comparable_total": 464.04,
+          "billing_days_basis": "usage_span_estimate"
+        },
+        "message": "Comparable components match arithmetically, but period, usage or rate evidence still needs review. This is not a validated bill.",
+        "warnings": [
+          "Rates are total bundled rates and do not model Community Choice Aggregation or Direct Access generation charges.",
+          "California Climate Credit, local taxes, surcharges, one-time adjustments, and non-electric charges are excluded.",
+          "The official tariff controls if this comparison differs from a PG&E bill.",
+          "Solar, NEM, battery export, master-metered service, and separately metered EV-B are outside the MVP scope."
+        ],
+        "human_gates": [
+          {
+            "id": "BILLING_PERIOD_REVIEW",
+            "title": "Confirm the statement period and matching usage",
+            "reason": "An arithmetic match cannot establish that the usage covers the bill being checked.",
+            "user_action": "Confirm the Pacific start date and exclusive end date from the statement convention; provide complete matching intervals without extra records.",
+            "status": "waiting_for_user"
+          },
+          {
+            "id": "USAGE_QUALITY_REVIEW",
+            "title": "Review usage coverage and input assumptions",
+            "reason": "Incomplete, coarse or inferred usage cannot establish switching savings.",
+            "user_action": "Confirm source units and durations, resolve gaps, and supply a sufficient usage period.",
+            "status": "waiting_for_user"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "case": "complete_declared_day",
+    "operation": "validate",
+    "request_sha256": "e549946796629d697113a4dc175e10ccd331dad5d6b3227b3246dba1e55bfec9",
+    "before": {
+      "exit_code": 2,
+      "seconds": 0.386723,
+      "stderr_empty": true,
+      "result": {
+        "status": "error",
+        "error": {
+          "code": "INVALID_REQUEST",
+          "message": "validate_bill() got an unexpected keyword argument 'billing_period'"
+        }
+      }
+    },
+    "after": {
+      "exit_code": 0,
+      "seconds": 0.409925,
+      "stderr_empty": true,
+      "result": {
+        "status": "validated",
+        "arithmetic_status": "matched",
+        "validation_scope": "comparable_components_only",
+        "usage_evidence_status": "sufficient_for_current_scope",
+        "required_reviews": [],
+        "billing_period": {
+          "status": "covered",
+          "start_date": "2026-07-06",
+          "end_date_exclusive": "2026-07-07",
+          "time_zone": "America/Los_Angeles",
+          "end_convention": "exclusive",
+          "calendar_days": 1,
+          "expected_minutes": 1440.0,
+          "covered_minutes": 1440.0,
+          "missing_minutes": 0.0,
+          "coverage_ratio": 1.0,
+          "outside_interval_count": 0,
+          "rate_snapshot_covers_period": true,
+          "required_reviews": [],
+          "source": "caller_supplied_dates_not_independently_verified"
+        },
+        "comparison_policy": {
+          "currency": "USD",
+          "precision": "decimal cents",
+          "tolerance": "max(2.00, reported * 0.02), compared before display rounding",
+          "pricing_rounding_certified": false
+        },
+        "source": "inline_intervals",
+        "checks": [
+          {
+            "component": "energy_charge",
+            "reported": 8.62,
+            "calculated": 8.62,
+            "difference": 0.0,
+            "tolerance": 2.0,
+            "tolerance_unrounded": "2.00",
+            "within_tolerance": true
+          },
+          {
+            "component": "base_services_charge",
+            "reported": 0.79,
+            "calculated": 0.79,
+            "difference": 0.0,
+            "tolerance": 2.0,
+            "tolerance_unrounded": "2.00",
+            "within_tolerance": true
+          }
+        ],
+        "rate_freshness": {
+          "verified_on": "2026-10-27",
+          "age_days": 4,
+          "stale": false,
+          "verification_overdue": false,
+          "outside_effective_window": false,
+          "rate_changed": null,
+          "effective_from": "2026-03-01",
+          "effective_to": null
+        },
+        "rate_snapshot": {
+          "freshness": {
+            "verified_on": "2026-10-27",
+            "age_days": 4,
+            "stale": false,
+            "verification_overdue": false,
+            "outside_effective_window": false,
+            "rate_changed": null,
+            "effective_from": "2026-03-01",
+            "effective_to": null
+          },
+          "source": {
+            "page_url": "https://www.pge.com/tariffs/en/rate-information/electric-rates.html",
+            "workbook_url": "https://www.pge.com/assets/rates/tariffs/res-inclu-tou-current.xlsx",
+            "workbook_label": "Residential Inclu TOU (MAR 1, 2026 - Present)",
+            "workbook_sha256": "e071be6fd457a92da60637fc529c1e4c7a5620ffd83d3ae221819f7e4866995d"
+          }
+        },
+        "simulation": {
+          "status": "calculated",
+          "plan": "E-TOU-D",
+          "plan_name": "Time-of-Use 5-8 p.m. Weekdays",
+          "usage_kwh": 24.0,
+          "billing_days": 1,
+          "baseline_kwh": null,
+          "usage_by_period_kwh": {
+            "summer_off_peak": 21.0,
+            "summer_peak": 3.0
+          },
+          "raw_energy_charge": 8.62,
+          "assistance_program": "NONE",
+          "assistance_discount": 0.0,
+          "energy_charge_after_discount": 8.62,
+          "base_services_charge": 0.79,
+          "estimated_comparable_total": 9.41,
+          "annualized_comparable_total": 3436.64,
+          "billing_days_basis": "declared_pacific_calendar_period"
+        },
+        "message": "The supplied comparable components reconcile within tolerance for the declared period; excluded bill items and account eligibility are not validated.",
+        "warnings": [
+          "Rates are total bundled rates and do not model Community Choice Aggregation or Direct Access generation charges.",
+          "California Climate Credit, local taxes, surcharges, one-time adjustments, and non-electric charges are excluded.",
+          "The official tariff controls if this comparison differs from a PG&E bill.",
+          "Solar, NEM, battery export, master-metered service, and separately metered EV-B are outside the MVP scope."
+        ],
+        "human_gates": []
+      }
+    }
+  },
+  {
+    "case": "missing_first_hour",
+    "operation": "validate",
+    "request_sha256": "59c3a8d33a70658754dd33319c782e2d5e0bf8f753a4de042f4e9c94e4799061",
+    "before": {
+      "exit_code": 2,
+      "seconds": 0.380781,
+      "stderr_empty": true,
+      "result": {
+        "status": "error",
+        "error": {
+          "code": "INVALID_REQUEST",
+          "message": "validate_bill() got an unexpected keyword argument 'billing_period'"
+        }
+      }
+    },
+    "after": {
+      "exit_code": 0,
+      "seconds": 0.392235,
+      "stderr_empty": true,
+      "result": {
+        "status": "needs_review",
+        "arithmetic_status": "matched",
+        "validation_scope": "comparable_components_only",
+        "usage_evidence_status": "needs_review",
+        "required_reviews": [
+          "INCOMPLETE_BILLING_PERIOD"
+        ],
+        "billing_period": {
+          "status": "needs_review",
+          "start_date": "2026-07-06",
+          "end_date_exclusive": "2026-07-07",
+          "time_zone": "America/Los_Angeles",
+          "end_convention": "exclusive",
+          "calendar_days": 1,
+          "expected_minutes": 1440.0,
+          "covered_minutes": 1380.0,
+          "missing_minutes": 60.0,
+          "coverage_ratio": 0.958333,
+          "outside_interval_count": 0,
+          "rate_snapshot_covers_period": true,
+          "required_reviews": [
+            "INCOMPLETE_BILLING_PERIOD"
+          ],
+          "source": "caller_supplied_dates_not_independently_verified"
+        },
+        "comparison_policy": {
+          "currency": "USD",
+          "precision": "decimal cents",
+          "tolerance": "max(2.00, reported * 0.02), compared before display rounding",
+          "pricing_rounding_certified": false
+        },
+        "source": "inline_intervals",
+        "checks": [
+          {
+            "component": "energy_charge",
+            "reported": 8.62,
+            "calculated": 8.27,
+            "difference": -0.35,
+            "tolerance": 2.0,
+            "tolerance_unrounded": "2.00",
+            "within_tolerance": true
+          },
+          {
+            "component": "base_services_charge",
+            "reported": 0.79,
+            "calculated": 0.79,
+            "difference": 0.0,
+            "tolerance": 2.0,
+            "tolerance_unrounded": "2.00",
+            "within_tolerance": true
+          }
+        ],
+        "rate_freshness": {
+          "verified_on": "2026-10-27",
+          "age_days": 4,
+          "stale": false,
+          "verification_overdue": false,
+          "outside_effective_window": false,
+          "rate_changed": null,
+          "effective_from": "2026-03-01",
+          "effective_to": null
+        },
+        "rate_snapshot": {
+          "freshness": {
+            "verified_on": "2026-10-27",
+            "age_days": 4,
+            "stale": false,
+            "verification_overdue": false,
+            "outside_effective_window": false,
+            "rate_changed": null,
+            "effective_from": "2026-03-01",
+            "effective_to": null
+          },
+          "source": {
+            "page_url": "https://www.pge.com/tariffs/en/rate-information/electric-rates.html",
+            "workbook_url": "https://www.pge.com/assets/rates/tariffs/res-inclu-tou-current.xlsx",
+            "workbook_label": "Residential Inclu TOU (MAR 1, 2026 - Present)",
+            "workbook_sha256": "e071be6fd457a92da60637fc529c1e4c7a5620ffd83d3ae221819f7e4866995d"
+          }
+        },
+        "simulation": {
+          "status": "calculated",
+          "plan": "E-TOU-D",
+          "plan_name": "Time-of-Use 5-8 p.m. Weekdays",
+          "usage_kwh": 23.0,
+          "billing_days": 1,
+          "baseline_kwh": null,
+          "usage_by_period_kwh": {
+            "summer_off_peak": 20.0,
+            "summer_peak": 3.0
+          },
+          "raw_energy_charge": 8.27,
+          "assistance_program": "NONE",
+          "assistance_discount": 0.0,
+          "energy_charge_after_discount": 8.27,
+          "base_services_charge": 0.79,
+          "estimated_comparable_total": 9.07,
+          "annualized_comparable_total": 3311.68,
+          "billing_days_basis": "declared_pacific_calendar_period"
+        },
+        "message": "Comparable components match arithmetically, but period, usage or rate evidence still needs review. This is not a validated bill.",
+        "warnings": [
+          "Rates are total bundled rates and do not model Community Choice Aggregation or Direct Access generation charges.",
+          "California Climate Credit, local taxes, surcharges, one-time adjustments, and non-electric charges are excluded.",
+          "The official tariff controls if this comparison differs from a PG&E bill.",
+          "Solar, NEM, battery export, master-metered service, and separately metered EV-B are outside the MVP scope."
+        ],
+        "human_gates": [
+          {
+            "id": "BILLING_PERIOD_REVIEW",
+            "title": "Confirm the statement period and matching usage",
+            "reason": "An arithmetic match cannot establish that the usage covers the bill being checked.",
+            "user_action": "Confirm the Pacific start date and exclusive end date from the statement convention; provide complete matching intervals without extra records.",
+            "status": "waiting_for_user"
+          },
+          {
+            "id": "USAGE_QUALITY_REVIEW",
+            "title": "Review usage coverage and input assumptions",
+            "reason": "Incomplete, coarse or inferred usage cannot establish switching savings.",
+            "user_action": "Confirm source units and durations, resolve gaps, and supply a sufficient usage period.",
+            "status": "waiting_for_user"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "case": "subcent_reported_amount",
+    "operation": "validate",
+    "request_sha256": "d958bac1dd8c31ec10b35d3303d071b7051e7f58bb6aefb6ac623138e901a597",
+    "before": {
+      "exit_code": 0,
+      "seconds": 0.380772,
+      "stderr_empty": true,
+      "result": {
+        "status": "validated",
+        "validation_scope": "comparable_components_only",
+        "usage_evidence_status": "needs_review",
+        "source": "inline_intervals",
+        "checks": [
+          {
+            "component": "energy_charge",
+            "reported": 0.48,
+            "calculated": 0.48,
+            "difference": -0.01,
+            "tolerance": 2.0,
+            "within_tolerance": true
+          }
+        ],
+        "rate_freshness": {
+          "verified_on": "2026-10-27",
+          "age_days": 4,
+          "stale": false,
+          "verification_overdue": false,
+          "outside_effective_window": false,
+          "rate_changed": null,
+          "effective_from": "2026-03-01",
+          "effective_to": null
+        },
+        "simulation": {
+          "status": "calculated",
+          "plan": "E-TOU-D",
+          "plan_name": "Time-of-Use 5-8 p.m. Weekdays",
+          "usage_kwh": 1.0,
+          "billing_days": 1,
+          "baseline_kwh": null,
+          "usage_by_period_kwh": {
+            "summer_peak": 1.0
+          },
+          "raw_energy_charge": 0.48,
+          "assistance_program": "NONE",
+          "assistance_discount": 0.0,
+          "energy_charge_after_discount": 0.48,
+          "base_services_charge": 0.79,
+          "estimated_comparable_total": 1.27,
+          "annualized_comparable_total": 464.04
+        },
+        "message": "Comparable components reconcile within tolerance.",
+        "warnings": [
+          "Rates are total bundled rates and do not model Community Choice Aggregation or Direct Access generation charges.",
+          "California Climate Credit, local taxes, surcharges, one-time adjustments, and non-electric charges are excluded.",
+          "The official tariff controls if this comparison differs from a PG&E bill.",
+          "Solar, NEM, battery export, master-metered service, and separately metered EV-B are outside the MVP scope."
+        ],
+        "human_gates": [
+          {
+            "id": "USAGE_QUALITY_REVIEW",
+            "title": "Review usage coverage and input assumptions",
+            "reason": "Incomplete, coarse or inferred usage cannot establish switching savings.",
+            "user_action": "Confirm source units and durations, resolve gaps, and supply a sufficient usage period.",
+            "status": "waiting_for_user"
+          }
+        ]
+      }
+    },
+    "after": {
+      "exit_code": 2,
+      "seconds": 0.382803,
+      "stderr_empty": true,
+      "result": {
+        "status": "error",
+        "error": {
+          "code": "INVALID_BILL_AMOUNT",
+          "message": "Comparable bill amounts must be nonnegative finite USD cents, at most 1e15; do not round an ambiguous field silently.",
+          "details": {}
+        }
+      }
+    }
+  },
+  {
+    "case": "rate_snapshot_before_effective_date",
+    "operation": "validate",
+    "request_sha256": "fea076915c7eba205a291c2bb6aee3aee8df757980fe94972aaaf37902a62b84",
+    "before": {
+      "exit_code": 2,
+      "seconds": 0.393488,
+      "stderr_empty": true,
+      "result": {
+        "status": "error",
+        "error": {
+          "code": "INVALID_REQUEST",
+          "message": "validate_bill() got an unexpected keyword argument 'billing_period'"
+        }
+      }
+    },
+    "after": {
+      "exit_code": 0,
+      "seconds": 0.371854,
+      "stderr_empty": true,
+      "result": {
+        "status": "needs_review",
+        "arithmetic_status": "matched",
+        "validation_scope": "comparable_components_only",
+        "usage_evidence_status": "needs_review",
+        "required_reviews": [
+          "RATE_PERIOD_NOT_COVERED"
+        ],
+        "billing_period": {
+          "status": "needs_review",
+          "start_date": "2026-02-28",
+          "end_date_exclusive": "2026-03-01",
+          "time_zone": "America/Los_Angeles",
+          "end_convention": "exclusive",
+          "calendar_days": 1,
+          "expected_minutes": 1440.0,
+          "covered_minutes": 1440.0,
+          "missing_minutes": 0.0,
+          "coverage_ratio": 1.0,
+          "outside_interval_count": 0,
+          "rate_snapshot_covers_period": false,
+          "required_reviews": [
+            "RATE_PERIOD_NOT_COVERED"
+          ],
+          "source": "caller_supplied_dates_not_independently_verified"
+        },
+        "comparison_policy": {
+          "currency": "USD",
+          "precision": "decimal cents",
+          "tolerance": "max(2.00, reported * 0.02), compared before display rounding",
+          "pricing_rounding_certified": false
+        },
+        "source": "inline_intervals",
+        "checks": [
+          {
+            "component": "energy_charge",
+            "reported": 8.37,
+            "calculated": 8.37,
+            "difference": 0.0,
+            "tolerance": 2.0,
+            "tolerance_unrounded": "2.00",
+            "within_tolerance": true
+          },
+          {
+            "component": "base_services_charge",
+            "reported": 0.79,
+            "calculated": 0.79,
+            "difference": 0.0,
+            "tolerance": 2.0,
+            "tolerance_unrounded": "2.00",
+            "within_tolerance": true
+          }
+        ],
+        "rate_freshness": {
+          "verified_on": "2026-10-27",
+          "age_days": 4,
+          "stale": false,
+          "verification_overdue": false,
+          "outside_effective_window": false,
+          "rate_changed": null,
+          "effective_from": "2026-03-01",
+          "effective_to": null
+        },
+        "rate_snapshot": {
+          "freshness": {
+            "verified_on": "2026-10-27",
+            "age_days": 4,
+            "stale": false,
+            "verification_overdue": false,
+            "outside_effective_window": false,
+            "rate_changed": null,
+            "effective_from": "2026-03-01",
+            "effective_to": null
+          },
+          "source": {
+            "page_url": "https://www.pge.com/tariffs/en/rate-information/electric-rates.html",
+            "workbook_url": "https://www.pge.com/assets/rates/tariffs/res-inclu-tou-current.xlsx",
+            "workbook_label": "Residential Inclu TOU (MAR 1, 2026 - Present)",
+            "workbook_sha256": "e071be6fd457a92da60637fc529c1e4c7a5620ffd83d3ae221819f7e4866995d"
+          }
+        },
+        "simulation": {
+          "status": "calculated",
+          "plan": "E-TOU-D",
+          "plan_name": "Time-of-Use 5-8 p.m. Weekdays",
+          "usage_kwh": 24.0,
+          "billing_days": 1,
+          "baseline_kwh": null,
+          "usage_by_period_kwh": {
+            "winter_off_peak": 24.0
+          },
+          "raw_energy_charge": 8.37,
+          "assistance_program": "NONE",
+          "assistance_discount": 0.0,
+          "energy_charge_after_discount": 8.37,
+          "base_services_charge": 0.79,
+          "estimated_comparable_total": 9.17,
+          "annualized_comparable_total": 3347.84,
+          "billing_days_basis": "declared_pacific_calendar_period"
+        },
+        "message": "Comparable components match arithmetically, but period, usage or rate evidence still needs review. This is not a validated bill.",
+        "warnings": [
+          "Rates are total bundled rates and do not model Community Choice Aggregation or Direct Access generation charges.",
+          "California Climate Credit, local taxes, surcharges, one-time adjustments, and non-electric charges are excluded.",
+          "The official tariff controls if this comparison differs from a PG&E bill.",
+          "Solar, NEM, battery export, master-metered service, and separately metered EV-B are outside the MVP scope."
+        ],
+        "human_gates": [
+          {
+            "id": "BILLING_PERIOD_REVIEW",
+            "title": "Confirm the statement period and matching usage",
+            "reason": "An arithmetic match cannot establish that the usage covers the bill being checked.",
+            "user_action": "Confirm the Pacific start date and exclusive end date from the statement convention; provide complete matching intervals without extra records.",
+            "status": "waiting_for_user"
+          },
+          {
+            "id": "OFFICIAL_RATE_CONFIRMATION",
+            "title": "Confirm rates before acting",
+            "reason": "Utility rates and tariff rules can change after BillFit's verified snapshot.",
+            "user_action": "Open the cited PG&E rate page and confirm the effective date before changing plans.",
+            "status": "waiting_for_user"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "case": "near_complete_month_with_one_gap",
+    "operation": "compare",
+    "request_sha256": "88fba1c86c3f2547e9b2bb79144f091f4dd7506038956d42b1f3d76e79eaeb03",
+    "before": {
+      "exit_code": 0,
+      "seconds": 0.431433,
+      "stderr_empty": true,
+      "result": {
+        "status": "compared",
+        "scope": "PG&E bundled, non-solar, individually metered residential electricity",
+        "source": "inline_intervals",
+        "usage_summary": {
+          "interval_count": 743,
+          "start": "2026-07-01T00:00:00-07:00",
+          "end": "2026-08-01T00:00:00-07:00",
+          "span_days": 31.0,
+          "billing_days": 31,
+          "total_kwh": 743.0,
+          "median_interval_minutes": 60.0,
+          "max_interval_minutes": 60.0,
+          "coverage_ratio": 0.9987,
+          "elapsed_minutes": 44640.0,
+          "gap_minutes": 60.0,
+          "negative_interval_count": 0,
+          "quality": "good"
+        },
+        "rate_snapshot": {
+          "freshness": {
+            "verified_on": "2026-10-27",
+            "age_days": 4,
+            "stale": false,
+            "verification_overdue": false,
+            "outside_effective_window": false,
+            "rate_changed": null,
+            "effective_from": "2026-03-01",
+            "effective_to": null
+          },
+          "source": {
+            "page_url": "https://www.pge.com/tariffs/en/rate-information/electric-rates.html",
+            "workbook_url": "https://www.pge.com/assets/rates/tariffs/res-inclu-tou-current.xlsx",
+            "workbook_label": "Residential Inclu TOU (MAR 1, 2026 - Present)",
+            "workbook_sha256": "e071be6fd457a92da60637fc529c1e4c7a5620ffd83d3ae221819f7e4866995d"
+          }
+        },
+        "results": [
+          {
+            "status": "calculated",
+            "plan": "E-TOU-D",
+            "plan_name": "Time-of-Use 5-8 p.m. Weekdays",
+            "usage_kwh": 743.0,
+            "billing_days": 31,
+            "baseline_kwh": null,
+            "usage_by_period_kwh": {
+              "summer_off_peak": 677.0,
+              "summer_peak": 66.0
+            },
+            "raw_energy_charge": 263.1,
+            "assistance_program": "NONE",
+            "assistance_discount": 0.0,
+            "energy_charge_after_discount": 263.1,
+            "base_services_charge": 24.6,
+            "estimated_comparable_total": 287.7,
+            "annualized_comparable_total": 3389.67
+          }
+        ],
+        "ranking": [
+          "E-TOU-D"
+        ],
+        "recommendation": {
+          "status": "stay_or_difference_too_small",
+          "current_plan": "E-TOU-D",
+          "lowest_calculated_plan": "E-TOU-D",
+          "estimated_annual_savings": 0.0,
+          "estimated_savings_percent": 0.0,
+          "message": "No alternative clears both BillFit review thresholds."
+        },
+        "warnings": [
+          "Rates are total bundled rates and do not model Community Choice Aggregation or Direct Access generation charges.",
+          "California Climate Credit, local taxes, surcharges, one-time adjustments, and non-electric charges are excluded.",
+          "The official tariff controls if this comparison differs from a PG&E bill.",
+          "Solar, NEM, battery export, master-metered service, and separately metered EV-B are outside the MVP scope."
+        ],
+        "human_gates": []
+      }
+    },
+    "after": {
+      "exit_code": 0,
+      "seconds": 0.43114,
+      "stderr_empty": true,
+      "result": {
+        "status": "compared",
+        "scope": "PG&E bundled, non-solar, individually metered residential electricity",
+        "source": "inline_intervals",
+        "usage_summary": {
+          "interval_count": 743,
+          "start": "2026-07-01T00:00:00-07:00",
+          "end": "2026-08-01T00:00:00-07:00",
+          "span_days": 31.0,
+          "billing_days": 31,
+          "total_kwh": 743.0,
+          "median_interval_minutes": 60.0,
+          "max_interval_minutes": 60.0,
+          "coverage_ratio": 0.9987,
+          "elapsed_minutes": 44640.0,
+          "gap_minutes": 60.0,
+          "negative_interval_count": 0,
+          "quality": "good"
+        },
+        "rate_snapshot": {
+          "freshness": {
+            "verified_on": "2026-10-27",
+            "age_days": 4,
+            "stale": false,
+            "verification_overdue": false,
+            "outside_effective_window": false,
+            "rate_changed": null,
+            "effective_from": "2026-03-01",
+            "effective_to": null
+          },
+          "source": {
+            "page_url": "https://www.pge.com/tariffs/en/rate-information/electric-rates.html",
+            "workbook_url": "https://www.pge.com/assets/rates/tariffs/res-inclu-tou-current.xlsx",
+            "workbook_label": "Residential Inclu TOU (MAR 1, 2026 - Present)",
+            "workbook_sha256": "e071be6fd457a92da60637fc529c1e4c7a5620ffd83d3ae221819f7e4866995d"
+          }
+        },
+        "results": [
+          {
+            "status": "calculated",
+            "plan": "E-TOU-D",
+            "plan_name": "Time-of-Use 5-8 p.m. Weekdays",
+            "usage_kwh": 743.0,
+            "billing_days": 31,
+            "baseline_kwh": null,
+            "usage_by_period_kwh": {
+              "summer_off_peak": 677.0,
+              "summer_peak": 66.0
+            },
+            "raw_energy_charge": 263.1,
+            "assistance_program": "NONE",
+            "assistance_discount": 0.0,
+            "energy_charge_after_discount": 263.1,
+            "base_services_charge": 24.6,
+            "estimated_comparable_total": 287.7,
+            "annualized_comparable_total": 3389.67
+          }
+        ],
+        "ranking": [
+          "E-TOU-D"
+        ],
+        "recommendation": {
+          "status": "withheld_pending_usage_quality",
+          "message": "Calculations are illustrative. Confirm units/durations, resolve every detected gap and provide at least 28 days of supported intervals before switching guidance; no annual saving is established.",
+          "lowest_calculated_plan": "E-TOU-D"
+        },
+        "warnings": [
+          "Rates are total bundled rates and do not model Community Choice Aggregation or Direct Access generation charges.",
+          "California Climate Credit, local taxes, surcharges, one-time adjustments, and non-electric charges are excluded.",
+          "The official tariff controls if this comparison differs from a PG&E bill.",
+          "Solar, NEM, battery export, master-metered service, and separately metered EV-B are outside the MVP scope."
+        ],
+        "human_gates": [
+          {
+            "id": "USAGE_QUALITY_REVIEW",
+            "title": "Review usage coverage and input assumptions",
+            "reason": "Incomplete, coarse or inferred usage cannot establish switching savings.",
+            "user_action": "Confirm source units and durations, resolve gaps, and supply a sufficient usage period.",
+            "status": "waiting_for_user"
+          }
+        ]
+      }
+    }
+  }
+]

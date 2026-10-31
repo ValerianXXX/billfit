@@ -2,6 +2,10 @@
 
 ## Unreleased — 2026-10-31
 
+- Separate bill arithmetic from evidence status. Accept explicit Pacific statement dates with an exclusive end; report missing/extra usage, calendar days and unsupported historical rate periods without clipping, imputing or approving data.
+- Reconcile monetary tolerance in decimal cents. Fix a $4.40/$2.40 boundary mismatch, reject unconfirmed subcent amounts, and preserve the unrounded percentage tolerance. Existing pricing-engine numbers remain unchanged; exact utility rounding is still unverified.
+- Withhold validation when evidence is incomplete and remove savings fields for stale rates or any detected usage gap. Retain stronger replacements for two old one-hour assertions, original failures and one disclosed test-oracle correction. Pass 178 full tests, actual CLI replay and both existing SDK profiles; no model call, rate activation, dependency change or deployment.
+
 - Isolate each rate comparison/reconciliation snapshot and candidate review; cache immutable bundled text rather than shared mutable dictionaries. A frozen concurrent review test previously changed an ordinary synthetic charge from $0.48 to $0.88; the ordinary calculation now remains $0.48.
 - Tighten candidate scope, eligibility-list, discount-unit, source-identity and date validation. Prepare non-activating complete review packages with preserved assistance rules, runtime/content hashes and replayed baseline calculations; keep approval absent and release gates explicit.
 - Pass 157 full local tests and actual review CLI preparation/verification. Preserve failing contracts and a synthetic counterfactual workflow. An October 31 official workbook download is byte-identical; no packaged value/date, tariff activation, migration, release or model call occurs. Operational rollback and independent acceptance remain open.

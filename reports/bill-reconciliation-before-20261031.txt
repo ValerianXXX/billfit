@@ -1,0 +1,287 @@
+test_complete_month_without_bill_dates_still_needs_period_confirmation (test_bill_reconciliation.BillReconciliationTests.test_complete_month_without_bill_dates_still_needs_period_confirmation) ... FAIL
+test_dst_calendar_days_are_distinct_from_elapsed_hours (test_bill_reconciliation.BillReconciliationTests.test_dst_calendar_days_are_distinct_from_elapsed_hours) ... 
+  test_dst_calendar_days_are_distinct_from_elapsed_hours (test_bill_reconciliation.BillReconciliationTests.test_dst_calendar_days_are_distinct_from_elapsed_hours) (start='2026-03-08T00:00:00-08:00') ... ERROR
+  test_dst_calendar_days_are_distinct_from_elapsed_hours (test_bill_reconciliation.BillReconciliationTests.test_dst_calendar_days_are_distinct_from_elapsed_hours) (start='2026-11-01T00:00:00-07:00') ... ERROR
+test_extra_usage_is_not_silently_clipped_to_the_bill_period (test_bill_reconciliation.BillReconciliationTests.test_extra_usage_is_not_silently_clipped_to_the_bill_period) ... ERROR
+test_full_explicit_period_can_validate_only_comparable_components (test_bill_reconciliation.BillReconciliationTests.test_full_explicit_period_can_validate_only_comparable_components) ... ERROR
+test_inferred_duration_prevents_validation_even_with_full_coverage (test_bill_reconciliation.BillReconciliationTests.test_inferred_duration_prevents_validation_even_with_full_coverage) ... ERROR
+test_malformed_or_unbounded_period_is_a_structured_error (test_bill_reconciliation.BillReconciliationTests.test_malformed_or_unbounded_period_is_a_structured_error) ... 
+  test_malformed_or_unbounded_period_is_a_structured_error (test_bill_reconciliation.BillReconciliationTests.test_malformed_or_unbounded_period_is_a_structured_error) (period={}) ... ERROR
+  test_malformed_or_unbounded_period_is_a_structured_error (test_bill_reconciliation.BillReconciliationTests.test_malformed_or_unbounded_period_is_a_structured_error) (period={'start_date': '2026-07-01', 'end_date_exclusive': '2026-08-01', 'approved': True}) ... ERROR
+  test_malformed_or_unbounded_period_is_a_structured_error (test_bill_reconciliation.BillReconciliationTests.test_malformed_or_unbounded_period_is_a_structured_error) (period={'start_date': '20260701', 'end_date_exclusive': '2026-08-01'}) ... ERROR
+  test_malformed_or_unbounded_period_is_a_structured_error (test_bill_reconciliation.BillReconciliationTests.test_malformed_or_unbounded_period_is_a_structured_error) (period={'start_date': '2026-07-01', 'end_date_exclusive': '2026-07-01'}) ... ERROR
+  test_malformed_or_unbounded_period_is_a_structured_error (test_bill_reconciliation.BillReconciliationTests.test_malformed_or_unbounded_period_is_a_structured_error) (period={'start_date': '2026-07-01', 'end_date_exclusive': '2030-01-01'}) ... ERROR
+  test_malformed_or_unbounded_period_is_a_structured_error (test_bill_reconciliation.BillReconciliationTests.test_malformed_or_unbounded_period_is_a_structured_error) (period={'start_date': True, 'end_date_exclusive': '2026-08-01'}) ... ERROR
+  test_malformed_or_unbounded_period_is_a_structured_error (test_bill_reconciliation.BillReconciliationTests.test_malformed_or_unbounded_period_is_a_structured_error) (period='not a period') ... ERROR
+test_missing_edge_day_is_visible_against_declared_period (test_bill_reconciliation.BillReconciliationTests.test_missing_edge_day_is_visible_against_declared_period) ... ERROR
+test_new_snapshot_cannot_validate_usage_before_its_effective_date (test_bill_reconciliation.BillReconciliationTests.test_new_snapshot_cannot_validate_usage_before_its_effective_date) ... ERROR
+test_no_amount_keeps_period_and_source_diagnostics (test_bill_reconciliation.BillReconciliationTests.test_no_amount_keeps_period_and_source_diagnostics) ... ERROR
+test_one_hour_arithmetic_match_is_not_validated_bill_evidence (test_bill_reconciliation.BillReconciliationTests.test_one_hour_arithmetic_match_is_not_validated_bill_evidence) ... FAIL
+test_one_missing_hour_withholds_switch_savings_even_above_95_percent (test_bill_reconciliation.BillReconciliationTests.test_one_missing_hour_withholds_switch_savings_even_above_95_percent) ... FAIL
+test_stale_arithmetic_match_is_not_validated (test_bill_reconciliation.BillReconciliationTests.test_stale_arithmetic_match_is_not_validated) ... ERROR
+test_stale_snapshot_drops_savings_fields_instead_of_only_relabeling (test_bill_reconciliation.BillReconciliationTests.test_stale_snapshot_drops_savings_fields_instead_of_only_relabeling) ... FAIL
+test_subcent_amounts_are_not_silently_rounded_to_bill_fields (test_bill_reconciliation.BillReconciliationTests.test_subcent_amounts_are_not_silently_rounded_to_bill_fields) ... 
+  test_subcent_amounts_are_not_silently_rounded_to_bill_fields (test_bill_reconciliation.BillReconciliationTests.test_subcent_amounts_are_not_silently_rounded_to_bill_fields) (amount='2.405') ... FAIL
+  test_subcent_amounts_are_not_silently_rounded_to_bill_fields (test_bill_reconciliation.BillReconciliationTests.test_subcent_amounts_are_not_silently_rounded_to_bill_fields) (amount='2.405') ... FAIL
+  test_subcent_amounts_are_not_silently_rounded_to_bill_fields (test_bill_reconciliation.BillReconciliationTests.test_subcent_amounts_are_not_silently_rounded_to_bill_fields) (amount='0.001') ... FAIL
+test_two_dollar_tolerance_boundary_uses_decimal_cents (test_bill_reconciliation.BillReconciliationTests.test_two_dollar_tolerance_boundary_uses_decimal_cents) ... FAIL
+
+======================================================================
+ERROR: test_dst_calendar_days_are_distinct_from_elapsed_hours (test_bill_reconciliation.BillReconciliationTests.test_dst_calendar_days_are_distinct_from_elapsed_hours) (start='2026-03-08T00:00:00-08:00')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<checkout>\plugins\billfit\tests\test_bill_reconciliation.py", line 153, in test_dst_calendar_days_are_distinct_from_elapsed_hours
+    result = self.matched(hours(start, count), billing_period=period)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<checkout>\plugins\billfit\tests\test_bill_reconciliation.py", line 33, in matched
+    return core.validate_bill(intervals=rows, current_plan="E-TOU-D",
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: validate_bill() got an unexpected keyword argument 'billing_period'
+
+======================================================================
+ERROR: test_dst_calendar_days_are_distinct_from_elapsed_hours (test_bill_reconciliation.BillReconciliationTests.test_dst_calendar_days_are_distinct_from_elapsed_hours) (start='2026-11-01T00:00:00-07:00')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<checkout>\plugins\billfit\tests\test_bill_reconciliation.py", line 153, in test_dst_calendar_days_are_distinct_from_elapsed_hours
+    result = self.matched(hours(start, count), billing_period=period)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<checkout>\plugins\billfit\tests\test_bill_reconciliation.py", line 33, in matched
+    return core.validate_bill(intervals=rows, current_plan="E-TOU-D",
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: validate_bill() got an unexpected keyword argument 'billing_period'
+
+======================================================================
+ERROR: test_extra_usage_is_not_silently_clipped_to_the_bill_period (test_bill_reconciliation.BillReconciliationTests.test_extra_usage_is_not_silently_clipped_to_the_bill_period)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<checkout>\plugins\billfit\tests\test_bill_reconciliation.py", line 93, in test_extra_usage_is_not_silently_clipped_to_the_bill_period
+    result = self.matched(hours(count=31 * 24 + 1), billing_period=JULY)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<checkout>\plugins\billfit\tests\test_bill_reconciliation.py", line 33, in matched
+    return core.validate_bill(intervals=rows, current_plan="E-TOU-D",
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: validate_bill() got an unexpected keyword argument 'billing_period'
+
+======================================================================
+ERROR: test_full_explicit_period_can_validate_only_comparable_components (test_bill_reconciliation.BillReconciliationTests.test_full_explicit_period_can_validate_only_comparable_components)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<checkout>\plugins\billfit\tests\test_bill_reconciliation.py", line 66, in test_full_explicit_period_can_validate_only_comparable_components
+    result = self.matched(billing_period=JULY)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<checkout>\plugins\billfit\tests\test_bill_reconciliation.py", line 33, in matched
+    return core.validate_bill(intervals=rows, current_plan="E-TOU-D",
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: validate_bill() got an unexpected keyword argument 'billing_period'
+
+======================================================================
+ERROR: test_inferred_duration_prevents_validation_even_with_full_coverage (test_bill_reconciliation.BillReconciliationTests.test_inferred_duration_prevents_validation_even_with_full_coverage)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<checkout>\plugins\billfit\tests\test_bill_reconciliation.py", line 103, in test_inferred_duration_prevents_validation_even_with_full_coverage
+    result = self.matched(rows, billing_period=JULY)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<checkout>\plugins\billfit\tests\test_bill_reconciliation.py", line 33, in matched
+    return core.validate_bill(intervals=rows, current_plan="E-TOU-D",
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: validate_bill() got an unexpected keyword argument 'billing_period'
+
+======================================================================
+ERROR: test_malformed_or_unbounded_period_is_a_structured_error (test_bill_reconciliation.BillReconciliationTests.test_malformed_or_unbounded_period_is_a_structured_error) (period={})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<checkout>\plugins\billfit\tests\test_bill_reconciliation.py", line 137, in test_malformed_or_unbounded_period_is_a_structured_error
+    self.matched(hours(count=1), billing_period=period)
+  File "<checkout>\plugins\billfit\tests\test_bill_reconciliation.py", line 33, in matched
+    return core.validate_bill(intervals=rows, current_plan="E-TOU-D",
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: validate_bill() got an unexpected keyword argument 'billing_period'
+
+======================================================================
+ERROR: test_malformed_or_unbounded_period_is_a_structured_error (test_bill_reconciliation.BillReconciliationTests.test_malformed_or_unbounded_period_is_a_structured_error) (period={'start_date': '2026-07-01', 'end_date_exclusive': '2026-08-01', 'approved': True})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<checkout>\plugins\billfit\tests\test_bill_reconciliation.py", line 137, in test_malformed_or_unbounded_period_is_a_structured_error
+    self.matched(hours(count=1), billing_period=period)
+  File "<checkout>\plugins\billfit\tests\test_bill_reconciliation.py", line 33, in matched
+    return core.validate_bill(intervals=rows, current_plan="E-TOU-D",
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: validate_bill() got an unexpected keyword argument 'billing_period'
+
+======================================================================
+ERROR: test_malformed_or_unbounded_period_is_a_structured_error (test_bill_reconciliation.BillReconciliationTests.test_malformed_or_unbounded_period_is_a_structured_error) (period={'start_date': '20260701', 'end_date_exclusive': '2026-08-01'})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<checkout>\plugins\billfit\tests\test_bill_reconciliation.py", line 137, in test_malformed_or_unbounded_period_is_a_structured_error
+    self.matched(hours(count=1), billing_period=period)
+  File "<checkout>\plugins\billfit\tests\test_bill_reconciliation.py", line 33, in matched
+    return core.validate_bill(intervals=rows, current_plan="E-TOU-D",
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: validate_bill() got an unexpected keyword argument 'billing_period'
+
+======================================================================
+ERROR: test_malformed_or_unbounded_period_is_a_structured_error (test_bill_reconciliation.BillReconciliationTests.test_malformed_or_unbounded_period_is_a_structured_error) (period={'start_date': '2026-07-01', 'end_date_exclusive': '2026-07-01'})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<checkout>\plugins\billfit\tests\test_bill_reconciliation.py", line 137, in test_malformed_or_unbounded_period_is_a_structured_error
+    self.matched(hours(count=1), billing_period=period)
+  File "<checkout>\plugins\billfit\tests\test_bill_reconciliation.py", line 33, in matched
+    return core.validate_bill(intervals=rows, current_plan="E-TOU-D",
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: validate_bill() got an unexpected keyword argument 'billing_period'
+
+======================================================================
+ERROR: test_malformed_or_unbounded_period_is_a_structured_error (test_bill_reconciliation.BillReconciliationTests.test_malformed_or_unbounded_period_is_a_structured_error) (period={'start_date': '2026-07-01', 'end_date_exclusive': '2030-01-01'})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<checkout>\plugins\billfit\tests\test_bill_reconciliation.py", line 137, in test_malformed_or_unbounded_period_is_a_structured_error
+    self.matched(hours(count=1), billing_period=period)
+  File "<checkout>\plugins\billfit\tests\test_bill_reconciliation.py", line 33, in matched
+    return core.validate_bill(intervals=rows, current_plan="E-TOU-D",
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: validate_bill() got an unexpected keyword argument 'billing_period'
+
+======================================================================
+ERROR: test_malformed_or_unbounded_period_is_a_structured_error (test_bill_reconciliation.BillReconciliationTests.test_malformed_or_unbounded_period_is_a_structured_error) (period={'start_date': True, 'end_date_exclusive': '2026-08-01'})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<checkout>\plugins\billfit\tests\test_bill_reconciliation.py", line 137, in test_malformed_or_unbounded_period_is_a_structured_error
+    self.matched(hours(count=1), billing_period=period)
+  File "<checkout>\plugins\billfit\tests\test_bill_reconciliation.py", line 33, in matched
+    return core.validate_bill(intervals=rows, current_plan="E-TOU-D",
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: validate_bill() got an unexpected keyword argument 'billing_period'
+
+======================================================================
+ERROR: test_malformed_or_unbounded_period_is_a_structured_error (test_bill_reconciliation.BillReconciliationTests.test_malformed_or_unbounded_period_is_a_structured_error) (period='not a period')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<checkout>\plugins\billfit\tests\test_bill_reconciliation.py", line 137, in test_malformed_or_unbounded_period_is_a_structured_error
+    self.matched(hours(count=1), billing_period=period)
+  File "<checkout>\plugins\billfit\tests\test_bill_reconciliation.py", line 33, in matched
+    return core.validate_bill(intervals=rows, current_plan="E-TOU-D",
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: validate_bill() got an unexpected keyword argument 'billing_period'
+
+======================================================================
+ERROR: test_missing_edge_day_is_visible_against_declared_period (test_bill_reconciliation.BillReconciliationTests.test_missing_edge_day_is_visible_against_declared_period)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<checkout>\plugins\billfit\tests\test_bill_reconciliation.py", line 85, in test_missing_edge_day_is_visible_against_declared_period
+    result = self.matched(hours()[24:], billing_period=JULY)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<checkout>\plugins\billfit\tests\test_bill_reconciliation.py", line 33, in matched
+    return core.validate_bill(intervals=rows, current_plan="E-TOU-D",
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: validate_bill() got an unexpected keyword argument 'billing_period'
+
+======================================================================
+ERROR: test_new_snapshot_cannot_validate_usage_before_its_effective_date (test_bill_reconciliation.BillReconciliationTests.test_new_snapshot_cannot_validate_usage_before_its_effective_date)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<checkout>\plugins\billfit\tests\test_bill_reconciliation.py", line 126, in test_new_snapshot_cannot_validate_usage_before_its_effective_date
+    result = self.matched(hours("2026-02-28T00:00:00-08:00", 48), billing_period=period)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<checkout>\plugins\billfit\tests\test_bill_reconciliation.py", line 33, in matched
+    return core.validate_bill(intervals=rows, current_plan="E-TOU-D",
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: validate_bill() got an unexpected keyword argument 'billing_period'
+
+======================================================================
+ERROR: test_no_amount_keeps_period_and_source_diagnostics (test_bill_reconciliation.BillReconciliationTests.test_no_amount_keeps_period_and_source_diagnostics)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<checkout>\plugins\billfit\tests\test_bill_reconciliation.py", line 141, in test_no_amount_keeps_period_and_source_diagnostics
+    result = core.validate_bill(intervals=hours(), current_plan="E-TOU-D", billing_period=JULY)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: validate_bill() got an unexpected keyword argument 'billing_period'
+
+======================================================================
+ERROR: test_stale_arithmetic_match_is_not_validated (test_bill_reconciliation.BillReconciliationTests.test_stale_arithmetic_match_is_not_validated)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<checkout>\plugins\billfit\tests\test_bill_reconciliation.py", line 119, in test_stale_arithmetic_match_is_not_validated
+    result = self.matched(billing_period=JULY)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<checkout>\plugins\billfit\tests\test_bill_reconciliation.py", line 33, in matched
+    return core.validate_bill(intervals=rows, current_plan="E-TOU-D",
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: validate_bill() got an unexpected keyword argument 'billing_period'
+
+======================================================================
+FAIL: test_complete_month_without_bill_dates_still_needs_period_confirmation (test_bill_reconciliation.BillReconciliationTests.test_complete_month_without_bill_dates_still_needs_period_confirmation)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<checkout>\plugins\billfit\tests\test_bill_reconciliation.py", line 62, in test_complete_month_without_bill_dates_still_needs_period_confirmation
+    self.assertEqual(result["status"], "needs_review")
+AssertionError: 'validated' != 'needs_review'
+- validated
++ needs_review
+
+
+======================================================================
+FAIL: test_one_hour_arithmetic_match_is_not_validated_bill_evidence (test_bill_reconciliation.BillReconciliationTests.test_one_hour_arithmetic_match_is_not_validated_bill_evidence)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<checkout>\plugins\billfit\tests\test_bill_reconciliation.py", line 55, in test_one_hour_arithmetic_match_is_not_validated_bill_evidence
+    self.assertEqual(result["status"], "needs_review")
+AssertionError: 'validated' != 'needs_review'
+- validated
++ needs_review
+
+
+======================================================================
+FAIL: test_one_missing_hour_withholds_switch_savings_even_above_95_percent (test_bill_reconciliation.BillReconciliationTests.test_one_missing_hour_withholds_switch_savings_even_above_95_percent)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<checkout>\plugins\billfit\tests\test_bill_reconciliation.py", line 81, in test_one_missing_hour_withholds_switch_savings_even_above_95_percent
+    self.assertEqual(result["recommendation"]["status"], "withheld_pending_usage_quality")
+AssertionError: 'stay_or_difference_too_small' != 'withheld_pending_usage_quality'
+- stay_or_difference_too_small
++ withheld_pending_usage_quality
+
+
+======================================================================
+FAIL: test_stale_snapshot_drops_savings_fields_instead_of_only_relabeling (test_bill_reconciliation.BillReconciliationTests.test_stale_snapshot_drops_savings_fields_instead_of_only_relabeling)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<checkout>\plugins\billfit\tests\test_bill_reconciliation.py", line 112, in test_stale_snapshot_drops_savings_fields_instead_of_only_relabeling
+    self.assertNotIn("estimated_annual_savings", result["recommendation"])
+AssertionError: 'estimated_annual_savings' unexpectedly found in {'status': 'withheld_pending_rate_verification', 'current_plan': 'E-TOU-D', 'lowest_calculated_plan': 'E-TOU-D', 'estimated_annual_savings': 0.0, 'estimated_savings_percent': 0.0, 'message': 'Snapshot verification is stale or outside its effective window; this does not prove rates changed. Confirm official rules before acting.'}
+
+======================================================================
+FAIL: test_subcent_amounts_are_not_silently_rounded_to_bill_fields (test_bill_reconciliation.BillReconciliationTests.test_subcent_amounts_are_not_silently_rounded_to_bill_fields) (amount='2.405')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<checkout>\plugins\billfit\tests\test_bill_reconciliation.py", line 49, in test_subcent_amounts_are_not_silently_rounded_to_bill_fields
+    with self.assertRaises(core.BillFitError) as caught:
+AssertionError: BillFitError not raised
+
+======================================================================
+FAIL: test_subcent_amounts_are_not_silently_rounded_to_bill_fields (test_bill_reconciliation.BillReconciliationTests.test_subcent_amounts_are_not_silently_rounded_to_bill_fields) (amount='2.405')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<checkout>\plugins\billfit\tests\test_bill_reconciliation.py", line 49, in test_subcent_amounts_are_not_silently_rounded_to_bill_fields
+    with self.assertRaises(core.BillFitError) as caught:
+AssertionError: BillFitError not raised
+
+======================================================================
+FAIL: test_subcent_amounts_are_not_silently_rounded_to_bill_fields (test_bill_reconciliation.BillReconciliationTests.test_subcent_amounts_are_not_silently_rounded_to_bill_fields) (amount='0.001')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<checkout>\plugins\billfit\tests\test_bill_reconciliation.py", line 49, in test_subcent_amounts_are_not_silently_rounded_to_bill_fields
+    with self.assertRaises(core.BillFitError) as caught:
+AssertionError: BillFitError not raised
+
+======================================================================
+FAIL: test_two_dollar_tolerance_boundary_uses_decimal_cents (test_bill_reconciliation.BillReconciliationTests.test_two_dollar_tolerance_boundary_uses_decimal_cents)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<checkout>\plugins\billfit\tests\test_bill_reconciliation.py", line 42, in test_two_dollar_tolerance_boundary_uses_decimal_cents
+    self.assertTrue(check["within_tolerance"])
+AssertionError: False is not true
+
+----------------------------------------------------------------------
+Ran 15 tests in 0.381s
+
+FAILED (failures=8, errors=16)

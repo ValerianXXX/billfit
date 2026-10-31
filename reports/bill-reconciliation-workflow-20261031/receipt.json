@@ -1,0 +1,55 @@
+{
+  "observed_at": "2026-10-31T14:01:22.212116+00:00",
+  "synthetic_only": true,
+  "baseline": "2847b4c8deb40485c5e1400347898567b50c7135",
+  "current_head": "848595fa72e05c55535a0f4916cc13576790fafc",
+  "python": "3.11.3",
+  "platform": "Windows",
+  "cases": 7,
+  "actual_cli_invocations": 14,
+  "checks": {
+    "decimal_boundary_match": true,
+    "short_match_is_review_only": true,
+    "complete_day_arithmetic_match": true,
+    "missing_hour_reported": true,
+    "subcent_rejected": true,
+    "historical_rate_gap_disclosed": true,
+    "gap_savings_withheld": true,
+    "packaged_sources_unchanged": true
+  },
+  "observations_sha256": "d241258a4cb0cd9fb5faf233018bc7409f79c1d53b55f6d21fd6ca3529449ada",
+  "source_files_before": {
+    "pge_residential_rates_2026-03-01.json": "2475f673017cfe20d9272c20e1e13e3506da6c47f99bbb685278c029ad25d9b8",
+    "care_fera_2026-06-01.json": "087246bab7df312cedcee607c7d880f96604574a35e48f87fb29bf10f2e5b26b"
+  },
+  "source_files_after": {
+    "pge_residential_rates_2026-03-01.json": "2475f673017cfe20d9272c20e1e13e3506da6c47f99bbb685278c029ad25d9b8",
+    "care_fera_2026-06-01.json": "087246bab7df312cedcee607c7d880f96604574a35e48f87fb29bf10f2e5b26b"
+  },
+  "runtime_lf_hashes": {
+    "billfit_cli.py": "6fd00652b609166fc92d2a9838e348b78972741001fba87d77d52c9e71982cfa",
+    "billfit_core.py": "c52816fe5b0f326120947cc3bb63410c871f0d4254791e30babf70248cce61c9",
+    "billfit_errors.py": "b09170050614a0fc20331312f3510c19e9e75f66d59b05f69cd0ce0f47e86cd3",
+    "billfit_reconciliation.py": "107111db7774b2ef05f18a29f8190b672496d049e7e6e00aef1211890b54d52e",
+    "billfit_usage.py": "4c58f0cd11fe76eb4e3553567fb57e30705f6e5a279f84cb79138ff47dcdffcb",
+    "bill_cancellation.py": "2d86f5757a3e67895efa06f8e555d5e039919168d46beb45bd012a7f5292e036",
+    "bill_image.py": "d7dfa49e34f8514e6379fd02b4f357577dc1c4cdee49ba1eda0a6ae439aa4a30",
+    "bill_image_geometry.py": "5c846e754ec773730f8426b73bc5eef2e96a0f7689eafed57712502e72529b69",
+    "bill_image_worker.py": "47f2f6878d1dce13948881c829ac540abded7fa4f15588246649b86b393fe349",
+    "bill_input.py": "d4c31d5983bcdf5e33110c37672724290b4872fcacf6a23ef45537606c22547e",
+    "bill_ocr.py": "250220f2950627a0166098d3581b56ab640adcf0a756aaeef8d1ac326c7443f3",
+    "bill_pdf_worker.py": "ba04b073845da74484483d125faeb709c2de447352339a00e2298d5af926ddce",
+    "bill_process.py": "27caf17ab1416ef2272732b05aa53d1a955f218247aea954cd1019e9e1b6e647",
+    "mcp_server.py": "51fa0fd00ba3b308641b062a336243390badd82568ac98028dca78ea18ae951d",
+    "source_check.py": "ce0dfe524eb02b327a2278654758432878c0cd56ec0061c6617df86e3c0b6005",
+    "tariff_review_bundle.py": "8435c41b09c64599f60215f350ddd3de1e67a7cb4a3d52610d41a81f6d48b163"
+  },
+  "models_called": 0,
+  "account_actions": 0,
+  "bill_accuracy_certified": false,
+  "limits": [
+    "Development cases, not independent customer bills",
+    "Pricing engine rounding remains a separate open verification item",
+    "Old CLI does not support billing_period; its errors are retained"
+  ]
+}
