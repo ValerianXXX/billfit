@@ -1,0 +1,7 @@
+{
+  "operation": "reject-overwrite",
+  "exit_code": 2,
+  "elapsed_seconds": 0.413498,
+  "stdout": "{\"status\": \"error\", \"error\": {\"code\": \"TARIFF_REVIEW_FAILED\", \"message\": \"Review inputs, source/runtime identity and destination. Preserve existing evidence and use a fresh review directory.\"}}\n",
+  "stderr": ""
+}

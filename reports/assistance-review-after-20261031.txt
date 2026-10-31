@@ -1,0 +1,15 @@
+test_actual_cli_prepares_assistance_only_and_redacts_invalid_input (test_assistance_review.AssistanceReviewTests.test_actual_cli_prepares_assistance_only_and_redacts_invalid_input) ... ok
+test_assistance_only_bundle_contains_replay_and_preserves_both_baselines (test_assistance_review.AssistanceReviewTests.test_assistance_only_bundle_contains_replay_and_preserves_both_baselines) ... ok
+test_candidate_review_cannot_change_concurrent_public_screening (test_assistance_review.AssistanceReviewTests.test_candidate_review_cannot_change_concurrent_public_screening) ... ok
+test_changed_thresholds_include_both_boundaries_and_large_households (test_assistance_review.AssistanceReviewTests.test_changed_thresholds_include_both_boundaries_and_large_households) ... ok
+test_every_existing_program_and_alias_retains_application_and_medical_gates (test_assistance_review.AssistanceReviewTests.test_every_existing_program_and_alias_retains_application_and_medical_gates) ... ok
+test_future_rules_replay_at_explicit_dates_without_becoming_current (test_assistance_review.AssistanceReviewTests.test_future_rules_replay_at_explicit_dates_without_becoming_current) ... ok
+test_invalid_candidate_leaves_no_directory_or_packaged_rule_changes (test_assistance_review.AssistanceReviewTests.test_invalid_candidate_leaves_no_directory_or_packaged_rule_changes) ... ok
+test_public_entry_point_does_not_accept_candidate_or_date_override (test_assistance_review.AssistanceReviewTests.test_public_entry_point_does_not_accept_candidate_or_date_override) ... ok
+test_rehashed_screening_and_rule_policy_tampering_fail (test_assistance_review.AssistanceReviewTests.test_rehashed_screening_and_rule_policy_tampering_fail) ... ok
+test_rejects_coercion_inconsistent_tables_and_scope_changes (test_assistance_review.AssistanceReviewTests.test_rejects_coercion_inconsistent_tables_and_scope_changes) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 2.389s
+
+OK

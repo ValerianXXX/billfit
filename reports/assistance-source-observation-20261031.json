@@ -1,0 +1,19 @@
+{
+  "observed_at": "2026-10-31T16:40:03.878896+00:00",
+  "url": "https://www.cpuc.ca.gov/care/",
+  "bytes": 60160,
+  "content_sha256": "fe088cbb64a05a7aaf56820d126b69b3242e4723407bf90fde1991865daa245c",
+  "status": "RETRIEVED_AND_CURRENT_TABLE_REVIEWED",
+  "effective_from": "2026-06-01",
+  "effective_to": "2027-05-31",
+  "all_packaged_threshold_numbers_present": true,
+  "number_presence_is_not_full_semantic_mapping": true,
+  "source_interpretation": "Official CARE and FERA tables reviewed with web source on October 31; no changed threshold asserted",
+  "packaged_verified_on": "2026-10-27",
+  "packaged_data_changed": false,
+  "automatic_activation": false,
+  "limits": [
+    "Existing categorical paths are regression coverage, not a new audit of every official program",
+    "Whole-dollar printed boundaries do not establish fractional-income rounding policy"
+  ]
+}

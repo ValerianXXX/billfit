@@ -1,0 +1,91 @@
+test_actual_cli_prepares_assistance_only_and_redacts_invalid_input (test_assistance_review.AssistanceReviewTests.test_actual_cli_prepares_assistance_only_and_redacts_invalid_input) ... FAIL
+test_assistance_only_bundle_contains_replay_and_preserves_both_baselines (test_assistance_review.AssistanceReviewTests.test_assistance_only_bundle_contains_replay_and_preserves_both_baselines) ... ERROR
+test_candidate_review_cannot_change_concurrent_public_screening (test_assistance_review.AssistanceReviewTests.test_candidate_review_cannot_change_concurrent_public_screening) ... ERROR
+test_changed_thresholds_include_both_boundaries_and_large_households (test_assistance_review.AssistanceReviewTests.test_changed_thresholds_include_both_boundaries_and_large_households) ... ERROR
+test_every_existing_program_and_alias_retains_application_and_medical_gates (test_assistance_review.AssistanceReviewTests.test_every_existing_program_and_alias_retains_application_and_medical_gates) ... ERROR
+test_future_rules_replay_at_explicit_dates_without_becoming_current (test_assistance_review.AssistanceReviewTests.test_future_rules_replay_at_explicit_dates_without_becoming_current) ... ERROR
+test_invalid_candidate_leaves_no_directory_or_packaged_rule_changes (test_assistance_review.AssistanceReviewTests.test_invalid_candidate_leaves_no_directory_or_packaged_rule_changes) ... ERROR
+test_public_entry_point_does_not_accept_candidate_or_date_override (test_assistance_review.AssistanceReviewTests.test_public_entry_point_does_not_accept_candidate_or_date_override) ... ok
+test_rehashed_screening_and_rule_policy_tampering_fail (test_assistance_review.AssistanceReviewTests.test_rehashed_screening_and_rule_policy_tampering_fail) ... ERROR
+test_rejects_coercion_inconsistent_tables_and_scope_changes (test_assistance_review.AssistanceReviewTests.test_rejects_coercion_inconsistent_tables_and_scope_changes) ... ERROR
+
+======================================================================
+ERROR: test_assistance_only_bundle_contains_replay_and_preserves_both_baselines (test_assistance_review.AssistanceReviewTests.test_assistance_only_bundle_contains_replay_and_preserves_both_baselines)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repo>\plugins\billfit\tests\test_assistance_review.py", line 153, in test_assistance_only_bundle_contains_replay_and_preserves_both_baselines
+    manifest = prepare_bundle(None, path, assistance_candidate=candidate_rules(), synthetic_only=True)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: prepare_bundle() got an unexpected keyword argument 'assistance_candidate'
+
+======================================================================
+ERROR: test_candidate_review_cannot_change_concurrent_public_screening (test_assistance_review.AssistanceReviewTests.test_candidate_review_cannot_change_concurrent_public_screening)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repo>\plugins\billfit\tests\test_assistance_review.py", line 110, in test_candidate_review_cannot_change_concurrent_public_screening
+    from assistance_review import compare_assistance_candidate
+ModuleNotFoundError: No module named 'assistance_review'
+
+======================================================================
+ERROR: test_changed_thresholds_include_both_boundaries_and_large_households (test_assistance_review.AssistanceReviewTests.test_changed_thresholds_include_both_boundaries_and_large_households)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repo>\plugins\billfit\tests\test_assistance_review.py", line 29, in test_changed_thresholds_include_both_boundaries_and_large_households
+    from assistance_review import compare_assistance_candidate
+ModuleNotFoundError: No module named 'assistance_review'
+
+======================================================================
+ERROR: test_every_existing_program_and_alias_retains_application_and_medical_gates (test_assistance_review.AssistanceReviewTests.test_every_existing_program_and_alias_retains_application_and_medical_gates)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repo>\plugins\billfit\tests\test_assistance_review.py", line 94, in test_every_existing_program_and_alias_retains_application_and_medical_gates
+    from assistance_review import compare_assistance_candidate
+ModuleNotFoundError: No module named 'assistance_review'
+
+======================================================================
+ERROR: test_future_rules_replay_at_explicit_dates_without_becoming_current (test_assistance_review.AssistanceReviewTests.test_future_rules_replay_at_explicit_dates_without_becoming_current)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repo>\plugins\billfit\tests\test_assistance_review.py", line 52, in test_future_rules_replay_at_explicit_dates_without_becoming_current
+    from assistance_review import compare_assistance_candidate
+ModuleNotFoundError: No module named 'assistance_review'
+
+======================================================================
+ERROR: test_invalid_candidate_leaves_no_directory_or_packaged_rule_changes (test_assistance_review.AssistanceReviewTests.test_invalid_candidate_leaves_no_directory_or_packaged_rule_changes)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repo>\plugins\billfit\tests\test_assistance_review.py", line 201, in test_invalid_candidate_leaves_no_directory_or_packaged_rule_changes
+    prepare_bundle(None, path, assistance_candidate=proposed, synthetic_only=True)
+TypeError: prepare_bundle() got an unexpected keyword argument 'assistance_candidate'
+
+======================================================================
+ERROR: test_rehashed_screening_and_rule_policy_tampering_fail (test_assistance_review.AssistanceReviewTests.test_rehashed_screening_and_rule_policy_tampering_fail)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repo>\plugins\billfit\tests\test_assistance_review.py", line 172, in test_rehashed_screening_and_rule_policy_tampering_fail
+    prepare_bundle(None, path, assistance_candidate=candidate_rules(), synthetic_only=True)
+TypeError: prepare_bundle() got an unexpected keyword argument 'assistance_candidate'
+
+======================================================================
+ERROR: test_rejects_coercion_inconsistent_tables_and_scope_changes (test_assistance_review.AssistanceReviewTests.test_rejects_coercion_inconsistent_tables_and_scope_changes)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repo>\plugins\billfit\tests\test_assistance_review.py", line 67, in test_rejects_coercion_inconsistent_tables_and_scope_changes
+    from assistance_review import compare_assistance_candidate
+ModuleNotFoundError: No module named 'assistance_review'
+
+======================================================================
+FAIL: test_actual_cli_prepares_assistance_only_and_redacts_invalid_input (test_assistance_review.AssistanceReviewTests.test_actual_cli_prepares_assistance_only_and_redacts_invalid_input)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repo>\plugins\billfit\tests\test_assistance_review.py", line 213, in test_actual_cli_prepares_assistance_only_and_redacts_invalid_input
+    self.assertEqual(prepared.returncode, 0, prepared.stderr)
+AssertionError: 2 != 0 : usage: tariff_review_bundle.py prepare [-h] --candidate CANDIDATE --output-dir
+                                       OUTPUT_DIR [--synthetic]
+tariff_review_bundle.py prepare: error: the following arguments are required: --candidate
+
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.506s
+
+FAILED (failures=1, errors=8)

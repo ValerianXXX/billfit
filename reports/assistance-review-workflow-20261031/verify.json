@@ -1,0 +1,7 @@
+{
+  "operation": "verify",
+  "exit_code": 0,
+  "elapsed_seconds": 0.497773,
+  "stdout": "{\n  \"status\": \"REVIEW_REQUIRED\",\n  \"approval\": null,\n  \"automatic_activation\": false,\n  \"synthetic_only\": true,\n  \"calculation_replay_matches\": true,\n  \"assistance_replay_matches\": true,\n  \"rollback_snapshot_replay_matches\": true,\n  \"installed_or_activated\": false,\n  \"snapshot_hashes\": {\n    \"baseline.json\": \"b4e584fb4e0c65250d2ce418db1f35ed9362d020ce2b7deb44fe0b962ef16a09\",\n    \"candidate.json\": \"df8a2abb419bc630d97333b42524d7c4c94e4b356ad879de8dcd7a7f09a399d8\"\n  },\n  \"remaining_gates\": [\n    \"Independent source-to-cell and effective-date review\",\n    \"Review changed calculations and scope\",\n    \"Explicit owner approval of an exact version before publication\",\n    \"Release/install and operational rollback acceptance\"\n  ]\n}\n",
+  "stderr": ""
+}

@@ -47,6 +47,14 @@ Do not edit a package's approval/gates or use synthetic counterfactual rates for
 customer advice. The ordinary calculator continues to use its packaged rules;
 no MCP argument selects an unapproved tariff snapshot.
 
+The local maintenance CLI also accepts `--assistance-candidate` for complete
+income-table/date updates within existing program rules. Version-2 packages add
+old/new assistance screening and baseline replay. Their explicit scenario dates
+are test inputs, not an override for ordinary customer screening. Program/alias,
+source-identity and scope changes need a separate engine review. Counterfactual
+examples remain synthetic even if inherited snapshot metadata names an official
+source. Never treat package verification as source authentication or enrollment.
+
 ## Workflow
 
 ### 1. Establish the smallest valid scope
