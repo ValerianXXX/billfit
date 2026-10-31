@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+from copy import deepcopy
 import json
 import math
 import re
@@ -16,16 +17,18 @@ PLUGIN_ROOT = Path(__file__).resolve().parents[1]
 DATA_ROOT = PLUGIN_ROOT / "data"
 
 
-@lru_cache(maxsize=1)
+@lru_cache(maxsize=2)
+def _bundled_data_text(filename: str) -> str:
+    # Cache immutable text, never a dictionary exposed to callers.
+    return (DATA_ROOT / filename).read_text(encoding="utf-8")
+
+
 def rate_data() -> dict[str, Any]:
-    path = DATA_ROOT / "pge_residential_rates_2026-03-01.json"
-    return json.loads(path.read_text(encoding="utf-8"))
+    return json.loads(_bundled_data_text("pge_residential_rates_2026-03-01.json"))
 
 
-@lru_cache(maxsize=1)
 def assistance_data() -> dict[str, Any]:
-    path = DATA_ROOT / "care_fera_2026-06-01.json"
-    return json.loads(path.read_text(encoding="utf-8"))
+    return json.loads(_bundled_data_text("care_fera_2026-06-01.json"))
 
 
 def _gate(
@@ -192,7 +195,7 @@ def parse_usage_file(usage_file: str) -> dict[str, Any]:
     }
 
 
-def _normalize_plan(plan: str) -> str:
+def _normalize_plan(plan: str, *, rates: dict | None = None) -> str:
     key = re.sub(r"[^A-Z0-9]", "", str(plan).upper())
     aliases = {
         "E1": "E-1",
@@ -203,7 +206,7 @@ def _normalize_plan(plan: str) -> str:
         "EELEC": "E-ELEC",
     }
     if key not in aliases:
-        raise BillFitError("UNSUPPORTED_PLAN", f"Unsupported rate plan: {plan}", {"supported": list(rate_data()["plans"])})
+        raise BillFitError("UNSUPPORTED_PLAN", f"Unsupported rate plan: {plan}", {"supported": list((rate_data() if rates is None else rates)["plans"])})
     return aliases[key]
 
 
@@ -283,8 +286,8 @@ def _coverage_minutes_by_day(intervals: list[Interval]) -> dict[date, float]:
     return coverage
 
 
-def _baseline_allowance(intervals: list[Interval], territory: str, service_type: str) -> float:
-    rates = rate_data()
+def _baseline_allowance(intervals: list[Interval], territory: str, service_type: str, *, rates: dict | None = None) -> float:
+    rates = rate_data() if rates is None else rates
     territory_key = territory.upper().strip()
     service_key = service_type.lower().replace("-", "_").replace(" ", "_")
     if service_key in {"allelectric", "all_elec"}:
@@ -309,8 +312,8 @@ def _baseline_allowance(intervals: list[Interval], territory: str, service_type:
     return allowance
 
 
-def _check_plan_eligibility(plan: str, technologies: set[str] | None) -> None:
-    details = rate_data()["plans"][plan]
+def _check_plan_eligibility(plan: str, technologies: set[str] | None, *, rates: dict | None = None) -> None:
+    details = (rate_data() if rates is None else rates)["plans"][plan]
     eligibility = details["eligibility"]
     if eligibility == "general":
         return
@@ -331,10 +334,12 @@ def _simulate_plan(
     baseline_territory: str | None,
     service_type: str | None,
     technologies: set[str] | None,
+    *,
+    rates: dict | None = None,
 ) -> dict[str, Any]:
-    rates = rate_data()
+    rates = rate_data() if rates is None else rates
     details = rates["plans"][plan]
-    _check_plan_eligibility(plan, technologies)
+    _check_plan_eligibility(plan, technologies, rates=rates)
     summary = _usage_summary(intervals)
     if summary["negative_interval_count"]:
         raise BillFitError("UNSUPPORTED_NET_EXPORT", "Negative intervals indicate export; solar/net export is outside the MVP scope.")
@@ -346,7 +351,7 @@ def _simulate_plan(
     if details["kind"] == "tiered":
         if not baseline_territory or not service_type:
             raise BillFitError("BASELINE_INFO_REQUIRED", "E-1 requires baseline territory and service type.")
-        baseline_kwh = _baseline_allowance(intervals, baseline_territory, service_type)
+        baseline_kwh = _baseline_allowance(intervals, baseline_territory, service_type, rates=rates)
         tier_1_kwh = min(total_kwh, baseline_kwh)
         tier_2_kwh = max(0.0, total_kwh - tier_1_kwh)
         period_kwh = {"tier_1": tier_1_kwh, "tier_2": tier_2_kwh}
@@ -362,7 +367,7 @@ def _simulate_plan(
         if details["kind"] == "tou_baseline_credit":
             if not baseline_territory or not service_type:
                 raise BillFitError("BASELINE_INFO_REQUIRED", "E-TOU-C requires baseline territory and service type.")
-            baseline_kwh = _baseline_allowance(intervals, baseline_territory, service_type)
+            baseline_kwh = _baseline_allowance(intervals, baseline_territory, service_type, rates=rates)
             raw_energy_charge -= min(total_kwh, baseline_kwh) * details["baseline_credit"]
 
     discount_rate = rates["assistance_volumetric_discount"][assistance_program]
@@ -409,6 +414,30 @@ def compare_rate_plans(
     solar_or_net_export: bool = False,
     cca_or_direct_access: bool = False,
 ) -> dict[str, Any]:
+    return _compare_rate_snapshot(
+        rate_data(), usage_file=usage_file, intervals=intervals, current_plan=current_plan,
+        candidate_plans=candidate_plans, baseline_territory=baseline_territory, service_type=service_type,
+        assistance_program=assistance_program, qualifying_technologies=qualifying_technologies,
+        solar_or_net_export=solar_or_net_export, cca_or_direct_access=cca_or_direct_access,
+    )
+
+
+def _compare_rate_snapshot(
+    rates: dict[str, Any],
+    *,
+    usage_file: str | None = None,
+    intervals: list[dict[str, Any]] | None = None,
+    current_plan: str | None = None,
+    candidate_plans: list[str] | None = None,
+    baseline_territory: str | None = None,
+    service_type: str | None = None,
+    assistance_program: str | None = None,
+    qualifying_technologies: list[str] | None = None,
+    solar_or_net_export: bool = False,
+    cca_or_direct_access: bool = False,
+) -> dict[str, Any]:
+    """Internal review entry; snapshots are never selected by MCP/CLI arguments."""
+    rates = deepcopy(rates)
     if solar_or_net_export:
         raise BillFitError("UNSUPPORTED_SCOPE", "Solar, NEM, and net export are outside the BillFit MVP scope.")
     if cca_or_direct_access:
@@ -421,9 +450,9 @@ def compare_rate_plans(
     techs = None if qualifying_technologies is None else {
         re.sub(r"[^a-z0-9]+", "_", item.lower()).strip("_") for item in qualifying_technologies
     }
-    plans = [_normalize_plan(plan) for plan in candidate_plans] if candidate_plans else list(rate_data()["plans"])
+    plans = [_normalize_plan(plan, rates=rates) for plan in candidate_plans] if candidate_plans else list(rates["plans"])
     if current_plan:
-        normalized_current = _normalize_plan(current_plan)
+        normalized_current = _normalize_plan(current_plan, rates=rates)
         if normalized_current not in plans:
             plans.insert(0, normalized_current)
     else:
@@ -441,6 +470,7 @@ def compare_rate_plans(
                 baseline_territory,
                 service_type,
                 techs,
+                rates=rates,
             )
         except BillFitError as exc:
             status = "ineligible" if exc.code == "PLAN_INELIGIBLE" else "needs_human_input"
@@ -501,7 +531,7 @@ def compare_rate_plans(
             "lowest_calculated_plan": best["plan"],
         }
         gates_by_id["USAGE_QUALITY_REVIEW"] = HUMAN_GATES["USAGE_QUALITY_REVIEW"]
-    freshness = _freshness(rate_data())
+    freshness = _freshness(rates)
     if freshness["stale"]:
         gates_by_id["OFFICIAL_RATE_CONFIRMATION"] = HUMAN_GATES["OFFICIAL_RATE_CONFIRMATION"]
         warnings.append("The bundled rate snapshot is older than 45 days or outside its effective window.")
@@ -514,12 +544,12 @@ def compare_rate_plans(
         "usage_summary": summary,
         "rate_snapshot": {
             "freshness": freshness,
-            "source": rate_data()["source"],
+            "source": rates["source"],
         },
         "results": results,
         "ranking": [item["plan"] for item in calculated],
         "recommendation": recommendation,
-        "warnings": warnings + rate_data()["limitations"],
+        "warnings": warnings + rates["limitations"],
         "human_gates": list(gates_by_id.values()),
     }
 
@@ -537,13 +567,14 @@ def validate_bill(
 ) -> dict[str, Any]:
     if not current_plan:
         raise BillFitError("CURRENT_PLAN_REQUIRED", "current_plan is required for bill validation.")
+    rates = rate_data()
     parsed, warnings, source = load_usage(usage_file=usage_file, intervals=intervals)
-    plan = _normalize_plan(current_plan)
+    plan = _normalize_plan(current_plan, rates=rates)
     program = _normalize_program(assistance_program)
     techs = None if qualifying_technologies is None else {
         re.sub(r"[^a-z0-9]+", "_", item.lower()).strip("_") for item in qualifying_technologies
     }
-    simulated = _simulate_plan(parsed, plan, program, baseline_territory, service_type, techs)
+    simulated = _simulate_plan(parsed, plan, program, baseline_territory, service_type, techs, rates=rates)
     checks: list[dict[str, Any]] = []
     for label, reported, calculated in (
         ("energy_charge", reported_energy_charge, simulated["energy_charge_after_discount"]),
@@ -577,7 +608,7 @@ def validate_bill(
             "human_gates": [],
         }
     passed = all(check["within_tolerance"] for check in checks)
-    freshness = _freshness(rate_data())
+    freshness = _freshness(rates)
     needs_usage_review = _usage_needs_review(_usage_summary(parsed), warnings)
     gates = [] if passed and not freshness["stale"] else [HUMAN_GATES["OFFICIAL_RATE_CONFIRMATION"]]
     if needs_usage_review:
@@ -591,7 +622,7 @@ def validate_bill(
         "rate_freshness": freshness,
         "simulation": simulated,
         "message": "Comparable components reconcile within tolerance." if passed else "Do not act on the comparison until the mismatch is explained.",
-        "warnings": warnings + rate_data()["limitations"],
+        "warnings": warnings + rates["limitations"],
         "human_gates": gates,
     }
 

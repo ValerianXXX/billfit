@@ -1,0 +1,122 @@
+{
+  "observed_at": "2026-10-31T13:46:20.850327+00:00",
+  "status": "LOCAL_IMPLEMENTATION_AND_REVIEW_REPLAY_VERIFIED_RELEASE_OPEN",
+  "branch": "codex/tariff-review-isolation-20261031",
+  "base_commit": "0a4cb36fd2f2aa8f030b884f34bfc11b612ef815",
+  "runtime_commit": "65d3c41779b604f89bc9dcc5a215d545d53995e7",
+  "baseline": {
+    "tests": 143,
+    "unchanged_from_verified_predecessor": true
+  },
+  "frozen_isolation": {
+    "methods": 7,
+    "initial_failures": 16,
+    "initial_errors": 1,
+    "subtests_included": true,
+    "final_all_pass": true
+  },
+  "frozen_bundle": {
+    "methods": 4,
+    "initial_errors": 4,
+    "final_all_pass": true
+  },
+  "additional_manifest_failures_retained": 2,
+  "targeted": {
+    "passed": 13,
+    "seconds": 0.689
+  },
+  "full": {
+    "passed": 157,
+    "skipped": 0,
+    "seconds": 74.011,
+    "platform": "Windows",
+    "python": "3.11.3"
+  },
+  "concurrent_public_energy_charge": {
+    "expected": 0.48,
+    "before_fix": 0.88,
+    "after_fix": 0.48,
+    "synthetic_only": true,
+    "production_incident_claimed": false
+  },
+  "actual_cli": {
+    "prepare": "PASS",
+    "verify": "PASS",
+    "malformed_input_redaction": "PASS",
+    "public_values_unchanged": true,
+    "complete_snapshots_saved": true,
+    "rollback_arithmetic_replayed": true,
+    "operational_rollback": false
+  },
+  "logs": {
+    "tariff-review-isolation-before-20261031": {
+      "original_sha256": "897c0e0a188aa8a21744a621ece90dcb5401591a11e143af302c5c9c0650984e",
+      "portable_path": "reports/tariff-review-isolation-before-20261031.txt",
+      "portable_sha256": "748e5efb63d5271e2a2f4859d85b9a3e22c44067f1cb3e9d53a02b8af5264229"
+    },
+    "tariff-review-isolation-after-20261031": {
+      "original_sha256": "2c9cc7e7842b47b9710100056404961abe2d3a30d7b81f8b290021cf161bb955",
+      "portable_path": "reports/tariff-review-isolation-after-20261031.txt",
+      "portable_sha256": "0d4b24c4ccaca284a2040db4174f1e8b643710ec2320bd753ce8bbe6820d7566"
+    },
+    "tariff-review-bundle-before-20261031": {
+      "original_sha256": "e03a4f26c4b7992ff480f83bbddc1b172e0e3dd201012b8d2e53dc04e653445b",
+      "portable_path": "reports/tariff-review-bundle-before-20261031.txt",
+      "portable_sha256": "fb513d16c54c81c1224caf3f530571da6c435a3a5e52efaf02ee00c717b4d528"
+    },
+    "tariff-review-gates-before-20261031": {
+      "original_sha256": "b605bf961165a2a853d107b3aeddceaf3603a81e58798d6d932d6aa7334c0a0f",
+      "portable_path": "reports/tariff-review-gates-before-20261031.txt",
+      "portable_sha256": "93f527967b4020af06ed1d10c8531c757847901929a5a5e739b20fb8263f2bc9"
+    },
+    "tariff-review-targeted-final-20261031": {
+      "original_sha256": "f3834a669b05e7fa5c40ceb1c9624d99964f4ceaa917c20ed6bb341dbb35aa0a",
+      "portable_path": "reports/tariff-review-targeted-final-20261031.txt",
+      "portable_sha256": "2f2f3ba0586628f56f44cfdc7e427b5050ed3b619a4199d8d255089c23041682"
+    },
+    "tariff-review-full-20261031": {
+      "original_sha256": "0cb579e912854c33e40bbfa0cc7fd90c4016431268cc21fc30f65e5c21ceb556",
+      "portable_path": "reports/tariff-review-full-20261031.txt",
+      "portable_sha256": "3a34bae82e72ac4112d08bbd4bd218e081c536110e916443873f98fa9cb1fcb1"
+    }
+  },
+  "runtime_lf_hashes": {
+    "scripts/billfit_core.py": "f0fb2e445f9eab5a1d4a21b5197e44c31b8ac3cd98bb061bc7aed5d5107e16d2",
+    "scripts/billfit_usage.py": "4c58f0cd11fe76eb4e3553567fb57e30705f6e5a279f84cb79138ff47dcdffcb",
+    "scripts/billfit_errors.py": "b09170050614a0fc20331312f3510c19e9e75f66d59b05f69cd0ce0f47e86cd3",
+    "scripts/source_check.py": "ce0dfe524eb02b327a2278654758432878c0cd56ec0061c6617df86e3c0b6005",
+    "scripts/tariff_review_bundle.py": "a1027568995276114ffb5e8592f920bebd81e2c82a2281e2ad35b393f55085c5",
+    "data/pge_residential_rates_2026-03-01.json": "cff04fb40659084260afab13b99bab5cb6dd3a6a77eb8490b05c0e89bbf7e53b",
+    "data/care_fera_2026-06-01.json": "1ff88ab2bc8f8ebbe12e78a3590d1de1ce54626ff0a2b689fc23774ea4b85618"
+  },
+  "source_observation": {
+    "path": "reports/tariff-review-source-observation-20261031.json",
+    "original_capture_sha256": "d5d87fce2d038af8702da9279716c1002f72d42dda8dce6fe10c96d28aa1f353",
+    "portable_sha256": "68478f6dc5220778ca1d83cef12b5b9dc9e879d76038cbcf4bb3a2a1d2889b7f",
+    "workbook_byte_identical": true,
+    "packaged_verified_on_unchanged": "2026-10-27"
+  },
+  "workflow_files": {
+    "reports/tariff-review-workflow-20261031/receipt.json": "94b2c560751b0237fed920b11e0d7650a5b4268d22becc488203d4fbb8425cb2",
+    "reports/tariff-review-workflow-20261031/review/baseline.json": "b4e584fb4e0c65250d2ce418db1f35ed9362d020ce2b7deb44fe0b962ef16a09",
+    "reports/tariff-review-workflow-20261031/review/candidate.json": "d0cc1dfc177fc63275d58da9eab6def262e874745a898790a9124e42730f251c",
+    "reports/tariff-review-workflow-20261031/review/comparison.json": "26c26e8a32aa546c10ab3e4294c53066c026ce10a5347cf31574dcf6519f6c55",
+    "reports/tariff-review-workflow-20261031/review/manifest.json": "0d67505120937afed588bec4aa08d4832d061ba4fe8c977c16264eff9f13e945",
+    "reports/tariff-review-workflow-20261031/review/rollback-comparison.json": "7fa8ec608a4e56839da8348c13ed3a2a78bfda82db7c5e5123fc195f53600ee3",
+    "reports/tariff-review-workflow-20261031/synthetic-candidate.json": "4717daa2e9996579a633cc8348a7a5e2c3505d376d6c103b3c0e124da54ec75b"
+  },
+  "model_calls": 0,
+  "new_dependencies": 0,
+  "data_migrations": 0,
+  "production_actions": 0,
+  "approval": null,
+  "goal_complete": false,
+  "remaining": [
+    "Independent source-to-cell review for a real candidate",
+    "Reviewed real tariff activation and operational rollback",
+    "Assistance-rule update preparation",
+    "Broader cent-rounding and billing-period reconciliation",
+    "Existing native OCR/customer/holdout/independent-human acceptance",
+    "Hosted CI at delivery head"
+  ]
+}

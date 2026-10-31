@@ -1,10 +1,12 @@
 """Read-only source checks and candidate comparisons. Never installs new rates."""
 from __future__ import annotations
 import argparse
+from copy import deepcopy
 from datetime import date, datetime, timezone
 import hashlib
 import json
 import math
+import re
 from pathlib import Path
 from urllib.request import Request, urlopen
 from urllib.parse import urlparse
@@ -55,31 +57,52 @@ def validate_candidate(candidate: dict, baseline: dict) -> None:
             if type(new) is not bool or new != old:
                 raise ValueError(f"Unsupported rule change at {path}")
         elif isinstance(old, (int, float)):
-            if type(new) not in (int, float) or not math.isfinite(new) or not 0 <= new <= 1_000_000:
+            if type(new) not in (int, float) or not 0 <= new <= 1_000_000 or not math.isfinite(new):
                 raise ValueError(f"Invalid numeric value at {path}")
         elif old is None:
             if new is not None:
-                date.fromisoformat(new)
+                _canonical_date(new)
         elif isinstance(old, list):
             if not isinstance(new, list) or any(not isinstance(x, str) for x in new):
                 raise ValueError(f"Invalid list at {path}")
         elif not isinstance(new, str):
             raise ValueError(f"Invalid text at {path}")
     walk(candidate, baseline)
-    start = date.fromisoformat(candidate["effective_from"])
-    date.fromisoformat(candidate["verified_on"])
-    if candidate["effective_to"] and date.fromisoformat(candidate["effective_to"]) < start:
+    start = _canonical_date(candidate["effective_from"])
+    _canonical_date(candidate["verified_on"])
+    if candidate["effective_to"] and _canonical_date(candidate["effective_to"]) < start:
         raise ValueError("Invalid effective window")
-    if candidate["source"]["workbook_url"] != SOURCES["rates_workbook"]:
+    if (candidate["source"]["workbook_url"] != SOURCES["rates_workbook"]
+            or candidate["source"]["page_url"] != SOURCES["rates_page"]
+            or re.fullmatch(r"[a-f0-9]{64}", candidate["source"]["workbook_sha256"]) is None):
         raise ValueError("Unsupported rate source")
+    for key in ("schema_version", "utility", "utility_code", "service", "limitations"):
+        if candidate[key] != baseline[key]:
+            raise ValueError("Scope and schema changes require an explicit engine review")
+    discounts = candidate["assistance_volumetric_discount"]
+    if any(not 0 <= value <= 1 for value in discounts.values()) or discounts["none"] != 0:
+        raise ValueError("Discounts must use fractions, with no discount for the none program")
     for name in baseline["plans"]:
-        for key in ("kind", "eligibility", "requires_baseline"):
+        for key in ("kind", "eligibility", "requires_baseline", "qualifying_technologies"):
+            if key not in baseline["plans"][name]:
+                continue
             if candidate["plans"][name][key] != baseline["plans"][name][key]:
                 raise ValueError("Rule changes require an explicit engine review")
 
 
+def _canonical_date(value: str) -> date:
+    if not isinstance(value, str) or re.fullmatch(r"[0-9]{4}-[0-9]{2}-[0-9]{2}", value) is None:
+        raise ValueError("Use a complete YYYY-MM-DD source date")
+    return date.fromisoformat(value)
+
+
 def compare_candidate(candidate: dict) -> dict:
-    baseline = core.rate_data()
+    return _compare_candidate_snapshots(core.rate_data(), candidate)
+
+
+def _compare_candidate_snapshots(baseline: dict, candidate: dict) -> dict:
+    baseline = deepcopy(baseline)
+    candidate = deepcopy(candidate)
     validate_candidate(candidate, baseline)
     diffs = []
     def compare(a, b, path=""):
@@ -89,20 +112,12 @@ def compare_candidate(candidate: dict) -> dict:
         elif a != b:
             diffs.append({"field": path, "old": a, "new": b})
     compare(baseline, candidate)
-    # This offline review process is single-threaded and never changes persisted rates.
-    original = core.rate_data
     scenarios = []
-    try:
-        for season, day in [("winter", "2026-02-02"), ("summer", "2026-07-06")]:
-            request = {"intervals": [{"start": f"{day}T{h:02d}:00:00-08:00" if season == "winter" else f"{day}T{h:02d}:00:00-07:00", "kwh": 1, "duration_minutes": 60} for h in range(24)],
-                       "baseline_territory": "Z", "service_type": "basic", "qualifying_technologies": ["electric_vehicle"]}
-            values = []
-            for data in [baseline, candidate]:
-                core.rate_data = lambda: data
-                values.append(core.compare_rate_plans(**request)["results"])
-            scenarios.append({"season": season, "old": values[0], "candidate": values[1]})
-    finally:
-        core.rate_data = original
+    for season, day in [("winter", "2026-02-02"), ("summer", "2026-07-06")]:
+        request = {"intervals": [{"start": f"{day}T{h:02d}:00:00-08:00" if season == "winter" else f"{day}T{h:02d}:00:00-07:00", "kwh": 1, "duration_minutes": 60} for h in range(24)],
+                   "baseline_territory": "Z", "service_type": "basic", "qualifying_technologies": ["electric_vehicle"]}
+        values = [core._compare_rate_snapshot(data, **request)["results"] for data in (baseline, candidate)]
+        scenarios.append({"season": season, "old": values[0], "candidate": values[1]})
     return {"status": "REVIEW_REQUIRED", "automatic_activation": False, "differences": diffs,
             "regression_scenarios": scenarios, "approval": None}
 

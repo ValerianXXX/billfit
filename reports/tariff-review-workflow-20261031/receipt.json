@@ -1,0 +1,99 @@
+{
+  "observed_at": "2026-10-31T13:43:37.898877+00:00",
+  "status": "PASS",
+  "synthetic_only": true,
+  "cli_operations": [
+    {
+      "operation": "prepare",
+      "status": "PASS",
+      "milliseconds": 700.378,
+      "result": {
+        "schema_version": 1,
+        "status": "REVIEW_REQUIRED",
+        "approval": null,
+        "automatic_activation": false,
+        "synthetic_only": true,
+        "prepared_at": "2026-10-31T13:43:37.116866+00:00",
+        "files": {
+          "baseline.json": "b4e584fb4e0c65250d2ce418db1f35ed9362d020ce2b7deb44fe0b962ef16a09",
+          "candidate.json": "d0cc1dfc177fc63275d58da9eab6def262e874745a898790a9124e42730f251c",
+          "comparison.json": "26c26e8a32aa546c10ab3e4294c53066c026ce10a5347cf31574dcf6519f6c55",
+          "rollback-comparison.json": "7fa8ec608a4e56839da8348c13ed3a2a78bfda82db7c5e5123fc195f53600ee3"
+        },
+        "runtime_lf_hashes": {
+          "scripts/billfit_core.py": "f0fb2e445f9eab5a1d4a21b5197e44c31b8ac3cd98bb061bc7aed5d5107e16d2",
+          "scripts/billfit_usage.py": "4c58f0cd11fe76eb4e3553567fb57e30705f6e5a279f84cb79138ff47dcdffcb",
+          "scripts/billfit_errors.py": "b09170050614a0fc20331312f3510c19e9e75f66d59b05f69cd0ce0f47e86cd3",
+          "scripts/source_check.py": "ce0dfe524eb02b327a2278654758432878c0cd56ec0061c6617df86e3c0b6005",
+          "scripts/tariff_review_bundle.py": "a1027568995276114ffb5e8592f920bebd81e2c82a2281e2ad35b393f55085c5",
+          "data/pge_residential_rates_2026-03-01.json": "cff04fb40659084260afab13b99bab5cb6dd3a6a77eb8490b05c0e89bbf7e53b",
+          "data/care_fera_2026-06-01.json": "1ff88ab2bc8f8ebbe12e78a3590d1de1ce54626ff0a2b689fc23774ea4b85618"
+        },
+        "assistance_policy": "PRESERVE_CURRENT_RULES_UNCHANGED",
+        "source_verified_on": {
+          "rates": "2026-10-27",
+          "assistance": "2026-10-27"
+        },
+        "remaining_gates": [
+          "Independent source-to-cell and effective-date review",
+          "Review changed calculations and scope",
+          "Explicit owner approval of an exact version before publication",
+          "Release/install and operational rollback acceptance"
+        ],
+        "rollback_scope": "Complete prior rate/assistance files and arithmetic replay; no running service was switched"
+      }
+    },
+    {
+      "operation": "verify",
+      "status": "PASS",
+      "milliseconds": 732.932,
+      "result": {
+        "status": "REVIEW_REQUIRED",
+        "approval": null,
+        "automatic_activation": false,
+        "synthetic_only": true,
+        "calculation_replay_matches": true,
+        "rollback_snapshot_replay_matches": true,
+        "installed_or_activated": false,
+        "snapshot_hashes": {
+          "baseline.json": "b4e584fb4e0c65250d2ce418db1f35ed9362d020ce2b7deb44fe0b962ef16a09",
+          "candidate.json": "d0cc1dfc177fc63275d58da9eab6def262e874745a898790a9124e42730f251c"
+        },
+        "remaining_gates": [
+          "Independent source-to-cell and effective-date review",
+          "Review changed calculations and scope",
+          "Explicit owner approval of an exact version before publication",
+          "Release/install and operational rollback acceptance"
+        ]
+      }
+    }
+  ],
+  "bundled_data_before": {
+    "pge_residential_rates_2026-03-01.json": "2475f673017cfe20d9272c20e1e13e3506da6c47f99bbb685278c029ad25d9b8",
+    "care_fera_2026-06-01.json": "087246bab7df312cedcee607c7d880f96604574a35e48f87fb29bf10f2e5b26b"
+  },
+  "bundled_data_after": {
+    "pge_residential_rates_2026-03-01.json": "2475f673017cfe20d9272c20e1e13e3506da6c47f99bbb685278c029ad25d9b8",
+    "care_fera_2026-06-01.json": "087246bab7df312cedcee607c7d880f96604574a35e48f87fb29bf10f2e5b26b"
+  },
+  "public_calculation_unchanged": true,
+  "public_energy_charge_before_after": [
+    0.48,
+    0.48
+  ],
+  "counterfactual_summer_24kwh_energy_delta": 1.2,
+  "unchanged_other_plan_season_rows": 9,
+  "paired_assistance_snapshot_preserved": true,
+  "source_verified_on_unchanged": "2026-10-27",
+  "production_activation": false,
+  "operational_rollback": false,
+  "approved": false,
+  "model_calls": 0,
+  "external_account_actions": 0,
+  "limits": [
+    "Counterfactual values are not official tariffs",
+    "Snapshot arithmetic replay does not prove a deployed service rollback",
+    "Complete assistance snapshot is preserved; assistance-rule update workflow is not added",
+    "Independent source mapping and owner publication approval remain required"
+  ]
+}

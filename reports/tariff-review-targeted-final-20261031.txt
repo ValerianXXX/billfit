@@ -1,0 +1,18 @@
+test_a_forged_approval_does_not_become_a_publish_permission (test_tariff_review_bundle.TariffReviewBundleTests.test_a_forged_approval_does_not_become_a_publish_permission) ... ok
+test_existing_destination_is_not_overwritten (test_tariff_review_bundle.TariffReviewBundleTests.test_existing_destination_is_not_overwritten) ... ok
+test_manifest_cannot_remove_gates_or_redate_the_source (test_tariff_review_bundle.TariffReviewBundleTests.test_manifest_cannot_remove_gates_or_redate_the_source) ... ok
+test_modified_snapshot_and_incomplete_package_are_rejected (test_tariff_review_bundle.TariffReviewBundleTests.test_modified_snapshot_and_incomplete_package_are_rejected) ... ok
+test_package_preserves_both_rule_sets_and_is_never_an_approval (test_tariff_review_bundle.TariffReviewBundleTests.test_package_preserves_both_rule_sets_and_is_never_an_approval) ... ok
+test_rehashed_calculation_changes_still_require_real_replay (test_tariff_review_bundle.TariffReviewBundleTests.test_rehashed_calculation_changes_still_require_real_replay) ... ok
+test_discounts_have_fraction_units_and_none_cannot_become_a_discount (test_tariff_review_isolation.TariffReviewIsolationTests.test_discounts_have_fraction_units_and_none_cannot_become_a_discount) ... ok
+test_identity_review_and_failure_leave_defaults_unchanged (test_tariff_review_isolation.TariffReviewIsolationTests.test_identity_review_and_failure_leave_defaults_unchanged) ... ok
+test_returned_default_data_cannot_poison_the_cached_snapshot (test_tariff_review_isolation.TariffReviewIsolationTests.test_returned_default_data_cannot_poison_the_cached_snapshot) ... ok
+test_review_freezes_candidate_before_calculation (test_tariff_review_isolation.TariffReviewIsolationTests.test_review_freezes_candidate_before_calculation) ... ok
+test_scope_rules_and_eligibility_lists_require_engine_review (test_tariff_review_isolation.TariffReviewIsolationTests.test_scope_rules_and_eligibility_lists_require_engine_review) ... ok
+test_source_identity_and_canonical_dates_are_not_free_text (test_tariff_review_isolation.TariffReviewIsolationTests.test_source_identity_and_canonical_dates_are_not_free_text) ... ok
+test_unapproved_review_cannot_change_a_concurrent_public_calculation (test_tariff_review_isolation.TariffReviewIsolationTests.test_unapproved_review_cannot_change_a_concurrent_public_calculation) ... ok
+
+----------------------------------------------------------------------
+Ran 13 tests in 0.689s
+
+OK

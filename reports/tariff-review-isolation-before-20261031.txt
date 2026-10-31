@@ -1,0 +1,175 @@
+test_discounts_have_fraction_units_and_none_cannot_become_a_discount (test_tariff_review_isolation.TariffReviewIsolationTests.test_discounts_have_fraction_units_and_none_cannot_become_a_discount) ... 
+  test_discounts_have_fraction_units_and_none_cannot_become_a_discount (test_tariff_review_isolation.TariffReviewIsolationTests.test_discounts_have_fraction_units_and_none_cannot_become_a_discount) (program='care', value='35') ... FAIL
+  test_discounts_have_fraction_units_and_none_cannot_become_a_discount (test_tariff_review_isolation.TariffReviewIsolationTests.test_discounts_have_fraction_units_and_none_cannot_become_a_discount) (program='fera', value='18') ... FAIL
+  test_discounts_have_fraction_units_and_none_cannot_become_a_discount (test_tariff_review_isolation.TariffReviewIsolationTests.test_discounts_have_fraction_units_and_none_cannot_become_a_discount) (program='none', value='0.01') ... FAIL
+  test_discounts_have_fraction_units_and_none_cannot_become_a_discount (test_tariff_review_isolation.TariffReviewIsolationTests.test_discounts_have_fraction_units_and_none_cannot_become_a_discount) (program='care', value='10000000000000000000') ... ERROR
+test_identity_review_and_failure_leave_defaults_unchanged (test_tariff_review_isolation.TariffReviewIsolationTests.test_identity_review_and_failure_leave_defaults_unchanged) ... ok
+test_returned_default_data_cannot_poison_the_cached_snapshot (test_tariff_review_isolation.TariffReviewIsolationTests.test_returned_default_data_cannot_poison_the_cached_snapshot) ... 
+  test_returned_default_data_cannot_poison_the_cached_snapshot (test_tariff_review_isolation.TariffReviewIsolationTests.test_returned_default_data_cannot_poison_the_cached_snapshot) (key='plans') ... FAIL
+  test_returned_default_data_cannot_poison_the_cached_snapshot (test_tariff_review_isolation.TariffReviewIsolationTests.test_returned_default_data_cannot_poison_the_cached_snapshot) (key='care_income_upper_limit') ... FAIL
+test_review_freezes_candidate_before_calculation (test_tariff_review_isolation.TariffReviewIsolationTests.test_review_freezes_candidate_before_calculation) ... FAIL
+test_scope_rules_and_eligibility_lists_require_engine_review (test_tariff_review_isolation.TariffReviewIsolationTests.test_scope_rules_and_eligibility_lists_require_engine_review) ... 
+  test_scope_rules_and_eligibility_lists_require_engine_review (test_tariff_review_isolation.TariffReviewIsolationTests.test_scope_rules_and_eligibility_lists_require_engine_review) (candidate='bundled residential electricity') ... FAIL
+  test_scope_rules_and_eligibility_lists_require_engine_review (test_tariff_review_isolation.TariffReviewIsolationTests.test_scope_rules_and_eligibility_lists_require_engine_review) (candidate='CCA electricity') ... FAIL
+  test_scope_rules_and_eligibility_lists_require_engine_review (test_tariff_review_isolation.TariffReviewIsolationTests.test_scope_rules_and_eligibility_lists_require_engine_review) (candidate='bundled residential electricity') ... FAIL
+  test_scope_rules_and_eligibility_lists_require_engine_review (test_tariff_review_isolation.TariffReviewIsolationTests.test_scope_rules_and_eligibility_lists_require_engine_review) (candidate='bundled residential electricity') ... FAIL
+  test_scope_rules_and_eligibility_lists_require_engine_review (test_tariff_review_isolation.TariffReviewIsolationTests.test_scope_rules_and_eligibility_lists_require_engine_review) (candidate='bundled residential electricity') ... FAIL
+test_source_identity_and_canonical_dates_are_not_free_text (test_tariff_review_isolation.TariffReviewIsolationTests.test_source_identity_and_canonical_dates_are_not_free_text) ... 
+  test_source_identity_and_canonical_dates_are_not_free_text (test_tariff_review_isolation.TariffReviewIsolationTests.test_source_identity_and_canonical_dates_are_not_free_text) (source={'page_url': 'https://www.pge.com/tariffs/en/rate-information/electric-rates.html', 'workbook_url': 'https://www.pge.com/assets/rates/tariffs/res-inclu-tou-current.xlsx', 'workbook_label': 'Residential Inclu TOU (MAR 1, 2026 - Present)', 'workbook_sha256': 'not-a-hash'}) ... FAIL
+  test_source_identity_and_canonical_dates_are_not_free_text (test_tariff_review_isolation.TariffReviewIsolationTests.test_source_identity_and_canonical_dates_are_not_free_text) (source={'page_url': 'https://example.invalid/claimed-tariff', 'workbook_url': 'https://www.pge.com/assets/rates/tariffs/res-inclu-tou-current.xlsx', 'workbook_label': 'Residential Inclu TOU (MAR 1, 2026 - Present)', 'workbook_sha256': 'e071be6fd457a92da60637fc529c1e4c7a5620ffd83d3ae221819f7e4866995d'}) ... FAIL
+  test_source_identity_and_canonical_dates_are_not_free_text (test_tariff_review_isolation.TariffReviewIsolationTests.test_source_identity_and_canonical_dates_are_not_free_text) (source={'page_url': 'https://www.pge.com/tariffs/en/rate-information/electric-rates.html', 'workbook_url': 'https://www.pge.com/assets/rates/tariffs/res-inclu-tou-current.xlsx', 'workbook_label': 'Residential Inclu TOU (MAR 1, 2026 - Present)', 'workbook_sha256': 'e071be6fd457a92da60637fc529c1e4c7a5620ffd83d3ae221819f7e4866995d'}) ... FAIL
+  test_source_identity_and_canonical_dates_are_not_free_text (test_tariff_review_isolation.TariffReviewIsolationTests.test_source_identity_and_canonical_dates_are_not_free_text) (source={'page_url': 'https://www.pge.com/tariffs/en/rate-information/electric-rates.html', 'workbook_url': 'https://www.pge.com/assets/rates/tariffs/res-inclu-tou-current.xlsx', 'workbook_label': 'Residential Inclu TOU (MAR 1, 2026 - Present)', 'workbook_sha256': 'e071be6fd457a92da60637fc529c1e4c7a5620ffd83d3ae221819f7e4866995d'}) ... FAIL
+test_unapproved_review_cannot_change_a_concurrent_public_calculation (test_tariff_review_isolation.TariffReviewIsolationTests.test_unapproved_review_cannot_change_a_concurrent_public_calculation) ... FAIL
+
+======================================================================
+ERROR: test_discounts_have_fraction_units_and_none_cannot_become_a_discount (test_tariff_review_isolation.TariffReviewIsolationTests.test_discounts_have_fraction_units_and_none_cannot_become_a_discount) (program='care', value='10000000000000000000')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<checkout>\plugins\billfit\tests\test_tariff_review_isolation.py", line 103, in test_discounts_have_fraction_units_and_none_cannot_become_a_discount
+    validate_candidate(candidate, baseline)
+  File "<checkout>\plugins\billfit\skills\billfit\scripts\source_check.py", line 68, in validate_candidate
+    walk(candidate, baseline)
+  File "<checkout>\plugins\billfit\skills\billfit\scripts\source_check.py", line 53, in walk
+    walk(new[key], old[key], path + "." + key)
+  File "<checkout>\plugins\billfit\skills\billfit\scripts\source_check.py", line 53, in walk
+    walk(new[key], old[key], path + "." + key)
+  File "<checkout>\plugins\billfit\skills\billfit\scripts\source_check.py", line 58, in walk
+    if type(new) not in (int, float) or not math.isfinite(new) or not 0 <= new <= 1_000_000:
+                                            ^^^^^^^^^^^^^^^^^^
+OverflowError: int too large to convert to float
+
+======================================================================
+FAIL: test_discounts_have_fraction_units_and_none_cannot_become_a_discount (test_tariff_review_isolation.TariffReviewIsolationTests.test_discounts_have_fraction_units_and_none_cannot_become_a_discount) (program='care', value='35')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<checkout>\plugins\billfit\tests\test_tariff_review_isolation.py", line 102, in test_discounts_have_fraction_units_and_none_cannot_become_a_discount
+    with self.subTest(program=program, value=str(value)[:20]), self.assertRaises(ValueError):
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_discounts_have_fraction_units_and_none_cannot_become_a_discount (test_tariff_review_isolation.TariffReviewIsolationTests.test_discounts_have_fraction_units_and_none_cannot_become_a_discount) (program='fera', value='18')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<checkout>\plugins\billfit\tests\test_tariff_review_isolation.py", line 102, in test_discounts_have_fraction_units_and_none_cannot_become_a_discount
+    with self.subTest(program=program, value=str(value)[:20]), self.assertRaises(ValueError):
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_discounts_have_fraction_units_and_none_cannot_become_a_discount (test_tariff_review_isolation.TariffReviewIsolationTests.test_discounts_have_fraction_units_and_none_cannot_become_a_discount) (program='none', value='0.01')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<checkout>\plugins\billfit\tests\test_tariff_review_isolation.py", line 102, in test_discounts_have_fraction_units_and_none_cannot_become_a_discount
+    with self.subTest(program=program, value=str(value)[:20]), self.assertRaises(ValueError):
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_returned_default_data_cannot_poison_the_cached_snapshot (test_tariff_review_isolation.TariffReviewIsolationTests.test_returned_default_data_cannot_poison_the_cached_snapshot) (key='plans')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<checkout>\plugins\billfit\tests\test_tariff_review_isolation.py", line 80, in test_returned_default_data_cannot_poison_the_cached_snapshot
+    self.assertEqual(getter(), expected)
+AssertionError: {'sch[1198 chars]s': {}, 'baseline_daily_kwh': {'P': {'basic': [966 chars]7}}}} != {'sch[1198 chars]s': {'E-1': {'name': 'Tiered Rate Plan', 'kind[2287 chars]7}}}}
+Diff is 5535 characters long. Set self.maxDiff to None to see it.
+
+======================================================================
+FAIL: test_returned_default_data_cannot_poison_the_cached_snapshot (test_tariff_review_isolation.TariffReviewIsolationTests.test_returned_default_data_cannot_poison_the_cached_snapshot) (key='care_income_upper_limit')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<checkout>\plugins\billfit\tests\test_tariff_review_isolation.py", line 80, in test_returned_default_data_cannot_poison_the_cached_snapshot
+    self.assertEqual(getter(), expected)
+AssertionError: {'sch[247 chars]t': {}, 'fera_income_upper_limit': {'1': 54100[1060 chars]n.']} != {'sch[247 chars]t': {'1': 43280, '2': 43280, '3': 54640, '4': [1184 chars]n.']}
+Diff is 2739 characters long. Set self.maxDiff to None to see it.
+
+======================================================================
+FAIL: test_review_freezes_candidate_before_calculation (test_tariff_review_isolation.TariffReviewIsolationTests.test_review_freezes_candidate_before_calculation)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<checkout>\plugins\billfit\tests\test_tariff_review_isolation.py", line 69, in test_review_freezes_candidate_before_calculation
+    self.assertAlmostEqual(new["raw_energy_charge"] - old["raw_energy_charge"], 1.20, places=2)
+AssertionError: 295.56 != 1.2 within 2 places (294.36 difference)
+
+======================================================================
+FAIL: test_scope_rules_and_eligibility_lists_require_engine_review (test_tariff_review_isolation.TariffReviewIsolationTests.test_scope_rules_and_eligibility_lists_require_engine_review) (candidate='bundled residential electricity')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<checkout>\plugins\billfit\tests\test_tariff_review_isolation.py", line 94, in test_scope_rules_and_eligibility_lists_require_engine_review
+    with self.subTest(candidate=candidate.get("service")), self.assertRaises(ValueError):
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_scope_rules_and_eligibility_lists_require_engine_review (test_tariff_review_isolation.TariffReviewIsolationTests.test_scope_rules_and_eligibility_lists_require_engine_review) (candidate='CCA electricity')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<checkout>\plugins\billfit\tests\test_tariff_review_isolation.py", line 94, in test_scope_rules_and_eligibility_lists_require_engine_review
+    with self.subTest(candidate=candidate.get("service")), self.assertRaises(ValueError):
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_scope_rules_and_eligibility_lists_require_engine_review (test_tariff_review_isolation.TariffReviewIsolationTests.test_scope_rules_and_eligibility_lists_require_engine_review) (candidate='bundled residential electricity')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<checkout>\plugins\billfit\tests\test_tariff_review_isolation.py", line 94, in test_scope_rules_and_eligibility_lists_require_engine_review
+    with self.subTest(candidate=candidate.get("service")), self.assertRaises(ValueError):
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_scope_rules_and_eligibility_lists_require_engine_review (test_tariff_review_isolation.TariffReviewIsolationTests.test_scope_rules_and_eligibility_lists_require_engine_review) (candidate='bundled residential electricity')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<checkout>\plugins\billfit\tests\test_tariff_review_isolation.py", line 94, in test_scope_rules_and_eligibility_lists_require_engine_review
+    with self.subTest(candidate=candidate.get("service")), self.assertRaises(ValueError):
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_scope_rules_and_eligibility_lists_require_engine_review (test_tariff_review_isolation.TariffReviewIsolationTests.test_scope_rules_and_eligibility_lists_require_engine_review) (candidate='bundled residential electricity')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<checkout>\plugins\billfit\tests\test_tariff_review_isolation.py", line 94, in test_scope_rules_and_eligibility_lists_require_engine_review
+    with self.subTest(candidate=candidate.get("service")), self.assertRaises(ValueError):
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_source_identity_and_canonical_dates_are_not_free_text (test_tariff_review_isolation.TariffReviewIsolationTests.test_source_identity_and_canonical_dates_are_not_free_text) (source={'page_url': 'https://www.pge.com/tariffs/en/rate-information/electric-rates.html', 'workbook_url': 'https://www.pge.com/assets/rates/tariffs/res-inclu-tou-current.xlsx', 'workbook_label': 'Residential Inclu TOU (MAR 1, 2026 - Present)', 'workbook_sha256': 'not-a-hash'})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<checkout>\plugins\billfit\tests\test_tariff_review_isolation.py", line 113, in test_source_identity_and_canonical_dates_are_not_free_text
+    with self.subTest(source=candidate["source"]), self.assertRaises(ValueError):
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_source_identity_and_canonical_dates_are_not_free_text (test_tariff_review_isolation.TariffReviewIsolationTests.test_source_identity_and_canonical_dates_are_not_free_text) (source={'page_url': 'https://example.invalid/claimed-tariff', 'workbook_url': 'https://www.pge.com/assets/rates/tariffs/res-inclu-tou-current.xlsx', 'workbook_label': 'Residential Inclu TOU (MAR 1, 2026 - Present)', 'workbook_sha256': 'e071be6fd457a92da60637fc529c1e4c7a5620ffd83d3ae221819f7e4866995d'})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<checkout>\plugins\billfit\tests\test_tariff_review_isolation.py", line 113, in test_source_identity_and_canonical_dates_are_not_free_text
+    with self.subTest(source=candidate["source"]), self.assertRaises(ValueError):
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_source_identity_and_canonical_dates_are_not_free_text (test_tariff_review_isolation.TariffReviewIsolationTests.test_source_identity_and_canonical_dates_are_not_free_text) (source={'page_url': 'https://www.pge.com/tariffs/en/rate-information/electric-rates.html', 'workbook_url': 'https://www.pge.com/assets/rates/tariffs/res-inclu-tou-current.xlsx', 'workbook_label': 'Residential Inclu TOU (MAR 1, 2026 - Present)', 'workbook_sha256': 'e071be6fd457a92da60637fc529c1e4c7a5620ffd83d3ae221819f7e4866995d'})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<checkout>\plugins\billfit\tests\test_tariff_review_isolation.py", line 113, in test_source_identity_and_canonical_dates_are_not_free_text
+    with self.subTest(source=candidate["source"]), self.assertRaises(ValueError):
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_source_identity_and_canonical_dates_are_not_free_text (test_tariff_review_isolation.TariffReviewIsolationTests.test_source_identity_and_canonical_dates_are_not_free_text) (source={'page_url': 'https://www.pge.com/tariffs/en/rate-information/electric-rates.html', 'workbook_url': 'https://www.pge.com/assets/rates/tariffs/res-inclu-tou-current.xlsx', 'workbook_label': 'Residential Inclu TOU (MAR 1, 2026 - Present)', 'workbook_sha256': 'e071be6fd457a92da60637fc529c1e4c7a5620ffd83d3ae221819f7e4866995d'})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<checkout>\plugins\billfit\tests\test_tariff_review_isolation.py", line 113, in test_source_identity_and_canonical_dates_are_not_free_text
+    with self.subTest(source=candidate["source"]), self.assertRaises(ValueError):
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_unapproved_review_cannot_change_a_concurrent_public_calculation (test_tariff_review_isolation.TariffReviewIsolationTests.test_unapproved_review_cannot_change_a_concurrent_public_calculation)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<checkout>\plugins\billfit\tests\test_tariff_review_isolation.py", line 49, in test_unapproved_review_cannot_change_a_concurrent_public_calculation
+    self.assertEqual(observed, expected)
+AssertionError: {'sta[1278 chars]': 0.88, 'assistance_program': 'NONE', 'assist[1333 chars]r'}]} != {'sta[1278 chars]': 0.48, 'assistance_program': 'NONE', 'assist[1333 chars]r'}]}
+Diff is 4726 characters long. Set self.maxDiff to None to see it.
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.095s
+
+FAILED (failures=16, errors=1)

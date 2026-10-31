@@ -2,6 +2,10 @@
 
 ## Unreleased — 2026-10-31
 
+- Isolate each rate comparison/reconciliation snapshot and candidate review; cache immutable bundled text rather than shared mutable dictionaries. A frozen concurrent review test previously changed an ordinary synthetic charge from $0.48 to $0.88; the ordinary calculation now remains $0.48.
+- Tighten candidate scope, eligibility-list, discount-unit, source-identity and date validation. Prepare non-activating complete review packages with preserved assistance rules, runtime/content hashes and replayed baseline calculations; keep approval absent and release gates explicit.
+- Pass 157 full local tests and actual review CLI preparation/verification. Preserve failing contracts and a synthetic counterfactual workflow. An October 31 official workbook download is byte-identical; no packaged value/date, tariff activation, migration, release or model call occurs. Operational rollback and independent acceptance remain open.
+
 - Add opt-in local image preparation with bounded clockwise rotation, conservative pixel-based deskew and automatic OCR layout. Preserve original bytes, verify derived hashes and map word evidence back to original encoded pixels, including EXIF and TIFF decoder orientation.
 - Keep default extraction and deterministic calculations unchanged. Add an optional Pillow 13 profile, bounded preparation child and shared OCR deadline; all fields remain unconfirmed. No cloud fallback, automatic quarter-turn detector or tariff activation.
 - Pass 143 full local tests and real CLI/MCP parser calls in both existing SDK modes. On the unchanged eight-image development matrix, assisted preparation improves 6/8 to 8/8 and 32/38 to 38/38 valid candidates, with one explicit manual rotation and higher latency. Preserve the unsuccessful first attempt and boundary failures; no real-customer or independent-human claim.
