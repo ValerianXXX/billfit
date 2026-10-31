@@ -83,5 +83,7 @@ def parse_tsv(raw: bytes) -> list[dict]:
         raise _invalid() from exc
 
 
-def extract_ocr_spans(command: str, snapshot: Path) -> list[dict]:
-    return parse_tsv(_run_bounded([command, str(snapshot), "stdout", "--psm", "6", "tsv"]))
+def extract_ocr_spans(command: str, snapshot: Path, *, timeout: float = 30, page_segmentation: int = 6) -> list[dict]:
+    if type(page_segmentation) is not int or page_segmentation not in (3, 6):
+        raise BillFitError("OCR_OPTIONS_INVALID", "Use the supported automatic or single-block page layout.")
+    return parse_tsv(_run_bounded([command, str(snapshot), "stdout", "--psm", str(page_segmentation), "tsv"], timeout=timeout))

@@ -1,0 +1,32 @@
+test_cancellation_reaps_preparation_child_removes_temp_and_never_starts_ocr (test_image_preparation_runtime.ImagePreparationRuntimeTests.test_cancellation_reaps_preparation_child_removes_temp_and_never_starts_ocr) ... ok
+test_deskew_is_not_dominated_by_a_long_upright_header (test_image_preparation_runtime.ImagePreparationRuntimeTests.test_deskew_is_not_dominated_by_a_long_upright_header) ... FAIL
+test_inconsistent_worker_metadata_is_rejected (test_image_preparation_runtime.ImagePreparationRuntimeTests.test_inconsistent_worker_metadata_is_rejected) ... ok
+test_jpeg_orientation_matches_decoded_source_pixels (test_image_preparation_runtime.ImagePreparationRuntimeTests.test_jpeg_orientation_matches_decoded_source_pixels) ... ok
+test_ocr_receives_only_remaining_budget_and_source_polygons (test_image_preparation_runtime.ImagePreparationRuntimeTests.test_ocr_receives_only_remaining_budget_and_source_polygons) ... ERROR
+test_tiff_orientation_preserves_original_encoded_grid (test_image_preparation_runtime.ImagePreparationRuntimeTests.test_tiff_orientation_preserves_original_encoded_grid) ... ok
+test_unbounded_integer_is_an_options_error_not_an_overflow (test_image_preparation_runtime.ImagePreparationRuntimeTests.test_unbounded_integer_is_an_options_error_not_an_overflow) ... ok
+
+======================================================================
+ERROR: test_ocr_receives_only_remaining_budget_and_source_polygons (test_image_preparation_runtime.ImagePreparationRuntimeTests.test_ocr_receives_only_remaining_budget_and_source_polygons)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<checkout>\plugins\billfit\tests\test_image_preparation_runtime.py", line 124, in test_ocr_receives_only_remaining_budget_and_source_polygons
+    self.assertEqual(ocr.call_args.kwargs["page_segmentation"], 3)
+                     ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'page_segmentation'
+
+======================================================================
+FAIL: test_deskew_is_not_dominated_by_a_long_upright_header (test_image_preparation_runtime.ImagePreparationRuntimeTests.test_deskew_is_not_dominated_by_a_long_upright_header)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<checkout>\plugins\billfit\tests\test_image_preparation_runtime.py", line 35, in test_deskew_is_not_dominated_by_a_long_upright_header
+    self.assertEqual(metadata["deskew_status"], "APPLIED")
+AssertionError: 'ALREADY_ALIGNED' != 'APPLIED'
+- ALREADY_ALIGNED
++ APPLIED
+
+
+----------------------------------------------------------------------
+Ran 7 tests in 3.133s
+
+FAILED (failures=1, errors=1)

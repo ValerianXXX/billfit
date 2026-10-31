@@ -1,0 +1,5 @@
+{
+  "bill_file": "plugins/billfit/tests/fixtures/bill-input-v2/rotated-90-degrees.png",
+  "ocr_rotation_degrees": 90,
+  "ocr_deskew": true
+}

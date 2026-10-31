@@ -121,8 +121,22 @@ TOOLS: list[dict[str, Any]] = [
 
 
 PUBLIC_FUNCTIONS = {**PUBLIC_FUNCTIONS, "billfit_extract_bill_fields": extract_bill_fields}
-TOOLS.append({"name": "billfit_extract_bill_fields", "description": "Extract unconfirmed fields from one local PDF/image bill with page/line evidence. No uploads or automatic calculation; verify all fields with the user.",
-              "inputSchema": {"type": "object", "properties": {"bill_file": {"type": "string", "description": "Exact local PDF/image path supplied by the user or client. Use it unchanged, including a supplied relative filename. Never invent or prepend /mnt/data, a home folder or another directory. Ask for the path when missing."}}, "required": ["bill_file"], "additionalProperties": False}})
+TOOLS.append({
+    "name": "billfit_extract_bill_fields",
+    "description": "Extract unconfirmed fields from one local PDF/image bill. Optional image preparation stays local and maps evidence to original pixels. No uploads or automatic calculation; verify all fields with the user.",
+    "inputSchema": {
+        "type": "object",
+        "properties": {
+            "bill_file": {"type": "string", "description": "Exact local PDF/image path supplied by the user or client. Use it unchanged, including a supplied relative filename. Never invent or prepend /mnt/data, a home folder or another directory. Ask for the path when missing."},
+            "ocr_rotation_degrees": {"type": "number", "minimum": -360, "maximum": 360, "default": 0,
+                                     "description": "Optional clockwise correction after EXIF orientation, chosen from visual source inspection. Images only; requires the optional image-input profile. Do not guess from amounts or try multiple angles to maximize extracted fields."},
+            "ocr_deskew": {"type": "boolean", "default": False,
+                           "description": "Opt in to local pixel-based small-angle deskew after the specified rotation. Ambiguous estimates apply no deskew. All returned fields require original-image review."},
+        },
+        "required": ["bill_file"],
+        "additionalProperties": False,
+    },
+})
 
 
 def _send(payload: dict[str, Any]) -> None:

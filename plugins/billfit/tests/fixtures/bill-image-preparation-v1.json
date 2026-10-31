@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "synthetic_only": true,
+  "manifest_sha256": "a1a17439f5ffaba5defce0c5de74085a3852165ff682872a8d62291c28fdb99f",
+  "default_options": {"ocr_deskew": true},
+  "case_options": {"rotated-90-degrees": {"ocr_rotation_degrees": 90}},
+  "operator_interventions": [
+    {"case": "rotated-90-degrees", "action": "Inspect original and choose a 90-degree clockwise correction", "automatic_orientation_detection": false}
+  ],
+  "limits": [
+    "Deskew is opted in for every image before evaluating fields.",
+    "The one manual quarter-turn follows source orientation, not OCR output or field-count optimization.",
+    "This is an assisted development-set comparison, not a blind or human study."
+  ]
+}

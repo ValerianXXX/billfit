@@ -1,0 +1,3 @@
+# Optional image preparation only; calculator and ordinary OCR remain independent.
+-r requirements-bill-input.txt
+Pillow>=13,<14

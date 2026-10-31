@@ -1,0 +1,87 @@
+{
+  "status": "ok",
+  "mvp_scope": {
+    "utility": "PG&E",
+    "customer_type": "individually metered residential bundled electric service",
+    "supported_plans": [
+      "E-1",
+      "E-TOU-C",
+      "E-TOU-D",
+      "EV2-A",
+      "E-ELEC"
+    ],
+    "usage_formats": [
+      "PG&E Green Button CSV",
+      "Green Button ESPI XML",
+      "BillFit interval JSON"
+    ],
+    "assistance_screening": [
+      "CARE",
+      "FERA",
+      "Medical Baseline"
+    ],
+    "time_zone": "America/Los_Angeles"
+  },
+  "not_supported": [
+    "CCA or Direct Access generation charges",
+    "solar, NEM, net export, or battery export",
+    "master-metered service",
+    "gas rates",
+    "EV-B separately metered service",
+    "taxes, local surcharges, Climate Credit, or account-specific adjustments"
+  ],
+  "rate_snapshot": {
+    "status": "official-current-page",
+    "freshness": {
+      "verified_on": "2026-10-27",
+      "age_days": 4,
+      "stale": false,
+      "verification_overdue": false,
+      "outside_effective_window": false,
+      "rate_changed": null,
+      "effective_from": "2026-03-01",
+      "effective_to": null
+    },
+    "source": {
+      "page_url": "https://www.pge.com/tariffs/en/rate-information/electric-rates.html",
+      "workbook_url": "https://www.pge.com/assets/rates/tariffs/res-inclu-tou-current.xlsx",
+      "workbook_label": "Residential Inclu TOU (MAR 1, 2026 - Present)",
+      "workbook_sha256": "e071be6fd457a92da60637fc529c1e4c7a5620ffd83d3ae221819f7e4866995d"
+    }
+  },
+  "assistance_snapshot": {
+    "freshness": {
+      "verified_on": "2026-10-27",
+      "age_days": 4,
+      "stale": false,
+      "verification_overdue": false,
+      "outside_effective_window": false,
+      "rate_changed": null,
+      "effective_from": "2026-06-01",
+      "effective_to": "2027-05-31"
+    },
+    "effective_from": "2026-06-01",
+    "effective_to": "2027-05-31",
+    "source": {
+      "url": "https://www.cpuc.ca.gov/care/",
+      "title": "CARE/FERA Program"
+    }
+  },
+  "privacy": "Files are read locally. BillFit does not need account credentials, SSN, medical records, or uploaded income documents for screening.",
+  "human_gates": [
+    {
+      "id": "ACCOUNT_LOGIN",
+      "title": "Download real usage data",
+      "reason": "BillFit does not sign in to a utility account or handle credentials.",
+      "user_action": "Sign in to PG&E, choose Usage and rates, View Usage Details, then Green Button Download my data.",
+      "status": "waiting_for_user"
+    },
+    {
+      "id": "REAL_USAGE_FILE",
+      "title": "Provide a real usage file",
+      "reason": "A personalized comparison needs the customer's own interval usage.",
+      "user_action": "Attach or provide the local path to a PG&E Green Button CSV or XML file.",
+      "status": "waiting_for_user"
+    }
+  ]
+}
