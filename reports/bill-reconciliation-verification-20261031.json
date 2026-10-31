@@ -1,0 +1,352 @@
+{
+  "observed_at": "2026-10-31T14:02:41.786025+00:00",
+  "status": "LOCAL_IMPLEMENTATION_AND_REAL_COMPONENTS_VERIFIED_CUSTOMER_ACCEPTANCE_OPEN",
+  "branch": "codex/bill-reconciliation-evidence-20261031",
+  "baseline_commit": "2847b4c8deb40485c5e1400347898567b50c7135",
+  "runtime_commit": "848595fa72e05c55535a0f4916cc13576790fafc",
+  "frozen_test_commit": "b88e42a9d664b14aa00e60a50fa3be61bc546980",
+  "baseline": {
+    "full_tests": 157,
+    "ci": "https://github.com/ValerianXXX/billfit/actions/runs/41207145184",
+    "unchanged_baseline_reused": true
+  },
+  "frozen_before": {
+    "methods": 15,
+    "failures_including_subtests": 8,
+    "errors_including_subtests": 16
+  },
+  "oracle_correction": {
+    "methods_changed": 1,
+    "incorrect_initial_expected": 24.39,
+    "source_daily_rate": 0.79343,
+    "days": 31,
+    "unrounded": 24.59633,
+    "corrected_expected": 24.6,
+    "source_data_unchanged": true,
+    "first_after_failure_retained": true,
+    "not_claimed_fully_unchanged_frozen_set": true
+  },
+  "existing_assertions_strengthened": 2,
+  "targeted": {
+    "passed": 21,
+    "seconds": 10.895
+  },
+  "full": {
+    "passed": 178,
+    "skipped": 0,
+    "seconds": 62.946,
+    "platform": "Windows",
+    "python": "3.11.3"
+  },
+  "actual_cli_workflow": {
+    "cases": 7,
+    "invocations": 14,
+    "checks": {
+      "decimal_boundary_match": true,
+      "short_match_is_review_only": true,
+      "complete_day_arithmetic_match": true,
+      "missing_hour_reported": true,
+      "subcent_rejected": true,
+      "historical_rate_gap_disclosed": true,
+      "gap_savings_withheld": true,
+      "packaged_sources_unchanged": true
+    },
+    "observations": [
+      {
+        "case": "exact_two_dollar_boundary",
+        "before": {
+          "status": "mismatch",
+          "checks": [
+            {
+              "component": "energy_charge",
+              "reported": 2.4,
+              "calculated": 4.4,
+              "difference": 2.0,
+              "tolerance": 2.0,
+              "within_tolerance": false
+            }
+          ]
+        },
+        "after": {
+          "status": "needs_review",
+          "arithmetic_status": "matched",
+          "required_reviews": [
+            "BILLING_PERIOD_REQUIRED"
+          ],
+          "checks": [
+            {
+              "component": "energy_charge",
+              "reported": 2.4,
+              "calculated": 4.4,
+              "difference": 2.0,
+              "tolerance": 2.0,
+              "tolerance_unrounded": "2.00",
+              "within_tolerance": true
+            }
+          ]
+        }
+      },
+      {
+        "case": "one_hour_match_without_dates",
+        "before": {
+          "status": "validated",
+          "checks": [
+            {
+              "component": "energy_charge",
+              "reported": 0.48,
+              "calculated": 0.48,
+              "difference": 0.0,
+              "tolerance": 2.0,
+              "within_tolerance": true
+            }
+          ]
+        },
+        "after": {
+          "status": "needs_review",
+          "arithmetic_status": "matched",
+          "required_reviews": [
+            "BILLING_PERIOD_REQUIRED"
+          ],
+          "checks": [
+            {
+              "component": "energy_charge",
+              "reported": 0.48,
+              "calculated": 0.48,
+              "difference": 0.0,
+              "tolerance": 2.0,
+              "tolerance_unrounded": "2.00",
+              "within_tolerance": true
+            }
+          ]
+        }
+      },
+      {
+        "case": "complete_declared_day",
+        "before": {
+          "status": "error",
+          "error_code": "INVALID_REQUEST"
+        },
+        "after": {
+          "status": "validated",
+          "arithmetic_status": "matched",
+          "required_reviews": [],
+          "checks": [
+            {
+              "component": "energy_charge",
+              "reported": 8.62,
+              "calculated": 8.62,
+              "difference": 0.0,
+              "tolerance": 2.0,
+              "tolerance_unrounded": "2.00",
+              "within_tolerance": true
+            },
+            {
+              "component": "base_services_charge",
+              "reported": 0.79,
+              "calculated": 0.79,
+              "difference": 0.0,
+              "tolerance": 2.0,
+              "tolerance_unrounded": "2.00",
+              "within_tolerance": true
+            }
+          ]
+        }
+      },
+      {
+        "case": "missing_first_hour",
+        "before": {
+          "status": "error",
+          "error_code": "INVALID_REQUEST"
+        },
+        "after": {
+          "status": "needs_review",
+          "arithmetic_status": "matched",
+          "required_reviews": [
+            "INCOMPLETE_BILLING_PERIOD"
+          ],
+          "checks": [
+            {
+              "component": "energy_charge",
+              "reported": 8.62,
+              "calculated": 8.27,
+              "difference": -0.35,
+              "tolerance": 2.0,
+              "tolerance_unrounded": "2.00",
+              "within_tolerance": true
+            },
+            {
+              "component": "base_services_charge",
+              "reported": 0.79,
+              "calculated": 0.79,
+              "difference": 0.0,
+              "tolerance": 2.0,
+              "tolerance_unrounded": "2.00",
+              "within_tolerance": true
+            }
+          ]
+        }
+      },
+      {
+        "case": "subcent_reported_amount",
+        "before": {
+          "status": "validated",
+          "checks": [
+            {
+              "component": "energy_charge",
+              "reported": 0.48,
+              "calculated": 0.48,
+              "difference": -0.01,
+              "tolerance": 2.0,
+              "within_tolerance": true
+            }
+          ]
+        },
+        "after": {
+          "status": "error",
+          "error_code": "INVALID_BILL_AMOUNT"
+        }
+      },
+      {
+        "case": "rate_snapshot_before_effective_date",
+        "before": {
+          "status": "error",
+          "error_code": "INVALID_REQUEST"
+        },
+        "after": {
+          "status": "needs_review",
+          "arithmetic_status": "matched",
+          "required_reviews": [
+            "RATE_PERIOD_NOT_COVERED"
+          ],
+          "checks": [
+            {
+              "component": "energy_charge",
+              "reported": 8.37,
+              "calculated": 8.37,
+              "difference": 0.0,
+              "tolerance": 2.0,
+              "tolerance_unrounded": "2.00",
+              "within_tolerance": true
+            },
+            {
+              "component": "base_services_charge",
+              "reported": 0.79,
+              "calculated": 0.79,
+              "difference": 0.0,
+              "tolerance": 2.0,
+              "tolerance_unrounded": "2.00",
+              "within_tolerance": true
+            }
+          ]
+        }
+      },
+      {
+        "case": "near_complete_month_with_one_gap",
+        "before": {
+          "status": "compared",
+          "recommendation": {
+            "status": "stay_or_difference_too_small",
+            "current_plan": "E-TOU-D",
+            "lowest_calculated_plan": "E-TOU-D",
+            "estimated_annual_savings": 0.0,
+            "estimated_savings_percent": 0.0,
+            "message": "No alternative clears both BillFit review thresholds."
+          }
+        },
+        "after": {
+          "status": "compared",
+          "recommendation": {
+            "status": "withheld_pending_usage_quality",
+            "message": "Calculations are illustrative. Confirm units/durations, resolve every detected gap and provide at least 28 days of supported intervals before switching guidance; no annual saving is established.",
+            "lowest_calculated_plan": "E-TOU-D"
+          }
+        }
+      }
+    ]
+  },
+  "sdk": {
+    "profiles": [
+      "2026-07-28",
+      "legacy"
+    ],
+    "discovery": "PASS",
+    "period_argument": "PASS",
+    "input_errors": "PASS",
+    "same_connection_recovery": "PASS",
+    "actual_hermes_model_run": false
+  },
+  "dependency_check": "PASS",
+  "manual_unsupported_windows_no_site_check": {
+    "command_profile": "python -S",
+    "result": "FAILED_EXPECTED_MISSING_TZDATA",
+    "normal_supported_environment": "PASS",
+    "no_package_free_windows_claim": true
+  },
+  "logs": {
+    "before": {
+      "original_sha256": "778b51a184a879bfcd2ce1bc35caa087e4dbbb12bf3254f6a176d4a3aff11805",
+      "portable_path": "reports/bill-reconciliation-before-20261031.txt",
+      "portable_sha256": "e94596b54ac50940a8f09ffe4f83dfa8c75879b0ec43b7da21edc73c75038f0a"
+    },
+    "targeted": {
+      "original_sha256": "c1598f59df47ccd4e78a41b9b276c127d259d31b560d31b07cb5d8bab7289a4d",
+      "portable_path": "reports/bill-reconciliation-targeted-20261031.txt",
+      "portable_sha256": "8648116075b325ae06ae7f26cb4dc8c49d6022ff4342418b87e3c111de42c92e"
+    },
+    "targeted-corrected": {
+      "original_sha256": "828c1b07589aef179d285149aa5a0337a1965e4b34acb0cc1fc73b2e35d8455c",
+      "portable_path": "reports/bill-reconciliation-targeted-corrected-20261031.txt",
+      "portable_sha256": "0421e1a12e5d39036f251c1dd64c918c9d71008989385401eec33a2847fac4af"
+    },
+    "integration": {
+      "original_sha256": "52765f5c8981c1ce163310a8e38780067f4ea67c46a85f27ada7fd7ee418ecbe",
+      "portable_path": "reports/bill-reconciliation-integration-20261031.txt",
+      "portable_sha256": "7006252ef5186e7787840a7132ce18a4911484c418ed65f16a9d463718f99559"
+    },
+    "full": {
+      "original_sha256": "ee02b10b8fe4226962caba1862931190bc2c9c39e186fd6168ce22836d03dff4",
+      "portable_path": "reports/bill-reconciliation-full-20261031.txt",
+      "portable_sha256": "e5f55b82e70b47e3542d41b11feef3cd8666a2c92a12ea31b33747463200752e"
+    }
+  },
+  "workflow_files": {
+    "reports/bill-reconciliation-workflow-20261031/observations.json": "d241258a4cb0cd9fb5faf233018bc7409f79c1d53b55f6d21fd6ca3529449ada",
+    "reports/bill-reconciliation-workflow-20261031/receipt.json": "0ec1086d63d2a763950b63158ab47f28277ed102927481323bb5fc93413adf63"
+  },
+  "runtime_lf_hashes": {
+    "billfit_cli.py": "6fd00652b609166fc92d2a9838e348b78972741001fba87d77d52c9e71982cfa",
+    "billfit_core.py": "c52816fe5b0f326120947cc3bb63410c871f0d4254791e30babf70248cce61c9",
+    "billfit_errors.py": "b09170050614a0fc20331312f3510c19e9e75f66d59b05f69cd0ce0f47e86cd3",
+    "billfit_reconciliation.py": "107111db7774b2ef05f18a29f8190b672496d049e7e6e00aef1211890b54d52e",
+    "billfit_usage.py": "4c58f0cd11fe76eb4e3553567fb57e30705f6e5a279f84cb79138ff47dcdffcb",
+    "bill_cancellation.py": "2d86f5757a3e67895efa06f8e555d5e039919168d46beb45bd012a7f5292e036",
+    "bill_image.py": "d7dfa49e34f8514e6379fd02b4f357577dc1c4cdee49ba1eda0a6ae439aa4a30",
+    "bill_image_geometry.py": "5c846e754ec773730f8426b73bc5eef2e96a0f7689eafed57712502e72529b69",
+    "bill_image_worker.py": "47f2f6878d1dce13948881c829ac540abded7fa4f15588246649b86b393fe349",
+    "bill_input.py": "d4c31d5983bcdf5e33110c37672724290b4872fcacf6a23ef45537606c22547e",
+    "bill_ocr.py": "250220f2950627a0166098d3581b56ab640adcf0a756aaeef8d1ac326c7443f3",
+    "bill_pdf_worker.py": "ba04b073845da74484483d125faeb709c2de447352339a00e2298d5af926ddce",
+    "bill_process.py": "27caf17ab1416ef2272732b05aa53d1a955f218247aea954cd1019e9e1b6e647",
+    "mcp_server.py": "51fa0fd00ba3b308641b062a336243390badd82568ac98028dca78ea18ae951d",
+    "source_check.py": "ce0dfe524eb02b327a2278654758432878c0cd56ec0061c6617df86e3c0b6005",
+    "tariff_review_bundle.py": "8435c41b09c64599f60215f350ddd3de1e67a7cb4a3d52610d41a81f6d48b163"
+  },
+  "sources": {
+    "rates_page": "https://www.pge.com/tariffs/en/rate-information/electric-rates.html",
+    "billing_period_rule": "https://www.pge.com/tariffs/assets/pdf/tariffbook/ELEC_RULES_9.pdf",
+    "checked_on": "2026-10-31",
+    "unchanged_packaged_verified_on": "2026-10-27"
+  },
+  "model_calls": 0,
+  "new_dependencies": 0,
+  "data_migrations": 0,
+  "production_actions": 0,
+  "goal_complete": false,
+  "remaining": [
+    "Exact pricing-engine and utility line-item rounding certification",
+    "Applicable historic/multiple rate snapshot selection",
+    "Real customer bills and independent human acceptance",
+    "Existing tariff publication/operational rollback requirements",
+    "Hosted CI at delivery head"
+  ]
+}

@@ -28,7 +28,9 @@ class UsageIntegrationTests(unittest.TestCase):
     def test_arithmetic_match_preserves_usage_quality_gate(self):
         result = core.compare_rate_plans(intervals=self.sample(), candidate_plans=['E-TOU-D'])['results'][0]
         validated = core.validate_bill(intervals=self.sample(), current_plan='E-TOU-D', reported_energy_charge=result['energy_charge_after_discount'])
-        self.assertEqual(validated['status'], 'validated')
+        self.assertEqual(validated['status'], 'needs_review')
+        self.assertEqual(validated['arithmetic_status'], 'matched')
+        self.assertTrue(all(row['within_tolerance'] for row in validated['checks']))
         self.assertEqual(validated['validation_scope'], 'comparable_components_only')
         self.assertEqual(validated['usage_evidence_status'], 'needs_review')
         self.assertIn('USAGE_QUALITY_REVIEW', {row['id'] for row in validated['human_gates']})

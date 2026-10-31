@@ -11,6 +11,7 @@ from typing import Any
 
 from billfit_errors import BillFitError
 from billfit_usage import Interval, PACIFIC, load_usage, usage_summary as _usage_summary, split_interval as _split_interval
+from billfit_reconciliation import assess_period, compare_component, usage_has_assumptions
 
 
 PLUGIN_ROOT = Path(__file__).resolve().parents[1]
@@ -65,6 +66,12 @@ HUMAN_GATES: dict[str, dict[str, str]] = {
         "Review usage coverage and input assumptions",
         "Incomplete, coarse or inferred usage cannot establish switching savings.",
         "Confirm source units and durations, resolve gaps, and supply a sufficient usage period.",
+    ),
+    "BILLING_PERIOD_REVIEW": _gate(
+        "BILLING_PERIOD_REVIEW",
+        "Confirm the statement period and matching usage",
+        "An arithmetic match cannot establish that the usage covers the bill being checked.",
+        "Confirm the Pacific start date and exclusive end date from the statement convention; provide complete matching intervals without extra records.",
     ),
     "BASELINE_INFO": _gate(
         "BASELINE_INFO",
@@ -336,6 +343,7 @@ def _simulate_plan(
     technologies: set[str] | None,
     *,
     rates: dict | None = None,
+    billing_days: int | None = None,
 ) -> dict[str, Any]:
     rates = rate_data() if rates is None else rates
     details = rates["plans"][plan]
@@ -374,15 +382,16 @@ def _simulate_plan(
     assistance_discount = max(0.0, raw_energy_charge * discount_rate)
     energy_after_discount = raw_energy_charge - assistance_discount
     bsc = rates["base_services_charge_per_day"]["standard" if assistance_program == "none" else assistance_program]
-    base_services_charge = bsc * summary["billing_days"]
+    billed_days = summary["billing_days"] if billing_days is None else billing_days
+    base_services_charge = bsc * billed_days
     total = energy_after_discount + base_services_charge
-    annualized = total / summary["billing_days"] * 365.2425
+    annualized = total / billed_days * 365.2425
     return {
         "status": "calculated",
         "plan": plan,
         "plan_name": details["name"],
         "usage_kwh": round(total_kwh, 6),
-        "billing_days": summary["billing_days"],
+        "billing_days": billed_days,
         "baseline_kwh": round(baseline_kwh, 6) if baseline_kwh is not None else None,
         "usage_by_period_kwh": {key: round(value, 6) for key, value in sorted(period_kwh.items())},
         "raw_energy_charge": round(raw_energy_charge, 2),
@@ -396,10 +405,7 @@ def _simulate_plan(
 
 
 def _usage_needs_review(summary: dict[str, Any], warnings: list[str]) -> bool:
-    return summary["quality"] != "good" or any(
-        marker in warning for warning in warnings
-        for marker in ("INFERRED_INTERVAL_DURATION", "ASSUMED_USAGE_UNIT", "COARSE_INTERVAL_ALLOCATION")
-    )
+    return summary["quality"] != "good" or summary["gap_minutes"] > 0 or usage_has_assumptions(warnings)
 
 
 def compare_rate_plans(
@@ -527,7 +533,7 @@ def _compare_rate_snapshot(
     if best and usage_uncertain:
         recommendation = {
             "status": "withheld_pending_usage_quality",
-            "message": "Calculations are illustrative. Confirm units/durations and provide at least 28 days of near-complete supported intervals before switching guidance; no annual saving is established.",
+            "message": "Calculations are illustrative. Confirm units/durations, resolve every detected gap and provide at least 28 days of supported intervals before switching guidance; no annual saving is established.",
             "lowest_calculated_plan": best["plan"],
         }
         gates_by_id["USAGE_QUALITY_REVIEW"] = HUMAN_GATES["USAGE_QUALITY_REVIEW"]
@@ -535,7 +541,7 @@ def _compare_rate_snapshot(
     if freshness["stale"]:
         gates_by_id["OFFICIAL_RATE_CONFIRMATION"] = HUMAN_GATES["OFFICIAL_RATE_CONFIRMATION"]
         warnings.append("The bundled rate snapshot is older than 45 days or outside its effective window.")
-        recommendation = {**recommendation, "status": "withheld_pending_rate_verification",
+        recommendation = {"status": "withheld_pending_rate_verification",
                           "message": "Snapshot verification is stale or outside its effective window; this does not prove rates changed. Confirm official rules before acting."}
     return {
         "status": "compared" if calculated else "needs_human_input",
@@ -564,6 +570,7 @@ def validate_bill(
     service_type: str | None = None,
     assistance_program: str | None = None,
     qualifying_technologies: list[str] | None = None,
+    billing_period: dict[str, str] | None = None,
 ) -> dict[str, Any]:
     if not current_plan:
         raise BillFitError("CURRENT_PLAN_REQUIRED", "current_plan is required for bill validation.")
@@ -574,7 +581,10 @@ def validate_bill(
     techs = None if qualifying_technologies is None else {
         re.sub(r"[^a-z0-9]+", "_", item.lower()).strip("_") for item in qualifying_technologies
     }
-    simulated = _simulate_plan(parsed, plan, program, baseline_territory, service_type, techs, rates=rates)
+    period = assess_period(billing_period, parsed, rates)
+    simulated = _simulate_plan(parsed, plan, program, baseline_territory, service_type, techs,
+                               rates=rates, billing_days=period["calendar_days"])
+    simulated["billing_days_basis"] = "usage_span_estimate" if billing_period is None else "declared_pacific_calendar_period"
     checks: list[dict[str, Any]] = []
     for label, reported, calculated in (
         ("energy_charge", reported_energy_charge, simulated["energy_charge_after_discount"]),
@@ -582,46 +592,50 @@ def validate_bill(
     ):
         if reported is None:
             continue
-        try:
-            amount = float(reported)
-        except (ValueError, TypeError, OverflowError) as exc:
-            raise BillFitError("INVALID_BILL_AMOUNT", "Comparable bill amounts must be finite nonnegative numbers.") from exc
-        if isinstance(reported, bool) or not math.isfinite(amount) or amount < 0:
-            raise BillFitError("INVALID_BILL_AMOUNT", "Comparable bill amounts must be finite nonnegative numbers.")
-        difference = calculated - float(reported)
-        tolerance = max(2.0, abs(float(reported)) * 0.02)
-        checks.append(
-            {
-                "component": label,
-                "reported": round(float(reported), 2),
-                "calculated": calculated,
-                "difference": round(difference, 2),
-                "tolerance": round(tolerance, 2),
-                "within_tolerance": abs(difference) <= tolerance,
-            }
-        )
-    if not checks:
-        return {
-            "status": "needs_information",
-            "message": "Provide the bill's energy charge and/or Base Services Charge; do not use the whole amount due.",
-            "simulation": simulated,
-            "human_gates": [],
-        }
-    passed = all(check["within_tolerance"] for check in checks)
+        checks.append(compare_component(label, reported, calculated))
+    passed = bool(checks) and all(check["within_tolerance"] for check in checks)
     freshness = _freshness(rates)
-    needs_usage_review = _usage_needs_review(_usage_summary(parsed), warnings)
+    summary = _usage_summary(parsed)
+    reasons = list(period["required_reviews"])
+    assumptions = usage_has_assumptions(warnings)
+    if assumptions:
+        reasons.append("USAGE_ASSUMPTIONS_REQUIRE_REVIEW")
+    if freshness["stale"]:
+        reasons.append("RATE_VERIFICATION_REQUIRED")
+    needs_usage_review = assumptions or any(reason in reasons for reason in (
+        "INCOMPLETE_BILLING_PERIOD", "USAGE_OUTSIDE_BILLING_PERIOD")) or (
+        billing_period is None and _usage_needs_review(summary, warnings))
     gates = [] if passed and not freshness["stale"] else [HUMAN_GATES["OFFICIAL_RATE_CONFIRMATION"]]
+    if period["status"] != "covered":
+        gates.append(HUMAN_GATES["BILLING_PERIOD_REVIEW"])
+    if "RATE_PERIOD_NOT_COVERED" in reasons and not any(g["id"] == "OFFICIAL_RATE_CONFIRMATION" for g in gates):
+        gates.append(HUMAN_GATES["OFFICIAL_RATE_CONFIRMATION"])
     if needs_usage_review:
         gates.append(HUMAN_GATES["USAGE_QUALITY_REVIEW"])
+    if not checks:
+        status, message = "needs_information", "Provide the bill's energy charge and/or Base Services Charge; do not use the whole amount due."
+    elif not passed:
+        status, message = "mismatch", "Comparable components differ beyond tolerance. Explain the mismatch and all evidence gaps before acting."
+    elif reasons:
+        status, message = "needs_review", "Comparable components match arithmetically, but period, usage or rate evidence still needs review. This is not a validated bill."
+    else:
+        status, message = "validated", "The supplied comparable components reconcile within tolerance for the declared period; excluded bill items and account eligibility are not validated."
     return {
-        "status": "validated" if passed else "mismatch",
+        "status": status,
+        "arithmetic_status": "not_checked" if not checks else "matched" if passed else "mismatch",
         "validation_scope": "comparable_components_only",
-        "usage_evidence_status": "needs_review" if needs_usage_review else "sufficient_for_current_scope",
+        "usage_evidence_status": "needs_review" if needs_usage_review or period["status"] != "covered" else "sufficient_for_current_scope",
+        "required_reviews": reasons,
+        "billing_period": period,
+        "comparison_policy": {"currency": "USD", "precision": "decimal cents",
+                              "tolerance": "max(2.00, reported * 0.02), compared before display rounding",
+                              "pricing_rounding_certified": False},
         "source": source,
         "checks": checks,
         "rate_freshness": freshness,
+        "rate_snapshot": {"freshness": freshness, "source": rates["source"]},
         "simulation": simulated,
-        "message": "Comparable components reconcile within tolerance." if passed else "Do not act on the comparison until the mismatch is explained.",
+        "message": message,
         "warnings": warnings + rates["limitations"],
         "human_gates": gates,
     }

@@ -9,4 +9,7 @@ plugins/billfit/tests/fixtures/bill-image-preparation-v1.json text eol=lf
 reports/tariff-review-*.json text eol=lf
 reports/tariff-review-*.txt text eol=lf
 reports/tariff-review-*/**/*.json text eol=lf
+reports/bill-reconciliation-*.json text eol=lf
+reports/bill-reconciliation-*.txt text eol=lf
+reports/bill-reconciliation-*/*.json text eol=lf
 plugins/billfit/tests/fixtures/bill-input-v2/manifest.json text eol=lf

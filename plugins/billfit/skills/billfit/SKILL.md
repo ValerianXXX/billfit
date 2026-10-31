@@ -95,9 +95,11 @@ Call `billfit_compare_rate_plans` or run the CLI `compare` operation with the sa
 - estimated switch savings only when the current plan was supplied and calculated
 - excluded bill components and all returned human gates
 
-When `withheld_pending_usage_quality` or `USAGE_QUALITY_REVIEW` is returned, describe the calculation as illustrative and preserve the missing-data requirement. Do not promote a short, gappy, coarse or inferred interval series into an established annual saving. Even a `validated` bill result only reconciles comparable components; check `validation_scope`, `usage_evidence_status` and the remaining gates before describing its evidential strength.
+When `withheld_pending_usage_quality` or `USAGE_QUALITY_REVIEW` is returned, describe the calculation as illustrative and preserve the missing-data requirement. Any detected gap prevents switching-savings fields even if the descriptive quality grade is `good`. Do not promote a short, gappy, coarse or inferred series or a stale snapshot into an established annual saving. Per-plan annualized totals are illustrative projections, not demonstrated savings.
 
-If a bill is available, ask only for the line-item energy charge and Base Services Charge, then call `billfit_validate_bill` or run the CLI `validate` operation. Do not validate against the whole amount due. If the reconstruction is outside tolerance, withhold a switching recommendation until the mismatch is explained.
+If a bill is available, obtain its line-item energy charge and/or Base Services Charge plus confirmed Pacific start and exclusive end dates. Supply dates in `billing_period`; confirm the statement's inclusive/exclusive convention instead of inferring dates from the usage series or OCR. Amounts must be finite nonnegative USD cents; do not silently round ambiguous subcent input. Do not compare against the whole amount due.
+
+`arithmetic_status: matched` only means supplied component amounts agree within tolerance. Preserve `required_reviews`, `billing_period`, `rate_snapshot` and `human_gates`. Missing dates, gaps, extra records, assumptions or unsupported rate periods keep `status` at `needs_review`; explain what source input is required. A complete explicit short bill can reconcile without meeting the 28-day switching threshold. Even `validated` only covers supplied comparable components and caller-declared dates, not account eligibility, excluded items or certified utility rounding. If arithmetic mismatches, withhold action until explained. See `docs/bill-reconciliation-2026-10-31.md` in the repository for the runnable synthetic example and compatibility change.
 
 ### 5. Screen assistance separately
 
