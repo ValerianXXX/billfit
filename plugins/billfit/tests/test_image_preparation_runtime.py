@@ -10,6 +10,7 @@ import threading
 import unittest
 from unittest.mock import patch
 from PIL import Image
+from PIL import ImageDraw
 from test_image_preparation import image_fixture, spans_fixture, SCRIPTS
 from bill_cancellation import cancellation_scope
 from bill_image import prepare_image
@@ -18,6 +19,22 @@ from billfit_errors import BillFitError
 
 
 class ImagePreparationRuntimeTests(unittest.TestCase):
+    def test_deskew_is_not_dominated_by_a_long_upright_header(self):
+        with tempfile.TemporaryDirectory(prefix="billfit-mixed-skew-") as temporary:
+            root = Path(temporary)
+            body = Image.new("RGB", (800, 800), "white")
+            draw = ImageDraw.Draw(body)
+            for y in range(230, 710, 70):
+                draw.line((110, y, 400, y), fill="black", width=3)
+            body = body.rotate(6, resample=Image.Resampling.BICUBIC, fillcolor="white")
+            draw = ImageDraw.Draw(body)
+            for y in (35, 65):
+                draw.line((50, y, 700, y), fill="black", width=3)
+            source = root / "source.png"; body.save(source)
+            metadata = prepare_image(source, root / "output.png", deskew=True)
+            self.assertEqual(metadata["deskew_status"], "APPLIED")
+            self.assertAlmostEqual(metadata["deskew_degrees"], 6, delta=.6)
+
     def test_tiff_orientation_preserves_original_encoded_grid(self):
         transposes = {1: None, 2: Image.Transpose.FLIP_LEFT_RIGHT,
                       3: Image.Transpose.ROTATE_180, 4: Image.Transpose.FLIP_TOP_BOTTOM,
@@ -104,6 +121,7 @@ class ImagePreparationRuntimeTests(unittest.TestCase):
                 result = extract_bill_fields(str(source), ocr_rotation_degrees=90)
             self.assertGreater(ocr.call_args.kwargs["timeout"], 0)
             self.assertLess(ocr.call_args.kwargs["timeout"], 30)
+            self.assertEqual(ocr.call_args.kwargs["page_segmentation"], 3)
             source = result["candidates"][0]["source"]
             self.assertEqual(source["prepared_bbox"], [10, 20, 30, 40])
             self.assertEqual(source["source_polygons"], [[[20, 70], [20, 50], [40, 50], [40, 70]]])

@@ -14,8 +14,11 @@ import re
 import stat
 import sys
 import tempfile
+import time
 
 from bill_cancellation import check_cancelled
+import bill_image
+from bill_image_geometry import validate_options
 from billfit_errors import BillFitError
 from bill_ocr import extract_ocr_spans
 from bill_process import run_bounded
@@ -61,6 +64,23 @@ def _source(span: dict, sha256: str, start: int, end: int) -> tuple[dict, list[s
             flags.append("LOW_OCR_CONFIDENCE")
         if len(known) != len(words):
             flags.append("OCR_CONFIDENCE_UNKNOWN")
+    if "image_preparation" in span:
+        metadata = span["image_preparation"]
+        regions = words or [span]
+        source.update({
+            "coordinate_system": metadata["coordinate_system"],
+            "image_size": metadata["source_size"],
+            "prepared_sha256": metadata["prepared_sha256"],
+            "prepared_bbox": [min(row["prepared_bbox"][0] for row in regions),
+                              min(row["prepared_bbox"][1] for row in regions),
+                              max(row["prepared_bbox"][2] for row in regions),
+                              max(row["prepared_bbox"][3] for row in regions)],
+            "source_polygons": [row["source_polygon"] for row in regions],
+            "source_box_clipped": any(row["source_box_clipped"] for row in regions),
+        })
+        flags.append("IMAGE_PREPARATION_REQUIRES_REVIEW")
+        if source["source_box_clipped"]:
+            flags.append("SOURCE_REGION_CLIPPED")
     return source, flags
 
 
@@ -170,8 +190,10 @@ def _pdf_spans(raw: bytes) -> list[dict]:
         raise BillFitError("PDF_TEXT_FAILED", errors["PDF_TEXT_FAILED"]) from exc
 
 
-def extract_bill_fields(bill_file: str) -> dict:
+def extract_bill_fields(bill_file: str, ocr_rotation_degrees: float = 0, ocr_deskew: bool = False) -> dict:
     check_cancelled()
+    rotation, deskew = validate_options(ocr_rotation_degrees, ocr_deskew)
+    preparation = None
     try:
         path = Path(bill_file).expanduser().resolve(strict=True)
     except (OSError, ValueError) as exc:
@@ -179,6 +201,8 @@ def extract_bill_fields(bill_file: str) -> dict:
     suffix = path.suffix.lower()
     if suffix not in {".pdf", ".png", ".jpg", ".jpeg", ".tif", ".tiff"}:
         raise BillFitError("BILL_FORMAT_UNSUPPORTED", "Use PDF, PNG, JPEG or TIFF. Usage files still use the existing parse operation.")
+    if suffix == ".pdf" and (rotation or deskew):
+        raise BillFitError("IMAGE_PREPARATION_FORMAT_UNSUPPORTED", "Export the intended PDF page as an image before requesting image preparation.")
     raw, fingerprint = _read_source(path)
     sha256 = hashlib.sha256(raw).hexdigest()
     if suffix == ".pdf":
@@ -190,7 +214,25 @@ def extract_bill_fields(bill_file: str) -> dict:
         with tempfile.TemporaryDirectory(prefix="billfit-ocr-") as directory:
             snapshot = Path(directory) / ("source" + suffix)
             snapshot.write_bytes(raw)
-            spans = extract_ocr_spans(command, snapshot)
+            if rotation or deskew:
+                deadline = time.monotonic() + 30
+                prepared = Path(directory) / "prepared.png"
+                preparation = bill_image.prepare_image(snapshot, prepared, rotation_degrees=rotation, deskew=deskew)
+                remaining = deadline - time.monotonic()
+                if remaining <= 0:
+                    raise BillFitError("LOCAL_OCR_TIMEOUT", "Image preparation exhausted the local OCR time limit.")
+                # One OCR call on the chosen transform; never select a retry by
+                # the number or apparent plausibility of extracted amounts.
+                spans = extract_ocr_spans(command, prepared, timeout=remaining, page_segmentation=3)
+                try:
+                    prepared_raw, _ = _read_source(prepared)
+                except BillFitError as exc:
+                    raise BillFitError("BILL_SOURCE_CHANGED", "The prepared extraction snapshot changed or became unavailable.") from exc
+                if hashlib.sha256(prepared_raw).hexdigest() != preparation["prepared_sha256"]:
+                    raise BillFitError("BILL_SOURCE_CHANGED", "The prepared extraction snapshot changed. Check the local OCR executable.")
+                spans = bill_image.map_ocr_spans(spans, preparation)
+            else:
+                spans = extract_ocr_spans(command, snapshot)
             try:
                 snapshot_raw, _ = _read_source(snapshot)
             except BillFitError as exc:
@@ -211,6 +253,12 @@ def extract_bill_fields(bill_file: str) -> dict:
     result = extract_spans(spans, sha256, method)
     result["source_sha256"] = sha256
     result["method"] = method
+    if preparation is not None:
+        result["image_preparation"] = preparation
+        result["ocr_page_segmentation"] = "AUTOMATIC_LAYOUT_WITHOUT_OSD"
+        result["warnings"].append("Image preparation was requested. Evidence coordinates refer to original encoded pixels, before EXIF display rotation. Review the original; a mapped box is not proof of OCR correctness.")
+        if preparation["deskew_status"] in {"AMBIGUOUS", "INSUFFICIENT_EVIDENCE"}:
+            result["warnings"].append("Automatic deskew could not establish an angle and applied no deskew correction. Review orientation manually.")
     if not spans:
         result["warnings"].append("No readable text. For a scanned PDF, export the relevant page to an image and use local OCR.")
     if not result["candidates"]:
