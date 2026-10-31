@@ -1,0 +1,13 @@
+test_candidate_comparison_contains_fractional_old_and_new_boundaries (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_candidate_comparison_contains_fractional_old_and_new_boundaries) ... ok
+test_categorical_eligibility_remains_an_independent_path (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_categorical_eligibility_remains_an_independent_path) ... ok
+test_confirmed_table_edges_keep_existing_screening_outcomes (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_confirmed_table_edges_keep_existing_screening_outcomes) ... ok
+test_gap_is_reviewable_for_each_supported_household_progression (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_gap_is_reviewable_for_each_supported_household_progression) ... ok
+test_medical_need_stays_separate_from_income_uncertainty (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_medical_need_stays_separate_from_income_uncertainty) ... ok
+test_missing_income_and_expired_rules_are_not_invented (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_missing_income_and_expired_rules_are_not_invented) ... ok
+test_stale_rules_add_their_own_gate_without_erasing_boundary_review (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_stale_rules_add_their_own_gate_without_erasing_boundary_review) ... ok
+test_subcent_and_adjacent_float_inputs_are_not_silently_rounded (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_subcent_and_adjacent_float_inputs_are_not_silently_rounded) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.030s
+
+OK

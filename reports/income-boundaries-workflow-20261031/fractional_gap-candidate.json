@@ -1,0 +1,56 @@
+{
+  "status": "screened",
+  "rules_freshness": {
+    "verified_on": "2026-10-27",
+    "age_days": 4,
+    "stale": false,
+    "verification_overdue": false,
+    "outside_effective_window": false,
+    "rate_changed": null,
+    "effective_from": "2026-06-01",
+    "effective_to": "2027-05-31"
+  },
+  "household_size": 1,
+  "gross_annual_household_income": 43280.5,
+  "care": {
+    "status": "likely_not_eligible_by_income",
+    "income_upper_limit": 43280
+  },
+  "fera": {
+    "status": "needs_official_confirmation",
+    "reason_code": "FRACTIONAL_INCOME_BOUNDARY",
+    "reason": "Income is above the published CARE maximum but below the displayed whole-dollar FERA minimum. Eligibility at this precision is unresolved.",
+    "income_lower_bound": 43281,
+    "income_upper_limit": 54100,
+    "rounding_policy": "unverified"
+  },
+  "medical_baseline": {
+    "status": "not_screened",
+    "question": "Does a full-time resident rely on electricity for a qualifying medical condition or home medical device?",
+    "income_test": "not_applicable"
+  },
+  "rules_effective": {
+    "from": "2026-06-01",
+    "to": "2027-05-31"
+  },
+  "source": {
+    "url": "https://www.cpuc.ca.gov/care/",
+    "title": "CARE/FERA Program"
+  },
+  "notes": [
+    "This is a screening result, not an enrollment decision.",
+    "Gross annual household income includes taxable and non-taxable income from household members.",
+    "PG&E may request proof after enrollment.",
+    "Medical Baseline is based on medical need rather than income and requires practitioner certification."
+  ],
+  "privacy": "Do not provide SSN, medical records, tax returns, pay stubs, or account credentials to BillFit for this screening.",
+  "human_gates": [
+    {
+      "id": "INCOME_BOUNDARY_CONFIRMATION",
+      "title": "Confirm the fractional-income boundary with PG&E",
+      "reason": "The supplied income falls between the published whole-dollar CARE maximum and FERA minimum; the maintained sources do not establish a rounding rule.",
+      "user_action": "Keep the original income amount and ask PG&E how to apply the published boundary. Do not round it or treat this screening as eligibility approval or denial.",
+      "status": "waiting_for_user"
+    }
+  ]
+}

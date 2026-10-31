@@ -1,0 +1,54 @@
+{
+  "status": "screened",
+  "rules_freshness": {
+    "verified_on": "2026-10-27",
+    "age_days": 4,
+    "stale": false,
+    "verification_overdue": false,
+    "outside_effective_window": false,
+    "rate_changed": null,
+    "effective_from": "2026-06-01",
+    "effective_to": "2027-05-31"
+  },
+  "household_size": 1,
+  "gross_annual_household_income": 43280.5,
+  "care": {
+    "status": "likely_not_eligible_by_income",
+    "income_upper_limit": 43280
+  },
+  "fera": {
+    "status": "likely_eligible",
+    "basis": "income",
+    "income_lower_bound": 43281,
+    "income_upper_limit": 54100
+  },
+  "medical_baseline": {
+    "status": "not_screened",
+    "question": "Does a full-time resident rely on electricity for a qualifying medical condition or home medical device?",
+    "income_test": "not_applicable"
+  },
+  "rules_effective": {
+    "from": "2026-06-01",
+    "to": "2027-05-31"
+  },
+  "source": {
+    "url": "https://www.cpuc.ca.gov/care/",
+    "title": "CARE/FERA Program"
+  },
+  "notes": [
+    "This is a screening result, not an enrollment decision.",
+    "Gross annual household income includes taxable and non-taxable income from household members.",
+    "PG&E may request proof after enrollment.",
+    "Medical Baseline is based on medical need rather than income and requires practitioner certification."
+  ],
+  "privacy": "Do not provide SSN, medical records, tax returns, pay stubs, or account credentials to BillFit for this screening.",
+  "human_gates": [
+    {
+      "id": "ASSISTANCE_APPLICATION",
+      "title": "Apply for CARE or FERA",
+      "reason": "BillFit only screens eligibility and does not submit personal or income information.",
+      "user_action": "Review the official requirements and personally complete the PG&E CARE/FERA application.",
+      "status": "waiting_for_user"
+    }
+  ]
+}

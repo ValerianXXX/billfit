@@ -62,6 +62,18 @@ records terminal full-suite results, source hashes and the dated before/after
 outputs. Prior [assistance-review evidence](assistance-rule-review-2026-10-31.md)
 and its 168 whole-dollar scenarios remain historical observations.
 
+Eight additional real CLI invocations compare four identical synthetic requests
+against the unchanged base checkout and this implementation. The fractional-gap
+result changes from `likely_eligible` to `needs_official_confirmation`; CARE
+maximum, printed FERA minimum and categorical-path responses are otherwise
+identical. [Requests and raw outputs](../reports/income-boundaries-workflow-20261031/fractional_gap-request.json)
+are bound in the receipt. The explicitly labelled counterfactual comparison has
+**288 scenarios**, retaining the original whole-dollar cases and adding 120
+fractional cases; its 18 proposed threshold changes are synthetic and inactive.
+The [source observation](../reports/income-boundaries-sources-20261031.json)
+records successful bounded downloads and HTML hashes for all three checked
+official pages. HTML hashes do not authenticate a rule interpretation.
+
 The complete optional-profile suite passes **200 tests, zero skips, 45.016
 seconds** on Windows Python 3.11.3. Existing rate calculations, DST/usage
 boundaries, bill reconciliation, parser cancellation, image preparation and

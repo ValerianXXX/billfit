@@ -1,0 +1,189 @@
+{
+  "observed_at": "2026-10-31T19:33:35.364916+00:00",
+  "status": "LOCAL_FULL_CLI_SDK_PASS_OFFICIAL_FRACTIONAL_POLICY_UNVERIFIED",
+  "branch": "codex/assistance-income-boundaries-20261031",
+  "base": "9bf1302c3f0fcb2a6e614da568c8b551b6d1da2e",
+  "runtime": "5cd74432f7277f28bfcba52fa3dad47ac8729218",
+  "frozen": "b459bcfe83fa8dfaf64ffbcca6dc9201fb106866",
+  "baseline": {
+    "tests": 190,
+    "commit": "9bf1302c3f0fcb2a6e614da568c8b551b6d1da2e",
+    "unchanged_baseline_reused": true
+  },
+  "frozen_contracts": {
+    "methods": 8,
+    "before_passing_methods": 3,
+    "before_affected_methods": 5,
+    "before_failing_subcases": 95,
+    "before_errors": 1,
+    "before_seconds": 0.049,
+    "after_passed": 8,
+    "after_seconds": 0.03,
+    "unchanged": true
+  },
+  "integration": {
+    "methods": 2,
+    "passed": 2,
+    "seconds": 4.787,
+    "sdk_modes": [
+      "2026-07-28",
+      "legacy"
+    ],
+    "initial_observation": "Expected direct-call INVALID_INCOME, but existing public schema rejects boolean input first as INVALID_ARGUMENTS; corrected only the new integration expectation, not validation"
+  },
+  "full": {
+    "tests": 200,
+    "passed": 200,
+    "skips": 0,
+    "seconds": 45.016,
+    "python": "3.11.3",
+    "platform": "win32",
+    "mcp_sdk": "2.3.0"
+  },
+  "actual_cli_comparison": {
+    "operations": [
+      {
+        "case": "fractional_gap",
+        "version": "baseline",
+        "exit_code": 0,
+        "elapsed_seconds": 0.266,
+        "fera_status": "likely_eligible"
+      },
+      {
+        "case": "fractional_gap",
+        "version": "candidate",
+        "exit_code": 0,
+        "elapsed_seconds": 0.265,
+        "fera_status": "needs_official_confirmation"
+      },
+      {
+        "case": "care_maximum",
+        "version": "baseline",
+        "exit_code": 0,
+        "elapsed_seconds": 0.266,
+        "fera_status": "not_primary_path"
+      },
+      {
+        "case": "care_maximum",
+        "version": "candidate",
+        "exit_code": 0,
+        "elapsed_seconds": 0.25,
+        "fera_status": "not_primary_path"
+      },
+      {
+        "case": "fera_printed_minimum",
+        "version": "baseline",
+        "exit_code": 0,
+        "elapsed_seconds": 0.266,
+        "fera_status": "likely_eligible"
+      },
+      {
+        "case": "fera_printed_minimum",
+        "version": "candidate",
+        "exit_code": 0,
+        "elapsed_seconds": 0.266,
+        "fera_status": "likely_eligible"
+      },
+      {
+        "case": "categorical_gap",
+        "version": "baseline",
+        "exit_code": 0,
+        "elapsed_seconds": 0.265,
+        "fera_status": "not_primary_path"
+      },
+      {
+        "case": "categorical_gap",
+        "version": "candidate",
+        "exit_code": 0,
+        "elapsed_seconds": 0.25,
+        "fera_status": "not_primary_path"
+      }
+    ],
+    "ordinary_edge_and_categorical_outputs_identical": true,
+    "fractional_outcome_before": "likely_eligible",
+    "fractional_outcome_after": "needs_official_confirmation",
+    "synthetic_only": true
+  },
+  "candidate_review": {
+    "synthetic_only": true,
+    "changed_threshold_fields": 18,
+    "scenarios": 288,
+    "approval": null,
+    "automatic_activation": false
+  },
+  "official_observation": "reports/income-boundaries-sources-20261031.json",
+  "official_observation_lf_sha256": "b8d1daf213ffaf2baf47552753ce9c983e01450284df6bd163e4862f24b945f4",
+  "source_lf_sha256": {
+    "plugins/billfit/skills/billfit/scripts/billfit_core.py": "75f06487bf7195b1c39f560b16dffae2e9b99a0bc746ba8f1c57e0b85f89fc06",
+    "plugins/billfit/skills/billfit/scripts/assistance_review.py": "4d564f9d90a42a06b9c897f2a438d494f7cfb3b01fd587dfdf30b06545866e34",
+    "plugins/billfit/skills/billfit/scripts/mcp_server.py": "b8e1d39870fe711d8b970cc0641cf801f57ad4baf3ef68be6f90e68bf52c6656",
+    "plugins/billfit/tests/test_assistance_income_boundaries.py": "06694761d88c20cb6dfcbbbde395131300d02b5e98b36c96bfca2da2654219e1",
+    "plugins/billfit/tests/test_assistance_boundary_integration.py": "5a5688217bdf4553e1a908329f47ad76546a742abcaa87af0a53a345593a8e68"
+  },
+  "workflow_artifact_lf_sha256": {
+    "reports/income-boundaries-workflow-20261031/care_maximum-baseline.json": "f66539f75a7bd24d856d265c1dafc2740a0bfe7bfba55c7d29a2469279f75a1e",
+    "reports/income-boundaries-workflow-20261031/care_maximum-candidate.json": "f66539f75a7bd24d856d265c1dafc2740a0bfe7bfba55c7d29a2469279f75a1e",
+    "reports/income-boundaries-workflow-20261031/care_maximum-request.json": "94bbe6fa571f25baaf3c24c15e322bacf289e7ae526df7b0f56ab02e39004b65",
+    "reports/income-boundaries-workflow-20261031/categorical_gap-baseline.json": "ee16bdf85e3700212a726be9663f7c509d3344bdb7b94b029bcc00bb5d1fbfb4",
+    "reports/income-boundaries-workflow-20261031/categorical_gap-candidate.json": "ee16bdf85e3700212a726be9663f7c509d3344bdb7b94b029bcc00bb5d1fbfb4",
+    "reports/income-boundaries-workflow-20261031/categorical_gap-request.json": "1c27552f4ee0006f7982f19a288da71775ae54844f3317d722c62500673de0ae",
+    "reports/income-boundaries-workflow-20261031/fera_printed_minimum-baseline.json": "29f2d64dd1a765f10478a6b555eade6920752ef4c75ad1a1f128044afcbae70d",
+    "reports/income-boundaries-workflow-20261031/fera_printed_minimum-candidate.json": "29f2d64dd1a765f10478a6b555eade6920752ef4c75ad1a1f128044afcbae70d",
+    "reports/income-boundaries-workflow-20261031/fera_printed_minimum-request.json": "92f08729128f33168ec7d49e1f466d8dbc15cdbcb76d00c317c87789fbc5f610",
+    "reports/income-boundaries-workflow-20261031/fractional_gap-baseline.json": "44eb76ede787c5b8b40f214b4dbf4bfefa3e76402afadecca38ed3f6b86dca4a",
+    "reports/income-boundaries-workflow-20261031/fractional_gap-candidate.json": "6ea7a64488957ab2b6178e2777b3e52dc24f60873ebd5cc50370460ad3db9e3f",
+    "reports/income-boundaries-workflow-20261031/fractional_gap-request.json": "f870b69d3b5c6b664d9af33c327bccf6b652233da12590657621aadc4afdb0db",
+    "reports/income-boundaries-workflow-20261031/SYNTHETIC-NOT-OFFICIAL-comparison.json": "2c402a4f38b025644cac0cee1283a396a04f468f745e1948da8080b033c7c340",
+    "reports/income-boundaries-workflow-20261031/SYNTHETIC-NOT-OFFICIAL-income-candidate.json": "b40e07a91b32b71e1df31c489000e184202aed673e785422d863c41e2048714a"
+  },
+  "portable_logs": [
+    {
+      "source": "reports/income-boundaries-before-20261031.log",
+      "raw_sha256": "d0e01150bb30c07e6229e6d99a04784e01ba593cb3be3deebb878207dd6842db",
+      "portable": "reports/income-boundaries-before-20261031.txt",
+      "portable_lf_sha256": "80e847b54418d3ed74f6b4213b78b55a11a5c6f0c43558daa7c963f4a3a4d858"
+    },
+    {
+      "source": "reports/income-boundaries-after-20261031.log",
+      "raw_sha256": "0c99fafb9790df67bc8593f6631da48d6a40a74972052f224b82d68ec07be3a0",
+      "portable": "reports/income-boundaries-after-20261031.txt",
+      "portable_lf_sha256": "5ff53db6f1c058726086fac5a2192a8e9348a4685924f87f944bd729762d7fea"
+    },
+    {
+      "source": "reports/income-boundaries-integration-20261031.log",
+      "raw_sha256": "6421dedf235d08a7e230b330528430d696511bf87c5f1ff3d4bbedd46cda6b3e",
+      "portable": "reports/income-boundaries-integration-20261031.txt",
+      "portable_lf_sha256": "7abb084bf77c84f08d3bf5331213748fe579c88d8f0cddc94fc50b6a89a1a901"
+    },
+    {
+      "source": "reports/income-boundaries-integration-final-20261031.log",
+      "raw_sha256": "a7dadd95915fd68b68b564c960b3d5b5b767d8a24a617ae8499fbb9db6abc1f5",
+      "portable": "reports/income-boundaries-integration-final-20261031.txt",
+      "portable_lf_sha256": "6994e8685f8e56beba8cb5a36832fbbb6f40c88c05c8d5cc0a5e0a475b2fdb96"
+    },
+    {
+      "source": "reports/income-boundaries-full-20261031.log",
+      "raw_sha256": "ba6991b1abceb9efa884e5e4841700a055ead9cde7123fea7e3952b09460039d",
+      "portable": "reports/income-boundaries-full-20261031.txt",
+      "portable_lf_sha256": "9d4ba0a08ba90d10c42fc47795b4e0077a6c42ad06074d46ec3cfbe3e0c5a3a2"
+    }
+  ],
+  "unchanged_packaged_data": {
+    "plugins/billfit/skills/billfit/data/care_fera_2026-06-01.json": "1ff88ab2bc8f8ebbe12e78a3590d1de1ce54626ff0a2b689fc23774ea4b85618",
+    "plugins/billfit/skills/billfit/data/pge_residential_rates_2026-03-01.json": "cff04fb40659084260afab13b99bab5cb6dd3a6a77eb8490b05c0e89bbf7e53b"
+  },
+  "new_model_calls": 0,
+  "measured_ai_quality_or_customer_benefit": false,
+  "new_dependency_or_protocol": false,
+  "production_actions": 0,
+  "migration": false,
+  "remaining": [
+    "Official fractional-income interpretation",
+    "Complete categorical-program coverage",
+    "Reviewed exact-version publication and operational rollback",
+    "Exact utility rounding and permissioned customer bills",
+    "Native Windows OCR and independent human acceptance",
+    "New Hermes/model-selected observation not performed"
+  ],
+  "whole_goal_complete": false
+}
