@@ -1,0 +1,38 @@
+{
+  "observed_at": "2026-10-31T19:31:27.096697+00:00",
+  "sources": [
+    {
+      "url": "https://www.cpuc.ca.gov/care/",
+      "checked_at": "2026-10-31T19:31:26.245879+00:00",
+      "status": "FETCHED",
+      "http_status": 200,
+      "final_url": "https://www.cpuc.ca.gov/care/",
+      "bytes": 59962,
+      "html_sha256": "346809d348af3322e53c4e2b65c4c3620a67f4390e65bc773e2fde64cd6996fe"
+    },
+    {
+      "url": "https://www.pge.com/en/account/billing-and-assistance/financial-assistance/california-alternate-rates-for-energy-program.html",
+      "checked_at": "2026-10-31T19:31:26.246880+00:00",
+      "status": "FETCHED",
+      "http_status": 200,
+      "final_url": "https://www.pge.com/en/account/billing-and-assistance/financial-assistance/california-alternate-rates-for-energy-program.html",
+      "bytes": 155057,
+      "html_sha256": "9e2db499c3d68958b465e28e74fe9495aff5c6b23126ad9b6dfe1520e3582fb0"
+    },
+    {
+      "url": "https://www.pge.com/en/account/billing-and-assistance/financial-assistance/fera-eligibility.html",
+      "checked_at": "2026-10-31T19:31:26.246880+00:00",
+      "status": "FETCHED",
+      "http_status": 200,
+      "final_url": "https://www.pge.com/en/account/billing-and-assistance/financial-assistance/fera-eligibility.html",
+      "bytes": 153590,
+      "html_sha256": "8b45c5e8bc15e0a1ee8df997a042bfb38a2f0fe9e846b1e29e20c05a5cdf91ae"
+    }
+  ],
+  "interpretation": "The reviewed CPUC table displays a whole-dollar CARE/FERA boundary. Checked PG&E pages require gross household income but do not establish fractional-dollar rounding within that gap.",
+  "source_mapping_method": "Human-readable official tables/guidance inspected separately from raw HTML hashes; hash or numeric presence is not source-to-field authentication.",
+  "missing_policy": "Official treatment of fractional income between the displayed CARE maximum and FERA minimum remains unverified.",
+  "snapshot_dates_or_values_changed": false,
+  "source_inspection_is_not_release_approval": true,
+  "fetch_failures_do_not_erase_browser_source_observations": true
+}

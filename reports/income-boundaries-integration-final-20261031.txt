@@ -1,0 +1,7 @@
+test_actual_cli_preserves_uncertainty_and_standard_edges (test_assistance_boundary_integration.AssistanceBoundaryIntegrationTests.test_actual_cli_preserves_uncertainty_and_standard_edges) ... ok
+test_actual_sdk_both_profiles_retain_boundary_gate_and_recover (test_assistance_boundary_integration.AssistanceBoundaryIntegrationTests.test_actual_sdk_both_profiles_retain_boundary_gate_and_recover) ... ok
+
+----------------------------------------------------------------------
+Ran 2 tests in 4.787s
+
+OK

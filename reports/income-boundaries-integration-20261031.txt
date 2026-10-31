@@ -1,0 +1,117 @@
+test_actual_cli_preserves_uncertainty_and_standard_edges (test_assistance_boundary_integration.AssistanceBoundaryIntegrationTests.test_actual_cli_preserves_uncertainty_and_standard_edges) ... ok
+test_actual_sdk_both_profiles_retain_boundary_gate_and_recover (test_assistance_boundary_integration.AssistanceBoundaryIntegrationTests.test_actual_sdk_both_profiles_retain_boundary_gate_and_recover) ...
+  test_actual_sdk_both_profiles_retain_boundary_gate_and_recover (test_assistance_boundary_integration.AssistanceBoundaryIntegrationTests.test_actual_sdk_both_profiles_retain_boundary_gate_and_recover) (mode='2026-07-28') ... ERROR
+  test_actual_sdk_both_profiles_retain_boundary_gate_and_recover (test_assistance_boundary_integration.AssistanceBoundaryIntegrationTests.test_actual_sdk_both_profiles_retain_boundary_gate_and_recover) (mode='legacy') ... ERROR
+
+======================================================================
+ERROR: test_actual_sdk_both_profiles_retain_boundary_gate_and_recover (test_assistance_boundary_integration.AssistanceBoundaryIntegrationTests.test_actual_sdk_both_profiles_retain_boundary_gate_and_recover) (mode='2026-07-28')
+----------------------------------------------------------------------
+  + Exception Group Traceback (most recent call last):
+  |   File "$PROJECT_ROOT\plugins\billfit\tests\test_assistance_boundary_integration.py", line 67, in test_actual_sdk_both_profiles_retain_boundary_gate_and_recover
+  |     asyncio.run(scenario(mode))
+  |   File "$USER_HOME\AppData\Local\Programs\Python\Python311\Lib\asyncio\runners.py", line 190, in run
+  |     return runner.run(main)
+  |            ^^^^^^^^^^^^^^^^
+  |   File "$USER_HOME\AppData\Local\Programs\Python\Python311\Lib\asyncio\runners.py", line 118, in run
+  |     return self._loop.run_until_complete(task)
+  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "$USER_HOME\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 653, in run_until_complete
+  |     return future.result()
+  |            ^^^^^^^^^^^^^^^
+  |   File "$PROJECT_ROOT\plugins\billfit\tests\test_assistance_boundary_integration.py", line 49, in scenario
+  |     async with Client(params, mode=mode) as client:
+  |   File "$WORKSPACE\billfit\.venv\Lib\site-packages\mcp\client\client.py", line 480, in __aexit__
+  |     await self._exit_stack.__aexit__(exc_type, exc_val, exc_tb)
+  |   File "$USER_HOME\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 733, in __aexit__
+  |     raise exc_details[1]
+  |   File "$USER_HOME\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 716, in __aexit__
+  |     cb_suppress = await cb(*exc_details)
+  |                   ^^^^^^^^^^^^^^^^^^^^^^
+  |   File "$USER_HOME\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 222, in __aexit__
+  |     await self.gen.athrow(typ, value, traceback)
+  |   File "$WORKSPACE\billfit\.venv\Lib\site-packages\mcp\client\stdio.py", line 201, in stdio_client
+  |     async with anyio.create_task_group() as tg:
+  |   File "$WORKSPACE\billfit\.venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 847, in __aexit__
+  |     raise BaseExceptionGroup(
+  | ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | Exception Group Traceback (most recent call last):
+    |   File "$WORKSPACE\billfit\.venv\Lib\site-packages\mcp\client\stdio.py", line 205, in stdio_client
+    |     yield read_stream, write_stream
+    |   File "$USER_HOME\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 716, in __aexit__
+    |     cb_suppress = await cb(*exc_details)
+    |                   ^^^^^^^^^^^^^^^^^^^^^^
+    |   File "$WORKSPACE\billfit\.venv\Lib\site-packages\mcp\client\session.py", line 514, in __aexit__
+    |     result = await self._task_group.__aexit__(exc_type, exc_val, exc_tb)
+    |              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "$WORKSPACE\billfit\.venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 847, in __aexit__
+    |     raise BaseExceptionGroup(
+    | ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+    +-+---------------- 1 ----------------
+      | Traceback (most recent call last):
+      |   File "$PROJECT_ROOT\plugins\billfit\tests\test_assistance_boundary_integration.py", line 57, in scenario
+      |     self.assertEqual(invalid.structured_content["error"]["code"], "INVALID_INCOME")
+      | AssertionError: 'INVALID_ARGUMENTS' != 'INVALID_INCOME'
+      | - INVALID_ARGUMENTS
+      | + INVALID_INCOME
+      |
+      +------------------------------------
+
+======================================================================
+ERROR: test_actual_sdk_both_profiles_retain_boundary_gate_and_recover (test_assistance_boundary_integration.AssistanceBoundaryIntegrationTests.test_actual_sdk_both_profiles_retain_boundary_gate_and_recover) (mode='legacy')
+----------------------------------------------------------------------
+  + Exception Group Traceback (most recent call last):
+  |   File "$PROJECT_ROOT\plugins\billfit\tests\test_assistance_boundary_integration.py", line 67, in test_actual_sdk_both_profiles_retain_boundary_gate_and_recover
+  |     asyncio.run(scenario(mode))
+  |   File "$USER_HOME\AppData\Local\Programs\Python\Python311\Lib\asyncio\runners.py", line 190, in run
+  |     return runner.run(main)
+  |            ^^^^^^^^^^^^^^^^
+  |   File "$USER_HOME\AppData\Local\Programs\Python\Python311\Lib\asyncio\runners.py", line 118, in run
+  |     return self._loop.run_until_complete(task)
+  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "$USER_HOME\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 653, in run_until_complete
+  |     return future.result()
+  |            ^^^^^^^^^^^^^^^
+  |   File "$PROJECT_ROOT\plugins\billfit\tests\test_assistance_boundary_integration.py", line 49, in scenario
+  |     async with Client(params, mode=mode) as client:
+  |   File "$WORKSPACE\billfit\.venv\Lib\site-packages\mcp\client\client.py", line 480, in __aexit__
+  |     await self._exit_stack.__aexit__(exc_type, exc_val, exc_tb)
+  |   File "$USER_HOME\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 733, in __aexit__
+  |     raise exc_details[1]
+  |   File "$USER_HOME\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 716, in __aexit__
+  |     cb_suppress = await cb(*exc_details)
+  |                   ^^^^^^^^^^^^^^^^^^^^^^
+  |   File "$USER_HOME\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 222, in __aexit__
+  |     await self.gen.athrow(typ, value, traceback)
+  |   File "$WORKSPACE\billfit\.venv\Lib\site-packages\mcp\client\stdio.py", line 201, in stdio_client
+  |     async with anyio.create_task_group() as tg:
+  |   File "$WORKSPACE\billfit\.venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 847, in __aexit__
+  |     raise BaseExceptionGroup(
+  | ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | Exception Group Traceback (most recent call last):
+    |   File "$WORKSPACE\billfit\.venv\Lib\site-packages\mcp\client\stdio.py", line 205, in stdio_client
+    |     yield read_stream, write_stream
+    |   File "$USER_HOME\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 716, in __aexit__
+    |     cb_suppress = await cb(*exc_details)
+    |                   ^^^^^^^^^^^^^^^^^^^^^^
+    |   File "$WORKSPACE\billfit\.venv\Lib\site-packages\mcp\client\session.py", line 514, in __aexit__
+    |     result = await self._task_group.__aexit__(exc_type, exc_val, exc_tb)
+    |              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "$WORKSPACE\billfit\.venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 847, in __aexit__
+    |     raise BaseExceptionGroup(
+    | ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+    +-+---------------- 1 ----------------
+      | Traceback (most recent call last):
+      |   File "$PROJECT_ROOT\plugins\billfit\tests\test_assistance_boundary_integration.py", line 57, in scenario
+      |     self.assertEqual(invalid.structured_content["error"]["code"], "INVALID_INCOME")
+      | AssertionError: 'INVALID_ARGUMENTS' != 'INVALID_INCOME'
+      | - INVALID_ARGUMENTS
+      | + INVALID_INCOME
+      |
+      +------------------------------------
+
+----------------------------------------------------------------------
+Ran 2 tests in 4.846s
+
+FAILED (errors=2)

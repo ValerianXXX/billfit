@@ -103,6 +103,12 @@ HUMAN_GATES: dict[str, dict[str, str]] = {
         "BillFit only screens eligibility and does not submit personal or income information.",
         "Review the official requirements and personally complete the PG&E CARE/FERA application.",
     ),
+    "INCOME_BOUNDARY_CONFIRMATION": _gate(
+        "INCOME_BOUNDARY_CONFIRMATION",
+        "Confirm the fractional-income boundary with PG&E",
+        "The supplied income falls between the published whole-dollar CARE maximum and FERA minimum; the maintained sources do not establish a rounding rule.",
+        "Keep the original income amount and ask PG&E how to apply the published boundary. Do not round it or treat this screening as eligibility approval or denial.",
+    ),
     "MEDICAL_CERTIFICATION": _gate(
         "MEDICAL_CERTIFICATION",
         "Obtain Medical Baseline certification",
@@ -717,6 +723,17 @@ def _screen_assistance_snapshot(
             care = {"status": "likely_eligible", "basis": "income", "income_upper_limit": care_limit}
             fera = {"status": "not_primary_path", "reason": "Income is within the CARE screening range."}
             gates.append(HUMAN_GATES["ASSISTANCE_APPLICATION"])
+        elif income < care_limit + 1:
+            care = {"status": "likely_not_eligible_by_income", "income_upper_limit": care_limit}
+            fera = {
+                "status": "needs_official_confirmation",
+                "reason_code": "FRACTIONAL_INCOME_BOUNDARY",
+                "reason": "Income is above the published CARE maximum but below the displayed whole-dollar FERA minimum. Eligibility at this precision is unresolved.",
+                "income_lower_bound": care_limit + 1,
+                "income_upper_limit": fera_limit,
+                "rounding_policy": "unverified",
+            }
+            gates.append(HUMAN_GATES["INCOME_BOUNDARY_CONFIRMATION"])
         elif income <= fera_limit:
             care = {"status": "likely_not_eligible_by_income", "income_upper_limit": care_limit}
             fera = {

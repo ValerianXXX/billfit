@@ -70,6 +70,9 @@ def _compare_assistance_snapshots(baseline: dict, candidate: dict) -> dict:
                 for name in TABLES:
                     limit = core._income_limit(data[name], size)
                     incomes.update((limit - 1, limit, limit + 1))
+                    incomes.update((limit - .01, limit + .01))
+                    if name == "care_income_upper_limit":
+                        incomes.update((limit + .5, limit + .99))
             for income in [None, *sorted(incomes)]:
                 add(as_of, {"household_size": size, "gross_annual_household_income": income})
         for program in sorted(set(baseline["care_categorical_programs"]) | set(baseline["program_aliases"])):
@@ -87,4 +90,4 @@ def _compare_assistance_snapshots(baseline: dict, candidate: dict) -> dict:
         add(as_of, {"household_size": 1, "gross_annual_household_income": 0})
     return {"status": "REVIEW_REQUIRED", "approval": None, "automatic_activation": False,
             "differences": differences, "screening_scenarios": rows,
-            "scope": "Synthetic whole-dollar boundary and existing-path regression, not source authentication, enrollment or current-date activation"}
+            "scope": "Synthetic whole-dollar and fractional boundary regression, not source authentication, enrollment or current-date activation"}

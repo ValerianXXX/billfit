@@ -113,7 +113,7 @@ TOOLS: list[dict[str, Any]] = [
     },
     {
         "name": "billfit_screen_assistance",
-        "description": "Screen CARE and FERA using the current CPUC household-size and gross-income rules plus categorical programs; separately flag possible Medical Baseline need without collecting medical records.",
+        "description": "Screen CARE and FERA using packaged, source-dated household-size and gross-income rules plus categorical programs. Preserve needs_official_confirmation and human gates for fractional income between published whole-dollar boundaries; never round income or infer approval. Separately flag possible Medical Baseline need without collecting medical records.",
         "inputSchema": {
             "type": "object",
             "properties": {

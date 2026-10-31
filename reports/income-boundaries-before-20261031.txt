@@ -1,0 +1,991 @@
+test_candidate_comparison_contains_fractional_old_and_new_boundaries (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_candidate_comparison_contains_fractional_old_and_new_boundaries) ...
+  test_candidate_comparison_contains_fractional_old_and_new_boundaries (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_candidate_comparison_contains_fractional_old_and_new_boundaries) (size=1, income=43279.99) ... FAIL
+  test_candidate_comparison_contains_fractional_old_and_new_boundaries (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_candidate_comparison_contains_fractional_old_and_new_boundaries) (size=1, income=43280.01) ... FAIL
+  test_candidate_comparison_contains_fractional_old_and_new_boundaries (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_candidate_comparison_contains_fractional_old_and_new_boundaries) (size=1, income=43280.5) ... FAIL
+  test_candidate_comparison_contains_fractional_old_and_new_boundaries (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_candidate_comparison_contains_fractional_old_and_new_boundaries) (size=1, income=43280.99) ... FAIL
+  test_candidate_comparison_contains_fractional_old_and_new_boundaries (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_candidate_comparison_contains_fractional_old_and_new_boundaries) (size=1, income=54099.99) ... FAIL
+  test_candidate_comparison_contains_fractional_old_and_new_boundaries (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_candidate_comparison_contains_fractional_old_and_new_boundaries) (size=1, income=54100.01) ... FAIL
+  test_candidate_comparison_contains_fractional_old_and_new_boundaries (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_candidate_comparison_contains_fractional_old_and_new_boundaries) (size=1, income=43379.99) ... FAIL
+  test_candidate_comparison_contains_fractional_old_and_new_boundaries (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_candidate_comparison_contains_fractional_old_and_new_boundaries) (size=1, income=43380.01) ... FAIL
+  test_candidate_comparison_contains_fractional_old_and_new_boundaries (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_candidate_comparison_contains_fractional_old_and_new_boundaries) (size=1, income=43380.5) ... FAIL
+  test_candidate_comparison_contains_fractional_old_and_new_boundaries (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_candidate_comparison_contains_fractional_old_and_new_boundaries) (size=1, income=43380.99) ... FAIL
+  test_candidate_comparison_contains_fractional_old_and_new_boundaries (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_candidate_comparison_contains_fractional_old_and_new_boundaries) (size=1, income=54199.99) ... FAIL
+  test_candidate_comparison_contains_fractional_old_and_new_boundaries (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_candidate_comparison_contains_fractional_old_and_new_boundaries) (size=1, income=54200.01) ... FAIL
+  test_candidate_comparison_contains_fractional_old_and_new_boundaries (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_candidate_comparison_contains_fractional_old_and_new_boundaries) (size=2, income=43279.99) ... FAIL
+  test_candidate_comparison_contains_fractional_old_and_new_boundaries (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_candidate_comparison_contains_fractional_old_and_new_boundaries) (size=2, income=43280.01) ... FAIL
+  test_candidate_comparison_contains_fractional_old_and_new_boundaries (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_candidate_comparison_contains_fractional_old_and_new_boundaries) (size=2, income=43280.5) ... FAIL
+  test_candidate_comparison_contains_fractional_old_and_new_boundaries (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_candidate_comparison_contains_fractional_old_and_new_boundaries) (size=2, income=43280.99) ... FAIL
+  test_candidate_comparison_contains_fractional_old_and_new_boundaries (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_candidate_comparison_contains_fractional_old_and_new_boundaries) (size=2, income=54099.99) ... FAIL
+  test_candidate_comparison_contains_fractional_old_and_new_boundaries (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_candidate_comparison_contains_fractional_old_and_new_boundaries) (size=2, income=54100.01) ... FAIL
+  test_candidate_comparison_contains_fractional_old_and_new_boundaries (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_candidate_comparison_contains_fractional_old_and_new_boundaries) (size=2, income=43379.99) ... FAIL
+  test_candidate_comparison_contains_fractional_old_and_new_boundaries (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_candidate_comparison_contains_fractional_old_and_new_boundaries) (size=2, income=43380.01) ... FAIL
+  test_candidate_comparison_contains_fractional_old_and_new_boundaries (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_candidate_comparison_contains_fractional_old_and_new_boundaries) (size=2, income=43380.5) ... FAIL
+  test_candidate_comparison_contains_fractional_old_and_new_boundaries (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_candidate_comparison_contains_fractional_old_and_new_boundaries) (size=2, income=43380.99) ... FAIL
+  test_candidate_comparison_contains_fractional_old_and_new_boundaries (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_candidate_comparison_contains_fractional_old_and_new_boundaries) (size=2, income=54199.99) ... FAIL
+  test_candidate_comparison_contains_fractional_old_and_new_boundaries (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_candidate_comparison_contains_fractional_old_and_new_boundaries) (size=2, income=54200.01) ... FAIL
+  test_candidate_comparison_contains_fractional_old_and_new_boundaries (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_candidate_comparison_contains_fractional_old_and_new_boundaries) (size=3, income=54639.99) ... FAIL
+  test_candidate_comparison_contains_fractional_old_and_new_boundaries (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_candidate_comparison_contains_fractional_old_and_new_boundaries) (size=3, income=54640.01) ... FAIL
+  test_candidate_comparison_contains_fractional_old_and_new_boundaries (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_candidate_comparison_contains_fractional_old_and_new_boundaries) (size=3, income=54640.5) ... FAIL
+  test_candidate_comparison_contains_fractional_old_and_new_boundaries (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_candidate_comparison_contains_fractional_old_and_new_boundaries) (size=3, income=54640.99) ... FAIL
+  test_candidate_comparison_contains_fractional_old_and_new_boundaries (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_candidate_comparison_contains_fractional_old_and_new_boundaries) (size=3, income=68299.99) ... FAIL
+  test_candidate_comparison_contains_fractional_old_and_new_boundaries (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_candidate_comparison_contains_fractional_old_and_new_boundaries) (size=3, income=68300.01) ... FAIL
+  test_candidate_comparison_contains_fractional_old_and_new_boundaries (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_candidate_comparison_contains_fractional_old_and_new_boundaries) (size=3, income=54739.99) ... FAIL
+  test_candidate_comparison_contains_fractional_old_and_new_boundaries (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_candidate_comparison_contains_fractional_old_and_new_boundaries) (size=3, income=54740.01) ... FAIL
+  test_candidate_comparison_contains_fractional_old_and_new_boundaries (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_candidate_comparison_contains_fractional_old_and_new_boundaries) (size=3, income=54740.5) ... FAIL
+  test_candidate_comparison_contains_fractional_old_and_new_boundaries (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_candidate_comparison_contains_fractional_old_and_new_boundaries) (size=3, income=54740.99) ... FAIL
+  test_candidate_comparison_contains_fractional_old_and_new_boundaries (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_candidate_comparison_contains_fractional_old_and_new_boundaries) (size=3, income=68399.99) ... FAIL
+  test_candidate_comparison_contains_fractional_old_and_new_boundaries (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_candidate_comparison_contains_fractional_old_and_new_boundaries) (size=3, income=68400.01) ... FAIL
+  test_candidate_comparison_contains_fractional_old_and_new_boundaries (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_candidate_comparison_contains_fractional_old_and_new_boundaries) (size=8, income=111439.99) ... FAIL
+  test_candidate_comparison_contains_fractional_old_and_new_boundaries (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_candidate_comparison_contains_fractional_old_and_new_boundaries) (size=8, income=111440.01) ... FAIL
+  test_candidate_comparison_contains_fractional_old_and_new_boundaries (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_candidate_comparison_contains_fractional_old_and_new_boundaries) (size=8, income=111440.5) ... FAIL
+  test_candidate_comparison_contains_fractional_old_and_new_boundaries (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_candidate_comparison_contains_fractional_old_and_new_boundaries) (size=8, income=111440.99) ... FAIL
+  test_candidate_comparison_contains_fractional_old_and_new_boundaries (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_candidate_comparison_contains_fractional_old_and_new_boundaries) (size=8, income=139299.99) ... FAIL
+  test_candidate_comparison_contains_fractional_old_and_new_boundaries (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_candidate_comparison_contains_fractional_old_and_new_boundaries) (size=8, income=139300.01) ... FAIL
+  test_candidate_comparison_contains_fractional_old_and_new_boundaries (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_candidate_comparison_contains_fractional_old_and_new_boundaries) (size=8, income=111539.99) ... FAIL
+  test_candidate_comparison_contains_fractional_old_and_new_boundaries (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_candidate_comparison_contains_fractional_old_and_new_boundaries) (size=8, income=111540.01) ... FAIL
+  test_candidate_comparison_contains_fractional_old_and_new_boundaries (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_candidate_comparison_contains_fractional_old_and_new_boundaries) (size=8, income=111540.5) ... FAIL
+  test_candidate_comparison_contains_fractional_old_and_new_boundaries (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_candidate_comparison_contains_fractional_old_and_new_boundaries) (size=8, income=111540.99) ... FAIL
+  test_candidate_comparison_contains_fractional_old_and_new_boundaries (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_candidate_comparison_contains_fractional_old_and_new_boundaries) (size=8, income=139399.99) ... FAIL
+  test_candidate_comparison_contains_fractional_old_and_new_boundaries (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_candidate_comparison_contains_fractional_old_and_new_boundaries) (size=8, income=139400.01) ... FAIL
+  test_candidate_comparison_contains_fractional_old_and_new_boundaries (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_candidate_comparison_contains_fractional_old_and_new_boundaries) (size=9, income=122799.99) ... FAIL
+  test_candidate_comparison_contains_fractional_old_and_new_boundaries (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_candidate_comparison_contains_fractional_old_and_new_boundaries) (size=9, income=122800.01) ... FAIL
+  test_candidate_comparison_contains_fractional_old_and_new_boundaries (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_candidate_comparison_contains_fractional_old_and_new_boundaries) (size=9, income=122800.5) ... FAIL
+  test_candidate_comparison_contains_fractional_old_and_new_boundaries (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_candidate_comparison_contains_fractional_old_and_new_boundaries) (size=9, income=122800.99) ... FAIL
+  test_candidate_comparison_contains_fractional_old_and_new_boundaries (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_candidate_comparison_contains_fractional_old_and_new_boundaries) (size=9, income=153499.99) ... FAIL
+  test_candidate_comparison_contains_fractional_old_and_new_boundaries (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_candidate_comparison_contains_fractional_old_and_new_boundaries) (size=9, income=153500.01) ... FAIL
+  test_candidate_comparison_contains_fractional_old_and_new_boundaries (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_candidate_comparison_contains_fractional_old_and_new_boundaries) (size=9, income=122999.99) ... FAIL
+  test_candidate_comparison_contains_fractional_old_and_new_boundaries (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_candidate_comparison_contains_fractional_old_and_new_boundaries) (size=9, income=123000.01) ... FAIL
+  test_candidate_comparison_contains_fractional_old_and_new_boundaries (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_candidate_comparison_contains_fractional_old_and_new_boundaries) (size=9, income=123000.5) ... FAIL
+  test_candidate_comparison_contains_fractional_old_and_new_boundaries (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_candidate_comparison_contains_fractional_old_and_new_boundaries) (size=9, income=123000.99) ... FAIL
+  test_candidate_comparison_contains_fractional_old_and_new_boundaries (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_candidate_comparison_contains_fractional_old_and_new_boundaries) (size=9, income=153699.99) ... FAIL
+  test_candidate_comparison_contains_fractional_old_and_new_boundaries (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_candidate_comparison_contains_fractional_old_and_new_boundaries) (size=9, income=153700.01) ... FAIL
+  test_candidate_comparison_contains_fractional_old_and_new_boundaries (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_candidate_comparison_contains_fractional_old_and_new_boundaries) (size=12, income=156879.99) ... FAIL
+  test_candidate_comparison_contains_fractional_old_and_new_boundaries (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_candidate_comparison_contains_fractional_old_and_new_boundaries) (size=12, income=156880.01) ... FAIL
+  test_candidate_comparison_contains_fractional_old_and_new_boundaries (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_candidate_comparison_contains_fractional_old_and_new_boundaries) (size=12, income=156880.5) ... FAIL
+  test_candidate_comparison_contains_fractional_old_and_new_boundaries (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_candidate_comparison_contains_fractional_old_and_new_boundaries) (size=12, income=156880.99) ... FAIL
+  test_candidate_comparison_contains_fractional_old_and_new_boundaries (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_candidate_comparison_contains_fractional_old_and_new_boundaries) (size=12, income=196099.99) ... FAIL
+  test_candidate_comparison_contains_fractional_old_and_new_boundaries (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_candidate_comparison_contains_fractional_old_and_new_boundaries) (size=12, income=196100.01) ... FAIL
+  test_candidate_comparison_contains_fractional_old_and_new_boundaries (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_candidate_comparison_contains_fractional_old_and_new_boundaries) (size=12, income=157379.99) ... FAIL
+  test_candidate_comparison_contains_fractional_old_and_new_boundaries (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_candidate_comparison_contains_fractional_old_and_new_boundaries) (size=12, income=157380.01) ... FAIL
+  test_candidate_comparison_contains_fractional_old_and_new_boundaries (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_candidate_comparison_contains_fractional_old_and_new_boundaries) (size=12, income=157380.5) ... FAIL
+  test_candidate_comparison_contains_fractional_old_and_new_boundaries (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_candidate_comparison_contains_fractional_old_and_new_boundaries) (size=12, income=157380.99) ... FAIL
+  test_candidate_comparison_contains_fractional_old_and_new_boundaries (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_candidate_comparison_contains_fractional_old_and_new_boundaries) (size=12, income=196599.99) ... FAIL
+  test_candidate_comparison_contains_fractional_old_and_new_boundaries (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_candidate_comparison_contains_fractional_old_and_new_boundaries) (size=12, income=196600.01) ... FAIL
+test_candidate_comparison_contains_fractional_old_and_new_boundaries (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_candidate_comparison_contains_fractional_old_and_new_boundaries) ... ERROR
+test_categorical_eligibility_remains_an_independent_path (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_categorical_eligibility_remains_an_independent_path) ... ok
+test_confirmed_table_edges_keep_existing_screening_outcomes (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_confirmed_table_edges_keep_existing_screening_outcomes) ... ok
+test_gap_is_reviewable_for_each_supported_household_progression (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_gap_is_reviewable_for_each_supported_household_progression) ...
+  test_gap_is_reviewable_for_each_supported_household_progression (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_gap_is_reviewable_for_each_supported_household_progression) (size=1, fraction=0.01) ... FAIL
+  test_gap_is_reviewable_for_each_supported_household_progression (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_gap_is_reviewable_for_each_supported_household_progression) (size=1, fraction=0.5) ... FAIL
+  test_gap_is_reviewable_for_each_supported_household_progression (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_gap_is_reviewable_for_each_supported_household_progression) (size=1, fraction=0.99) ... FAIL
+  test_gap_is_reviewable_for_each_supported_household_progression (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_gap_is_reviewable_for_each_supported_household_progression) (size=2, fraction=0.01) ... FAIL
+  test_gap_is_reviewable_for_each_supported_household_progression (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_gap_is_reviewable_for_each_supported_household_progression) (size=2, fraction=0.5) ... FAIL
+  test_gap_is_reviewable_for_each_supported_household_progression (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_gap_is_reviewable_for_each_supported_household_progression) (size=2, fraction=0.99) ... FAIL
+  test_gap_is_reviewable_for_each_supported_household_progression (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_gap_is_reviewable_for_each_supported_household_progression) (size=3, fraction=0.01) ... FAIL
+  test_gap_is_reviewable_for_each_supported_household_progression (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_gap_is_reviewable_for_each_supported_household_progression) (size=3, fraction=0.5) ... FAIL
+  test_gap_is_reviewable_for_each_supported_household_progression (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_gap_is_reviewable_for_each_supported_household_progression) (size=3, fraction=0.99) ... FAIL
+  test_gap_is_reviewable_for_each_supported_household_progression (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_gap_is_reviewable_for_each_supported_household_progression) (size=8, fraction=0.01) ... FAIL
+  test_gap_is_reviewable_for_each_supported_household_progression (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_gap_is_reviewable_for_each_supported_household_progression) (size=8, fraction=0.5) ... FAIL
+  test_gap_is_reviewable_for_each_supported_household_progression (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_gap_is_reviewable_for_each_supported_household_progression) (size=8, fraction=0.99) ... FAIL
+  test_gap_is_reviewable_for_each_supported_household_progression (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_gap_is_reviewable_for_each_supported_household_progression) (size=9, fraction=0.01) ... FAIL
+  test_gap_is_reviewable_for_each_supported_household_progression (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_gap_is_reviewable_for_each_supported_household_progression) (size=9, fraction=0.5) ... FAIL
+  test_gap_is_reviewable_for_each_supported_household_progression (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_gap_is_reviewable_for_each_supported_household_progression) (size=9, fraction=0.99) ... FAIL
+  test_gap_is_reviewable_for_each_supported_household_progression (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_gap_is_reviewable_for_each_supported_household_progression) (size=12, fraction=0.01) ... FAIL
+  test_gap_is_reviewable_for_each_supported_household_progression (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_gap_is_reviewable_for_each_supported_household_progression) (size=12, fraction=0.5) ... FAIL
+  test_gap_is_reviewable_for_each_supported_household_progression (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_gap_is_reviewable_for_each_supported_household_progression) (size=12, fraction=0.99) ... FAIL
+test_medical_need_stays_separate_from_income_uncertainty (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_medical_need_stays_separate_from_income_uncertainty) ... FAIL
+test_missing_income_and_expired_rules_are_not_invented (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_missing_income_and_expired_rules_are_not_invented) ... ok
+test_stale_rules_add_their_own_gate_without_erasing_boundary_review (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_stale_rules_add_their_own_gate_without_erasing_boundary_review) ... FAIL
+test_subcent_and_adjacent_float_inputs_are_not_silently_rounded (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_subcent_and_adjacent_float_inputs_are_not_silently_rounded) ...
+  test_subcent_and_adjacent_float_inputs_are_not_silently_rounded (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_subcent_and_adjacent_float_inputs_are_not_silently_rounded) (income=43280.0001) ... FAIL
+  test_subcent_and_adjacent_float_inputs_are_not_silently_rounded (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_subcent_and_adjacent_float_inputs_are_not_silently_rounded) (income=43280.00000000001) ... FAIL
+  test_subcent_and_adjacent_float_inputs_are_not_silently_rounded (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_subcent_and_adjacent_float_inputs_are_not_silently_rounded) (income=43280.99999999999) ... FAIL
+
+======================================================================
+ERROR: test_candidate_comparison_contains_fractional_old_and_new_boundaries (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_candidate_comparison_contains_fractional_old_and_new_boundaries)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$PROJECT_ROOT\plugins\billfit\tests\test_assistance_income_boundaries.py", line 112, in test_candidate_comparison_contains_fractional_old_and_new_boundaries
+    row = next(row for row in rows if row["as_of"] == self.rules["effective_from"] and row["request"] == {
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+StopIteration
+
+======================================================================
+FAIL: test_candidate_comparison_contains_fractional_old_and_new_boundaries (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_candidate_comparison_contains_fractional_old_and_new_boundaries) (size=1, income=43279.99)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$PROJECT_ROOT\plugins\billfit\tests\test_assistance_income_boundaries.py", line 109, in test_candidate_comparison_contains_fractional_old_and_new_boundaries
+    self.assertTrue(any(row["as_of"] == self.rules["effective_from"] and row["request"] == {
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_candidate_comparison_contains_fractional_old_and_new_boundaries (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_candidate_comparison_contains_fractional_old_and_new_boundaries) (size=1, income=43280.01)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$PROJECT_ROOT\plugins\billfit\tests\test_assistance_income_boundaries.py", line 109, in test_candidate_comparison_contains_fractional_old_and_new_boundaries
+    self.assertTrue(any(row["as_of"] == self.rules["effective_from"] and row["request"] == {
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_candidate_comparison_contains_fractional_old_and_new_boundaries (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_candidate_comparison_contains_fractional_old_and_new_boundaries) (size=1, income=43280.5)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$PROJECT_ROOT\plugins\billfit\tests\test_assistance_income_boundaries.py", line 109, in test_candidate_comparison_contains_fractional_old_and_new_boundaries
+    self.assertTrue(any(row["as_of"] == self.rules["effective_from"] and row["request"] == {
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_candidate_comparison_contains_fractional_old_and_new_boundaries (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_candidate_comparison_contains_fractional_old_and_new_boundaries) (size=1, income=43280.99)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$PROJECT_ROOT\plugins\billfit\tests\test_assistance_income_boundaries.py", line 109, in test_candidate_comparison_contains_fractional_old_and_new_boundaries
+    self.assertTrue(any(row["as_of"] == self.rules["effective_from"] and row["request"] == {
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_candidate_comparison_contains_fractional_old_and_new_boundaries (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_candidate_comparison_contains_fractional_old_and_new_boundaries) (size=1, income=54099.99)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$PROJECT_ROOT\plugins\billfit\tests\test_assistance_income_boundaries.py", line 109, in test_candidate_comparison_contains_fractional_old_and_new_boundaries
+    self.assertTrue(any(row["as_of"] == self.rules["effective_from"] and row["request"] == {
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_candidate_comparison_contains_fractional_old_and_new_boundaries (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_candidate_comparison_contains_fractional_old_and_new_boundaries) (size=1, income=54100.01)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$PROJECT_ROOT\plugins\billfit\tests\test_assistance_income_boundaries.py", line 109, in test_candidate_comparison_contains_fractional_old_and_new_boundaries
+    self.assertTrue(any(row["as_of"] == self.rules["effective_from"] and row["request"] == {
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_candidate_comparison_contains_fractional_old_and_new_boundaries (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_candidate_comparison_contains_fractional_old_and_new_boundaries) (size=1, income=43379.99)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$PROJECT_ROOT\plugins\billfit\tests\test_assistance_income_boundaries.py", line 109, in test_candidate_comparison_contains_fractional_old_and_new_boundaries
+    self.assertTrue(any(row["as_of"] == self.rules["effective_from"] and row["request"] == {
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_candidate_comparison_contains_fractional_old_and_new_boundaries (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_candidate_comparison_contains_fractional_old_and_new_boundaries) (size=1, income=43380.01)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$PROJECT_ROOT\plugins\billfit\tests\test_assistance_income_boundaries.py", line 109, in test_candidate_comparison_contains_fractional_old_and_new_boundaries
+    self.assertTrue(any(row["as_of"] == self.rules["effective_from"] and row["request"] == {
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_candidate_comparison_contains_fractional_old_and_new_boundaries (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_candidate_comparison_contains_fractional_old_and_new_boundaries) (size=1, income=43380.5)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$PROJECT_ROOT\plugins\billfit\tests\test_assistance_income_boundaries.py", line 109, in test_candidate_comparison_contains_fractional_old_and_new_boundaries
+    self.assertTrue(any(row["as_of"] == self.rules["effective_from"] and row["request"] == {
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_candidate_comparison_contains_fractional_old_and_new_boundaries (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_candidate_comparison_contains_fractional_old_and_new_boundaries) (size=1, income=43380.99)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$PROJECT_ROOT\plugins\billfit\tests\test_assistance_income_boundaries.py", line 109, in test_candidate_comparison_contains_fractional_old_and_new_boundaries
+    self.assertTrue(any(row["as_of"] == self.rules["effective_from"] and row["request"] == {
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_candidate_comparison_contains_fractional_old_and_new_boundaries (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_candidate_comparison_contains_fractional_old_and_new_boundaries) (size=1, income=54199.99)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$PROJECT_ROOT\plugins\billfit\tests\test_assistance_income_boundaries.py", line 109, in test_candidate_comparison_contains_fractional_old_and_new_boundaries
+    self.assertTrue(any(row["as_of"] == self.rules["effective_from"] and row["request"] == {
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_candidate_comparison_contains_fractional_old_and_new_boundaries (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_candidate_comparison_contains_fractional_old_and_new_boundaries) (size=1, income=54200.01)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$PROJECT_ROOT\plugins\billfit\tests\test_assistance_income_boundaries.py", line 109, in test_candidate_comparison_contains_fractional_old_and_new_boundaries
+    self.assertTrue(any(row["as_of"] == self.rules["effective_from"] and row["request"] == {
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_candidate_comparison_contains_fractional_old_and_new_boundaries (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_candidate_comparison_contains_fractional_old_and_new_boundaries) (size=2, income=43279.99)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$PROJECT_ROOT\plugins\billfit\tests\test_assistance_income_boundaries.py", line 109, in test_candidate_comparison_contains_fractional_old_and_new_boundaries
+    self.assertTrue(any(row["as_of"] == self.rules["effective_from"] and row["request"] == {
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_candidate_comparison_contains_fractional_old_and_new_boundaries (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_candidate_comparison_contains_fractional_old_and_new_boundaries) (size=2, income=43280.01)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$PROJECT_ROOT\plugins\billfit\tests\test_assistance_income_boundaries.py", line 109, in test_candidate_comparison_contains_fractional_old_and_new_boundaries
+    self.assertTrue(any(row["as_of"] == self.rules["effective_from"] and row["request"] == {
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_candidate_comparison_contains_fractional_old_and_new_boundaries (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_candidate_comparison_contains_fractional_old_and_new_boundaries) (size=2, income=43280.5)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$PROJECT_ROOT\plugins\billfit\tests\test_assistance_income_boundaries.py", line 109, in test_candidate_comparison_contains_fractional_old_and_new_boundaries
+    self.assertTrue(any(row["as_of"] == self.rules["effective_from"] and row["request"] == {
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_candidate_comparison_contains_fractional_old_and_new_boundaries (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_candidate_comparison_contains_fractional_old_and_new_boundaries) (size=2, income=43280.99)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$PROJECT_ROOT\plugins\billfit\tests\test_assistance_income_boundaries.py", line 109, in test_candidate_comparison_contains_fractional_old_and_new_boundaries
+    self.assertTrue(any(row["as_of"] == self.rules["effective_from"] and row["request"] == {
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_candidate_comparison_contains_fractional_old_and_new_boundaries (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_candidate_comparison_contains_fractional_old_and_new_boundaries) (size=2, income=54099.99)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$PROJECT_ROOT\plugins\billfit\tests\test_assistance_income_boundaries.py", line 109, in test_candidate_comparison_contains_fractional_old_and_new_boundaries
+    self.assertTrue(any(row["as_of"] == self.rules["effective_from"] and row["request"] == {
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_candidate_comparison_contains_fractional_old_and_new_boundaries (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_candidate_comparison_contains_fractional_old_and_new_boundaries) (size=2, income=54100.01)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$PROJECT_ROOT\plugins\billfit\tests\test_assistance_income_boundaries.py", line 109, in test_candidate_comparison_contains_fractional_old_and_new_boundaries
+    self.assertTrue(any(row["as_of"] == self.rules["effective_from"] and row["request"] == {
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_candidate_comparison_contains_fractional_old_and_new_boundaries (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_candidate_comparison_contains_fractional_old_and_new_boundaries) (size=2, income=43379.99)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$PROJECT_ROOT\plugins\billfit\tests\test_assistance_income_boundaries.py", line 109, in test_candidate_comparison_contains_fractional_old_and_new_boundaries
+    self.assertTrue(any(row["as_of"] == self.rules["effective_from"] and row["request"] == {
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_candidate_comparison_contains_fractional_old_and_new_boundaries (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_candidate_comparison_contains_fractional_old_and_new_boundaries) (size=2, income=43380.01)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$PROJECT_ROOT\plugins\billfit\tests\test_assistance_income_boundaries.py", line 109, in test_candidate_comparison_contains_fractional_old_and_new_boundaries
+    self.assertTrue(any(row["as_of"] == self.rules["effective_from"] and row["request"] == {
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_candidate_comparison_contains_fractional_old_and_new_boundaries (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_candidate_comparison_contains_fractional_old_and_new_boundaries) (size=2, income=43380.5)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$PROJECT_ROOT\plugins\billfit\tests\test_assistance_income_boundaries.py", line 109, in test_candidate_comparison_contains_fractional_old_and_new_boundaries
+    self.assertTrue(any(row["as_of"] == self.rules["effective_from"] and row["request"] == {
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_candidate_comparison_contains_fractional_old_and_new_boundaries (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_candidate_comparison_contains_fractional_old_and_new_boundaries) (size=2, income=43380.99)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$PROJECT_ROOT\plugins\billfit\tests\test_assistance_income_boundaries.py", line 109, in test_candidate_comparison_contains_fractional_old_and_new_boundaries
+    self.assertTrue(any(row["as_of"] == self.rules["effective_from"] and row["request"] == {
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_candidate_comparison_contains_fractional_old_and_new_boundaries (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_candidate_comparison_contains_fractional_old_and_new_boundaries) (size=2, income=54199.99)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$PROJECT_ROOT\plugins\billfit\tests\test_assistance_income_boundaries.py", line 109, in test_candidate_comparison_contains_fractional_old_and_new_boundaries
+    self.assertTrue(any(row["as_of"] == self.rules["effective_from"] and row["request"] == {
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_candidate_comparison_contains_fractional_old_and_new_boundaries (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_candidate_comparison_contains_fractional_old_and_new_boundaries) (size=2, income=54200.01)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$PROJECT_ROOT\plugins\billfit\tests\test_assistance_income_boundaries.py", line 109, in test_candidate_comparison_contains_fractional_old_and_new_boundaries
+    self.assertTrue(any(row["as_of"] == self.rules["effective_from"] and row["request"] == {
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_candidate_comparison_contains_fractional_old_and_new_boundaries (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_candidate_comparison_contains_fractional_old_and_new_boundaries) (size=3, income=54639.99)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$PROJECT_ROOT\plugins\billfit\tests\test_assistance_income_boundaries.py", line 109, in test_candidate_comparison_contains_fractional_old_and_new_boundaries
+    self.assertTrue(any(row["as_of"] == self.rules["effective_from"] and row["request"] == {
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_candidate_comparison_contains_fractional_old_and_new_boundaries (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_candidate_comparison_contains_fractional_old_and_new_boundaries) (size=3, income=54640.01)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$PROJECT_ROOT\plugins\billfit\tests\test_assistance_income_boundaries.py", line 109, in test_candidate_comparison_contains_fractional_old_and_new_boundaries
+    self.assertTrue(any(row["as_of"] == self.rules["effective_from"] and row["request"] == {
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_candidate_comparison_contains_fractional_old_and_new_boundaries (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_candidate_comparison_contains_fractional_old_and_new_boundaries) (size=3, income=54640.5)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$PROJECT_ROOT\plugins\billfit\tests\test_assistance_income_boundaries.py", line 109, in test_candidate_comparison_contains_fractional_old_and_new_boundaries
+    self.assertTrue(any(row["as_of"] == self.rules["effective_from"] and row["request"] == {
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_candidate_comparison_contains_fractional_old_and_new_boundaries (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_candidate_comparison_contains_fractional_old_and_new_boundaries) (size=3, income=54640.99)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$PROJECT_ROOT\plugins\billfit\tests\test_assistance_income_boundaries.py", line 109, in test_candidate_comparison_contains_fractional_old_and_new_boundaries
+    self.assertTrue(any(row["as_of"] == self.rules["effective_from"] and row["request"] == {
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_candidate_comparison_contains_fractional_old_and_new_boundaries (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_candidate_comparison_contains_fractional_old_and_new_boundaries) (size=3, income=68299.99)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$PROJECT_ROOT\plugins\billfit\tests\test_assistance_income_boundaries.py", line 109, in test_candidate_comparison_contains_fractional_old_and_new_boundaries
+    self.assertTrue(any(row["as_of"] == self.rules["effective_from"] and row["request"] == {
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_candidate_comparison_contains_fractional_old_and_new_boundaries (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_candidate_comparison_contains_fractional_old_and_new_boundaries) (size=3, income=68300.01)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$PROJECT_ROOT\plugins\billfit\tests\test_assistance_income_boundaries.py", line 109, in test_candidate_comparison_contains_fractional_old_and_new_boundaries
+    self.assertTrue(any(row["as_of"] == self.rules["effective_from"] and row["request"] == {
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_candidate_comparison_contains_fractional_old_and_new_boundaries (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_candidate_comparison_contains_fractional_old_and_new_boundaries) (size=3, income=54739.99)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$PROJECT_ROOT\plugins\billfit\tests\test_assistance_income_boundaries.py", line 109, in test_candidate_comparison_contains_fractional_old_and_new_boundaries
+    self.assertTrue(any(row["as_of"] == self.rules["effective_from"] and row["request"] == {
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_candidate_comparison_contains_fractional_old_and_new_boundaries (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_candidate_comparison_contains_fractional_old_and_new_boundaries) (size=3, income=54740.01)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$PROJECT_ROOT\plugins\billfit\tests\test_assistance_income_boundaries.py", line 109, in test_candidate_comparison_contains_fractional_old_and_new_boundaries
+    self.assertTrue(any(row["as_of"] == self.rules["effective_from"] and row["request"] == {
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_candidate_comparison_contains_fractional_old_and_new_boundaries (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_candidate_comparison_contains_fractional_old_and_new_boundaries) (size=3, income=54740.5)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$PROJECT_ROOT\plugins\billfit\tests\test_assistance_income_boundaries.py", line 109, in test_candidate_comparison_contains_fractional_old_and_new_boundaries
+    self.assertTrue(any(row["as_of"] == self.rules["effective_from"] and row["request"] == {
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_candidate_comparison_contains_fractional_old_and_new_boundaries (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_candidate_comparison_contains_fractional_old_and_new_boundaries) (size=3, income=54740.99)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$PROJECT_ROOT\plugins\billfit\tests\test_assistance_income_boundaries.py", line 109, in test_candidate_comparison_contains_fractional_old_and_new_boundaries
+    self.assertTrue(any(row["as_of"] == self.rules["effective_from"] and row["request"] == {
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_candidate_comparison_contains_fractional_old_and_new_boundaries (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_candidate_comparison_contains_fractional_old_and_new_boundaries) (size=3, income=68399.99)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$PROJECT_ROOT\plugins\billfit\tests\test_assistance_income_boundaries.py", line 109, in test_candidate_comparison_contains_fractional_old_and_new_boundaries
+    self.assertTrue(any(row["as_of"] == self.rules["effective_from"] and row["request"] == {
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_candidate_comparison_contains_fractional_old_and_new_boundaries (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_candidate_comparison_contains_fractional_old_and_new_boundaries) (size=3, income=68400.01)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$PROJECT_ROOT\plugins\billfit\tests\test_assistance_income_boundaries.py", line 109, in test_candidate_comparison_contains_fractional_old_and_new_boundaries
+    self.assertTrue(any(row["as_of"] == self.rules["effective_from"] and row["request"] == {
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_candidate_comparison_contains_fractional_old_and_new_boundaries (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_candidate_comparison_contains_fractional_old_and_new_boundaries) (size=8, income=111439.99)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$PROJECT_ROOT\plugins\billfit\tests\test_assistance_income_boundaries.py", line 109, in test_candidate_comparison_contains_fractional_old_and_new_boundaries
+    self.assertTrue(any(row["as_of"] == self.rules["effective_from"] and row["request"] == {
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_candidate_comparison_contains_fractional_old_and_new_boundaries (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_candidate_comparison_contains_fractional_old_and_new_boundaries) (size=8, income=111440.01)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$PROJECT_ROOT\plugins\billfit\tests\test_assistance_income_boundaries.py", line 109, in test_candidate_comparison_contains_fractional_old_and_new_boundaries
+    self.assertTrue(any(row["as_of"] == self.rules["effective_from"] and row["request"] == {
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_candidate_comparison_contains_fractional_old_and_new_boundaries (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_candidate_comparison_contains_fractional_old_and_new_boundaries) (size=8, income=111440.5)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$PROJECT_ROOT\plugins\billfit\tests\test_assistance_income_boundaries.py", line 109, in test_candidate_comparison_contains_fractional_old_and_new_boundaries
+    self.assertTrue(any(row["as_of"] == self.rules["effective_from"] and row["request"] == {
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_candidate_comparison_contains_fractional_old_and_new_boundaries (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_candidate_comparison_contains_fractional_old_and_new_boundaries) (size=8, income=111440.99)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$PROJECT_ROOT\plugins\billfit\tests\test_assistance_income_boundaries.py", line 109, in test_candidate_comparison_contains_fractional_old_and_new_boundaries
+    self.assertTrue(any(row["as_of"] == self.rules["effective_from"] and row["request"] == {
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_candidate_comparison_contains_fractional_old_and_new_boundaries (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_candidate_comparison_contains_fractional_old_and_new_boundaries) (size=8, income=139299.99)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$PROJECT_ROOT\plugins\billfit\tests\test_assistance_income_boundaries.py", line 109, in test_candidate_comparison_contains_fractional_old_and_new_boundaries
+    self.assertTrue(any(row["as_of"] == self.rules["effective_from"] and row["request"] == {
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_candidate_comparison_contains_fractional_old_and_new_boundaries (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_candidate_comparison_contains_fractional_old_and_new_boundaries) (size=8, income=139300.01)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$PROJECT_ROOT\plugins\billfit\tests\test_assistance_income_boundaries.py", line 109, in test_candidate_comparison_contains_fractional_old_and_new_boundaries
+    self.assertTrue(any(row["as_of"] == self.rules["effective_from"] and row["request"] == {
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_candidate_comparison_contains_fractional_old_and_new_boundaries (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_candidate_comparison_contains_fractional_old_and_new_boundaries) (size=8, income=111539.99)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$PROJECT_ROOT\plugins\billfit\tests\test_assistance_income_boundaries.py", line 109, in test_candidate_comparison_contains_fractional_old_and_new_boundaries
+    self.assertTrue(any(row["as_of"] == self.rules["effective_from"] and row["request"] == {
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_candidate_comparison_contains_fractional_old_and_new_boundaries (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_candidate_comparison_contains_fractional_old_and_new_boundaries) (size=8, income=111540.01)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$PROJECT_ROOT\plugins\billfit\tests\test_assistance_income_boundaries.py", line 109, in test_candidate_comparison_contains_fractional_old_and_new_boundaries
+    self.assertTrue(any(row["as_of"] == self.rules["effective_from"] and row["request"] == {
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_candidate_comparison_contains_fractional_old_and_new_boundaries (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_candidate_comparison_contains_fractional_old_and_new_boundaries) (size=8, income=111540.5)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$PROJECT_ROOT\plugins\billfit\tests\test_assistance_income_boundaries.py", line 109, in test_candidate_comparison_contains_fractional_old_and_new_boundaries
+    self.assertTrue(any(row["as_of"] == self.rules["effective_from"] and row["request"] == {
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_candidate_comparison_contains_fractional_old_and_new_boundaries (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_candidate_comparison_contains_fractional_old_and_new_boundaries) (size=8, income=111540.99)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$PROJECT_ROOT\plugins\billfit\tests\test_assistance_income_boundaries.py", line 109, in test_candidate_comparison_contains_fractional_old_and_new_boundaries
+    self.assertTrue(any(row["as_of"] == self.rules["effective_from"] and row["request"] == {
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_candidate_comparison_contains_fractional_old_and_new_boundaries (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_candidate_comparison_contains_fractional_old_and_new_boundaries) (size=8, income=139399.99)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$PROJECT_ROOT\plugins\billfit\tests\test_assistance_income_boundaries.py", line 109, in test_candidate_comparison_contains_fractional_old_and_new_boundaries
+    self.assertTrue(any(row["as_of"] == self.rules["effective_from"] and row["request"] == {
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_candidate_comparison_contains_fractional_old_and_new_boundaries (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_candidate_comparison_contains_fractional_old_and_new_boundaries) (size=8, income=139400.01)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$PROJECT_ROOT\plugins\billfit\tests\test_assistance_income_boundaries.py", line 109, in test_candidate_comparison_contains_fractional_old_and_new_boundaries
+    self.assertTrue(any(row["as_of"] == self.rules["effective_from"] and row["request"] == {
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_candidate_comparison_contains_fractional_old_and_new_boundaries (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_candidate_comparison_contains_fractional_old_and_new_boundaries) (size=9, income=122799.99)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$PROJECT_ROOT\plugins\billfit\tests\test_assistance_income_boundaries.py", line 109, in test_candidate_comparison_contains_fractional_old_and_new_boundaries
+    self.assertTrue(any(row["as_of"] == self.rules["effective_from"] and row["request"] == {
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_candidate_comparison_contains_fractional_old_and_new_boundaries (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_candidate_comparison_contains_fractional_old_and_new_boundaries) (size=9, income=122800.01)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$PROJECT_ROOT\plugins\billfit\tests\test_assistance_income_boundaries.py", line 109, in test_candidate_comparison_contains_fractional_old_and_new_boundaries
+    self.assertTrue(any(row["as_of"] == self.rules["effective_from"] and row["request"] == {
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_candidate_comparison_contains_fractional_old_and_new_boundaries (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_candidate_comparison_contains_fractional_old_and_new_boundaries) (size=9, income=122800.5)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$PROJECT_ROOT\plugins\billfit\tests\test_assistance_income_boundaries.py", line 109, in test_candidate_comparison_contains_fractional_old_and_new_boundaries
+    self.assertTrue(any(row["as_of"] == self.rules["effective_from"] and row["request"] == {
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_candidate_comparison_contains_fractional_old_and_new_boundaries (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_candidate_comparison_contains_fractional_old_and_new_boundaries) (size=9, income=122800.99)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$PROJECT_ROOT\plugins\billfit\tests\test_assistance_income_boundaries.py", line 109, in test_candidate_comparison_contains_fractional_old_and_new_boundaries
+    self.assertTrue(any(row["as_of"] == self.rules["effective_from"] and row["request"] == {
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_candidate_comparison_contains_fractional_old_and_new_boundaries (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_candidate_comparison_contains_fractional_old_and_new_boundaries) (size=9, income=153499.99)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$PROJECT_ROOT\plugins\billfit\tests\test_assistance_income_boundaries.py", line 109, in test_candidate_comparison_contains_fractional_old_and_new_boundaries
+    self.assertTrue(any(row["as_of"] == self.rules["effective_from"] and row["request"] == {
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_candidate_comparison_contains_fractional_old_and_new_boundaries (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_candidate_comparison_contains_fractional_old_and_new_boundaries) (size=9, income=153500.01)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$PROJECT_ROOT\plugins\billfit\tests\test_assistance_income_boundaries.py", line 109, in test_candidate_comparison_contains_fractional_old_and_new_boundaries
+    self.assertTrue(any(row["as_of"] == self.rules["effective_from"] and row["request"] == {
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_candidate_comparison_contains_fractional_old_and_new_boundaries (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_candidate_comparison_contains_fractional_old_and_new_boundaries) (size=9, income=122999.99)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$PROJECT_ROOT\plugins\billfit\tests\test_assistance_income_boundaries.py", line 109, in test_candidate_comparison_contains_fractional_old_and_new_boundaries
+    self.assertTrue(any(row["as_of"] == self.rules["effective_from"] and row["request"] == {
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_candidate_comparison_contains_fractional_old_and_new_boundaries (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_candidate_comparison_contains_fractional_old_and_new_boundaries) (size=9, income=123000.01)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$PROJECT_ROOT\plugins\billfit\tests\test_assistance_income_boundaries.py", line 109, in test_candidate_comparison_contains_fractional_old_and_new_boundaries
+    self.assertTrue(any(row["as_of"] == self.rules["effective_from"] and row["request"] == {
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_candidate_comparison_contains_fractional_old_and_new_boundaries (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_candidate_comparison_contains_fractional_old_and_new_boundaries) (size=9, income=123000.5)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$PROJECT_ROOT\plugins\billfit\tests\test_assistance_income_boundaries.py", line 109, in test_candidate_comparison_contains_fractional_old_and_new_boundaries
+    self.assertTrue(any(row["as_of"] == self.rules["effective_from"] and row["request"] == {
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_candidate_comparison_contains_fractional_old_and_new_boundaries (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_candidate_comparison_contains_fractional_old_and_new_boundaries) (size=9, income=123000.99)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$PROJECT_ROOT\plugins\billfit\tests\test_assistance_income_boundaries.py", line 109, in test_candidate_comparison_contains_fractional_old_and_new_boundaries
+    self.assertTrue(any(row["as_of"] == self.rules["effective_from"] and row["request"] == {
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_candidate_comparison_contains_fractional_old_and_new_boundaries (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_candidate_comparison_contains_fractional_old_and_new_boundaries) (size=9, income=153699.99)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$PROJECT_ROOT\plugins\billfit\tests\test_assistance_income_boundaries.py", line 109, in test_candidate_comparison_contains_fractional_old_and_new_boundaries
+    self.assertTrue(any(row["as_of"] == self.rules["effective_from"] and row["request"] == {
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_candidate_comparison_contains_fractional_old_and_new_boundaries (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_candidate_comparison_contains_fractional_old_and_new_boundaries) (size=9, income=153700.01)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$PROJECT_ROOT\plugins\billfit\tests\test_assistance_income_boundaries.py", line 109, in test_candidate_comparison_contains_fractional_old_and_new_boundaries
+    self.assertTrue(any(row["as_of"] == self.rules["effective_from"] and row["request"] == {
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_candidate_comparison_contains_fractional_old_and_new_boundaries (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_candidate_comparison_contains_fractional_old_and_new_boundaries) (size=12, income=156879.99)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$PROJECT_ROOT\plugins\billfit\tests\test_assistance_income_boundaries.py", line 109, in test_candidate_comparison_contains_fractional_old_and_new_boundaries
+    self.assertTrue(any(row["as_of"] == self.rules["effective_from"] and row["request"] == {
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_candidate_comparison_contains_fractional_old_and_new_boundaries (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_candidate_comparison_contains_fractional_old_and_new_boundaries) (size=12, income=156880.01)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$PROJECT_ROOT\plugins\billfit\tests\test_assistance_income_boundaries.py", line 109, in test_candidate_comparison_contains_fractional_old_and_new_boundaries
+    self.assertTrue(any(row["as_of"] == self.rules["effective_from"] and row["request"] == {
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_candidate_comparison_contains_fractional_old_and_new_boundaries (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_candidate_comparison_contains_fractional_old_and_new_boundaries) (size=12, income=156880.5)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$PROJECT_ROOT\plugins\billfit\tests\test_assistance_income_boundaries.py", line 109, in test_candidate_comparison_contains_fractional_old_and_new_boundaries
+    self.assertTrue(any(row["as_of"] == self.rules["effective_from"] and row["request"] == {
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_candidate_comparison_contains_fractional_old_and_new_boundaries (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_candidate_comparison_contains_fractional_old_and_new_boundaries) (size=12, income=156880.99)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$PROJECT_ROOT\plugins\billfit\tests\test_assistance_income_boundaries.py", line 109, in test_candidate_comparison_contains_fractional_old_and_new_boundaries
+    self.assertTrue(any(row["as_of"] == self.rules["effective_from"] and row["request"] == {
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_candidate_comparison_contains_fractional_old_and_new_boundaries (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_candidate_comparison_contains_fractional_old_and_new_boundaries) (size=12, income=196099.99)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$PROJECT_ROOT\plugins\billfit\tests\test_assistance_income_boundaries.py", line 109, in test_candidate_comparison_contains_fractional_old_and_new_boundaries
+    self.assertTrue(any(row["as_of"] == self.rules["effective_from"] and row["request"] == {
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_candidate_comparison_contains_fractional_old_and_new_boundaries (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_candidate_comparison_contains_fractional_old_and_new_boundaries) (size=12, income=196100.01)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$PROJECT_ROOT\plugins\billfit\tests\test_assistance_income_boundaries.py", line 109, in test_candidate_comparison_contains_fractional_old_and_new_boundaries
+    self.assertTrue(any(row["as_of"] == self.rules["effective_from"] and row["request"] == {
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_candidate_comparison_contains_fractional_old_and_new_boundaries (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_candidate_comparison_contains_fractional_old_and_new_boundaries) (size=12, income=157379.99)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$PROJECT_ROOT\plugins\billfit\tests\test_assistance_income_boundaries.py", line 109, in test_candidate_comparison_contains_fractional_old_and_new_boundaries
+    self.assertTrue(any(row["as_of"] == self.rules["effective_from"] and row["request"] == {
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_candidate_comparison_contains_fractional_old_and_new_boundaries (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_candidate_comparison_contains_fractional_old_and_new_boundaries) (size=12, income=157380.01)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$PROJECT_ROOT\plugins\billfit\tests\test_assistance_income_boundaries.py", line 109, in test_candidate_comparison_contains_fractional_old_and_new_boundaries
+    self.assertTrue(any(row["as_of"] == self.rules["effective_from"] and row["request"] == {
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_candidate_comparison_contains_fractional_old_and_new_boundaries (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_candidate_comparison_contains_fractional_old_and_new_boundaries) (size=12, income=157380.5)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$PROJECT_ROOT\plugins\billfit\tests\test_assistance_income_boundaries.py", line 109, in test_candidate_comparison_contains_fractional_old_and_new_boundaries
+    self.assertTrue(any(row["as_of"] == self.rules["effective_from"] and row["request"] == {
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_candidate_comparison_contains_fractional_old_and_new_boundaries (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_candidate_comparison_contains_fractional_old_and_new_boundaries) (size=12, income=157380.99)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$PROJECT_ROOT\plugins\billfit\tests\test_assistance_income_boundaries.py", line 109, in test_candidate_comparison_contains_fractional_old_and_new_boundaries
+    self.assertTrue(any(row["as_of"] == self.rules["effective_from"] and row["request"] == {
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_candidate_comparison_contains_fractional_old_and_new_boundaries (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_candidate_comparison_contains_fractional_old_and_new_boundaries) (size=12, income=196599.99)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$PROJECT_ROOT\plugins\billfit\tests\test_assistance_income_boundaries.py", line 109, in test_candidate_comparison_contains_fractional_old_and_new_boundaries
+    self.assertTrue(any(row["as_of"] == self.rules["effective_from"] and row["request"] == {
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_candidate_comparison_contains_fractional_old_and_new_boundaries (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_candidate_comparison_contains_fractional_old_and_new_boundaries) (size=12, income=196600.01)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$PROJECT_ROOT\plugins\billfit\tests\test_assistance_income_boundaries.py", line 109, in test_candidate_comparison_contains_fractional_old_and_new_boundaries
+    self.assertTrue(any(row["as_of"] == self.rules["effective_from"] and row["request"] == {
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_gap_is_reviewable_for_each_supported_household_progression (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_gap_is_reviewable_for_each_supported_household_progression) (size=1, fraction=0.01)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$PROJECT_ROOT\plugins\billfit\tests\test_assistance_income_boundaries.py", line 41, in test_gap_is_reviewable_for_each_supported_household_progression
+    self.assert_boundary_review(self.screen(size, income), income, limit)
+  File "$PROJECT_ROOT\plugins\billfit\tests\test_assistance_income_boundaries.py", line 27, in assert_boundary_review
+    self.assertEqual(result["fera"]["status"], "needs_official_confirmation")
+AssertionError: 'likely_eligible' != 'needs_official_confirmation'
+- likely_eligible
++ needs_official_confirmation
+
+
+======================================================================
+FAIL: test_gap_is_reviewable_for_each_supported_household_progression (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_gap_is_reviewable_for_each_supported_household_progression) (size=1, fraction=0.5)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$PROJECT_ROOT\plugins\billfit\tests\test_assistance_income_boundaries.py", line 41, in test_gap_is_reviewable_for_each_supported_household_progression
+    self.assert_boundary_review(self.screen(size, income), income, limit)
+  File "$PROJECT_ROOT\plugins\billfit\tests\test_assistance_income_boundaries.py", line 27, in assert_boundary_review
+    self.assertEqual(result["fera"]["status"], "needs_official_confirmation")
+AssertionError: 'likely_eligible' != 'needs_official_confirmation'
+- likely_eligible
++ needs_official_confirmation
+
+
+======================================================================
+FAIL: test_gap_is_reviewable_for_each_supported_household_progression (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_gap_is_reviewable_for_each_supported_household_progression) (size=1, fraction=0.99)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$PROJECT_ROOT\plugins\billfit\tests\test_assistance_income_boundaries.py", line 41, in test_gap_is_reviewable_for_each_supported_household_progression
+    self.assert_boundary_review(self.screen(size, income), income, limit)
+  File "$PROJECT_ROOT\plugins\billfit\tests\test_assistance_income_boundaries.py", line 27, in assert_boundary_review
+    self.assertEqual(result["fera"]["status"], "needs_official_confirmation")
+AssertionError: 'likely_eligible' != 'needs_official_confirmation'
+- likely_eligible
++ needs_official_confirmation
+
+
+======================================================================
+FAIL: test_gap_is_reviewable_for_each_supported_household_progression (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_gap_is_reviewable_for_each_supported_household_progression) (size=2, fraction=0.01)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$PROJECT_ROOT\plugins\billfit\tests\test_assistance_income_boundaries.py", line 41, in test_gap_is_reviewable_for_each_supported_household_progression
+    self.assert_boundary_review(self.screen(size, income), income, limit)
+  File "$PROJECT_ROOT\plugins\billfit\tests\test_assistance_income_boundaries.py", line 27, in assert_boundary_review
+    self.assertEqual(result["fera"]["status"], "needs_official_confirmation")
+AssertionError: 'likely_eligible' != 'needs_official_confirmation'
+- likely_eligible
++ needs_official_confirmation
+
+
+======================================================================
+FAIL: test_gap_is_reviewable_for_each_supported_household_progression (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_gap_is_reviewable_for_each_supported_household_progression) (size=2, fraction=0.5)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$PROJECT_ROOT\plugins\billfit\tests\test_assistance_income_boundaries.py", line 41, in test_gap_is_reviewable_for_each_supported_household_progression
+    self.assert_boundary_review(self.screen(size, income), income, limit)
+  File "$PROJECT_ROOT\plugins\billfit\tests\test_assistance_income_boundaries.py", line 27, in assert_boundary_review
+    self.assertEqual(result["fera"]["status"], "needs_official_confirmation")
+AssertionError: 'likely_eligible' != 'needs_official_confirmation'
+- likely_eligible
++ needs_official_confirmation
+
+
+======================================================================
+FAIL: test_gap_is_reviewable_for_each_supported_household_progression (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_gap_is_reviewable_for_each_supported_household_progression) (size=2, fraction=0.99)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$PROJECT_ROOT\plugins\billfit\tests\test_assistance_income_boundaries.py", line 41, in test_gap_is_reviewable_for_each_supported_household_progression
+    self.assert_boundary_review(self.screen(size, income), income, limit)
+  File "$PROJECT_ROOT\plugins\billfit\tests\test_assistance_income_boundaries.py", line 27, in assert_boundary_review
+    self.assertEqual(result["fera"]["status"], "needs_official_confirmation")
+AssertionError: 'likely_eligible' != 'needs_official_confirmation'
+- likely_eligible
++ needs_official_confirmation
+
+
+======================================================================
+FAIL: test_gap_is_reviewable_for_each_supported_household_progression (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_gap_is_reviewable_for_each_supported_household_progression) (size=3, fraction=0.01)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$PROJECT_ROOT\plugins\billfit\tests\test_assistance_income_boundaries.py", line 41, in test_gap_is_reviewable_for_each_supported_household_progression
+    self.assert_boundary_review(self.screen(size, income), income, limit)
+  File "$PROJECT_ROOT\plugins\billfit\tests\test_assistance_income_boundaries.py", line 27, in assert_boundary_review
+    self.assertEqual(result["fera"]["status"], "needs_official_confirmation")
+AssertionError: 'likely_eligible' != 'needs_official_confirmation'
+- likely_eligible
++ needs_official_confirmation
+
+
+======================================================================
+FAIL: test_gap_is_reviewable_for_each_supported_household_progression (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_gap_is_reviewable_for_each_supported_household_progression) (size=3, fraction=0.5)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$PROJECT_ROOT\plugins\billfit\tests\test_assistance_income_boundaries.py", line 41, in test_gap_is_reviewable_for_each_supported_household_progression
+    self.assert_boundary_review(self.screen(size, income), income, limit)
+  File "$PROJECT_ROOT\plugins\billfit\tests\test_assistance_income_boundaries.py", line 27, in assert_boundary_review
+    self.assertEqual(result["fera"]["status"], "needs_official_confirmation")
+AssertionError: 'likely_eligible' != 'needs_official_confirmation'
+- likely_eligible
++ needs_official_confirmation
+
+
+======================================================================
+FAIL: test_gap_is_reviewable_for_each_supported_household_progression (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_gap_is_reviewable_for_each_supported_household_progression) (size=3, fraction=0.99)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$PROJECT_ROOT\plugins\billfit\tests\test_assistance_income_boundaries.py", line 41, in test_gap_is_reviewable_for_each_supported_household_progression
+    self.assert_boundary_review(self.screen(size, income), income, limit)
+  File "$PROJECT_ROOT\plugins\billfit\tests\test_assistance_income_boundaries.py", line 27, in assert_boundary_review
+    self.assertEqual(result["fera"]["status"], "needs_official_confirmation")
+AssertionError: 'likely_eligible' != 'needs_official_confirmation'
+- likely_eligible
++ needs_official_confirmation
+
+
+======================================================================
+FAIL: test_gap_is_reviewable_for_each_supported_household_progression (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_gap_is_reviewable_for_each_supported_household_progression) (size=8, fraction=0.01)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$PROJECT_ROOT\plugins\billfit\tests\test_assistance_income_boundaries.py", line 41, in test_gap_is_reviewable_for_each_supported_household_progression
+    self.assert_boundary_review(self.screen(size, income), income, limit)
+  File "$PROJECT_ROOT\plugins\billfit\tests\test_assistance_income_boundaries.py", line 27, in assert_boundary_review
+    self.assertEqual(result["fera"]["status"], "needs_official_confirmation")
+AssertionError: 'likely_eligible' != 'needs_official_confirmation'
+- likely_eligible
++ needs_official_confirmation
+
+
+======================================================================
+FAIL: test_gap_is_reviewable_for_each_supported_household_progression (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_gap_is_reviewable_for_each_supported_household_progression) (size=8, fraction=0.5)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$PROJECT_ROOT\plugins\billfit\tests\test_assistance_income_boundaries.py", line 41, in test_gap_is_reviewable_for_each_supported_household_progression
+    self.assert_boundary_review(self.screen(size, income), income, limit)
+  File "$PROJECT_ROOT\plugins\billfit\tests\test_assistance_income_boundaries.py", line 27, in assert_boundary_review
+    self.assertEqual(result["fera"]["status"], "needs_official_confirmation")
+AssertionError: 'likely_eligible' != 'needs_official_confirmation'
+- likely_eligible
++ needs_official_confirmation
+
+
+======================================================================
+FAIL: test_gap_is_reviewable_for_each_supported_household_progression (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_gap_is_reviewable_for_each_supported_household_progression) (size=8, fraction=0.99)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$PROJECT_ROOT\plugins\billfit\tests\test_assistance_income_boundaries.py", line 41, in test_gap_is_reviewable_for_each_supported_household_progression
+    self.assert_boundary_review(self.screen(size, income), income, limit)
+  File "$PROJECT_ROOT\plugins\billfit\tests\test_assistance_income_boundaries.py", line 27, in assert_boundary_review
+    self.assertEqual(result["fera"]["status"], "needs_official_confirmation")
+AssertionError: 'likely_eligible' != 'needs_official_confirmation'
+- likely_eligible
++ needs_official_confirmation
+
+
+======================================================================
+FAIL: test_gap_is_reviewable_for_each_supported_household_progression (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_gap_is_reviewable_for_each_supported_household_progression) (size=9, fraction=0.01)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$PROJECT_ROOT\plugins\billfit\tests\test_assistance_income_boundaries.py", line 41, in test_gap_is_reviewable_for_each_supported_household_progression
+    self.assert_boundary_review(self.screen(size, income), income, limit)
+  File "$PROJECT_ROOT\plugins\billfit\tests\test_assistance_income_boundaries.py", line 27, in assert_boundary_review
+    self.assertEqual(result["fera"]["status"], "needs_official_confirmation")
+AssertionError: 'likely_eligible' != 'needs_official_confirmation'
+- likely_eligible
++ needs_official_confirmation
+
+
+======================================================================
+FAIL: test_gap_is_reviewable_for_each_supported_household_progression (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_gap_is_reviewable_for_each_supported_household_progression) (size=9, fraction=0.5)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$PROJECT_ROOT\plugins\billfit\tests\test_assistance_income_boundaries.py", line 41, in test_gap_is_reviewable_for_each_supported_household_progression
+    self.assert_boundary_review(self.screen(size, income), income, limit)
+  File "$PROJECT_ROOT\plugins\billfit\tests\test_assistance_income_boundaries.py", line 27, in assert_boundary_review
+    self.assertEqual(result["fera"]["status"], "needs_official_confirmation")
+AssertionError: 'likely_eligible' != 'needs_official_confirmation'
+- likely_eligible
++ needs_official_confirmation
+
+
+======================================================================
+FAIL: test_gap_is_reviewable_for_each_supported_household_progression (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_gap_is_reviewable_for_each_supported_household_progression) (size=9, fraction=0.99)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$PROJECT_ROOT\plugins\billfit\tests\test_assistance_income_boundaries.py", line 41, in test_gap_is_reviewable_for_each_supported_household_progression
+    self.assert_boundary_review(self.screen(size, income), income, limit)
+  File "$PROJECT_ROOT\plugins\billfit\tests\test_assistance_income_boundaries.py", line 27, in assert_boundary_review
+    self.assertEqual(result["fera"]["status"], "needs_official_confirmation")
+AssertionError: 'likely_eligible' != 'needs_official_confirmation'
+- likely_eligible
++ needs_official_confirmation
+
+
+======================================================================
+FAIL: test_gap_is_reviewable_for_each_supported_household_progression (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_gap_is_reviewable_for_each_supported_household_progression) (size=12, fraction=0.01)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$PROJECT_ROOT\plugins\billfit\tests\test_assistance_income_boundaries.py", line 41, in test_gap_is_reviewable_for_each_supported_household_progression
+    self.assert_boundary_review(self.screen(size, income), income, limit)
+  File "$PROJECT_ROOT\plugins\billfit\tests\test_assistance_income_boundaries.py", line 27, in assert_boundary_review
+    self.assertEqual(result["fera"]["status"], "needs_official_confirmation")
+AssertionError: 'likely_eligible' != 'needs_official_confirmation'
+- likely_eligible
++ needs_official_confirmation
+
+
+======================================================================
+FAIL: test_gap_is_reviewable_for_each_supported_household_progression (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_gap_is_reviewable_for_each_supported_household_progression) (size=12, fraction=0.5)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$PROJECT_ROOT\plugins\billfit\tests\test_assistance_income_boundaries.py", line 41, in test_gap_is_reviewable_for_each_supported_household_progression
+    self.assert_boundary_review(self.screen(size, income), income, limit)
+  File "$PROJECT_ROOT\plugins\billfit\tests\test_assistance_income_boundaries.py", line 27, in assert_boundary_review
+    self.assertEqual(result["fera"]["status"], "needs_official_confirmation")
+AssertionError: 'likely_eligible' != 'needs_official_confirmation'
+- likely_eligible
++ needs_official_confirmation
+
+
+======================================================================
+FAIL: test_gap_is_reviewable_for_each_supported_household_progression (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_gap_is_reviewable_for_each_supported_household_progression) (size=12, fraction=0.99)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$PROJECT_ROOT\plugins\billfit\tests\test_assistance_income_boundaries.py", line 41, in test_gap_is_reviewable_for_each_supported_household_progression
+    self.assert_boundary_review(self.screen(size, income), income, limit)
+  File "$PROJECT_ROOT\plugins\billfit\tests\test_assistance_income_boundaries.py", line 27, in assert_boundary_review
+    self.assertEqual(result["fera"]["status"], "needs_official_confirmation")
+AssertionError: 'likely_eligible' != 'needs_official_confirmation'
+- likely_eligible
++ needs_official_confirmation
+
+
+======================================================================
+FAIL: test_medical_need_stays_separate_from_income_uncertainty (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_medical_need_stays_separate_from_income_uncertainty)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$PROJECT_ROOT\plugins\billfit\tests\test_assistance_income_boundaries.py", line 77, in test_medical_need_stays_separate_from_income_uncertainty
+    self.assert_boundary_review(result, limit + .5, limit)
+  File "$PROJECT_ROOT\plugins\billfit\tests\test_assistance_income_boundaries.py", line 27, in assert_boundary_review
+    self.assertEqual(result["fera"]["status"], "needs_official_confirmation")
+AssertionError: 'likely_eligible' != 'needs_official_confirmation'
+- likely_eligible
++ needs_official_confirmation
+
+
+======================================================================
+FAIL: test_stale_rules_add_their_own_gate_without_erasing_boundary_review (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_stale_rules_add_their_own_gate_without_erasing_boundary_review)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$PROJECT_ROOT\plugins\billfit\tests\test_assistance_income_boundaries.py", line 85, in test_stale_rules_add_their_own_gate_without_erasing_boundary_review
+    self.assert_boundary_review(result, limit + .5, limit)
+  File "$PROJECT_ROOT\plugins\billfit\tests\test_assistance_income_boundaries.py", line 27, in assert_boundary_review
+    self.assertEqual(result["fera"]["status"], "needs_official_confirmation")
+AssertionError: 'likely_eligible' != 'needs_official_confirmation'
+- likely_eligible
++ needs_official_confirmation
+
+
+======================================================================
+FAIL: test_subcent_and_adjacent_float_inputs_are_not_silently_rounded (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_subcent_and_adjacent_float_inputs_are_not_silently_rounded) (income=43280.0001)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$PROJECT_ROOT\plugins\billfit\tests\test_assistance_income_boundaries.py", line 48, in test_subcent_and_adjacent_float_inputs_are_not_silently_rounded
+    self.assert_boundary_review(self.screen(2, income), income, limit)
+  File "$PROJECT_ROOT\plugins\billfit\tests\test_assistance_income_boundaries.py", line 27, in assert_boundary_review
+    self.assertEqual(result["fera"]["status"], "needs_official_confirmation")
+AssertionError: 'likely_eligible' != 'needs_official_confirmation'
+- likely_eligible
++ needs_official_confirmation
+
+
+======================================================================
+FAIL: test_subcent_and_adjacent_float_inputs_are_not_silently_rounded (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_subcent_and_adjacent_float_inputs_are_not_silently_rounded) (income=43280.00000000001)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$PROJECT_ROOT\plugins\billfit\tests\test_assistance_income_boundaries.py", line 48, in test_subcent_and_adjacent_float_inputs_are_not_silently_rounded
+    self.assert_boundary_review(self.screen(2, income), income, limit)
+  File "$PROJECT_ROOT\plugins\billfit\tests\test_assistance_income_boundaries.py", line 27, in assert_boundary_review
+    self.assertEqual(result["fera"]["status"], "needs_official_confirmation")
+AssertionError: 'likely_eligible' != 'needs_official_confirmation'
+- likely_eligible
++ needs_official_confirmation
+
+
+======================================================================
+FAIL: test_subcent_and_adjacent_float_inputs_are_not_silently_rounded (test_assistance_income_boundaries.AssistanceIncomeBoundaryTests.test_subcent_and_adjacent_float_inputs_are_not_silently_rounded) (income=43280.99999999999)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$PROJECT_ROOT\plugins\billfit\tests\test_assistance_income_boundaries.py", line 48, in test_subcent_and_adjacent_float_inputs_are_not_silently_rounded
+    self.assert_boundary_review(self.screen(2, income), income, limit)
+  File "$PROJECT_ROOT\plugins\billfit\tests\test_assistance_income_boundaries.py", line 27, in assert_boundary_review
+    self.assertEqual(result["fera"]["status"], "needs_official_confirmation")
+AssertionError: 'likely_eligible' != 'needs_official_confirmation'
+- likely_eligible
++ needs_official_confirmation
+
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.049s
+
+FAILED (failures=95, errors=1)
