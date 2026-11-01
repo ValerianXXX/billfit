@@ -2,6 +2,15 @@
 
 ## Unreleased — 2026-11-01
 
+- Validate energy/duration number syntax before removing thousands separators;
+  reject currency, malformed groups and nonzero text that underflows to zero.
+  Reject surplus CSV cells instead of discarding them. Existing valid formats,
+  source bytes, missing-duration warnings and export restrictions remain intact.
+  The frozen 90-request CLI comparison improves invalid rejection from 12/53
+  to 53/53 and retains 37/37 valid values. All 223 local tests pass, including
+  actual SDK error/recovery in both existing modes. No new model calls, rates,
+  dependency or migration. [Evidence and recovery](docs/usage-number-format-2026-11-01.md).
+
 - Recognize qualified official CARE program names using a separate exact-name
   resolver. Preserve original input positions, canonical pathways and explicit
   confirmation for unknown/ambiguous names; reject malformed/bounded input with

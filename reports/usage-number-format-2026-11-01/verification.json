@@ -1,0 +1,141 @@
+{
+  "observed_at_utc": "2026-11-01T10:15:59.681411+00:00",
+  "base_commit": "d9d2a079312cf9948b4f5fe4084629ebf41f5cf2",
+  "frozen_commit": "00c7180715d069b0fd5698a006747371afa923ed",
+  "runtime_commit": "97a8046a93c086d3ea0abbfb048ff0d4bbc7bc4f",
+  "input_kind": "synthetic",
+  "before": {
+    "requests": 90,
+    "passed": 49,
+    "invalid_rejected_correctly": 12,
+    "invalid_n": 53,
+    "valid_preserved_correctly": 37,
+    "valid_n": 37,
+    "elapsed_seconds": 25.475735599175096
+  },
+  "after": {
+    "requests": 90,
+    "passed": 90,
+    "invalid_rejected_correctly": 53,
+    "invalid_n": 53,
+    "valid_preserved_correctly": 37,
+    "valid_n": 37,
+    "elapsed_seconds": 26.16184929944575
+  },
+  "frozen_tests": {
+    "methods": 9,
+    "before_failures_including_subtests": 48,
+    "before_sdk_wrapped_assertion_errors": 2,
+    "after_passed": 9,
+    "after_seconds": 4.231
+  },
+  "complete_suite": {
+    "platform": "Windows",
+    "python": "3.11.3",
+    "passed": 223,
+    "skipped": 0,
+    "seconds": 56.224
+  },
+  "baseline_complete_suite": "Prior evidence: 214 local/hosted tests passed at unchanged base; not a new run.",
+  "sdk": {
+    "version": "2.3.0",
+    "modes": [
+      "2026-07-28",
+      "legacy"
+    ],
+    "actual_local_file_error_and_same_connection_recovery": "PASS",
+    "model_selected_tool": false
+  },
+  "packages": {
+    "mcp": "2.3.0",
+    "Pillow": "13.0.0",
+    "pypdf": "6.21.3",
+    "jsonschema": "4.26.0",
+    "tzdata": "2026.5"
+  },
+  "dependency_check": "PASS_NO_NEW_DEPENDENCIES",
+  "native_ocr_prior_receipt_sha256": "906b3ffbda825390e9ba7bb387c2fb92e180038ad6213e844c06f4887edebd70",
+  "native_ocr_files_match_prior_receipt": true,
+  "new_model_calls": 0,
+  "customer_data_used": false,
+  "production_changes": false,
+  "independent_human_acceptance": false,
+  "utility_rounding_certified": false,
+  "hosted_checks": "PENDING_AT_LOCAL_DELIVERY",
+  "migration": "NONE",
+  "frozen_sources": [
+    {
+      "path": "plugins/billfit/tests/fixtures/usage-number-format-v1.json",
+      "git_blob_sha256": "e4af2f2ab7d86647bc85035068a4dce47355a40b3cfac97c3ce93343952247ad"
+    },
+    {
+      "path": "plugins/billfit/tests/test_usage_number_format.py",
+      "git_blob_sha256": "9b6f07b74232c5bc56e32370f21937009462ce0f0b2c7677278c836ce665f69c"
+    },
+    {
+      "path": "scripts/verify-usage-number-format.py",
+      "git_blob_sha256": "496c219b21274194b5d736431fc536e6080b580434f62fd1db1c4adceb7c82ed"
+    },
+    {
+      "path": "evaluations/usage-number-format-v1/protocol.json",
+      "git_blob_sha256": "5eabad3b2cea94bce4571b81ef1e311da4b2ea12fa54fa7dc68a2b0be7b1de87"
+    }
+  ],
+  "runtime_and_unchanged_data": [
+    {
+      "path": "plugins/billfit/skills/billfit/scripts/billfit_usage.py",
+      "git_blob_sha256": "06bb977c96a590c038afc56a69fd29341b5052498d546a3b8ce9d31c6f1977f6",
+      "observed_bytes_sha256": "ad03544f5a419ce005f782e225017fb6cb67f85ec41118343e4cacceef788726"
+    },
+    {
+      "path": "plugins/billfit/skills/billfit/data/pge_residential_rates_2026-03-01.json",
+      "git_blob_sha256": "cff04fb40659084260afab13b99bab5cb6dd3a6a77eb8490b05c0e89bbf7e53b",
+      "observed_bytes_sha256": "2475f673017cfe20d9272c20e1e13e3506da6c47f99bbb685278c029ad25d9b8"
+    },
+    {
+      "path": "plugins/billfit/skills/billfit/data/care_fera_2026-06-01.json",
+      "git_blob_sha256": "1ff88ab2bc8f8ebbe12e78a3590d1de1ce54626ff0a2b689fc23774ea4b85618",
+      "observed_bytes_sha256": "087246bab7df312cedcee607c7d880f96604574a35e48f87fb29bf10f2e5b26b"
+    }
+  ],
+  "evidence": [
+    {
+      "file": "before-cli.json",
+      "original_local_file": "billfit-usage-numbers-cli-before-20261101.json",
+      "original_sha256": "344ed887e60bd73bb1b004123dbf6cb517fba4723ebe5621039416b54cd75a66",
+      "published_sha256": "344ed887e60bd73bb1b004123dbf6cb517fba4723ebe5621039416b54cd75a66"
+    },
+    {
+      "file": "after-cli.json",
+      "original_local_file": "billfit-usage-numbers-cli-after-20261101.json",
+      "original_sha256": "2a01ca914eb7d4be71e60815e0c1f3349b461072ed784f80c9edd2dd0126fc19",
+      "published_sha256": "2a01ca914eb7d4be71e60815e0c1f3349b461072ed784f80c9edd2dd0126fc19"
+    },
+    {
+      "file": "before-tests.txt",
+      "original_local_file": "billfit-usage-numbers-before-20261101.log",
+      "original_sha256": "c35226eed155754acb4d5146d1e63d5b2fab0d81e18b9245f9f171dfea0b7c71",
+      "published_sha256": "4fa1a069be463d36fa0d43e6730d522764253ee93f1638f34c2b9aac5ae0043c"
+    },
+    {
+      "file": "related-tests.txt",
+      "original_local_file": "billfit-usage-numbers-targeted-20261101.log",
+      "original_sha256": "fd7c01877baa779da578f34bd9662c3f24068a99b5ea1d8619649c6783614ee9",
+      "published_sha256": "d7cf9ba026783bd54322cbcb15c4843327a98b0e25cf2a2911a17c6185a03fb5"
+    },
+    {
+      "file": "full-tests.txt",
+      "original_local_file": "billfit-usage-numbers-full-20261101.log",
+      "original_sha256": "9e4eaaeca6535bb28ca8a63adf4e188c0d6551663fa9d5bb58c983542efbf5e1",
+      "published_sha256": "851d734bf88b099790cc306fbcffe8a384ac384861a773811c03139ee9b984b9"
+    }
+  ],
+  "local_relative_links_checked": 29,
+  "remaining": [
+    "No locale inference or arbitrary-precision contract.",
+    "Previously rounded numeric values from a client cannot recover their original token.",
+    "Exact utility rounding and full historical tariffs remain unverified.",
+    "Official holiday-page scope does not unconditionally resolve residential Saturday observance.",
+    "No new live model, customer or independent-human result."
+  ]
+}

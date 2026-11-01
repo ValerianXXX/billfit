@@ -1,0 +1,645 @@
+test_actual_sdk_file_rejection_and_same_connection_recovery (test_usage_number_format.UsageNumberFormatTests.test_actual_sdk_file_rejection_and_same_connection_recovery) ...
+  test_actual_sdk_file_rejection_and_same_connection_recovery (test_usage_number_format.UsageNumberFormatTests.test_actual_sdk_file_rejection_and_same_connection_recovery) (mode='2026-07-28') ... ERROR
+  test_actual_sdk_file_rejection_and_same_connection_recovery (test_usage_number_format.UsageNumberFormatTests.test_actual_sdk_file_rejection_and_same_connection_recovery) (mode='legacy') ... ERROR
+test_csv_never_discards_surplus_cells_even_when_trailing_cell_is_empty (test_usage_number_format.UsageNumberFormatTests.test_csv_never_discards_surplus_cells_even_when_trailing_cell_is_empty) ...
+  test_csv_never_discards_surplus_cells_even_when_trailing_cell_is_empty (test_usage_number_format.UsageNumberFormatTests.test_csv_never_discards_surplus_cells_even_when_trailing_cell_is_empty) (row='2026-07-06T12:00:00-07:00,60,1,23') ... FAIL
+  test_csv_never_discards_surplus_cells_even_when_trailing_cell_is_empty (test_usage_number_format.UsageNumberFormatTests.test_csv_never_discards_surplus_cells_even_when_trailing_cell_is_empty) (row='2026-07-06T12:00:00-07:00,60,1,234.5') ... FAIL
+  test_csv_never_discards_surplus_cells_even_when_trailing_cell_is_empty (test_usage_number_format.UsageNumberFormatTests.test_csv_never_discards_surplus_cells_even_when_trailing_cell_is_empty) (row='2026-07-06T12:00:00-07:00,60,1,IGNORED_SYNTHETIC_CELL') ... FAIL
+  test_csv_never_discards_surplus_cells_even_when_trailing_cell_is_empty (test_usage_number_format.UsageNumberFormatTests.test_csv_never_discards_surplus_cells_even_when_trailing_cell_is_empty) (row='2026-07-06T12:00:00-07:00,60,1,') ... FAIL
+test_explicit_duration_format_cannot_change_elapsed_time (test_usage_number_format.UsageNumberFormatTests.test_explicit_duration_format_cannot_change_elapsed_time) ...
+  test_explicit_duration_format_cannot_change_elapsed_time (test_usage_number_format.UsageNumberFormatTests.test_explicit_duration_format_cannot_change_elapsed_time) (value='6,0') ... FAIL
+  test_explicit_duration_format_cannot_change_elapsed_time (test_usage_number_format.UsageNumberFormatTests.test_explicit_duration_format_cannot_change_elapsed_time) (value='6$0') ... FAIL
+  test_explicit_duration_format_cannot_change_elapsed_time (test_usage_number_format.UsageNumberFormatTests.test_explicit_duration_format_cannot_change_elapsed_time) (value='$60') ... FAIL
+  test_explicit_duration_format_cannot_change_elapsed_time (test_usage_number_format.UsageNumberFormatTests.test_explicit_duration_format_cannot_change_elapsed_time) (value='6_0') ... FAIL
+  test_explicit_duration_format_cannot_change_elapsed_time (test_usage_number_format.UsageNumberFormatTests.test_explicit_duration_format_cannot_change_elapsed_time) (value='1,2.0') ... FAIL
+test_inline_invalid_energy_is_not_repaired_into_another_number (test_usage_number_format.UsageNumberFormatTests.test_inline_invalid_energy_is_not_repaired_into_another_number) ...
+  test_inline_invalid_energy_is_not_repaired_into_another_number (test_usage_number_format.UsageNumberFormatTests.test_inline_invalid_energy_is_not_repaired_into_another_number) (value='1,23') ... FAIL
+  test_inline_invalid_energy_is_not_repaired_into_another_number (test_usage_number_format.UsageNumberFormatTests.test_inline_invalid_energy_is_not_repaired_into_another_number) (value='1,,234') ... FAIL
+  test_inline_invalid_energy_is_not_repaired_into_another_number (test_usage_number_format.UsageNumberFormatTests.test_inline_invalid_energy_is_not_repaired_into_another_number) (value=',123') ... FAIL
+  test_inline_invalid_energy_is_not_repaired_into_another_number (test_usage_number_format.UsageNumberFormatTests.test_inline_invalid_energy_is_not_repaired_into_another_number) (value='123,') ... FAIL
+  test_inline_invalid_energy_is_not_repaired_into_another_number (test_usage_number_format.UsageNumberFormatTests.test_inline_invalid_energy_is_not_repaired_into_another_number) (value='1,234.5,6') ... FAIL
+  test_inline_invalid_energy_is_not_repaired_into_another_number (test_usage_number_format.UsageNumberFormatTests.test_inline_invalid_energy_is_not_repaired_into_another_number) (value='$1') ... FAIL
+  test_inline_invalid_energy_is_not_repaired_into_another_number (test_usage_number_format.UsageNumberFormatTests.test_inline_invalid_energy_is_not_repaired_into_another_number) (value='1$2') ... FAIL
+  test_inline_invalid_energy_is_not_repaired_into_another_number (test_usage_number_format.UsageNumberFormatTests.test_inline_invalid_energy_is_not_repaired_into_another_number) (value='1_000') ... FAIL
+  test_inline_invalid_energy_is_not_repaired_into_another_number (test_usage_number_format.UsageNumberFormatTests.test_inline_invalid_energy_is_not_repaired_into_another_number) (value='1.234,56') ... FAIL
+  test_inline_invalid_energy_is_not_repaired_into_another_number (test_usage_number_format.UsageNumberFormatTests.test_inline_invalid_energy_is_not_repaired_into_another_number) (value='1e-400') ... FAIL
+  test_inline_invalid_energy_is_not_repaired_into_another_number (test_usage_number_format.UsageNumberFormatTests.test_inline_invalid_energy_is_not_repaired_into_another_number) (value='(1,23)') ... FAIL
+test_inline_valid_formats_preserve_exact_interpreted_values (test_usage_number_format.UsageNumberFormatTests.test_inline_valid_formats_preserve_exact_interpreted_values) ... ok
+test_json_and_quoted_csv_apply_the_same_energy_contract (test_usage_number_format.UsageNumberFormatTests.test_json_and_quoted_csv_apply_the_same_energy_contract) ...
+  test_json_and_quoted_csv_apply_the_same_energy_contract (test_usage_number_format.UsageNumberFormatTests.test_json_and_quoted_csv_apply_the_same_energy_contract) (value='1,23', suffix='.json') ... FAIL
+  test_json_and_quoted_csv_apply_the_same_energy_contract (test_usage_number_format.UsageNumberFormatTests.test_json_and_quoted_csv_apply_the_same_energy_contract) (value='1,23', suffix='.csv') ... FAIL
+  test_json_and_quoted_csv_apply_the_same_energy_contract (test_usage_number_format.UsageNumberFormatTests.test_json_and_quoted_csv_apply_the_same_energy_contract) (value='1,,234', suffix='.json') ... FAIL
+  test_json_and_quoted_csv_apply_the_same_energy_contract (test_usage_number_format.UsageNumberFormatTests.test_json_and_quoted_csv_apply_the_same_energy_contract) (value='1,,234', suffix='.csv') ... FAIL
+  test_json_and_quoted_csv_apply_the_same_energy_contract (test_usage_number_format.UsageNumberFormatTests.test_json_and_quoted_csv_apply_the_same_energy_contract) (value=',123', suffix='.json') ... FAIL
+  test_json_and_quoted_csv_apply_the_same_energy_contract (test_usage_number_format.UsageNumberFormatTests.test_json_and_quoted_csv_apply_the_same_energy_contract) (value=',123', suffix='.csv') ... FAIL
+  test_json_and_quoted_csv_apply_the_same_energy_contract (test_usage_number_format.UsageNumberFormatTests.test_json_and_quoted_csv_apply_the_same_energy_contract) (value='123,', suffix='.json') ... FAIL
+  test_json_and_quoted_csv_apply_the_same_energy_contract (test_usage_number_format.UsageNumberFormatTests.test_json_and_quoted_csv_apply_the_same_energy_contract) (value='123,', suffix='.csv') ... FAIL
+  test_json_and_quoted_csv_apply_the_same_energy_contract (test_usage_number_format.UsageNumberFormatTests.test_json_and_quoted_csv_apply_the_same_energy_contract) (value='1,234.5,6', suffix='.json') ... FAIL
+  test_json_and_quoted_csv_apply_the_same_energy_contract (test_usage_number_format.UsageNumberFormatTests.test_json_and_quoted_csv_apply_the_same_energy_contract) (value='1,234.5,6', suffix='.csv') ... FAIL
+  test_json_and_quoted_csv_apply_the_same_energy_contract (test_usage_number_format.UsageNumberFormatTests.test_json_and_quoted_csv_apply_the_same_energy_contract) (value='$1', suffix='.json') ... FAIL
+  test_json_and_quoted_csv_apply_the_same_energy_contract (test_usage_number_format.UsageNumberFormatTests.test_json_and_quoted_csv_apply_the_same_energy_contract) (value='$1', suffix='.csv') ... FAIL
+  test_json_and_quoted_csv_apply_the_same_energy_contract (test_usage_number_format.UsageNumberFormatTests.test_json_and_quoted_csv_apply_the_same_energy_contract) (value='1$2', suffix='.json') ... FAIL
+  test_json_and_quoted_csv_apply_the_same_energy_contract (test_usage_number_format.UsageNumberFormatTests.test_json_and_quoted_csv_apply_the_same_energy_contract) (value='1$2', suffix='.csv') ... FAIL
+  test_json_and_quoted_csv_apply_the_same_energy_contract (test_usage_number_format.UsageNumberFormatTests.test_json_and_quoted_csv_apply_the_same_energy_contract) (value='1_000', suffix='.json') ... FAIL
+  test_json_and_quoted_csv_apply_the_same_energy_contract (test_usage_number_format.UsageNumberFormatTests.test_json_and_quoted_csv_apply_the_same_energy_contract) (value='1_000', suffix='.csv') ... FAIL
+  test_json_and_quoted_csv_apply_the_same_energy_contract (test_usage_number_format.UsageNumberFormatTests.test_json_and_quoted_csv_apply_the_same_energy_contract) (value='1.234,56', suffix='.json') ... FAIL
+  test_json_and_quoted_csv_apply_the_same_energy_contract (test_usage_number_format.UsageNumberFormatTests.test_json_and_quoted_csv_apply_the_same_energy_contract) (value='1.234,56', suffix='.csv') ... FAIL
+  test_json_and_quoted_csv_apply_the_same_energy_contract (test_usage_number_format.UsageNumberFormatTests.test_json_and_quoted_csv_apply_the_same_energy_contract) (value='1e-400', suffix='.json') ... FAIL
+  test_json_and_quoted_csv_apply_the_same_energy_contract (test_usage_number_format.UsageNumberFormatTests.test_json_and_quoted_csv_apply_the_same_energy_contract) (value='1e-400', suffix='.csv') ... FAIL
+  test_json_and_quoted_csv_apply_the_same_energy_contract (test_usage_number_format.UsageNumberFormatTests.test_json_and_quoted_csv_apply_the_same_energy_contract) (value='(1,23)', suffix='.json') ... FAIL
+  test_json_and_quoted_csv_apply_the_same_energy_contract (test_usage_number_format.UsageNumberFormatTests.test_json_and_quoted_csv_apply_the_same_energy_contract) (value='(1,23)', suffix='.csv') ... FAIL
+test_optional_missing_csv_cells_keep_existing_quality_gate (test_usage_number_format.UsageNumberFormatTests.test_optional_missing_csv_cells_keep_existing_quality_gate) ... ok
+test_rejected_input_cannot_reach_comparison_or_bill_reconciliation (test_usage_number_format.UsageNumberFormatTests.test_rejected_input_cannot_reach_comparison_or_bill_reconciliation) ... FAIL
+test_xml_energy_and_seconds_cannot_remove_punctuation (test_usage_number_format.UsageNumberFormatTests.test_xml_energy_and_seconds_cannot_remove_punctuation) ...
+  test_xml_energy_and_seconds_cannot_remove_punctuation (test_usage_number_format.UsageNumberFormatTests.test_xml_energy_and_seconds_cannot_remove_punctuation) (energy='1,23') ... FAIL
+  test_xml_energy_and_seconds_cannot_remove_punctuation (test_usage_number_format.UsageNumberFormatTests.test_xml_energy_and_seconds_cannot_remove_punctuation) (energy='$250') ... FAIL
+  test_xml_energy_and_seconds_cannot_remove_punctuation (test_usage_number_format.UsageNumberFormatTests.test_xml_energy_and_seconds_cannot_remove_punctuation) (energy='2_50') ... FAIL
+  test_xml_energy_and_seconds_cannot_remove_punctuation (test_usage_number_format.UsageNumberFormatTests.test_xml_energy_and_seconds_cannot_remove_punctuation) (energy='1e-400') ... FAIL
+test_xml_energy_and_seconds_cannot_remove_punctuation (test_usage_number_format.UsageNumberFormatTests.test_xml_energy_and_seconds_cannot_remove_punctuation) ... FAIL
+
+======================================================================
+ERROR: test_actual_sdk_file_rejection_and_same_connection_recovery (test_usage_number_format.UsageNumberFormatTests.test_actual_sdk_file_rejection_and_same_connection_recovery) (mode='2026-07-28')
+----------------------------------------------------------------------
+  + Exception Group Traceback (most recent call last):
+  |   File "$WORKSPACE_ROOT\billfit-usage-numbers\plugins\billfit\tests\test_usage_number_format.py", line 133, in test_actual_sdk_file_rejection_and_same_connection_recovery
+  |     asyncio.run(scenario(mode))
+  |   File "$USER_HOME\AppData\Local\Programs\Python\Python311\Lib\asyncio\runners.py", line 190, in run
+  |     return runner.run(main)
+  |            ^^^^^^^^^^^^^^^^
+  |   File "$USER_HOME\AppData\Local\Programs\Python\Python311\Lib\asyncio\runners.py", line 118, in run
+  |     return self._loop.run_until_complete(task)
+  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "$USER_HOME\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 653, in run_until_complete
+  |     return future.result()
+  |            ^^^^^^^^^^^^^^^
+  |   File "$WORKSPACE_ROOT\billfit-usage-numbers\plugins\billfit\tests\test_usage_number_format.py", line 122, in scenario
+  |     async with Client(params, mode=mode) as client:
+  |   File "$WORKSPACE_ROOT\billfit\.venv\Lib\site-packages\mcp\client\client.py", line 480, in __aexit__
+  |     await self._exit_stack.__aexit__(exc_type, exc_val, exc_tb)
+  |   File "$USER_HOME\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 733, in __aexit__
+  |     raise exc_details[1]
+  |   File "$USER_HOME\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 716, in __aexit__
+  |     cb_suppress = await cb(*exc_details)
+  |                   ^^^^^^^^^^^^^^^^^^^^^^
+  |   File "$USER_HOME\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 222, in __aexit__
+  |     await self.gen.athrow(typ, value, traceback)
+  |   File "$WORKSPACE_ROOT\billfit\.venv\Lib\site-packages\mcp\client\stdio.py", line 201, in stdio_client
+  |     async with anyio.create_task_group() as tg:
+  |   File "$WORKSPACE_ROOT\billfit\.venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 847, in __aexit__
+  |     raise BaseExceptionGroup(
+  | ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | Exception Group Traceback (most recent call last):
+    |   File "$WORKSPACE_ROOT\billfit\.venv\Lib\site-packages\mcp\client\stdio.py", line 205, in stdio_client
+    |     yield read_stream, write_stream
+    |   File "$USER_HOME\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 716, in __aexit__
+    |     cb_suppress = await cb(*exc_details)
+    |                   ^^^^^^^^^^^^^^^^^^^^^^
+    |   File "$WORKSPACE_ROOT\billfit\.venv\Lib\site-packages\mcp\client\session.py", line 514, in __aexit__
+    |     result = await self._task_group.__aexit__(exc_type, exc_val, exc_tb)
+    |              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "$WORKSPACE_ROOT\billfit\.venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 847, in __aexit__
+    |     raise BaseExceptionGroup(
+    | ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+    +-+---------------- 1 ----------------
+      | Traceback (most recent call last):
+      |   File "$WORKSPACE_ROOT\billfit-usage-numbers\plugins\billfit\tests\test_usage_number_format.py", line 124, in scenario
+      |     self.assertTrue(result.is_error)
+      | AssertionError: False is not true
+      +------------------------------------
+
+======================================================================
+ERROR: test_actual_sdk_file_rejection_and_same_connection_recovery (test_usage_number_format.UsageNumberFormatTests.test_actual_sdk_file_rejection_and_same_connection_recovery) (mode='legacy')
+----------------------------------------------------------------------
+  + Exception Group Traceback (most recent call last):
+  |   File "$WORKSPACE_ROOT\billfit-usage-numbers\plugins\billfit\tests\test_usage_number_format.py", line 133, in test_actual_sdk_file_rejection_and_same_connection_recovery
+  |     asyncio.run(scenario(mode))
+  |   File "$USER_HOME\AppData\Local\Programs\Python\Python311\Lib\asyncio\runners.py", line 190, in run
+  |     return runner.run(main)
+  |            ^^^^^^^^^^^^^^^^
+  |   File "$USER_HOME\AppData\Local\Programs\Python\Python311\Lib\asyncio\runners.py", line 118, in run
+  |     return self._loop.run_until_complete(task)
+  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "$USER_HOME\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 653, in run_until_complete
+  |     return future.result()
+  |            ^^^^^^^^^^^^^^^
+  |   File "$WORKSPACE_ROOT\billfit-usage-numbers\plugins\billfit\tests\test_usage_number_format.py", line 122, in scenario
+  |     async with Client(params, mode=mode) as client:
+  |   File "$WORKSPACE_ROOT\billfit\.venv\Lib\site-packages\mcp\client\client.py", line 480, in __aexit__
+  |     await self._exit_stack.__aexit__(exc_type, exc_val, exc_tb)
+  |   File "$USER_HOME\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 733, in __aexit__
+  |     raise exc_details[1]
+  |   File "$USER_HOME\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 716, in __aexit__
+  |     cb_suppress = await cb(*exc_details)
+  |                   ^^^^^^^^^^^^^^^^^^^^^^
+  |   File "$USER_HOME\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 222, in __aexit__
+  |     await self.gen.athrow(typ, value, traceback)
+  |   File "$WORKSPACE_ROOT\billfit\.venv\Lib\site-packages\mcp\client\stdio.py", line 201, in stdio_client
+  |     async with anyio.create_task_group() as tg:
+  |   File "$WORKSPACE_ROOT\billfit\.venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 847, in __aexit__
+  |     raise BaseExceptionGroup(
+  | ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | Exception Group Traceback (most recent call last):
+    |   File "$WORKSPACE_ROOT\billfit\.venv\Lib\site-packages\mcp\client\stdio.py", line 205, in stdio_client
+    |     yield read_stream, write_stream
+    |   File "$USER_HOME\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 716, in __aexit__
+    |     cb_suppress = await cb(*exc_details)
+    |                   ^^^^^^^^^^^^^^^^^^^^^^
+    |   File "$WORKSPACE_ROOT\billfit\.venv\Lib\site-packages\mcp\client\session.py", line 514, in __aexit__
+    |     result = await self._task_group.__aexit__(exc_type, exc_val, exc_tb)
+    |              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "$WORKSPACE_ROOT\billfit\.venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 847, in __aexit__
+    |     raise BaseExceptionGroup(
+    | ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+    +-+---------------- 1 ----------------
+      | Traceback (most recent call last):
+      |   File "$WORKSPACE_ROOT\billfit-usage-numbers\plugins\billfit\tests\test_usage_number_format.py", line 124, in scenario
+      |     self.assertTrue(result.is_error)
+      | AssertionError: False is not true
+      +------------------------------------
+
+======================================================================
+FAIL: test_csv_never_discards_surplus_cells_even_when_trailing_cell_is_empty (test_usage_number_format.UsageNumberFormatTests.test_csv_never_discards_surplus_cells_even_when_trailing_cell_is_empty) (row='2026-07-06T12:00:00-07:00,60,1,23')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$WORKSPACE_ROOT\billfit-usage-numbers\plugins\billfit\tests\test_usage_number_format.py", line 84, in test_csv_never_discards_surplus_cells_even_when_trailing_cell_is_empty
+    self.rejected('CSV_ROW_WIDTH_MISMATCH', lambda: self.parse('timestamp,duration minutes,kWh\n' + row + '\n'))
+  File "$WORKSPACE_ROOT\billfit-usage-numbers\plugins\billfit\tests\test_usage_number_format.py", line 44, in rejected
+    with self.assertRaises(core.BillFitError) as caught:
+AssertionError: BillFitError not raised
+
+======================================================================
+FAIL: test_csv_never_discards_surplus_cells_even_when_trailing_cell_is_empty (test_usage_number_format.UsageNumberFormatTests.test_csv_never_discards_surplus_cells_even_when_trailing_cell_is_empty) (row='2026-07-06T12:00:00-07:00,60,1,234.5')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$WORKSPACE_ROOT\billfit-usage-numbers\plugins\billfit\tests\test_usage_number_format.py", line 84, in test_csv_never_discards_surplus_cells_even_when_trailing_cell_is_empty
+    self.rejected('CSV_ROW_WIDTH_MISMATCH', lambda: self.parse('timestamp,duration minutes,kWh\n' + row + '\n'))
+  File "$WORKSPACE_ROOT\billfit-usage-numbers\plugins\billfit\tests\test_usage_number_format.py", line 44, in rejected
+    with self.assertRaises(core.BillFitError) as caught:
+AssertionError: BillFitError not raised
+
+======================================================================
+FAIL: test_csv_never_discards_surplus_cells_even_when_trailing_cell_is_empty (test_usage_number_format.UsageNumberFormatTests.test_csv_never_discards_surplus_cells_even_when_trailing_cell_is_empty) (row='2026-07-06T12:00:00-07:00,60,1,IGNORED_SYNTHETIC_CELL')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$WORKSPACE_ROOT\billfit-usage-numbers\plugins\billfit\tests\test_usage_number_format.py", line 84, in test_csv_never_discards_surplus_cells_even_when_trailing_cell_is_empty
+    self.rejected('CSV_ROW_WIDTH_MISMATCH', lambda: self.parse('timestamp,duration minutes,kWh\n' + row + '\n'))
+  File "$WORKSPACE_ROOT\billfit-usage-numbers\plugins\billfit\tests\test_usage_number_format.py", line 44, in rejected
+    with self.assertRaises(core.BillFitError) as caught:
+AssertionError: BillFitError not raised
+
+======================================================================
+FAIL: test_csv_never_discards_surplus_cells_even_when_trailing_cell_is_empty (test_usage_number_format.UsageNumberFormatTests.test_csv_never_discards_surplus_cells_even_when_trailing_cell_is_empty) (row='2026-07-06T12:00:00-07:00,60,1,')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$WORKSPACE_ROOT\billfit-usage-numbers\plugins\billfit\tests\test_usage_number_format.py", line 84, in test_csv_never_discards_surplus_cells_even_when_trailing_cell_is_empty
+    self.rejected('CSV_ROW_WIDTH_MISMATCH', lambda: self.parse('timestamp,duration minutes,kWh\n' + row + '\n'))
+  File "$WORKSPACE_ROOT\billfit-usage-numbers\plugins\billfit\tests\test_usage_number_format.py", line 44, in rejected
+    with self.assertRaises(core.BillFitError) as caught:
+AssertionError: BillFitError not raised
+
+======================================================================
+FAIL: test_explicit_duration_format_cannot_change_elapsed_time (test_usage_number_format.UsageNumberFormatTests.test_explicit_duration_format_cannot_change_elapsed_time) (value='6,0')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$WORKSPACE_ROOT\billfit-usage-numbers\plugins\billfit\tests\test_usage_number_format.py", line 63, in test_explicit_duration_format_cannot_change_elapsed_time
+    self.rejected('INVALID_INTERVAL_DURATION', lambda: core.load_usage(intervals=[reading(minutes=value)]))
+  File "$WORKSPACE_ROOT\billfit-usage-numbers\plugins\billfit\tests\test_usage_number_format.py", line 44, in rejected
+    with self.assertRaises(core.BillFitError) as caught:
+AssertionError: BillFitError not raised
+
+======================================================================
+FAIL: test_explicit_duration_format_cannot_change_elapsed_time (test_usage_number_format.UsageNumberFormatTests.test_explicit_duration_format_cannot_change_elapsed_time) (value='6$0')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$WORKSPACE_ROOT\billfit-usage-numbers\plugins\billfit\tests\test_usage_number_format.py", line 63, in test_explicit_duration_format_cannot_change_elapsed_time
+    self.rejected('INVALID_INTERVAL_DURATION', lambda: core.load_usage(intervals=[reading(minutes=value)]))
+  File "$WORKSPACE_ROOT\billfit-usage-numbers\plugins\billfit\tests\test_usage_number_format.py", line 44, in rejected
+    with self.assertRaises(core.BillFitError) as caught:
+AssertionError: BillFitError not raised
+
+======================================================================
+FAIL: test_explicit_duration_format_cannot_change_elapsed_time (test_usage_number_format.UsageNumberFormatTests.test_explicit_duration_format_cannot_change_elapsed_time) (value='$60')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$WORKSPACE_ROOT\billfit-usage-numbers\plugins\billfit\tests\test_usage_number_format.py", line 63, in test_explicit_duration_format_cannot_change_elapsed_time
+    self.rejected('INVALID_INTERVAL_DURATION', lambda: core.load_usage(intervals=[reading(minutes=value)]))
+  File "$WORKSPACE_ROOT\billfit-usage-numbers\plugins\billfit\tests\test_usage_number_format.py", line 44, in rejected
+    with self.assertRaises(core.BillFitError) as caught:
+AssertionError: BillFitError not raised
+
+======================================================================
+FAIL: test_explicit_duration_format_cannot_change_elapsed_time (test_usage_number_format.UsageNumberFormatTests.test_explicit_duration_format_cannot_change_elapsed_time) (value='6_0')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$WORKSPACE_ROOT\billfit-usage-numbers\plugins\billfit\tests\test_usage_number_format.py", line 63, in test_explicit_duration_format_cannot_change_elapsed_time
+    self.rejected('INVALID_INTERVAL_DURATION', lambda: core.load_usage(intervals=[reading(minutes=value)]))
+  File "$WORKSPACE_ROOT\billfit-usage-numbers\plugins\billfit\tests\test_usage_number_format.py", line 44, in rejected
+    with self.assertRaises(core.BillFitError) as caught:
+AssertionError: BillFitError not raised
+
+======================================================================
+FAIL: test_explicit_duration_format_cannot_change_elapsed_time (test_usage_number_format.UsageNumberFormatTests.test_explicit_duration_format_cannot_change_elapsed_time) (value='1,2.0')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$WORKSPACE_ROOT\billfit-usage-numbers\plugins\billfit\tests\test_usage_number_format.py", line 63, in test_explicit_duration_format_cannot_change_elapsed_time
+    self.rejected('INVALID_INTERVAL_DURATION', lambda: core.load_usage(intervals=[reading(minutes=value)]))
+  File "$WORKSPACE_ROOT\billfit-usage-numbers\plugins\billfit\tests\test_usage_number_format.py", line 44, in rejected
+    with self.assertRaises(core.BillFitError) as caught:
+AssertionError: BillFitError not raised
+
+======================================================================
+FAIL: test_inline_invalid_energy_is_not_repaired_into_another_number (test_usage_number_format.UsageNumberFormatTests.test_inline_invalid_energy_is_not_repaired_into_another_number) (value='1,23')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$WORKSPACE_ROOT\billfit-usage-numbers\plugins\billfit\tests\test_usage_number_format.py", line 52, in test_inline_invalid_energy_is_not_repaired_into_another_number
+    self.rejected('INVALID_USAGE_VALUE', lambda: core.load_usage(intervals=[reading(value)]))
+  File "$WORKSPACE_ROOT\billfit-usage-numbers\plugins\billfit\tests\test_usage_number_format.py", line 44, in rejected
+    with self.assertRaises(core.BillFitError) as caught:
+AssertionError: BillFitError not raised
+
+======================================================================
+FAIL: test_inline_invalid_energy_is_not_repaired_into_another_number (test_usage_number_format.UsageNumberFormatTests.test_inline_invalid_energy_is_not_repaired_into_another_number) (value='1,,234')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$WORKSPACE_ROOT\billfit-usage-numbers\plugins\billfit\tests\test_usage_number_format.py", line 52, in test_inline_invalid_energy_is_not_repaired_into_another_number
+    self.rejected('INVALID_USAGE_VALUE', lambda: core.load_usage(intervals=[reading(value)]))
+  File "$WORKSPACE_ROOT\billfit-usage-numbers\plugins\billfit\tests\test_usage_number_format.py", line 44, in rejected
+    with self.assertRaises(core.BillFitError) as caught:
+AssertionError: BillFitError not raised
+
+======================================================================
+FAIL: test_inline_invalid_energy_is_not_repaired_into_another_number (test_usage_number_format.UsageNumberFormatTests.test_inline_invalid_energy_is_not_repaired_into_another_number) (value=',123')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$WORKSPACE_ROOT\billfit-usage-numbers\plugins\billfit\tests\test_usage_number_format.py", line 52, in test_inline_invalid_energy_is_not_repaired_into_another_number
+    self.rejected('INVALID_USAGE_VALUE', lambda: core.load_usage(intervals=[reading(value)]))
+  File "$WORKSPACE_ROOT\billfit-usage-numbers\plugins\billfit\tests\test_usage_number_format.py", line 44, in rejected
+    with self.assertRaises(core.BillFitError) as caught:
+AssertionError: BillFitError not raised
+
+======================================================================
+FAIL: test_inline_invalid_energy_is_not_repaired_into_another_number (test_usage_number_format.UsageNumberFormatTests.test_inline_invalid_energy_is_not_repaired_into_another_number) (value='123,')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$WORKSPACE_ROOT\billfit-usage-numbers\plugins\billfit\tests\test_usage_number_format.py", line 52, in test_inline_invalid_energy_is_not_repaired_into_another_number
+    self.rejected('INVALID_USAGE_VALUE', lambda: core.load_usage(intervals=[reading(value)]))
+  File "$WORKSPACE_ROOT\billfit-usage-numbers\plugins\billfit\tests\test_usage_number_format.py", line 44, in rejected
+    with self.assertRaises(core.BillFitError) as caught:
+AssertionError: BillFitError not raised
+
+======================================================================
+FAIL: test_inline_invalid_energy_is_not_repaired_into_another_number (test_usage_number_format.UsageNumberFormatTests.test_inline_invalid_energy_is_not_repaired_into_another_number) (value='1,234.5,6')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$WORKSPACE_ROOT\billfit-usage-numbers\plugins\billfit\tests\test_usage_number_format.py", line 52, in test_inline_invalid_energy_is_not_repaired_into_another_number
+    self.rejected('INVALID_USAGE_VALUE', lambda: core.load_usage(intervals=[reading(value)]))
+  File "$WORKSPACE_ROOT\billfit-usage-numbers\plugins\billfit\tests\test_usage_number_format.py", line 44, in rejected
+    with self.assertRaises(core.BillFitError) as caught:
+AssertionError: BillFitError not raised
+
+======================================================================
+FAIL: test_inline_invalid_energy_is_not_repaired_into_another_number (test_usage_number_format.UsageNumberFormatTests.test_inline_invalid_energy_is_not_repaired_into_another_number) (value='$1')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$WORKSPACE_ROOT\billfit-usage-numbers\plugins\billfit\tests\test_usage_number_format.py", line 52, in test_inline_invalid_energy_is_not_repaired_into_another_number
+    self.rejected('INVALID_USAGE_VALUE', lambda: core.load_usage(intervals=[reading(value)]))
+  File "$WORKSPACE_ROOT\billfit-usage-numbers\plugins\billfit\tests\test_usage_number_format.py", line 44, in rejected
+    with self.assertRaises(core.BillFitError) as caught:
+AssertionError: BillFitError not raised
+
+======================================================================
+FAIL: test_inline_invalid_energy_is_not_repaired_into_another_number (test_usage_number_format.UsageNumberFormatTests.test_inline_invalid_energy_is_not_repaired_into_another_number) (value='1$2')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$WORKSPACE_ROOT\billfit-usage-numbers\plugins\billfit\tests\test_usage_number_format.py", line 52, in test_inline_invalid_energy_is_not_repaired_into_another_number
+    self.rejected('INVALID_USAGE_VALUE', lambda: core.load_usage(intervals=[reading(value)]))
+  File "$WORKSPACE_ROOT\billfit-usage-numbers\plugins\billfit\tests\test_usage_number_format.py", line 44, in rejected
+    with self.assertRaises(core.BillFitError) as caught:
+AssertionError: BillFitError not raised
+
+======================================================================
+FAIL: test_inline_invalid_energy_is_not_repaired_into_another_number (test_usage_number_format.UsageNumberFormatTests.test_inline_invalid_energy_is_not_repaired_into_another_number) (value='1_000')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$WORKSPACE_ROOT\billfit-usage-numbers\plugins\billfit\tests\test_usage_number_format.py", line 52, in test_inline_invalid_energy_is_not_repaired_into_another_number
+    self.rejected('INVALID_USAGE_VALUE', lambda: core.load_usage(intervals=[reading(value)]))
+  File "$WORKSPACE_ROOT\billfit-usage-numbers\plugins\billfit\tests\test_usage_number_format.py", line 44, in rejected
+    with self.assertRaises(core.BillFitError) as caught:
+AssertionError: BillFitError not raised
+
+======================================================================
+FAIL: test_inline_invalid_energy_is_not_repaired_into_another_number (test_usage_number_format.UsageNumberFormatTests.test_inline_invalid_energy_is_not_repaired_into_another_number) (value='1.234,56')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$WORKSPACE_ROOT\billfit-usage-numbers\plugins\billfit\tests\test_usage_number_format.py", line 52, in test_inline_invalid_energy_is_not_repaired_into_another_number
+    self.rejected('INVALID_USAGE_VALUE', lambda: core.load_usage(intervals=[reading(value)]))
+  File "$WORKSPACE_ROOT\billfit-usage-numbers\plugins\billfit\tests\test_usage_number_format.py", line 44, in rejected
+    with self.assertRaises(core.BillFitError) as caught:
+AssertionError: BillFitError not raised
+
+======================================================================
+FAIL: test_inline_invalid_energy_is_not_repaired_into_another_number (test_usage_number_format.UsageNumberFormatTests.test_inline_invalid_energy_is_not_repaired_into_another_number) (value='1e-400')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$WORKSPACE_ROOT\billfit-usage-numbers\plugins\billfit\tests\test_usage_number_format.py", line 52, in test_inline_invalid_energy_is_not_repaired_into_another_number
+    self.rejected('INVALID_USAGE_VALUE', lambda: core.load_usage(intervals=[reading(value)]))
+  File "$WORKSPACE_ROOT\billfit-usage-numbers\plugins\billfit\tests\test_usage_number_format.py", line 44, in rejected
+    with self.assertRaises(core.BillFitError) as caught:
+AssertionError: BillFitError not raised
+
+======================================================================
+FAIL: test_inline_invalid_energy_is_not_repaired_into_another_number (test_usage_number_format.UsageNumberFormatTests.test_inline_invalid_energy_is_not_repaired_into_another_number) (value='(1,23)')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$WORKSPACE_ROOT\billfit-usage-numbers\plugins\billfit\tests\test_usage_number_format.py", line 52, in test_inline_invalid_energy_is_not_repaired_into_another_number
+    self.rejected('INVALID_USAGE_VALUE', lambda: core.load_usage(intervals=[reading(value)]))
+  File "$WORKSPACE_ROOT\billfit-usage-numbers\plugins\billfit\tests\test_usage_number_format.py", line 44, in rejected
+    with self.assertRaises(core.BillFitError) as caught:
+AssertionError: BillFitError not raised
+
+======================================================================
+FAIL: test_json_and_quoted_csv_apply_the_same_energy_contract (test_usage_number_format.UsageNumberFormatTests.test_json_and_quoted_csv_apply_the_same_energy_contract) (value='1,23', suffix='.json')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$WORKSPACE_ROOT\billfit-usage-numbers\plugins\billfit\tests\test_usage_number_format.py", line 74, in test_json_and_quoted_csv_apply_the_same_energy_contract
+    self.rejected('INVALID_USAGE_VALUE', lambda: self.parse(content, suffix))
+  File "$WORKSPACE_ROOT\billfit-usage-numbers\plugins\billfit\tests\test_usage_number_format.py", line 44, in rejected
+    with self.assertRaises(core.BillFitError) as caught:
+AssertionError: BillFitError not raised
+
+======================================================================
+FAIL: test_json_and_quoted_csv_apply_the_same_energy_contract (test_usage_number_format.UsageNumberFormatTests.test_json_and_quoted_csv_apply_the_same_energy_contract) (value='1,23', suffix='.csv')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$WORKSPACE_ROOT\billfit-usage-numbers\plugins\billfit\tests\test_usage_number_format.py", line 74, in test_json_and_quoted_csv_apply_the_same_energy_contract
+    self.rejected('INVALID_USAGE_VALUE', lambda: self.parse(content, suffix))
+  File "$WORKSPACE_ROOT\billfit-usage-numbers\plugins\billfit\tests\test_usage_number_format.py", line 44, in rejected
+    with self.assertRaises(core.BillFitError) as caught:
+AssertionError: BillFitError not raised
+
+======================================================================
+FAIL: test_json_and_quoted_csv_apply_the_same_energy_contract (test_usage_number_format.UsageNumberFormatTests.test_json_and_quoted_csv_apply_the_same_energy_contract) (value='1,,234', suffix='.json')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$WORKSPACE_ROOT\billfit-usage-numbers\plugins\billfit\tests\test_usage_number_format.py", line 74, in test_json_and_quoted_csv_apply_the_same_energy_contract
+    self.rejected('INVALID_USAGE_VALUE', lambda: self.parse(content, suffix))
+  File "$WORKSPACE_ROOT\billfit-usage-numbers\plugins\billfit\tests\test_usage_number_format.py", line 44, in rejected
+    with self.assertRaises(core.BillFitError) as caught:
+AssertionError: BillFitError not raised
+
+======================================================================
+FAIL: test_json_and_quoted_csv_apply_the_same_energy_contract (test_usage_number_format.UsageNumberFormatTests.test_json_and_quoted_csv_apply_the_same_energy_contract) (value='1,,234', suffix='.csv')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$WORKSPACE_ROOT\billfit-usage-numbers\plugins\billfit\tests\test_usage_number_format.py", line 74, in test_json_and_quoted_csv_apply_the_same_energy_contract
+    self.rejected('INVALID_USAGE_VALUE', lambda: self.parse(content, suffix))
+  File "$WORKSPACE_ROOT\billfit-usage-numbers\plugins\billfit\tests\test_usage_number_format.py", line 44, in rejected
+    with self.assertRaises(core.BillFitError) as caught:
+AssertionError: BillFitError not raised
+
+======================================================================
+FAIL: test_json_and_quoted_csv_apply_the_same_energy_contract (test_usage_number_format.UsageNumberFormatTests.test_json_and_quoted_csv_apply_the_same_energy_contract) (value=',123', suffix='.json')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$WORKSPACE_ROOT\billfit-usage-numbers\plugins\billfit\tests\test_usage_number_format.py", line 74, in test_json_and_quoted_csv_apply_the_same_energy_contract
+    self.rejected('INVALID_USAGE_VALUE', lambda: self.parse(content, suffix))
+  File "$WORKSPACE_ROOT\billfit-usage-numbers\plugins\billfit\tests\test_usage_number_format.py", line 44, in rejected
+    with self.assertRaises(core.BillFitError) as caught:
+AssertionError: BillFitError not raised
+
+======================================================================
+FAIL: test_json_and_quoted_csv_apply_the_same_energy_contract (test_usage_number_format.UsageNumberFormatTests.test_json_and_quoted_csv_apply_the_same_energy_contract) (value=',123', suffix='.csv')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$WORKSPACE_ROOT\billfit-usage-numbers\plugins\billfit\tests\test_usage_number_format.py", line 74, in test_json_and_quoted_csv_apply_the_same_energy_contract
+    self.rejected('INVALID_USAGE_VALUE', lambda: self.parse(content, suffix))
+  File "$WORKSPACE_ROOT\billfit-usage-numbers\plugins\billfit\tests\test_usage_number_format.py", line 44, in rejected
+    with self.assertRaises(core.BillFitError) as caught:
+AssertionError: BillFitError not raised
+
+======================================================================
+FAIL: test_json_and_quoted_csv_apply_the_same_energy_contract (test_usage_number_format.UsageNumberFormatTests.test_json_and_quoted_csv_apply_the_same_energy_contract) (value='123,', suffix='.json')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$WORKSPACE_ROOT\billfit-usage-numbers\plugins\billfit\tests\test_usage_number_format.py", line 74, in test_json_and_quoted_csv_apply_the_same_energy_contract
+    self.rejected('INVALID_USAGE_VALUE', lambda: self.parse(content, suffix))
+  File "$WORKSPACE_ROOT\billfit-usage-numbers\plugins\billfit\tests\test_usage_number_format.py", line 44, in rejected
+    with self.assertRaises(core.BillFitError) as caught:
+AssertionError: BillFitError not raised
+
+======================================================================
+FAIL: test_json_and_quoted_csv_apply_the_same_energy_contract (test_usage_number_format.UsageNumberFormatTests.test_json_and_quoted_csv_apply_the_same_energy_contract) (value='123,', suffix='.csv')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$WORKSPACE_ROOT\billfit-usage-numbers\plugins\billfit\tests\test_usage_number_format.py", line 74, in test_json_and_quoted_csv_apply_the_same_energy_contract
+    self.rejected('INVALID_USAGE_VALUE', lambda: self.parse(content, suffix))
+  File "$WORKSPACE_ROOT\billfit-usage-numbers\plugins\billfit\tests\test_usage_number_format.py", line 44, in rejected
+    with self.assertRaises(core.BillFitError) as caught:
+AssertionError: BillFitError not raised
+
+======================================================================
+FAIL: test_json_and_quoted_csv_apply_the_same_energy_contract (test_usage_number_format.UsageNumberFormatTests.test_json_and_quoted_csv_apply_the_same_energy_contract) (value='1,234.5,6', suffix='.json')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$WORKSPACE_ROOT\billfit-usage-numbers\plugins\billfit\tests\test_usage_number_format.py", line 74, in test_json_and_quoted_csv_apply_the_same_energy_contract
+    self.rejected('INVALID_USAGE_VALUE', lambda: self.parse(content, suffix))
+  File "$WORKSPACE_ROOT\billfit-usage-numbers\plugins\billfit\tests\test_usage_number_format.py", line 44, in rejected
+    with self.assertRaises(core.BillFitError) as caught:
+AssertionError: BillFitError not raised
+
+======================================================================
+FAIL: test_json_and_quoted_csv_apply_the_same_energy_contract (test_usage_number_format.UsageNumberFormatTests.test_json_and_quoted_csv_apply_the_same_energy_contract) (value='1,234.5,6', suffix='.csv')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$WORKSPACE_ROOT\billfit-usage-numbers\plugins\billfit\tests\test_usage_number_format.py", line 74, in test_json_and_quoted_csv_apply_the_same_energy_contract
+    self.rejected('INVALID_USAGE_VALUE', lambda: self.parse(content, suffix))
+  File "$WORKSPACE_ROOT\billfit-usage-numbers\plugins\billfit\tests\test_usage_number_format.py", line 44, in rejected
+    with self.assertRaises(core.BillFitError) as caught:
+AssertionError: BillFitError not raised
+
+======================================================================
+FAIL: test_json_and_quoted_csv_apply_the_same_energy_contract (test_usage_number_format.UsageNumberFormatTests.test_json_and_quoted_csv_apply_the_same_energy_contract) (value='$1', suffix='.json')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$WORKSPACE_ROOT\billfit-usage-numbers\plugins\billfit\tests\test_usage_number_format.py", line 74, in test_json_and_quoted_csv_apply_the_same_energy_contract
+    self.rejected('INVALID_USAGE_VALUE', lambda: self.parse(content, suffix))
+  File "$WORKSPACE_ROOT\billfit-usage-numbers\plugins\billfit\tests\test_usage_number_format.py", line 44, in rejected
+    with self.assertRaises(core.BillFitError) as caught:
+AssertionError: BillFitError not raised
+
+======================================================================
+FAIL: test_json_and_quoted_csv_apply_the_same_energy_contract (test_usage_number_format.UsageNumberFormatTests.test_json_and_quoted_csv_apply_the_same_energy_contract) (value='$1', suffix='.csv')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$WORKSPACE_ROOT\billfit-usage-numbers\plugins\billfit\tests\test_usage_number_format.py", line 74, in test_json_and_quoted_csv_apply_the_same_energy_contract
+    self.rejected('INVALID_USAGE_VALUE', lambda: self.parse(content, suffix))
+  File "$WORKSPACE_ROOT\billfit-usage-numbers\plugins\billfit\tests\test_usage_number_format.py", line 44, in rejected
+    with self.assertRaises(core.BillFitError) as caught:
+AssertionError: BillFitError not raised
+
+======================================================================
+FAIL: test_json_and_quoted_csv_apply_the_same_energy_contract (test_usage_number_format.UsageNumberFormatTests.test_json_and_quoted_csv_apply_the_same_energy_contract) (value='1$2', suffix='.json')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$WORKSPACE_ROOT\billfit-usage-numbers\plugins\billfit\tests\test_usage_number_format.py", line 74, in test_json_and_quoted_csv_apply_the_same_energy_contract
+    self.rejected('INVALID_USAGE_VALUE', lambda: self.parse(content, suffix))
+  File "$WORKSPACE_ROOT\billfit-usage-numbers\plugins\billfit\tests\test_usage_number_format.py", line 44, in rejected
+    with self.assertRaises(core.BillFitError) as caught:
+AssertionError: BillFitError not raised
+
+======================================================================
+FAIL: test_json_and_quoted_csv_apply_the_same_energy_contract (test_usage_number_format.UsageNumberFormatTests.test_json_and_quoted_csv_apply_the_same_energy_contract) (value='1$2', suffix='.csv')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$WORKSPACE_ROOT\billfit-usage-numbers\plugins\billfit\tests\test_usage_number_format.py", line 74, in test_json_and_quoted_csv_apply_the_same_energy_contract
+    self.rejected('INVALID_USAGE_VALUE', lambda: self.parse(content, suffix))
+  File "$WORKSPACE_ROOT\billfit-usage-numbers\plugins\billfit\tests\test_usage_number_format.py", line 44, in rejected
+    with self.assertRaises(core.BillFitError) as caught:
+AssertionError: BillFitError not raised
+
+======================================================================
+FAIL: test_json_and_quoted_csv_apply_the_same_energy_contract (test_usage_number_format.UsageNumberFormatTests.test_json_and_quoted_csv_apply_the_same_energy_contract) (value='1_000', suffix='.json')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$WORKSPACE_ROOT\billfit-usage-numbers\plugins\billfit\tests\test_usage_number_format.py", line 74, in test_json_and_quoted_csv_apply_the_same_energy_contract
+    self.rejected('INVALID_USAGE_VALUE', lambda: self.parse(content, suffix))
+  File "$WORKSPACE_ROOT\billfit-usage-numbers\plugins\billfit\tests\test_usage_number_format.py", line 44, in rejected
+    with self.assertRaises(core.BillFitError) as caught:
+AssertionError: BillFitError not raised
+
+======================================================================
+FAIL: test_json_and_quoted_csv_apply_the_same_energy_contract (test_usage_number_format.UsageNumberFormatTests.test_json_and_quoted_csv_apply_the_same_energy_contract) (value='1_000', suffix='.csv')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$WORKSPACE_ROOT\billfit-usage-numbers\plugins\billfit\tests\test_usage_number_format.py", line 74, in test_json_and_quoted_csv_apply_the_same_energy_contract
+    self.rejected('INVALID_USAGE_VALUE', lambda: self.parse(content, suffix))
+  File "$WORKSPACE_ROOT\billfit-usage-numbers\plugins\billfit\tests\test_usage_number_format.py", line 44, in rejected
+    with self.assertRaises(core.BillFitError) as caught:
+AssertionError: BillFitError not raised
+
+======================================================================
+FAIL: test_json_and_quoted_csv_apply_the_same_energy_contract (test_usage_number_format.UsageNumberFormatTests.test_json_and_quoted_csv_apply_the_same_energy_contract) (value='1.234,56', suffix='.json')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$WORKSPACE_ROOT\billfit-usage-numbers\plugins\billfit\tests\test_usage_number_format.py", line 74, in test_json_and_quoted_csv_apply_the_same_energy_contract
+    self.rejected('INVALID_USAGE_VALUE', lambda: self.parse(content, suffix))
+  File "$WORKSPACE_ROOT\billfit-usage-numbers\plugins\billfit\tests\test_usage_number_format.py", line 44, in rejected
+    with self.assertRaises(core.BillFitError) as caught:
+AssertionError: BillFitError not raised
+
+======================================================================
+FAIL: test_json_and_quoted_csv_apply_the_same_energy_contract (test_usage_number_format.UsageNumberFormatTests.test_json_and_quoted_csv_apply_the_same_energy_contract) (value='1.234,56', suffix='.csv')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$WORKSPACE_ROOT\billfit-usage-numbers\plugins\billfit\tests\test_usage_number_format.py", line 74, in test_json_and_quoted_csv_apply_the_same_energy_contract
+    self.rejected('INVALID_USAGE_VALUE', lambda: self.parse(content, suffix))
+  File "$WORKSPACE_ROOT\billfit-usage-numbers\plugins\billfit\tests\test_usage_number_format.py", line 44, in rejected
+    with self.assertRaises(core.BillFitError) as caught:
+AssertionError: BillFitError not raised
+
+======================================================================
+FAIL: test_json_and_quoted_csv_apply_the_same_energy_contract (test_usage_number_format.UsageNumberFormatTests.test_json_and_quoted_csv_apply_the_same_energy_contract) (value='1e-400', suffix='.json')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$WORKSPACE_ROOT\billfit-usage-numbers\plugins\billfit\tests\test_usage_number_format.py", line 74, in test_json_and_quoted_csv_apply_the_same_energy_contract
+    self.rejected('INVALID_USAGE_VALUE', lambda: self.parse(content, suffix))
+  File "$WORKSPACE_ROOT\billfit-usage-numbers\plugins\billfit\tests\test_usage_number_format.py", line 44, in rejected
+    with self.assertRaises(core.BillFitError) as caught:
+AssertionError: BillFitError not raised
+
+======================================================================
+FAIL: test_json_and_quoted_csv_apply_the_same_energy_contract (test_usage_number_format.UsageNumberFormatTests.test_json_and_quoted_csv_apply_the_same_energy_contract) (value='1e-400', suffix='.csv')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$WORKSPACE_ROOT\billfit-usage-numbers\plugins\billfit\tests\test_usage_number_format.py", line 74, in test_json_and_quoted_csv_apply_the_same_energy_contract
+    self.rejected('INVALID_USAGE_VALUE', lambda: self.parse(content, suffix))
+  File "$WORKSPACE_ROOT\billfit-usage-numbers\plugins\billfit\tests\test_usage_number_format.py", line 44, in rejected
+    with self.assertRaises(core.BillFitError) as caught:
+AssertionError: BillFitError not raised
+
+======================================================================
+FAIL: test_json_and_quoted_csv_apply_the_same_energy_contract (test_usage_number_format.UsageNumberFormatTests.test_json_and_quoted_csv_apply_the_same_energy_contract) (value='(1,23)', suffix='.json')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$WORKSPACE_ROOT\billfit-usage-numbers\plugins\billfit\tests\test_usage_number_format.py", line 74, in test_json_and_quoted_csv_apply_the_same_energy_contract
+    self.rejected('INVALID_USAGE_VALUE', lambda: self.parse(content, suffix))
+  File "$WORKSPACE_ROOT\billfit-usage-numbers\plugins\billfit\tests\test_usage_number_format.py", line 44, in rejected
+    with self.assertRaises(core.BillFitError) as caught:
+AssertionError: BillFitError not raised
+
+======================================================================
+FAIL: test_json_and_quoted_csv_apply_the_same_energy_contract (test_usage_number_format.UsageNumberFormatTests.test_json_and_quoted_csv_apply_the_same_energy_contract) (value='(1,23)', suffix='.csv')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$WORKSPACE_ROOT\billfit-usage-numbers\plugins\billfit\tests\test_usage_number_format.py", line 74, in test_json_and_quoted_csv_apply_the_same_energy_contract
+    self.rejected('INVALID_USAGE_VALUE', lambda: self.parse(content, suffix))
+  File "$WORKSPACE_ROOT\billfit-usage-numbers\plugins\billfit\tests\test_usage_number_format.py", line 44, in rejected
+    with self.assertRaises(core.BillFitError) as caught:
+AssertionError: BillFitError not raised
+
+======================================================================
+FAIL: test_rejected_input_cannot_reach_comparison_or_bill_reconciliation (test_usage_number_format.UsageNumberFormatTests.test_rejected_input_cannot_reach_comparison_or_bill_reconciliation)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$WORKSPACE_ROOT\billfit-usage-numbers\plugins\billfit\tests\test_usage_number_format.py", line 103, in test_rejected_input_cannot_reach_comparison_or_bill_reconciliation
+    self.rejected('INVALID_USAGE_VALUE', lambda: core.compare_rate_plans(
+  File "$WORKSPACE_ROOT\billfit-usage-numbers\plugins\billfit\tests\test_usage_number_format.py", line 44, in rejected
+    with self.assertRaises(core.BillFitError) as caught:
+AssertionError: BillFitError not raised
+
+======================================================================
+FAIL: test_xml_energy_and_seconds_cannot_remove_punctuation (test_usage_number_format.UsageNumberFormatTests.test_xml_energy_and_seconds_cannot_remove_punctuation) (energy='1,23')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$WORKSPACE_ROOT\billfit-usage-numbers\plugins\billfit\tests\test_usage_number_format.py", line 98, in test_xml_energy_and_seconds_cannot_remove_punctuation
+    self.rejected('INVALID_USAGE_VALUE', lambda: self.parse(xml(value), '.xml'))
+  File "$WORKSPACE_ROOT\billfit-usage-numbers\plugins\billfit\tests\test_usage_number_format.py", line 44, in rejected
+    with self.assertRaises(core.BillFitError) as caught:
+AssertionError: BillFitError not raised
+
+======================================================================
+FAIL: test_xml_energy_and_seconds_cannot_remove_punctuation (test_usage_number_format.UsageNumberFormatTests.test_xml_energy_and_seconds_cannot_remove_punctuation) (energy='$250')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$WORKSPACE_ROOT\billfit-usage-numbers\plugins\billfit\tests\test_usage_number_format.py", line 98, in test_xml_energy_and_seconds_cannot_remove_punctuation
+    self.rejected('INVALID_USAGE_VALUE', lambda: self.parse(xml(value), '.xml'))
+  File "$WORKSPACE_ROOT\billfit-usage-numbers\plugins\billfit\tests\test_usage_number_format.py", line 44, in rejected
+    with self.assertRaises(core.BillFitError) as caught:
+AssertionError: BillFitError not raised
+
+======================================================================
+FAIL: test_xml_energy_and_seconds_cannot_remove_punctuation (test_usage_number_format.UsageNumberFormatTests.test_xml_energy_and_seconds_cannot_remove_punctuation) (energy='2_50')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$WORKSPACE_ROOT\billfit-usage-numbers\plugins\billfit\tests\test_usage_number_format.py", line 98, in test_xml_energy_and_seconds_cannot_remove_punctuation
+    self.rejected('INVALID_USAGE_VALUE', lambda: self.parse(xml(value), '.xml'))
+  File "$WORKSPACE_ROOT\billfit-usage-numbers\plugins\billfit\tests\test_usage_number_format.py", line 44, in rejected
+    with self.assertRaises(core.BillFitError) as caught:
+AssertionError: BillFitError not raised
+
+======================================================================
+FAIL: test_xml_energy_and_seconds_cannot_remove_punctuation (test_usage_number_format.UsageNumberFormatTests.test_xml_energy_and_seconds_cannot_remove_punctuation) (energy='1e-400')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$WORKSPACE_ROOT\billfit-usage-numbers\plugins\billfit\tests\test_usage_number_format.py", line 98, in test_xml_energy_and_seconds_cannot_remove_punctuation
+    self.rejected('INVALID_USAGE_VALUE', lambda: self.parse(xml(value), '.xml'))
+  File "$WORKSPACE_ROOT\billfit-usage-numbers\plugins\billfit\tests\test_usage_number_format.py", line 44, in rejected
+    with self.assertRaises(core.BillFitError) as caught:
+AssertionError: BillFitError not raised
+
+======================================================================
+FAIL: test_xml_energy_and_seconds_cannot_remove_punctuation (test_usage_number_format.UsageNumberFormatTests.test_xml_energy_and_seconds_cannot_remove_punctuation)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$WORKSPACE_ROOT\billfit-usage-numbers\plugins\billfit\tests\test_usage_number_format.py", line 99, in test_xml_energy_and_seconds_cannot_remove_punctuation
+    self.rejected('INVALID_INTERVAL_DURATION', lambda: self.parse(xml(seconds='9,00'), '.xml'))
+  File "$WORKSPACE_ROOT\billfit-usage-numbers\plugins\billfit\tests\test_usage_number_format.py", line 44, in rejected
+    with self.assertRaises(core.BillFitError) as caught:
+AssertionError: BillFitError not raised
+
+----------------------------------------------------------------------
+Ran 9 tests in 4.661s
+
+FAILED (failures=48, errors=2)

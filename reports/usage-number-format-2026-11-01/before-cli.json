@@ -1,0 +1,3875 @@
+{
+  "observed_at_utc": "2026-11-01T10:11:17.977831+00:00",
+  "checkout_commit": "d9d2a079312cf9948b4f5fe4084629ebf41f5cf2",
+  "runtime_sha256": "4c58f0cd11fe76eb4e3553567fb57e30705f6e5a279f84cb79138ff47dcdffcb",
+  "fixture_sha256": "e4af2f2ab7d86647bc85035068a4dce47355a40b3cfac97c3ce93343952247ad",
+  "evaluator_sha256": "496c219b21274194b5d736431fc536e6080b580434f62fd1db1c4adceb7c82ed",
+  "environment": {
+    "python": "3.11.3",
+    "platform": "win32"
+  },
+  "input_kind": "synthetic",
+  "new_model_calls": 0,
+  "summary": {
+    "requests": 90,
+    "passed": 49,
+    "invalid_rejected_correctly": 12,
+    "invalid_n": 53,
+    "valid_preserved_correctly": 37,
+    "valid_n": 37,
+    "elapsed_seconds": 25.475735599175096
+  },
+  "observations": [
+    {
+      "id": "energy-reject-json-0",
+      "source_sha256": "c94d8683ac6926e0e81fc45e20cc1fd2d92dc1019c994c2a2408a83280a40dcd",
+      "expected": {
+        "error": "INVALID_USAGE_VALUE"
+      },
+      "exit": 0,
+      "elapsed_seconds": 0.29281759983859956,
+      "result": {
+        "status": "parsed",
+        "source": "$SYNTHETIC_FILE",
+        "summary": {
+          "interval_count": 1,
+          "start": "2026-07-06T12:00:00-07:00",
+          "end": "2026-07-06T13:00:00-07:00",
+          "span_days": 0.042,
+          "billing_days": 1,
+          "total_kwh": 123.0,
+          "median_interval_minutes": 60.0,
+          "max_interval_minutes": 60.0,
+          "coverage_ratio": 1.0,
+          "elapsed_minutes": 60.0,
+          "gap_minutes": 0,
+          "negative_interval_count": 0,
+          "quality": "limited"
+        },
+        "warnings": [],
+        "preview": [
+          {
+            "start": "2026-07-06T12:00:00-07:00",
+            "duration_minutes": 60.0,
+            "kwh": 123.0
+          }
+        ],
+        "next_step": "Call billfit_compare_rate_plans with the same usage_file.",
+        "human_gates": []
+      },
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "checks": {
+        "source_unchanged": true,
+        "no_input_in_error": true,
+        "reject_without_values": false
+      },
+      "passed": false
+    },
+    {
+      "id": "energy-reject-json-1",
+      "source_sha256": "105b564626144ab73276283c0ebaf3f9ca82aa3b492568cf0e71336221c4dbe7",
+      "expected": {
+        "error": "INVALID_USAGE_VALUE"
+      },
+      "exit": 0,
+      "elapsed_seconds": 0.2823614999651909,
+      "result": {
+        "status": "parsed",
+        "source": "$SYNTHETIC_FILE",
+        "summary": {
+          "interval_count": 1,
+          "start": "2026-07-06T12:00:00-07:00",
+          "end": "2026-07-06T13:00:00-07:00",
+          "span_days": 0.042,
+          "billing_days": 1,
+          "total_kwh": 1234.0,
+          "median_interval_minutes": 60.0,
+          "max_interval_minutes": 60.0,
+          "coverage_ratio": 1.0,
+          "elapsed_minutes": 60.0,
+          "gap_minutes": 0,
+          "negative_interval_count": 0,
+          "quality": "limited"
+        },
+        "warnings": [],
+        "preview": [
+          {
+            "start": "2026-07-06T12:00:00-07:00",
+            "duration_minutes": 60.0,
+            "kwh": 1234.0
+          }
+        ],
+        "next_step": "Call billfit_compare_rate_plans with the same usage_file.",
+        "human_gates": []
+      },
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "checks": {
+        "source_unchanged": true,
+        "no_input_in_error": true,
+        "reject_without_values": false
+      },
+      "passed": false
+    },
+    {
+      "id": "energy-reject-json-2",
+      "source_sha256": "2bf99e296879e45003dd5e2a93c5a9316f482dc7bcfbdd0686950057a219e13a",
+      "expected": {
+        "error": "INVALID_USAGE_VALUE"
+      },
+      "exit": 0,
+      "elapsed_seconds": 0.2929983001668006,
+      "result": {
+        "status": "parsed",
+        "source": "$SYNTHETIC_FILE",
+        "summary": {
+          "interval_count": 1,
+          "start": "2026-07-06T12:00:00-07:00",
+          "end": "2026-07-06T13:00:00-07:00",
+          "span_days": 0.042,
+          "billing_days": 1,
+          "total_kwh": 123.0,
+          "median_interval_minutes": 60.0,
+          "max_interval_minutes": 60.0,
+          "coverage_ratio": 1.0,
+          "elapsed_minutes": 60.0,
+          "gap_minutes": 0,
+          "negative_interval_count": 0,
+          "quality": "limited"
+        },
+        "warnings": [],
+        "preview": [
+          {
+            "start": "2026-07-06T12:00:00-07:00",
+            "duration_minutes": 60.0,
+            "kwh": 123.0
+          }
+        ],
+        "next_step": "Call billfit_compare_rate_plans with the same usage_file.",
+        "human_gates": []
+      },
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "checks": {
+        "source_unchanged": true,
+        "no_input_in_error": true,
+        "reject_without_values": false
+      },
+      "passed": false
+    },
+    {
+      "id": "energy-reject-json-3",
+      "source_sha256": "7f68c8c8d7465c356e4d0f524ec6e8194e3e0c604ceb5b74d5fab178a670d656",
+      "expected": {
+        "error": "INVALID_USAGE_VALUE"
+      },
+      "exit": 0,
+      "elapsed_seconds": 0.2868707999587059,
+      "result": {
+        "status": "parsed",
+        "source": "$SYNTHETIC_FILE",
+        "summary": {
+          "interval_count": 1,
+          "start": "2026-07-06T12:00:00-07:00",
+          "end": "2026-07-06T13:00:00-07:00",
+          "span_days": 0.042,
+          "billing_days": 1,
+          "total_kwh": 123.0,
+          "median_interval_minutes": 60.0,
+          "max_interval_minutes": 60.0,
+          "coverage_ratio": 1.0,
+          "elapsed_minutes": 60.0,
+          "gap_minutes": 0,
+          "negative_interval_count": 0,
+          "quality": "limited"
+        },
+        "warnings": [],
+        "preview": [
+          {
+            "start": "2026-07-06T12:00:00-07:00",
+            "duration_minutes": 60.0,
+            "kwh": 123.0
+          }
+        ],
+        "next_step": "Call billfit_compare_rate_plans with the same usage_file.",
+        "human_gates": []
+      },
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "checks": {
+        "source_unchanged": true,
+        "no_input_in_error": true,
+        "reject_without_values": false
+      },
+      "passed": false
+    },
+    {
+      "id": "energy-reject-json-4",
+      "source_sha256": "594aaea05309fc4ce5f8c6248dcb5948dfcaef5d98332821c57a0e89b00e4676",
+      "expected": {
+        "error": "INVALID_USAGE_VALUE"
+      },
+      "exit": 0,
+      "elapsed_seconds": 0.28280399995855987,
+      "result": {
+        "status": "parsed",
+        "source": "$SYNTHETIC_FILE",
+        "summary": {
+          "interval_count": 1,
+          "start": "2026-07-06T12:00:00-07:00",
+          "end": "2026-07-06T13:00:00-07:00",
+          "span_days": 0.042,
+          "billing_days": 1,
+          "total_kwh": 1234.56,
+          "median_interval_minutes": 60.0,
+          "max_interval_minutes": 60.0,
+          "coverage_ratio": 1.0,
+          "elapsed_minutes": 60.0,
+          "gap_minutes": 0,
+          "negative_interval_count": 0,
+          "quality": "limited"
+        },
+        "warnings": [],
+        "preview": [
+          {
+            "start": "2026-07-06T12:00:00-07:00",
+            "duration_minutes": 60.0,
+            "kwh": 1234.56
+          }
+        ],
+        "next_step": "Call billfit_compare_rate_plans with the same usage_file.",
+        "human_gates": []
+      },
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "checks": {
+        "source_unchanged": true,
+        "no_input_in_error": true,
+        "reject_without_values": false
+      },
+      "passed": false
+    },
+    {
+      "id": "energy-reject-json-5",
+      "source_sha256": "6b2005e569412f0659c14293995a47fe43fdac19541f4bf84c28432fc7eca964",
+      "expected": {
+        "error": "INVALID_USAGE_VALUE"
+      },
+      "exit": 0,
+      "elapsed_seconds": 0.28741910005919635,
+      "result": {
+        "status": "parsed",
+        "source": "$SYNTHETIC_FILE",
+        "summary": {
+          "interval_count": 1,
+          "start": "2026-07-06T12:00:00-07:00",
+          "end": "2026-07-06T13:00:00-07:00",
+          "span_days": 0.042,
+          "billing_days": 1,
+          "total_kwh": 1.0,
+          "median_interval_minutes": 60.0,
+          "max_interval_minutes": 60.0,
+          "coverage_ratio": 1.0,
+          "elapsed_minutes": 60.0,
+          "gap_minutes": 0,
+          "negative_interval_count": 0,
+          "quality": "limited"
+        },
+        "warnings": [],
+        "preview": [
+          {
+            "start": "2026-07-06T12:00:00-07:00",
+            "duration_minutes": 60.0,
+            "kwh": 1.0
+          }
+        ],
+        "next_step": "Call billfit_compare_rate_plans with the same usage_file.",
+        "human_gates": []
+      },
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "checks": {
+        "source_unchanged": true,
+        "no_input_in_error": true,
+        "reject_without_values": false
+      },
+      "passed": false
+    },
+    {
+      "id": "energy-reject-json-6",
+      "source_sha256": "4d8aa561e24230489020ad51d8f1c6393ac61ecfcb2ff02ab7fd09e93b893f0e",
+      "expected": {
+        "error": "INVALID_USAGE_VALUE"
+      },
+      "exit": 0,
+      "elapsed_seconds": 0.29172719991765916,
+      "result": {
+        "status": "parsed",
+        "source": "$SYNTHETIC_FILE",
+        "summary": {
+          "interval_count": 1,
+          "start": "2026-07-06T12:00:00-07:00",
+          "end": "2026-07-06T13:00:00-07:00",
+          "span_days": 0.042,
+          "billing_days": 1,
+          "total_kwh": 12.0,
+          "median_interval_minutes": 60.0,
+          "max_interval_minutes": 60.0,
+          "coverage_ratio": 1.0,
+          "elapsed_minutes": 60.0,
+          "gap_minutes": 0,
+          "negative_interval_count": 0,
+          "quality": "limited"
+        },
+        "warnings": [],
+        "preview": [
+          {
+            "start": "2026-07-06T12:00:00-07:00",
+            "duration_minutes": 60.0,
+            "kwh": 12.0
+          }
+        ],
+        "next_step": "Call billfit_compare_rate_plans with the same usage_file.",
+        "human_gates": []
+      },
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "checks": {
+        "source_unchanged": true,
+        "no_input_in_error": true,
+        "reject_without_values": false
+      },
+      "passed": false
+    },
+    {
+      "id": "energy-reject-json-7",
+      "source_sha256": "30d5a2fe2d0af52db76a4c6871d4de5f7feede0d260385489d429f230df8730c",
+      "expected": {
+        "error": "INVALID_USAGE_VALUE"
+      },
+      "exit": 0,
+      "elapsed_seconds": 0.2840824001468718,
+      "result": {
+        "status": "parsed",
+        "source": "$SYNTHETIC_FILE",
+        "summary": {
+          "interval_count": 1,
+          "start": "2026-07-06T12:00:00-07:00",
+          "end": "2026-07-06T13:00:00-07:00",
+          "span_days": 0.042,
+          "billing_days": 1,
+          "total_kwh": 1000.0,
+          "median_interval_minutes": 60.0,
+          "max_interval_minutes": 60.0,
+          "coverage_ratio": 1.0,
+          "elapsed_minutes": 60.0,
+          "gap_minutes": 0,
+          "negative_interval_count": 0,
+          "quality": "limited"
+        },
+        "warnings": [],
+        "preview": [
+          {
+            "start": "2026-07-06T12:00:00-07:00",
+            "duration_minutes": 60.0,
+            "kwh": 1000.0
+          }
+        ],
+        "next_step": "Call billfit_compare_rate_plans with the same usage_file.",
+        "human_gates": []
+      },
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "checks": {
+        "source_unchanged": true,
+        "no_input_in_error": true,
+        "reject_without_values": false
+      },
+      "passed": false
+    },
+    {
+      "id": "energy-reject-json-8",
+      "source_sha256": "eaeec647a793fd9e24f6acaa3c8f32072c2cfdc21ff1f2f58ada9a615e4b12ad",
+      "expected": {
+        "error": "INVALID_USAGE_VALUE"
+      },
+      "exit": 2,
+      "elapsed_seconds": 0.28073689993470907,
+      "result": {
+        "status": "error",
+        "error": {
+          "code": "INVALID_USAGE_VALUE",
+          "message": "A supplied usage or duration is not a finite number.",
+          "details": {}
+        }
+      },
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "checks": {
+        "source_unchanged": true,
+        "no_input_in_error": true,
+        "reject_without_values": true
+      },
+      "passed": true
+    },
+    {
+      "id": "energy-reject-json-9",
+      "source_sha256": "e243accc122f548877d1a7cc80fe3f4d529ca86ab72bd6e2efcd902904fdbe45",
+      "expected": {
+        "error": "INVALID_USAGE_VALUE"
+      },
+      "exit": 0,
+      "elapsed_seconds": 0.29480129992589355,
+      "result": {
+        "status": "parsed",
+        "source": "$SYNTHETIC_FILE",
+        "summary": {
+          "interval_count": 1,
+          "start": "2026-07-06T12:00:00-07:00",
+          "end": "2026-07-06T13:00:00-07:00",
+          "span_days": 0.042,
+          "billing_days": 1,
+          "total_kwh": 1.23456,
+          "median_interval_minutes": 60.0,
+          "max_interval_minutes": 60.0,
+          "coverage_ratio": 1.0,
+          "elapsed_minutes": 60.0,
+          "gap_minutes": 0,
+          "negative_interval_count": 0,
+          "quality": "limited"
+        },
+        "warnings": [],
+        "preview": [
+          {
+            "start": "2026-07-06T12:00:00-07:00",
+            "duration_minutes": 60.0,
+            "kwh": 1.23456
+          }
+        ],
+        "next_step": "Call billfit_compare_rate_plans with the same usage_file.",
+        "human_gates": []
+      },
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "checks": {
+        "source_unchanged": true,
+        "no_input_in_error": true,
+        "reject_without_values": false
+      },
+      "passed": false
+    },
+    {
+      "id": "energy-reject-json-10",
+      "source_sha256": "ca654dd1a80cb1715c1970a4c0955386f029b0a7b6677ca45d604e32d2a32160",
+      "expected": {
+        "error": "INVALID_USAGE_VALUE"
+      },
+      "exit": 0,
+      "elapsed_seconds": 0.28186820005066693,
+      "result": {
+        "status": "parsed",
+        "source": "$SYNTHETIC_FILE",
+        "summary": {
+          "interval_count": 1,
+          "start": "2026-07-06T12:00:00-07:00",
+          "end": "2026-07-06T13:00:00-07:00",
+          "span_days": 0.042,
+          "billing_days": 1,
+          "total_kwh": 0.0,
+          "median_interval_minutes": 60.0,
+          "max_interval_minutes": 60.0,
+          "coverage_ratio": 1.0,
+          "elapsed_minutes": 60.0,
+          "gap_minutes": 0,
+          "negative_interval_count": 0,
+          "quality": "limited"
+        },
+        "warnings": [],
+        "preview": [
+          {
+            "start": "2026-07-06T12:00:00-07:00",
+            "duration_minutes": 60.0,
+            "kwh": 0.0
+          }
+        ],
+        "next_step": "Call billfit_compare_rate_plans with the same usage_file.",
+        "human_gates": []
+      },
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "checks": {
+        "source_unchanged": true,
+        "no_input_in_error": true,
+        "reject_without_values": false
+      },
+      "passed": false
+    },
+    {
+      "id": "energy-reject-json-11",
+      "source_sha256": "5e265a8d08598675e7abeaa0f9e5802c90de8f5d0b3d32b5af0b94ae997dbf87",
+      "expected": {
+        "error": "INVALID_USAGE_VALUE"
+      },
+      "exit": 0,
+      "elapsed_seconds": 0.28192929993383586,
+      "result": {
+        "status": "parsed",
+        "source": "$SYNTHETIC_FILE",
+        "summary": {
+          "interval_count": 1,
+          "start": "2026-07-06T12:00:00-07:00",
+          "end": "2026-07-06T13:00:00-07:00",
+          "span_days": 0.042,
+          "billing_days": 1,
+          "total_kwh": -123.0,
+          "median_interval_minutes": 60.0,
+          "max_interval_minutes": 60.0,
+          "coverage_ratio": 1.0,
+          "elapsed_minutes": 60.0,
+          "gap_minutes": 0,
+          "negative_interval_count": 1,
+          "quality": "unsupported_net_export"
+        },
+        "warnings": [
+          "Negative usage indicates export or corrections; solar/net export is outside the MVP scope."
+        ],
+        "preview": [
+          {
+            "start": "2026-07-06T12:00:00-07:00",
+            "duration_minutes": 60.0,
+            "kwh": -123.0
+          }
+        ],
+        "next_step": "Call billfit_compare_rate_plans with the same usage_file.",
+        "human_gates": []
+      },
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "checks": {
+        "source_unchanged": true,
+        "no_input_in_error": true,
+        "reject_without_values": false
+      },
+      "passed": false
+    },
+    {
+      "id": "energy-reject-json-12",
+      "source_sha256": "364d0454a8866afaae9050f4da80f71f929a6f7f4c02a40049891be23fe48ca1",
+      "expected": {
+        "error": "INVALID_USAGE_VALUE"
+      },
+      "exit": 2,
+      "elapsed_seconds": 0.2963578999042511,
+      "result": {
+        "status": "error",
+        "error": {
+          "code": "INVALID_USAGE_VALUE",
+          "message": "A supplied usage or duration is not a finite number.",
+          "details": {}
+        }
+      },
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "checks": {
+        "source_unchanged": true,
+        "no_input_in_error": true,
+        "reject_without_values": true
+      },
+      "passed": true
+    },
+    {
+      "id": "energy-reject-json-13",
+      "source_sha256": "370359c04f4f3398c021a7148b259b4f51d423313d88a885b58713824f9b6a9f",
+      "expected": {
+        "error": "INVALID_USAGE_VALUE"
+      },
+      "exit": 2,
+      "elapsed_seconds": 0.2810944998636842,
+      "result": {
+        "status": "error",
+        "error": {
+          "code": "INVALID_USAGE_VALUE",
+          "message": "A supplied usage or duration is not a finite number.",
+          "details": {}
+        }
+      },
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "checks": {
+        "source_unchanged": true,
+        "no_input_in_error": true,
+        "reject_without_values": true
+      },
+      "passed": true
+    },
+    {
+      "id": "energy-reject-json-14",
+      "source_sha256": "73f92f0e034e68458a8d8eb85b3c5e527b2c112b923e49604d6f334bcfe3bb48",
+      "expected": {
+        "error": "INVALID_USAGE_VALUE"
+      },
+      "exit": 2,
+      "elapsed_seconds": 0.2867341998498887,
+      "result": {
+        "status": "error",
+        "error": {
+          "code": "INVALID_USAGE_VALUE",
+          "message": "Boolean values are not numeric usage or durations.",
+          "details": {}
+        }
+      },
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "checks": {
+        "source_unchanged": true,
+        "no_input_in_error": true,
+        "reject_without_values": true
+      },
+      "passed": true
+    },
+    {
+      "id": "energy-reject-json-15",
+      "source_sha256": "b8f151019c77a3118cf2690d5f0d7205175b42ac1e76d4c1fbf5d484c967b4c7",
+      "expected": {
+        "error": "INVALID_USAGE_VALUE"
+      },
+      "exit": 2,
+      "elapsed_seconds": 0.29344729986041784,
+      "result": {
+        "status": "error",
+        "error": {
+          "code": "INVALID_USAGE_VALUE",
+          "message": "A supplied usage or duration is not a finite number.",
+          "details": {}
+        }
+      },
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "checks": {
+        "source_unchanged": true,
+        "no_input_in_error": true,
+        "reject_without_values": true
+      },
+      "passed": true
+    },
+    {
+      "id": "energy-accept-json-0",
+      "source_sha256": "5f2594868fa019bbab2a629afc66a8154a804859a41efaa75eded676c22978a4",
+      "expected": {
+        "kwh": 0,
+        "minutes": 60
+      },
+      "exit": 0,
+      "elapsed_seconds": 0.29198429989628494,
+      "result": {
+        "status": "parsed",
+        "source": "$SYNTHETIC_FILE",
+        "summary": {
+          "interval_count": 1,
+          "start": "2026-07-06T12:00:00-07:00",
+          "end": "2026-07-06T13:00:00-07:00",
+          "span_days": 0.042,
+          "billing_days": 1,
+          "total_kwh": 0.0,
+          "median_interval_minutes": 60.0,
+          "max_interval_minutes": 60.0,
+          "coverage_ratio": 1.0,
+          "elapsed_minutes": 60.0,
+          "gap_minutes": 0,
+          "negative_interval_count": 0,
+          "quality": "limited"
+        },
+        "warnings": [],
+        "preview": [
+          {
+            "start": "2026-07-06T12:00:00-07:00",
+            "duration_minutes": 60.0,
+            "kwh": 0.0
+          }
+        ],
+        "next_step": "Call billfit_compare_rate_plans with the same usage_file.",
+        "human_gates": []
+      },
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "checks": {
+        "source_unchanged": true,
+        "no_input_in_error": true,
+        "preserved_values": true
+      },
+      "passed": true
+    },
+    {
+      "id": "energy-accept-json-1",
+      "source_sha256": "474f34b37bd77f8139261691c07613332b40732c0938ad1aa63ad9ac6396208e",
+      "expected": {
+        "kwh": 1.25,
+        "minutes": 60
+      },
+      "exit": 0,
+      "elapsed_seconds": 0.2904640999622643,
+      "result": {
+        "status": "parsed",
+        "source": "$SYNTHETIC_FILE",
+        "summary": {
+          "interval_count": 1,
+          "start": "2026-07-06T12:00:00-07:00",
+          "end": "2026-07-06T13:00:00-07:00",
+          "span_days": 0.042,
+          "billing_days": 1,
+          "total_kwh": 1.25,
+          "median_interval_minutes": 60.0,
+          "max_interval_minutes": 60.0,
+          "coverage_ratio": 1.0,
+          "elapsed_minutes": 60.0,
+          "gap_minutes": 0,
+          "negative_interval_count": 0,
+          "quality": "limited"
+        },
+        "warnings": [],
+        "preview": [
+          {
+            "start": "2026-07-06T12:00:00-07:00",
+            "duration_minutes": 60.0,
+            "kwh": 1.25
+          }
+        ],
+        "next_step": "Call billfit_compare_rate_plans with the same usage_file.",
+        "human_gates": []
+      },
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "checks": {
+        "source_unchanged": true,
+        "no_input_in_error": true,
+        "preserved_values": true
+      },
+      "passed": true
+    },
+    {
+      "id": "energy-accept-json-2",
+      "source_sha256": "209612d07c5d352a3561565e84c76d093593ca5adfdf2c225be73b3097980e57",
+      "expected": {
+        "kwh": 1.25,
+        "minutes": 60
+      },
+      "exit": 0,
+      "elapsed_seconds": 0.2785506001673639,
+      "result": {
+        "status": "parsed",
+        "source": "$SYNTHETIC_FILE",
+        "summary": {
+          "interval_count": 1,
+          "start": "2026-07-06T12:00:00-07:00",
+          "end": "2026-07-06T13:00:00-07:00",
+          "span_days": 0.042,
+          "billing_days": 1,
+          "total_kwh": 1.25,
+          "median_interval_minutes": 60.0,
+          "max_interval_minutes": 60.0,
+          "coverage_ratio": 1.0,
+          "elapsed_minutes": 60.0,
+          "gap_minutes": 0,
+          "negative_interval_count": 0,
+          "quality": "limited"
+        },
+        "warnings": [],
+        "preview": [
+          {
+            "start": "2026-07-06T12:00:00-07:00",
+            "duration_minutes": 60.0,
+            "kwh": 1.25
+          }
+        ],
+        "next_step": "Call billfit_compare_rate_plans with the same usage_file.",
+        "human_gates": []
+      },
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "checks": {
+        "source_unchanged": true,
+        "no_input_in_error": true,
+        "preserved_values": true
+      },
+      "passed": true
+    },
+    {
+      "id": "energy-accept-json-3",
+      "source_sha256": "d0dc52a7810fcc7919b952131162db30bb7a26b0b1aed6ae3a4d3b384616e960",
+      "expected": {
+        "kwh": 1.25,
+        "minutes": 60
+      },
+      "exit": 0,
+      "elapsed_seconds": 0.28679420007392764,
+      "result": {
+        "status": "parsed",
+        "source": "$SYNTHETIC_FILE",
+        "summary": {
+          "interval_count": 1,
+          "start": "2026-07-06T12:00:00-07:00",
+          "end": "2026-07-06T13:00:00-07:00",
+          "span_days": 0.042,
+          "billing_days": 1,
+          "total_kwh": 1.25,
+          "median_interval_minutes": 60.0,
+          "max_interval_minutes": 60.0,
+          "coverage_ratio": 1.0,
+          "elapsed_minutes": 60.0,
+          "gap_minutes": 0,
+          "negative_interval_count": 0,
+          "quality": "limited"
+        },
+        "warnings": [],
+        "preview": [
+          {
+            "start": "2026-07-06T12:00:00-07:00",
+            "duration_minutes": 60.0,
+            "kwh": 1.25
+          }
+        ],
+        "next_step": "Call billfit_compare_rate_plans with the same usage_file.",
+        "human_gates": []
+      },
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "checks": {
+        "source_unchanged": true,
+        "no_input_in_error": true,
+        "preserved_values": true
+      },
+      "passed": true
+    },
+    {
+      "id": "energy-accept-json-4",
+      "source_sha256": "68038e2367407b73e3dbc3e7ba4292f0de6af3213088e6463b61b1f2a3900fcc",
+      "expected": {
+        "kwh": 1.25,
+        "minutes": 60
+      },
+      "exit": 0,
+      "elapsed_seconds": 0.2853697999380529,
+      "result": {
+        "status": "parsed",
+        "source": "$SYNTHETIC_FILE",
+        "summary": {
+          "interval_count": 1,
+          "start": "2026-07-06T12:00:00-07:00",
+          "end": "2026-07-06T13:00:00-07:00",
+          "span_days": 0.042,
+          "billing_days": 1,
+          "total_kwh": 1.25,
+          "median_interval_minutes": 60.0,
+          "max_interval_minutes": 60.0,
+          "coverage_ratio": 1.0,
+          "elapsed_minutes": 60.0,
+          "gap_minutes": 0,
+          "negative_interval_count": 0,
+          "quality": "limited"
+        },
+        "warnings": [],
+        "preview": [
+          {
+            "start": "2026-07-06T12:00:00-07:00",
+            "duration_minutes": 60.0,
+            "kwh": 1.25
+          }
+        ],
+        "next_step": "Call billfit_compare_rate_plans with the same usage_file.",
+        "human_gates": []
+      },
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "checks": {
+        "source_unchanged": true,
+        "no_input_in_error": true,
+        "preserved_values": true
+      },
+      "passed": true
+    },
+    {
+      "id": "energy-accept-json-5",
+      "source_sha256": "586f0715f11163fd141097f522fd5cb85913683ad32024f9693061d45d9435c6",
+      "expected": {
+        "kwh": 0.25,
+        "minutes": 60
+      },
+      "exit": 0,
+      "elapsed_seconds": 0.2809981999453157,
+      "result": {
+        "status": "parsed",
+        "source": "$SYNTHETIC_FILE",
+        "summary": {
+          "interval_count": 1,
+          "start": "2026-07-06T12:00:00-07:00",
+          "end": "2026-07-06T13:00:00-07:00",
+          "span_days": 0.042,
+          "billing_days": 1,
+          "total_kwh": 0.25,
+          "median_interval_minutes": 60.0,
+          "max_interval_minutes": 60.0,
+          "coverage_ratio": 1.0,
+          "elapsed_minutes": 60.0,
+          "gap_minutes": 0,
+          "negative_interval_count": 0,
+          "quality": "limited"
+        },
+        "warnings": [],
+        "preview": [
+          {
+            "start": "2026-07-06T12:00:00-07:00",
+            "duration_minutes": 60.0,
+            "kwh": 0.25
+          }
+        ],
+        "next_step": "Call billfit_compare_rate_plans with the same usage_file.",
+        "human_gates": []
+      },
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "checks": {
+        "source_unchanged": true,
+        "no_input_in_error": true,
+        "preserved_values": true
+      },
+      "passed": true
+    },
+    {
+      "id": "energy-accept-json-6",
+      "source_sha256": "d8184f097aa75a6e0ef4fab8e44ba79db924789694d4b33ab3a2adbd77c74085",
+      "expected": {
+        "kwh": 1,
+        "minutes": 60
+      },
+      "exit": 0,
+      "elapsed_seconds": 0.27847310015931726,
+      "result": {
+        "status": "parsed",
+        "source": "$SYNTHETIC_FILE",
+        "summary": {
+          "interval_count": 1,
+          "start": "2026-07-06T12:00:00-07:00",
+          "end": "2026-07-06T13:00:00-07:00",
+          "span_days": 0.042,
+          "billing_days": 1,
+          "total_kwh": 1.0,
+          "median_interval_minutes": 60.0,
+          "max_interval_minutes": 60.0,
+          "coverage_ratio": 1.0,
+          "elapsed_minutes": 60.0,
+          "gap_minutes": 0,
+          "negative_interval_count": 0,
+          "quality": "limited"
+        },
+        "warnings": [],
+        "preview": [
+          {
+            "start": "2026-07-06T12:00:00-07:00",
+            "duration_minutes": 60.0,
+            "kwh": 1.0
+          }
+        ],
+        "next_step": "Call billfit_compare_rate_plans with the same usage_file.",
+        "human_gates": []
+      },
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "checks": {
+        "source_unchanged": true,
+        "no_input_in_error": true,
+        "preserved_values": true
+      },
+      "passed": true
+    },
+    {
+      "id": "energy-accept-json-7",
+      "source_sha256": "dac0dccf6a4d5812a1126d02fb21b725992bf184ed07ceeaf001964973446bf0",
+      "expected": {
+        "kwh": 1234.5,
+        "minutes": 60
+      },
+      "exit": 0,
+      "elapsed_seconds": 0.27748339995741844,
+      "result": {
+        "status": "parsed",
+        "source": "$SYNTHETIC_FILE",
+        "summary": {
+          "interval_count": 1,
+          "start": "2026-07-06T12:00:00-07:00",
+          "end": "2026-07-06T13:00:00-07:00",
+          "span_days": 0.042,
+          "billing_days": 1,
+          "total_kwh": 1234.5,
+          "median_interval_minutes": 60.0,
+          "max_interval_minutes": 60.0,
+          "coverage_ratio": 1.0,
+          "elapsed_minutes": 60.0,
+          "gap_minutes": 0,
+          "negative_interval_count": 0,
+          "quality": "limited"
+        },
+        "warnings": [],
+        "preview": [
+          {
+            "start": "2026-07-06T12:00:00-07:00",
+            "duration_minutes": 60.0,
+            "kwh": 1234.5
+          }
+        ],
+        "next_step": "Call billfit_compare_rate_plans with the same usage_file.",
+        "human_gates": []
+      },
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "checks": {
+        "source_unchanged": true,
+        "no_input_in_error": true,
+        "preserved_values": true
+      },
+      "passed": true
+    },
+    {
+      "id": "energy-accept-json-8",
+      "source_sha256": "4e456e2a987995002dbbdc79239908ff1a46f09c34872257a3270cebd37271ff",
+      "expected": {
+        "kwh": 1234567.5,
+        "minutes": 60
+      },
+      "exit": 0,
+      "elapsed_seconds": 0.27582730003632605,
+      "result": {
+        "status": "parsed",
+        "source": "$SYNTHETIC_FILE",
+        "summary": {
+          "interval_count": 1,
+          "start": "2026-07-06T12:00:00-07:00",
+          "end": "2026-07-06T13:00:00-07:00",
+          "span_days": 0.042,
+          "billing_days": 1,
+          "total_kwh": 1234567.5,
+          "median_interval_minutes": 60.0,
+          "max_interval_minutes": 60.0,
+          "coverage_ratio": 1.0,
+          "elapsed_minutes": 60.0,
+          "gap_minutes": 0,
+          "negative_interval_count": 0,
+          "quality": "limited"
+        },
+        "warnings": [],
+        "preview": [
+          {
+            "start": "2026-07-06T12:00:00-07:00",
+            "duration_minutes": 60.0,
+            "kwh": 1234567.5
+          }
+        ],
+        "next_step": "Call billfit_compare_rate_plans with the same usage_file.",
+        "human_gates": []
+      },
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "checks": {
+        "source_unchanged": true,
+        "no_input_in_error": true,
+        "preserved_values": true
+      },
+      "passed": true
+    },
+    {
+      "id": "energy-accept-json-9",
+      "source_sha256": "0de217b0d3dd40f425efbf4c675da6b01b4889f443680af4b746091b9b0db98a",
+      "expected": {
+        "kwh": 0.00125,
+        "minutes": 60
+      },
+      "exit": 0,
+      "elapsed_seconds": 0.27968079992569983,
+      "result": {
+        "status": "parsed",
+        "source": "$SYNTHETIC_FILE",
+        "summary": {
+          "interval_count": 1,
+          "start": "2026-07-06T12:00:00-07:00",
+          "end": "2026-07-06T13:00:00-07:00",
+          "span_days": 0.042,
+          "billing_days": 1,
+          "total_kwh": 0.00125,
+          "median_interval_minutes": 60.0,
+          "max_interval_minutes": 60.0,
+          "coverage_ratio": 1.0,
+          "elapsed_minutes": 60.0,
+          "gap_minutes": 0,
+          "negative_interval_count": 0,
+          "quality": "limited"
+        },
+        "warnings": [],
+        "preview": [
+          {
+            "start": "2026-07-06T12:00:00-07:00",
+            "duration_minutes": 60.0,
+            "kwh": 0.00125
+          }
+        ],
+        "next_step": "Call billfit_compare_rate_plans with the same usage_file.",
+        "human_gates": []
+      },
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "checks": {
+        "source_unchanged": true,
+        "no_input_in_error": true,
+        "preserved_values": true
+      },
+      "passed": true
+    },
+    {
+      "id": "energy-accept-json-10",
+      "source_sha256": "19db7bd35ae2ff00229f935cb80f615e6df296ebc02eb6595a2f558add5e3072",
+      "expected": {
+        "kwh": 1.25,
+        "minutes": 60
+      },
+      "exit": 0,
+      "elapsed_seconds": 0.28414399991743267,
+      "result": {
+        "status": "parsed",
+        "source": "$SYNTHETIC_FILE",
+        "summary": {
+          "interval_count": 1,
+          "start": "2026-07-06T12:00:00-07:00",
+          "end": "2026-07-06T13:00:00-07:00",
+          "span_days": 0.042,
+          "billing_days": 1,
+          "total_kwh": 1.25,
+          "median_interval_minutes": 60.0,
+          "max_interval_minutes": 60.0,
+          "coverage_ratio": 1.0,
+          "elapsed_minutes": 60.0,
+          "gap_minutes": 0,
+          "negative_interval_count": 0,
+          "quality": "limited"
+        },
+        "warnings": [],
+        "preview": [
+          {
+            "start": "2026-07-06T12:00:00-07:00",
+            "duration_minutes": 60.0,
+            "kwh": 1.25
+          }
+        ],
+        "next_step": "Call billfit_compare_rate_plans with the same usage_file.",
+        "human_gates": []
+      },
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "checks": {
+        "source_unchanged": true,
+        "no_input_in_error": true,
+        "preserved_values": true
+      },
+      "passed": true
+    },
+    {
+      "id": "energy-accept-json-11",
+      "source_sha256": "e8ebd273fb28589460d203fe453e615fb979e61c42f37551a7eab25795d28f2c",
+      "expected": {
+        "kwh": 0,
+        "minutes": 60
+      },
+      "exit": 0,
+      "elapsed_seconds": 0.28017929987981915,
+      "result": {
+        "status": "parsed",
+        "source": "$SYNTHETIC_FILE",
+        "summary": {
+          "interval_count": 1,
+          "start": "2026-07-06T12:00:00-07:00",
+          "end": "2026-07-06T13:00:00-07:00",
+          "span_days": 0.042,
+          "billing_days": 1,
+          "total_kwh": 0.0,
+          "median_interval_minutes": 60.0,
+          "max_interval_minutes": 60.0,
+          "coverage_ratio": 1.0,
+          "elapsed_minutes": 60.0,
+          "gap_minutes": 0,
+          "negative_interval_count": 0,
+          "quality": "limited"
+        },
+        "warnings": [],
+        "preview": [
+          {
+            "start": "2026-07-06T12:00:00-07:00",
+            "duration_minutes": 60.0,
+            "kwh": 0.0
+          }
+        ],
+        "next_step": "Call billfit_compare_rate_plans with the same usage_file.",
+        "human_gates": []
+      },
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "checks": {
+        "source_unchanged": true,
+        "no_input_in_error": true,
+        "preserved_values": true
+      },
+      "passed": true
+    },
+    {
+      "id": "energy-accept-json-12",
+      "source_sha256": "72cb33854a3310289d1d7e657dd83dbe4aa94bb7195ec5bc0459a19b10851a9e",
+      "expected": {
+        "kwh": -1.25,
+        "minutes": 60
+      },
+      "exit": 0,
+      "elapsed_seconds": 0.2750887998845428,
+      "result": {
+        "status": "parsed",
+        "source": "$SYNTHETIC_FILE",
+        "summary": {
+          "interval_count": 1,
+          "start": "2026-07-06T12:00:00-07:00",
+          "end": "2026-07-06T13:00:00-07:00",
+          "span_days": 0.042,
+          "billing_days": 1,
+          "total_kwh": -1.25,
+          "median_interval_minutes": 60.0,
+          "max_interval_minutes": 60.0,
+          "coverage_ratio": 1.0,
+          "elapsed_minutes": 60.0,
+          "gap_minutes": 0,
+          "negative_interval_count": 1,
+          "quality": "unsupported_net_export"
+        },
+        "warnings": [
+          "Negative usage indicates export or corrections; solar/net export is outside the MVP scope."
+        ],
+        "preview": [
+          {
+            "start": "2026-07-06T12:00:00-07:00",
+            "duration_minutes": 60.0,
+            "kwh": -1.25
+          }
+        ],
+        "next_step": "Call billfit_compare_rate_plans with the same usage_file.",
+        "human_gates": []
+      },
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "checks": {
+        "source_unchanged": true,
+        "no_input_in_error": true,
+        "preserved_values": true
+      },
+      "passed": true
+    },
+    {
+      "id": "energy-accept-json-13",
+      "source_sha256": "cabfff398e9423171d91605c8e99fbadf98f1f2d2cf5abba9056889c9d959fdf",
+      "expected": {
+        "kwh": -1.25,
+        "minutes": 60
+      },
+      "exit": 0,
+      "elapsed_seconds": 0.28397160000167787,
+      "result": {
+        "status": "parsed",
+        "source": "$SYNTHETIC_FILE",
+        "summary": {
+          "interval_count": 1,
+          "start": "2026-07-06T12:00:00-07:00",
+          "end": "2026-07-06T13:00:00-07:00",
+          "span_days": 0.042,
+          "billing_days": 1,
+          "total_kwh": -1.25,
+          "median_interval_minutes": 60.0,
+          "max_interval_minutes": 60.0,
+          "coverage_ratio": 1.0,
+          "elapsed_minutes": 60.0,
+          "gap_minutes": 0,
+          "negative_interval_count": 1,
+          "quality": "unsupported_net_export"
+        },
+        "warnings": [
+          "Negative usage indicates export or corrections; solar/net export is outside the MVP scope."
+        ],
+        "preview": [
+          {
+            "start": "2026-07-06T12:00:00-07:00",
+            "duration_minutes": 60.0,
+            "kwh": -1.25
+          }
+        ],
+        "next_step": "Call billfit_compare_rate_plans with the same usage_file.",
+        "human_gates": []
+      },
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "checks": {
+        "source_unchanged": true,
+        "no_input_in_error": true,
+        "preserved_values": true
+      },
+      "passed": true
+    },
+    {
+      "id": "duration-reject-json-0",
+      "source_sha256": "c17e3bf7f150970a685989f55107d6a3547a286bf56946891610c0c85124a2a9",
+      "expected": {
+        "error": "INVALID_INTERVAL_DURATION"
+      },
+      "exit": 0,
+      "elapsed_seconds": 0.28418929991312325,
+      "result": {
+        "status": "parsed",
+        "source": "$SYNTHETIC_FILE",
+        "summary": {
+          "interval_count": 1,
+          "start": "2026-07-06T12:00:00-07:00",
+          "end": "2026-07-06T13:00:00-07:00",
+          "span_days": 0.042,
+          "billing_days": 1,
+          "total_kwh": 1.0,
+          "median_interval_minutes": 60.0,
+          "max_interval_minutes": 60.0,
+          "coverage_ratio": 1.0,
+          "elapsed_minutes": 60.0,
+          "gap_minutes": 0,
+          "negative_interval_count": 0,
+          "quality": "limited"
+        },
+        "warnings": [],
+        "preview": [
+          {
+            "start": "2026-07-06T12:00:00-07:00",
+            "duration_minutes": 60.0,
+            "kwh": 1.0
+          }
+        ],
+        "next_step": "Call billfit_compare_rate_plans with the same usage_file.",
+        "human_gates": []
+      },
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "checks": {
+        "source_unchanged": true,
+        "no_input_in_error": true,
+        "reject_without_values": false
+      },
+      "passed": false
+    },
+    {
+      "id": "duration-reject-json-1",
+      "source_sha256": "e96ecd891f2a8ec223fafb73ccd04db6306e5288622382662067183eac248ca0",
+      "expected": {
+        "error": "INVALID_INTERVAL_DURATION"
+      },
+      "exit": 0,
+      "elapsed_seconds": 0.287185899913311,
+      "result": {
+        "status": "parsed",
+        "source": "$SYNTHETIC_FILE",
+        "summary": {
+          "interval_count": 1,
+          "start": "2026-07-06T12:00:00-07:00",
+          "end": "2026-07-06T13:00:00-07:00",
+          "span_days": 0.042,
+          "billing_days": 1,
+          "total_kwh": 1.0,
+          "median_interval_minutes": 60.0,
+          "max_interval_minutes": 60.0,
+          "coverage_ratio": 1.0,
+          "elapsed_minutes": 60.0,
+          "gap_minutes": 0,
+          "negative_interval_count": 0,
+          "quality": "limited"
+        },
+        "warnings": [],
+        "preview": [
+          {
+            "start": "2026-07-06T12:00:00-07:00",
+            "duration_minutes": 60.0,
+            "kwh": 1.0
+          }
+        ],
+        "next_step": "Call billfit_compare_rate_plans with the same usage_file.",
+        "human_gates": []
+      },
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "checks": {
+        "source_unchanged": true,
+        "no_input_in_error": true,
+        "reject_without_values": false
+      },
+      "passed": false
+    },
+    {
+      "id": "duration-reject-json-2",
+      "source_sha256": "2af98de77d733c8e58760e717cc19717f8f2d37dd6caccd8fb5096762848d71d",
+      "expected": {
+        "error": "INVALID_INTERVAL_DURATION"
+      },
+      "exit": 0,
+      "elapsed_seconds": 0.28198169986717403,
+      "result": {
+        "status": "parsed",
+        "source": "$SYNTHETIC_FILE",
+        "summary": {
+          "interval_count": 1,
+          "start": "2026-07-06T12:00:00-07:00",
+          "end": "2026-07-06T13:00:00-07:00",
+          "span_days": 0.042,
+          "billing_days": 1,
+          "total_kwh": 1.0,
+          "median_interval_minutes": 60.0,
+          "max_interval_minutes": 60.0,
+          "coverage_ratio": 1.0,
+          "elapsed_minutes": 60.0,
+          "gap_minutes": 0,
+          "negative_interval_count": 0,
+          "quality": "limited"
+        },
+        "warnings": [],
+        "preview": [
+          {
+            "start": "2026-07-06T12:00:00-07:00",
+            "duration_minutes": 60.0,
+            "kwh": 1.0
+          }
+        ],
+        "next_step": "Call billfit_compare_rate_plans with the same usage_file.",
+        "human_gates": []
+      },
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "checks": {
+        "source_unchanged": true,
+        "no_input_in_error": true,
+        "reject_without_values": false
+      },
+      "passed": false
+    },
+    {
+      "id": "duration-reject-json-3",
+      "source_sha256": "75cc825562c6e938e14fe227aa06cfb662b18e77d9f6ace70f5c1eaa7e458eec",
+      "expected": {
+        "error": "INVALID_INTERVAL_DURATION"
+      },
+      "exit": 0,
+      "elapsed_seconds": 0.3316786999348551,
+      "result": {
+        "status": "parsed",
+        "source": "$SYNTHETIC_FILE",
+        "summary": {
+          "interval_count": 1,
+          "start": "2026-07-06T12:00:00-07:00",
+          "end": "2026-07-06T13:00:00-07:00",
+          "span_days": 0.042,
+          "billing_days": 1,
+          "total_kwh": 1.0,
+          "median_interval_minutes": 60.0,
+          "max_interval_minutes": 60.0,
+          "coverage_ratio": 1.0,
+          "elapsed_minutes": 60.0,
+          "gap_minutes": 0,
+          "negative_interval_count": 0,
+          "quality": "limited"
+        },
+        "warnings": [],
+        "preview": [
+          {
+            "start": "2026-07-06T12:00:00-07:00",
+            "duration_minutes": 60.0,
+            "kwh": 1.0
+          }
+        ],
+        "next_step": "Call billfit_compare_rate_plans with the same usage_file.",
+        "human_gates": []
+      },
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "checks": {
+        "source_unchanged": true,
+        "no_input_in_error": true,
+        "reject_without_values": false
+      },
+      "passed": false
+    },
+    {
+      "id": "duration-reject-json-4",
+      "source_sha256": "ebd5038c61ea64a420ce7f2b3e159d72615ab23efc08c184ac9da6eaad533dbb",
+      "expected": {
+        "error": "INVALID_INTERVAL_DURATION"
+      },
+      "exit": 0,
+      "elapsed_seconds": 0.2935558999888599,
+      "result": {
+        "status": "parsed",
+        "source": "$SYNTHETIC_FILE",
+        "summary": {
+          "interval_count": 1,
+          "start": "2026-07-06T12:00:00-07:00",
+          "end": "2026-07-06T12:12:00-07:00",
+          "span_days": 0.008,
+          "billing_days": 1,
+          "total_kwh": 1.0,
+          "median_interval_minutes": 12.0,
+          "max_interval_minutes": 12.0,
+          "coverage_ratio": 1.0,
+          "elapsed_minutes": 12.0,
+          "gap_minutes": 0,
+          "negative_interval_count": 0,
+          "quality": "limited"
+        },
+        "warnings": [],
+        "preview": [
+          {
+            "start": "2026-07-06T12:00:00-07:00",
+            "duration_minutes": 12.0,
+            "kwh": 1.0
+          }
+        ],
+        "next_step": "Call billfit_compare_rate_plans with the same usage_file.",
+        "human_gates": []
+      },
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "checks": {
+        "source_unchanged": true,
+        "no_input_in_error": true,
+        "reject_without_values": false
+      },
+      "passed": false
+    },
+    {
+      "id": "duration-reject-json-5",
+      "source_sha256": "fa6abd77767beb1083b95f620c414db6fd26ea39ac74f4e11a16e1fa7026c6be",
+      "expected": {
+        "error": "INVALID_INTERVAL_DURATION"
+      },
+      "exit": 2,
+      "elapsed_seconds": 0.2745880000293255,
+      "result": {
+        "status": "error",
+        "error": {
+          "code": "INVALID_INTERVAL_DURATION",
+          "message": "An explicit interval must be at least one second and at most 1,440 minutes.",
+          "details": {}
+        }
+      },
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "checks": {
+        "source_unchanged": true,
+        "no_input_in_error": true,
+        "reject_without_values": true
+      },
+      "passed": true
+    },
+    {
+      "id": "duration-reject-json-6",
+      "source_sha256": "82882bc8e8b96d299d4c63161bda7185c0bddbfda12f76faaa4a43656ad6834a",
+      "expected": {
+        "error": "INVALID_INTERVAL_DURATION"
+      },
+      "exit": 2,
+      "elapsed_seconds": 0.2752932000439614,
+      "result": {
+        "status": "error",
+        "error": {
+          "code": "INVALID_INTERVAL_DURATION",
+          "message": "Boolean values are not numeric usage or durations.",
+          "details": {}
+        }
+      },
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "checks": {
+        "source_unchanged": true,
+        "no_input_in_error": true,
+        "reject_without_values": true
+      },
+      "passed": true
+    },
+    {
+      "id": "duration-reject-json-7",
+      "source_sha256": "8ae2402d0d13d3dbf0c8aefea7bf8944ed06507d385c0527476379fdb406e962",
+      "expected": {
+        "error": "INVALID_INTERVAL_DURATION"
+      },
+      "exit": 2,
+      "elapsed_seconds": 0.2861241998616606,
+      "result": {
+        "status": "error",
+        "error": {
+          "code": "INVALID_INTERVAL_DURATION",
+          "message": "A supplied usage or duration is not a finite number.",
+          "details": {}
+        }
+      },
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "checks": {
+        "source_unchanged": true,
+        "no_input_in_error": true,
+        "reject_without_values": true
+      },
+      "passed": true
+    },
+    {
+      "id": "duration-accept-json-0",
+      "source_sha256": "46d2ca6a7f3fedb9cc3e9d6373f13192a0f3d3aff7238463b6d8220b64cd6320",
+      "expected": {
+        "kwh": 1,
+        "minutes": 60
+      },
+      "exit": 0,
+      "elapsed_seconds": 0.2800940000452101,
+      "result": {
+        "status": "parsed",
+        "source": "$SYNTHETIC_FILE",
+        "summary": {
+          "interval_count": 1,
+          "start": "2026-07-06T12:00:00-07:00",
+          "end": "2026-07-06T13:00:00-07:00",
+          "span_days": 0.042,
+          "billing_days": 1,
+          "total_kwh": 1.0,
+          "median_interval_minutes": 60.0,
+          "max_interval_minutes": 60.0,
+          "coverage_ratio": 1.0,
+          "elapsed_minutes": 60.0,
+          "gap_minutes": 0,
+          "negative_interval_count": 0,
+          "quality": "limited"
+        },
+        "warnings": [],
+        "preview": [
+          {
+            "start": "2026-07-06T12:00:00-07:00",
+            "duration_minutes": 60.0,
+            "kwh": 1.0
+          }
+        ],
+        "next_step": "Call billfit_compare_rate_plans with the same usage_file.",
+        "human_gates": []
+      },
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "checks": {
+        "source_unchanged": true,
+        "no_input_in_error": true,
+        "preserved_values": true
+      },
+      "passed": true
+    },
+    {
+      "id": "duration-accept-json-1",
+      "source_sha256": "24d492d6d89a0b035c7aefe79b02c666128e41d8ea741f310ade9248a3726331",
+      "expected": {
+        "kwh": 1,
+        "minutes": 60
+      },
+      "exit": 0,
+      "elapsed_seconds": 0.2726280000060797,
+      "result": {
+        "status": "parsed",
+        "source": "$SYNTHETIC_FILE",
+        "summary": {
+          "interval_count": 1,
+          "start": "2026-07-06T12:00:00-07:00",
+          "end": "2026-07-06T13:00:00-07:00",
+          "span_days": 0.042,
+          "billing_days": 1,
+          "total_kwh": 1.0,
+          "median_interval_minutes": 60.0,
+          "max_interval_minutes": 60.0,
+          "coverage_ratio": 1.0,
+          "elapsed_minutes": 60.0,
+          "gap_minutes": 0,
+          "negative_interval_count": 0,
+          "quality": "limited"
+        },
+        "warnings": [],
+        "preview": [
+          {
+            "start": "2026-07-06T12:00:00-07:00",
+            "duration_minutes": 60.0,
+            "kwh": 1.0
+          }
+        ],
+        "next_step": "Call billfit_compare_rate_plans with the same usage_file.",
+        "human_gates": []
+      },
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "checks": {
+        "source_unchanged": true,
+        "no_input_in_error": true,
+        "preserved_values": true
+      },
+      "passed": true
+    },
+    {
+      "id": "duration-accept-json-2",
+      "source_sha256": "a7f333fcadeba301fa2113772bb3f44d07d59e1b44ecf11ebefa8c97620b83f6",
+      "expected": {
+        "kwh": 1,
+        "minutes": 1200
+      },
+      "exit": 0,
+      "elapsed_seconds": 0.2734769000671804,
+      "result": {
+        "status": "parsed",
+        "source": "$SYNTHETIC_FILE",
+        "summary": {
+          "interval_count": 1,
+          "start": "2026-07-06T12:00:00-07:00",
+          "end": "2026-07-07T08:00:00-07:00",
+          "span_days": 0.833,
+          "billing_days": 1,
+          "total_kwh": 1.0,
+          "median_interval_minutes": 1200.0,
+          "max_interval_minutes": 1200.0,
+          "coverage_ratio": 1.0,
+          "elapsed_minutes": 1200.0,
+          "gap_minutes": 0,
+          "negative_interval_count": 0,
+          "quality": "limited"
+        },
+        "warnings": [
+          "COARSE_INTERVAL_ALLOCATION: intervals longer than one hour require uniform-power allocation; switching guidance is withheld."
+        ],
+        "preview": [
+          {
+            "start": "2026-07-06T12:00:00-07:00",
+            "duration_minutes": 1200.0,
+            "kwh": 1.0
+          }
+        ],
+        "next_step": "Call billfit_compare_rate_plans with the same usage_file.",
+        "human_gates": []
+      },
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "checks": {
+        "source_unchanged": true,
+        "no_input_in_error": true,
+        "preserved_values": true
+      },
+      "passed": true
+    },
+    {
+      "id": "duration-accept-json-3",
+      "source_sha256": "2556773d100c06607f2079be535fdd969100776516cf9838bdbc14708e040757",
+      "expected": {
+        "kwh": 1,
+        "minutes": 0.5
+      },
+      "exit": 0,
+      "elapsed_seconds": 0.2757109000813216,
+      "result": {
+        "status": "parsed",
+        "source": "$SYNTHETIC_FILE",
+        "summary": {
+          "interval_count": 1,
+          "start": "2026-07-06T12:00:00-07:00",
+          "end": "2026-07-06T12:00:30-07:00",
+          "span_days": 0.0,
+          "billing_days": 1,
+          "total_kwh": 1.0,
+          "median_interval_minutes": 0.5,
+          "max_interval_minutes": 0.5,
+          "coverage_ratio": 1.0,
+          "elapsed_minutes": 0.5,
+          "gap_minutes": 0,
+          "negative_interval_count": 0,
+          "quality": "limited"
+        },
+        "warnings": [],
+        "preview": [
+          {
+            "start": "2026-07-06T12:00:00-07:00",
+            "duration_minutes": 0.5,
+            "kwh": 1.0
+          }
+        ],
+        "next_step": "Call billfit_compare_rate_plans with the same usage_file.",
+        "human_gates": []
+      },
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "checks": {
+        "source_unchanged": true,
+        "no_input_in_error": true,
+        "preserved_values": true
+      },
+      "passed": true
+    },
+    {
+      "id": "energy-reject-csv-0",
+      "source_sha256": "fc0943a96897a9a3311785081b35fc2ab100f16dbba2654e668dd37b1b5fd7ee",
+      "expected": {
+        "error": "INVALID_USAGE_VALUE"
+      },
+      "exit": 0,
+      "elapsed_seconds": 0.2731167001184076,
+      "result": {
+        "status": "parsed",
+        "source": "$SYNTHETIC_FILE",
+        "summary": {
+          "interval_count": 1,
+          "start": "2026-07-06T12:00:00-07:00",
+          "end": "2026-07-06T13:00:00-07:00",
+          "span_days": 0.042,
+          "billing_days": 1,
+          "total_kwh": 123.0,
+          "median_interval_minutes": 60.0,
+          "max_interval_minutes": 60.0,
+          "coverage_ratio": 1.0,
+          "elapsed_minutes": 60.0,
+          "gap_minutes": 0,
+          "negative_interval_count": 0,
+          "quality": "limited"
+        },
+        "warnings": [],
+        "preview": [
+          {
+            "start": "2026-07-06T12:00:00-07:00",
+            "duration_minutes": 60.0,
+            "kwh": 123.0
+          }
+        ],
+        "next_step": "Call billfit_compare_rate_plans with the same usage_file.",
+        "human_gates": []
+      },
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "checks": {
+        "source_unchanged": true,
+        "no_input_in_error": true,
+        "reject_without_values": false
+      },
+      "passed": false
+    },
+    {
+      "id": "energy-reject-csv-1",
+      "source_sha256": "16c711e0f47c3adad5763abad44944c3091e13c9404001368e330478058c73c7",
+      "expected": {
+        "error": "INVALID_USAGE_VALUE"
+      },
+      "exit": 0,
+      "elapsed_seconds": 0.27388600003905594,
+      "result": {
+        "status": "parsed",
+        "source": "$SYNTHETIC_FILE",
+        "summary": {
+          "interval_count": 1,
+          "start": "2026-07-06T12:00:00-07:00",
+          "end": "2026-07-06T13:00:00-07:00",
+          "span_days": 0.042,
+          "billing_days": 1,
+          "total_kwh": 1234.0,
+          "median_interval_minutes": 60.0,
+          "max_interval_minutes": 60.0,
+          "coverage_ratio": 1.0,
+          "elapsed_minutes": 60.0,
+          "gap_minutes": 0,
+          "negative_interval_count": 0,
+          "quality": "limited"
+        },
+        "warnings": [],
+        "preview": [
+          {
+            "start": "2026-07-06T12:00:00-07:00",
+            "duration_minutes": 60.0,
+            "kwh": 1234.0
+          }
+        ],
+        "next_step": "Call billfit_compare_rate_plans with the same usage_file.",
+        "human_gates": []
+      },
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "checks": {
+        "source_unchanged": true,
+        "no_input_in_error": true,
+        "reject_without_values": false
+      },
+      "passed": false
+    },
+    {
+      "id": "energy-reject-csv-2",
+      "source_sha256": "7591f16d8ce6147a903f35ba46d268f9f63e0384c67f55384b346d4be717b9c8",
+      "expected": {
+        "error": "INVALID_USAGE_VALUE"
+      },
+      "exit": 0,
+      "elapsed_seconds": 0.27942449995316565,
+      "result": {
+        "status": "parsed",
+        "source": "$SYNTHETIC_FILE",
+        "summary": {
+          "interval_count": 1,
+          "start": "2026-07-06T12:00:00-07:00",
+          "end": "2026-07-06T13:00:00-07:00",
+          "span_days": 0.042,
+          "billing_days": 1,
+          "total_kwh": 123.0,
+          "median_interval_minutes": 60.0,
+          "max_interval_minutes": 60.0,
+          "coverage_ratio": 1.0,
+          "elapsed_minutes": 60.0,
+          "gap_minutes": 0,
+          "negative_interval_count": 0,
+          "quality": "limited"
+        },
+        "warnings": [],
+        "preview": [
+          {
+            "start": "2026-07-06T12:00:00-07:00",
+            "duration_minutes": 60.0,
+            "kwh": 123.0
+          }
+        ],
+        "next_step": "Call billfit_compare_rate_plans with the same usage_file.",
+        "human_gates": []
+      },
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "checks": {
+        "source_unchanged": true,
+        "no_input_in_error": true,
+        "reject_without_values": false
+      },
+      "passed": false
+    },
+    {
+      "id": "energy-reject-csv-3",
+      "source_sha256": "08545c88d5eaf1a5b8ff9d24f50a23309301afd67feec2e727d113ec1344de3f",
+      "expected": {
+        "error": "INVALID_USAGE_VALUE"
+      },
+      "exit": 0,
+      "elapsed_seconds": 0.2754859998822212,
+      "result": {
+        "status": "parsed",
+        "source": "$SYNTHETIC_FILE",
+        "summary": {
+          "interval_count": 1,
+          "start": "2026-07-06T12:00:00-07:00",
+          "end": "2026-07-06T13:00:00-07:00",
+          "span_days": 0.042,
+          "billing_days": 1,
+          "total_kwh": 123.0,
+          "median_interval_minutes": 60.0,
+          "max_interval_minutes": 60.0,
+          "coverage_ratio": 1.0,
+          "elapsed_minutes": 60.0,
+          "gap_minutes": 0,
+          "negative_interval_count": 0,
+          "quality": "limited"
+        },
+        "warnings": [],
+        "preview": [
+          {
+            "start": "2026-07-06T12:00:00-07:00",
+            "duration_minutes": 60.0,
+            "kwh": 123.0
+          }
+        ],
+        "next_step": "Call billfit_compare_rate_plans with the same usage_file.",
+        "human_gates": []
+      },
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "checks": {
+        "source_unchanged": true,
+        "no_input_in_error": true,
+        "reject_without_values": false
+      },
+      "passed": false
+    },
+    {
+      "id": "energy-reject-csv-4",
+      "source_sha256": "6e80c2c3bfcac5b4bf8adf3df2681c007931817f7252cef77654322aa9f575b3",
+      "expected": {
+        "error": "INVALID_USAGE_VALUE"
+      },
+      "exit": 0,
+      "elapsed_seconds": 0.2815057002007961,
+      "result": {
+        "status": "parsed",
+        "source": "$SYNTHETIC_FILE",
+        "summary": {
+          "interval_count": 1,
+          "start": "2026-07-06T12:00:00-07:00",
+          "end": "2026-07-06T13:00:00-07:00",
+          "span_days": 0.042,
+          "billing_days": 1,
+          "total_kwh": 1234.56,
+          "median_interval_minutes": 60.0,
+          "max_interval_minutes": 60.0,
+          "coverage_ratio": 1.0,
+          "elapsed_minutes": 60.0,
+          "gap_minutes": 0,
+          "negative_interval_count": 0,
+          "quality": "limited"
+        },
+        "warnings": [],
+        "preview": [
+          {
+            "start": "2026-07-06T12:00:00-07:00",
+            "duration_minutes": 60.0,
+            "kwh": 1234.56
+          }
+        ],
+        "next_step": "Call billfit_compare_rate_plans with the same usage_file.",
+        "human_gates": []
+      },
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "checks": {
+        "source_unchanged": true,
+        "no_input_in_error": true,
+        "reject_without_values": false
+      },
+      "passed": false
+    },
+    {
+      "id": "energy-reject-csv-5",
+      "source_sha256": "8e1c33597e8f5b7e5e31e335cd1479a766a6bc5fba6979f7c7c4dcb1a320e59d",
+      "expected": {
+        "error": "INVALID_USAGE_VALUE"
+      },
+      "exit": 0,
+      "elapsed_seconds": 0.27749420003965497,
+      "result": {
+        "status": "parsed",
+        "source": "$SYNTHETIC_FILE",
+        "summary": {
+          "interval_count": 1,
+          "start": "2026-07-06T12:00:00-07:00",
+          "end": "2026-07-06T13:00:00-07:00",
+          "span_days": 0.042,
+          "billing_days": 1,
+          "total_kwh": 1.0,
+          "median_interval_minutes": 60.0,
+          "max_interval_minutes": 60.0,
+          "coverage_ratio": 1.0,
+          "elapsed_minutes": 60.0,
+          "gap_minutes": 0,
+          "negative_interval_count": 0,
+          "quality": "limited"
+        },
+        "warnings": [],
+        "preview": [
+          {
+            "start": "2026-07-06T12:00:00-07:00",
+            "duration_minutes": 60.0,
+            "kwh": 1.0
+          }
+        ],
+        "next_step": "Call billfit_compare_rate_plans with the same usage_file.",
+        "human_gates": []
+      },
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "checks": {
+        "source_unchanged": true,
+        "no_input_in_error": true,
+        "reject_without_values": false
+      },
+      "passed": false
+    },
+    {
+      "id": "energy-reject-csv-6",
+      "source_sha256": "9da4fb780ce8862fc7a410a0c4c2728806658d704f8f540ec45ba42f66690281",
+      "expected": {
+        "error": "INVALID_USAGE_VALUE"
+      },
+      "exit": 0,
+      "elapsed_seconds": 0.2817215998657048,
+      "result": {
+        "status": "parsed",
+        "source": "$SYNTHETIC_FILE",
+        "summary": {
+          "interval_count": 1,
+          "start": "2026-07-06T12:00:00-07:00",
+          "end": "2026-07-06T13:00:00-07:00",
+          "span_days": 0.042,
+          "billing_days": 1,
+          "total_kwh": 12.0,
+          "median_interval_minutes": 60.0,
+          "max_interval_minutes": 60.0,
+          "coverage_ratio": 1.0,
+          "elapsed_minutes": 60.0,
+          "gap_minutes": 0,
+          "negative_interval_count": 0,
+          "quality": "limited"
+        },
+        "warnings": [],
+        "preview": [
+          {
+            "start": "2026-07-06T12:00:00-07:00",
+            "duration_minutes": 60.0,
+            "kwh": 12.0
+          }
+        ],
+        "next_step": "Call billfit_compare_rate_plans with the same usage_file.",
+        "human_gates": []
+      },
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "checks": {
+        "source_unchanged": true,
+        "no_input_in_error": true,
+        "reject_without_values": false
+      },
+      "passed": false
+    },
+    {
+      "id": "energy-reject-csv-7",
+      "source_sha256": "6109b9cd504fd072a4a45992be56164182c253c5de050003c41f380f19ff8c68",
+      "expected": {
+        "error": "INVALID_USAGE_VALUE"
+      },
+      "exit": 0,
+      "elapsed_seconds": 0.2756832998711616,
+      "result": {
+        "status": "parsed",
+        "source": "$SYNTHETIC_FILE",
+        "summary": {
+          "interval_count": 1,
+          "start": "2026-07-06T12:00:00-07:00",
+          "end": "2026-07-06T13:00:00-07:00",
+          "span_days": 0.042,
+          "billing_days": 1,
+          "total_kwh": 1000.0,
+          "median_interval_minutes": 60.0,
+          "max_interval_minutes": 60.0,
+          "coverage_ratio": 1.0,
+          "elapsed_minutes": 60.0,
+          "gap_minutes": 0,
+          "negative_interval_count": 0,
+          "quality": "limited"
+        },
+        "warnings": [],
+        "preview": [
+          {
+            "start": "2026-07-06T12:00:00-07:00",
+            "duration_minutes": 60.0,
+            "kwh": 1000.0
+          }
+        ],
+        "next_step": "Call billfit_compare_rate_plans with the same usage_file.",
+        "human_gates": []
+      },
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "checks": {
+        "source_unchanged": true,
+        "no_input_in_error": true,
+        "reject_without_values": false
+      },
+      "passed": false
+    },
+    {
+      "id": "energy-reject-csv-8",
+      "source_sha256": "bf2a44bc9597f97a8b1635c21884f9fcb48ff353fe8fe24d2634c448d1f96a7a",
+      "expected": {
+        "error": "INVALID_USAGE_VALUE"
+      },
+      "exit": 2,
+      "elapsed_seconds": 0.2736893000546843,
+      "result": {
+        "status": "error",
+        "error": {
+          "code": "INVALID_USAGE_VALUE",
+          "message": "A supplied usage or duration is not a finite number.",
+          "details": {}
+        }
+      },
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "checks": {
+        "source_unchanged": true,
+        "no_input_in_error": true,
+        "reject_without_values": true
+      },
+      "passed": true
+    },
+    {
+      "id": "energy-reject-csv-9",
+      "source_sha256": "71864a17652f0926554dbbbfc460cd30581964a5b949a975db5a3dd3a5dcf72c",
+      "expected": {
+        "error": "INVALID_USAGE_VALUE"
+      },
+      "exit": 0,
+      "elapsed_seconds": 0.28963909996673465,
+      "result": {
+        "status": "parsed",
+        "source": "$SYNTHETIC_FILE",
+        "summary": {
+          "interval_count": 1,
+          "start": "2026-07-06T12:00:00-07:00",
+          "end": "2026-07-06T13:00:00-07:00",
+          "span_days": 0.042,
+          "billing_days": 1,
+          "total_kwh": 1.23456,
+          "median_interval_minutes": 60.0,
+          "max_interval_minutes": 60.0,
+          "coverage_ratio": 1.0,
+          "elapsed_minutes": 60.0,
+          "gap_minutes": 0,
+          "negative_interval_count": 0,
+          "quality": "limited"
+        },
+        "warnings": [],
+        "preview": [
+          {
+            "start": "2026-07-06T12:00:00-07:00",
+            "duration_minutes": 60.0,
+            "kwh": 1.23456
+          }
+        ],
+        "next_step": "Call billfit_compare_rate_plans with the same usage_file.",
+        "human_gates": []
+      },
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "checks": {
+        "source_unchanged": true,
+        "no_input_in_error": true,
+        "reject_without_values": false
+      },
+      "passed": false
+    },
+    {
+      "id": "energy-reject-csv-10",
+      "source_sha256": "51766846b10ef4f5fad2eb1348bbf83c7a0204a277a96c7b51f8818c545bfffa",
+      "expected": {
+        "error": "INVALID_USAGE_VALUE"
+      },
+      "exit": 0,
+      "elapsed_seconds": 0.29584649996832013,
+      "result": {
+        "status": "parsed",
+        "source": "$SYNTHETIC_FILE",
+        "summary": {
+          "interval_count": 1,
+          "start": "2026-07-06T12:00:00-07:00",
+          "end": "2026-07-06T13:00:00-07:00",
+          "span_days": 0.042,
+          "billing_days": 1,
+          "total_kwh": 0.0,
+          "median_interval_minutes": 60.0,
+          "max_interval_minutes": 60.0,
+          "coverage_ratio": 1.0,
+          "elapsed_minutes": 60.0,
+          "gap_minutes": 0,
+          "negative_interval_count": 0,
+          "quality": "limited"
+        },
+        "warnings": [],
+        "preview": [
+          {
+            "start": "2026-07-06T12:00:00-07:00",
+            "duration_minutes": 60.0,
+            "kwh": 0.0
+          }
+        ],
+        "next_step": "Call billfit_compare_rate_plans with the same usage_file.",
+        "human_gates": []
+      },
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "checks": {
+        "source_unchanged": true,
+        "no_input_in_error": true,
+        "reject_without_values": false
+      },
+      "passed": false
+    },
+    {
+      "id": "energy-reject-csv-11",
+      "source_sha256": "c39c66bd68ead01ca3312bc826aef03429977bef7ea40b1c01ea2c435dbbf06b",
+      "expected": {
+        "error": "INVALID_USAGE_VALUE"
+      },
+      "exit": 0,
+      "elapsed_seconds": 0.29368000011891127,
+      "result": {
+        "status": "parsed",
+        "source": "$SYNTHETIC_FILE",
+        "summary": {
+          "interval_count": 1,
+          "start": "2026-07-06T12:00:00-07:00",
+          "end": "2026-07-06T13:00:00-07:00",
+          "span_days": 0.042,
+          "billing_days": 1,
+          "total_kwh": -123.0,
+          "median_interval_minutes": 60.0,
+          "max_interval_minutes": 60.0,
+          "coverage_ratio": 1.0,
+          "elapsed_minutes": 60.0,
+          "gap_minutes": 0,
+          "negative_interval_count": 1,
+          "quality": "unsupported_net_export"
+        },
+        "warnings": [
+          "Negative usage indicates export or corrections; solar/net export is outside the MVP scope."
+        ],
+        "preview": [
+          {
+            "start": "2026-07-06T12:00:00-07:00",
+            "duration_minutes": 60.0,
+            "kwh": -123.0
+          }
+        ],
+        "next_step": "Call billfit_compare_rate_plans with the same usage_file.",
+        "human_gates": []
+      },
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "checks": {
+        "source_unchanged": true,
+        "no_input_in_error": true,
+        "reject_without_values": false
+      },
+      "passed": false
+    },
+    {
+      "id": "energy-reject-csv-12",
+      "source_sha256": "448d48d7713d66e6ac52e86febb4c566fa9a31f4db5890db228e5a7af92a8e8e",
+      "expected": {
+        "error": "INVALID_USAGE_VALUE"
+      },
+      "exit": 2,
+      "elapsed_seconds": 0.27703430014662445,
+      "result": {
+        "status": "error",
+        "error": {
+          "code": "INVALID_USAGE_VALUE",
+          "message": "A supplied usage or duration is not a finite number.",
+          "details": {}
+        }
+      },
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "checks": {
+        "source_unchanged": true,
+        "no_input_in_error": true,
+        "reject_without_values": true
+      },
+      "passed": true
+    },
+    {
+      "id": "energy-reject-csv-13",
+      "source_sha256": "e176de39f17a9fb046b772d39faa8ddc1d851d999e7ec0f694eb47a24971263d",
+      "expected": {
+        "error": "INVALID_USAGE_VALUE"
+      },
+      "exit": 2,
+      "elapsed_seconds": 0.2758979999925941,
+      "result": {
+        "status": "error",
+        "error": {
+          "code": "INVALID_USAGE_VALUE",
+          "message": "A supplied usage or duration is not a finite number.",
+          "details": {}
+        }
+      },
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "checks": {
+        "source_unchanged": true,
+        "no_input_in_error": true,
+        "reject_without_values": true
+      },
+      "passed": true
+    },
+    {
+      "id": "energy-accept-csv-0",
+      "source_sha256": "d3097fd9d9d16ea4d84450d0462d0761ef1da509074cad941c110944a73fa3f3",
+      "expected": {
+        "kwh": 0,
+        "minutes": 60
+      },
+      "exit": 0,
+      "elapsed_seconds": 0.27505810000002384,
+      "result": {
+        "status": "parsed",
+        "source": "$SYNTHETIC_FILE",
+        "summary": {
+          "interval_count": 1,
+          "start": "2026-07-06T12:00:00-07:00",
+          "end": "2026-07-06T13:00:00-07:00",
+          "span_days": 0.042,
+          "billing_days": 1,
+          "total_kwh": 0.0,
+          "median_interval_minutes": 60.0,
+          "max_interval_minutes": 60.0,
+          "coverage_ratio": 1.0,
+          "elapsed_minutes": 60.0,
+          "gap_minutes": 0,
+          "negative_interval_count": 0,
+          "quality": "limited"
+        },
+        "warnings": [],
+        "preview": [
+          {
+            "start": "2026-07-06T12:00:00-07:00",
+            "duration_minutes": 60.0,
+            "kwh": 0.0
+          }
+        ],
+        "next_step": "Call billfit_compare_rate_plans with the same usage_file.",
+        "human_gates": []
+      },
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "checks": {
+        "source_unchanged": true,
+        "no_input_in_error": true,
+        "preserved_values": true
+      },
+      "passed": true
+    },
+    {
+      "id": "energy-accept-csv-1",
+      "source_sha256": "be8c82c512a9623ad721fb43ad3e341b475e1ab1e03646c85120366e4fdce580",
+      "expected": {
+        "kwh": 1.25,
+        "minutes": 60
+      },
+      "exit": 0,
+      "elapsed_seconds": 0.27599270013161004,
+      "result": {
+        "status": "parsed",
+        "source": "$SYNTHETIC_FILE",
+        "summary": {
+          "interval_count": 1,
+          "start": "2026-07-06T12:00:00-07:00",
+          "end": "2026-07-06T13:00:00-07:00",
+          "span_days": 0.042,
+          "billing_days": 1,
+          "total_kwh": 1.25,
+          "median_interval_minutes": 60.0,
+          "max_interval_minutes": 60.0,
+          "coverage_ratio": 1.0,
+          "elapsed_minutes": 60.0,
+          "gap_minutes": 0,
+          "negative_interval_count": 0,
+          "quality": "limited"
+        },
+        "warnings": [],
+        "preview": [
+          {
+            "start": "2026-07-06T12:00:00-07:00",
+            "duration_minutes": 60.0,
+            "kwh": 1.25
+          }
+        ],
+        "next_step": "Call billfit_compare_rate_plans with the same usage_file.",
+        "human_gates": []
+      },
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "checks": {
+        "source_unchanged": true,
+        "no_input_in_error": true,
+        "preserved_values": true
+      },
+      "passed": true
+    },
+    {
+      "id": "energy-accept-csv-2",
+      "source_sha256": "be8c82c512a9623ad721fb43ad3e341b475e1ab1e03646c85120366e4fdce580",
+      "expected": {
+        "kwh": 1.25,
+        "minutes": 60
+      },
+      "exit": 0,
+      "elapsed_seconds": 0.27574270009063184,
+      "result": {
+        "status": "parsed",
+        "source": "$SYNTHETIC_FILE",
+        "summary": {
+          "interval_count": 1,
+          "start": "2026-07-06T12:00:00-07:00",
+          "end": "2026-07-06T13:00:00-07:00",
+          "span_days": 0.042,
+          "billing_days": 1,
+          "total_kwh": 1.25,
+          "median_interval_minutes": 60.0,
+          "max_interval_minutes": 60.0,
+          "coverage_ratio": 1.0,
+          "elapsed_minutes": 60.0,
+          "gap_minutes": 0,
+          "negative_interval_count": 0,
+          "quality": "limited"
+        },
+        "warnings": [],
+        "preview": [
+          {
+            "start": "2026-07-06T12:00:00-07:00",
+            "duration_minutes": 60.0,
+            "kwh": 1.25
+          }
+        ],
+        "next_step": "Call billfit_compare_rate_plans with the same usage_file.",
+        "human_gates": []
+      },
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "checks": {
+        "source_unchanged": true,
+        "no_input_in_error": true,
+        "preserved_values": true
+      },
+      "passed": true
+    },
+    {
+      "id": "energy-accept-csv-3",
+      "source_sha256": "cd1232e7b670e593adf9517996436680eca8031da8298dbe9d31f1cae9dc4d80",
+      "expected": {
+        "kwh": 1.25,
+        "minutes": 60
+      },
+      "exit": 0,
+      "elapsed_seconds": 0.2709961000364274,
+      "result": {
+        "status": "parsed",
+        "source": "$SYNTHETIC_FILE",
+        "summary": {
+          "interval_count": 1,
+          "start": "2026-07-06T12:00:00-07:00",
+          "end": "2026-07-06T13:00:00-07:00",
+          "span_days": 0.042,
+          "billing_days": 1,
+          "total_kwh": 1.25,
+          "median_interval_minutes": 60.0,
+          "max_interval_minutes": 60.0,
+          "coverage_ratio": 1.0,
+          "elapsed_minutes": 60.0,
+          "gap_minutes": 0,
+          "negative_interval_count": 0,
+          "quality": "limited"
+        },
+        "warnings": [],
+        "preview": [
+          {
+            "start": "2026-07-06T12:00:00-07:00",
+            "duration_minutes": 60.0,
+            "kwh": 1.25
+          }
+        ],
+        "next_step": "Call billfit_compare_rate_plans with the same usage_file.",
+        "human_gates": []
+      },
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "checks": {
+        "source_unchanged": true,
+        "no_input_in_error": true,
+        "preserved_values": true
+      },
+      "passed": true
+    },
+    {
+      "id": "energy-accept-csv-4",
+      "source_sha256": "b51798a169bab3f1bd62067f1544c0cebbc4d3dc4abf4886e7f7de884097229f",
+      "expected": {
+        "kwh": 1.25,
+        "minutes": 60
+      },
+      "exit": 0,
+      "elapsed_seconds": 0.272552200127393,
+      "result": {
+        "status": "parsed",
+        "source": "$SYNTHETIC_FILE",
+        "summary": {
+          "interval_count": 1,
+          "start": "2026-07-06T12:00:00-07:00",
+          "end": "2026-07-06T13:00:00-07:00",
+          "span_days": 0.042,
+          "billing_days": 1,
+          "total_kwh": 1.25,
+          "median_interval_minutes": 60.0,
+          "max_interval_minutes": 60.0,
+          "coverage_ratio": 1.0,
+          "elapsed_minutes": 60.0,
+          "gap_minutes": 0,
+          "negative_interval_count": 0,
+          "quality": "limited"
+        },
+        "warnings": [],
+        "preview": [
+          {
+            "start": "2026-07-06T12:00:00-07:00",
+            "duration_minutes": 60.0,
+            "kwh": 1.25
+          }
+        ],
+        "next_step": "Call billfit_compare_rate_plans with the same usage_file.",
+        "human_gates": []
+      },
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "checks": {
+        "source_unchanged": true,
+        "no_input_in_error": true,
+        "preserved_values": true
+      },
+      "passed": true
+    },
+    {
+      "id": "energy-accept-csv-5",
+      "source_sha256": "e49041bd9dd15a67b0645c959cabfa96f951ae2179b6d8d28ba6e5bcadba4f12",
+      "expected": {
+        "kwh": 0.25,
+        "minutes": 60
+      },
+      "exit": 0,
+      "elapsed_seconds": 0.275007399963215,
+      "result": {
+        "status": "parsed",
+        "source": "$SYNTHETIC_FILE",
+        "summary": {
+          "interval_count": 1,
+          "start": "2026-07-06T12:00:00-07:00",
+          "end": "2026-07-06T13:00:00-07:00",
+          "span_days": 0.042,
+          "billing_days": 1,
+          "total_kwh": 0.25,
+          "median_interval_minutes": 60.0,
+          "max_interval_minutes": 60.0,
+          "coverage_ratio": 1.0,
+          "elapsed_minutes": 60.0,
+          "gap_minutes": 0,
+          "negative_interval_count": 0,
+          "quality": "limited"
+        },
+        "warnings": [],
+        "preview": [
+          {
+            "start": "2026-07-06T12:00:00-07:00",
+            "duration_minutes": 60.0,
+            "kwh": 0.25
+          }
+        ],
+        "next_step": "Call billfit_compare_rate_plans with the same usage_file.",
+        "human_gates": []
+      },
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "checks": {
+        "source_unchanged": true,
+        "no_input_in_error": true,
+        "preserved_values": true
+      },
+      "passed": true
+    },
+    {
+      "id": "energy-accept-csv-6",
+      "source_sha256": "de17a60ece33691a2707384cd3039a6223536e4ad13204e8f366a0ed8fe2acf0",
+      "expected": {
+        "kwh": 1,
+        "minutes": 60
+      },
+      "exit": 0,
+      "elapsed_seconds": 0.28473219997249544,
+      "result": {
+        "status": "parsed",
+        "source": "$SYNTHETIC_FILE",
+        "summary": {
+          "interval_count": 1,
+          "start": "2026-07-06T12:00:00-07:00",
+          "end": "2026-07-06T13:00:00-07:00",
+          "span_days": 0.042,
+          "billing_days": 1,
+          "total_kwh": 1.0,
+          "median_interval_minutes": 60.0,
+          "max_interval_minutes": 60.0,
+          "coverage_ratio": 1.0,
+          "elapsed_minutes": 60.0,
+          "gap_minutes": 0,
+          "negative_interval_count": 0,
+          "quality": "limited"
+        },
+        "warnings": [],
+        "preview": [
+          {
+            "start": "2026-07-06T12:00:00-07:00",
+            "duration_minutes": 60.0,
+            "kwh": 1.0
+          }
+        ],
+        "next_step": "Call billfit_compare_rate_plans with the same usage_file.",
+        "human_gates": []
+      },
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "checks": {
+        "source_unchanged": true,
+        "no_input_in_error": true,
+        "preserved_values": true
+      },
+      "passed": true
+    },
+    {
+      "id": "energy-accept-csv-7",
+      "source_sha256": "eccf5d90310e1a10bef7fbb4cfaa9fbfd36eea413bbb5baf24f18a5cd88c797b",
+      "expected": {
+        "kwh": 1234.5,
+        "minutes": 60
+      },
+      "exit": 0,
+      "elapsed_seconds": 0.28418410010635853,
+      "result": {
+        "status": "parsed",
+        "source": "$SYNTHETIC_FILE",
+        "summary": {
+          "interval_count": 1,
+          "start": "2026-07-06T12:00:00-07:00",
+          "end": "2026-07-06T13:00:00-07:00",
+          "span_days": 0.042,
+          "billing_days": 1,
+          "total_kwh": 1234.5,
+          "median_interval_minutes": 60.0,
+          "max_interval_minutes": 60.0,
+          "coverage_ratio": 1.0,
+          "elapsed_minutes": 60.0,
+          "gap_minutes": 0,
+          "negative_interval_count": 0,
+          "quality": "limited"
+        },
+        "warnings": [],
+        "preview": [
+          {
+            "start": "2026-07-06T12:00:00-07:00",
+            "duration_minutes": 60.0,
+            "kwh": 1234.5
+          }
+        ],
+        "next_step": "Call billfit_compare_rate_plans with the same usage_file.",
+        "human_gates": []
+      },
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "checks": {
+        "source_unchanged": true,
+        "no_input_in_error": true,
+        "preserved_values": true
+      },
+      "passed": true
+    },
+    {
+      "id": "energy-accept-csv-8",
+      "source_sha256": "53a692d91c6f3210fc4e968af4a88c8a8e92c7a5e2e3aba27953d48b670d9159",
+      "expected": {
+        "kwh": 1234567.5,
+        "minutes": 60
+      },
+      "exit": 0,
+      "elapsed_seconds": 0.2810593999456614,
+      "result": {
+        "status": "parsed",
+        "source": "$SYNTHETIC_FILE",
+        "summary": {
+          "interval_count": 1,
+          "start": "2026-07-06T12:00:00-07:00",
+          "end": "2026-07-06T13:00:00-07:00",
+          "span_days": 0.042,
+          "billing_days": 1,
+          "total_kwh": 1234567.5,
+          "median_interval_minutes": 60.0,
+          "max_interval_minutes": 60.0,
+          "coverage_ratio": 1.0,
+          "elapsed_minutes": 60.0,
+          "gap_minutes": 0,
+          "negative_interval_count": 0,
+          "quality": "limited"
+        },
+        "warnings": [],
+        "preview": [
+          {
+            "start": "2026-07-06T12:00:00-07:00",
+            "duration_minutes": 60.0,
+            "kwh": 1234567.5
+          }
+        ],
+        "next_step": "Call billfit_compare_rate_plans with the same usage_file.",
+        "human_gates": []
+      },
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "checks": {
+        "source_unchanged": true,
+        "no_input_in_error": true,
+        "preserved_values": true
+      },
+      "passed": true
+    },
+    {
+      "id": "energy-accept-csv-9",
+      "source_sha256": "c6853b298eae7fb9175d49bb8cbc77b116d0e68d9ee744dc1b8bdc2129b0845d",
+      "expected": {
+        "kwh": 0.00125,
+        "minutes": 60
+      },
+      "exit": 0,
+      "elapsed_seconds": 0.2852156001608819,
+      "result": {
+        "status": "parsed",
+        "source": "$SYNTHETIC_FILE",
+        "summary": {
+          "interval_count": 1,
+          "start": "2026-07-06T12:00:00-07:00",
+          "end": "2026-07-06T13:00:00-07:00",
+          "span_days": 0.042,
+          "billing_days": 1,
+          "total_kwh": 0.00125,
+          "median_interval_minutes": 60.0,
+          "max_interval_minutes": 60.0,
+          "coverage_ratio": 1.0,
+          "elapsed_minutes": 60.0,
+          "gap_minutes": 0,
+          "negative_interval_count": 0,
+          "quality": "limited"
+        },
+        "warnings": [],
+        "preview": [
+          {
+            "start": "2026-07-06T12:00:00-07:00",
+            "duration_minutes": 60.0,
+            "kwh": 0.00125
+          }
+        ],
+        "next_step": "Call billfit_compare_rate_plans with the same usage_file.",
+        "human_gates": []
+      },
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "checks": {
+        "source_unchanged": true,
+        "no_input_in_error": true,
+        "preserved_values": true
+      },
+      "passed": true
+    },
+    {
+      "id": "energy-accept-csv-10",
+      "source_sha256": "f21233e1b97f43fe1997f5b6aa5d281c5a9a40b3950b5bce0a8ab6b4086fd114",
+      "expected": {
+        "kwh": 1.25,
+        "minutes": 60
+      },
+      "exit": 0,
+      "elapsed_seconds": 0.28528760001063347,
+      "result": {
+        "status": "parsed",
+        "source": "$SYNTHETIC_FILE",
+        "summary": {
+          "interval_count": 1,
+          "start": "2026-07-06T12:00:00-07:00",
+          "end": "2026-07-06T13:00:00-07:00",
+          "span_days": 0.042,
+          "billing_days": 1,
+          "total_kwh": 1.25,
+          "median_interval_minutes": 60.0,
+          "max_interval_minutes": 60.0,
+          "coverage_ratio": 1.0,
+          "elapsed_minutes": 60.0,
+          "gap_minutes": 0,
+          "negative_interval_count": 0,
+          "quality": "limited"
+        },
+        "warnings": [],
+        "preview": [
+          {
+            "start": "2026-07-06T12:00:00-07:00",
+            "duration_minutes": 60.0,
+            "kwh": 1.25
+          }
+        ],
+        "next_step": "Call billfit_compare_rate_plans with the same usage_file.",
+        "human_gates": []
+      },
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "checks": {
+        "source_unchanged": true,
+        "no_input_in_error": true,
+        "preserved_values": true
+      },
+      "passed": true
+    },
+    {
+      "id": "energy-accept-csv-11",
+      "source_sha256": "88663957fd84e782241390b9256b4783e53d34efb501fd0b6735f2e1fc1940d9",
+      "expected": {
+        "kwh": 0,
+        "minutes": 60
+      },
+      "exit": 0,
+      "elapsed_seconds": 0.29050259990617633,
+      "result": {
+        "status": "parsed",
+        "source": "$SYNTHETIC_FILE",
+        "summary": {
+          "interval_count": 1,
+          "start": "2026-07-06T12:00:00-07:00",
+          "end": "2026-07-06T13:00:00-07:00",
+          "span_days": 0.042,
+          "billing_days": 1,
+          "total_kwh": 0.0,
+          "median_interval_minutes": 60.0,
+          "max_interval_minutes": 60.0,
+          "coverage_ratio": 1.0,
+          "elapsed_minutes": 60.0,
+          "gap_minutes": 0,
+          "negative_interval_count": 0,
+          "quality": "limited"
+        },
+        "warnings": [],
+        "preview": [
+          {
+            "start": "2026-07-06T12:00:00-07:00",
+            "duration_minutes": 60.0,
+            "kwh": 0.0
+          }
+        ],
+        "next_step": "Call billfit_compare_rate_plans with the same usage_file.",
+        "human_gates": []
+      },
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "checks": {
+        "source_unchanged": true,
+        "no_input_in_error": true,
+        "preserved_values": true
+      },
+      "passed": true
+    },
+    {
+      "id": "energy-accept-csv-12",
+      "source_sha256": "9e1a1f55f049b4b5cb1056ba3cb56a7319c26d1e4a1f6680783407e27e5b80c3",
+      "expected": {
+        "kwh": -1.25,
+        "minutes": 60
+      },
+      "exit": 0,
+      "elapsed_seconds": 0.28178550000302494,
+      "result": {
+        "status": "parsed",
+        "source": "$SYNTHETIC_FILE",
+        "summary": {
+          "interval_count": 1,
+          "start": "2026-07-06T12:00:00-07:00",
+          "end": "2026-07-06T13:00:00-07:00",
+          "span_days": 0.042,
+          "billing_days": 1,
+          "total_kwh": -1.25,
+          "median_interval_minutes": 60.0,
+          "max_interval_minutes": 60.0,
+          "coverage_ratio": 1.0,
+          "elapsed_minutes": 60.0,
+          "gap_minutes": 0,
+          "negative_interval_count": 1,
+          "quality": "unsupported_net_export"
+        },
+        "warnings": [
+          "Negative usage indicates export or corrections; solar/net export is outside the MVP scope."
+        ],
+        "preview": [
+          {
+            "start": "2026-07-06T12:00:00-07:00",
+            "duration_minutes": 60.0,
+            "kwh": -1.25
+          }
+        ],
+        "next_step": "Call billfit_compare_rate_plans with the same usage_file.",
+        "human_gates": []
+      },
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "checks": {
+        "source_unchanged": true,
+        "no_input_in_error": true,
+        "preserved_values": true
+      },
+      "passed": true
+    },
+    {
+      "id": "energy-accept-csv-13",
+      "source_sha256": "bcab35b022ece1b240616a004d14ced807a797c40af01489e91b8db7dfbf6bd6",
+      "expected": {
+        "kwh": -1.25,
+        "minutes": 60
+      },
+      "exit": 0,
+      "elapsed_seconds": 0.27743480005301535,
+      "result": {
+        "status": "parsed",
+        "source": "$SYNTHETIC_FILE",
+        "summary": {
+          "interval_count": 1,
+          "start": "2026-07-06T12:00:00-07:00",
+          "end": "2026-07-06T13:00:00-07:00",
+          "span_days": 0.042,
+          "billing_days": 1,
+          "total_kwh": -1.25,
+          "median_interval_minutes": 60.0,
+          "max_interval_minutes": 60.0,
+          "coverage_ratio": 1.0,
+          "elapsed_minutes": 60.0,
+          "gap_minutes": 0,
+          "negative_interval_count": 1,
+          "quality": "unsupported_net_export"
+        },
+        "warnings": [
+          "Negative usage indicates export or corrections; solar/net export is outside the MVP scope."
+        ],
+        "preview": [
+          {
+            "start": "2026-07-06T12:00:00-07:00",
+            "duration_minutes": 60.0,
+            "kwh": -1.25
+          }
+        ],
+        "next_step": "Call billfit_compare_rate_plans with the same usage_file.",
+        "human_gates": []
+      },
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "checks": {
+        "source_unchanged": true,
+        "no_input_in_error": true,
+        "preserved_values": true
+      },
+      "passed": true
+    },
+    {
+      "id": "duration-reject-csv-0",
+      "source_sha256": "8229e7366c0b21f8c8ec23c0b0621b89211148c0c51b3e8632f895a441c486e9",
+      "expected": {
+        "error": "INVALID_INTERVAL_DURATION"
+      },
+      "exit": 0,
+      "elapsed_seconds": 0.2785551000852138,
+      "result": {
+        "status": "parsed",
+        "source": "$SYNTHETIC_FILE",
+        "summary": {
+          "interval_count": 1,
+          "start": "2026-07-06T12:00:00-07:00",
+          "end": "2026-07-06T13:00:00-07:00",
+          "span_days": 0.042,
+          "billing_days": 1,
+          "total_kwh": 1.0,
+          "median_interval_minutes": 60.0,
+          "max_interval_minutes": 60.0,
+          "coverage_ratio": 1.0,
+          "elapsed_minutes": 60.0,
+          "gap_minutes": 0,
+          "negative_interval_count": 0,
+          "quality": "limited"
+        },
+        "warnings": [],
+        "preview": [
+          {
+            "start": "2026-07-06T12:00:00-07:00",
+            "duration_minutes": 60.0,
+            "kwh": 1.0
+          }
+        ],
+        "next_step": "Call billfit_compare_rate_plans with the same usage_file.",
+        "human_gates": []
+      },
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "checks": {
+        "source_unchanged": true,
+        "no_input_in_error": true,
+        "reject_without_values": false
+      },
+      "passed": false
+    },
+    {
+      "id": "duration-reject-csv-1",
+      "source_sha256": "8ad2abf01be05ef2edfafa03638fa7e2181c573d1ad1390e5788f7dae553c5fd",
+      "expected": {
+        "error": "INVALID_INTERVAL_DURATION"
+      },
+      "exit": 0,
+      "elapsed_seconds": 0.27861869987100363,
+      "result": {
+        "status": "parsed",
+        "source": "$SYNTHETIC_FILE",
+        "summary": {
+          "interval_count": 1,
+          "start": "2026-07-06T12:00:00-07:00",
+          "end": "2026-07-06T13:00:00-07:00",
+          "span_days": 0.042,
+          "billing_days": 1,
+          "total_kwh": 1.0,
+          "median_interval_minutes": 60.0,
+          "max_interval_minutes": 60.0,
+          "coverage_ratio": 1.0,
+          "elapsed_minutes": 60.0,
+          "gap_minutes": 0,
+          "negative_interval_count": 0,
+          "quality": "limited"
+        },
+        "warnings": [],
+        "preview": [
+          {
+            "start": "2026-07-06T12:00:00-07:00",
+            "duration_minutes": 60.0,
+            "kwh": 1.0
+          }
+        ],
+        "next_step": "Call billfit_compare_rate_plans with the same usage_file.",
+        "human_gates": []
+      },
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "checks": {
+        "source_unchanged": true,
+        "no_input_in_error": true,
+        "reject_without_values": false
+      },
+      "passed": false
+    },
+    {
+      "id": "duration-reject-csv-2",
+      "source_sha256": "05591452863da37414d4bd8cfda1ff65cab88adf4614f131b9154bea01fdac7e",
+      "expected": {
+        "error": "INVALID_INTERVAL_DURATION"
+      },
+      "exit": 0,
+      "elapsed_seconds": 0.283545000012964,
+      "result": {
+        "status": "parsed",
+        "source": "$SYNTHETIC_FILE",
+        "summary": {
+          "interval_count": 1,
+          "start": "2026-07-06T12:00:00-07:00",
+          "end": "2026-07-06T13:00:00-07:00",
+          "span_days": 0.042,
+          "billing_days": 1,
+          "total_kwh": 1.0,
+          "median_interval_minutes": 60.0,
+          "max_interval_minutes": 60.0,
+          "coverage_ratio": 1.0,
+          "elapsed_minutes": 60.0,
+          "gap_minutes": 0,
+          "negative_interval_count": 0,
+          "quality": "limited"
+        },
+        "warnings": [],
+        "preview": [
+          {
+            "start": "2026-07-06T12:00:00-07:00",
+            "duration_minutes": 60.0,
+            "kwh": 1.0
+          }
+        ],
+        "next_step": "Call billfit_compare_rate_plans with the same usage_file.",
+        "human_gates": []
+      },
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "checks": {
+        "source_unchanged": true,
+        "no_input_in_error": true,
+        "reject_without_values": false
+      },
+      "passed": false
+    },
+    {
+      "id": "duration-reject-csv-3",
+      "source_sha256": "6fb5a75aaa3f6db1d3a8678254523911f2ec396138f1f93cae7045384a2b621e",
+      "expected": {
+        "error": "INVALID_INTERVAL_DURATION"
+      },
+      "exit": 0,
+      "elapsed_seconds": 0.28743199980817735,
+      "result": {
+        "status": "parsed",
+        "source": "$SYNTHETIC_FILE",
+        "summary": {
+          "interval_count": 1,
+          "start": "2026-07-06T12:00:00-07:00",
+          "end": "2026-07-06T13:00:00-07:00",
+          "span_days": 0.042,
+          "billing_days": 1,
+          "total_kwh": 1.0,
+          "median_interval_minutes": 60.0,
+          "max_interval_minutes": 60.0,
+          "coverage_ratio": 1.0,
+          "elapsed_minutes": 60.0,
+          "gap_minutes": 0,
+          "negative_interval_count": 0,
+          "quality": "limited"
+        },
+        "warnings": [],
+        "preview": [
+          {
+            "start": "2026-07-06T12:00:00-07:00",
+            "duration_minutes": 60.0,
+            "kwh": 1.0
+          }
+        ],
+        "next_step": "Call billfit_compare_rate_plans with the same usage_file.",
+        "human_gates": []
+      },
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "checks": {
+        "source_unchanged": true,
+        "no_input_in_error": true,
+        "reject_without_values": false
+      },
+      "passed": false
+    },
+    {
+      "id": "duration-reject-csv-4",
+      "source_sha256": "649698e5a7b8bea14bdd43ed2ca27a20b69a1a34758f8bef66b61bf67914fd58",
+      "expected": {
+        "error": "INVALID_INTERVAL_DURATION"
+      },
+      "exit": 0,
+      "elapsed_seconds": 0.27298129978589714,
+      "result": {
+        "status": "parsed",
+        "source": "$SYNTHETIC_FILE",
+        "summary": {
+          "interval_count": 1,
+          "start": "2026-07-06T12:00:00-07:00",
+          "end": "2026-07-06T12:12:00-07:00",
+          "span_days": 0.008,
+          "billing_days": 1,
+          "total_kwh": 1.0,
+          "median_interval_minutes": 12.0,
+          "max_interval_minutes": 12.0,
+          "coverage_ratio": 1.0,
+          "elapsed_minutes": 12.0,
+          "gap_minutes": 0,
+          "negative_interval_count": 0,
+          "quality": "limited"
+        },
+        "warnings": [],
+        "preview": [
+          {
+            "start": "2026-07-06T12:00:00-07:00",
+            "duration_minutes": 12.0,
+            "kwh": 1.0
+          }
+        ],
+        "next_step": "Call billfit_compare_rate_plans with the same usage_file.",
+        "human_gates": []
+      },
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "checks": {
+        "source_unchanged": true,
+        "no_input_in_error": true,
+        "reject_without_values": false
+      },
+      "passed": false
+    },
+    {
+      "id": "duration-reject-csv-5",
+      "source_sha256": "62f8e9ef9899e4142e59d34af04ab480fbb57418f520c017712f0233f5c0779b",
+      "expected": {
+        "error": "INVALID_INTERVAL_DURATION"
+      },
+      "exit": 2,
+      "elapsed_seconds": 0.2740806001238525,
+      "result": {
+        "status": "error",
+        "error": {
+          "code": "INVALID_INTERVAL_DURATION",
+          "message": "An explicit interval must be at least one second and at most 1,440 minutes.",
+          "details": {}
+        }
+      },
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "checks": {
+        "source_unchanged": true,
+        "no_input_in_error": true,
+        "reject_without_values": true
+      },
+      "passed": true
+    },
+    {
+      "id": "duration-accept-csv-0",
+      "source_sha256": "aef0938d54d31e4289732fb26e5e4ddab86d29151a8e7420c192c0f235fa5743",
+      "expected": {
+        "kwh": 1,
+        "minutes": 60
+      },
+      "exit": 0,
+      "elapsed_seconds": 0.27560799987986684,
+      "result": {
+        "status": "parsed",
+        "source": "$SYNTHETIC_FILE",
+        "summary": {
+          "interval_count": 1,
+          "start": "2026-07-06T12:00:00-07:00",
+          "end": "2026-07-06T13:00:00-07:00",
+          "span_days": 0.042,
+          "billing_days": 1,
+          "total_kwh": 1.0,
+          "median_interval_minutes": 60.0,
+          "max_interval_minutes": 60.0,
+          "coverage_ratio": 1.0,
+          "elapsed_minutes": 60.0,
+          "gap_minutes": 0,
+          "negative_interval_count": 0,
+          "quality": "limited"
+        },
+        "warnings": [],
+        "preview": [
+          {
+            "start": "2026-07-06T12:00:00-07:00",
+            "duration_minutes": 60.0,
+            "kwh": 1.0
+          }
+        ],
+        "next_step": "Call billfit_compare_rate_plans with the same usage_file.",
+        "human_gates": []
+      },
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "checks": {
+        "source_unchanged": true,
+        "no_input_in_error": true,
+        "preserved_values": true
+      },
+      "passed": true
+    },
+    {
+      "id": "duration-accept-csv-1",
+      "source_sha256": "07b6b81cac78612f5859e12ca7b542d9f2fe3d3c7f43cef695b281b9ef70aad1",
+      "expected": {
+        "kwh": 1,
+        "minutes": 60
+      },
+      "exit": 0,
+      "elapsed_seconds": 0.2868053999263793,
+      "result": {
+        "status": "parsed",
+        "source": "$SYNTHETIC_FILE",
+        "summary": {
+          "interval_count": 1,
+          "start": "2026-07-06T12:00:00-07:00",
+          "end": "2026-07-06T13:00:00-07:00",
+          "span_days": 0.042,
+          "billing_days": 1,
+          "total_kwh": 1.0,
+          "median_interval_minutes": 60.0,
+          "max_interval_minutes": 60.0,
+          "coverage_ratio": 1.0,
+          "elapsed_minutes": 60.0,
+          "gap_minutes": 0,
+          "negative_interval_count": 0,
+          "quality": "limited"
+        },
+        "warnings": [],
+        "preview": [
+          {
+            "start": "2026-07-06T12:00:00-07:00",
+            "duration_minutes": 60.0,
+            "kwh": 1.0
+          }
+        ],
+        "next_step": "Call billfit_compare_rate_plans with the same usage_file.",
+        "human_gates": []
+      },
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "checks": {
+        "source_unchanged": true,
+        "no_input_in_error": true,
+        "preserved_values": true
+      },
+      "passed": true
+    },
+    {
+      "id": "duration-accept-csv-2",
+      "source_sha256": "b58ee2216ed5b490c0b7b432d806d837ac3b261a9d5bb43178731a6b02b2b545",
+      "expected": {
+        "kwh": 1,
+        "minutes": 1200
+      },
+      "exit": 0,
+      "elapsed_seconds": 0.29001020011492074,
+      "result": {
+        "status": "parsed",
+        "source": "$SYNTHETIC_FILE",
+        "summary": {
+          "interval_count": 1,
+          "start": "2026-07-06T12:00:00-07:00",
+          "end": "2026-07-07T08:00:00-07:00",
+          "span_days": 0.833,
+          "billing_days": 1,
+          "total_kwh": 1.0,
+          "median_interval_minutes": 1200.0,
+          "max_interval_minutes": 1200.0,
+          "coverage_ratio": 1.0,
+          "elapsed_minutes": 1200.0,
+          "gap_minutes": 0,
+          "negative_interval_count": 0,
+          "quality": "limited"
+        },
+        "warnings": [
+          "COARSE_INTERVAL_ALLOCATION: intervals longer than one hour require uniform-power allocation; switching guidance is withheld."
+        ],
+        "preview": [
+          {
+            "start": "2026-07-06T12:00:00-07:00",
+            "duration_minutes": 1200.0,
+            "kwh": 1.0
+          }
+        ],
+        "next_step": "Call billfit_compare_rate_plans with the same usage_file.",
+        "human_gates": []
+      },
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "checks": {
+        "source_unchanged": true,
+        "no_input_in_error": true,
+        "preserved_values": true
+      },
+      "passed": true
+    },
+    {
+      "id": "duration-accept-csv-3",
+      "source_sha256": "73716bed4186e1968412b8326033b2fc52d87706c1a687f4791e339dd055dbbb",
+      "expected": {
+        "kwh": 1,
+        "minutes": 0.5
+      },
+      "exit": 0,
+      "elapsed_seconds": 0.29287180001847446,
+      "result": {
+        "status": "parsed",
+        "source": "$SYNTHETIC_FILE",
+        "summary": {
+          "interval_count": 1,
+          "start": "2026-07-06T12:00:00-07:00",
+          "end": "2026-07-06T12:00:30-07:00",
+          "span_days": 0.0,
+          "billing_days": 1,
+          "total_kwh": 1.0,
+          "median_interval_minutes": 0.5,
+          "max_interval_minutes": 0.5,
+          "coverage_ratio": 1.0,
+          "elapsed_minutes": 0.5,
+          "gap_minutes": 0,
+          "negative_interval_count": 0,
+          "quality": "limited"
+        },
+        "warnings": [],
+        "preview": [
+          {
+            "start": "2026-07-06T12:00:00-07:00",
+            "duration_minutes": 0.5,
+            "kwh": 1.0
+          }
+        ],
+        "next_step": "Call billfit_compare_rate_plans with the same usage_file.",
+        "human_gates": []
+      },
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "checks": {
+        "source_unchanged": true,
+        "no_input_in_error": true,
+        "preserved_values": true
+      },
+      "passed": true
+    },
+    {
+      "id": "csv-surplus-0",
+      "source_sha256": "97c417597be322f1041caa5565cc7420cabffdf588699fba5651acc0405ca035",
+      "expected": {
+        "error": "CSV_ROW_WIDTH_MISMATCH"
+      },
+      "exit": 0,
+      "elapsed_seconds": 0.2910357001237571,
+      "result": {
+        "status": "parsed",
+        "source": "$SYNTHETIC_FILE",
+        "summary": {
+          "interval_count": 1,
+          "start": "2026-07-06T12:00:00-07:00",
+          "end": "2026-07-06T13:00:00-07:00",
+          "span_days": 0.042,
+          "billing_days": 1,
+          "total_kwh": 1.0,
+          "median_interval_minutes": 60.0,
+          "max_interval_minutes": 60.0,
+          "coverage_ratio": 1.0,
+          "elapsed_minutes": 60.0,
+          "gap_minutes": 0,
+          "negative_interval_count": 0,
+          "quality": "limited"
+        },
+        "warnings": [],
+        "preview": [
+          {
+            "start": "2026-07-06T12:00:00-07:00",
+            "duration_minutes": 60.0,
+            "kwh": 1.0
+          }
+        ],
+        "next_step": "Call billfit_compare_rate_plans with the same usage_file.",
+        "human_gates": []
+      },
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "checks": {
+        "source_unchanged": true,
+        "no_input_in_error": true,
+        "reject_without_values": false
+      },
+      "passed": false
+    },
+    {
+      "id": "csv-surplus-1",
+      "source_sha256": "58d88a39d7fb22e5cffdaad3f6936648f15d5b4a9157aece5ea116a9c6747dfe",
+      "expected": {
+        "error": "CSV_ROW_WIDTH_MISMATCH"
+      },
+      "exit": 0,
+      "elapsed_seconds": 0.29450839990749955,
+      "result": {
+        "status": "parsed",
+        "source": "$SYNTHETIC_FILE",
+        "summary": {
+          "interval_count": 1,
+          "start": "2026-07-06T12:00:00-07:00",
+          "end": "2026-07-06T13:00:00-07:00",
+          "span_days": 0.042,
+          "billing_days": 1,
+          "total_kwh": 1.0,
+          "median_interval_minutes": 60.0,
+          "max_interval_minutes": 60.0,
+          "coverage_ratio": 1.0,
+          "elapsed_minutes": 60.0,
+          "gap_minutes": 0,
+          "negative_interval_count": 0,
+          "quality": "limited"
+        },
+        "warnings": [],
+        "preview": [
+          {
+            "start": "2026-07-06T12:00:00-07:00",
+            "duration_minutes": 60.0,
+            "kwh": 1.0
+          }
+        ],
+        "next_step": "Call billfit_compare_rate_plans with the same usage_file.",
+        "human_gates": []
+      },
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "checks": {
+        "source_unchanged": true,
+        "no_input_in_error": true,
+        "reject_without_values": false
+      },
+      "passed": false
+    },
+    {
+      "id": "csv-surplus-2",
+      "source_sha256": "118b9106f33bc6b60b966f3c64abbf6a6d47182778a9d00e3cbfb3c4824ce4ce",
+      "expected": {
+        "error": "CSV_ROW_WIDTH_MISMATCH"
+      },
+      "exit": 0,
+      "elapsed_seconds": 0.29209750005975366,
+      "result": {
+        "status": "parsed",
+        "source": "$SYNTHETIC_FILE",
+        "summary": {
+          "interval_count": 1,
+          "start": "2026-07-06T12:00:00-07:00",
+          "end": "2026-07-06T13:00:00-07:00",
+          "span_days": 0.042,
+          "billing_days": 1,
+          "total_kwh": 1.0,
+          "median_interval_minutes": 60.0,
+          "max_interval_minutes": 60.0,
+          "coverage_ratio": 1.0,
+          "elapsed_minutes": 60.0,
+          "gap_minutes": 0,
+          "negative_interval_count": 0,
+          "quality": "limited"
+        },
+        "warnings": [],
+        "preview": [
+          {
+            "start": "2026-07-06T12:00:00-07:00",
+            "duration_minutes": 60.0,
+            "kwh": 1.0
+          }
+        ],
+        "next_step": "Call billfit_compare_rate_plans with the same usage_file.",
+        "human_gates": []
+      },
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "checks": {
+        "source_unchanged": true,
+        "no_input_in_error": true,
+        "reject_without_values": false
+      },
+      "passed": false
+    },
+    {
+      "id": "csv-surplus-3",
+      "source_sha256": "c81bf7a0628544711c7a04346abf4500de4489f938a1a2657f2601a62218b027",
+      "expected": {
+        "error": "CSV_ROW_WIDTH_MISMATCH"
+      },
+      "exit": 0,
+      "elapsed_seconds": 0.28713049995712936,
+      "result": {
+        "status": "parsed",
+        "source": "$SYNTHETIC_FILE",
+        "summary": {
+          "interval_count": 1,
+          "start": "2026-07-06T12:00:00-07:00",
+          "end": "2026-07-06T13:00:00-07:00",
+          "span_days": 0.042,
+          "billing_days": 1,
+          "total_kwh": 1.0,
+          "median_interval_minutes": 60.0,
+          "max_interval_minutes": 60.0,
+          "coverage_ratio": 1.0,
+          "elapsed_minutes": 60.0,
+          "gap_minutes": 0,
+          "negative_interval_count": 0,
+          "quality": "limited"
+        },
+        "warnings": [],
+        "preview": [
+          {
+            "start": "2026-07-06T12:00:00-07:00",
+            "duration_minutes": 60.0,
+            "kwh": 1.0
+          }
+        ],
+        "next_step": "Call billfit_compare_rate_plans with the same usage_file.",
+        "human_gates": []
+      },
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "checks": {
+        "source_unchanged": true,
+        "no_input_in_error": true,
+        "reject_without_values": false
+      },
+      "passed": false
+    },
+    {
+      "id": "xml-0",
+      "source_sha256": "29f5d17e83a6eab1406b02c4af13d9be780d4391e47ed974b4ac40a5097fa238",
+      "expected": {
+        "error": "INVALID_USAGE_VALUE"
+      },
+      "exit": 0,
+      "elapsed_seconds": 0.28560349997133017,
+      "result": {
+        "status": "parsed",
+        "source": "$SYNTHETIC_FILE",
+        "summary": {
+          "interval_count": 1,
+          "start": "2026-07-06T08:00:00-07:00",
+          "end": "2026-07-06T08:15:00-07:00",
+          "span_days": 0.01,
+          "billing_days": 1,
+          "total_kwh": 0.123,
+          "median_interval_minutes": 15.0,
+          "max_interval_minutes": 15.0,
+          "coverage_ratio": 1.0,
+          "elapsed_minutes": 15.0,
+          "gap_minutes": 0,
+          "negative_interval_count": 0,
+          "quality": "limited"
+        },
+        "warnings": [],
+        "preview": [
+          {
+            "start": "2026-07-06T08:00:00-07:00",
+            "duration_minutes": 15.0,
+            "kwh": 0.123
+          }
+        ],
+        "next_step": "Call billfit_compare_rate_plans with the same usage_file.",
+        "human_gates": []
+      },
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "checks": {
+        "source_unchanged": true,
+        "no_input_in_error": true,
+        "reject_without_values": false
+      },
+      "passed": false
+    },
+    {
+      "id": "xml-1",
+      "source_sha256": "126aaaed7fae3dc5b09fa84ad856de3a2d155a5f7ac48759be15fa5bdf2e7c46",
+      "expected": {
+        "error": "INVALID_USAGE_VALUE"
+      },
+      "exit": 0,
+      "elapsed_seconds": 0.2821541999001056,
+      "result": {
+        "status": "parsed",
+        "source": "$SYNTHETIC_FILE",
+        "summary": {
+          "interval_count": 1,
+          "start": "2026-07-06T08:00:00-07:00",
+          "end": "2026-07-06T08:15:00-07:00",
+          "span_days": 0.01,
+          "billing_days": 1,
+          "total_kwh": 0.25,
+          "median_interval_minutes": 15.0,
+          "max_interval_minutes": 15.0,
+          "coverage_ratio": 1.0,
+          "elapsed_minutes": 15.0,
+          "gap_minutes": 0,
+          "negative_interval_count": 0,
+          "quality": "limited"
+        },
+        "warnings": [],
+        "preview": [
+          {
+            "start": "2026-07-06T08:00:00-07:00",
+            "duration_minutes": 15.0,
+            "kwh": 0.25
+          }
+        ],
+        "next_step": "Call billfit_compare_rate_plans with the same usage_file.",
+        "human_gates": []
+      },
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "checks": {
+        "source_unchanged": true,
+        "no_input_in_error": true,
+        "reject_without_values": false
+      },
+      "passed": false
+    },
+    {
+      "id": "xml-2",
+      "source_sha256": "a18ed6ef4410ad7feff0df5193102ad9e17553b96ea431f35d6cbd1cb0f4ac36",
+      "expected": {
+        "error": "INVALID_USAGE_VALUE"
+      },
+      "exit": 0,
+      "elapsed_seconds": 0.2725408000405878,
+      "result": {
+        "status": "parsed",
+        "source": "$SYNTHETIC_FILE",
+        "summary": {
+          "interval_count": 1,
+          "start": "2026-07-06T08:00:00-07:00",
+          "end": "2026-07-06T08:15:00-07:00",
+          "span_days": 0.01,
+          "billing_days": 1,
+          "total_kwh": 0.25,
+          "median_interval_minutes": 15.0,
+          "max_interval_minutes": 15.0,
+          "coverage_ratio": 1.0,
+          "elapsed_minutes": 15.0,
+          "gap_minutes": 0,
+          "negative_interval_count": 0,
+          "quality": "limited"
+        },
+        "warnings": [],
+        "preview": [
+          {
+            "start": "2026-07-06T08:00:00-07:00",
+            "duration_minutes": 15.0,
+            "kwh": 0.25
+          }
+        ],
+        "next_step": "Call billfit_compare_rate_plans with the same usage_file.",
+        "human_gates": []
+      },
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "checks": {
+        "source_unchanged": true,
+        "no_input_in_error": true,
+        "reject_without_values": false
+      },
+      "passed": false
+    },
+    {
+      "id": "xml-3",
+      "source_sha256": "d3dfaa08d4f33097ba3b90cec3c6a908a7f0729df28eaa4462f32ce54c0782cc",
+      "expected": {
+        "error": "INVALID_USAGE_VALUE"
+      },
+      "exit": 0,
+      "elapsed_seconds": 0.2741308999247849,
+      "result": {
+        "status": "parsed",
+        "source": "$SYNTHETIC_FILE",
+        "summary": {
+          "interval_count": 1,
+          "start": "2026-07-06T08:00:00-07:00",
+          "end": "2026-07-06T08:15:00-07:00",
+          "span_days": 0.01,
+          "billing_days": 1,
+          "total_kwh": 0.0,
+          "median_interval_minutes": 15.0,
+          "max_interval_minutes": 15.0,
+          "coverage_ratio": 1.0,
+          "elapsed_minutes": 15.0,
+          "gap_minutes": 0,
+          "negative_interval_count": 0,
+          "quality": "limited"
+        },
+        "warnings": [],
+        "preview": [
+          {
+            "start": "2026-07-06T08:00:00-07:00",
+            "duration_minutes": 15.0,
+            "kwh": 0.0
+          }
+        ],
+        "next_step": "Call billfit_compare_rate_plans with the same usage_file.",
+        "human_gates": []
+      },
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "checks": {
+        "source_unchanged": true,
+        "no_input_in_error": true,
+        "reject_without_values": false
+      },
+      "passed": false
+    },
+    {
+      "id": "xml-4",
+      "source_sha256": "e981cced1f6347f426117720fff187a2bcd94ae57cdfdb600c45f2e02bda188e",
+      "expected": {
+        "error": "INVALID_INTERVAL_DURATION"
+      },
+      "exit": 0,
+      "elapsed_seconds": 0.281391000142321,
+      "result": {
+        "status": "parsed",
+        "source": "$SYNTHETIC_FILE",
+        "summary": {
+          "interval_count": 1,
+          "start": "2026-07-06T08:00:00-07:00",
+          "end": "2026-07-06T08:15:00-07:00",
+          "span_days": 0.01,
+          "billing_days": 1,
+          "total_kwh": 0.25,
+          "median_interval_minutes": 15.0,
+          "max_interval_minutes": 15.0,
+          "coverage_ratio": 1.0,
+          "elapsed_minutes": 15.0,
+          "gap_minutes": 0,
+          "negative_interval_count": 0,
+          "quality": "limited"
+        },
+        "warnings": [],
+        "preview": [
+          {
+            "start": "2026-07-06T08:00:00-07:00",
+            "duration_minutes": 15.0,
+            "kwh": 0.25
+          }
+        ],
+        "next_step": "Call billfit_compare_rate_plans with the same usage_file.",
+        "human_gates": []
+      },
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "checks": {
+        "source_unchanged": true,
+        "no_input_in_error": true,
+        "reject_without_values": false
+      },
+      "passed": false
+    },
+    {
+      "id": "xml-5",
+      "source_sha256": "1a8d050c20f88dfdc1796f07b79df3a11c160d443c6cefb5589e55079469fcfa",
+      "expected": {
+        "kwh": 0.25,
+        "minutes": 15
+      },
+      "exit": 0,
+      "elapsed_seconds": 0.29141209996305406,
+      "result": {
+        "status": "parsed",
+        "source": "$SYNTHETIC_FILE",
+        "summary": {
+          "interval_count": 1,
+          "start": "2026-07-06T08:00:00-07:00",
+          "end": "2026-07-06T08:15:00-07:00",
+          "span_days": 0.01,
+          "billing_days": 1,
+          "total_kwh": 0.25,
+          "median_interval_minutes": 15.0,
+          "max_interval_minutes": 15.0,
+          "coverage_ratio": 1.0,
+          "elapsed_minutes": 15.0,
+          "gap_minutes": 0,
+          "negative_interval_count": 0,
+          "quality": "limited"
+        },
+        "warnings": [],
+        "preview": [
+          {
+            "start": "2026-07-06T08:00:00-07:00",
+            "duration_minutes": 15.0,
+            "kwh": 0.25
+          }
+        ],
+        "next_step": "Call billfit_compare_rate_plans with the same usage_file.",
+        "human_gates": []
+      },
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "checks": {
+        "source_unchanged": true,
+        "no_input_in_error": true,
+        "preserved_values": true
+      },
+      "passed": true
+    }
+  ]
+}

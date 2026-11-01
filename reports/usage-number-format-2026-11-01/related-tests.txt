@@ -1,0 +1,14 @@
+test_actual_sdk_file_rejection_and_same_connection_recovery (test_usage_number_format.UsageNumberFormatTests.test_actual_sdk_file_rejection_and_same_connection_recovery) ... ok
+test_csv_never_discards_surplus_cells_even_when_trailing_cell_is_empty (test_usage_number_format.UsageNumberFormatTests.test_csv_never_discards_surplus_cells_even_when_trailing_cell_is_empty) ... ok
+test_explicit_duration_format_cannot_change_elapsed_time (test_usage_number_format.UsageNumberFormatTests.test_explicit_duration_format_cannot_change_elapsed_time) ... ok
+test_inline_invalid_energy_is_not_repaired_into_another_number (test_usage_number_format.UsageNumberFormatTests.test_inline_invalid_energy_is_not_repaired_into_another_number) ... ok
+test_inline_valid_formats_preserve_exact_interpreted_values (test_usage_number_format.UsageNumberFormatTests.test_inline_valid_formats_preserve_exact_interpreted_values) ... ok
+test_json_and_quoted_csv_apply_the_same_energy_contract (test_usage_number_format.UsageNumberFormatTests.test_json_and_quoted_csv_apply_the_same_energy_contract) ... ok
+test_optional_missing_csv_cells_keep_existing_quality_gate (test_usage_number_format.UsageNumberFormatTests.test_optional_missing_csv_cells_keep_existing_quality_gate) ... ok
+test_rejected_input_cannot_reach_comparison_or_bill_reconciliation (test_usage_number_format.UsageNumberFormatTests.test_rejected_input_cannot_reach_comparison_or_bill_reconciliation) ... ok
+test_xml_energy_and_seconds_cannot_remove_punctuation (test_usage_number_format.UsageNumberFormatTests.test_xml_energy_and_seconds_cannot_remove_punctuation) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 4.231s
+
+OK
