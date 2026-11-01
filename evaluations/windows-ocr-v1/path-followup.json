@@ -1,0 +1,17 @@
+{
+  "protocol": "BILLFIT_NATIVE_WINDOWS_PATHS_V1",
+  "frozen_on": "2026-11-01",
+  "relationship": "Additional filesystem compatibility checks after the original native matrix; not a blind quality holdout or a retry of its failures.",
+  "synthetic_only": true,
+  "fixture": "skew-6-degrees",
+  "bytes_and_expected_values": "Unchanged manifest/profile from BILLFIT_NATIVE_WINDOWS_OCR_V1",
+  "cases": ["ASCII paths", "Spaces in source and temporary paths", "Non-ASCII source and temporary paths"],
+  "requests": 3,
+  "interface": "Actual native CLI, new process per case so temporary-directory discovery is not cached",
+  "acceptance": ["Same five candidates and source hash", "All fields unconfirmed", "Original-pixel evidence", "No residual parser files in the owned temporary parent", "Source file bytes unchanged"],
+  "cloud_calls": 0,
+  "llm_calls": 0,
+  "automatic_retries": 0,
+  "runtime": "Same hash-pinned native executable and language data as the first matrix; signing limitation unchanged",
+  "limits": ["One synthetic image, not all Windows paths or filesystems", "No clean machine, customer file or independent human acceptance"]
+}
