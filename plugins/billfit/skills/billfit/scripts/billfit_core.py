@@ -10,6 +10,7 @@ from pathlib import Path
 from typing import Any
 
 from billfit_errors import BillFitError
+from assistance_programs import normalize_public_program, review_public_programs
 from billfit_usage import Interval, PACIFIC, load_usage, usage_summary as _usage_summary, split_interval as _split_interval
 from billfit_reconciliation import assess_period, compare_component, usage_has_assumptions
 
@@ -49,6 +50,12 @@ def _gate(
 
 
 HUMAN_GATES: dict[str, dict[str, str]] = {
+    "ASSISTANCE_PROGRAM_CONFIRMATION": _gate(
+        "ASSISTANCE_PROGRAM_CONFIRMATION",
+        "Confirm the unrecognized assistance program",
+        "An unmatched program name does not establish eligibility or ineligibility.",
+        "Confirm which listed program a household member is enrolled in. Keep Tribal/income-eligible and free-lunch qualifiers; do not provide enrollment documents or infer a similar name.",
+    ),
     "ACCOUNT_LOGIN": _gate(
         "ACCOUNT_LOGIN",
         "Download real usage data",
@@ -656,13 +663,7 @@ def _income_limit(table: dict[str, Any], household_size: int) -> int:
 
 
 def _normalize_public_program(program: str, data: dict[str, Any]) -> str:
-    cleaned = re.sub(r"[^a-z0-9]+", " ", program.lower()).strip()
-    aliases = data["program_aliases"]
-    for alias, canonical in aliases.items():
-        if cleaned == re.sub(r"[^a-z0-9]+", " ", alias.lower()).strip():
-            return canonical
-    underscored = cleaned.replace(" ", "_")
-    return aliases.get(underscored, underscored)
+    return normalize_public_program(program, data)
 
 
 def screen_assistance(
@@ -689,6 +690,7 @@ def _screen_assistance_snapshot(
         raise BillFitError("INVALID_HOUSEHOLD_SIZE", "household_size must be a positive integer.")
     if gross_annual_household_income is not None and (type(gross_annual_household_income) not in (int, float) or not math.isfinite(gross_annual_household_income) or gross_annual_household_income < 0):
         raise BillFitError("INVALID_INCOME", "Income must be a finite nonnegative number.")
+    program_review = review_public_programs(enrolled_public_programs, data)
     freshness = _freshness(data, as_of)
     if freshness["outside_effective_window"]:
         return {"status": "rules_outside_effective_window", "rules_freshness": freshness,
@@ -697,11 +699,10 @@ def _screen_assistance_snapshot(
     size = int(household_size)
     care_limit = _income_limit(data["care_income_upper_limit"], size)
     fera_limit = _income_limit(data["fera_income_upper_limit"], size)
-    normalized_programs = {
-        _normalize_public_program(program, data) for program in (enrolled_public_programs or [])
-    }
-    matching_programs = sorted(normalized_programs.intersection(data["care_categorical_programs"]))
+    matching_programs = sorted({item['canonical_program'] for item in program_review['matches']})
     gates: list[dict[str, str]] = []
+    if program_review['unrecognized']:
+        gates.append(HUMAN_GATES['ASSISTANCE_PROGRAM_CONFIRMATION'])
     if freshness["stale"]:
         gates.append(HUMAN_GATES["OFFICIAL_RATE_CONFIRMATION"])
 
@@ -769,6 +770,7 @@ def _screen_assistance_snapshot(
         "rules_freshness": freshness,
         "household_size": size,
         "gross_annual_household_income": gross_annual_household_income,
+        "categorical_program_review": program_review,
         "care": care,
         "fera": fera,
         "medical_baseline": medical,
