@@ -1,0 +1,44 @@
+{
+  "protocol": "CARE_PROGRAM_NAMES_V1",
+  "frozen_on": "2026-11-01",
+  "synthetic_household": {"household_size": 2, "gross_annual_household_income": 999999},
+  "sources": [
+    "https://www.pge.com/en/account/billing-and-assistance/financial-assistance/care-eligibility.html",
+    "https://www.cpuc.ca.gov/care/"
+  ],
+  "recognized": {
+    "EBT/CalFresh/SNAP (Food Stamps)": "calfresh_snap",
+    "Low Income Home Energy Assistance Program (LIHEAP)": "liheap",
+    "Women, Infants, and Children (WIC)": "wic",
+    "Women, Infants, and Children Program (WIC)": "wic",
+    "CalWORKs (TANF)": "calworks_tanf",
+    "Tribal TANF": "tribal_tanf",
+    "Head Start Income Eligible (Tribal Only)": "head_start_tribal_only",
+    "Supplemental Security Income (SSI)": "supplemental_security_income",
+    "Medi-Cal for Families (Healthy Families A & B)": "medicaid_medi_cal",
+    "Healthy Families A & B": "medicaid_medi_cal",
+    "Bureau of Indian Affairs General Assistance": "bureau_of_indian_affairs_general_assistance",
+    "Medicaid/Medi-Cal (under age 65)": "medicaid_medi_cal",
+    "Medicaid/Medi-Cal (age 65 and over)": "medicaid_medi_cal",
+    "Medicaid / Medi-Cal": "medicaid_medi_cal",
+    "National School Lunch Program (NSLP) - Free Lunch": "national_school_lunch_program_free_lunch"
+  },
+  "unresolved": [
+    "Head Start",
+    "Medicare",
+    "Social Security",
+    "EBT",
+    "National School Lunch Program (NSLP)",
+    "universal free school meals",
+    "CalWORKs (TANF) or Tribal TANF",
+    "not enrolled in SNAP",
+    "SNAP expired",
+    "UNRECOGNIZED_SYNTHETIC_PROGRAM"
+  ],
+  "limitations": [
+    "Program-label recognition only, not authenticated enrollment or final eligibility",
+    "CPUC specifies free lunch while the PG&E label omits that qualifier; bare NSLP remains unresolved",
+    "A combined CalWORKs-or-Tribal label does not establish which enrollment the user reports",
+    "No fuzzy matching, provider calls, customer records or independent-user accuracy measurement"
+  ]
+}

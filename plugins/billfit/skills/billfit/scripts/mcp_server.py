@@ -113,13 +113,15 @@ TOOLS: list[dict[str, Any]] = [
     },
     {
         "name": "billfit_screen_assistance",
-        "description": "Screen CARE and FERA using packaged, source-dated household-size and gross-income rules plus categorical programs. Preserve needs_official_confirmation and human gates for fractional income between published whole-dollar boundaries; never round income or infer approval. Separately flag possible Medical Baseline need without collecting medical records.",
+        "description": "Screen CARE and FERA using packaged, source-dated household-size and gross-income rules plus user-reported categorical programs. Preserve categorical_program_review and its confirmation gate: unrecognized names are unresolved, not ineligible; do not guess a similar program or omit qualifiers. Preserve needs_official_confirmation for fractional income between published whole-dollar boundaries; never round income or infer approval. Separately flag possible Medical Baseline need without collecting medical records.",
         "inputSchema": {
             "type": "object",
             "properties": {
                 "household_size": {"type": "integer", "minimum": 1},
                 "gross_annual_household_income": {"type": "number", "minimum": 0},
-                "enrolled_public_programs": {"type": "array", "items": {"type": "string"}},
+                "enrolled_public_programs": {"type": "array", "maxItems": 32,
+                    "items": {"type": "string", "minLength": 1, "maxLength": 160},
+                    "description": "Exact names of programs a household member reports current enrollment in; preserve qualifiers. Do not infer enrollment from school meals, age, benefits cards or similar names."},
                 "medical_baseline_need": {"type": ["boolean", "null"]},
             },
             "required": ["household_size"],

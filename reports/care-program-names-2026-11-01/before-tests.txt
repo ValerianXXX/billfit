@@ -1,0 +1,596 @@
+test_actual_cli_rejects_malformed_programs_without_traceback_then_recovers (test_care_program_names.CareProgramNameTests.test_actual_cli_rejects_malformed_programs_without_traceback_then_recovers) ... FAIL
+test_actual_sdk_both_profiles_preserve_review_and_recover_after_invalid_input (test_care_program_names.CareProgramNameTests.test_actual_sdk_both_profiles_preserve_review_and_recover_after_invalid_input) ...
+  test_actual_sdk_both_profiles_preserve_review_and_recover_after_invalid_input (test_care_program_names.CareProgramNameTests.test_actual_sdk_both_profiles_preserve_review_and_recover_after_invalid_input) (mode='2026-07-28') ... ERROR
+  test_actual_sdk_both_profiles_preserve_review_and_recover_after_invalid_input (test_care_program_names.CareProgramNameTests.test_actual_sdk_both_profiles_preserve_review_and_recover_after_invalid_input) (mode='legacy') ... ERROR
+test_ambiguous_and_unrecognized_names_are_visible_without_invented_eligibility (test_care_program_names.CareProgramNameTests.test_ambiguous_and_unrecognized_names_are_visible_without_invented_eligibility) ...
+  test_ambiguous_and_unrecognized_names_are_visible_without_invented_eligibility (test_care_program_names.CareProgramNameTests.test_ambiguous_and_unrecognized_names_are_visible_without_invented_eligibility) (label='Head Start') ... ERROR
+  test_ambiguous_and_unrecognized_names_are_visible_without_invented_eligibility (test_care_program_names.CareProgramNameTests.test_ambiguous_and_unrecognized_names_are_visible_without_invented_eligibility) (label='Medicare') ... ERROR
+  test_ambiguous_and_unrecognized_names_are_visible_without_invented_eligibility (test_care_program_names.CareProgramNameTests.test_ambiguous_and_unrecognized_names_are_visible_without_invented_eligibility) (label='Social Security') ... ERROR
+  test_ambiguous_and_unrecognized_names_are_visible_without_invented_eligibility (test_care_program_names.CareProgramNameTests.test_ambiguous_and_unrecognized_names_are_visible_without_invented_eligibility) (label='EBT') ... ERROR
+  test_ambiguous_and_unrecognized_names_are_visible_without_invented_eligibility (test_care_program_names.CareProgramNameTests.test_ambiguous_and_unrecognized_names_are_visible_without_invented_eligibility) (label='National School Lunch Program (NSLP)') ... ERROR
+  test_ambiguous_and_unrecognized_names_are_visible_without_invented_eligibility (test_care_program_names.CareProgramNameTests.test_ambiguous_and_unrecognized_names_are_visible_without_invented_eligibility) (label='universal free school meals') ... ERROR
+  test_ambiguous_and_unrecognized_names_are_visible_without_invented_eligibility (test_care_program_names.CareProgramNameTests.test_ambiguous_and_unrecognized_names_are_visible_without_invented_eligibility) (label='CalWORKs (TANF) or Tribal TANF') ... ERROR
+  test_ambiguous_and_unrecognized_names_are_visible_without_invented_eligibility (test_care_program_names.CareProgramNameTests.test_ambiguous_and_unrecognized_names_are_visible_without_invented_eligibility) (label='not enrolled in SNAP') ... ERROR
+  test_ambiguous_and_unrecognized_names_are_visible_without_invented_eligibility (test_care_program_names.CareProgramNameTests.test_ambiguous_and_unrecognized_names_are_visible_without_invented_eligibility) (label='SNAP expired') ... ERROR
+  test_ambiguous_and_unrecognized_names_are_visible_without_invented_eligibility (test_care_program_names.CareProgramNameTests.test_ambiguous_and_unrecognized_names_are_visible_without_invented_eligibility) (label='UNRECOGNIZED_SYNTHETIC_PROGRAM') ... ERROR
+test_case_punctuation_and_fullwidth_text_do_not_require_fuzzy_matching (test_care_program_names.CareProgramNameTests.test_case_punctuation_and_fullwidth_text_do_not_require_fuzzy_matching) ...
+  test_case_punctuation_and_fullwidth_text_do_not_require_fuzzy_matching (test_care_program_names.CareProgramNameTests.test_case_punctuation_and_fullwidth_text_do_not_require_fuzzy_matching) (label='  women, INFANTS and children (wic)  ') ... ERROR
+  test_case_punctuation_and_fullwidth_text_do_not_require_fuzzy_matching (test_care_program_names.CareProgramNameTests.test_case_punctuation_and_fullwidth_text_do_not_require_fuzzy_matching) (label='Medicaid—Medi-Cal (under age 65)') ... ERROR
+  test_case_punctuation_and_fullwidth_text_do_not_require_fuzzy_matching (test_care_program_names.CareProgramNameTests.test_case_punctuation_and_fullwidth_text_do_not_require_fuzzy_matching) (label='ＷＩＣ') ... ERROR
+test_existing_canonical_ids_and_aliases_remain_supported (test_care_program_names.CareProgramNameTests.test_existing_canonical_ids_and_aliases_remain_supported) ... ok
+test_invalid_program_container_members_and_bounds_fail_with_redacted_domain_error (test_care_program_names.CareProgramNameTests.test_invalid_program_container_members_and_bounds_fail_with_redacted_domain_error) ...
+  test_invalid_program_container_members_and_bounds_fail_with_redacted_domain_error (test_care_program_names.CareProgramNameTests.test_invalid_program_container_members_and_bounds_fail_with_redacted_domain_error) (type='str') ... FAIL
+  test_invalid_program_container_members_and_bounds_fail_with_redacted_domain_error (test_care_program_names.CareProgramNameTests.test_invalid_program_container_members_and_bounds_fail_with_redacted_domain_error) (type='dict') ... FAIL
+  test_invalid_program_container_members_and_bounds_fail_with_redacted_domain_error (test_care_program_names.CareProgramNameTests.test_invalid_program_container_members_and_bounds_fail_with_redacted_domain_error) (type='list') ... ERROR
+  test_invalid_program_container_members_and_bounds_fail_with_redacted_domain_error (test_care_program_names.CareProgramNameTests.test_invalid_program_container_members_and_bounds_fail_with_redacted_domain_error) (type='list') ... ERROR
+  test_invalid_program_container_members_and_bounds_fail_with_redacted_domain_error (test_care_program_names.CareProgramNameTests.test_invalid_program_container_members_and_bounds_fail_with_redacted_domain_error) (type='list') ... ERROR
+  test_invalid_program_container_members_and_bounds_fail_with_redacted_domain_error (test_care_program_names.CareProgramNameTests.test_invalid_program_container_members_and_bounds_fail_with_redacted_domain_error) (type='list') ... FAIL
+  test_invalid_program_container_members_and_bounds_fail_with_redacted_domain_error (test_care_program_names.CareProgramNameTests.test_invalid_program_container_members_and_bounds_fail_with_redacted_domain_error) (type='list') ... FAIL
+  test_invalid_program_container_members_and_bounds_fail_with_redacted_domain_error (test_care_program_names.CareProgramNameTests.test_invalid_program_container_members_and_bounds_fail_with_redacted_domain_error) (type='list') ... FAIL
+  test_invalid_program_container_members_and_bounds_fail_with_redacted_domain_error (test_care_program_names.CareProgramNameTests.test_invalid_program_container_members_and_bounds_fail_with_redacted_domain_error) (type='list') ... FAIL
+test_matching_names_preserve_supplied_evidence_and_deduplicate_canonical_paths (test_care_program_names.CareProgramNameTests.test_matching_names_preserve_supplied_evidence_and_deduplicate_canonical_paths) ... ERROR
+test_missing_income_medical_and_fractional_uncertainty_remain_separate (test_care_program_names.CareProgramNameTests.test_missing_income_medical_and_fractional_uncertainty_remain_separate) ... ERROR
+test_name_review_does_not_redate_income_rules_or_bypass_stale_and_expired_gates (test_care_program_names.CareProgramNameTests.test_name_review_does_not_redate_income_rules_or_bypass_stale_and_expired_gates) ... FAIL
+test_no_program_input_and_unknown_names_do_not_erase_income_paths (test_care_program_names.CareProgramNameTests.test_no_program_input_and_unknown_names_do_not_erase_income_paths) ... ERROR
+test_official_qualified_labels_keep_the_categorical_path (test_care_program_names.CareProgramNameTests.test_official_qualified_labels_keep_the_categorical_path) ...
+  test_official_qualified_labels_keep_the_categorical_path (test_care_program_names.CareProgramNameTests.test_official_qualified_labels_keep_the_categorical_path) (label='EBT/CalFresh/SNAP (Food Stamps)') ... FAIL
+  test_official_qualified_labels_keep_the_categorical_path (test_care_program_names.CareProgramNameTests.test_official_qualified_labels_keep_the_categorical_path) (label='Low Income Home Energy Assistance Program (LIHEAP)') ... FAIL
+  test_official_qualified_labels_keep_the_categorical_path (test_care_program_names.CareProgramNameTests.test_official_qualified_labels_keep_the_categorical_path) (label='Women, Infants, and Children (WIC)') ... FAIL
+  test_official_qualified_labels_keep_the_categorical_path (test_care_program_names.CareProgramNameTests.test_official_qualified_labels_keep_the_categorical_path) (label='Women, Infants, and Children Program (WIC)') ... FAIL
+  test_official_qualified_labels_keep_the_categorical_path (test_care_program_names.CareProgramNameTests.test_official_qualified_labels_keep_the_categorical_path) (label='Head Start Income Eligible (Tribal Only)') ... FAIL
+  test_official_qualified_labels_keep_the_categorical_path (test_care_program_names.CareProgramNameTests.test_official_qualified_labels_keep_the_categorical_path) (label='Supplemental Security Income (SSI)') ... FAIL
+  test_official_qualified_labels_keep_the_categorical_path (test_care_program_names.CareProgramNameTests.test_official_qualified_labels_keep_the_categorical_path) (label='Medi-Cal for Families (Healthy Families A & B)') ... FAIL
+  test_official_qualified_labels_keep_the_categorical_path (test_care_program_names.CareProgramNameTests.test_official_qualified_labels_keep_the_categorical_path) (label='Healthy Families A & B') ... FAIL
+  test_official_qualified_labels_keep_the_categorical_path (test_care_program_names.CareProgramNameTests.test_official_qualified_labels_keep_the_categorical_path) (label='Medicaid/Medi-Cal (under age 65)') ... FAIL
+  test_official_qualified_labels_keep_the_categorical_path (test_care_program_names.CareProgramNameTests.test_official_qualified_labels_keep_the_categorical_path) (label='Medicaid/Medi-Cal (age 65 and over)') ... FAIL
+  test_official_qualified_labels_keep_the_categorical_path (test_care_program_names.CareProgramNameTests.test_official_qualified_labels_keep_the_categorical_path) (label='National School Lunch Program (NSLP) - Free Lunch') ... FAIL
+test_public_schema_declares_the_same_bounded_program_input (test_care_program_names.CareProgramNameTests.test_public_schema_declares_the_same_bounded_program_input) ... ERROR
+test_review_packages_bind_the_program_resolver_and_keep_program_edits_blocked (test_care_program_names.CareProgramNameTests.test_review_packages_bind_the_program_resolver_and_keep_program_edits_blocked) ... FAIL
+test_snapshot_and_maintained_data_are_not_mutated_by_name_resolution (test_care_program_names.CareProgramNameTests.test_snapshot_and_maintained_data_are_not_mutated_by_name_resolution) ... ERROR
+
+======================================================================
+ERROR: test_actual_sdk_both_profiles_preserve_review_and_recover_after_invalid_input (test_care_program_names.CareProgramNameTests.test_actual_sdk_both_profiles_preserve_review_and_recover_after_invalid_input) (mode='2026-07-28')
+----------------------------------------------------------------------
+  + Exception Group Traceback (most recent call last):
+  |   File "$WORKSPACE_ROOT\billfit-care-programs\plugins\billfit\tests\test_care_program_names.py", line 181, in test_actual_sdk_both_profiles_preserve_review_and_recover_after_invalid_input
+  |     asyncio.run(scenario(mode))
+  |   File "$USER_HOME\AppData\Local\Programs\Python\Python311\Lib\asyncio\runners.py", line 190, in run
+  |     return runner.run(main)
+  |            ^^^^^^^^^^^^^^^^
+  |   File "$USER_HOME\AppData\Local\Programs\Python\Python311\Lib\asyncio\runners.py", line 118, in run
+  |     return self._loop.run_until_complete(task)
+  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "$USER_HOME\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 653, in run_until_complete
+  |     return future.result()
+  |            ^^^^^^^^^^^^^^^
+  |   File "$WORKSPACE_ROOT\billfit-care-programs\plugins\billfit\tests\test_care_program_names.py", line 168, in scenario
+  |     async with Client(params, mode=mode) as client:
+  |   File "$WORKSPACE_ROOT\billfit\.venv\Lib\site-packages\mcp\client\client.py", line 480, in __aexit__
+  |     await self._exit_stack.__aexit__(exc_type, exc_val, exc_tb)
+  |   File "$USER_HOME\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 733, in __aexit__
+  |     raise exc_details[1]
+  |   File "$USER_HOME\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 716, in __aexit__
+  |     cb_suppress = await cb(*exc_details)
+  |                   ^^^^^^^^^^^^^^^^^^^^^^
+  |   File "$USER_HOME\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 222, in __aexit__
+  |     await self.gen.athrow(typ, value, traceback)
+  |   File "$WORKSPACE_ROOT\billfit\.venv\Lib\site-packages\mcp\client\stdio.py", line 201, in stdio_client
+  |     async with anyio.create_task_group() as tg:
+  |   File "$WORKSPACE_ROOT\billfit\.venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 847, in __aexit__
+  |     raise BaseExceptionGroup(
+  | ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | Exception Group Traceback (most recent call last):
+    |   File "$WORKSPACE_ROOT\billfit\.venv\Lib\site-packages\mcp\client\stdio.py", line 205, in stdio_client
+    |     yield read_stream, write_stream
+    |   File "$USER_HOME\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 716, in __aexit__
+    |     cb_suppress = await cb(*exc_details)
+    |                   ^^^^^^^^^^^^^^^^^^^^^^
+    |   File "$WORKSPACE_ROOT\billfit\.venv\Lib\site-packages\mcp\client\session.py", line 514, in __aexit__
+    |     result = await self._task_group.__aexit__(exc_type, exc_val, exc_tb)
+    |              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "$WORKSPACE_ROOT\billfit\.venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 847, in __aexit__
+    |     raise BaseExceptionGroup(
+    | ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+    +-+---------------- 1 ----------------
+      | Traceback (most recent call last):
+      |   File "$WORKSPACE_ROOT\billfit-care-programs\plugins\billfit\tests\test_care_program_names.py", line 172, in scenario
+      |     self.assertEqual(result.structured_content['care']['matching_programs'], ['medicaid_medi_cal'])
+      |                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+      | KeyError: 'matching_programs'
+      +------------------------------------
+
+======================================================================
+ERROR: test_actual_sdk_both_profiles_preserve_review_and_recover_after_invalid_input (test_care_program_names.CareProgramNameTests.test_actual_sdk_both_profiles_preserve_review_and_recover_after_invalid_input) (mode='legacy')
+----------------------------------------------------------------------
+  + Exception Group Traceback (most recent call last):
+  |   File "$WORKSPACE_ROOT\billfit-care-programs\plugins\billfit\tests\test_care_program_names.py", line 181, in test_actual_sdk_both_profiles_preserve_review_and_recover_after_invalid_input
+  |     asyncio.run(scenario(mode))
+  |   File "$USER_HOME\AppData\Local\Programs\Python\Python311\Lib\asyncio\runners.py", line 190, in run
+  |     return runner.run(main)
+  |            ^^^^^^^^^^^^^^^^
+  |   File "$USER_HOME\AppData\Local\Programs\Python\Python311\Lib\asyncio\runners.py", line 118, in run
+  |     return self._loop.run_until_complete(task)
+  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "$USER_HOME\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 653, in run_until_complete
+  |     return future.result()
+  |            ^^^^^^^^^^^^^^^
+  |   File "$WORKSPACE_ROOT\billfit-care-programs\plugins\billfit\tests\test_care_program_names.py", line 168, in scenario
+  |     async with Client(params, mode=mode) as client:
+  |   File "$WORKSPACE_ROOT\billfit\.venv\Lib\site-packages\mcp\client\client.py", line 480, in __aexit__
+  |     await self._exit_stack.__aexit__(exc_type, exc_val, exc_tb)
+  |   File "$USER_HOME\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 733, in __aexit__
+  |     raise exc_details[1]
+  |   File "$USER_HOME\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 716, in __aexit__
+  |     cb_suppress = await cb(*exc_details)
+  |                   ^^^^^^^^^^^^^^^^^^^^^^
+  |   File "$USER_HOME\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 222, in __aexit__
+  |     await self.gen.athrow(typ, value, traceback)
+  |   File "$WORKSPACE_ROOT\billfit\.venv\Lib\site-packages\mcp\client\stdio.py", line 201, in stdio_client
+  |     async with anyio.create_task_group() as tg:
+  |   File "$WORKSPACE_ROOT\billfit\.venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 847, in __aexit__
+  |     raise BaseExceptionGroup(
+  | ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | Exception Group Traceback (most recent call last):
+    |   File "$WORKSPACE_ROOT\billfit\.venv\Lib\site-packages\mcp\client\stdio.py", line 205, in stdio_client
+    |     yield read_stream, write_stream
+    |   File "$USER_HOME\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 716, in __aexit__
+    |     cb_suppress = await cb(*exc_details)
+    |                   ^^^^^^^^^^^^^^^^^^^^^^
+    |   File "$WORKSPACE_ROOT\billfit\.venv\Lib\site-packages\mcp\client\session.py", line 514, in __aexit__
+    |     result = await self._task_group.__aexit__(exc_type, exc_val, exc_tb)
+    |              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "$WORKSPACE_ROOT\billfit\.venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 847, in __aexit__
+    |     raise BaseExceptionGroup(
+    | ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+    +-+---------------- 1 ----------------
+      | Traceback (most recent call last):
+      |   File "$WORKSPACE_ROOT\billfit-care-programs\plugins\billfit\tests\test_care_program_names.py", line 172, in scenario
+      |     self.assertEqual(result.structured_content['care']['matching_programs'], ['medicaid_medi_cal'])
+      |                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+      | KeyError: 'matching_programs'
+      +------------------------------------
+
+======================================================================
+ERROR: test_ambiguous_and_unrecognized_names_are_visible_without_invented_eligibility (test_care_program_names.CareProgramNameTests.test_ambiguous_and_unrecognized_names_are_visible_without_invented_eligibility) (label='Head Start')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$WORKSPACE_ROOT\billfit-care-programs\plugins\billfit\tests\test_care_program_names.py", line 59, in test_ambiguous_and_unrecognized_names_are_visible_without_invented_eligibility
+    review = result['categorical_program_review']
+             ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'categorical_program_review'
+
+======================================================================
+ERROR: test_ambiguous_and_unrecognized_names_are_visible_without_invented_eligibility (test_care_program_names.CareProgramNameTests.test_ambiguous_and_unrecognized_names_are_visible_without_invented_eligibility) (label='Medicare')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$WORKSPACE_ROOT\billfit-care-programs\plugins\billfit\tests\test_care_program_names.py", line 59, in test_ambiguous_and_unrecognized_names_are_visible_without_invented_eligibility
+    review = result['categorical_program_review']
+             ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'categorical_program_review'
+
+======================================================================
+ERROR: test_ambiguous_and_unrecognized_names_are_visible_without_invented_eligibility (test_care_program_names.CareProgramNameTests.test_ambiguous_and_unrecognized_names_are_visible_without_invented_eligibility) (label='Social Security')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$WORKSPACE_ROOT\billfit-care-programs\plugins\billfit\tests\test_care_program_names.py", line 59, in test_ambiguous_and_unrecognized_names_are_visible_without_invented_eligibility
+    review = result['categorical_program_review']
+             ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'categorical_program_review'
+
+======================================================================
+ERROR: test_ambiguous_and_unrecognized_names_are_visible_without_invented_eligibility (test_care_program_names.CareProgramNameTests.test_ambiguous_and_unrecognized_names_are_visible_without_invented_eligibility) (label='EBT')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$WORKSPACE_ROOT\billfit-care-programs\plugins\billfit\tests\test_care_program_names.py", line 59, in test_ambiguous_and_unrecognized_names_are_visible_without_invented_eligibility
+    review = result['categorical_program_review']
+             ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'categorical_program_review'
+
+======================================================================
+ERROR: test_ambiguous_and_unrecognized_names_are_visible_without_invented_eligibility (test_care_program_names.CareProgramNameTests.test_ambiguous_and_unrecognized_names_are_visible_without_invented_eligibility) (label='National School Lunch Program (NSLP)')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$WORKSPACE_ROOT\billfit-care-programs\plugins\billfit\tests\test_care_program_names.py", line 59, in test_ambiguous_and_unrecognized_names_are_visible_without_invented_eligibility
+    review = result['categorical_program_review']
+             ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'categorical_program_review'
+
+======================================================================
+ERROR: test_ambiguous_and_unrecognized_names_are_visible_without_invented_eligibility (test_care_program_names.CareProgramNameTests.test_ambiguous_and_unrecognized_names_are_visible_without_invented_eligibility) (label='universal free school meals')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$WORKSPACE_ROOT\billfit-care-programs\plugins\billfit\tests\test_care_program_names.py", line 59, in test_ambiguous_and_unrecognized_names_are_visible_without_invented_eligibility
+    review = result['categorical_program_review']
+             ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'categorical_program_review'
+
+======================================================================
+ERROR: test_ambiguous_and_unrecognized_names_are_visible_without_invented_eligibility (test_care_program_names.CareProgramNameTests.test_ambiguous_and_unrecognized_names_are_visible_without_invented_eligibility) (label='CalWORKs (TANF) or Tribal TANF')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$WORKSPACE_ROOT\billfit-care-programs\plugins\billfit\tests\test_care_program_names.py", line 59, in test_ambiguous_and_unrecognized_names_are_visible_without_invented_eligibility
+    review = result['categorical_program_review']
+             ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'categorical_program_review'
+
+======================================================================
+ERROR: test_ambiguous_and_unrecognized_names_are_visible_without_invented_eligibility (test_care_program_names.CareProgramNameTests.test_ambiguous_and_unrecognized_names_are_visible_without_invented_eligibility) (label='not enrolled in SNAP')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$WORKSPACE_ROOT\billfit-care-programs\plugins\billfit\tests\test_care_program_names.py", line 59, in test_ambiguous_and_unrecognized_names_are_visible_without_invented_eligibility
+    review = result['categorical_program_review']
+             ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'categorical_program_review'
+
+======================================================================
+ERROR: test_ambiguous_and_unrecognized_names_are_visible_without_invented_eligibility (test_care_program_names.CareProgramNameTests.test_ambiguous_and_unrecognized_names_are_visible_without_invented_eligibility) (label='SNAP expired')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$WORKSPACE_ROOT\billfit-care-programs\plugins\billfit\tests\test_care_program_names.py", line 59, in test_ambiguous_and_unrecognized_names_are_visible_without_invented_eligibility
+    review = result['categorical_program_review']
+             ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'categorical_program_review'
+
+======================================================================
+ERROR: test_ambiguous_and_unrecognized_names_are_visible_without_invented_eligibility (test_care_program_names.CareProgramNameTests.test_ambiguous_and_unrecognized_names_are_visible_without_invented_eligibility) (label='UNRECOGNIZED_SYNTHETIC_PROGRAM')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$WORKSPACE_ROOT\billfit-care-programs\plugins\billfit\tests\test_care_program_names.py", line 59, in test_ambiguous_and_unrecognized_names_are_visible_without_invented_eligibility
+    review = result['categorical_program_review']
+             ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'categorical_program_review'
+
+======================================================================
+ERROR: test_case_punctuation_and_fullwidth_text_do_not_require_fuzzy_matching (test_care_program_names.CareProgramNameTests.test_case_punctuation_and_fullwidth_text_do_not_require_fuzzy_matching) (label='  women, INFANTS and children (wic)  ')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$WORKSPACE_ROOT\billfit-care-programs\plugins\billfit\tests\test_care_program_names.py", line 52, in test_case_punctuation_and_fullwidth_text_do_not_require_fuzzy_matching
+    self.assertEqual(self.screen([label])['care']['matching_programs'], [canonical])
+                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'matching_programs'
+
+======================================================================
+ERROR: test_case_punctuation_and_fullwidth_text_do_not_require_fuzzy_matching (test_care_program_names.CareProgramNameTests.test_case_punctuation_and_fullwidth_text_do_not_require_fuzzy_matching) (label='Medicaid—Medi-Cal (under age 65)')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$WORKSPACE_ROOT\billfit-care-programs\plugins\billfit\tests\test_care_program_names.py", line 52, in test_case_punctuation_and_fullwidth_text_do_not_require_fuzzy_matching
+    self.assertEqual(self.screen([label])['care']['matching_programs'], [canonical])
+                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'matching_programs'
+
+======================================================================
+ERROR: test_case_punctuation_and_fullwidth_text_do_not_require_fuzzy_matching (test_care_program_names.CareProgramNameTests.test_case_punctuation_and_fullwidth_text_do_not_require_fuzzy_matching) (label='ＷＩＣ')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$WORKSPACE_ROOT\billfit-care-programs\plugins\billfit\tests\test_care_program_names.py", line 52, in test_case_punctuation_and_fullwidth_text_do_not_require_fuzzy_matching
+    self.assertEqual(self.screen([label])['care']['matching_programs'], [canonical])
+                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'matching_programs'
+
+======================================================================
+ERROR: test_invalid_program_container_members_and_bounds_fail_with_redacted_domain_error (test_care_program_names.CareProgramNameTests.test_invalid_program_container_members_and_bounds_fail_with_redacted_domain_error) (type='list')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$WORKSPACE_ROOT\billfit-care-programs\plugins\billfit\tests\test_care_program_names.py", line 94, in test_invalid_program_container_members_and_bounds_fail_with_redacted_domain_error
+    self.screen(value)
+  File "$WORKSPACE_ROOT\billfit-care-programs\plugins\billfit\tests\test_care_program_names.py", line 28, in screen
+    return core._screen_assistance_snapshot(self.rules, 2, income, programs,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "$WORKSPACE_ROOT\billfit-care-programs\plugins\billfit\skills\billfit\scripts\billfit_core.py", line 700, in _screen_assistance_snapshot
+    normalized_programs = {
+                          ^
+  File "$WORKSPACE_ROOT\billfit-care-programs\plugins\billfit\skills\billfit\scripts\billfit_core.py", line 701, in <setcomp>
+    _normalize_public_program(program, data) for program in (enrolled_public_programs or [])
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "$WORKSPACE_ROOT\billfit-care-programs\plugins\billfit\skills\billfit\scripts\billfit_core.py", line 659, in _normalize_public_program
+    cleaned = re.sub(r"[^a-z0-9]+", " ", program.lower()).strip()
+                                         ^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'lower'
+
+======================================================================
+ERROR: test_invalid_program_container_members_and_bounds_fail_with_redacted_domain_error (test_care_program_names.CareProgramNameTests.test_invalid_program_container_members_and_bounds_fail_with_redacted_domain_error) (type='list')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$WORKSPACE_ROOT\billfit-care-programs\plugins\billfit\tests\test_care_program_names.py", line 94, in test_invalid_program_container_members_and_bounds_fail_with_redacted_domain_error
+    self.screen(value)
+  File "$WORKSPACE_ROOT\billfit-care-programs\plugins\billfit\tests\test_care_program_names.py", line 28, in screen
+    return core._screen_assistance_snapshot(self.rules, 2, income, programs,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "$WORKSPACE_ROOT\billfit-care-programs\plugins\billfit\skills\billfit\scripts\billfit_core.py", line 700, in _screen_assistance_snapshot
+    normalized_programs = {
+                          ^
+  File "$WORKSPACE_ROOT\billfit-care-programs\plugins\billfit\skills\billfit\scripts\billfit_core.py", line 701, in <setcomp>
+    _normalize_public_program(program, data) for program in (enrolled_public_programs or [])
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "$WORKSPACE_ROOT\billfit-care-programs\plugins\billfit\skills\billfit\scripts\billfit_core.py", line 659, in _normalize_public_program
+    cleaned = re.sub(r"[^a-z0-9]+", " ", program.lower()).strip()
+                                         ^^^^^^^^^^^^^
+AttributeError: 'int' object has no attribute 'lower'
+
+======================================================================
+ERROR: test_invalid_program_container_members_and_bounds_fail_with_redacted_domain_error (test_care_program_names.CareProgramNameTests.test_invalid_program_container_members_and_bounds_fail_with_redacted_domain_error) (type='list')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$WORKSPACE_ROOT\billfit-care-programs\plugins\billfit\tests\test_care_program_names.py", line 94, in test_invalid_program_container_members_and_bounds_fail_with_redacted_domain_error
+    self.screen(value)
+  File "$WORKSPACE_ROOT\billfit-care-programs\plugins\billfit\tests\test_care_program_names.py", line 28, in screen
+    return core._screen_assistance_snapshot(self.rules, 2, income, programs,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "$WORKSPACE_ROOT\billfit-care-programs\plugins\billfit\skills\billfit\scripts\billfit_core.py", line 700, in _screen_assistance_snapshot
+    normalized_programs = {
+                          ^
+  File "$WORKSPACE_ROOT\billfit-care-programs\plugins\billfit\skills\billfit\scripts\billfit_core.py", line 701, in <setcomp>
+    _normalize_public_program(program, data) for program in (enrolled_public_programs or [])
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "$WORKSPACE_ROOT\billfit-care-programs\plugins\billfit\skills\billfit\scripts\billfit_core.py", line 659, in _normalize_public_program
+    cleaned = re.sub(r"[^a-z0-9]+", " ", program.lower()).strip()
+                                         ^^^^^^^^^^^^^
+AttributeError: 'bool' object has no attribute 'lower'
+
+======================================================================
+ERROR: test_matching_names_preserve_supplied_evidence_and_deduplicate_canonical_paths (test_care_program_names.CareProgramNameTests.test_matching_names_preserve_supplied_evidence_and_deduplicate_canonical_paths)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$WORKSPACE_ROOT\billfit-care-programs\plugins\billfit\tests\test_care_program_names.py", line 70, in test_matching_names_preserve_supplied_evidence_and_deduplicate_canonical_paths
+    review = result['categorical_program_review']
+             ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'categorical_program_review'
+
+======================================================================
+ERROR: test_missing_income_medical_and_fractional_uncertainty_remain_separate (test_care_program_names.CareProgramNameTests.test_missing_income_medical_and_fractional_uncertainty_remain_separate)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$WORKSPACE_ROOT\billfit-care-programs\plugins\billfit\tests\test_care_program_names.py", line 115, in test_missing_income_medical_and_fractional_uncertainty_remain_separate
+    self.assertEqual(result['care']['basis'], 'categorical_program')
+                     ~~~~~~~~~~~~~~^^^^^^^^^
+KeyError: 'basis'
+
+======================================================================
+ERROR: test_no_program_input_and_unknown_names_do_not_erase_income_paths (test_care_program_names.CareProgramNameTests.test_no_program_input_and_unknown_names_do_not_erase_income_paths)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$WORKSPACE_ROOT\billfit-care-programs\plugins\billfit\tests\test_care_program_names.py", line 80, in test_no_program_input_and_unknown_names_do_not_erase_income_paths
+    self.assertEqual(result['categorical_program_review']['status'], 'not_provided')
+                     ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'categorical_program_review'
+
+======================================================================
+ERROR: test_public_schema_declares_the_same_bounded_program_input (test_care_program_names.CareProgramNameTests.test_public_schema_declares_the_same_bounded_program_input)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$WORKSPACE_ROOT\billfit-care-programs\plugins\billfit\tests\test_care_program_names.py", line 142, in test_public_schema_declares_the_same_bounded_program_input
+    self.assertEqual(schema['maxItems'], 32)
+                     ~~~~~~^^^^^^^^^^^^
+KeyError: 'maxItems'
+
+======================================================================
+ERROR: test_snapshot_and_maintained_data_are_not_mutated_by_name_resolution (test_care_program_names.CareProgramNameTests.test_snapshot_and_maintained_data_are_not_mutated_by_name_resolution)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$WORKSPACE_ROOT\billfit-care-programs\plugins\billfit\tests\test_care_program_names.py", line 125, in test_snapshot_and_maintained_data_are_not_mutated_by_name_resolution
+    result['categorical_program_review']['sources'].clear()
+    ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'categorical_program_review'
+
+======================================================================
+FAIL: test_actual_cli_rejects_malformed_programs_without_traceback_then_recovers (test_care_program_names.CareProgramNameTests.test_actual_cli_rejects_malformed_programs_without_traceback_then_recovers)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$WORKSPACE_ROOT\billfit-care-programs\plugins\billfit\tests\test_care_program_names.py", line 154, in test_actual_cli_rejects_malformed_programs_without_traceback_then_recovers
+    self.assertEqual(run.returncode, expected_exit, run.stderr)
+AssertionError: 1 != 2 : Traceback (most recent call last):
+  File "$WORKSPACE_ROOT\billfit-care-programs\plugins\billfit\skills\billfit\scripts\billfit_cli.py", line 72, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "$WORKSPACE_ROOT\billfit-care-programs\plugins\billfit\skills\billfit\scripts\billfit_cli.py", line 55, in main
+    result = OPERATIONS[args.operation](**payload)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "$WORKSPACE_ROOT\billfit-care-programs\plugins\billfit\skills\billfit\scripts\billfit_core.py", line 674, in screen_assistance
+    return _screen_assistance_snapshot(assistance_data(), household_size,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "$WORKSPACE_ROOT\billfit-care-programs\plugins\billfit\skills\billfit\scripts\billfit_core.py", line 700, in _screen_assistance_snapshot
+    normalized_programs = {
+                          ^
+  File "$WORKSPACE_ROOT\billfit-care-programs\plugins\billfit\skills\billfit\scripts\billfit_core.py", line 701, in <setcomp>
+    _normalize_public_program(program, data) for program in (enrolled_public_programs or [])
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "$WORKSPACE_ROOT\billfit-care-programs\plugins\billfit\skills\billfit\scripts\billfit_core.py", line 659, in _normalize_public_program
+    cleaned = re.sub(r"[^a-z0-9]+", " ", program.lower()).strip()
+                                         ^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'lower'
+
+
+======================================================================
+FAIL: test_invalid_program_container_members_and_bounds_fail_with_redacted_domain_error (test_care_program_names.CareProgramNameTests.test_invalid_program_container_members_and_bounds_fail_with_redacted_domain_error) (type='str')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$WORKSPACE_ROOT\billfit-care-programs\plugins\billfit\tests\test_care_program_names.py", line 93, in test_invalid_program_container_members_and_bounds_fail_with_redacted_domain_error
+    with self.assertRaises(core.BillFitError) as raised:
+AssertionError: BillFitError not raised
+
+======================================================================
+FAIL: test_invalid_program_container_members_and_bounds_fail_with_redacted_domain_error (test_care_program_names.CareProgramNameTests.test_invalid_program_container_members_and_bounds_fail_with_redacted_domain_error) (type='dict')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$WORKSPACE_ROOT\billfit-care-programs\plugins\billfit\tests\test_care_program_names.py", line 93, in test_invalid_program_container_members_and_bounds_fail_with_redacted_domain_error
+    with self.assertRaises(core.BillFitError) as raised:
+AssertionError: BillFitError not raised
+
+======================================================================
+FAIL: test_invalid_program_container_members_and_bounds_fail_with_redacted_domain_error (test_care_program_names.CareProgramNameTests.test_invalid_program_container_members_and_bounds_fail_with_redacted_domain_error) (type='list')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$WORKSPACE_ROOT\billfit-care-programs\plugins\billfit\tests\test_care_program_names.py", line 93, in test_invalid_program_container_members_and_bounds_fail_with_redacted_domain_error
+    with self.assertRaises(core.BillFitError) as raised:
+AssertionError: BillFitError not raised
+
+======================================================================
+FAIL: test_invalid_program_container_members_and_bounds_fail_with_redacted_domain_error (test_care_program_names.CareProgramNameTests.test_invalid_program_container_members_and_bounds_fail_with_redacted_domain_error) (type='list')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$WORKSPACE_ROOT\billfit-care-programs\plugins\billfit\tests\test_care_program_names.py", line 93, in test_invalid_program_container_members_and_bounds_fail_with_redacted_domain_error
+    with self.assertRaises(core.BillFitError) as raised:
+AssertionError: BillFitError not raised
+
+======================================================================
+FAIL: test_invalid_program_container_members_and_bounds_fail_with_redacted_domain_error (test_care_program_names.CareProgramNameTests.test_invalid_program_container_members_and_bounds_fail_with_redacted_domain_error) (type='list')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$WORKSPACE_ROOT\billfit-care-programs\plugins\billfit\tests\test_care_program_names.py", line 93, in test_invalid_program_container_members_and_bounds_fail_with_redacted_domain_error
+    with self.assertRaises(core.BillFitError) as raised:
+AssertionError: BillFitError not raised
+
+======================================================================
+FAIL: test_invalid_program_container_members_and_bounds_fail_with_redacted_domain_error (test_care_program_names.CareProgramNameTests.test_invalid_program_container_members_and_bounds_fail_with_redacted_domain_error) (type='list')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$WORKSPACE_ROOT\billfit-care-programs\plugins\billfit\tests\test_care_program_names.py", line 93, in test_invalid_program_container_members_and_bounds_fail_with_redacted_domain_error
+    with self.assertRaises(core.BillFitError) as raised:
+AssertionError: BillFitError not raised
+
+======================================================================
+FAIL: test_name_review_does_not_redate_income_rules_or_bypass_stale_and_expired_gates (test_care_program_names.CareProgramNameTests.test_name_review_does_not_redate_income_rules_or_bypass_stale_and_expired_gates)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$WORKSPACE_ROOT\billfit-care-programs\plugins\billfit\tests\test_care_program_names.py", line 101, in test_name_review_does_not_redate_income_rules_or_bypass_stale_and_expired_gates
+    self.assertEqual(result['care']['status'], 'likely_eligible')
+AssertionError: 'likely_not_eligible_by_income' != 'likely_eligible'
+- likely_not_eligible_by_income
++ likely_eligible
+
+
+======================================================================
+FAIL: test_official_qualified_labels_keep_the_categorical_path (test_care_program_names.CareProgramNameTests.test_official_qualified_labels_keep_the_categorical_path) (label='EBT/CalFresh/SNAP (Food Stamps)')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$WORKSPACE_ROOT\billfit-care-programs\plugins\billfit\tests\test_care_program_names.py", line 35, in test_official_qualified_labels_keep_the_categorical_path
+    self.assertEqual(result['care']['status'], 'likely_eligible')
+AssertionError: 'likely_not_eligible_by_income' != 'likely_eligible'
+- likely_not_eligible_by_income
++ likely_eligible
+
+
+======================================================================
+FAIL: test_official_qualified_labels_keep_the_categorical_path (test_care_program_names.CareProgramNameTests.test_official_qualified_labels_keep_the_categorical_path) (label='Low Income Home Energy Assistance Program (LIHEAP)')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$WORKSPACE_ROOT\billfit-care-programs\plugins\billfit\tests\test_care_program_names.py", line 35, in test_official_qualified_labels_keep_the_categorical_path
+    self.assertEqual(result['care']['status'], 'likely_eligible')
+AssertionError: 'likely_not_eligible_by_income' != 'likely_eligible'
+- likely_not_eligible_by_income
++ likely_eligible
+
+
+======================================================================
+FAIL: test_official_qualified_labels_keep_the_categorical_path (test_care_program_names.CareProgramNameTests.test_official_qualified_labels_keep_the_categorical_path) (label='Women, Infants, and Children (WIC)')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$WORKSPACE_ROOT\billfit-care-programs\plugins\billfit\tests\test_care_program_names.py", line 35, in test_official_qualified_labels_keep_the_categorical_path
+    self.assertEqual(result['care']['status'], 'likely_eligible')
+AssertionError: 'likely_not_eligible_by_income' != 'likely_eligible'
+- likely_not_eligible_by_income
++ likely_eligible
+
+
+======================================================================
+FAIL: test_official_qualified_labels_keep_the_categorical_path (test_care_program_names.CareProgramNameTests.test_official_qualified_labels_keep_the_categorical_path) (label='Women, Infants, and Children Program (WIC)')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$WORKSPACE_ROOT\billfit-care-programs\plugins\billfit\tests\test_care_program_names.py", line 35, in test_official_qualified_labels_keep_the_categorical_path
+    self.assertEqual(result['care']['status'], 'likely_eligible')
+AssertionError: 'likely_not_eligible_by_income' != 'likely_eligible'
+- likely_not_eligible_by_income
++ likely_eligible
+
+
+======================================================================
+FAIL: test_official_qualified_labels_keep_the_categorical_path (test_care_program_names.CareProgramNameTests.test_official_qualified_labels_keep_the_categorical_path) (label='Head Start Income Eligible (Tribal Only)')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$WORKSPACE_ROOT\billfit-care-programs\plugins\billfit\tests\test_care_program_names.py", line 35, in test_official_qualified_labels_keep_the_categorical_path
+    self.assertEqual(result['care']['status'], 'likely_eligible')
+AssertionError: 'likely_not_eligible_by_income' != 'likely_eligible'
+- likely_not_eligible_by_income
++ likely_eligible
+
+
+======================================================================
+FAIL: test_official_qualified_labels_keep_the_categorical_path (test_care_program_names.CareProgramNameTests.test_official_qualified_labels_keep_the_categorical_path) (label='Supplemental Security Income (SSI)')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$WORKSPACE_ROOT\billfit-care-programs\plugins\billfit\tests\test_care_program_names.py", line 35, in test_official_qualified_labels_keep_the_categorical_path
+    self.assertEqual(result['care']['status'], 'likely_eligible')
+AssertionError: 'likely_not_eligible_by_income' != 'likely_eligible'
+- likely_not_eligible_by_income
++ likely_eligible
+
+
+======================================================================
+FAIL: test_official_qualified_labels_keep_the_categorical_path (test_care_program_names.CareProgramNameTests.test_official_qualified_labels_keep_the_categorical_path) (label='Medi-Cal for Families (Healthy Families A & B)')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$WORKSPACE_ROOT\billfit-care-programs\plugins\billfit\tests\test_care_program_names.py", line 35, in test_official_qualified_labels_keep_the_categorical_path
+    self.assertEqual(result['care']['status'], 'likely_eligible')
+AssertionError: 'likely_not_eligible_by_income' != 'likely_eligible'
+- likely_not_eligible_by_income
++ likely_eligible
+
+
+======================================================================
+FAIL: test_official_qualified_labels_keep_the_categorical_path (test_care_program_names.CareProgramNameTests.test_official_qualified_labels_keep_the_categorical_path) (label='Healthy Families A & B')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$WORKSPACE_ROOT\billfit-care-programs\plugins\billfit\tests\test_care_program_names.py", line 35, in test_official_qualified_labels_keep_the_categorical_path
+    self.assertEqual(result['care']['status'], 'likely_eligible')
+AssertionError: 'likely_not_eligible_by_income' != 'likely_eligible'
+- likely_not_eligible_by_income
++ likely_eligible
+
+
+======================================================================
+FAIL: test_official_qualified_labels_keep_the_categorical_path (test_care_program_names.CareProgramNameTests.test_official_qualified_labels_keep_the_categorical_path) (label='Medicaid/Medi-Cal (under age 65)')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$WORKSPACE_ROOT\billfit-care-programs\plugins\billfit\tests\test_care_program_names.py", line 35, in test_official_qualified_labels_keep_the_categorical_path
+    self.assertEqual(result['care']['status'], 'likely_eligible')
+AssertionError: 'likely_not_eligible_by_income' != 'likely_eligible'
+- likely_not_eligible_by_income
++ likely_eligible
+
+
+======================================================================
+FAIL: test_official_qualified_labels_keep_the_categorical_path (test_care_program_names.CareProgramNameTests.test_official_qualified_labels_keep_the_categorical_path) (label='Medicaid/Medi-Cal (age 65 and over)')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$WORKSPACE_ROOT\billfit-care-programs\plugins\billfit\tests\test_care_program_names.py", line 35, in test_official_qualified_labels_keep_the_categorical_path
+    self.assertEqual(result['care']['status'], 'likely_eligible')
+AssertionError: 'likely_not_eligible_by_income' != 'likely_eligible'
+- likely_not_eligible_by_income
++ likely_eligible
+
+
+======================================================================
+FAIL: test_official_qualified_labels_keep_the_categorical_path (test_care_program_names.CareProgramNameTests.test_official_qualified_labels_keep_the_categorical_path) (label='National School Lunch Program (NSLP) - Free Lunch')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$WORKSPACE_ROOT\billfit-care-programs\plugins\billfit\tests\test_care_program_names.py", line 35, in test_official_qualified_labels_keep_the_categorical_path
+    self.assertEqual(result['care']['status'], 'likely_eligible')
+AssertionError: 'likely_not_eligible_by_income' != 'likely_eligible'
+- likely_not_eligible_by_income
++ likely_eligible
+
+
+======================================================================
+FAIL: test_review_packages_bind_the_program_resolver_and_keep_program_edits_blocked (test_care_program_names.CareProgramNameTests.test_review_packages_bind_the_program_resolver_and_keep_program_edits_blocked)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "$WORKSPACE_ROOT\billfit-care-programs\plugins\billfit\tests\test_care_program_names.py", line 132, in test_review_packages_bind_the_program_resolver_and_keep_program_edits_blocked
+    self.assertIn('scripts/assistance_programs.py', tariff_review_bundle._runtime_hashes())
+AssertionError: 'scripts/assistance_programs.py' not found in {'scripts/billfit_core.py': '75f06487bf7195b1c39f560b16dffae2e9b99a0bc746ba8f1c57e0b85f89fc06', 'scripts/billfit_usage.py': '4c58f0cd11fe76eb4e3553567fb57e30705f6e5a279f84cb79138ff47dcdffcb', 'scripts/billfit_errors.py': 'b09170050614a0fc20331312f3510c19e9e75f66d59b05f69cd0ce0f47e86cd3', 'scripts/billfit_reconciliation.py': '107111db7774b2ef05f18a29f8190b672496d049e7e6e00aef1211890b54d52e', 'scripts/source_check.py': 'ce0dfe524eb02b327a2278654758432878c0cd56ec0061c6617df86e3c0b6005', 'scripts/assistance_review.py': '4d564f9d90a42a06b9c897f2a438d494f7cfb3b01fd587dfdf30b06545866e34', 'scripts/tariff_review_bundle.py': '861d17ec9a1f2514e99bbd2665a74c84df8d7d229cf13834d80cedb692291e5c', 'data/pge_residential_rates_2026-03-01.json': 'cff04fb40659084260afab13b99bab5cb6dd3a6a77eb8490b05c0e89bbf7e53b', 'data/care_fera_2026-06-01.json': '1ff88ab2bc8f8ebbe12e78a3590d1de1ce54626ff0a2b689fc23774ea4b85618'}
+
+----------------------------------------------------------------------
+Ran 14 tests in 4.362s
+
+FAILED (failures=20, errors=23)
