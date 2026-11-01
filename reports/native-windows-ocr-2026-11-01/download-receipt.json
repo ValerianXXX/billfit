@@ -1,0 +1,13 @@
+{
+  "observedAt": "2026-11-01T04:22:26.377752+00:00",
+  "metadataUrl": "https://api.github.com/repos/tesseract-ocr/tesseract/releases/tags/5.5.3",
+  "sourceUrl": "https://github.com/tesseract-ocr/tesseract/releases/download/5.5.3/tesseract-ocr-w64-setup-5.5.3.20260724.exe",
+  "release": "https://github.com/tesseract-ocr/tesseract/releases/tag/5.5.3",
+  "bytes": 26573224,
+  "expectedSha256": "bee9e3434bd94fd65387d9be28cd467a41f61b1275383b55b0f59a1331270ae4",
+  "downloadSha256": "bee9e3434bd94fd65387d9be28cd467a41f61b1275383b55b0f59a1331270ae4",
+  "metadataSha256": "d5f86494c2fc6b8dce6fc28c72766991e74460797d5e075089ddd36a4915d702",
+  "installed": false,
+  "executed": false,
+  "scope": "Verification download only; no installer execution"
+}

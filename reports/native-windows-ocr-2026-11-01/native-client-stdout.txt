@@ -1,0 +1,1 @@
+{"status": "PASS", "interfaces": [{"interface": "CLI", "status": "PASS"}, {"interface": "MCP_SDK", "mode": "2026-07-28", "status": "PASS"}, {"interface": "MCP_SDK", "mode": "legacy", "status": "PASS"}]}

@@ -1,5 +1,16 @@
 # Changelog
 
+## Unreleased — 2026-11-01
+
+- Verify the existing parser on native Windows with a pinned, separately acquired
+  Tesseract runtime. Preserve the fixed 6/8 default and 8/8 prepared observations,
+  original evidence overlays, actual CLI/SDK recovery and 200 passing regressions.
+- Correct the verification receipt's hard-coded Linux description and document
+  optional native language-data configuration. Product runtime, rules, fixtures,
+  dependencies and confirmations are unchanged. Retain the acquired package's
+  certificate time-validity failure; functional testing is not signing acceptance.
+  [Native Windows evidence and limits](docs/native-windows-ocr-2026-11-01.md).
+
 ## Unreleased — 2026-10-31
 
 - Keep fractional income between the published CARE maximum and whole-dollar
