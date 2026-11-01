@@ -29,6 +29,9 @@ SUPPORTED_EXTENSIONS = {'.csv', '.xml', '.json'}
 CSV_ENERGY_COLUMNS = {'usage': None, 'usagekwh': 'kWh', 'kwh': 'kWh',
                       'value': None, 'consumption': None, 'intervalusage': None}
 CSV_UNIT_COLUMNS = {'unit', 'units', 'uom'}
+_NUMBER_FORMAT = re.compile(
+    r'[+-]?(?:(?:[0-9]+|[0-9]{1,3}(?:,[0-9]{3})+)(?:\.[0-9]*)?|\.[0-9]+)'
+    r'(?:[eE][+-]?[0-9]+)?')
 
 
 @dataclass(frozen=True)
@@ -48,15 +51,24 @@ class Interval:
 def _number(value: Any, code: str = 'INVALID_USAGE_VALUE') -> float:
     if isinstance(value, bool):
         raise BillFitError(code, 'Boolean values are not numeric usage or durations.')
-    text = str(value).strip().replace(',', '').replace('$', '')
+    text = str(value).strip()
+    if len(text) > 128:
+        raise BillFitError(code, 'A supplied numeric token is too long; check the original export.')
     if text.startswith('(') and text.endswith(')'):
         text = '-' + text[1:-1]
+    # Validate before removing separators. A comma is a complete thousands group,
+    # never an inferred decimal separator; energy and elapsed time are not money.
+    if not _NUMBER_FORMAT.fullmatch(text):
+        raise BillFitError(code, 'Use a decimal point and optional complete three-digit comma groups; currency, malformed separators and guessed locale formats are not supported. Check the original export.')
+    text = text.replace(',', '')
     try:
         number = float(text)
     except (ValueError, TypeError, OverflowError) as exc:
         raise BillFitError(code, 'A supplied usage or duration is not a finite number.') from exc
     if not math.isfinite(number):
         raise BillFitError(code, 'A supplied usage or duration is not a finite number.')
+    if number == 0 and any(char in '123456789' for char in text.lower().split('e', 1)[0]):
+        raise BillFitError(code, 'A nonzero numeric token is too small to represent; it cannot be silently changed to zero.')
     return number
 
 
@@ -196,6 +208,8 @@ def _parse_csv(path: Path) -> tuple[list[Interval], list[str]]:
     for raw in rows[index + 1:]:
         if not any(cell.strip() for cell in raw):
             continue
+        if len(raw) > len(headers):
+            raise BillFitError('CSV_ROW_WIDTH_MISMATCH', 'A CSV record has more cells than its header. Check delimiters and quote grouped numbers in a copy of the original export; no cells were discarded.')
         row = dict(zip(headers, raw + [''] * max(0, len(headers) - len(raw))))
         unit = _value(row, 'units', 'unit', 'uom')
         if unit and ('therm' in unit.casefold() or unit.casefold() == 'gas'):
