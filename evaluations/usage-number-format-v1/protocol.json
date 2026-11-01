@@ -1,0 +1,11 @@
+{
+  "date": "2026-11-01",
+  "baseline": "d9d2a079312cf9948b4f5fe4084629ebf41f5cf2",
+  "purpose": "Prevent malformed numeric inputs and surplus CSV cells from silently changing energy or elapsed time.",
+  "fixture": "plugins/billfit/tests/fixtures/usage-number-format-v1.json",
+  "methods": "Freeze tests and evaluator before runtime edits; exercise same generated synthetic files via real CLI before/after; test inline, JSON, CSV and ESPI adapters; actual SDK error and recovery in both existing modes; complete necessary regression at milestone.",
+  "preserve": ["valid decimal and exponent inputs", "complete comma groups", "negative export scope gate", "missing optional duration quality gate", "source bytes", "rate and assistance snapshots and dates"],
+  "acceptance": "Every invalid case returns its domain error without parsed values; every valid control retains its value and duration. No dropped CSV cells. Existing tests remain unchanged.",
+  "exclusions": ["locale auto-detection", "currency amounts", "PG&E rounding certification", "new tariff calendar", "customer files", "AI or independent human accuracy", "production changes"],
+  "model_call_budget": 0
+}

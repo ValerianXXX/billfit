@@ -80,6 +80,14 @@ When a file is supplied, call `billfit_parse_usage_file` or run the CLI `parse` 
 
 Preserve interval errors and input assumptions. Identical repeated records retain one value with a warning; conflicting duplicates, overlaps, unknown units and ambiguous local daylight-saving times require corrected source data. Do not invent offsets, silently discard a conflicting row or add repeated usage. A generic CSV `duration` column needs explicit minutes/seconds units. Multiple ESPI reading types or usage points need a supported source mapping; do not combine accounts.
 
+Energy and duration accept decimal points and complete three-digit comma groups,
+not currency or inferred decimal commas. On `INVALID_USAGE_VALUE`,
+`INVALID_INTERVAL_DURATION` or `CSV_ROW_WIDTH_MISMATCH`, preserve the original
+and ask for a confirmed export or an explicitly corrected copy. Do not remove
+punctuation, discard cells or guess whether `1,23` means `1.23` or `123`. A grouped
+CSV number such as `1,234.5` must occupy one quoted cell. A textual nonzero value
+that cannot be represented must not be silently replaced by zero.
+
 ### 3. Collect only facts that materially change the calculation
 
 For E-1 or E-TOU-C, obtain baseline territory P–Z and `basic` versus `all_electric` service. If absent, leave `BASELINE_INFO` waiting; still calculate plans that do not require baseline when possible.
