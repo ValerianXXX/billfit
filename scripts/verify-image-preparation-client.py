@@ -106,7 +106,7 @@ def main():
         report["source_unchanged"] = all(hashlib.sha256((FIXTURES / case["file"]).read_bytes()).hexdigest() == case["sha256"] for case in cases)
         report["status"] = "PASS" if all(row["status"] == "PASS" for row in report["results"]) and report["source_unchanged"] else "FAILED"
         report["limits"] = ["Fixed development fixtures, not real customer bills or independent human acceptance",
-                            "Local Linux parser and actual SDK transports; not native Windows Tesseract or a Hermes model session",
+                            f"Local {platform.system()} parser and actual SDK transports; not an independent machine or a Hermes model session",
                             "Manual quarter-turn supplied; all extracted fields remain unconfirmed"]
         json.dump(report, output, indent=2); output.write("\n")
     print(json.dumps({"status": report["status"], "interfaces": [{key: row[key] for key in ("interface", "mode", "status") if key in row} for row in report["results"]]}))
