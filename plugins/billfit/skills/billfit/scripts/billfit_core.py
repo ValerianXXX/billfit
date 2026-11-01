@@ -13,6 +13,7 @@ from billfit_errors import BillFitError
 from assistance_programs import normalize_public_program, review_public_programs
 from billfit_usage import Interval, PACIFIC, load_usage, usage_summary as _usage_summary, split_interval as _split_interval
 from billfit_reconciliation import assess_period, compare_component, usage_has_assumptions
+from billfit_espi import reading_requires_review
 
 
 PLUGIN_ROOT = Path(__file__).resolve().parents[1]
@@ -202,6 +203,8 @@ def parse_usage_file(usage_file: str) -> dict[str, Any]:
         for item in preview_items
     ]
     gates = []
+    if reading_requires_review(warnings):
+        gates.append(HUMAN_GATES['USAGE_QUALITY_REVIEW'])
     if summary["negative_interval_count"]:
         warnings.append("Negative usage indicates export or corrections; solar/net export is outside the MVP scope.")
     return {

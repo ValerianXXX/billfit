@@ -18,6 +18,7 @@ from typing import Any, Iterable
 from zoneinfo import ZoneInfo
 
 from billfit_errors import BillFitError
+from billfit_espi import FINAL_UNMODIFIED_QUALITY, quality_warning, reading_profile, single_text
 
 PACIFIC = ZoneInfo('America/Los_Angeles')
 MAX_USAGE_FILE_BYTES = 50 * 1024 * 1024
@@ -285,20 +286,27 @@ def _parse_xml(path: Path) -> tuple[list[Interval], list[str]]:
         raise BillFitError('AMBIGUOUS_ESPI_READING_TYPE', 'Exactly one supported ReadingType is required; multiple types need an explicit meter-to-unit mapping.')
     if sum(_local_name(element) == 'UsagePoint' for element in root.iter()) > 1:
         raise BillFitError('MULTIPLE_USAGE_POINTS', 'Separate usage points before comparison; BillFit does not combine accounts or meters.')
-    unit = _child_text(types[0], 'uom')
+    unit = single_text(types[0], 'uom')
     if unit is None:
         raise BillFitError('UNSUPPORTED_UOM', 'ESPI ReadingType must declare a supported energy unit.')
     try:
-        multiplier = int(_child_text(types[0], 'powerOfTenMultiplier') or '0')
+        multiplier = int(single_text(types[0], 'powerOfTenMultiplier') or '0')
         if not -12 <= multiplier <= 12:
             raise ValueError('unsupported multiplier')
     except ValueError as exc:
         raise BillFitError('INVALID_ESPI_MULTIPLIER', 'The ESPI power-of-ten multiplier is invalid or outside the supported range.') from exc
-    warnings: list[str] = []
+    profile = reading_profile(root, types[0])
+    warnings = profile.warnings()
+    review_intervals = 0
+    review_codes: set[int | None] = set()
     intervals = []
     for reading in root.iter():
         if _local_name(reading) != 'IntervalReading':
             continue
+        quality = profile.quality(reading)
+        if any(code not in FINAL_UNMODIFIED_QUALITY for code in quality):
+            review_intervals += 1
+            review_codes.update(quality)
         start, duration, value = (_child_text(reading, name) for name in ('start', 'duration', 'value'))
         if start is None or duration is None or value is None:
             raise BillFitError('MISSING_ESPI_INTERVAL_FIELD', 'Every ESPI interval needs start, duration and value; incomplete records cannot be dropped or filled.')
@@ -313,6 +321,9 @@ def _parse_xml(path: Path) -> tuple[list[Interval], list[str]]:
             raise BillFitError('TOO_MANY_INTERVALS', 'At most 200,000 intervals are supported in one input.')
     if not intervals:
         raise BillFitError('NO_ESPI_INTERVALS', 'No IntervalReading records were found.')
+    quality_note = quality_warning(review_intervals, review_codes)
+    if quality_note:
+        warnings.append(quality_note)
     return _finalize(intervals, warnings), warnings
 
 
