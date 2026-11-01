@@ -1,0 +1,52 @@
+{
+  "protocol": "BILLFIT_NATIVE_WINDOWS_OCR_V1",
+  "frozen_on": "2026-11-01",
+  "baseline_commit": "9e8f047bf46f0a7709e334705bfbfbbb21112b33",
+  "purpose": "Exercise the existing image path on native Windows, including source evidence and real CLI/SDK transports.",
+  "synthetic_only": true,
+  "independent_human_acceptance": false,
+  "fixture_manifest": "plugins/billfit/tests/fixtures/bill-input-v2/manifest.json",
+  "fixture_manifest_sha256": "a1a17439f5ffaba5defce0c5de74085a3852165ff682872a8d62291c28fdb99f",
+  "assisted_profile": "plugins/billfit/tests/fixtures/bill-image-preparation-v1.json",
+  "cases": "All eight existing image cases; retain all original expected values, conflicts, rejections and evidence checks.",
+  "arms": ["Native Windows without image preparation", "Same Windows runtime with the existing optional preparation profile"],
+  "manual_intervention": "One predeclared 90-degree clockwise correction; no trial angles or field-based transform selection.",
+  "runtime": {
+    "python": "3.11.3",
+    "pillow": "13.0.0",
+    "mcp": "2.3.0",
+    "tesseract_release": "5.5.3",
+    "release_url": "https://github.com/tesseract-ocr/tesseract/releases/tag/5.5.3",
+    "asset": "tesseract-ocr-w64-setup-5.5.3.20260724.exe",
+    "asset_sha256": "bee9e3434bd94fd65387d9be28cd467a41f61b1275383b55b0f59a1331270ae4",
+    "tesseract_exe_sha256": "c66f0f12ed76f6aa455dac97684bbc86756d6a732380bee09122454cfda3f420",
+    "tessdata_revision": "87416418657359cb625c412a48b6e1d6d41c29bd",
+    "eng_traineddata_sha256": "7d4322bd2a7749724879683fc3912cb542f19906c83bcc1a52132556427170b2",
+    "acquisition": "Verified upstream release asset SHA-256; extracted selected runtime files with existing 7-Zip. Installer not executed; no registry/global PATH installation.",
+    "authenticode_limit": "Get-AuthenticodeSignature returned UnknownError with a certificate time-validity error. This is retained, not treated as valid production signing.",
+    "licenses": ["Tesseract Apache-2.0", "tessdata_fast Apache-2.0"],
+    "binaries_committed": false
+  },
+  "execution": {
+    "matrix_runner": "scripts/evaluate-bill-input-matrix.py",
+    "client_runner": "scripts/verify-image-preparation-client.py",
+    "client_cases": ["skew-6-degrees", "rotated-90-degrees"],
+    "sdk_modes": ["2026-07-28", "legacy"],
+    "cloud_calls": 0,
+    "llm_calls": 0,
+    "expected_image_requests": "8 default + 8 prepared + 1 CLI + 4 successful SDK + 2 malformed SDK inputs",
+    "retries": "No automatic reruns after an observation failure; retain the failed receipt and diagnose before any changed execution. Existing time/output limits remain.",
+    "customer_data": false,
+    "source_and_gold_changes": false
+  },
+  "acceptance": [
+    "Inspect every returned candidate, unresolved field, original hash and original-coordinate evidence using the existing checks.",
+    "Keep all values unconfirmed and automatic calculation disabled.",
+    "Record missing/unexpected fields, conflicts, parser errors, source preservation and cleanup.",
+    "Run malformed-input rejection then valid requests on the same actual SDK connection.",
+    "Separate native Windows results from earlier WSL/version observations; do not infer platform-caused quality differences.",
+    "If product changes are needed, freeze failing contracts first, keep original observations and complete the required regression suite."
+  ],
+  "cost": "No cloud/paid API calls. Hardware, energy and operator cost are not measured and remain unknown.",
+  "non_goals": ["Production deployment/signing", "Customer-bill reliability", "Independent human study", "New live Hermes or model campaign", "Automatic orientation detection", "Tariff verification or activation"]
+}
