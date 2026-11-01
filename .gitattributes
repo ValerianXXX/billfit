@@ -13,3 +13,6 @@ reports/bill-reconciliation-*.json text eol=lf
 reports/bill-reconciliation-*.txt text eol=lf
 reports/bill-reconciliation-*/*.json text eol=lf
 plugins/billfit/tests/fixtures/bill-input-v2/manifest.json text eol=lf
+reports/native-windows-ocr-2026-11-01/*.json text eol=lf
+reports/native-windows-ocr-2026-11-01/*.txt text eol=lf
+evaluations/windows-ocr-v1/*.json text eol=lf

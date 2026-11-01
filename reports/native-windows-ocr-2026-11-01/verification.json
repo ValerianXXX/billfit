@@ -1,0 +1,255 @@
+{
+  "protocol": "BILLFIT_NATIVE_WINDOWS_DELIVERY_V1",
+  "observedAt": "2026-11-01T04:36:46.069229+00:00",
+  "baselineCommit": "9e8f047bf46f0a7709e334705bfbfbbb21112b33",
+  "planCommit": "338cc36e7052cf9c3370505b5fe26ab9b342a822",
+  "observationCommit": "6113880f1f874de9a00e39fed4e05591330d65c2",
+  "pathFollowupCommit": "ac12279ce7ea6b41bb03bce13aaea70d4b8ba73c",
+  "status": "NATIVE_COMPONENTS_VERIFIED_CUSTOMER_AND_INSTALLER_ACCEPTANCE_OPEN",
+  "syntheticOnly": true,
+  "independentHuman": false,
+  "cleanMachine": false,
+  "productRuntimeDataAndExistingTestsUnchanged": true,
+  "sourceLFHashes": {
+    "evaluations/windows-ocr-v1/path-followup.json": "df2864418bc7bfd46606f853c7d7673a4ba8f0ed9d8cd9fa376e19bc8dc3ce4c",
+    "plugins/billfit/skills/billfit/scripts/bill_image.py": "d7dfa49e34f8514e6379fd02b4f357577dc1c4cdee49ba1eda0a6ae439aa4a30",
+    "plugins/billfit/skills/billfit/scripts/assistance_review.py": "4d564f9d90a42a06b9c897f2a438d494f7cfb3b01fd587dfdf30b06545866e34",
+    "scripts/verify-native-windows-paths.py": "d4c3c67b0d784af0a5a44d16ebca17d6850ff8cf71158b28f7156b3d524237ef",
+    "plugins/billfit/skills/billfit/scripts/bill_pdf_worker.py": "ba04b073845da74484483d125faeb709c2de447352339a00e2298d5af926ddce",
+    "evaluations/windows-ocr-v1/plan.json": "aae131b9ce3a232a6c2018d7c4d9ba2ac8c5d35e1e1dac7a36b48be3da5c45b4",
+    "plugins/billfit/skills/billfit/scripts/billfit_core.py": "75f06487bf7195b1c39f560b16dffae2e9b99a0bc746ba8f1c57e0b85f89fc06",
+    "scripts/verify-image-preparation-client.py": "8b9cbc1c8bc83753fb4db5c231f93c7eafd620f619b9aae281833bde0a00ec10",
+    "plugins/billfit/tests/fixtures/bill-input-v2/manifest.json": "a1a17439f5ffaba5defce0c5de74085a3852165ff682872a8d62291c28fdb99f",
+    "plugins/billfit/skills/billfit/scripts/billfit_cli.py": "6fd00652b609166fc92d2a9838e348b78972741001fba87d77d52c9e71982cfa",
+    "scripts/evaluate-bill-input-matrix.py": "af204a1cb1316b41bf2e62a25c5634374ad762a2d9837f3566dda55242a64873",
+    "plugins/billfit/skills/billfit/scripts/bill_ocr.py": "250220f2950627a0166098d3581b56ab640adcf0a756aaeef8d1ac326c7443f3",
+    "plugins/billfit/skills/billfit/scripts/mcp_server.py": "b8e1d39870fe711d8b970cc0641cf801f57ad4baf3ef68be6f90e68bf52c6656",
+    "plugins/billfit/skills/billfit/scripts/source_check.py": "ce0dfe524eb02b327a2278654758432878c0cd56ec0061c6617df86e3c0b6005",
+    "plugins/billfit/skills/billfit/scripts/tariff_review_bundle.py": "861d17ec9a1f2514e99bbd2665a74c84df8d7d229cf13834d80cedb692291e5c",
+    "plugins/billfit/skills/billfit/scripts/billfit_errors.py": "b09170050614a0fc20331312f3510c19e9e75f66d59b05f69cd0ce0f47e86cd3",
+    "plugins/billfit/skills/billfit/scripts/bill_input.py": "d4c31d5983bcdf5e33110c37672724290b4872fcacf6a23ef45537606c22547e",
+    "plugins/billfit/skills/billfit/scripts/bill_cancellation.py": "2d86f5757a3e67895efa06f8e555d5e039919168d46beb45bd012a7f5292e036",
+    "plugins/billfit/skills/billfit/scripts/bill_process.py": "27caf17ab1416ef2272732b05aa53d1a955f218247aea954cd1019e9e1b6e647",
+    "plugins/billfit/skills/billfit/scripts/bill_image_worker.py": "47f2f6878d1dce13948881c829ac540abded7fa4f15588246649b86b393fe349",
+    "plugins/billfit/skills/billfit/scripts/billfit_reconciliation.py": "107111db7774b2ef05f18a29f8190b672496d049e7e6e00aef1211890b54d52e",
+    "plugins/billfit/skills/billfit/scripts/billfit_usage.py": "4c58f0cd11fe76eb4e3553567fb57e30705f6e5a279f84cb79138ff47dcdffcb",
+    "plugins/billfit/skills/billfit/scripts/bill_image_geometry.py": "5c846e754ec773730f8426b73bc5eef2e96a0f7689eafed57712502e72529b69",
+    "plugins/billfit/tests/fixtures/bill-image-preparation-v1.json": "5b1c64518c1af686b8ee36a795f2ad1b520d36ceb7d9bfbbf599962571c87037"
+  },
+  "artifacts": [
+    {
+      "path": "native-default-20261101.json",
+      "originalFile": "native-default-20261101.json",
+      "originalSha256": "be1b9d330e9c99ed2fd2b1847d864fca4caf439c8e6718ac4cc78f45db096145",
+      "publishedSha256": "be1b9d330e9c99ed2fd2b1847d864fca4caf439c8e6718ac4cc78f45db096145",
+      "publishedBytes": 42330
+    },
+    {
+      "path": "native-prepared-20261101.json",
+      "originalFile": "native-prepared-20261101.json",
+      "originalSha256": "bd04a38c3b0511c857a7c5a3fb1aec97829f8b300ff944b60e0e0f2244541f9a",
+      "publishedSha256": "bd04a38c3b0511c857a7c5a3fb1aec97829f8b300ff944b60e0e0f2244541f9a",
+      "publishedBytes": 135104
+    },
+    {
+      "path": "native-client-20261101.json",
+      "originalFile": "native-client-20261101.json",
+      "originalSha256": "dca53a8c512cdcd9a03ad81874c26aae41c0ddac8e49a038a85f8155a3011ec9",
+      "publishedSha256": "dca53a8c512cdcd9a03ad81874c26aae41c0ddac8e49a038a85f8155a3011ec9",
+      "publishedBytes": 91355
+    },
+    {
+      "path": "native-paths-20261101.json",
+      "originalFile": "native-paths-20261101.json",
+      "originalSha256": "ddc9f562fd2e4f35605cb588693713e03250b1fad54a1bff6e93acf5e8f9146f",
+      "publishedSha256": "ddc9f562fd2e4f35605cb588693713e03250b1fad54a1bff6e93acf5e8f9146f",
+      "publishedBytes": 50261
+    },
+    {
+      "path": "native-run-observation.json",
+      "originalFile": "native-run-observation.json",
+      "originalSha256": "98ba3472d7ae2aea6e8a4119b420320634185562a8110941ae020503b7c8bbf6",
+      "publishedSha256": "74a21920b582aea7669edb34560c32e3567f12975ca546c7af2447af99b14f3e",
+      "publishedBytes": 3686
+    },
+    {
+      "path": "download-receipt.json",
+      "originalFile": "download-receipt.json",
+      "originalSha256": "a7fbebc0286c44024513f9b736cca11ff31c27a990d09832eeccc6bfc1cbb190",
+      "publishedSha256": "dbac0bc796c4fc513aec1183e6ccfe819837cdbd3a7165183946af720f439248",
+      "publishedBytes": 747
+    },
+    {
+      "path": "portable-receipt.json",
+      "originalFile": "portable-receipt.json",
+      "originalSha256": "906b3ffbda825390e9ba7bb387c2fb92e180038ad6213e844c06f4887edebd70",
+      "publishedSha256": "aca16793f55d63b085eb39ec46afcaf15f53d7e54298bc004a057bdbc64a6d0c",
+      "publishedBytes": 15020
+    },
+    {
+      "path": "authenticode-observation.json",
+      "originalFile": "authenticode-observation.json",
+      "originalSha256": "8736608bf5a845710772ed0a21302dacd4cc9dbed928c0dbf20187aefa842c58",
+      "publishedSha256": "ff1eadff95f1a93b3ab2855375b59f71e425e1b82b7c88b734bcd5152a6bccf6",
+      "publishedBytes": 651
+    },
+    {
+      "path": "native-version-stdout.txt",
+      "originalFile": "native-version-stdout.txt",
+      "originalSha256": "0452cabaaac67825685cf28aa32401e6ac86f590fbbdb85413adc099f0f2dbcc",
+      "publishedSha256": "97bd43204f48afc84823d145dba44c6b9dd54170666fd62e4bcdd1c0e8219923",
+      "publishedBytes": 468
+    },
+    {
+      "path": "native-version-stderr.txt",
+      "originalFile": "native-version-stderr.txt",
+      "originalSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "publishedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "publishedBytes": 0
+    },
+    {
+      "path": "native-default-stdout.txt",
+      "originalFile": "native-default-stdout.txt",
+      "originalSha256": "f0a41ebe0932068c243beec6431ae7144dd98d7669a6fd83bc9d638d26aba7d4",
+      "publishedSha256": "8a6733748cd75f68a36cec5eafb66a0df6d9d5ec3f74a16360de7ee7bc3a7df0",
+      "publishedBytes": 102
+    },
+    {
+      "path": "native-default-stderr.txt",
+      "originalFile": "native-default-stderr.txt",
+      "originalSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "publishedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "publishedBytes": 0
+    },
+    {
+      "path": "native-prepared-stdout.txt",
+      "originalFile": "native-prepared-stdout.txt",
+      "originalSha256": "d55e64086ee227ccd8af655d8f1d6833868b4178650d7e503029adbb3387d1ec",
+      "publishedSha256": "fec7314d44bae414849d983adf2b6528573869ebe3ebdb7e8f3e0def5d61e483",
+      "publishedBytes": 102
+    },
+    {
+      "path": "native-prepared-stderr.txt",
+      "originalFile": "native-prepared-stderr.txt",
+      "originalSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "publishedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "publishedBytes": 0
+    },
+    {
+      "path": "native-client-stdout.txt",
+      "originalFile": "native-client-stdout.txt",
+      "originalSha256": "5fcca582b2eb1947789f42237b1a566726d21a51ffca837a6983965ffcba5db8",
+      "publishedSha256": "ae5a9dcadafdc481b9a84f9afcc5bd1a00b819ac0a8343e9fa88dfa83e5ea3f3",
+      "publishedBytes": 203
+    },
+    {
+      "path": "native-client-stderr.txt",
+      "originalFile": "native-client-stderr.txt",
+      "originalSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "publishedSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "publishedBytes": 0
+    },
+    {
+      "path": "dependencies.txt",
+      "originalFile": "dependencies.txt",
+      "originalSha256": "672aec65a45bed50e70229c70934a7eebf0462595c459b83023027645d57cccf",
+      "publishedSha256": "9261363b733079a641c2e4cc9bc46ffa1d8336945a87f807b6cf68847dbc9b09",
+      "publishedBytes": 30
+    },
+    {
+      "path": "native-evidence-skew-6-degrees.png",
+      "originalFile": "native-evidence-skew-6-degrees.png",
+      "originalSha256": "641d45901e22d5a76a69f17b2e773a29587976dd38f308944596c2a936e3460b",
+      "publishedSha256": "641d45901e22d5a76a69f17b2e773a29587976dd38f308944596c2a936e3460b",
+      "publishedBytes": 177173
+    },
+    {
+      "path": "native-evidence-rotated-90-degrees.png",
+      "originalFile": "native-evidence-rotated-90-degrees.png",
+      "originalSha256": "1b91a653af946695e0a02fbfa09129fb5a936bfdc3453fbfff57e870d43fafd2",
+      "publishedSha256": "1b91a653af946695e0a02fbfa09129fb5a936bfdc3453fbfff57e870d43fafd2",
+      "publishedBytes": 164918
+    },
+    {
+      "path": "full-regression.txt",
+      "originalFile": "full-regression.log",
+      "originalSha256": "341c980d05cc8c8e26a92c12860dd8cca9361009418879d8d5b15aff02bb4218",
+      "publishedSha256": "84fd7e70ec56236f9f58319a85d56350b11096ed50554cac22a537ae4945b620",
+      "publishedBytes": 32505
+    }
+  ],
+  "before": {
+    "cases": 8,
+    "passed": 6,
+    "candidates": 31,
+    "allCandidatesUnconfirmed": true,
+    "missing": 7,
+    "unexpected": 0,
+    "milliseconds": 2375.23
+  },
+  "after": {
+    "cases": 8,
+    "passed": 8,
+    "candidates": 38,
+    "allCandidatesUnconfirmed": true,
+    "missing": 0,
+    "unexpected": 0,
+    "milliseconds": 6776.972
+  },
+  "cliSdk": {
+    "status": "PASS",
+    "modes": [
+      "2026-07-28",
+      "legacy"
+    ],
+    "successfulImageRequests": 5,
+    "malformedImageRequests": 2,
+    "sameConnectionRecovery": true,
+    "sourceUnchanged": true,
+    "temporaryRequestsRemoved": true
+  },
+  "pathFollowup": {
+    "status": "PASS",
+    "cases": [
+      "ascii",
+      "spaces",
+      "unicode"
+    ],
+    "additionalImageRequests": 3,
+    "ownedDirectoryRemoved": true,
+    "notIncludedInEightImageQualityDenominator": true
+  },
+  "fullRegression": {
+    "passed": 200,
+    "failed": 0,
+    "skipped": 0,
+    "seconds": 47.945,
+    "runtimeUnchangedAfterRun": true,
+    "note": "Full suite precedes the additional standalone path verifier; that verifier has three actual native executions."
+  },
+  "dependencyCheck": "PASS",
+  "hostedCheck": "PENDING_EXACT_DELIVERY",
+  "newCloudInferenceCalls": 0,
+  "newLlmCalls": 0,
+  "actualDollarCost": null,
+  "binariesCommitted": false,
+  "installerExecuted": false,
+  "globalPathChanged": false,
+  "authenticodeAccepted": false,
+  "acquisitionBasis": "Release-API asset SHA-256 plus pinned official language-data Git blob; Windows certificate validity failure retained",
+  "visualInspection": {
+    "images": 2,
+    "sourceWordsMatched": true,
+    "notIndependentHumanAcceptance": true
+  },
+  "evidenceTransformation": "UTF-8/LF and trailing whitespace normalization; local workspace/home prefixes redacted. Original hashes and local artifacts retained.",
+  "remaining": [
+    "Accepted signing/distribution where required",
+    "Clean-machine setup",
+    "Authorized customer bills",
+    "Independent layouts/photos/perspective/non-English labels",
+    "Measured human review effort",
+    "Separately approved publication"
+  ],
+  "rollback": "No product-runtime change or migration. Stop owned parsing before changing its configured runtime/data; retain source files and receipts."
+}

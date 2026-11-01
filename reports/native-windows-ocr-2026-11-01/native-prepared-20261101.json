@@ -1,0 +1,4848 @@
+{
+  "observedAt": "2026-11-01T04:26:41.173950+00:00",
+  "kind": "image",
+  "synthetic_only": true,
+  "python": "3.11.3",
+  "platform": "Windows",
+  "engine": "tesseract v5.5.3.20260724",
+  "sourceLFHashes": {
+    "bill_input.py": "d4c31d5983bcdf5e33110c37672724290b4872fcacf6a23ef45537606c22547e",
+    "bill_ocr.py": "250220f2950627a0166098d3581b56ab640adcf0a756aaeef8d1ac326c7443f3",
+    "bill_process.py": "27caf17ab1416ef2272732b05aa53d1a955f218247aea954cd1019e9e1b6e647",
+    "bill_image.py": "d7dfa49e34f8514e6379fd02b4f357577dc1c4cdee49ba1eda0a6ae439aa4a30",
+    "bill_image_worker.py": "47f2f6878d1dce13948881c829ac540abded7fa4f15588246649b86b393fe349",
+    "bill_image_geometry.py": "5c846e754ec773730f8426b73bc5eef2e96a0f7689eafed57712502e72529b69"
+  },
+  "manifestSha256": "a1a17439f5ffaba5defce0c5de74085a3852165ff682872a8d62291c28fdb99f",
+  "cases": 8,
+  "passed": 8,
+  "cloud_calls": 0,
+  "actual_dollar_cost": null,
+  "results": [
+    {
+      "id": "clean",
+      "status": "PASS",
+      "missing": {},
+      "unexpected": {},
+      "evidence_valid": true,
+      "visible_rejections": true,
+      "options": {
+        "ocr_deskew": true
+      },
+      "result": {
+        "status": "REVIEW_REQUIRED",
+        "candidates": [
+          {
+            "field": "current_plan",
+            "value": "E-TOU-D",
+            "status": "NEEDS_USER_CONFIRMATION",
+            "source": {
+              "sha256": "0060f8b7a1fea299dc5b6228580d1badb4a1c3169c2fa75b1ac6c3bfcfd07946",
+              "page": 1,
+              "line": 3,
+              "bbox": [
+                138,
+                251,
+                486,
+                274
+              ],
+              "quote": "Rate Schedule: E-TOU-D",
+              "start": 0,
+              "end": 22,
+              "ocr_confidence": {
+                "minimum": 92.265068,
+                "unknown_words": 0,
+                "calibrated": false
+              },
+              "coordinate_system": "ORIGINAL_ENCODED_IMAGE_PIXELS",
+              "image_size": [
+                1275,
+                1275
+              ],
+              "prepared_sha256": "dfae9f8a4c9a9a49dd349c3f6a1525f0a0deb5689afeca19dc33b88d2151003b",
+              "prepared_bbox": [
+                138,
+                251,
+                486,
+                274
+              ],
+              "source_polygons": [
+                [
+                  [
+                    138.0,
+                    252.0
+                  ],
+                  [
+                    200.0,
+                    252.0
+                  ],
+                  [
+                    200.0,
+                    274.0
+                  ],
+                  [
+                    138.0,
+                    274.0
+                  ]
+                ],
+                [
+                  [
+                    211.0,
+                    251.0
+                  ],
+                  [
+                    346.0,
+                    251.0
+                  ],
+                  [
+                    346.0,
+                    274.0
+                  ],
+                  [
+                    211.0,
+                    274.0
+                  ]
+                ],
+                [
+                  [
+                    360.0,
+                    251.0
+                  ],
+                  [
+                    486.0,
+                    251.0
+                  ],
+                  [
+                    486.0,
+                    274.0
+                  ],
+                  [
+                    360.0,
+                    274.0
+                  ]
+                ]
+              ],
+              "source_box_clipped": false
+            },
+            "quality_flags": [
+              "OCR_REQUIRES_VISUAL_REVIEW",
+              "IMAGE_PREPARATION_REQUIRES_REVIEW"
+            ],
+            "method": "LOCAL_TESSERACT_OCR"
+          },
+          {
+            "field": "reported_energy_charge",
+            "value": "12.34",
+            "status": "NEEDS_USER_CONFIRMATION",
+            "source": {
+              "sha256": "0060f8b7a1fea299dc5b6228580d1badb4a1c3169c2fa75b1ac6c3bfcfd07946",
+              "page": 1,
+              "line": 4,
+              "bbox": [
+                138,
+                342,
+                464,
+                373
+              ],
+              "quote": "Energy Charges $12.34",
+              "start": 0,
+              "end": 21,
+              "ocr_confidence": {
+                "minimum": 96.48082,
+                "unknown_words": 0,
+                "calibrated": false
+              },
+              "coordinate_system": "ORIGINAL_ENCODED_IMAGE_PIXELS",
+              "image_size": [
+                1275,
+                1275
+              ],
+              "prepared_sha256": "dfae9f8a4c9a9a49dd349c3f6a1525f0a0deb5689afeca19dc33b88d2151003b",
+              "prepared_bbox": [
+                138,
+                342,
+                464,
+                373
+              ],
+              "source_polygons": [
+                [
+                  [
+                    138.0,
+                    344.0
+                  ],
+                  [
+                    234.0,
+                    344.0
+                  ],
+                  [
+                    234.0,
+                    373.0
+                  ],
+                  [
+                    138.0,
+                    373.0
+                  ]
+                ],
+                [
+                  [
+                    245.0,
+                    343.0
+                  ],
+                  [
+                    360.0,
+                    343.0
+                  ],
+                  [
+                    360.0,
+                    373.0
+                  ],
+                  [
+                    245.0,
+                    373.0
+                  ]
+                ],
+                [
+                  [
+                    371.0,
+                    342.0
+                  ],
+                  [
+                    464.0,
+                    342.0
+                  ],
+                  [
+                    464.0,
+                    369.0
+                  ],
+                  [
+                    371.0,
+                    369.0
+                  ]
+                ]
+              ],
+              "source_box_clipped": false
+            },
+            "quality_flags": [
+              "OCR_REQUIRES_VISUAL_REVIEW",
+              "IMAGE_PREPARATION_REQUIRES_REVIEW"
+            ],
+            "method": "LOCAL_TESSERACT_OCR"
+          },
+          {
+            "field": "reported_base_services_charge",
+            "value": "0.79",
+            "status": "NEEDS_USER_CONFIRMATION",
+            "source": {
+              "sha256": "0060f8b7a1fea299dc5b6228580d1badb4a1c3169c2fa75b1ac6c3bfcfd07946",
+              "page": 1,
+              "line": 5,
+              "bbox": [
+                137,
+                434,
+                532,
+                465
+              ],
+              "quote": "Base Services Charge $0.79",
+              "start": 0,
+              "end": 26,
+              "ocr_confidence": {
+                "minimum": 95.546394,
+                "unknown_words": 0,
+                "calibrated": false
+              },
+              "coordinate_system": "ORIGINAL_ENCODED_IMAGE_PIXELS",
+              "image_size": [
+                1275,
+                1275
+              ],
+              "prepared_sha256": "dfae9f8a4c9a9a49dd349c3f6a1525f0a0deb5689afeca19dc33b88d2151003b",
+              "prepared_bbox": [
+                137,
+                434,
+                532,
+                465
+              ],
+              "source_polygons": [
+                [
+                  [
+                    137.0,
+                    436.0
+                  ],
+                  [
+                    205.0,
+                    436.0
+                  ],
+                  [
+                    205.0,
+                    458.0
+                  ],
+                  [
+                    137.0,
+                    458.0
+                  ]
+                ],
+                [
+                  [
+                    217.0,
+                    435.0
+                  ],
+                  [
+                    334.0,
+                    435.0
+                  ],
+                  [
+                    334.0,
+                    458.0
+                  ],
+                  [
+                    217.0,
+                    458.0
+                  ]
+                ],
+                [
+                  [
+                    345.0,
+                    435.0
+                  ],
+                  [
+                    445.0,
+                    435.0
+                  ],
+                  [
+                    445.0,
+                    465.0
+                  ],
+                  [
+                    345.0,
+                    465.0
+                  ]
+                ],
+                [
+                  [
+                    456.0,
+                    434.0
+                  ],
+                  [
+                    532.0,
+                    434.0
+                  ],
+                  [
+                    532.0,
+                    461.0
+                  ],
+                  [
+                    456.0,
+                    461.0
+                  ]
+                ]
+              ],
+              "source_box_clipped": false
+            },
+            "quality_flags": [
+              "OCR_REQUIRES_VISUAL_REVIEW",
+              "IMAGE_PREPARATION_REQUIRES_REVIEW"
+            ],
+            "method": "LOCAL_TESSERACT_OCR"
+          },
+          {
+            "field": "baseline_territory",
+            "value": "X",
+            "status": "NEEDS_USER_CONFIRMATION",
+            "source": {
+              "sha256": "0060f8b7a1fea299dc5b6228580d1badb4a1c3169c2fa75b1ac6c3bfcfd07946",
+              "page": 1,
+              "line": 6,
+              "bbox": [
+                137,
+                528,
+                418,
+                557
+              ],
+              "quote": "Baseline Territory: X",
+              "start": 0,
+              "end": 21,
+              "ocr_confidence": {
+                "minimum": 93.275642,
+                "unknown_words": 0,
+                "calibrated": false
+              },
+              "coordinate_system": "ORIGINAL_ENCODED_IMAGE_PIXELS",
+              "image_size": [
+                1275,
+                1275
+              ],
+              "prepared_sha256": "dfae9f8a4c9a9a49dd349c3f6a1525f0a0deb5689afeca19dc33b88d2151003b",
+              "prepared_bbox": [
+                137,
+                528,
+                418,
+                557
+              ],
+              "source_polygons": [
+                [
+                  [
+                    137.0,
+                    528.0
+                  ],
+                  [
+                    254.0,
+                    528.0
+                  ],
+                  [
+                    254.0,
+                    550.0
+                  ],
+                  [
+                    137.0,
+                    550.0
+                  ]
+                ],
+                [
+                  [
+                    264.0,
+                    528.0
+                  ],
+                  [
+                    386.0,
+                    528.0
+                  ],
+                  [
+                    386.0,
+                    557.0
+                  ],
+                  [
+                    264.0,
+                    557.0
+                  ]
+                ],
+                [
+                  [
+                    398.0,
+                    528.0
+                  ],
+                  [
+                    418.0,
+                    528.0
+                  ],
+                  [
+                    418.0,
+                    550.0
+                  ],
+                  [
+                    398.0,
+                    550.0
+                  ]
+                ]
+              ],
+              "source_box_clipped": false
+            },
+            "quality_flags": [
+              "OCR_REQUIRES_VISUAL_REVIEW",
+              "IMAGE_PREPARATION_REQUIRES_REVIEW"
+            ],
+            "method": "LOCAL_TESSERACT_OCR"
+          },
+          {
+            "field": "total_kwh",
+            "value": "25.5",
+            "status": "NEEDS_USER_CONFIRMATION",
+            "source": {
+              "sha256": "0060f8b7a1fea299dc5b6228580d1badb4a1c3169c2fa75b1ac6c3bfcfd07946",
+              "page": 1,
+              "line": 7,
+              "bbox": [
+                138,
+                619,
+                364,
+                648
+              ],
+              "quote": "Usage 25.5 kWh",
+              "start": 0,
+              "end": 14,
+              "ocr_confidence": {
+                "minimum": 96.106552,
+                "unknown_words": 0,
+                "calibrated": false
+              },
+              "coordinate_system": "ORIGINAL_ENCODED_IMAGE_PIXELS",
+              "image_size": [
+                1275,
+                1275
+              ],
+              "prepared_sha256": "dfae9f8a4c9a9a49dd349c3f6a1525f0a0deb5689afeca19dc33b88d2151003b",
+              "prepared_bbox": [
+                138,
+                619,
+                364,
+                648
+              ],
+              "source_polygons": [
+                [
+                  [
+                    138.0,
+                    619.0
+                  ],
+                  [
+                    224.0,
+                    619.0
+                  ],
+                  [
+                    224.0,
+                    648.0
+                  ],
+                  [
+                    138.0,
+                    648.0
+                  ]
+                ],
+                [
+                  [
+                    235.0,
+                    619.0
+                  ],
+                  [
+                    294.0,
+                    619.0
+                  ],
+                  [
+                    294.0,
+                    641.0
+                  ],
+                  [
+                    235.0,
+                    641.0
+                  ]
+                ],
+                [
+                  [
+                    306.0,
+                    619.0
+                  ],
+                  [
+                    364.0,
+                    619.0
+                  ],
+                  [
+                    364.0,
+                    641.0
+                  ],
+                  [
+                    306.0,
+                    641.0
+                  ]
+                ]
+              ],
+              "source_box_clipped": false
+            },
+            "quality_flags": [
+              "OCR_REQUIRES_VISUAL_REVIEW",
+              "IMAGE_PREPARATION_REQUIRES_REVIEW"
+            ],
+            "method": "LOCAL_TESSERACT_OCR"
+          }
+        ],
+        "unresolved_fields": [],
+        "missing_fields": [],
+        "conflicting_fields": [],
+        "automatic_calculation": false,
+        "automatic_confirmation": false,
+        "warnings": [
+          "Verify each candidate against the cited page/line before supplying it to validate/compare.",
+          "Total amount due is excluded. A bill's total kWh cannot replace interval usage.",
+          "No eligibility, account number, login, medical data or income is inferred.",
+          "OCR confidence is uncalibrated. Even high-confidence text needs visual source review.",
+          "Missing, unsupported or ambiguous values require manual review; charges are never summed.",
+          "Image preparation was requested. Evidence coordinates refer to original encoded pixels, before EXIF display rotation. Review the original; a mapped box is not proof of OCR correctness.",
+          "Automatic deskew could not establish an angle and applied no deskew correction. Review orientation manually."
+        ],
+        "source_sha256": "0060f8b7a1fea299dc5b6228580d1badb4a1c3169c2fa75b1ac6c3bfcfd07946",
+        "method": "LOCAL_TESSERACT_OCR",
+        "image_preparation": {
+          "schema_version": 1,
+          "source_size": [
+            1275,
+            1275
+          ],
+          "prepared_size": [
+            1275,
+            1275
+          ],
+          "source_to_prepared": [
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          "prepared_to_source": [
+            1.0,
+            -0.0,
+            0.0,
+            -0.0,
+            1.0,
+            0.0
+          ],
+          "rotation_degrees": 0.0,
+          "deskew_degrees": 0.0,
+          "deskew_status": "AMBIGUOUS",
+          "deskew_score_ratio": 1.07058,
+          "exif_orientation": 1,
+          "prepared_sha256": "dfae9f8a4c9a9a49dd349c3f6a1525f0a0deb5689afeca19dc33b88d2151003b",
+          "coordinate_system": "ORIGINAL_ENCODED_IMAGE_PIXELS",
+          "estimator_version": "band-projection-v1"
+        },
+        "ocr_page_segmentation": "AUTOMATIC_LAYOUT_WITHOUT_OSD"
+      },
+      "milliseconds": 863.627
+    },
+    {
+      "id": "low-contrast-noise",
+      "status": "PASS",
+      "missing": {},
+      "unexpected": {},
+      "evidence_valid": true,
+      "visible_rejections": true,
+      "options": {
+        "ocr_deskew": true
+      },
+      "result": {
+        "status": "REVIEW_REQUIRED",
+        "candidates": [
+          {
+            "field": "current_plan",
+            "value": "E-TOU-D",
+            "status": "NEEDS_USER_CONFIRMATION",
+            "source": {
+              "sha256": "c50dba41be5c218898a1d6fccf5f6673a35b0550e0806026fd478405fc27e040",
+              "page": 1,
+              "line": 3,
+              "bbox": [
+                138,
+                251,
+                486,
+                274
+              ],
+              "quote": "Rate Schedule: E-TOU-D",
+              "start": 0,
+              "end": 22,
+              "ocr_confidence": {
+                "minimum": 92.804306,
+                "unknown_words": 0,
+                "calibrated": false
+              },
+              "coordinate_system": "ORIGINAL_ENCODED_IMAGE_PIXELS",
+              "image_size": [
+                1275,
+                1275
+              ],
+              "prepared_sha256": "d7e765bdfc01f11f55bc1958def0b1764e4584b21882a97a3e49f9cb4d71513f",
+              "prepared_bbox": [
+                138,
+                251,
+                486,
+                274
+              ],
+              "source_polygons": [
+                [
+                  [
+                    138.0,
+                    252.0
+                  ],
+                  [
+                    200.0,
+                    252.0
+                  ],
+                  [
+                    200.0,
+                    274.0
+                  ],
+                  [
+                    138.0,
+                    274.0
+                  ]
+                ],
+                [
+                  [
+                    212.0,
+                    251.0
+                  ],
+                  [
+                    346.0,
+                    251.0
+                  ],
+                  [
+                    346.0,
+                    274.0
+                  ],
+                  [
+                    212.0,
+                    274.0
+                  ]
+                ],
+                [
+                  [
+                    360.0,
+                    251.0
+                  ],
+                  [
+                    486.0,
+                    251.0
+                  ],
+                  [
+                    486.0,
+                    274.0
+                  ],
+                  [
+                    360.0,
+                    274.0
+                  ]
+                ]
+              ],
+              "source_box_clipped": false
+            },
+            "quality_flags": [
+              "OCR_REQUIRES_VISUAL_REVIEW",
+              "IMAGE_PREPARATION_REQUIRES_REVIEW"
+            ],
+            "method": "LOCAL_TESSERACT_OCR"
+          },
+          {
+            "field": "reported_energy_charge",
+            "value": "12.34",
+            "status": "NEEDS_USER_CONFIRMATION",
+            "source": {
+              "sha256": "c50dba41be5c218898a1d6fccf5f6673a35b0550e0806026fd478405fc27e040",
+              "page": 1,
+              "line": 4,
+              "bbox": [
+                138,
+                342,
+                464,
+                372
+              ],
+              "quote": "Energy Charges $12.34",
+              "start": 0,
+              "end": 21,
+              "ocr_confidence": {
+                "minimum": 96.321983,
+                "unknown_words": 0,
+                "calibrated": false
+              },
+              "coordinate_system": "ORIGINAL_ENCODED_IMAGE_PIXELS",
+              "image_size": [
+                1275,
+                1275
+              ],
+              "prepared_sha256": "d7e765bdfc01f11f55bc1958def0b1764e4584b21882a97a3e49f9cb4d71513f",
+              "prepared_bbox": [
+                138,
+                342,
+                464,
+                372
+              ],
+              "source_polygons": [
+                [
+                  [
+                    138.0,
+                    344.0
+                  ],
+                  [
+                    234.0,
+                    344.0
+                  ],
+                  [
+                    234.0,
+                    372.0
+                  ],
+                  [
+                    138.0,
+                    372.0
+                  ]
+                ],
+                [
+                  [
+                    245.0,
+                    343.0
+                  ],
+                  [
+                    360.0,
+                    343.0
+                  ],
+                  [
+                    360.0,
+                    372.0
+                  ],
+                  [
+                    245.0,
+                    372.0
+                  ]
+                ],
+                [
+                  [
+                    371.0,
+                    342.0
+                  ],
+                  [
+                    464.0,
+                    342.0
+                  ],
+                  [
+                    464.0,
+                    369.0
+                  ],
+                  [
+                    371.0,
+                    369.0
+                  ]
+                ]
+              ],
+              "source_box_clipped": false
+            },
+            "quality_flags": [
+              "OCR_REQUIRES_VISUAL_REVIEW",
+              "IMAGE_PREPARATION_REQUIRES_REVIEW"
+            ],
+            "method": "LOCAL_TESSERACT_OCR"
+          },
+          {
+            "field": "reported_base_services_charge",
+            "value": "0.79",
+            "status": "NEEDS_USER_CONFIRMATION",
+            "source": {
+              "sha256": "c50dba41be5c218898a1d6fccf5f6673a35b0550e0806026fd478405fc27e040",
+              "page": 1,
+              "line": 5,
+              "bbox": [
+                138,
+                434,
+                532,
+                464
+              ],
+              "quote": "Base Services Charge $0.79",
+              "start": 0,
+              "end": 26,
+              "ocr_confidence": {
+                "minimum": 95.731033,
+                "unknown_words": 0,
+                "calibrated": false
+              },
+              "coordinate_system": "ORIGINAL_ENCODED_IMAGE_PIXELS",
+              "image_size": [
+                1275,
+                1275
+              ],
+              "prepared_sha256": "d7e765bdfc01f11f55bc1958def0b1764e4584b21882a97a3e49f9cb4d71513f",
+              "prepared_bbox": [
+                138,
+                434,
+                532,
+                464
+              ],
+              "source_polygons": [
+                [
+                  [
+                    138.0,
+                    436.0
+                  ],
+                  [
+                    205.0,
+                    436.0
+                  ],
+                  [
+                    205.0,
+                    458.0
+                  ],
+                  [
+                    138.0,
+                    458.0
+                  ]
+                ],
+                [
+                  [
+                    217.0,
+                    435.0
+                  ],
+                  [
+                    334.0,
+                    435.0
+                  ],
+                  [
+                    334.0,
+                    458.0
+                  ],
+                  [
+                    217.0,
+                    458.0
+                  ]
+                ],
+                [
+                  [
+                    345.0,
+                    435.0
+                  ],
+                  [
+                    445.0,
+                    435.0
+                  ],
+                  [
+                    445.0,
+                    464.0
+                  ],
+                  [
+                    345.0,
+                    464.0
+                  ]
+                ],
+                [
+                  [
+                    456.0,
+                    434.0
+                  ],
+                  [
+                    532.0,
+                    434.0
+                  ],
+                  [
+                    532.0,
+                    461.0
+                  ],
+                  [
+                    456.0,
+                    461.0
+                  ]
+                ]
+              ],
+              "source_box_clipped": false
+            },
+            "quality_flags": [
+              "OCR_REQUIRES_VISUAL_REVIEW",
+              "IMAGE_PREPARATION_REQUIRES_REVIEW"
+            ],
+            "method": "LOCAL_TESSERACT_OCR"
+          },
+          {
+            "field": "baseline_territory",
+            "value": "X",
+            "status": "NEEDS_USER_CONFIRMATION",
+            "source": {
+              "sha256": "c50dba41be5c218898a1d6fccf5f6673a35b0550e0806026fd478405fc27e040",
+              "page": 1,
+              "line": 6,
+              "bbox": [
+                138,
+                528,
+                418,
+                556
+              ],
+              "quote": "Baseline Territory: X",
+              "start": 0,
+              "end": 21,
+              "ocr_confidence": {
+                "minimum": 92.812477,
+                "unknown_words": 0,
+                "calibrated": false
+              },
+              "coordinate_system": "ORIGINAL_ENCODED_IMAGE_PIXELS",
+              "image_size": [
+                1275,
+                1275
+              ],
+              "prepared_sha256": "d7e765bdfc01f11f55bc1958def0b1764e4584b21882a97a3e49f9cb4d71513f",
+              "prepared_bbox": [
+                138,
+                528,
+                418,
+                556
+              ],
+              "source_polygons": [
+                [
+                  [
+                    138.0,
+                    528.0
+                  ],
+                  [
+                    254.0,
+                    528.0
+                  ],
+                  [
+                    254.0,
+                    550.0
+                  ],
+                  [
+                    138.0,
+                    550.0
+                  ]
+                ],
+                [
+                  [
+                    265.0,
+                    528.0
+                  ],
+                  [
+                    386.0,
+                    528.0
+                  ],
+                  [
+                    386.0,
+                    556.0
+                  ],
+                  [
+                    265.0,
+                    556.0
+                  ]
+                ],
+                [
+                  [
+                    398.0,
+                    528.0
+                  ],
+                  [
+                    418.0,
+                    528.0
+                  ],
+                  [
+                    418.0,
+                    550.0
+                  ],
+                  [
+                    398.0,
+                    550.0
+                  ]
+                ]
+              ],
+              "source_box_clipped": false
+            },
+            "quality_flags": [
+              "OCR_REQUIRES_VISUAL_REVIEW",
+              "IMAGE_PREPARATION_REQUIRES_REVIEW"
+            ],
+            "method": "LOCAL_TESSERACT_OCR"
+          },
+          {
+            "field": "total_kwh",
+            "value": "25.5",
+            "status": "NEEDS_USER_CONFIRMATION",
+            "source": {
+              "sha256": "c50dba41be5c218898a1d6fccf5f6673a35b0550e0806026fd478405fc27e040",
+              "page": 1,
+              "line": 7,
+              "bbox": [
+                138,
+                619,
+                364,
+                647
+              ],
+              "quote": "Usage 25.5 kWh",
+              "start": 0,
+              "end": 14,
+              "ocr_confidence": {
+                "minimum": 95.973328,
+                "unknown_words": 0,
+                "calibrated": false
+              },
+              "coordinate_system": "ORIGINAL_ENCODED_IMAGE_PIXELS",
+              "image_size": [
+                1275,
+                1275
+              ],
+              "prepared_sha256": "d7e765bdfc01f11f55bc1958def0b1764e4584b21882a97a3e49f9cb4d71513f",
+              "prepared_bbox": [
+                138,
+                619,
+                364,
+                647
+              ],
+              "source_polygons": [
+                [
+                  [
+                    138.0,
+                    619.0
+                  ],
+                  [
+                    224.0,
+                    619.0
+                  ],
+                  [
+                    224.0,
+                    647.0
+                  ],
+                  [
+                    138.0,
+                    647.0
+                  ]
+                ],
+                [
+                  [
+                    235.0,
+                    619.0
+                  ],
+                  [
+                    294.0,
+                    619.0
+                  ],
+                  [
+                    294.0,
+                    641.0
+                  ],
+                  [
+                    235.0,
+                    641.0
+                  ]
+                ],
+                [
+                  [
+                    306.0,
+                    619.0
+                  ],
+                  [
+                    364.0,
+                    619.0
+                  ],
+                  [
+                    364.0,
+                    641.0
+                  ],
+                  [
+                    306.0,
+                    641.0
+                  ]
+                ]
+              ],
+              "source_box_clipped": false
+            },
+            "quality_flags": [
+              "OCR_REQUIRES_VISUAL_REVIEW",
+              "IMAGE_PREPARATION_REQUIRES_REVIEW"
+            ],
+            "method": "LOCAL_TESSERACT_OCR"
+          }
+        ],
+        "unresolved_fields": [],
+        "missing_fields": [],
+        "conflicting_fields": [],
+        "automatic_calculation": false,
+        "automatic_confirmation": false,
+        "warnings": [
+          "Verify each candidate against the cited page/line before supplying it to validate/compare.",
+          "Total amount due is excluded. A bill's total kWh cannot replace interval usage.",
+          "No eligibility, account number, login, medical data or income is inferred.",
+          "OCR confidence is uncalibrated. Even high-confidence text needs visual source review.",
+          "Missing, unsupported or ambiguous values require manual review; charges are never summed.",
+          "Image preparation was requested. Evidence coordinates refer to original encoded pixels, before EXIF display rotation. Review the original; a mapped box is not proof of OCR correctness.",
+          "Automatic deskew could not establish an angle and applied no deskew correction. Review orientation manually."
+        ],
+        "source_sha256": "c50dba41be5c218898a1d6fccf5f6673a35b0550e0806026fd478405fc27e040",
+        "method": "LOCAL_TESSERACT_OCR",
+        "image_preparation": {
+          "schema_version": 1,
+          "source_size": [
+            1275,
+            1275
+          ],
+          "prepared_size": [
+            1275,
+            1275
+          ],
+          "source_to_prepared": [
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          "prepared_to_source": [
+            1.0,
+            -0.0,
+            0.0,
+            -0.0,
+            1.0,
+            0.0
+          ],
+          "rotation_degrees": 0.0,
+          "deskew_degrees": 0.0,
+          "deskew_status": "AMBIGUOUS",
+          "deskew_score_ratio": 1.03353,
+          "exif_orientation": 1,
+          "prepared_sha256": "d7e765bdfc01f11f55bc1958def0b1764e4584b21882a97a3e49f9cb4d71513f",
+          "coordinate_system": "ORIGINAL_ENCODED_IMAGE_PIXELS",
+          "estimator_version": "band-projection-v1"
+        },
+        "ocr_page_segmentation": "AUTOMATIC_LAYOUT_WITHOUT_OSD"
+      },
+      "milliseconds": 829.748
+    },
+    {
+      "id": "skew-6-degrees",
+      "status": "PASS",
+      "missing": {},
+      "unexpected": {},
+      "evidence_valid": true,
+      "visible_rejections": true,
+      "options": {
+        "ocr_deskew": true
+      },
+      "result": {
+        "status": "REVIEW_REQUIRED",
+        "candidates": [
+          {
+            "field": "current_plan",
+            "value": "E-TOU-D",
+            "status": "NEEDS_USER_CONFIRMATION",
+            "source": {
+              "sha256": "d1780d2d51d684b1d8e0710b563c89c87c661fa889b800d3240736045fa8073b",
+              "page": 1,
+              "line": 7,
+              "bbox": [
+                100,
+                268,
+                449,
+                330
+              ],
+              "quote": "Rate Schedule: E-TOU-D",
+              "start": 0,
+              "end": 22,
+              "ocr_confidence": {
+                "minimum": 90.746552,
+                "unknown_words": 0,
+                "calibrated": false
+              },
+              "coordinate_system": "ORIGINAL_ENCODED_IMAGE_PIXELS",
+              "image_size": [
+                1275,
+                1275
+              ],
+              "prepared_sha256": "02efc0729ad072c3dbebc9770fcb2b8a3dab154b7161b837b3bd11ead4d1ef92",
+              "prepared_bbox": [
+                201,
+                314,
+                549,
+                339
+              ],
+              "source_polygons": [
+                [
+                  [
+                    100.281664,
+                    306.19508
+                  ],
+                  [
+                    161.942022,
+                    299.714316
+                  ],
+                  [
+                    164.346176,
+                    322.588319
+                  ],
+                  [
+                    102.685819,
+                    329.069084
+                  ]
+                ],
+                [
+                  [
+                    172.881762,
+                    298.564503
+                  ],
+                  [
+                    308.13674,
+                    284.348632
+                  ],
+                  [
+                    310.645423,
+                    308.217157
+                  ],
+                  [
+                    175.390445,
+                    322.433028
+                  ]
+                ],
+                [
+                  [
+                    320.960996,
+                    281.99524
+                  ],
+                  [
+                    446.270755,
+                    268.824653
+                  ],
+                  [
+                    448.779438,
+                    292.693179
+                  ],
+                  [
+                    323.469679,
+                    305.863765
+                  ]
+                ]
+              ],
+              "source_box_clipped": false
+            },
+            "quality_flags": [
+              "OCR_REQUIRES_VISUAL_REVIEW",
+              "IMAGE_PREPARATION_REQUIRES_REVIEW"
+            ],
+            "method": "LOCAL_TESSERACT_OCR"
+          },
+          {
+            "field": "reported_energy_charge",
+            "value": "12.34",
+            "status": "NEEDS_USER_CONFIRMATION",
+            "source": {
+              "sha256": "d1780d2d51d684b1d8e0710b563c89c87c661fa889b800d3240736045fa8073b",
+              "page": 1,
+              "line": 8,
+              "bbox": [
+                108,
+                361,
+                437,
+                427
+              ],
+              "quote": "Energy Charges $12.34",
+              "start": 0,
+              "end": 21,
+              "ocr_confidence": {
+                "minimum": 96.438461,
+                "unknown_words": 0,
+                "calibrated": false
+              },
+              "coordinate_system": "ORIGINAL_ENCODED_IMAGE_PIXELS",
+              "image_size": [
+                1275,
+                1275
+              ],
+              "prepared_sha256": "02efc0729ad072c3dbebc9770fcb2b8a3dab154b7161b837b3bd11ead4d1ef92",
+              "prepared_bbox": [
+                200,
+                405,
+                527,
+                436
+              ],
+              "source_polygons": [
+                [
+                  [
+                    108.903761,
+                    397.795623
+                  ],
+                  [
+                    204.377863,
+                    387.760891
+                  ],
+                  [
+                    207.409188,
+                    416.602026
+                  ],
+                  [
+                    111.935086,
+                    426.636758
+                  ]
+                ],
+                [
+                  [
+                    215.213075,
+                    385.616556
+                  ],
+                  [
+                    329.583093,
+                    373.595783
+                  ],
+                  [
+                    332.718947,
+                    403.431439
+                  ],
+                  [
+                    218.348929,
+                    415.452213
+                  ]
+                ],
+                [
+                  [
+                    341.412827,
+                    371.346919
+                  ],
+                  [
+                    433.903364,
+                    361.625772
+                  ],
+                  [
+                    436.830161,
+                    389.472385
+                  ],
+                  [
+                    344.339624,
+                    399.193532
+                  ]
+                ]
+              ],
+              "source_box_clipped": false
+            },
+            "quality_flags": [
+              "OCR_REQUIRES_VISUAL_REVIEW",
+              "IMAGE_PREPARATION_REQUIRES_REVIEW"
+            ],
+            "method": "LOCAL_TESSERACT_OCR"
+          },
+          {
+            "field": "reported_base_services_charge",
+            "value": "0.79",
+            "status": "NEEDS_USER_CONFIRMATION",
+            "source": {
+              "sha256": "d1780d2d51d684b1d8e0710b563c89c87c661fa889b800d3240736045fa8073b",
+              "page": 1,
+              "line": 9,
+              "bbox": [
+                118,
+                446,
+                513,
+                513
+              ],
+              "quote": "Base Services Charge $0.79",
+              "start": 0,
+              "end": 26,
+              "ocr_confidence": {
+                "minimum": 96.313393,
+                "unknown_words": 0,
+                "calibrated": false
+              },
+              "coordinate_system": "ORIGINAL_ENCODED_IMAGE_PIXELS",
+              "image_size": [
+                1275,
+                1275
+              ],
+              "prepared_sha256": "02efc0729ad072c3dbebc9770fcb2b8a3dab154b7161b837b3bd11ead4d1ef92",
+              "prepared_bbox": [
+                200,
+                497,
+                594,
+                527
+              ],
+              "source_polygons": [
+                [
+                  [
+                    118.415851,
+                    488.297116
+                  ],
+                  [
+                    186.04334,
+                    481.18918
+                  ],
+                  [
+                    188.552023,
+                    505.057706
+                  ],
+                  [
+                    120.924534,
+                    512.165641
+                  ]
+                ],
+                [
+                  [
+                    196.983081,
+                    480.039367
+                  ],
+                  [
+                    314.336664,
+                    467.705009
+                  ],
+                  [
+                    316.845347,
+                    491.573534
+                  ],
+                  [
+                    199.491764,
+                    503.907893
+                  ]
+                ],
+                [
+                  [
+                    325.276405,
+                    466.555195
+                  ],
+                  [
+                    424.728595,
+                    456.102349
+                  ],
+                  [
+                    427.75992,
+                    484.943484
+                  ],
+                  [
+                    328.307731,
+                    495.39633
+                  ]
+                ],
+                [
+                  [
+                    435.563807,
+                    453.958014
+                  ],
+                  [
+                    510.152949,
+                    446.118379
+                  ],
+                  [
+                    512.975218,
+                    472.970471
+                  ],
+                  [
+                    438.386076,
+                    480.810105
+                  ]
+                ]
+              ],
+              "source_box_clipped": false
+            },
+            "quality_flags": [
+              "OCR_REQUIRES_VISUAL_REVIEW",
+              "IMAGE_PREPARATION_REQUIRES_REVIEW"
+            ],
+            "method": "LOCAL_TESSERACT_OCR"
+          },
+          {
+            "field": "baseline_territory",
+            "value": "X",
+            "status": "NEEDS_USER_CONFIRMATION",
+            "source": {
+              "sha256": "d1780d2d51d684b1d8e0710b563c89c87c661fa889b800d3240736045fa8073b",
+              "page": 1,
+              "line": 10,
+              "bbox": [
+                129,
+                550,
+                409,
+                603
+              ],
+              "quote": "Baseline Territory: X",
+              "start": 0,
+              "end": 21,
+              "ocr_confidence": {
+                "minimum": 92.326668,
+                "unknown_words": 0,
+                "calibrated": false
+              },
+              "coordinate_system": "ORIGINAL_ENCODED_IMAGE_PIXELS",
+              "image_size": [
+                1275,
+                1275
+              ],
+              "prepared_sha256": "02efc0729ad072c3dbebc9770fcb2b8a3dab154b7161b837b3bd11ead4d1ef92",
+              "prepared_bbox": [
+                201,
+                590,
+                480,
+                620
+              ],
+              "source_polygons": [
+                [
+                  [
+                    129.026991,
+                    579.688602
+                  ],
+                  [
+                    243.397009,
+                    567.667828
+                  ],
+                  [
+                    245.801164,
+                    590.541832
+                  ],
+                  [
+                    131.431146,
+                    602.562605
+                  ]
+                ],
+                [
+                  [
+                    254.33675,
+                    566.518015
+                  ],
+                  [
+                    375.668421,
+                    553.765543
+                  ],
+                  [
+                    378.804275,
+                    583.6012
+                  ],
+                  [
+                    257.472604,
+                    596.353672
+                  ]
+                ],
+                [
+                  [
+                    387.602684,
+                    552.511201
+                  ],
+                  [
+                    406.4986,
+                    550.52516
+                  ],
+                  [
+                    408.902755,
+                    573.399164
+                  ],
+                  [
+                    390.006839,
+                    575.385205
+                  ]
+                ]
+              ],
+              "source_box_clipped": false
+            },
+            "quality_flags": [
+              "OCR_REQUIRES_VISUAL_REVIEW",
+              "IMAGE_PREPARATION_REQUIRES_REVIEW"
+            ],
+            "method": "LOCAL_TESSERACT_OCR"
+          },
+          {
+            "field": "total_kwh",
+            "value": "25.5",
+            "status": "NEEDS_USER_CONFIRMATION",
+            "source": {
+              "sha256": "d1780d2d51d684b1d8e0710b563c89c87c661fa889b800d3240736045fa8073b",
+              "page": 1,
+              "line": 11,
+              "bbox": [
+                137,
+                646,
+                367,
+                701
+              ],
+              "quote": "Usage 25.5 kWh",
+              "start": 0,
+              "end": 14,
+              "ocr_confidence": {
+                "minimum": 96.39151,
+                "unknown_words": 0,
+                "calibrated": false
+              },
+              "coordinate_system": "ORIGINAL_ENCODED_IMAGE_PIXELS",
+              "image_size": [
+                1275,
+                1275
+              ],
+              "prepared_sha256": "02efc0729ad072c3dbebc9770fcb2b8a3dab154b7161b837b3bd11ead4d1ef92",
+              "prepared_bbox": [
+                200,
+                681,
+                428,
+                711
+              ],
+              "source_polygons": [
+                [
+                  [
+                    137.649088,
+                    671.289145
+                  ],
+                  [
+                    225.167015,
+                    662.09064
+                  ],
+                  [
+                    228.19834,
+                    690.931775
+                  ],
+                  [
+                    140.680414,
+                    700.130279
+                  ]
+                ],
+                [
+                  [
+                    236.106756,
+                    660.940827
+                  ],
+                  [
+                    293.789026,
+                    654.878176
+                  ],
+                  [
+                    296.19318,
+                    677.752179
+                  ],
+                  [
+                    238.51091,
+                    683.81483
+                  ]
+                ],
+                [
+                  [
+                    305.61876,
+                    652.629312
+                  ],
+                  [
+                    364.295552,
+                    646.462133
+                  ],
+                  [
+                    366.699706,
+                    669.336137
+                  ],
+                  [
+                    308.022915,
+                    675.503316
+                  ]
+                ]
+              ],
+              "source_box_clipped": false
+            },
+            "quality_flags": [
+              "OCR_REQUIRES_VISUAL_REVIEW",
+              "IMAGE_PREPARATION_REQUIRES_REVIEW"
+            ],
+            "method": "LOCAL_TESSERACT_OCR"
+          }
+        ],
+        "unresolved_fields": [],
+        "missing_fields": [],
+        "conflicting_fields": [],
+        "automatic_calculation": false,
+        "automatic_confirmation": false,
+        "warnings": [
+          "Verify each candidate against the cited page/line before supplying it to validate/compare.",
+          "Total amount due is excluded. A bill's total kWh cannot replace interval usage.",
+          "No eligibility, account number, login, medical data or income is inferred.",
+          "OCR confidence is uncalibrated. Even high-confidence text needs visual source review.",
+          "Missing, unsupported or ambiguous values require manual review; charges are never summed.",
+          "Image preparation was requested. Evidence coordinates refer to original encoded pixels, before EXIF display rotation. Review the original; a mapped box is not proof of OCR correctness."
+        ],
+        "source_sha256": "d1780d2d51d684b1d8e0710b563c89c87c661fa889b800d3240736045fa8073b",
+        "method": "LOCAL_TESSERACT_OCR",
+        "image_preparation": {
+          "schema_version": 1,
+          "source_size": [
+            1275,
+            1275
+          ],
+          "prepared_size": [
+            1402,
+            1402
+          ],
+          "source_to_prepared": [
+            0.994521895368,
+            -0.104528463268,
+            133.2737906667,
+            0.104528463268,
+            0.994521895368,
+            0.0
+          ],
+          "prepared_to_source": [
+            0.9945218953684687,
+            0.10452846326804927,
+            -132.543702896787,
+            -0.10452846326804927,
+            0.9945218953684687,
+            13.930904532297838
+          ],
+          "rotation_degrees": 0.0,
+          "deskew_degrees": 6.0,
+          "deskew_status": "APPLIED",
+          "deskew_score_ratio": 7.06188,
+          "exif_orientation": 1,
+          "prepared_sha256": "02efc0729ad072c3dbebc9770fcb2b8a3dab154b7161b837b3bd11ead4d1ef92",
+          "coordinate_system": "ORIGINAL_ENCODED_IMAGE_PIXELS",
+          "estimator_version": "band-projection-v1"
+        },
+        "ocr_page_segmentation": "AUTOMATIC_LAYOUT_WITHOUT_OSD"
+      },
+      "milliseconds": 841.052
+    },
+    {
+      "id": "rotated-90-degrees",
+      "status": "PASS",
+      "missing": {},
+      "unexpected": {},
+      "evidence_valid": true,
+      "visible_rejections": true,
+      "options": {
+        "ocr_deskew": true,
+        "ocr_rotation_degrees": 90
+      },
+      "result": {
+        "status": "REVIEW_REQUIRED",
+        "candidates": [
+          {
+            "field": "current_plan",
+            "value": "E-TOU-D",
+            "status": "NEEDS_USER_CONFIRMATION",
+            "source": {
+              "sha256": "ea98a54340f474d5ee525b73d42dab517f65c54de19e851cedb0c419888eb845",
+              "page": 1,
+              "line": 1,
+              "bbox": [
+                251,
+                788,
+                274,
+                1137
+              ],
+              "quote": "Rate Schedule: E-TOU-D",
+              "start": 0,
+              "end": 22,
+              "ocr_confidence": {
+                "minimum": 92.53717,
+                "unknown_words": 0,
+                "calibrated": false
+              },
+              "coordinate_system": "ORIGINAL_ENCODED_IMAGE_PIXELS",
+              "image_size": [
+                1275,
+                1275
+              ],
+              "prepared_sha256": "18d74318ce2faabc254551094a2c3bb9ae159d6a7d7f7dccb8a9d351e06a02ac",
+              "prepared_bbox": [
+                138,
+                251,
+                487,
+                274
+              ],
+              "source_polygons": [
+                [
+                  [
+                    252.0,
+                    1137.0
+                  ],
+                  [
+                    252.0,
+                    1074.0
+                  ],
+                  [
+                    274.0,
+                    1074.0
+                  ],
+                  [
+                    274.0,
+                    1137.0
+                  ]
+                ],
+                [
+                  [
+                    251.0,
+                    1063.0
+                  ],
+                  [
+                    251.0,
+                    928.0
+                  ],
+                  [
+                    274.0,
+                    928.0
+                  ],
+                  [
+                    274.0,
+                    1063.0
+                  ]
+                ],
+                [
+                  [
+                    251.0,
+                    915.0
+                  ],
+                  [
+                    251.0,
+                    788.0
+                  ],
+                  [
+                    274.0,
+                    788.0
+                  ],
+                  [
+                    274.0,
+                    915.0
+                  ]
+                ]
+              ],
+              "source_box_clipped": false
+            },
+            "quality_flags": [
+              "OCR_REQUIRES_VISUAL_REVIEW",
+              "IMAGE_PREPARATION_REQUIRES_REVIEW"
+            ],
+            "method": "LOCAL_TESSERACT_OCR"
+          },
+          {
+            "field": "reported_energy_charge",
+            "value": "12.34",
+            "status": "NEEDS_USER_CONFIRMATION",
+            "source": {
+              "sha256": "ea98a54340f474d5ee525b73d42dab517f65c54de19e851cedb0c419888eb845",
+              "page": 1,
+              "line": 2,
+              "bbox": [
+                342,
+                810,
+                373,
+                1137
+              ],
+              "quote": "Energy Charges $12.34",
+              "start": 0,
+              "end": 21,
+              "ocr_confidence": {
+                "minimum": 96.075317,
+                "unknown_words": 0,
+                "calibrated": false
+              },
+              "coordinate_system": "ORIGINAL_ENCODED_IMAGE_PIXELS",
+              "image_size": [
+                1275,
+                1275
+              ],
+              "prepared_sha256": "18d74318ce2faabc254551094a2c3bb9ae159d6a7d7f7dccb8a9d351e06a02ac",
+              "prepared_bbox": [
+                138,
+                342,
+                465,
+                373
+              ],
+              "source_polygons": [
+                [
+                  [
+                    344.0,
+                    1137.0
+                  ],
+                  [
+                    344.0,
+                    1041.0
+                  ],
+                  [
+                    373.0,
+                    1041.0
+                  ],
+                  [
+                    373.0,
+                    1137.0
+                  ]
+                ],
+                [
+                  [
+                    343.0,
+                    1029.0
+                  ],
+                  [
+                    343.0,
+                    915.0
+                  ],
+                  [
+                    373.0,
+                    915.0
+                  ],
+                  [
+                    373.0,
+                    1029.0
+                  ]
+                ],
+                [
+                  [
+                    342.0,
+                    904.0
+                  ],
+                  [
+                    342.0,
+                    810.0
+                  ],
+                  [
+                    369.0,
+                    810.0
+                  ],
+                  [
+                    369.0,
+                    904.0
+                  ]
+                ]
+              ],
+              "source_box_clipped": false
+            },
+            "quality_flags": [
+              "OCR_REQUIRES_VISUAL_REVIEW",
+              "IMAGE_PREPARATION_REQUIRES_REVIEW"
+            ],
+            "method": "LOCAL_TESSERACT_OCR"
+          },
+          {
+            "field": "reported_base_services_charge",
+            "value": "0.79",
+            "status": "NEEDS_USER_CONFIRMATION",
+            "source": {
+              "sha256": "ea98a54340f474d5ee525b73d42dab517f65c54de19e851cedb0c419888eb845",
+              "page": 1,
+              "line": 3,
+              "bbox": [
+                434,
+                743,
+                465,
+                1137
+              ],
+              "quote": "Base Services Charge $0.79",
+              "start": 0,
+              "end": 26,
+              "ocr_confidence": {
+                "minimum": 96.347534,
+                "unknown_words": 0,
+                "calibrated": false
+              },
+              "coordinate_system": "ORIGINAL_ENCODED_IMAGE_PIXELS",
+              "image_size": [
+                1275,
+                1275
+              ],
+              "prepared_sha256": "18d74318ce2faabc254551094a2c3bb9ae159d6a7d7f7dccb8a9d351e06a02ac",
+              "prepared_bbox": [
+                138,
+                434,
+                532,
+                465
+              ],
+              "source_polygons": [
+                [
+                  [
+                    436.0,
+                    1137.0
+                  ],
+                  [
+                    436.0,
+                    1069.0
+                  ],
+                  [
+                    458.0,
+                    1069.0
+                  ],
+                  [
+                    458.0,
+                    1137.0
+                  ]
+                ],
+                [
+                  [
+                    435.0,
+                    1058.0
+                  ],
+                  [
+                    435.0,
+                    941.0
+                  ],
+                  [
+                    458.0,
+                    941.0
+                  ],
+                  [
+                    458.0,
+                    1058.0
+                  ]
+                ],
+                [
+                  [
+                    435.0,
+                    929.0
+                  ],
+                  [
+                    435.0,
+                    830.0
+                  ],
+                  [
+                    465.0,
+                    830.0
+                  ],
+                  [
+                    465.0,
+                    929.0
+                  ]
+                ],
+                [
+                  [
+                    434.0,
+                    819.0
+                  ],
+                  [
+                    434.0,
+                    743.0
+                  ],
+                  [
+                    461.0,
+                    743.0
+                  ],
+                  [
+                    461.0,
+                    819.0
+                  ]
+                ]
+              ],
+              "source_box_clipped": false
+            },
+            "quality_flags": [
+              "OCR_REQUIRES_VISUAL_REVIEW",
+              "IMAGE_PREPARATION_REQUIRES_REVIEW"
+            ],
+            "method": "LOCAL_TESSERACT_OCR"
+          },
+          {
+            "field": "baseline_territory",
+            "value": "X",
+            "status": "NEEDS_USER_CONFIRMATION",
+            "source": {
+              "sha256": "ea98a54340f474d5ee525b73d42dab517f65c54de19e851cedb0c419888eb845",
+              "page": 1,
+              "line": 4,
+              "bbox": [
+                528,
+                857,
+                557,
+                1137
+              ],
+              "quote": "Baseline Territory: X",
+              "start": 0,
+              "end": 21,
+              "ocr_confidence": {
+                "minimum": 93.230797,
+                "unknown_words": 0,
+                "calibrated": false
+              },
+              "coordinate_system": "ORIGINAL_ENCODED_IMAGE_PIXELS",
+              "image_size": [
+                1275,
+                1275
+              ],
+              "prepared_sha256": "18d74318ce2faabc254551094a2c3bb9ae159d6a7d7f7dccb8a9d351e06a02ac",
+              "prepared_bbox": [
+                138,
+                528,
+                418,
+                557
+              ],
+              "source_polygons": [
+                [
+                  [
+                    528.0,
+                    1137.0
+                  ],
+                  [
+                    528.0,
+                    1021.0
+                  ],
+                  [
+                    550.0,
+                    1021.0
+                  ],
+                  [
+                    550.0,
+                    1137.0
+                  ]
+                ],
+                [
+                  [
+                    528.0,
+                    1010.0
+                  ],
+                  [
+                    528.0,
+                    888.0
+                  ],
+                  [
+                    557.0,
+                    888.0
+                  ],
+                  [
+                    557.0,
+                    1010.0
+                  ]
+                ],
+                [
+                  [
+                    528.0,
+                    877.0
+                  ],
+                  [
+                    528.0,
+                    857.0
+                  ],
+                  [
+                    550.0,
+                    857.0
+                  ],
+                  [
+                    550.0,
+                    877.0
+                  ]
+                ]
+              ],
+              "source_box_clipped": false
+            },
+            "quality_flags": [
+              "OCR_REQUIRES_VISUAL_REVIEW",
+              "IMAGE_PREPARATION_REQUIRES_REVIEW"
+            ],
+            "method": "LOCAL_TESSERACT_OCR"
+          },
+          {
+            "field": "total_kwh",
+            "value": "25.5",
+            "status": "NEEDS_USER_CONFIRMATION",
+            "source": {
+              "sha256": "ea98a54340f474d5ee525b73d42dab517f65c54de19e851cedb0c419888eb845",
+              "page": 1,
+              "line": 5,
+              "bbox": [
+                619,
+                910,
+                648,
+                1137
+              ],
+              "quote": "Usage 25.5 kWh",
+              "start": 0,
+              "end": 14,
+              "ocr_confidence": {
+                "minimum": 95.681183,
+                "unknown_words": 0,
+                "calibrated": false
+              },
+              "coordinate_system": "ORIGINAL_ENCODED_IMAGE_PIXELS",
+              "image_size": [
+                1275,
+                1275
+              ],
+              "prepared_sha256": "18d74318ce2faabc254551094a2c3bb9ae159d6a7d7f7dccb8a9d351e06a02ac",
+              "prepared_bbox": [
+                138,
+                619,
+                365,
+                648
+              ],
+              "source_polygons": [
+                [
+                  [
+                    619.0,
+                    1137.0
+                  ],
+                  [
+                    619.0,
+                    1050.0
+                  ],
+                  [
+                    648.0,
+                    1050.0
+                  ],
+                  [
+                    648.0,
+                    1137.0
+                  ]
+                ],
+                [
+                  [
+                    619.0,
+                    1039.0
+                  ],
+                  [
+                    619.0,
+                    981.0
+                  ],
+                  [
+                    641.0,
+                    981.0
+                  ],
+                  [
+                    641.0,
+                    1039.0
+                  ]
+                ],
+                [
+                  [
+                    619.0,
+                    969.0
+                  ],
+                  [
+                    619.0,
+                    910.0
+                  ],
+                  [
+                    641.0,
+                    910.0
+                  ],
+                  [
+                    641.0,
+                    969.0
+                  ]
+                ]
+              ],
+              "source_box_clipped": false
+            },
+            "quality_flags": [
+              "OCR_REQUIRES_VISUAL_REVIEW",
+              "IMAGE_PREPARATION_REQUIRES_REVIEW"
+            ],
+            "method": "LOCAL_TESSERACT_OCR"
+          }
+        ],
+        "unresolved_fields": [],
+        "missing_fields": [],
+        "conflicting_fields": [],
+        "automatic_calculation": false,
+        "automatic_confirmation": false,
+        "warnings": [
+          "Verify each candidate against the cited page/line before supplying it to validate/compare.",
+          "Total amount due is excluded. A bill's total kWh cannot replace interval usage.",
+          "No eligibility, account number, login, medical data or income is inferred.",
+          "OCR confidence is uncalibrated. Even high-confidence text needs visual source review.",
+          "Missing, unsupported or ambiguous values require manual review; charges are never summed.",
+          "Image preparation was requested. Evidence coordinates refer to original encoded pixels, before EXIF display rotation. Review the original; a mapped box is not proof of OCR correctness."
+        ],
+        "source_sha256": "ea98a54340f474d5ee525b73d42dab517f65c54de19e851cedb0c419888eb845",
+        "method": "LOCAL_TESSERACT_OCR",
+        "image_preparation": {
+          "schema_version": 1,
+          "source_size": [
+            1275,
+            1275
+          ],
+          "prepared_size": [
+            1275,
+            1275
+          ],
+          "source_to_prepared": [
+            0.0,
+            -1.0,
+            1275.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          "prepared_to_source": [
+            0.0,
+            1.0,
+            -0.0,
+            -1.0,
+            0.0,
+            1275.0
+          ],
+          "rotation_degrees": 90.0,
+          "deskew_degrees": 0.0,
+          "deskew_status": "ALREADY_ALIGNED",
+          "deskew_score_ratio": 1.0,
+          "exif_orientation": 1,
+          "prepared_sha256": "18d74318ce2faabc254551094a2c3bb9ae159d6a7d7f7dccb8a9d351e06a02ac",
+          "coordinate_system": "ORIGINAL_ENCODED_IMAGE_PIXELS",
+          "estimator_version": "band-projection-v1"
+        },
+        "ocr_page_segmentation": "AUTOMATIC_LAYOUT_WITHOUT_OSD"
+      },
+      "milliseconds": 859.35
+    },
+    {
+      "id": "invalid-comma",
+      "status": "PASS",
+      "missing": {},
+      "unexpected": {},
+      "evidence_valid": true,
+      "visible_rejections": true,
+      "options": {
+        "ocr_deskew": true
+      },
+      "result": {
+        "status": "REVIEW_REQUIRED",
+        "candidates": [
+          {
+            "field": "current_plan",
+            "value": "E-TOU-D",
+            "status": "NEEDS_USER_CONFIRMATION",
+            "source": {
+              "sha256": "06ef1318105cc229a12b1383227bb945e4d80acc8ac0d66b8ff207fcbbac84ea",
+              "page": 1,
+              "line": 3,
+              "bbox": [
+                138,
+                251,
+                486,
+                274
+              ],
+              "quote": "Rate Schedule: E-TOU-D",
+              "start": 0,
+              "end": 22,
+              "ocr_confidence": {
+                "minimum": 92.265068,
+                "unknown_words": 0,
+                "calibrated": false
+              },
+              "coordinate_system": "ORIGINAL_ENCODED_IMAGE_PIXELS",
+              "image_size": [
+                1275,
+                1275
+              ],
+              "prepared_sha256": "4bb1f13f9768fb3ce879dd3a6af4ba2d31b9870a9ce2515817e1997241313347",
+              "prepared_bbox": [
+                138,
+                251,
+                486,
+                274
+              ],
+              "source_polygons": [
+                [
+                  [
+                    138.0,
+                    252.0
+                  ],
+                  [
+                    200.0,
+                    252.0
+                  ],
+                  [
+                    200.0,
+                    274.0
+                  ],
+                  [
+                    138.0,
+                    274.0
+                  ]
+                ],
+                [
+                  [
+                    211.0,
+                    251.0
+                  ],
+                  [
+                    346.0,
+                    251.0
+                  ],
+                  [
+                    346.0,
+                    274.0
+                  ],
+                  [
+                    211.0,
+                    274.0
+                  ]
+                ],
+                [
+                  [
+                    360.0,
+                    251.0
+                  ],
+                  [
+                    486.0,
+                    251.0
+                  ],
+                  [
+                    486.0,
+                    274.0
+                  ],
+                  [
+                    360.0,
+                    274.0
+                  ]
+                ]
+              ],
+              "source_box_clipped": false
+            },
+            "quality_flags": [
+              "OCR_REQUIRES_VISUAL_REVIEW",
+              "IMAGE_PREPARATION_REQUIRES_REVIEW"
+            ],
+            "method": "LOCAL_TESSERACT_OCR"
+          },
+          {
+            "field": "reported_base_services_charge",
+            "value": "0.79",
+            "status": "NEEDS_USER_CONFIRMATION",
+            "source": {
+              "sha256": "06ef1318105cc229a12b1383227bb945e4d80acc8ac0d66b8ff207fcbbac84ea",
+              "page": 1,
+              "line": 5,
+              "bbox": [
+                137,
+                434,
+                532,
+                465
+              ],
+              "quote": "Base Services Charge $0.79",
+              "start": 0,
+              "end": 26,
+              "ocr_confidence": {
+                "minimum": 95.546394,
+                "unknown_words": 0,
+                "calibrated": false
+              },
+              "coordinate_system": "ORIGINAL_ENCODED_IMAGE_PIXELS",
+              "image_size": [
+                1275,
+                1275
+              ],
+              "prepared_sha256": "4bb1f13f9768fb3ce879dd3a6af4ba2d31b9870a9ce2515817e1997241313347",
+              "prepared_bbox": [
+                137,
+                434,
+                532,
+                465
+              ],
+              "source_polygons": [
+                [
+                  [
+                    137.0,
+                    436.0
+                  ],
+                  [
+                    205.0,
+                    436.0
+                  ],
+                  [
+                    205.0,
+                    458.0
+                  ],
+                  [
+                    137.0,
+                    458.0
+                  ]
+                ],
+                [
+                  [
+                    217.0,
+                    435.0
+                  ],
+                  [
+                    334.0,
+                    435.0
+                  ],
+                  [
+                    334.0,
+                    458.0
+                  ],
+                  [
+                    217.0,
+                    458.0
+                  ]
+                ],
+                [
+                  [
+                    345.0,
+                    435.0
+                  ],
+                  [
+                    445.0,
+                    435.0
+                  ],
+                  [
+                    445.0,
+                    465.0
+                  ],
+                  [
+                    345.0,
+                    465.0
+                  ]
+                ],
+                [
+                  [
+                    456.0,
+                    434.0
+                  ],
+                  [
+                    532.0,
+                    434.0
+                  ],
+                  [
+                    532.0,
+                    461.0
+                  ],
+                  [
+                    456.0,
+                    461.0
+                  ]
+                ]
+              ],
+              "source_box_clipped": false
+            },
+            "quality_flags": [
+              "OCR_REQUIRES_VISUAL_REVIEW",
+              "IMAGE_PREPARATION_REQUIRES_REVIEW"
+            ],
+            "method": "LOCAL_TESSERACT_OCR"
+          },
+          {
+            "field": "baseline_territory",
+            "value": "X",
+            "status": "NEEDS_USER_CONFIRMATION",
+            "source": {
+              "sha256": "06ef1318105cc229a12b1383227bb945e4d80acc8ac0d66b8ff207fcbbac84ea",
+              "page": 1,
+              "line": 6,
+              "bbox": [
+                137,
+                528,
+                418,
+                557
+              ],
+              "quote": "Baseline Territory: X",
+              "start": 0,
+              "end": 21,
+              "ocr_confidence": {
+                "minimum": 93.275642,
+                "unknown_words": 0,
+                "calibrated": false
+              },
+              "coordinate_system": "ORIGINAL_ENCODED_IMAGE_PIXELS",
+              "image_size": [
+                1275,
+                1275
+              ],
+              "prepared_sha256": "4bb1f13f9768fb3ce879dd3a6af4ba2d31b9870a9ce2515817e1997241313347",
+              "prepared_bbox": [
+                137,
+                528,
+                418,
+                557
+              ],
+              "source_polygons": [
+                [
+                  [
+                    137.0,
+                    528.0
+                  ],
+                  [
+                    254.0,
+                    528.0
+                  ],
+                  [
+                    254.0,
+                    550.0
+                  ],
+                  [
+                    137.0,
+                    550.0
+                  ]
+                ],
+                [
+                  [
+                    264.0,
+                    528.0
+                  ],
+                  [
+                    386.0,
+                    528.0
+                  ],
+                  [
+                    386.0,
+                    557.0
+                  ],
+                  [
+                    264.0,
+                    557.0
+                  ]
+                ],
+                [
+                  [
+                    398.0,
+                    528.0
+                  ],
+                  [
+                    418.0,
+                    528.0
+                  ],
+                  [
+                    418.0,
+                    550.0
+                  ],
+                  [
+                    398.0,
+                    550.0
+                  ]
+                ]
+              ],
+              "source_box_clipped": false
+            },
+            "quality_flags": [
+              "OCR_REQUIRES_VISUAL_REVIEW",
+              "IMAGE_PREPARATION_REQUIRES_REVIEW"
+            ],
+            "method": "LOCAL_TESSERACT_OCR"
+          },
+          {
+            "field": "total_kwh",
+            "value": "25.5",
+            "status": "NEEDS_USER_CONFIRMATION",
+            "source": {
+              "sha256": "06ef1318105cc229a12b1383227bb945e4d80acc8ac0d66b8ff207fcbbac84ea",
+              "page": 1,
+              "line": 7,
+              "bbox": [
+                138,
+                619,
+                364,
+                648
+              ],
+              "quote": "Usage 25.5 kWh",
+              "start": 0,
+              "end": 14,
+              "ocr_confidence": {
+                "minimum": 96.106552,
+                "unknown_words": 0,
+                "calibrated": false
+              },
+              "coordinate_system": "ORIGINAL_ENCODED_IMAGE_PIXELS",
+              "image_size": [
+                1275,
+                1275
+              ],
+              "prepared_sha256": "4bb1f13f9768fb3ce879dd3a6af4ba2d31b9870a9ce2515817e1997241313347",
+              "prepared_bbox": [
+                138,
+                619,
+                364,
+                648
+              ],
+              "source_polygons": [
+                [
+                  [
+                    138.0,
+                    619.0
+                  ],
+                  [
+                    224.0,
+                    619.0
+                  ],
+                  [
+                    224.0,
+                    648.0
+                  ],
+                  [
+                    138.0,
+                    648.0
+                  ]
+                ],
+                [
+                  [
+                    235.0,
+                    619.0
+                  ],
+                  [
+                    294.0,
+                    619.0
+                  ],
+                  [
+                    294.0,
+                    641.0
+                  ],
+                  [
+                    235.0,
+                    641.0
+                  ]
+                ],
+                [
+                  [
+                    306.0,
+                    619.0
+                  ],
+                  [
+                    364.0,
+                    619.0
+                  ],
+                  [
+                    364.0,
+                    641.0
+                  ],
+                  [
+                    306.0,
+                    641.0
+                  ]
+                ]
+              ],
+              "source_box_clipped": false
+            },
+            "quality_flags": [
+              "OCR_REQUIRES_VISUAL_REVIEW",
+              "IMAGE_PREPARATION_REQUIRES_REVIEW"
+            ],
+            "method": "LOCAL_TESSERACT_OCR"
+          }
+        ],
+        "unresolved_fields": [
+          {
+            "field": "reported_energy_charge",
+            "reason": "AMBIGUOUS_OR_UNSUPPORTED_VALUE",
+            "source": {
+              "sha256": "06ef1318105cc229a12b1383227bb945e4d80acc8ac0d66b8ff207fcbbac84ea",
+              "page": 1,
+              "line": 4,
+              "bbox": [
+                138,
+                342,
+                507,
+                373
+              ],
+              "quote": "Energy Charges $12,34.56",
+              "start": 0,
+              "end": 24,
+              "ocr_confidence": {
+                "minimum": 92.141846,
+                "unknown_words": 0,
+                "calibrated": false
+              },
+              "coordinate_system": "ORIGINAL_ENCODED_IMAGE_PIXELS",
+              "image_size": [
+                1275,
+                1275
+              ],
+              "prepared_sha256": "4bb1f13f9768fb3ce879dd3a6af4ba2d31b9870a9ce2515817e1997241313347",
+              "prepared_bbox": [
+                138,
+                342,
+                507,
+                373
+              ],
+              "source_polygons": [
+                [
+                  [
+                    138.0,
+                    344.0
+                  ],
+                  [
+                    234.0,
+                    344.0
+                  ],
+                  [
+                    234.0,
+                    373.0
+                  ],
+                  [
+                    138.0,
+                    373.0
+                  ]
+                ],
+                [
+                  [
+                    245.0,
+                    343.0
+                  ],
+                  [
+                    360.0,
+                    343.0
+                  ],
+                  [
+                    360.0,
+                    373.0
+                  ],
+                  [
+                    245.0,
+                    373.0
+                  ]
+                ],
+                [
+                  [
+                    371.0,
+                    342.0
+                  ],
+                  [
+                    507.0,
+                    342.0
+                  ],
+                  [
+                    507.0,
+                    370.0
+                  ],
+                  [
+                    371.0,
+                    370.0
+                  ]
+                ]
+              ],
+              "source_box_clipped": false
+            },
+            "quality_flags": [
+              "OCR_REQUIRES_VISUAL_REVIEW",
+              "IMAGE_PREPARATION_REQUIRES_REVIEW"
+            ]
+          }
+        ],
+        "missing_fields": [
+          "reported_energy_charge"
+        ],
+        "conflicting_fields": [],
+        "automatic_calculation": false,
+        "automatic_confirmation": false,
+        "warnings": [
+          "Verify each candidate against the cited page/line before supplying it to validate/compare.",
+          "Total amount due is excluded. A bill's total kWh cannot replace interval usage.",
+          "No eligibility, account number, login, medical data or income is inferred.",
+          "OCR confidence is uncalibrated. Even high-confidence text needs visual source review.",
+          "Missing, unsupported or ambiguous values require manual review; charges are never summed.",
+          "Image preparation was requested. Evidence coordinates refer to original encoded pixels, before EXIF display rotation. Review the original; a mapped box is not proof of OCR correctness.",
+          "Automatic deskew could not establish an angle and applied no deskew correction. Review orientation manually."
+        ],
+        "source_sha256": "06ef1318105cc229a12b1383227bb945e4d80acc8ac0d66b8ff207fcbbac84ea",
+        "method": "LOCAL_TESSERACT_OCR",
+        "image_preparation": {
+          "schema_version": 1,
+          "source_size": [
+            1275,
+            1275
+          ],
+          "prepared_size": [
+            1275,
+            1275
+          ],
+          "source_to_prepared": [
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          "prepared_to_source": [
+            1.0,
+            -0.0,
+            0.0,
+            -0.0,
+            1.0,
+            0.0
+          ],
+          "rotation_degrees": 0.0,
+          "deskew_degrees": 0.0,
+          "deskew_status": "AMBIGUOUS",
+          "deskew_score_ratio": 1.06298,
+          "exif_orientation": 1,
+          "prepared_sha256": "4bb1f13f9768fb3ce879dd3a6af4ba2d31b9870a9ce2515817e1997241313347",
+          "coordinate_system": "ORIGINAL_ENCODED_IMAGE_PIXELS",
+          "estimator_version": "band-projection-v1"
+        },
+        "ocr_page_segmentation": "AUTOMATIC_LAYOUT_WITHOUT_OSD"
+      },
+      "milliseconds": 842.16
+    },
+    {
+      "id": "credit",
+      "status": "PASS",
+      "missing": {},
+      "unexpected": {},
+      "evidence_valid": true,
+      "visible_rejections": true,
+      "options": {
+        "ocr_deskew": true
+      },
+      "result": {
+        "status": "REVIEW_REQUIRED",
+        "candidates": [
+          {
+            "field": "current_plan",
+            "value": "E-TOU-D",
+            "status": "NEEDS_USER_CONFIRMATION",
+            "source": {
+              "sha256": "0ce4c8b98f8b28031a554689b3d7c983e315444b3eb01d4e5cad5d9e3c7a1109",
+              "page": 1,
+              "line": 3,
+              "bbox": [
+                138,
+                251,
+                486,
+                274
+              ],
+              "quote": "Rate Schedule: E-TOU-D",
+              "start": 0,
+              "end": 22,
+              "ocr_confidence": {
+                "minimum": 92.265068,
+                "unknown_words": 0,
+                "calibrated": false
+              },
+              "coordinate_system": "ORIGINAL_ENCODED_IMAGE_PIXELS",
+              "image_size": [
+                1275,
+                1275
+              ],
+              "prepared_sha256": "e15f052e61cc53f176185b8b6e0fc77361e0a07ad980c262a872c49e7183890e",
+              "prepared_bbox": [
+                138,
+                251,
+                486,
+                274
+              ],
+              "source_polygons": [
+                [
+                  [
+                    138.0,
+                    252.0
+                  ],
+                  [
+                    200.0,
+                    252.0
+                  ],
+                  [
+                    200.0,
+                    274.0
+                  ],
+                  [
+                    138.0,
+                    274.0
+                  ]
+                ],
+                [
+                  [
+                    211.0,
+                    251.0
+                  ],
+                  [
+                    346.0,
+                    251.0
+                  ],
+                  [
+                    346.0,
+                    274.0
+                  ],
+                  [
+                    211.0,
+                    274.0
+                  ]
+                ],
+                [
+                  [
+                    360.0,
+                    251.0
+                  ],
+                  [
+                    486.0,
+                    251.0
+                  ],
+                  [
+                    486.0,
+                    274.0
+                  ],
+                  [
+                    360.0,
+                    274.0
+                  ]
+                ]
+              ],
+              "source_box_clipped": false
+            },
+            "quality_flags": [
+              "OCR_REQUIRES_VISUAL_REVIEW",
+              "IMAGE_PREPARATION_REQUIRES_REVIEW"
+            ],
+            "method": "LOCAL_TESSERACT_OCR"
+          },
+          {
+            "field": "reported_base_services_charge",
+            "value": "0.79",
+            "status": "NEEDS_USER_CONFIRMATION",
+            "source": {
+              "sha256": "0ce4c8b98f8b28031a554689b3d7c983e315444b3eb01d4e5cad5d9e3c7a1109",
+              "page": 1,
+              "line": 5,
+              "bbox": [
+                137,
+                434,
+                532,
+                465
+              ],
+              "quote": "Base Services Charge $0.79",
+              "start": 0,
+              "end": 26,
+              "ocr_confidence": {
+                "minimum": 95.546394,
+                "unknown_words": 0,
+                "calibrated": false
+              },
+              "coordinate_system": "ORIGINAL_ENCODED_IMAGE_PIXELS",
+              "image_size": [
+                1275,
+                1275
+              ],
+              "prepared_sha256": "e15f052e61cc53f176185b8b6e0fc77361e0a07ad980c262a872c49e7183890e",
+              "prepared_bbox": [
+                137,
+                434,
+                532,
+                465
+              ],
+              "source_polygons": [
+                [
+                  [
+                    137.0,
+                    436.0
+                  ],
+                  [
+                    205.0,
+                    436.0
+                  ],
+                  [
+                    205.0,
+                    458.0
+                  ],
+                  [
+                    137.0,
+                    458.0
+                  ]
+                ],
+                [
+                  [
+                    217.0,
+                    435.0
+                  ],
+                  [
+                    334.0,
+                    435.0
+                  ],
+                  [
+                    334.0,
+                    458.0
+                  ],
+                  [
+                    217.0,
+                    458.0
+                  ]
+                ],
+                [
+                  [
+                    345.0,
+                    435.0
+                  ],
+                  [
+                    445.0,
+                    435.0
+                  ],
+                  [
+                    445.0,
+                    465.0
+                  ],
+                  [
+                    345.0,
+                    465.0
+                  ]
+                ],
+                [
+                  [
+                    456.0,
+                    434.0
+                  ],
+                  [
+                    532.0,
+                    434.0
+                  ],
+                  [
+                    532.0,
+                    461.0
+                  ],
+                  [
+                    456.0,
+                    461.0
+                  ]
+                ]
+              ],
+              "source_box_clipped": false
+            },
+            "quality_flags": [
+              "OCR_REQUIRES_VISUAL_REVIEW",
+              "IMAGE_PREPARATION_REQUIRES_REVIEW"
+            ],
+            "method": "LOCAL_TESSERACT_OCR"
+          },
+          {
+            "field": "baseline_territory",
+            "value": "X",
+            "status": "NEEDS_USER_CONFIRMATION",
+            "source": {
+              "sha256": "0ce4c8b98f8b28031a554689b3d7c983e315444b3eb01d4e5cad5d9e3c7a1109",
+              "page": 1,
+              "line": 6,
+              "bbox": [
+                137,
+                528,
+                418,
+                557
+              ],
+              "quote": "Baseline Territory: X",
+              "start": 0,
+              "end": 21,
+              "ocr_confidence": {
+                "minimum": 93.275642,
+                "unknown_words": 0,
+                "calibrated": false
+              },
+              "coordinate_system": "ORIGINAL_ENCODED_IMAGE_PIXELS",
+              "image_size": [
+                1275,
+                1275
+              ],
+              "prepared_sha256": "e15f052e61cc53f176185b8b6e0fc77361e0a07ad980c262a872c49e7183890e",
+              "prepared_bbox": [
+                137,
+                528,
+                418,
+                557
+              ],
+              "source_polygons": [
+                [
+                  [
+                    137.0,
+                    528.0
+                  ],
+                  [
+                    254.0,
+                    528.0
+                  ],
+                  [
+                    254.0,
+                    550.0
+                  ],
+                  [
+                    137.0,
+                    550.0
+                  ]
+                ],
+                [
+                  [
+                    264.0,
+                    528.0
+                  ],
+                  [
+                    386.0,
+                    528.0
+                  ],
+                  [
+                    386.0,
+                    557.0
+                  ],
+                  [
+                    264.0,
+                    557.0
+                  ]
+                ],
+                [
+                  [
+                    398.0,
+                    528.0
+                  ],
+                  [
+                    418.0,
+                    528.0
+                  ],
+                  [
+                    418.0,
+                    550.0
+                  ],
+                  [
+                    398.0,
+                    550.0
+                  ]
+                ]
+              ],
+              "source_box_clipped": false
+            },
+            "quality_flags": [
+              "OCR_REQUIRES_VISUAL_REVIEW",
+              "IMAGE_PREPARATION_REQUIRES_REVIEW"
+            ],
+            "method": "LOCAL_TESSERACT_OCR"
+          },
+          {
+            "field": "total_kwh",
+            "value": "25.5",
+            "status": "NEEDS_USER_CONFIRMATION",
+            "source": {
+              "sha256": "0ce4c8b98f8b28031a554689b3d7c983e315444b3eb01d4e5cad5d9e3c7a1109",
+              "page": 1,
+              "line": 7,
+              "bbox": [
+                138,
+                619,
+                364,
+                648
+              ],
+              "quote": "Usage 25.5 kWh",
+              "start": 0,
+              "end": 14,
+              "ocr_confidence": {
+                "minimum": 96.106552,
+                "unknown_words": 0,
+                "calibrated": false
+              },
+              "coordinate_system": "ORIGINAL_ENCODED_IMAGE_PIXELS",
+              "image_size": [
+                1275,
+                1275
+              ],
+              "prepared_sha256": "e15f052e61cc53f176185b8b6e0fc77361e0a07ad980c262a872c49e7183890e",
+              "prepared_bbox": [
+                138,
+                619,
+                364,
+                648
+              ],
+              "source_polygons": [
+                [
+                  [
+                    138.0,
+                    619.0
+                  ],
+                  [
+                    224.0,
+                    619.0
+                  ],
+                  [
+                    224.0,
+                    648.0
+                  ],
+                  [
+                    138.0,
+                    648.0
+                  ]
+                ],
+                [
+                  [
+                    235.0,
+                    619.0
+                  ],
+                  [
+                    294.0,
+                    619.0
+                  ],
+                  [
+                    294.0,
+                    641.0
+                  ],
+                  [
+                    235.0,
+                    641.0
+                  ]
+                ],
+                [
+                  [
+                    306.0,
+                    619.0
+                  ],
+                  [
+                    364.0,
+                    619.0
+                  ],
+                  [
+                    364.0,
+                    641.0
+                  ],
+                  [
+                    306.0,
+                    641.0
+                  ]
+                ]
+              ],
+              "source_box_clipped": false
+            },
+            "quality_flags": [
+              "OCR_REQUIRES_VISUAL_REVIEW",
+              "IMAGE_PREPARATION_REQUIRES_REVIEW"
+            ],
+            "method": "LOCAL_TESSERACT_OCR"
+          }
+        ],
+        "unresolved_fields": [
+          {
+            "field": "reported_energy_charge",
+            "reason": "AMBIGUOUS_OR_UNSUPPORTED_VALUE",
+            "source": {
+              "sha256": "0ce4c8b98f8b28031a554689b3d7c983e315444b3eb01d4e5cad5d9e3c7a1109",
+              "page": 1,
+              "line": 4,
+              "bbox": [
+                138,
+                342,
+                518,
+                373
+              ],
+              "quote": "Energy Charges $12.34 CR",
+              "start": 0,
+              "end": 24,
+              "ocr_confidence": {
+                "minimum": 96.196121,
+                "unknown_words": 0,
+                "calibrated": false
+              },
+              "coordinate_system": "ORIGINAL_ENCODED_IMAGE_PIXELS",
+              "image_size": [
+                1275,
+                1275
+              ],
+              "prepared_sha256": "e15f052e61cc53f176185b8b6e0fc77361e0a07ad980c262a872c49e7183890e",
+              "prepared_bbox": [
+                138,
+                342,
+                518,
+                373
+              ],
+              "source_polygons": [
+                [
+                  [
+                    138.0,
+                    344.0
+                  ],
+                  [
+                    234.0,
+                    344.0
+                  ],
+                  [
+                    234.0,
+                    373.0
+                  ],
+                  [
+                    138.0,
+                    373.0
+                  ]
+                ],
+                [
+                  [
+                    245.0,
+                    343.0
+                  ],
+                  [
+                    360.0,
+                    343.0
+                  ],
+                  [
+                    360.0,
+                    373.0
+                  ],
+                  [
+                    245.0,
+                    373.0
+                  ]
+                ],
+                [
+                  [
+                    371.0,
+                    342.0
+                  ],
+                  [
+                    464.0,
+                    342.0
+                  ],
+                  [
+                    464.0,
+                    369.0
+                  ],
+                  [
+                    371.0,
+                    369.0
+                  ]
+                ],
+                [
+                  [
+                    476.0,
+                    343.0
+                  ],
+                  [
+                    518.0,
+                    343.0
+                  ],
+                  [
+                    518.0,
+                    366.0
+                  ],
+                  [
+                    476.0,
+                    366.0
+                  ]
+                ]
+              ],
+              "source_box_clipped": false
+            },
+            "quality_flags": [
+              "OCR_REQUIRES_VISUAL_REVIEW",
+              "IMAGE_PREPARATION_REQUIRES_REVIEW"
+            ]
+          }
+        ],
+        "missing_fields": [
+          "reported_energy_charge"
+        ],
+        "conflicting_fields": [],
+        "automatic_calculation": false,
+        "automatic_confirmation": false,
+        "warnings": [
+          "Verify each candidate against the cited page/line before supplying it to validate/compare.",
+          "Total amount due is excluded. A bill's total kWh cannot replace interval usage.",
+          "No eligibility, account number, login, medical data or income is inferred.",
+          "OCR confidence is uncalibrated. Even high-confidence text needs visual source review.",
+          "Missing, unsupported or ambiguous values require manual review; charges are never summed.",
+          "Image preparation was requested. Evidence coordinates refer to original encoded pixels, before EXIF display rotation. Review the original; a mapped box is not proof of OCR correctness.",
+          "Automatic deskew could not establish an angle and applied no deskew correction. Review orientation manually."
+        ],
+        "source_sha256": "0ce4c8b98f8b28031a554689b3d7c983e315444b3eb01d4e5cad5d9e3c7a1109",
+        "method": "LOCAL_TESSERACT_OCR",
+        "image_preparation": {
+          "schema_version": 1,
+          "source_size": [
+            1275,
+            1275
+          ],
+          "prepared_size": [
+            1275,
+            1275
+          ],
+          "source_to_prepared": [
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          "prepared_to_source": [
+            1.0,
+            -0.0,
+            0.0,
+            -0.0,
+            1.0,
+            0.0
+          ],
+          "rotation_degrees": 0.0,
+          "deskew_degrees": 0.0,
+          "deskew_status": "AMBIGUOUS",
+          "deskew_score_ratio": 1.06871,
+          "exif_orientation": 1,
+          "prepared_sha256": "e15f052e61cc53f176185b8b6e0fc77361e0a07ad980c262a872c49e7183890e",
+          "coordinate_system": "ORIGINAL_ENCODED_IMAGE_PIXELS",
+          "estimator_version": "band-projection-v1"
+        },
+        "ocr_page_segmentation": "AUTOMATIC_LAYOUT_WITHOUT_OSD"
+      },
+      "milliseconds": 831.396
+    },
+    {
+      "id": "unsupported-plan",
+      "status": "PASS",
+      "missing": {},
+      "unexpected": {},
+      "evidence_valid": true,
+      "visible_rejections": true,
+      "options": {
+        "ocr_deskew": true
+      },
+      "result": {
+        "status": "REVIEW_REQUIRED",
+        "candidates": [
+          {
+            "field": "reported_energy_charge",
+            "value": "12.34",
+            "status": "NEEDS_USER_CONFIRMATION",
+            "source": {
+              "sha256": "9bae127ce4bb94496348bc8507090b5e8103d027325a82a04cc964c10410f5d4",
+              "page": 1,
+              "line": 4,
+              "bbox": [
+                138,
+                342,
+                464,
+                373
+              ],
+              "quote": "Energy Charges $12.34",
+              "start": 0,
+              "end": 21,
+              "ocr_confidence": {
+                "minimum": 96.48082,
+                "unknown_words": 0,
+                "calibrated": false
+              },
+              "coordinate_system": "ORIGINAL_ENCODED_IMAGE_PIXELS",
+              "image_size": [
+                1275,
+                1275
+              ],
+              "prepared_sha256": "29ec9fea2cbe8dd467ed4f94b5b93830fd250bc8866a96bbc24406072e448987",
+              "prepared_bbox": [
+                138,
+                342,
+                464,
+                373
+              ],
+              "source_polygons": [
+                [
+                  [
+                    138.0,
+                    344.0
+                  ],
+                  [
+                    234.0,
+                    344.0
+                  ],
+                  [
+                    234.0,
+                    373.0
+                  ],
+                  [
+                    138.0,
+                    373.0
+                  ]
+                ],
+                [
+                  [
+                    245.0,
+                    343.0
+                  ],
+                  [
+                    360.0,
+                    343.0
+                  ],
+                  [
+                    360.0,
+                    373.0
+                  ],
+                  [
+                    245.0,
+                    373.0
+                  ]
+                ],
+                [
+                  [
+                    371.0,
+                    342.0
+                  ],
+                  [
+                    464.0,
+                    342.0
+                  ],
+                  [
+                    464.0,
+                    369.0
+                  ],
+                  [
+                    371.0,
+                    369.0
+                  ]
+                ]
+              ],
+              "source_box_clipped": false
+            },
+            "quality_flags": [
+              "OCR_REQUIRES_VISUAL_REVIEW",
+              "IMAGE_PREPARATION_REQUIRES_REVIEW"
+            ],
+            "method": "LOCAL_TESSERACT_OCR"
+          },
+          {
+            "field": "reported_base_services_charge",
+            "value": "0.79",
+            "status": "NEEDS_USER_CONFIRMATION",
+            "source": {
+              "sha256": "9bae127ce4bb94496348bc8507090b5e8103d027325a82a04cc964c10410f5d4",
+              "page": 1,
+              "line": 5,
+              "bbox": [
+                137,
+                434,
+                532,
+                465
+              ],
+              "quote": "Base Services Charge $0.79",
+              "start": 0,
+              "end": 26,
+              "ocr_confidence": {
+                "minimum": 95.546394,
+                "unknown_words": 0,
+                "calibrated": false
+              },
+              "coordinate_system": "ORIGINAL_ENCODED_IMAGE_PIXELS",
+              "image_size": [
+                1275,
+                1275
+              ],
+              "prepared_sha256": "29ec9fea2cbe8dd467ed4f94b5b93830fd250bc8866a96bbc24406072e448987",
+              "prepared_bbox": [
+                137,
+                434,
+                532,
+                465
+              ],
+              "source_polygons": [
+                [
+                  [
+                    137.0,
+                    436.0
+                  ],
+                  [
+                    205.0,
+                    436.0
+                  ],
+                  [
+                    205.0,
+                    458.0
+                  ],
+                  [
+                    137.0,
+                    458.0
+                  ]
+                ],
+                [
+                  [
+                    217.0,
+                    435.0
+                  ],
+                  [
+                    334.0,
+                    435.0
+                  ],
+                  [
+                    334.0,
+                    458.0
+                  ],
+                  [
+                    217.0,
+                    458.0
+                  ]
+                ],
+                [
+                  [
+                    345.0,
+                    435.0
+                  ],
+                  [
+                    445.0,
+                    435.0
+                  ],
+                  [
+                    445.0,
+                    465.0
+                  ],
+                  [
+                    345.0,
+                    465.0
+                  ]
+                ],
+                [
+                  [
+                    456.0,
+                    434.0
+                  ],
+                  [
+                    532.0,
+                    434.0
+                  ],
+                  [
+                    532.0,
+                    461.0
+                  ],
+                  [
+                    456.0,
+                    461.0
+                  ]
+                ]
+              ],
+              "source_box_clipped": false
+            },
+            "quality_flags": [
+              "OCR_REQUIRES_VISUAL_REVIEW",
+              "IMAGE_PREPARATION_REQUIRES_REVIEW"
+            ],
+            "method": "LOCAL_TESSERACT_OCR"
+          },
+          {
+            "field": "baseline_territory",
+            "value": "X",
+            "status": "NEEDS_USER_CONFIRMATION",
+            "source": {
+              "sha256": "9bae127ce4bb94496348bc8507090b5e8103d027325a82a04cc964c10410f5d4",
+              "page": 1,
+              "line": 6,
+              "bbox": [
+                137,
+                528,
+                418,
+                557
+              ],
+              "quote": "Baseline Territory: X",
+              "start": 0,
+              "end": 21,
+              "ocr_confidence": {
+                "minimum": 93.275642,
+                "unknown_words": 0,
+                "calibrated": false
+              },
+              "coordinate_system": "ORIGINAL_ENCODED_IMAGE_PIXELS",
+              "image_size": [
+                1275,
+                1275
+              ],
+              "prepared_sha256": "29ec9fea2cbe8dd467ed4f94b5b93830fd250bc8866a96bbc24406072e448987",
+              "prepared_bbox": [
+                137,
+                528,
+                418,
+                557
+              ],
+              "source_polygons": [
+                [
+                  [
+                    137.0,
+                    528.0
+                  ],
+                  [
+                    254.0,
+                    528.0
+                  ],
+                  [
+                    254.0,
+                    550.0
+                  ],
+                  [
+                    137.0,
+                    550.0
+                  ]
+                ],
+                [
+                  [
+                    264.0,
+                    528.0
+                  ],
+                  [
+                    386.0,
+                    528.0
+                  ],
+                  [
+                    386.0,
+                    557.0
+                  ],
+                  [
+                    264.0,
+                    557.0
+                  ]
+                ],
+                [
+                  [
+                    398.0,
+                    528.0
+                  ],
+                  [
+                    418.0,
+                    528.0
+                  ],
+                  [
+                    418.0,
+                    550.0
+                  ],
+                  [
+                    398.0,
+                    550.0
+                  ]
+                ]
+              ],
+              "source_box_clipped": false
+            },
+            "quality_flags": [
+              "OCR_REQUIRES_VISUAL_REVIEW",
+              "IMAGE_PREPARATION_REQUIRES_REVIEW"
+            ],
+            "method": "LOCAL_TESSERACT_OCR"
+          },
+          {
+            "field": "total_kwh",
+            "value": "25.5",
+            "status": "NEEDS_USER_CONFIRMATION",
+            "source": {
+              "sha256": "9bae127ce4bb94496348bc8507090b5e8103d027325a82a04cc964c10410f5d4",
+              "page": 1,
+              "line": 7,
+              "bbox": [
+                138,
+                619,
+                364,
+                648
+              ],
+              "quote": "Usage 25.5 kWh",
+              "start": 0,
+              "end": 14,
+              "ocr_confidence": {
+                "minimum": 96.106552,
+                "unknown_words": 0,
+                "calibrated": false
+              },
+              "coordinate_system": "ORIGINAL_ENCODED_IMAGE_PIXELS",
+              "image_size": [
+                1275,
+                1275
+              ],
+              "prepared_sha256": "29ec9fea2cbe8dd467ed4f94b5b93830fd250bc8866a96bbc24406072e448987",
+              "prepared_bbox": [
+                138,
+                619,
+                364,
+                648
+              ],
+              "source_polygons": [
+                [
+                  [
+                    138.0,
+                    619.0
+                  ],
+                  [
+                    224.0,
+                    619.0
+                  ],
+                  [
+                    224.0,
+                    648.0
+                  ],
+                  [
+                    138.0,
+                    648.0
+                  ]
+                ],
+                [
+                  [
+                    235.0,
+                    619.0
+                  ],
+                  [
+                    294.0,
+                    619.0
+                  ],
+                  [
+                    294.0,
+                    641.0
+                  ],
+                  [
+                    235.0,
+                    641.0
+                  ]
+                ],
+                [
+                  [
+                    306.0,
+                    619.0
+                  ],
+                  [
+                    364.0,
+                    619.0
+                  ],
+                  [
+                    364.0,
+                    641.0
+                  ],
+                  [
+                    306.0,
+                    641.0
+                  ]
+                ]
+              ],
+              "source_box_clipped": false
+            },
+            "quality_flags": [
+              "OCR_REQUIRES_VISUAL_REVIEW",
+              "IMAGE_PREPARATION_REQUIRES_REVIEW"
+            ],
+            "method": "LOCAL_TESSERACT_OCR"
+          }
+        ],
+        "unresolved_fields": [
+          {
+            "field": "current_plan",
+            "reason": "AMBIGUOUS_OR_UNSUPPORTED_VALUE",
+            "source": {
+              "sha256": "9bae127ce4bb94496348bc8507090b5e8103d027325a82a04cc964c10410f5d4",
+              "page": 1,
+              "line": 2,
+              "bbox": [
+                68,
+                84,
+                211,
+                101
+              ],
+              "quote": "plan",
+              "start": 12,
+              "end": 16,
+              "ocr_confidence": {
+                "minimum": 91.700027,
+                "unknown_words": 0,
+                "calibrated": false
+              },
+              "coordinate_system": "ORIGINAL_ENCODED_IMAGE_PIXELS",
+              "image_size": [
+                1275,
+                1275
+              ],
+              "prepared_sha256": "29ec9fea2cbe8dd467ed4f94b5b93830fd250bc8866a96bbc24406072e448987",
+              "prepared_bbox": [
+                68,
+                84,
+                211,
+                101
+              ],
+              "source_polygons": [
+                [
+                  [
+                    68.0,
+                    84.0
+                  ],
+                  [
+                    211.0,
+                    84.0
+                  ],
+                  [
+                    211.0,
+                    101.0
+                  ],
+                  [
+                    68.0,
+                    101.0
+                  ]
+                ]
+              ],
+              "source_box_clipped": false
+            },
+            "quality_flags": [
+              "OCR_REQUIRES_VISUAL_REVIEW",
+              "IMAGE_PREPARATION_REQUIRES_REVIEW"
+            ]
+          },
+          {
+            "field": "current_plan",
+            "reason": "AMBIGUOUS_OR_UNSUPPORTED_VALUE",
+            "source": {
+              "sha256": "9bae127ce4bb94496348bc8507090b5e8103d027325a82a04cc964c10410f5d4",
+              "page": 1,
+              "line": 3,
+              "bbox": [
+                138,
+                251,
+                565,
+                274
+              ],
+              "quote": "Rate Schedule: E-TOU-D-NEM",
+              "start": 0,
+              "end": 26,
+              "ocr_confidence": {
+                "minimum": 92.939095,
+                "unknown_words": 0,
+                "calibrated": false
+              },
+              "coordinate_system": "ORIGINAL_ENCODED_IMAGE_PIXELS",
+              "image_size": [
+                1275,
+                1275
+              ],
+              "prepared_sha256": "29ec9fea2cbe8dd467ed4f94b5b93830fd250bc8866a96bbc24406072e448987",
+              "prepared_bbox": [
+                138,
+                251,
+                565,
+                274
+              ],
+              "source_polygons": [
+                [
+                  [
+                    138.0,
+                    252.0
+                  ],
+                  [
+                    200.0,
+                    252.0
+                  ],
+                  [
+                    200.0,
+                    274.0
+                  ],
+                  [
+                    138.0,
+                    274.0
+                  ]
+                ],
+                [
+                  [
+                    211.0,
+                    251.0
+                  ],
+                  [
+                    346.0,
+                    251.0
+                  ],
+                  [
+                    346.0,
+                    274.0
+                  ],
+                  [
+                    211.0,
+                    274.0
+                  ]
+                ],
+                [
+                  [
+                    360.0,
+                    251.0
+                  ],
+                  [
+                    565.0,
+                    251.0
+                  ],
+                  [
+                    565.0,
+                    274.0
+                  ],
+                  [
+                    360.0,
+                    274.0
+                  ]
+                ]
+              ],
+              "source_box_clipped": false
+            },
+            "quality_flags": [
+              "OCR_REQUIRES_VISUAL_REVIEW",
+              "IMAGE_PREPARATION_REQUIRES_REVIEW"
+            ]
+          }
+        ],
+        "missing_fields": [
+          "current_plan"
+        ],
+        "conflicting_fields": [],
+        "automatic_calculation": false,
+        "automatic_confirmation": false,
+        "warnings": [
+          "Verify each candidate against the cited page/line before supplying it to validate/compare.",
+          "Total amount due is excluded. A bill's total kWh cannot replace interval usage.",
+          "No eligibility, account number, login, medical data or income is inferred.",
+          "OCR confidence is uncalibrated. Even high-confidence text needs visual source review.",
+          "Missing, unsupported or ambiguous values require manual review; charges are never summed.",
+          "Image preparation was requested. Evidence coordinates refer to original encoded pixels, before EXIF display rotation. Review the original; a mapped box is not proof of OCR correctness.",
+          "Automatic deskew could not establish an angle and applied no deskew correction. Review orientation manually."
+        ],
+        "source_sha256": "9bae127ce4bb94496348bc8507090b5e8103d027325a82a04cc964c10410f5d4",
+        "method": "LOCAL_TESSERACT_OCR",
+        "image_preparation": {
+          "schema_version": 1,
+          "source_size": [
+            1275,
+            1275
+          ],
+          "prepared_size": [
+            1275,
+            1275
+          ],
+          "source_to_prepared": [
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          "prepared_to_source": [
+            1.0,
+            -0.0,
+            0.0,
+            -0.0,
+            1.0,
+            0.0
+          ],
+          "rotation_degrees": 0.0,
+          "deskew_degrees": 0.0,
+          "deskew_status": "AMBIGUOUS",
+          "deskew_score_ratio": 1.07058,
+          "exif_orientation": 1,
+          "prepared_sha256": "29ec9fea2cbe8dd467ed4f94b5b93830fd250bc8866a96bbc24406072e448987",
+          "coordinate_system": "ORIGINAL_ENCODED_IMAGE_PIXELS",
+          "estimator_version": "band-projection-v1"
+        },
+        "ocr_page_segmentation": "AUTOMATIC_LAYOUT_WITHOUT_OSD"
+      },
+      "milliseconds": 876.019
+    },
+    {
+      "id": "conflicting-charge",
+      "status": "PASS",
+      "missing": {},
+      "unexpected": {},
+      "evidence_valid": true,
+      "visible_rejections": true,
+      "options": {
+        "ocr_deskew": true
+      },
+      "result": {
+        "status": "REVIEW_REQUIRED",
+        "candidates": [
+          {
+            "field": "current_plan",
+            "value": "E-TOU-D",
+            "status": "NEEDS_USER_CONFIRMATION",
+            "source": {
+              "sha256": "00d059c7d8f2c878d9c22bdc1223b95f26fbf4109f2940fca987ff2c2d3c4f85",
+              "page": 1,
+              "line": 3,
+              "bbox": [
+                138,
+                251,
+                486,
+                274
+              ],
+              "quote": "Rate Schedule: E-TOU-D",
+              "start": 0,
+              "end": 22,
+              "ocr_confidence": {
+                "minimum": 92.265068,
+                "unknown_words": 0,
+                "calibrated": false
+              },
+              "coordinate_system": "ORIGINAL_ENCODED_IMAGE_PIXELS",
+              "image_size": [
+                1275,
+                1275
+              ],
+              "prepared_sha256": "4817e030a4f554fbdabdc05fb80b1ee92992388714d8056f314ef483ea645dd3",
+              "prepared_bbox": [
+                138,
+                251,
+                486,
+                274
+              ],
+              "source_polygons": [
+                [
+                  [
+                    138.0,
+                    252.0
+                  ],
+                  [
+                    200.0,
+                    252.0
+                  ],
+                  [
+                    200.0,
+                    274.0
+                  ],
+                  [
+                    138.0,
+                    274.0
+                  ]
+                ],
+                [
+                  [
+                    211.0,
+                    251.0
+                  ],
+                  [
+                    346.0,
+                    251.0
+                  ],
+                  [
+                    346.0,
+                    274.0
+                  ],
+                  [
+                    211.0,
+                    274.0
+                  ]
+                ],
+                [
+                  [
+                    360.0,
+                    251.0
+                  ],
+                  [
+                    486.0,
+                    251.0
+                  ],
+                  [
+                    486.0,
+                    274.0
+                  ],
+                  [
+                    360.0,
+                    274.0
+                  ]
+                ]
+              ],
+              "source_box_clipped": false
+            },
+            "quality_flags": [
+              "OCR_REQUIRES_VISUAL_REVIEW",
+              "IMAGE_PREPARATION_REQUIRES_REVIEW"
+            ],
+            "method": "LOCAL_TESSERACT_OCR"
+          },
+          {
+            "field": "reported_energy_charge",
+            "value": "12.34",
+            "status": "NEEDS_USER_CONFIRMATION",
+            "source": {
+              "sha256": "00d059c7d8f2c878d9c22bdc1223b95f26fbf4109f2940fca987ff2c2d3c4f85",
+              "page": 1,
+              "line": 4,
+              "bbox": [
+                138,
+                342,
+                464,
+                373
+              ],
+              "quote": "Energy Charges $12.34",
+              "start": 0,
+              "end": 21,
+              "ocr_confidence": {
+                "minimum": 96.48082,
+                "unknown_words": 0,
+                "calibrated": false
+              },
+              "coordinate_system": "ORIGINAL_ENCODED_IMAGE_PIXELS",
+              "image_size": [
+                1275,
+                1275
+              ],
+              "prepared_sha256": "4817e030a4f554fbdabdc05fb80b1ee92992388714d8056f314ef483ea645dd3",
+              "prepared_bbox": [
+                138,
+                342,
+                464,
+                373
+              ],
+              "source_polygons": [
+                [
+                  [
+                    138.0,
+                    344.0
+                  ],
+                  [
+                    234.0,
+                    344.0
+                  ],
+                  [
+                    234.0,
+                    373.0
+                  ],
+                  [
+                    138.0,
+                    373.0
+                  ]
+                ],
+                [
+                  [
+                    245.0,
+                    343.0
+                  ],
+                  [
+                    360.0,
+                    343.0
+                  ],
+                  [
+                    360.0,
+                    373.0
+                  ],
+                  [
+                    245.0,
+                    373.0
+                  ]
+                ],
+                [
+                  [
+                    371.0,
+                    342.0
+                  ],
+                  [
+                    464.0,
+                    342.0
+                  ],
+                  [
+                    464.0,
+                    369.0
+                  ],
+                  [
+                    371.0,
+                    369.0
+                  ]
+                ]
+              ],
+              "source_box_clipped": false
+            },
+            "quality_flags": [
+              "OCR_REQUIRES_VISUAL_REVIEW",
+              "IMAGE_PREPARATION_REQUIRES_REVIEW"
+            ],
+            "method": "LOCAL_TESSERACT_OCR"
+          },
+          {
+            "field": "reported_base_services_charge",
+            "value": "0.79",
+            "status": "NEEDS_USER_CONFIRMATION",
+            "source": {
+              "sha256": "00d059c7d8f2c878d9c22bdc1223b95f26fbf4109f2940fca987ff2c2d3c4f85",
+              "page": 1,
+              "line": 5,
+              "bbox": [
+                137,
+                434,
+                532,
+                465
+              ],
+              "quote": "Base Services Charge $0.79",
+              "start": 0,
+              "end": 26,
+              "ocr_confidence": {
+                "minimum": 95.546394,
+                "unknown_words": 0,
+                "calibrated": false
+              },
+              "coordinate_system": "ORIGINAL_ENCODED_IMAGE_PIXELS",
+              "image_size": [
+                1275,
+                1275
+              ],
+              "prepared_sha256": "4817e030a4f554fbdabdc05fb80b1ee92992388714d8056f314ef483ea645dd3",
+              "prepared_bbox": [
+                137,
+                434,
+                532,
+                465
+              ],
+              "source_polygons": [
+                [
+                  [
+                    137.0,
+                    436.0
+                  ],
+                  [
+                    205.0,
+                    436.0
+                  ],
+                  [
+                    205.0,
+                    458.0
+                  ],
+                  [
+                    137.0,
+                    458.0
+                  ]
+                ],
+                [
+                  [
+                    217.0,
+                    435.0
+                  ],
+                  [
+                    334.0,
+                    435.0
+                  ],
+                  [
+                    334.0,
+                    458.0
+                  ],
+                  [
+                    217.0,
+                    458.0
+                  ]
+                ],
+                [
+                  [
+                    345.0,
+                    435.0
+                  ],
+                  [
+                    445.0,
+                    435.0
+                  ],
+                  [
+                    445.0,
+                    465.0
+                  ],
+                  [
+                    345.0,
+                    465.0
+                  ]
+                ],
+                [
+                  [
+                    456.0,
+                    434.0
+                  ],
+                  [
+                    532.0,
+                    434.0
+                  ],
+                  [
+                    532.0,
+                    461.0
+                  ],
+                  [
+                    456.0,
+                    461.0
+                  ]
+                ]
+              ],
+              "source_box_clipped": false
+            },
+            "quality_flags": [
+              "OCR_REQUIRES_VISUAL_REVIEW",
+              "IMAGE_PREPARATION_REQUIRES_REVIEW"
+            ],
+            "method": "LOCAL_TESSERACT_OCR"
+          },
+          {
+            "field": "baseline_territory",
+            "value": "X",
+            "status": "NEEDS_USER_CONFIRMATION",
+            "source": {
+              "sha256": "00d059c7d8f2c878d9c22bdc1223b95f26fbf4109f2940fca987ff2c2d3c4f85",
+              "page": 1,
+              "line": 6,
+              "bbox": [
+                137,
+                528,
+                418,
+                557
+              ],
+              "quote": "Baseline Territory: X",
+              "start": 0,
+              "end": 21,
+              "ocr_confidence": {
+                "minimum": 93.275642,
+                "unknown_words": 0,
+                "calibrated": false
+              },
+              "coordinate_system": "ORIGINAL_ENCODED_IMAGE_PIXELS",
+              "image_size": [
+                1275,
+                1275
+              ],
+              "prepared_sha256": "4817e030a4f554fbdabdc05fb80b1ee92992388714d8056f314ef483ea645dd3",
+              "prepared_bbox": [
+                137,
+                528,
+                418,
+                557
+              ],
+              "source_polygons": [
+                [
+                  [
+                    137.0,
+                    528.0
+                  ],
+                  [
+                    254.0,
+                    528.0
+                  ],
+                  [
+                    254.0,
+                    550.0
+                  ],
+                  [
+                    137.0,
+                    550.0
+                  ]
+                ],
+                [
+                  [
+                    264.0,
+                    528.0
+                  ],
+                  [
+                    386.0,
+                    528.0
+                  ],
+                  [
+                    386.0,
+                    557.0
+                  ],
+                  [
+                    264.0,
+                    557.0
+                  ]
+                ],
+                [
+                  [
+                    398.0,
+                    528.0
+                  ],
+                  [
+                    418.0,
+                    528.0
+                  ],
+                  [
+                    418.0,
+                    550.0
+                  ],
+                  [
+                    398.0,
+                    550.0
+                  ]
+                ]
+              ],
+              "source_box_clipped": false
+            },
+            "quality_flags": [
+              "OCR_REQUIRES_VISUAL_REVIEW",
+              "IMAGE_PREPARATION_REQUIRES_REVIEW"
+            ],
+            "method": "LOCAL_TESSERACT_OCR"
+          },
+          {
+            "field": "total_kwh",
+            "value": "25.5",
+            "status": "NEEDS_USER_CONFIRMATION",
+            "source": {
+              "sha256": "00d059c7d8f2c878d9c22bdc1223b95f26fbf4109f2940fca987ff2c2d3c4f85",
+              "page": 1,
+              "line": 7,
+              "bbox": [
+                138,
+                619,
+                364,
+                648
+              ],
+              "quote": "Usage 25.5 kWh",
+              "start": 0,
+              "end": 14,
+              "ocr_confidence": {
+                "minimum": 96.106552,
+                "unknown_words": 0,
+                "calibrated": false
+              },
+              "coordinate_system": "ORIGINAL_ENCODED_IMAGE_PIXELS",
+              "image_size": [
+                1275,
+                1275
+              ],
+              "prepared_sha256": "4817e030a4f554fbdabdc05fb80b1ee92992388714d8056f314ef483ea645dd3",
+              "prepared_bbox": [
+                138,
+                619,
+                364,
+                648
+              ],
+              "source_polygons": [
+                [
+                  [
+                    138.0,
+                    619.0
+                  ],
+                  [
+                    224.0,
+                    619.0
+                  ],
+                  [
+                    224.0,
+                    648.0
+                  ],
+                  [
+                    138.0,
+                    648.0
+                  ]
+                ],
+                [
+                  [
+                    235.0,
+                    619.0
+                  ],
+                  [
+                    294.0,
+                    619.0
+                  ],
+                  [
+                    294.0,
+                    641.0
+                  ],
+                  [
+                    235.0,
+                    641.0
+                  ]
+                ],
+                [
+                  [
+                    306.0,
+                    619.0
+                  ],
+                  [
+                    364.0,
+                    619.0
+                  ],
+                  [
+                    364.0,
+                    641.0
+                  ],
+                  [
+                    306.0,
+                    641.0
+                  ]
+                ]
+              ],
+              "source_box_clipped": false
+            },
+            "quality_flags": [
+              "OCR_REQUIRES_VISUAL_REVIEW",
+              "IMAGE_PREPARATION_REQUIRES_REVIEW"
+            ],
+            "method": "LOCAL_TESSERACT_OCR"
+          },
+          {
+            "field": "reported_energy_charge",
+            "value": "56.78",
+            "status": "NEEDS_USER_CONFIRMATION",
+            "source": {
+              "sha256": "00d059c7d8f2c878d9c22bdc1223b95f26fbf4109f2940fca987ff2c2d3c4f85",
+              "page": 1,
+              "line": 9,
+              "bbox": [
+                138,
+                801,
+                464,
+                832
+              ],
+              "quote": "Energy Charges $56.78",
+              "start": 0,
+              "end": 21,
+              "ocr_confidence": {
+                "minimum": 96.20359,
+                "unknown_words": 0,
+                "calibrated": false
+              },
+              "coordinate_system": "ORIGINAL_ENCODED_IMAGE_PIXELS",
+              "image_size": [
+                1275,
+                1275
+              ],
+              "prepared_sha256": "4817e030a4f554fbdabdc05fb80b1ee92992388714d8056f314ef483ea645dd3",
+              "prepared_bbox": [
+                138,
+                801,
+                464,
+                832
+              ],
+              "source_polygons": [
+                [
+                  [
+                    138.0,
+                    803.0
+                  ],
+                  [
+                    234.0,
+                    803.0
+                  ],
+                  [
+                    234.0,
+                    832.0
+                  ],
+                  [
+                    138.0,
+                    832.0
+                  ]
+                ],
+                [
+                  [
+                    245.0,
+                    802.0
+                  ],
+                  [
+                    360.0,
+                    802.0
+                  ],
+                  [
+                    360.0,
+                    832.0
+                  ],
+                  [
+                    245.0,
+                    832.0
+                  ]
+                ],
+                [
+                  [
+                    371.0,
+                    801.0
+                  ],
+                  [
+                    464.0,
+                    801.0
+                  ],
+                  [
+                    464.0,
+                    828.0
+                  ],
+                  [
+                    371.0,
+                    828.0
+                  ]
+                ]
+              ],
+              "source_box_clipped": false
+            },
+            "quality_flags": [
+              "OCR_REQUIRES_VISUAL_REVIEW",
+              "IMAGE_PREPARATION_REQUIRES_REVIEW"
+            ],
+            "method": "LOCAL_TESSERACT_OCR"
+          }
+        ],
+        "unresolved_fields": [],
+        "missing_fields": [],
+        "conflicting_fields": [
+          "reported_energy_charge"
+        ],
+        "automatic_calculation": false,
+        "automatic_confirmation": false,
+        "warnings": [
+          "Verify each candidate against the cited page/line before supplying it to validate/compare.",
+          "Total amount due is excluded. A bill's total kWh cannot replace interval usage.",
+          "No eligibility, account number, login, medical data or income is inferred.",
+          "OCR confidence is uncalibrated. Even high-confidence text needs visual source review.",
+          "Missing, unsupported or ambiguous values require manual review; charges are never summed.",
+          "Image preparation was requested. Evidence coordinates refer to original encoded pixels, before EXIF display rotation. Review the original; a mapped box is not proof of OCR correctness."
+        ],
+        "source_sha256": "00d059c7d8f2c878d9c22bdc1223b95f26fbf4109f2940fca987ff2c2d3c4f85",
+        "method": "LOCAL_TESSERACT_OCR",
+        "image_preparation": {
+          "schema_version": 1,
+          "source_size": [
+            1275,
+            1275
+          ],
+          "prepared_size": [
+            1275,
+            1275
+          ],
+          "source_to_prepared": [
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          "prepared_to_source": [
+            1.0,
+            -0.0,
+            0.0,
+            -0.0,
+            1.0,
+            0.0
+          ],
+          "rotation_degrees": 0.0,
+          "deskew_degrees": 0.0,
+          "deskew_status": "ALREADY_ALIGNED",
+          "deskew_score_ratio": 1.0,
+          "exif_orientation": 1,
+          "prepared_sha256": "4817e030a4f554fbdabdc05fb80b1ee92992388714d8056f314ef483ea645dd3",
+          "coordinate_system": "ORIGINAL_ENCODED_IMAGE_PIXELS",
+          "estimator_version": "band-projection-v1"
+        },
+        "ocr_page_segmentation": "AUTOMATIC_LAYOUT_WITHOUT_OSD"
+      },
+      "milliseconds": 833.62
+    }
+  ],
+  "preparation_profile": {
+    "version": 1,
+    "synthetic_only": true,
+    "manifest_sha256": "a1a17439f5ffaba5defce0c5de74085a3852165ff682872a8d62291c28fdb99f",
+    "default_options": {
+      "ocr_deskew": true
+    },
+    "case_options": {
+      "rotated-90-degrees": {
+        "ocr_rotation_degrees": 90
+      }
+    },
+    "operator_interventions": [
+      {
+        "case": "rotated-90-degrees",
+        "action": "Inspect original and choose a 90-degree clockwise correction",
+        "automatic_orientation_detection": false
+      }
+    ],
+    "limits": [
+      "Deskew is opted in for every image before evaluating fields.",
+      "The one manual quarter-turn follows source orientation, not OCR output or field-count optimization.",
+      "This is an assisted development-set comparison, not a blind or human study."
+    ]
+  },
+  "limits": [
+    "Authored synthetic fixtures, not customer bills or population accuracy",
+    "OCR confidence is uncalibrated; all fields still need user confirmation",
+    "No tariff update, calculator activation, account action or deployment"
+  ]
+}
