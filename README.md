@@ -12,21 +12,36 @@ BillFit is a local-first Codex plugin and self-contained AI skill that compares 
 
 Calculations are deterministic and use the official-source snapshots documented in [sources and limitations](plugins/billfit/skills/billfit/references/sources-and-limitations.md).
 
-**Current development checkout, November 1:** usage validation preserves DST hours and rejects conflicting records or units; incomplete usage withholds switching savings. Optional bill extraction binds candidates to source hashes and page/line evidence. An opt-in image path corrects a specified rotation and small skew locally, with evidence mapped back to original pixels. All values still require user confirmation. Installing `main` below does not install these draft changes.
+## Development status and evidence
 
-The current full local suite passes **223 tests**, with zero skips. The optional SDK server keeps its event loop responsive during bill extraction, propagates cancellation to owned parsers and admits at most two extractions per server instance. Excess work returns `BILL_PARSER_BUSY` without queueing it. Actual SDK tests cover both transport profiles, cleanup, request isolation and continued use of the same connection. [Cancellation evidence and setup](docs/parser-cancellation-2026-10-30.md) explain the boundaries; the default synchronous legacy shim does not gain these capabilities.
+The current November 1 development branch contains draft improvements; installing
+`main` below does not install them. Supported calculations remain deterministic,
+local and subject to the returned review requirements.
 
-Usage imports now reject malformed number separators and surplus CSV cells before they can change kWh or elapsed time. For example, `1,23` no longer becomes `123`, and an unquoted extra CSV cell is no longer discarded. The fixed 90-request CLI comparison rejects all 53 invalid cases while preserving all 37 valid controls. [Supported formats, recovery and evidence](docs/usage-number-format-2026-11-01.md) explain the stricter input contract; it neither changes tariffs nor establishes utility rounding or customer accuracy.
+| Area | Current behavior and evidence |
+| --- | --- |
+| Usage input | Preserves DST hours and rejects conflicting intervals, units and malformed numbers. [Numeric formats](docs/usage-number-format-2026-11-01.md) retain the 90-request comparison and recovery instructions. |
+| Green Button meaning | Rejects incompatible export/cumulative quantities and ambiguous metadata; unresolved meaning or reading quality withholds switching savings and bill validation. [ESPI guide](docs/espi-semantics-2026-11-01.md) includes three runnable examples and the fixed 73-request comparison. |
+| Bill PDF/image input | Returns unconfirmed fields tied to source hashes and page/line or pixel evidence. Optional local rotation/deskew retains original coordinates. [Input evidence](docs/bill-input-evidence-2026-10-30.md), [image preparation](docs/image-preparation-2026-10-31.md) and [native Windows observations](docs/native-windows-ocr-2026-11-01.md) preserve successes and failures. |
+| MCP integration | Optional SDK mode supports cancellation, owned-child cleanup and two bounded concurrent extractions. [Setup and tests](docs/parser-cancellation-2026-10-30.md); the synchronous legacy shim has separate limits. |
+| Bill reconciliation | Separates arithmetic agreement from sufficient period, usage and applicable-rate evidence. [Runnable example and boundaries](docs/bill-reconciliation-2026-10-31.md). |
+| Rule maintenance | Builds isolated old/proposed snapshots with validation and explicit review before activation. [Rate review](docs/tariff-review-isolation-2026-10-31.md), [assistance review](docs/assistance-rule-review-2026-10-31.md), [fractional-income limits](docs/assistance-income-boundaries-2026-10-31.md) and [CARE name handling](docs/care-program-names-2026-11-01.md). |
 
-CARE screening recognizes source-qualified full program names as well as existing identifiers and abbreviations. The fixed 15-name CLI comparison improves from 4 recognized correctly to 15; unrecognized names now remain visible with a confirmation step. This repairs missing categorical paths without guessing enrollment, changing income limits or refreshing tariff dates. [Name mapping, uncertainty and evidence](docs/care-program-names-2026-11-01.md) distinguish program recognition from eligibility and retain the original failures.
+The latest complete local optional-profile suite passes **229 tests, zero skips**.
+For the frozen ESPI cases, correct rejection improves **0/38 → 38/38**, visible
+review **0/20 → 20/20**, and valid controls remain **15/15**. Actual CLI and both
+existing SDK modes pass, including error recovery on the same connection.
+[Hashes, versions and original failed results](reports/espi-semantics-2026-11-01/verification.json)
+make the scope reviewable. These are exposed synthetic cases, not customer-bill
+accuracy, a new model-quality comparison or independent-user acceptance.
 
-The unchanged eight-image synthetic OCR matrix also passes on **native Windows: 8/8 with optional preparation**, versus 6/8 without it. Candidate recovery rises from 31/38 to 38/38, with one manual quarter-turn and all values still unconfirmed. Measured extraction time rises from 2.38 to 6.78 seconds. Actual CLI and both MCP modes pass. [Windows setup and evidence](docs/native-windows-ocr-2026-11-01.md) retain the tested package's certificate-validation error as a separate rollout limitation. These samples do not establish customer-bill accuracy or signed-installer acceptance. The [earlier WSL result](docs/image-preparation-2026-10-31.md) and [input study](docs/bill-input-evidence-2026-10-30.md) remain unchanged.
-
-Tariff values were last checked against official sources on **October 27, 2026**; this input change does not re-date or activate rate data. Earlier [source verification](docs/modernization-2026-10-27.md), [Hermes synthetic workflow](docs/hermes-workflow-2026-10-28.md), [interval repair](docs/interval-correctness-2026-10-29.md) and [CSV repair](docs/csv-energy-columns-2026-10-29.md) retain their original observations. Customer bills, clean-machine setup and independent user acceptance remain unverified.
-
-Candidate rate and assistance review uses isolated snapshots, preserving ordinary calculations while proposed rules are checked. The maintenance CLI supports assistance income-table updates, with explicit-date tests and complete old/proposed snapshots. The earlier 168-scenario review is retained; the new [fractional-income follow-up](docs/assistance-income-boundaries-2026-10-31.md) adds cent boundaries and preserves an explicit official-confirmation gate when income falls between the published CARE maximum and whole-dollar FERA minimum. It does not guess a rounding rule. Actual local CLI/SDK checks pass; no candidate is approved or activated. [Run the review workflow and inspect its limits](docs/assistance-rule-review-2026-10-31.md). The [earlier rate review](docs/tariff-review-isolation-2026-10-31.md) retains its source observation and original failures; packaged verification dates remain unchanged.
-
-Bill reconciliation separates arithmetic agreement from sufficient evidence. Confirm the statement's Pacific start date and exclusive end date; gaps, extra records, inferred inputs or unavailable applicable rates keep the result under review. Decimal-cent checks fix a reproduced tolerance-boundary error. Stale data and detected usage gaps withhold annual-savings fields. [Period input, actual CLI/SDK evidence and limits](docs/bill-reconciliation-2026-10-31.md) include a runnable synthetic example; exact utility rounding and customer bills remain unverified.
+Packaged tariff verification remains **October 27, 2026**; input changes do not
+activate rates or refresh that date. [Official-source verification](docs/modernization-2026-10-27.md),
+[earlier Hermes synthetic workflow](docs/hermes-workflow-2026-10-28.md),
+[interval repair](docs/interval-correctness-2026-10-29.md) and
+[CSV repair](docs/csv-energy-columns-2026-10-29.md) retain their dated observations.
+Exact utility rounding, residential Saturday holiday interpretation, real
+customer bills, clean-machine setup and independent-user acceptance remain open.
 
 ## Product discovery case
 

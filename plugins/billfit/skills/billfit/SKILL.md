@@ -88,6 +88,22 @@ punctuation, discard cells or guess whether `1,23` means `1.23` or `123`. A grou
 CSV number such as `1,234.5` must occupy one quoted cell. A textual nonzero value
 that cannot be represented must not be silently replaced by zero.
 
+For ESPI XML, retain the declared direction, accumulation, commodity, kind and
+quality. Positive exported energy is still export; cumulative register values
+are not interval consumption. On `UNSUPPORTED_ESPI_READING_TYPE` or
+`MULTIPLE_ESPI_METER_READINGS`, preserve the original and obtain the intended
+single-stream import data; do not relabel fields or difference registers.
+Ambiguous, nested, foreign-namespace or malformed meaning fields need correction
+at the source, not a guessed first value.
+
+`ESPI_READING_METADATA_REVIEW` and `ESPI_READING_QUALITY_REVIEW` keep
+`USAGE_QUALITY_REVIEW` active even with complete time coverage. The interval's
+quality overrides the default and multiple flags remain relevant. Explain
+which metadata or quality needs confirmation; do not convert the XML to bare
+intervals to discard a warning. A matching amount does not remove this review,
+and a valid/revenue-quality flag is not utility certification. The dated ESPI
+guide in `docs/espi-semantics-2026-11-01.md` defines the limited profile.
+
 ### 3. Collect only facts that materially change the calculation
 
 For E-1 or E-TOU-C, obtain baseline territory P–Z and `basic` versus `all_electric` service. If absent, leave `BASELINE_INFO` waiting; still calculate plans that do not require baseline when possible.

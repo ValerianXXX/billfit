@@ -1,0 +1,98 @@
+{
+  "observed_at_utc": "2026-11-01T12:20:25.976149+00:00",
+  "input_kind": "synthetic",
+  "runtime_commit": "4809f6aa17c3dec00af19ada4616034aa19bf134",
+  "examples": [
+    {
+      "example": "import",
+      "exit_code": 0,
+      "input_sha256": "c542c3239a4086d5a3d0c323726469e1f919f885f82cca0b8b9c9e212c57847a",
+      "result": {
+        "status": "parsed",
+        "source": "<repository>\\plugins\\billfit\\skills\\billfit\\examples\\synthetic-espi-import.xml",
+        "summary": {
+          "interval_count": 1,
+          "start": "2026-07-05T00:00:00-07:00",
+          "end": "2026-07-05T01:00:00-07:00",
+          "span_days": 0.042,
+          "billing_days": 1,
+          "total_kwh": 0.25,
+          "median_interval_minutes": 60.0,
+          "max_interval_minutes": 60.0,
+          "coverage_ratio": 1.0,
+          "elapsed_minutes": 60.0,
+          "gap_minutes": 0,
+          "negative_interval_count": 0,
+          "quality": "limited"
+        },
+        "warnings": [],
+        "preview": [
+          {
+            "start": "2026-07-05T00:00:00-07:00",
+            "duration_minutes": 60.0,
+            "kwh": 0.25
+          }
+        ],
+        "next_step": "Call billfit_compare_rate_plans with the same usage_file.",
+        "human_gates": []
+      }
+    },
+    {
+      "example": "review",
+      "exit_code": 0,
+      "input_sha256": "b12f2fccd7eed365a1e6c46c28d5657fa3bdc71cbc41cda103963d117cb7b478",
+      "result": {
+        "status": "parsed",
+        "source": "<repository>\\plugins\\billfit\\skills\\billfit\\examples\\synthetic-espi-review.xml",
+        "summary": {
+          "interval_count": 1,
+          "start": "2026-07-05T00:00:00-07:00",
+          "end": "2026-07-05T01:00:00-07:00",
+          "span_days": 0.042,
+          "billing_days": 1,
+          "total_kwh": 0.25,
+          "median_interval_minutes": 60.0,
+          "max_interval_minutes": 60.0,
+          "coverage_ratio": 1.0,
+          "elapsed_minutes": 60.0,
+          "gap_minutes": 0,
+          "negative_interval_count": 0,
+          "quality": "limited"
+        },
+        "warnings": [
+          "ESPI_READING_METADATA_REVIEW: Missing or unspecified ReadingType fields: flowDirection. Confirm a utility file of incremental imported electric energy; no quantity meaning was inferred."
+        ],
+        "preview": [
+          {
+            "start": "2026-07-05T00:00:00-07:00",
+            "duration_minutes": 60.0,
+            "kwh": 0.25
+          }
+        ],
+        "next_step": "Call billfit_compare_rate_plans with the same usage_file.",
+        "human_gates": [
+          {
+            "id": "USAGE_QUALITY_REVIEW",
+            "title": "Review usage coverage and input assumptions",
+            "reason": "Incomplete, coarse or inferred usage cannot establish switching savings.",
+            "user_action": "Confirm source units and durations, resolve gaps, and supply a sufficient usage period.",
+            "status": "waiting_for_user"
+          }
+        ]
+      }
+    },
+    {
+      "example": "export",
+      "exit_code": 2,
+      "input_sha256": "9054c7f604ddd71bccfdb79342a5bb272e92cc8ae40d8c9aec749dab15a8cf5e",
+      "result": {
+        "status": "error",
+        "error": {
+          "code": "UNSUPPORTED_ESPI_READING_TYPE",
+          "message": "ESPI flowDirection is outside the incremental forward metered-electric-energy profile. Obtain a utility file of incremental imported energy; do not relabel or add cumulative/net/export readings.",
+          "details": {}
+        }
+      }
+    }
+  ]
+}

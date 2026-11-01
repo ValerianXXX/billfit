@@ -1,0 +1,577 @@
+{
+  "synthetic_only": true,
+  "schema": 1,
+  "cases": [
+    {
+      "id": "unsupported-flowDirection-2",
+      "expected": "reject",
+      "metadata": {
+        "flowDirection": "2"
+      },
+      "error": "UNSUPPORTED_ESPI_READING_TYPE"
+    },
+    {
+      "id": "unsupported-flowDirection-4",
+      "expected": "reject",
+      "metadata": {
+        "flowDirection": "4"
+      },
+      "error": "UNSUPPORTED_ESPI_READING_TYPE"
+    },
+    {
+      "id": "unsupported-flowDirection-16",
+      "expected": "reject",
+      "metadata": {
+        "flowDirection": "16"
+      },
+      "error": "UNSUPPORTED_ESPI_READING_TYPE"
+    },
+    {
+      "id": "unsupported-flowDirection-19",
+      "expected": "reject",
+      "metadata": {
+        "flowDirection": "19"
+      },
+      "error": "UNSUPPORTED_ESPI_READING_TYPE"
+    },
+    {
+      "id": "unsupported-flowDirection-20",
+      "expected": "reject",
+      "metadata": {
+        "flowDirection": "20"
+      },
+      "error": "UNSUPPORTED_ESPI_READING_TYPE"
+    },
+    {
+      "id": "unsupported-accumulationBehaviour-1",
+      "expected": "reject",
+      "metadata": {
+        "accumulationBehaviour": "1"
+      },
+      "error": "UNSUPPORTED_ESPI_READING_TYPE"
+    },
+    {
+      "id": "unsupported-accumulationBehaviour-2",
+      "expected": "reject",
+      "metadata": {
+        "accumulationBehaviour": "2"
+      },
+      "error": "UNSUPPORTED_ESPI_READING_TYPE"
+    },
+    {
+      "id": "unsupported-accumulationBehaviour-3",
+      "expected": "reject",
+      "metadata": {
+        "accumulationBehaviour": "3"
+      },
+      "error": "UNSUPPORTED_ESPI_READING_TYPE"
+    },
+    {
+      "id": "unsupported-accumulationBehaviour-6",
+      "expected": "reject",
+      "metadata": {
+        "accumulationBehaviour": "6"
+      },
+      "error": "UNSUPPORTED_ESPI_READING_TYPE"
+    },
+    {
+      "id": "unsupported-accumulationBehaviour-9",
+      "expected": "reject",
+      "metadata": {
+        "accumulationBehaviour": "9"
+      },
+      "error": "UNSUPPORTED_ESPI_READING_TYPE"
+    },
+    {
+      "id": "unsupported-commodity-2",
+      "expected": "reject",
+      "metadata": {
+        "commodity": "2"
+      },
+      "error": "UNSUPPORTED_ESPI_READING_TYPE"
+    },
+    {
+      "id": "unsupported-commodity-7",
+      "expected": "reject",
+      "metadata": {
+        "commodity": "7"
+      },
+      "error": "UNSUPPORTED_ESPI_READING_TYPE"
+    },
+    {
+      "id": "unsupported-commodity-9",
+      "expected": "reject",
+      "metadata": {
+        "commodity": "9"
+      },
+      "error": "UNSUPPORTED_ESPI_READING_TYPE"
+    },
+    {
+      "id": "unsupported-commodity-26",
+      "expected": "reject",
+      "metadata": {
+        "commodity": "26"
+      },
+      "error": "UNSUPPORTED_ESPI_READING_TYPE"
+    },
+    {
+      "id": "unsupported-kind-37",
+      "expected": "reject",
+      "metadata": {
+        "kind": "37"
+      },
+      "error": "UNSUPPORTED_ESPI_READING_TYPE"
+    },
+    {
+      "id": "unsupported-kind-58",
+      "expected": "reject",
+      "metadata": {
+        "kind": "58"
+      },
+      "error": "UNSUPPORTED_ESPI_READING_TYPE"
+    },
+    {
+      "id": "unsupported-dataQualifier-2",
+      "expected": "reject",
+      "metadata": {
+        "dataQualifier": "2"
+      },
+      "error": "UNSUPPORTED_ESPI_READING_TYPE"
+    },
+    {
+      "id": "unsupported-dataQualifier-6",
+      "expected": "reject",
+      "metadata": {
+        "dataQualifier": "6"
+      },
+      "error": "UNSUPPORTED_ESPI_READING_TYPE"
+    },
+    {
+      "id": "unsupported-dataQualifier-9",
+      "expected": "reject",
+      "metadata": {
+        "dataQualifier": "9"
+      },
+      "error": "UNSUPPORTED_ESPI_READING_TYPE"
+    },
+    {
+      "id": "unsupported-dataQualifier-16",
+      "expected": "reject",
+      "metadata": {
+        "dataQualifier": "16"
+      },
+      "error": "UNSUPPORTED_ESPI_READING_TYPE"
+    },
+    {
+      "id": "duplicate-flowDirection",
+      "expected": "reject",
+      "duplicates": [
+        "flowDirection"
+      ],
+      "error": "AMBIGUOUS_ESPI_METADATA"
+    },
+    {
+      "id": "duplicate-accumulationBehaviour",
+      "expected": "reject",
+      "duplicates": [
+        "accumulationBehaviour"
+      ],
+      "error": "AMBIGUOUS_ESPI_METADATA"
+    },
+    {
+      "id": "duplicate-commodity",
+      "expected": "reject",
+      "duplicates": [
+        "commodity"
+      ],
+      "error": "AMBIGUOUS_ESPI_METADATA"
+    },
+    {
+      "id": "duplicate-kind",
+      "expected": "reject",
+      "duplicates": [
+        "kind"
+      ],
+      "error": "AMBIGUOUS_ESPI_METADATA"
+    },
+    {
+      "id": "duplicate-uom",
+      "expected": "reject",
+      "duplicates": [
+        "uom"
+      ],
+      "error": "AMBIGUOUS_ESPI_METADATA"
+    },
+    {
+      "id": "duplicate-powerOfTenMultiplier",
+      "expected": "reject",
+      "duplicates": [
+        "powerOfTenMultiplier"
+      ],
+      "error": "AMBIGUOUS_ESPI_METADATA"
+    },
+    {
+      "id": "duplicate-defaultQuality",
+      "expected": "reject",
+      "duplicates": [
+        "defaultQuality"
+      ],
+      "error": "AMBIGUOUS_ESPI_METADATA"
+    },
+    {
+      "id": "duplicate-dataQualifier",
+      "expected": "reject",
+      "duplicates": [
+        "dataQualifier"
+      ],
+      "error": "AMBIGUOUS_ESPI_METADATA"
+    },
+    {
+      "id": "malformed-flow-word",
+      "expected": "reject",
+      "metadata": {
+        "flowDirection": "forward"
+      },
+      "error": "INVALID_ESPI_METADATA"
+    },
+    {
+      "id": "malformed-flow-blank",
+      "expected": "reject",
+      "metadata": {
+        "flowDirection": ""
+      },
+      "error": "INVALID_ESPI_METADATA"
+    },
+    {
+      "id": "malformed-flow-decimal",
+      "expected": "reject",
+      "metadata": {
+        "flowDirection": "1.0"
+      },
+      "error": "INVALID_ESPI_METADATA"
+    },
+    {
+      "id": "malformed-flow-negative",
+      "expected": "reject",
+      "metadata": {
+        "flowDirection": "-1"
+      },
+      "error": "INVALID_ESPI_METADATA"
+    },
+    {
+      "id": "malformed-flow-overflow",
+      "expected": "reject",
+      "metadata": {
+        "flowDirection": "65536"
+      },
+      "error": "INVALID_ESPI_METADATA"
+    },
+    {
+      "id": "nested-flow",
+      "expected": "reject",
+      "nested": [
+        "flowDirection"
+      ],
+      "error": "INVALID_ESPI_METADATA"
+    },
+    {
+      "id": "foreign-flow",
+      "expected": "reject",
+      "foreign": [
+        "flowDirection"
+      ],
+      "error": "INVALID_ESPI_METADATA"
+    },
+    {
+      "id": "multiple-meter-readings",
+      "expected": "reject",
+      "meter_count": 2,
+      "error": "MULTIPLE_ESPI_METER_READINGS"
+    },
+    {
+      "id": "service-gas",
+      "expected": "reject",
+      "service_kind": "1",
+      "error": "UNSUPPORTED_ESPI_SERVICE_KIND"
+    },
+    {
+      "id": "service-water",
+      "expected": "reject",
+      "service_kind": "2",
+      "error": "UNSUPPORTED_ESPI_SERVICE_KIND"
+    },
+    {
+      "id": "missing-flowDirection",
+      "expected": "review",
+      "metadata": {
+        "flowDirection": null
+      },
+      "marker": "ESPI_READING_METADATA_REVIEW"
+    },
+    {
+      "id": "unknown-flowDirection",
+      "expected": "review",
+      "metadata": {
+        "flowDirection": "0"
+      },
+      "marker": "ESPI_READING_METADATA_REVIEW"
+    },
+    {
+      "id": "missing-accumulationBehaviour",
+      "expected": "review",
+      "metadata": {
+        "accumulationBehaviour": null
+      },
+      "marker": "ESPI_READING_METADATA_REVIEW"
+    },
+    {
+      "id": "unknown-accumulationBehaviour",
+      "expected": "review",
+      "metadata": {
+        "accumulationBehaviour": "0"
+      },
+      "marker": "ESPI_READING_METADATA_REVIEW"
+    },
+    {
+      "id": "missing-commodity",
+      "expected": "review",
+      "metadata": {
+        "commodity": null
+      },
+      "marker": "ESPI_READING_METADATA_REVIEW"
+    },
+    {
+      "id": "unknown-commodity",
+      "expected": "review",
+      "metadata": {
+        "commodity": "0"
+      },
+      "marker": "ESPI_READING_METADATA_REVIEW"
+    },
+    {
+      "id": "missing-kind",
+      "expected": "review",
+      "metadata": {
+        "kind": null
+      },
+      "marker": "ESPI_READING_METADATA_REVIEW"
+    },
+    {
+      "id": "unknown-kind",
+      "expected": "review",
+      "metadata": {
+        "kind": "0"
+      },
+      "marker": "ESPI_READING_METADATA_REVIEW"
+    },
+    {
+      "id": "legacy-unit-only",
+      "expected": "review",
+      "metadata": {
+        "flowDirection": null,
+        "accumulationBehaviour": null,
+        "commodity": null,
+        "kind": null,
+        "dataQualifier": null,
+        "defaultQuality": null
+      },
+      "marker": "ESPI_READING_METADATA_REVIEW"
+    },
+    {
+      "id": "quality-7",
+      "expected": "review",
+      "metadata": {
+        "defaultQuality": "7"
+      },
+      "marker": "ESPI_READING_QUALITY_REVIEW"
+    },
+    {
+      "id": "quality-9",
+      "expected": "review",
+      "metadata": {
+        "defaultQuality": "9"
+      },
+      "marker": "ESPI_READING_QUALITY_REVIEW"
+    },
+    {
+      "id": "quality-10",
+      "expected": "review",
+      "metadata": {
+        "defaultQuality": "10"
+      },
+      "marker": "ESPI_READING_QUALITY_REVIEW"
+    },
+    {
+      "id": "quality-12",
+      "expected": "review",
+      "metadata": {
+        "defaultQuality": "12"
+      },
+      "marker": "ESPI_READING_QUALITY_REVIEW"
+    },
+    {
+      "id": "quality-15",
+      "expected": "review",
+      "metadata": {
+        "defaultQuality": "15"
+      },
+      "marker": "ESPI_READING_QUALITY_REVIEW"
+    },
+    {
+      "id": "quality-17",
+      "expected": "review",
+      "metadata": {
+        "defaultQuality": "17"
+      },
+      "marker": "ESPI_READING_QUALITY_REVIEW"
+    },
+    {
+      "id": "quality-65535",
+      "expected": "review",
+      "metadata": {
+        "defaultQuality": "65535"
+      },
+      "marker": "ESPI_READING_QUALITY_REVIEW"
+    },
+    {
+      "id": "quality-unspecified",
+      "expected": "review",
+      "metadata": {
+        "defaultQuality": null
+      },
+      "marker": "ESPI_READING_QUALITY_REVIEW"
+    },
+    {
+      "id": "interval-overrides-good-default",
+      "expected": "review",
+      "quality": [
+        10
+      ],
+      "marker": "ESPI_READING_QUALITY_REVIEW"
+    },
+    {
+      "id": "multiple-quality-normalized",
+      "expected": "review",
+      "quality": [
+        19,
+        15
+      ],
+      "marker": "ESPI_READING_QUALITY_REVIEW"
+    },
+    {
+      "id": "scalar-quality-estimate",
+      "expected": "review",
+      "quality": [
+        9
+      ],
+      "quality_style": "scalar",
+      "marker": "ESPI_READING_QUALITY_REVIEW"
+    },
+    {
+      "id": "valid-forward-delta",
+      "expected": "accept"
+    },
+    {
+      "id": "valid-without-namespace",
+      "expected": "accept",
+      "namespace": false
+    },
+    {
+      "id": "valid-thousand-multiplier",
+      "expected": "accept",
+      "metadata": {
+        "powerOfTenMultiplier": "3"
+      },
+      "expected_kwh": 250
+    },
+    {
+      "id": "valid-negative-multiplier",
+      "expected": "accept",
+      "metadata": {
+        "powerOfTenMultiplier": "-3"
+      },
+      "expected_kwh": 0.00025
+    },
+    {
+      "id": "valid-zero-import",
+      "expected": "accept",
+      "value": "0",
+      "expected_kwh": 0
+    },
+    {
+      "id": "valid-leading-zero-enums",
+      "expected": "accept",
+      "metadata": {
+        "flowDirection": "01",
+        "accumulationBehaviour": "04"
+      }
+    },
+    {
+      "id": "valid-plus-enums",
+      "expected": "accept",
+      "metadata": {
+        "flowDirection": "+1"
+      }
+    },
+    {
+      "id": "valid-qualifier-na",
+      "expected": "accept",
+      "metadata": {
+        "dataQualifier": "0"
+      }
+    },
+    {
+      "id": "valid-qualifier-omitted",
+      "expected": "accept",
+      "metadata": {
+        "dataQualifier": null
+      }
+    },
+    {
+      "id": "valid-quality-revenue",
+      "expected": "accept",
+      "metadata": {
+        "defaultQuality": "19"
+      }
+    },
+    {
+      "id": "valid-interval-overrides-poor-default",
+      "expected": "accept",
+      "metadata": {
+        "defaultQuality": "10"
+      },
+      "quality": [
+        0
+      ]
+    },
+    {
+      "id": "valid-scalar-valid-quality",
+      "expected": "accept",
+      "metadata": {
+        "defaultQuality": null
+      },
+      "quality": [
+        0
+      ],
+      "quality_style": "scalar"
+    },
+    {
+      "id": "valid-multiple-valid-quality",
+      "expected": "accept",
+      "quality": [
+        0,
+        19
+      ]
+    },
+    {
+      "id": "valid-no-meter-descriptor",
+      "expected": "accept",
+      "meter_count": 0
+    },
+    {
+      "id": "valid-no-service-descriptor",
+      "expected": "accept",
+      "service_kind": null
+    }
+  ]
+}

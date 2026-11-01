@@ -10,6 +10,7 @@ from decimal import Context, Decimal, DivisionByZero, InvalidOperation, Overflow
 import re
 
 from billfit_errors import BillFitError
+from billfit_espi import reading_requires_review
 from billfit_usage import PACIFIC
 
 CENT = Decimal("0.01")
@@ -19,7 +20,7 @@ ASSUMPTION_MARKERS = ("INFERRED_INTERVAL_DURATION", "ASSUMED_USAGE_UNIT", "COARS
 
 
 def usage_has_assumptions(warnings):
-    return any(marker in warning for warning in warnings for marker in ASSUMPTION_MARKERS)
+    return reading_requires_review(warnings) or any(marker in warning for warning in warnings for marker in ASSUMPTION_MARKERS)
 
 
 def _amount(value):

@@ -1,0 +1,697 @@
+test_actual_sdk_rejects_export_then_recovers_on_same_connection (test_espi_semantics.ESPISemanticsTests.test_actual_sdk_rejects_export_then_recovers_on_same_connection) ...
+  test_actual_sdk_rejects_export_then_recovers_on_same_connection (test_espi_semantics.ESPISemanticsTests.test_actual_sdk_rejects_export_then_recovers_on_same_connection) (mode='2026-07-28') ... ERROR
+  test_actual_sdk_rejects_export_then_recovers_on_same_connection (test_espi_semantics.ESPISemanticsTests.test_actual_sdk_rejects_export_then_recovers_on_same_connection) (mode='legacy') ... ERROR
+test_complete_28_days_do_not_hide_missing_meaning_or_estimated_quality (test_espi_semantics.ESPISemanticsTests.test_complete_28_days_do_not_hide_missing_meaning_or_estimated_quality) ... FAIL
+test_declared_supported_28_day_input_preserves_existing_calculation (test_espi_semantics.ESPISemanticsTests.test_declared_supported_28_day_input_preserves_existing_calculation) ... ok
+test_frozen_input_matrix (test_espi_semantics.ESPISemanticsTests.test_frozen_input_matrix) ...
+  test_frozen_input_matrix (test_espi_semantics.ESPISemanticsTests.test_frozen_input_matrix) (case='unsupported-flowDirection-2') ... FAIL
+  test_frozen_input_matrix (test_espi_semantics.ESPISemanticsTests.test_frozen_input_matrix) (case='unsupported-flowDirection-4') ... FAIL
+  test_frozen_input_matrix (test_espi_semantics.ESPISemanticsTests.test_frozen_input_matrix) (case='unsupported-flowDirection-16') ... FAIL
+  test_frozen_input_matrix (test_espi_semantics.ESPISemanticsTests.test_frozen_input_matrix) (case='unsupported-flowDirection-19') ... FAIL
+  test_frozen_input_matrix (test_espi_semantics.ESPISemanticsTests.test_frozen_input_matrix) (case='unsupported-flowDirection-20') ... FAIL
+  test_frozen_input_matrix (test_espi_semantics.ESPISemanticsTests.test_frozen_input_matrix) (case='unsupported-accumulationBehaviour-1') ... FAIL
+  test_frozen_input_matrix (test_espi_semantics.ESPISemanticsTests.test_frozen_input_matrix) (case='unsupported-accumulationBehaviour-2') ... FAIL
+  test_frozen_input_matrix (test_espi_semantics.ESPISemanticsTests.test_frozen_input_matrix) (case='unsupported-accumulationBehaviour-3') ... FAIL
+  test_frozen_input_matrix (test_espi_semantics.ESPISemanticsTests.test_frozen_input_matrix) (case='unsupported-accumulationBehaviour-6') ... FAIL
+  test_frozen_input_matrix (test_espi_semantics.ESPISemanticsTests.test_frozen_input_matrix) (case='unsupported-accumulationBehaviour-9') ... FAIL
+  test_frozen_input_matrix (test_espi_semantics.ESPISemanticsTests.test_frozen_input_matrix) (case='unsupported-commodity-2') ... FAIL
+  test_frozen_input_matrix (test_espi_semantics.ESPISemanticsTests.test_frozen_input_matrix) (case='unsupported-commodity-7') ... FAIL
+  test_frozen_input_matrix (test_espi_semantics.ESPISemanticsTests.test_frozen_input_matrix) (case='unsupported-commodity-9') ... FAIL
+  test_frozen_input_matrix (test_espi_semantics.ESPISemanticsTests.test_frozen_input_matrix) (case='unsupported-commodity-26') ... FAIL
+  test_frozen_input_matrix (test_espi_semantics.ESPISemanticsTests.test_frozen_input_matrix) (case='unsupported-kind-37') ... FAIL
+  test_frozen_input_matrix (test_espi_semantics.ESPISemanticsTests.test_frozen_input_matrix) (case='unsupported-kind-58') ... FAIL
+  test_frozen_input_matrix (test_espi_semantics.ESPISemanticsTests.test_frozen_input_matrix) (case='unsupported-dataQualifier-2') ... FAIL
+  test_frozen_input_matrix (test_espi_semantics.ESPISemanticsTests.test_frozen_input_matrix) (case='unsupported-dataQualifier-6') ... FAIL
+  test_frozen_input_matrix (test_espi_semantics.ESPISemanticsTests.test_frozen_input_matrix) (case='unsupported-dataQualifier-9') ... FAIL
+  test_frozen_input_matrix (test_espi_semantics.ESPISemanticsTests.test_frozen_input_matrix) (case='unsupported-dataQualifier-16') ... FAIL
+  test_frozen_input_matrix (test_espi_semantics.ESPISemanticsTests.test_frozen_input_matrix) (case='duplicate-flowDirection') ... FAIL
+  test_frozen_input_matrix (test_espi_semantics.ESPISemanticsTests.test_frozen_input_matrix) (case='duplicate-accumulationBehaviour') ... FAIL
+  test_frozen_input_matrix (test_espi_semantics.ESPISemanticsTests.test_frozen_input_matrix) (case='duplicate-commodity') ... FAIL
+  test_frozen_input_matrix (test_espi_semantics.ESPISemanticsTests.test_frozen_input_matrix) (case='duplicate-kind') ... FAIL
+  test_frozen_input_matrix (test_espi_semantics.ESPISemanticsTests.test_frozen_input_matrix) (case='duplicate-uom') ... FAIL
+  test_frozen_input_matrix (test_espi_semantics.ESPISemanticsTests.test_frozen_input_matrix) (case='duplicate-powerOfTenMultiplier') ... FAIL
+  test_frozen_input_matrix (test_espi_semantics.ESPISemanticsTests.test_frozen_input_matrix) (case='duplicate-defaultQuality') ... FAIL
+  test_frozen_input_matrix (test_espi_semantics.ESPISemanticsTests.test_frozen_input_matrix) (case='duplicate-dataQualifier') ... FAIL
+  test_frozen_input_matrix (test_espi_semantics.ESPISemanticsTests.test_frozen_input_matrix) (case='malformed-flow-word') ... FAIL
+  test_frozen_input_matrix (test_espi_semantics.ESPISemanticsTests.test_frozen_input_matrix) (case='malformed-flow-blank') ... FAIL
+  test_frozen_input_matrix (test_espi_semantics.ESPISemanticsTests.test_frozen_input_matrix) (case='malformed-flow-decimal') ... FAIL
+  test_frozen_input_matrix (test_espi_semantics.ESPISemanticsTests.test_frozen_input_matrix) (case='malformed-flow-negative') ... FAIL
+  test_frozen_input_matrix (test_espi_semantics.ESPISemanticsTests.test_frozen_input_matrix) (case='malformed-flow-overflow') ... FAIL
+  test_frozen_input_matrix (test_espi_semantics.ESPISemanticsTests.test_frozen_input_matrix) (case='nested-flow') ... FAIL
+  test_frozen_input_matrix (test_espi_semantics.ESPISemanticsTests.test_frozen_input_matrix) (case='foreign-flow') ... FAIL
+  test_frozen_input_matrix (test_espi_semantics.ESPISemanticsTests.test_frozen_input_matrix) (case='multiple-meter-readings') ... FAIL
+  test_frozen_input_matrix (test_espi_semantics.ESPISemanticsTests.test_frozen_input_matrix) (case='service-gas') ... FAIL
+  test_frozen_input_matrix (test_espi_semantics.ESPISemanticsTests.test_frozen_input_matrix) (case='service-water') ... FAIL
+  test_frozen_input_matrix (test_espi_semantics.ESPISemanticsTests.test_frozen_input_matrix) (case='missing-flowDirection') ... FAIL
+  test_frozen_input_matrix (test_espi_semantics.ESPISemanticsTests.test_frozen_input_matrix) (case='unknown-flowDirection') ... FAIL
+  test_frozen_input_matrix (test_espi_semantics.ESPISemanticsTests.test_frozen_input_matrix) (case='missing-accumulationBehaviour') ... FAIL
+  test_frozen_input_matrix (test_espi_semantics.ESPISemanticsTests.test_frozen_input_matrix) (case='unknown-accumulationBehaviour') ... FAIL
+  test_frozen_input_matrix (test_espi_semantics.ESPISemanticsTests.test_frozen_input_matrix) (case='missing-commodity') ... FAIL
+  test_frozen_input_matrix (test_espi_semantics.ESPISemanticsTests.test_frozen_input_matrix) (case='unknown-commodity') ... FAIL
+  test_frozen_input_matrix (test_espi_semantics.ESPISemanticsTests.test_frozen_input_matrix) (case='missing-kind') ... FAIL
+  test_frozen_input_matrix (test_espi_semantics.ESPISemanticsTests.test_frozen_input_matrix) (case='unknown-kind') ... FAIL
+  test_frozen_input_matrix (test_espi_semantics.ESPISemanticsTests.test_frozen_input_matrix) (case='legacy-unit-only') ... FAIL
+  test_frozen_input_matrix (test_espi_semantics.ESPISemanticsTests.test_frozen_input_matrix) (case='quality-7') ... FAIL
+  test_frozen_input_matrix (test_espi_semantics.ESPISemanticsTests.test_frozen_input_matrix) (case='quality-9') ... FAIL
+  test_frozen_input_matrix (test_espi_semantics.ESPISemanticsTests.test_frozen_input_matrix) (case='quality-10') ... FAIL
+  test_frozen_input_matrix (test_espi_semantics.ESPISemanticsTests.test_frozen_input_matrix) (case='quality-12') ... FAIL
+  test_frozen_input_matrix (test_espi_semantics.ESPISemanticsTests.test_frozen_input_matrix) (case='quality-15') ... FAIL
+  test_frozen_input_matrix (test_espi_semantics.ESPISemanticsTests.test_frozen_input_matrix) (case='quality-17') ... FAIL
+  test_frozen_input_matrix (test_espi_semantics.ESPISemanticsTests.test_frozen_input_matrix) (case='quality-65535') ... FAIL
+  test_frozen_input_matrix (test_espi_semantics.ESPISemanticsTests.test_frozen_input_matrix) (case='quality-unspecified') ... FAIL
+  test_frozen_input_matrix (test_espi_semantics.ESPISemanticsTests.test_frozen_input_matrix) (case='interval-overrides-good-default') ... FAIL
+  test_frozen_input_matrix (test_espi_semantics.ESPISemanticsTests.test_frozen_input_matrix) (case='multiple-quality-normalized') ... FAIL
+  test_frozen_input_matrix (test_espi_semantics.ESPISemanticsTests.test_frozen_input_matrix) (case='scalar-quality-estimate') ... FAIL
+test_matching_bill_does_not_erase_declared_quality_review (test_espi_semantics.ESPISemanticsTests.test_matching_bill_does_not_erase_declared_quality_review) ... FAIL
+test_positive_export_and_cumulative_values_cannot_reach_pricing (test_espi_semantics.ESPISemanticsTests.test_positive_export_and_cumulative_values_cannot_reach_pricing) ...
+  test_positive_export_and_cumulative_values_cannot_reach_pricing (test_espi_semantics.ESPISemanticsTests.test_positive_export_and_cumulative_values_cannot_reach_pricing) (metadata={'flowDirection': '19'}, operation='compare_rate_plans') ... FAIL
+  test_positive_export_and_cumulative_values_cannot_reach_pricing (test_espi_semantics.ESPISemanticsTests.test_positive_export_and_cumulative_values_cannot_reach_pricing) (metadata={'flowDirection': '19'}, operation='validate_bill') ... FAIL
+  test_positive_export_and_cumulative_values_cannot_reach_pricing (test_espi_semantics.ESPISemanticsTests.test_positive_export_and_cumulative_values_cannot_reach_pricing) (metadata={'accumulationBehaviour': '3'}, operation='compare_rate_plans') ... FAIL
+  test_positive_export_and_cumulative_values_cannot_reach_pricing (test_espi_semantics.ESPISemanticsTests.test_positive_export_and_cumulative_values_cannot_reach_pricing) (metadata={'accumulationBehaviour': '3'}, operation='validate_bill') ... FAIL
+
+======================================================================
+ERROR: test_actual_sdk_rejects_export_then_recovers_on_same_connection (test_espi_semantics.ESPISemanticsTests.test_actual_sdk_rejects_export_then_recovers_on_same_connection) (mode='2026-07-28')
+----------------------------------------------------------------------
+  + Exception Group Traceback (most recent call last):
+  |   File "<repository>\plugins\billfit\tests\test_espi_semantics.py", line 105, in test_actual_sdk_rejects_export_then_recovers_on_same_connection
+  |     with self.subTest(mode=mode):asyncio.run(scenario(mode))
+  |                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "<user-home>\AppData\Local\Programs\Python\Python311\Lib\asyncio\runners.py", line 190, in run
+  |     return runner.run(main)
+  |            ^^^^^^^^^^^^^^^^
+  |   File "<user-home>\AppData\Local\Programs\Python\Python311\Lib\asyncio\runners.py", line 118, in run
+  |     return self._loop.run_until_complete(task)
+  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "<user-home>\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 653, in run_until_complete
+  |     return future.result()
+  |            ^^^^^^^^^^^^^^^
+  |   File "<repository>\plugins\billfit\tests\test_espi_semantics.py", line 95, in scenario
+  |     async with Client(params,mode=mode) as client:
+  |   File "<workspace>\billfit\.venv\Lib\site-packages\mcp\client\client.py", line 480, in __aexit__
+  |     await self._exit_stack.__aexit__(exc_type, exc_val, exc_tb)
+  |   File "<user-home>\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 733, in __aexit__
+  |     raise exc_details[1]
+  |   File "<user-home>\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 716, in __aexit__
+  |     cb_suppress = await cb(*exc_details)
+  |                   ^^^^^^^^^^^^^^^^^^^^^^
+  |   File "<user-home>\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 222, in __aexit__
+  |     await self.gen.athrow(typ, value, traceback)
+  |   File "<workspace>\billfit\.venv\Lib\site-packages\mcp\client\stdio.py", line 201, in stdio_client
+  |     async with anyio.create_task_group() as tg:
+  |   File "<workspace>\billfit\.venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 847, in __aexit__
+  |     raise BaseExceptionGroup(
+  | ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | Exception Group Traceback (most recent call last):
+    |   File "<workspace>\billfit\.venv\Lib\site-packages\mcp\client\stdio.py", line 205, in stdio_client
+    |     yield read_stream, write_stream
+    |   File "<user-home>\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 716, in __aexit__
+    |     cb_suppress = await cb(*exc_details)
+    |                   ^^^^^^^^^^^^^^^^^^^^^^
+    |   File "<workspace>\billfit\.venv\Lib\site-packages\mcp\client\session.py", line 514, in __aexit__
+    |     result = await self._task_group.__aexit__(exc_type, exc_val, exc_tb)
+    |              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "<workspace>\billfit\.venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 847, in __aexit__
+    |     raise BaseExceptionGroup(
+    | ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+    +-+---------------- 1 ----------------
+      | Traceback (most recent call last):
+      |   File "<repository>\plugins\billfit\tests\test_espi_semantics.py", line 98, in scenario
+      |     self.assertTrue(result.is_error)
+      | AssertionError: False is not true
+      +------------------------------------
+
+======================================================================
+ERROR: test_actual_sdk_rejects_export_then_recovers_on_same_connection (test_espi_semantics.ESPISemanticsTests.test_actual_sdk_rejects_export_then_recovers_on_same_connection) (mode='legacy')
+----------------------------------------------------------------------
+  + Exception Group Traceback (most recent call last):
+  |   File "<repository>\plugins\billfit\tests\test_espi_semantics.py", line 105, in test_actual_sdk_rejects_export_then_recovers_on_same_connection
+  |     with self.subTest(mode=mode):asyncio.run(scenario(mode))
+  |                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "<user-home>\AppData\Local\Programs\Python\Python311\Lib\asyncio\runners.py", line 190, in run
+  |     return runner.run(main)
+  |            ^^^^^^^^^^^^^^^^
+  |   File "<user-home>\AppData\Local\Programs\Python\Python311\Lib\asyncio\runners.py", line 118, in run
+  |     return self._loop.run_until_complete(task)
+  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "<user-home>\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 653, in run_until_complete
+  |     return future.result()
+  |            ^^^^^^^^^^^^^^^
+  |   File "<repository>\plugins\billfit\tests\test_espi_semantics.py", line 95, in scenario
+  |     async with Client(params,mode=mode) as client:
+  |   File "<workspace>\billfit\.venv\Lib\site-packages\mcp\client\client.py", line 480, in __aexit__
+  |     await self._exit_stack.__aexit__(exc_type, exc_val, exc_tb)
+  |   File "<user-home>\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 733, in __aexit__
+  |     raise exc_details[1]
+  |   File "<user-home>\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 716, in __aexit__
+  |     cb_suppress = await cb(*exc_details)
+  |                   ^^^^^^^^^^^^^^^^^^^^^^
+  |   File "<user-home>\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 222, in __aexit__
+  |     await self.gen.athrow(typ, value, traceback)
+  |   File "<workspace>\billfit\.venv\Lib\site-packages\mcp\client\stdio.py", line 201, in stdio_client
+  |     async with anyio.create_task_group() as tg:
+  |   File "<workspace>\billfit\.venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 847, in __aexit__
+  |     raise BaseExceptionGroup(
+  | ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | Exception Group Traceback (most recent call last):
+    |   File "<workspace>\billfit\.venv\Lib\site-packages\mcp\client\stdio.py", line 205, in stdio_client
+    |     yield read_stream, write_stream
+    |   File "<user-home>\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 716, in __aexit__
+    |     cb_suppress = await cb(*exc_details)
+    |                   ^^^^^^^^^^^^^^^^^^^^^^
+    |   File "<workspace>\billfit\.venv\Lib\site-packages\mcp\client\session.py", line 514, in __aexit__
+    |     result = await self._task_group.__aexit__(exc_type, exc_val, exc_tb)
+    |              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "<workspace>\billfit\.venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 847, in __aexit__
+    |     raise BaseExceptionGroup(
+    | ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+    +-+---------------- 1 ----------------
+      | Traceback (most recent call last):
+      |   File "<repository>\plugins\billfit\tests\test_espi_semantics.py", line 98, in scenario
+      |     self.assertTrue(result.is_error)
+      | AssertionError: False is not true
+      +------------------------------------
+
+======================================================================
+FAIL: test_complete_28_days_do_not_hide_missing_meaning_or_estimated_quality (test_espi_semantics.ESPISemanticsTests.test_complete_28_days_do_not_hide_missing_meaning_or_estimated_quality)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repository>\plugins\billfit\tests\test_espi_semantics.py", line 62, in test_complete_28_days_do_not_hide_missing_meaning_or_estimated_quality
+    self.assertEqual(result['recommendation']['status'],'withheld_pending_usage_quality')
+AssertionError: 'stay_or_difference_too_small' != 'withheld_pending_usage_quality'
+- stay_or_difference_too_small
++ withheld_pending_usage_quality
+
+
+======================================================================
+FAIL: test_frozen_input_matrix (test_espi_semantics.ESPISemanticsTests.test_frozen_input_matrix) (case='unsupported-flowDirection-2')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repository>\plugins\billfit\tests\test_espi_semantics.py", line 29, in test_frozen_input_matrix
+    with self.assertRaises(core.BillFitError) as caught:
+AssertionError: BillFitError not raised
+
+======================================================================
+FAIL: test_frozen_input_matrix (test_espi_semantics.ESPISemanticsTests.test_frozen_input_matrix) (case='unsupported-flowDirection-4')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repository>\plugins\billfit\tests\test_espi_semantics.py", line 29, in test_frozen_input_matrix
+    with self.assertRaises(core.BillFitError) as caught:
+AssertionError: BillFitError not raised
+
+======================================================================
+FAIL: test_frozen_input_matrix (test_espi_semantics.ESPISemanticsTests.test_frozen_input_matrix) (case='unsupported-flowDirection-16')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repository>\plugins\billfit\tests\test_espi_semantics.py", line 29, in test_frozen_input_matrix
+    with self.assertRaises(core.BillFitError) as caught:
+AssertionError: BillFitError not raised
+
+======================================================================
+FAIL: test_frozen_input_matrix (test_espi_semantics.ESPISemanticsTests.test_frozen_input_matrix) (case='unsupported-flowDirection-19')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repository>\plugins\billfit\tests\test_espi_semantics.py", line 29, in test_frozen_input_matrix
+    with self.assertRaises(core.BillFitError) as caught:
+AssertionError: BillFitError not raised
+
+======================================================================
+FAIL: test_frozen_input_matrix (test_espi_semantics.ESPISemanticsTests.test_frozen_input_matrix) (case='unsupported-flowDirection-20')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repository>\plugins\billfit\tests\test_espi_semantics.py", line 29, in test_frozen_input_matrix
+    with self.assertRaises(core.BillFitError) as caught:
+AssertionError: BillFitError not raised
+
+======================================================================
+FAIL: test_frozen_input_matrix (test_espi_semantics.ESPISemanticsTests.test_frozen_input_matrix) (case='unsupported-accumulationBehaviour-1')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repository>\plugins\billfit\tests\test_espi_semantics.py", line 29, in test_frozen_input_matrix
+    with self.assertRaises(core.BillFitError) as caught:
+AssertionError: BillFitError not raised
+
+======================================================================
+FAIL: test_frozen_input_matrix (test_espi_semantics.ESPISemanticsTests.test_frozen_input_matrix) (case='unsupported-accumulationBehaviour-2')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repository>\plugins\billfit\tests\test_espi_semantics.py", line 29, in test_frozen_input_matrix
+    with self.assertRaises(core.BillFitError) as caught:
+AssertionError: BillFitError not raised
+
+======================================================================
+FAIL: test_frozen_input_matrix (test_espi_semantics.ESPISemanticsTests.test_frozen_input_matrix) (case='unsupported-accumulationBehaviour-3')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repository>\plugins\billfit\tests\test_espi_semantics.py", line 29, in test_frozen_input_matrix
+    with self.assertRaises(core.BillFitError) as caught:
+AssertionError: BillFitError not raised
+
+======================================================================
+FAIL: test_frozen_input_matrix (test_espi_semantics.ESPISemanticsTests.test_frozen_input_matrix) (case='unsupported-accumulationBehaviour-6')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repository>\plugins\billfit\tests\test_espi_semantics.py", line 29, in test_frozen_input_matrix
+    with self.assertRaises(core.BillFitError) as caught:
+AssertionError: BillFitError not raised
+
+======================================================================
+FAIL: test_frozen_input_matrix (test_espi_semantics.ESPISemanticsTests.test_frozen_input_matrix) (case='unsupported-accumulationBehaviour-9')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repository>\plugins\billfit\tests\test_espi_semantics.py", line 29, in test_frozen_input_matrix
+    with self.assertRaises(core.BillFitError) as caught:
+AssertionError: BillFitError not raised
+
+======================================================================
+FAIL: test_frozen_input_matrix (test_espi_semantics.ESPISemanticsTests.test_frozen_input_matrix) (case='unsupported-commodity-2')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repository>\plugins\billfit\tests\test_espi_semantics.py", line 29, in test_frozen_input_matrix
+    with self.assertRaises(core.BillFitError) as caught:
+AssertionError: BillFitError not raised
+
+======================================================================
+FAIL: test_frozen_input_matrix (test_espi_semantics.ESPISemanticsTests.test_frozen_input_matrix) (case='unsupported-commodity-7')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repository>\plugins\billfit\tests\test_espi_semantics.py", line 29, in test_frozen_input_matrix
+    with self.assertRaises(core.BillFitError) as caught:
+AssertionError: BillFitError not raised
+
+======================================================================
+FAIL: test_frozen_input_matrix (test_espi_semantics.ESPISemanticsTests.test_frozen_input_matrix) (case='unsupported-commodity-9')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repository>\plugins\billfit\tests\test_espi_semantics.py", line 29, in test_frozen_input_matrix
+    with self.assertRaises(core.BillFitError) as caught:
+AssertionError: BillFitError not raised
+
+======================================================================
+FAIL: test_frozen_input_matrix (test_espi_semantics.ESPISemanticsTests.test_frozen_input_matrix) (case='unsupported-commodity-26')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repository>\plugins\billfit\tests\test_espi_semantics.py", line 29, in test_frozen_input_matrix
+    with self.assertRaises(core.BillFitError) as caught:
+AssertionError: BillFitError not raised
+
+======================================================================
+FAIL: test_frozen_input_matrix (test_espi_semantics.ESPISemanticsTests.test_frozen_input_matrix) (case='unsupported-kind-37')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repository>\plugins\billfit\tests\test_espi_semantics.py", line 29, in test_frozen_input_matrix
+    with self.assertRaises(core.BillFitError) as caught:
+AssertionError: BillFitError not raised
+
+======================================================================
+FAIL: test_frozen_input_matrix (test_espi_semantics.ESPISemanticsTests.test_frozen_input_matrix) (case='unsupported-kind-58')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repository>\plugins\billfit\tests\test_espi_semantics.py", line 29, in test_frozen_input_matrix
+    with self.assertRaises(core.BillFitError) as caught:
+AssertionError: BillFitError not raised
+
+======================================================================
+FAIL: test_frozen_input_matrix (test_espi_semantics.ESPISemanticsTests.test_frozen_input_matrix) (case='unsupported-dataQualifier-2')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repository>\plugins\billfit\tests\test_espi_semantics.py", line 29, in test_frozen_input_matrix
+    with self.assertRaises(core.BillFitError) as caught:
+AssertionError: BillFitError not raised
+
+======================================================================
+FAIL: test_frozen_input_matrix (test_espi_semantics.ESPISemanticsTests.test_frozen_input_matrix) (case='unsupported-dataQualifier-6')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repository>\plugins\billfit\tests\test_espi_semantics.py", line 29, in test_frozen_input_matrix
+    with self.assertRaises(core.BillFitError) as caught:
+AssertionError: BillFitError not raised
+
+======================================================================
+FAIL: test_frozen_input_matrix (test_espi_semantics.ESPISemanticsTests.test_frozen_input_matrix) (case='unsupported-dataQualifier-9')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repository>\plugins\billfit\tests\test_espi_semantics.py", line 29, in test_frozen_input_matrix
+    with self.assertRaises(core.BillFitError) as caught:
+AssertionError: BillFitError not raised
+
+======================================================================
+FAIL: test_frozen_input_matrix (test_espi_semantics.ESPISemanticsTests.test_frozen_input_matrix) (case='unsupported-dataQualifier-16')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repository>\plugins\billfit\tests\test_espi_semantics.py", line 29, in test_frozen_input_matrix
+    with self.assertRaises(core.BillFitError) as caught:
+AssertionError: BillFitError not raised
+
+======================================================================
+FAIL: test_frozen_input_matrix (test_espi_semantics.ESPISemanticsTests.test_frozen_input_matrix) (case='duplicate-flowDirection')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repository>\plugins\billfit\tests\test_espi_semantics.py", line 29, in test_frozen_input_matrix
+    with self.assertRaises(core.BillFitError) as caught:
+AssertionError: BillFitError not raised
+
+======================================================================
+FAIL: test_frozen_input_matrix (test_espi_semantics.ESPISemanticsTests.test_frozen_input_matrix) (case='duplicate-accumulationBehaviour')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repository>\plugins\billfit\tests\test_espi_semantics.py", line 29, in test_frozen_input_matrix
+    with self.assertRaises(core.BillFitError) as caught:
+AssertionError: BillFitError not raised
+
+======================================================================
+FAIL: test_frozen_input_matrix (test_espi_semantics.ESPISemanticsTests.test_frozen_input_matrix) (case='duplicate-commodity')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repository>\plugins\billfit\tests\test_espi_semantics.py", line 29, in test_frozen_input_matrix
+    with self.assertRaises(core.BillFitError) as caught:
+AssertionError: BillFitError not raised
+
+======================================================================
+FAIL: test_frozen_input_matrix (test_espi_semantics.ESPISemanticsTests.test_frozen_input_matrix) (case='duplicate-kind')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repository>\plugins\billfit\tests\test_espi_semantics.py", line 29, in test_frozen_input_matrix
+    with self.assertRaises(core.BillFitError) as caught:
+AssertionError: BillFitError not raised
+
+======================================================================
+FAIL: test_frozen_input_matrix (test_espi_semantics.ESPISemanticsTests.test_frozen_input_matrix) (case='duplicate-uom')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repository>\plugins\billfit\tests\test_espi_semantics.py", line 29, in test_frozen_input_matrix
+    with self.assertRaises(core.BillFitError) as caught:
+AssertionError: BillFitError not raised
+
+======================================================================
+FAIL: test_frozen_input_matrix (test_espi_semantics.ESPISemanticsTests.test_frozen_input_matrix) (case='duplicate-powerOfTenMultiplier')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repository>\plugins\billfit\tests\test_espi_semantics.py", line 29, in test_frozen_input_matrix
+    with self.assertRaises(core.BillFitError) as caught:
+AssertionError: BillFitError not raised
+
+======================================================================
+FAIL: test_frozen_input_matrix (test_espi_semantics.ESPISemanticsTests.test_frozen_input_matrix) (case='duplicate-defaultQuality')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repository>\plugins\billfit\tests\test_espi_semantics.py", line 29, in test_frozen_input_matrix
+    with self.assertRaises(core.BillFitError) as caught:
+AssertionError: BillFitError not raised
+
+======================================================================
+FAIL: test_frozen_input_matrix (test_espi_semantics.ESPISemanticsTests.test_frozen_input_matrix) (case='duplicate-dataQualifier')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repository>\plugins\billfit\tests\test_espi_semantics.py", line 29, in test_frozen_input_matrix
+    with self.assertRaises(core.BillFitError) as caught:
+AssertionError: BillFitError not raised
+
+======================================================================
+FAIL: test_frozen_input_matrix (test_espi_semantics.ESPISemanticsTests.test_frozen_input_matrix) (case='malformed-flow-word')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repository>\plugins\billfit\tests\test_espi_semantics.py", line 29, in test_frozen_input_matrix
+    with self.assertRaises(core.BillFitError) as caught:
+AssertionError: BillFitError not raised
+
+======================================================================
+FAIL: test_frozen_input_matrix (test_espi_semantics.ESPISemanticsTests.test_frozen_input_matrix) (case='malformed-flow-blank')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repository>\plugins\billfit\tests\test_espi_semantics.py", line 29, in test_frozen_input_matrix
+    with self.assertRaises(core.BillFitError) as caught:
+AssertionError: BillFitError not raised
+
+======================================================================
+FAIL: test_frozen_input_matrix (test_espi_semantics.ESPISemanticsTests.test_frozen_input_matrix) (case='malformed-flow-decimal')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repository>\plugins\billfit\tests\test_espi_semantics.py", line 29, in test_frozen_input_matrix
+    with self.assertRaises(core.BillFitError) as caught:
+AssertionError: BillFitError not raised
+
+======================================================================
+FAIL: test_frozen_input_matrix (test_espi_semantics.ESPISemanticsTests.test_frozen_input_matrix) (case='malformed-flow-negative')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repository>\plugins\billfit\tests\test_espi_semantics.py", line 29, in test_frozen_input_matrix
+    with self.assertRaises(core.BillFitError) as caught:
+AssertionError: BillFitError not raised
+
+======================================================================
+FAIL: test_frozen_input_matrix (test_espi_semantics.ESPISemanticsTests.test_frozen_input_matrix) (case='malformed-flow-overflow')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repository>\plugins\billfit\tests\test_espi_semantics.py", line 29, in test_frozen_input_matrix
+    with self.assertRaises(core.BillFitError) as caught:
+AssertionError: BillFitError not raised
+
+======================================================================
+FAIL: test_frozen_input_matrix (test_espi_semantics.ESPISemanticsTests.test_frozen_input_matrix) (case='nested-flow')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repository>\plugins\billfit\tests\test_espi_semantics.py", line 29, in test_frozen_input_matrix
+    with self.assertRaises(core.BillFitError) as caught:
+AssertionError: BillFitError not raised
+
+======================================================================
+FAIL: test_frozen_input_matrix (test_espi_semantics.ESPISemanticsTests.test_frozen_input_matrix) (case='foreign-flow')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repository>\plugins\billfit\tests\test_espi_semantics.py", line 29, in test_frozen_input_matrix
+    with self.assertRaises(core.BillFitError) as caught:
+AssertionError: BillFitError not raised
+
+======================================================================
+FAIL: test_frozen_input_matrix (test_espi_semantics.ESPISemanticsTests.test_frozen_input_matrix) (case='multiple-meter-readings')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repository>\plugins\billfit\tests\test_espi_semantics.py", line 29, in test_frozen_input_matrix
+    with self.assertRaises(core.BillFitError) as caught:
+AssertionError: BillFitError not raised
+
+======================================================================
+FAIL: test_frozen_input_matrix (test_espi_semantics.ESPISemanticsTests.test_frozen_input_matrix) (case='service-gas')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repository>\plugins\billfit\tests\test_espi_semantics.py", line 29, in test_frozen_input_matrix
+    with self.assertRaises(core.BillFitError) as caught:
+AssertionError: BillFitError not raised
+
+======================================================================
+FAIL: test_frozen_input_matrix (test_espi_semantics.ESPISemanticsTests.test_frozen_input_matrix) (case='service-water')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repository>\plugins\billfit\tests\test_espi_semantics.py", line 29, in test_frozen_input_matrix
+    with self.assertRaises(core.BillFitError) as caught:
+AssertionError: BillFitError not raised
+
+======================================================================
+FAIL: test_frozen_input_matrix (test_espi_semantics.ESPISemanticsTests.test_frozen_input_matrix) (case='missing-flowDirection')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repository>\plugins\billfit\tests\test_espi_semantics.py", line 37, in test_frozen_input_matrix
+    self.assertTrue(any(case['marker'] in w for w in review))
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_frozen_input_matrix (test_espi_semantics.ESPISemanticsTests.test_frozen_input_matrix) (case='unknown-flowDirection')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repository>\plugins\billfit\tests\test_espi_semantics.py", line 37, in test_frozen_input_matrix
+    self.assertTrue(any(case['marker'] in w for w in review))
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_frozen_input_matrix (test_espi_semantics.ESPISemanticsTests.test_frozen_input_matrix) (case='missing-accumulationBehaviour')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repository>\plugins\billfit\tests\test_espi_semantics.py", line 37, in test_frozen_input_matrix
+    self.assertTrue(any(case['marker'] in w for w in review))
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_frozen_input_matrix (test_espi_semantics.ESPISemanticsTests.test_frozen_input_matrix) (case='unknown-accumulationBehaviour')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repository>\plugins\billfit\tests\test_espi_semantics.py", line 37, in test_frozen_input_matrix
+    self.assertTrue(any(case['marker'] in w for w in review))
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_frozen_input_matrix (test_espi_semantics.ESPISemanticsTests.test_frozen_input_matrix) (case='missing-commodity')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repository>\plugins\billfit\tests\test_espi_semantics.py", line 37, in test_frozen_input_matrix
+    self.assertTrue(any(case['marker'] in w for w in review))
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_frozen_input_matrix (test_espi_semantics.ESPISemanticsTests.test_frozen_input_matrix) (case='unknown-commodity')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repository>\plugins\billfit\tests\test_espi_semantics.py", line 37, in test_frozen_input_matrix
+    self.assertTrue(any(case['marker'] in w for w in review))
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_frozen_input_matrix (test_espi_semantics.ESPISemanticsTests.test_frozen_input_matrix) (case='missing-kind')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repository>\plugins\billfit\tests\test_espi_semantics.py", line 37, in test_frozen_input_matrix
+    self.assertTrue(any(case['marker'] in w for w in review))
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_frozen_input_matrix (test_espi_semantics.ESPISemanticsTests.test_frozen_input_matrix) (case='unknown-kind')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repository>\plugins\billfit\tests\test_espi_semantics.py", line 37, in test_frozen_input_matrix
+    self.assertTrue(any(case['marker'] in w for w in review))
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_frozen_input_matrix (test_espi_semantics.ESPISemanticsTests.test_frozen_input_matrix) (case='legacy-unit-only')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repository>\plugins\billfit\tests\test_espi_semantics.py", line 37, in test_frozen_input_matrix
+    self.assertTrue(any(case['marker'] in w for w in review))
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_frozen_input_matrix (test_espi_semantics.ESPISemanticsTests.test_frozen_input_matrix) (case='quality-7')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repository>\plugins\billfit\tests\test_espi_semantics.py", line 37, in test_frozen_input_matrix
+    self.assertTrue(any(case['marker'] in w for w in review))
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_frozen_input_matrix (test_espi_semantics.ESPISemanticsTests.test_frozen_input_matrix) (case='quality-9')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repository>\plugins\billfit\tests\test_espi_semantics.py", line 37, in test_frozen_input_matrix
+    self.assertTrue(any(case['marker'] in w for w in review))
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_frozen_input_matrix (test_espi_semantics.ESPISemanticsTests.test_frozen_input_matrix) (case='quality-10')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repository>\plugins\billfit\tests\test_espi_semantics.py", line 37, in test_frozen_input_matrix
+    self.assertTrue(any(case['marker'] in w for w in review))
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_frozen_input_matrix (test_espi_semantics.ESPISemanticsTests.test_frozen_input_matrix) (case='quality-12')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repository>\plugins\billfit\tests\test_espi_semantics.py", line 37, in test_frozen_input_matrix
+    self.assertTrue(any(case['marker'] in w for w in review))
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_frozen_input_matrix (test_espi_semantics.ESPISemanticsTests.test_frozen_input_matrix) (case='quality-15')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repository>\plugins\billfit\tests\test_espi_semantics.py", line 37, in test_frozen_input_matrix
+    self.assertTrue(any(case['marker'] in w for w in review))
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_frozen_input_matrix (test_espi_semantics.ESPISemanticsTests.test_frozen_input_matrix) (case='quality-17')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repository>\plugins\billfit\tests\test_espi_semantics.py", line 37, in test_frozen_input_matrix
+    self.assertTrue(any(case['marker'] in w for w in review))
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_frozen_input_matrix (test_espi_semantics.ESPISemanticsTests.test_frozen_input_matrix) (case='quality-65535')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repository>\plugins\billfit\tests\test_espi_semantics.py", line 37, in test_frozen_input_matrix
+    self.assertTrue(any(case['marker'] in w for w in review))
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_frozen_input_matrix (test_espi_semantics.ESPISemanticsTests.test_frozen_input_matrix) (case='quality-unspecified')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repository>\plugins\billfit\tests\test_espi_semantics.py", line 37, in test_frozen_input_matrix
+    self.assertTrue(any(case['marker'] in w for w in review))
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_frozen_input_matrix (test_espi_semantics.ESPISemanticsTests.test_frozen_input_matrix) (case='interval-overrides-good-default')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repository>\plugins\billfit\tests\test_espi_semantics.py", line 37, in test_frozen_input_matrix
+    self.assertTrue(any(case['marker'] in w for w in review))
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_frozen_input_matrix (test_espi_semantics.ESPISemanticsTests.test_frozen_input_matrix) (case='multiple-quality-normalized')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repository>\plugins\billfit\tests\test_espi_semantics.py", line 37, in test_frozen_input_matrix
+    self.assertTrue(any(case['marker'] in w for w in review))
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_frozen_input_matrix (test_espi_semantics.ESPISemanticsTests.test_frozen_input_matrix) (case='scalar-quality-estimate')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repository>\plugins\billfit\tests\test_espi_semantics.py", line 37, in test_frozen_input_matrix
+    self.assertTrue(any(case['marker'] in w for w in review))
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_matching_bill_does_not_erase_declared_quality_review (test_espi_semantics.ESPISemanticsTests.test_matching_bill_does_not_erase_declared_quality_review)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repository>\plugins\billfit\tests\test_espi_semantics.py", line 74, in test_matching_bill_does_not_erase_declared_quality_review
+    self.assertEqual(result['status'],'needs_review')
+AssertionError: 'validated' != 'needs_review'
+- validated
++ needs_review
+
+
+======================================================================
+FAIL: test_positive_export_and_cumulative_values_cannot_reach_pricing (test_espi_semantics.ESPISemanticsTests.test_positive_export_and_cumulative_values_cannot_reach_pricing) (metadata={'flowDirection': '19'}, operation='compare_rate_plans')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repository>\plugins\billfit\tests\test_espi_semantics.py", line 51, in test_positive_export_and_cumulative_values_cannot_reach_pricing
+    with self.assertRaises(core.BillFitError) as caught:
+AssertionError: BillFitError not raised
+
+======================================================================
+FAIL: test_positive_export_and_cumulative_values_cannot_reach_pricing (test_espi_semantics.ESPISemanticsTests.test_positive_export_and_cumulative_values_cannot_reach_pricing) (metadata={'flowDirection': '19'}, operation='validate_bill')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repository>\plugins\billfit\tests\test_espi_semantics.py", line 51, in test_positive_export_and_cumulative_values_cannot_reach_pricing
+    with self.assertRaises(core.BillFitError) as caught:
+AssertionError: BillFitError not raised
+
+======================================================================
+FAIL: test_positive_export_and_cumulative_values_cannot_reach_pricing (test_espi_semantics.ESPISemanticsTests.test_positive_export_and_cumulative_values_cannot_reach_pricing) (metadata={'accumulationBehaviour': '3'}, operation='compare_rate_plans')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repository>\plugins\billfit\tests\test_espi_semantics.py", line 51, in test_positive_export_and_cumulative_values_cannot_reach_pricing
+    with self.assertRaises(core.BillFitError) as caught:
+AssertionError: BillFitError not raised
+
+======================================================================
+FAIL: test_positive_export_and_cumulative_values_cannot_reach_pricing (test_espi_semantics.ESPISemanticsTests.test_positive_export_and_cumulative_values_cannot_reach_pricing) (metadata={'accumulationBehaviour': '3'}, operation='validate_bill')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repository>\plugins\billfit\tests\test_espi_semantics.py", line 51, in test_positive_export_and_cumulative_values_cannot_reach_pricing
+    with self.assertRaises(core.BillFitError) as caught:
+AssertionError: BillFitError not raised
+
+----------------------------------------------------------------------
+Ran 6 tests in 4.772s
+
+FAILED (failures=64, errors=2)
