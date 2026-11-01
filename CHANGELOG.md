@@ -2,6 +2,19 @@
 
 ## Unreleased — 2026-11-01
 
+- Validate declared Green Button direction, accumulation, commodity, measurement
+  kind and quality before pricing. Separate the ESPI profile from arithmetic;
+  reject incompatible or ambiguous inputs and retain missing/adjusted-quality
+  review across parsing, comparison and bill reconciliation. Do not infer import
+  from a positive number or silently combine meter streams.
+- The frozen 73-request CLI comparison improves rejection from 0/38 to 38/38 and
+  visible review from 0/20 to 20/20; 15/15 valid controls are preserved. The full
+  native suite passes 229 tests with zero skips, including both existing real SDK
+  modes and same-connection recovery. Add three synthetic runnable examples;
+  preserve original failures, source bytes and unchanged tariff/assistance data.
+  No new provider call, dependency, account action or migration.
+  [Input profile, evidence and rollback](docs/espi-semantics-2026-11-01.md).
+
 - Validate energy/duration number syntax before removing thousands separators;
   reject currency, malformed groups and nonzero text that underflows to zero.
   Reject surplus CSV cells instead of discarding them. Existing valid formats,

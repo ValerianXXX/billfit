@@ -1,0 +1,11 @@
+test_actual_sdk_rejects_export_then_recovers_on_same_connection (test_espi_semantics.ESPISemanticsTests.test_actual_sdk_rejects_export_then_recovers_on_same_connection) ... ok
+test_complete_28_days_do_not_hide_missing_meaning_or_estimated_quality (test_espi_semantics.ESPISemanticsTests.test_complete_28_days_do_not_hide_missing_meaning_or_estimated_quality) ... ok
+test_declared_supported_28_day_input_preserves_existing_calculation (test_espi_semantics.ESPISemanticsTests.test_declared_supported_28_day_input_preserves_existing_calculation) ... ok
+test_frozen_input_matrix (test_espi_semantics.ESPISemanticsTests.test_frozen_input_matrix) ... ok
+test_matching_bill_does_not_erase_declared_quality_review (test_espi_semantics.ESPISemanticsTests.test_matching_bill_does_not_erase_declared_quality_review) ... ok
+test_positive_export_and_cumulative_values_cannot_reach_pricing (test_espi_semantics.ESPISemanticsTests.test_positive_export_and_cumulative_values_cannot_reach_pricing) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 4.381s
+
+OK

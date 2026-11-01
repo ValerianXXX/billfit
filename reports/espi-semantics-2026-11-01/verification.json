@@ -1,0 +1,233 @@
+{
+  "observed_at_utc": "2026-11-01T12:20:27.567317+00:00",
+  "base_commit": "84565475c4e2ba3d0a5fa940ab4c38e605126337",
+  "fixture_commit": "76ffafe6562348d96bad23431d5c90969eae6da1",
+  "evaluator_commit": "d244e9ef0b0808ba9e9d060bc738c30922f70128",
+  "runtime_commit": "4809f6aa17c3dec00af19ada4616034aa19bf134",
+  "input_kind": "synthetic",
+  "case_count": 73,
+  "before": {
+    "summary": {
+      "reject": {
+        "total": 38,
+        "passed": 0
+      },
+      "review": {
+        "total": 20,
+        "passed": 0
+      },
+      "accept": {
+        "total": 15,
+        "passed": 15
+      }
+    },
+    "elapsed_seconds": 19.922
+  },
+  "after": {
+    "summary": {
+      "reject": {
+        "total": 38,
+        "passed": 38
+      },
+      "review": {
+        "total": 20,
+        "passed": 20
+      },
+      "accept": {
+        "total": 15,
+        "passed": 15
+      }
+    },
+    "elapsed_seconds": 20.469
+  },
+  "all_73_input_hashes_equal_between_arms": true,
+  "originals_preserved_in_both_arms": true,
+  "frozen_tests": {
+    "methods": 6,
+    "before_failures_including_subtests": 64,
+    "before_sdk_wrapped_assertion_errors": 2,
+    "after_passed": 6,
+    "first_implementation_seconds": 4.381,
+    "first_implementation_state": "Uncommitted runtime before error-text clarification; complete suite below uses committed runtime."
+  },
+  "baseline_complete_suite": {
+    "passed": 223,
+    "skipped": 0,
+    "seconds": 55.57,
+    "runtime": "84565475c4e2ba3d0a5fa940ab4c38e605126337"
+  },
+  "complete_suite": {
+    "passed": 229,
+    "skipped": 0,
+    "seconds": 58.958,
+    "platform": "Windows",
+    "python": "3.11.3"
+  },
+  "sdk": {
+    "version": "2.3.0",
+    "modes": [
+      "2026-07-28",
+      "legacy"
+    ],
+    "actual_local_export_rejection_and_same_connection_recovery": "PASS",
+    "new_model_selected_trial": false
+  },
+  "packages": {
+    "mcp": "2.3.0",
+    "pypdf": "6.21.3",
+    "Pillow": "13.0.0",
+    "tzdata": "2026.5"
+  },
+  "frozen_sources": [
+    {
+      "path": "evaluations/espi-semantics/cases.json",
+      "git_blob_sha256": "2e67e608c88f6aa79de5c9ab83445c9712187d24b104422b98aec6535412acd7",
+      "observed_bytes_sha256": "a8f97c4ea1320a65d413c94496aab62daf74b27bdb2f6968362ad17406bc4531"
+    },
+    {
+      "path": "plugins/billfit/tests/_espi_semantics.py",
+      "git_blob_sha256": "ca241dd706e2428429b02478a917a3fb2415c5de3feed66c2db2b7b3e64b10e2",
+      "observed_bytes_sha256": "ca241dd706e2428429b02478a917a3fb2415c5de3feed66c2db2b7b3e64b10e2"
+    },
+    {
+      "path": "plugins/billfit/tests/test_espi_semantics.py",
+      "git_blob_sha256": "f65acca92e68a0df356ab3a368d63953c7d094eee800789f8d09e017976ef759",
+      "observed_bytes_sha256": "f65acca92e68a0df356ab3a368d63953c7d094eee800789f8d09e017976ef759"
+    },
+    {
+      "path": "scripts/verify-espi-semantics.py",
+      "git_blob_sha256": "ab64785fd954f2175c54eee782b9f7203a45ab195d63c07ed18230c85d50e66c",
+      "observed_bytes_sha256": "ab64785fd954f2175c54eee782b9f7203a45ab195d63c07ed18230c85d50e66c"
+    },
+    {
+      "path": "docs/espi-semantics-protocol-2026-11-01.md",
+      "git_blob_sha256": "e718394973199df1bb1934fc15a197a0953c09caf02dd7a7fa0ee1835ecc6cd7",
+      "observed_bytes_sha256": "e718394973199df1bb1934fc15a197a0953c09caf02dd7a7fa0ee1835ecc6cd7"
+    }
+  ],
+  "runtime_sources": [
+    {
+      "path": "plugins/billfit/skills/billfit/scripts/billfit_espi.py",
+      "git_blob_sha256": "dd0ad9ec2dac2f118e4f9e300ae61d139a7c302761433a8276639dde7be9334c",
+      "observed_bytes_sha256": "dd0ad9ec2dac2f118e4f9e300ae61d139a7c302761433a8276639dde7be9334c"
+    },
+    {
+      "path": "plugins/billfit/skills/billfit/scripts/billfit_usage.py",
+      "git_blob_sha256": "a4d6a6aeb3a787de605f547aa12ddf0bde800644bc1e2c60e6c2c34c2b506c2d",
+      "observed_bytes_sha256": "1ec9e5ce7f807d7791156bff1b2ae69c384c5674899f13cba2a6edf2c94a879a"
+    },
+    {
+      "path": "plugins/billfit/skills/billfit/scripts/billfit_core.py",
+      "git_blob_sha256": "7e88583d2be4250923b12f09442aec7ec9141a8c7d8d50f3f73d8935f6a7b43c",
+      "observed_bytes_sha256": "ae6c41e91197b1c6cae14fa86f373e5399e1d181069583445b222e8d17a2ce63"
+    },
+    {
+      "path": "plugins/billfit/skills/billfit/scripts/billfit_reconciliation.py",
+      "git_blob_sha256": "08fb7334f2464fb8b9d4f6f5f89dfe891d24757826e188f757a78052de3c8175",
+      "observed_bytes_sha256": "5d972f1d317293fc3f17b3339e4dd65a4150c8c9d87038185867f3c5a1fc03ff"
+    }
+  ],
+  "unchanged_data_and_requirements": [
+    {
+      "path": "plugins/billfit/skills/billfit/data/pge_residential_rates_2026-03-01.json",
+      "git_blob_sha256": "cff04fb40659084260afab13b99bab5cb6dd3a6a77eb8490b05c0e89bbf7e53b",
+      "observed_bytes_sha256": "2475f673017cfe20d9272c20e1e13e3506da6c47f99bbb685278c029ad25d9b8"
+    },
+    {
+      "path": "plugins/billfit/skills/billfit/data/care_fera_2026-06-01.json",
+      "git_blob_sha256": "1ff88ab2bc8f8ebbe12e78a3590d1de1ce54626ff0a2b689fc23774ea4b85618",
+      "observed_bytes_sha256": "087246bab7df312cedcee607c7d880f96604574a35e48f87fb29bf10f2e5b26b"
+    },
+    {
+      "path": "plugins/billfit/requirements.txt",
+      "git_blob_sha256": "482dc86768c07f7af5f79e768d925a357dd888e81eb29f620d8c0a3f62edcf52",
+      "observed_bytes_sha256": "c486d7ea3069f8fff73d323f3e96c6fdea7f9f2f1ead35d9ceedbb5125161596"
+    },
+    {
+      "path": "plugins/billfit/requirements-agent.txt",
+      "git_blob_sha256": "7f46ec9bd414de64475fff4cd293677fe2bb7593376c4a79a61d9a52287398b4",
+      "observed_bytes_sha256": "ffe0e9eaecfeb95b7cb448b1def5c6358e93bbe93798a28d3111363efa011bec"
+    },
+    {
+      "path": "plugins/billfit/requirements-image-input.txt",
+      "git_blob_sha256": "9a37e9bc3fec6484312aac22a6184e0265d363ffd695a61d874110e353565f54",
+      "observed_bytes_sha256": "e87b0c7e4b7850fb6b84c398672a61bb893fb9adf67a2c4e34d84c7682558db9"
+    },
+    {
+      "path": "plugins/billfit/requirements-bill-input.txt",
+      "git_blob_sha256": "00187e67e8035e457385748c97ad65cd69de9e40767da06184983772ebb41e49",
+      "observed_bytes_sha256": "3b5fb88f985960138f52284589745a63865dd22b06687027e386e53746bc59bd"
+    }
+  ],
+  "evidence": [
+    {
+      "file": "before-cli.json",
+      "original_local_file": "billfit-espi-cli-before-20261101.json",
+      "original_sha256": "5d5f8d81204a637a53bc74a1b0f4be3c0d9fa5c470fae203406f9d2d4a1acaa6",
+      "published_sha256": "255900971e9cfa053c19dcc3f694cbe30658032d4fce3d1516e0515c88c69284"
+    },
+    {
+      "file": "after-cli.json",
+      "original_local_file": "billfit-espi-cli-after-20261101.json",
+      "original_sha256": "f23c7cb96a2d8bac3197bd7f6196e961913761d75fcfa845a44071d1ad509e20",
+      "published_sha256": "a6a360e231c9a90c6a5163ef02d1b6a3d00c11e2301d35711c86c814ea365352"
+    },
+    {
+      "file": "baseline-tests.txt",
+      "original_local_file": "billfit-espi-baseline-20261101.txt",
+      "original_sha256": "805f274d19f85323aeabbe5cb46c1f7253db686416e722a592549f98ff7c28e8",
+      "published_sha256": "b3e8920c045da932f57fcd9fa8351e3fa146074758a7ab78c6800ed3b952d2f6"
+    },
+    {
+      "file": "before-tests.txt",
+      "original_local_file": "billfit-espi-frozen-before-20261101.txt",
+      "original_sha256": "32368399824bb21a2cfdd0205476a0f03b3bb9d6525ae396ecd75b788f5b3a78",
+      "published_sha256": "48031ed18c8db594a223d5c173b119420861d1d030f914d47253bb4dd8325aec"
+    },
+    {
+      "file": "first-implementation-tests.txt",
+      "original_local_file": "billfit-espi-first-implementation-20261101.txt",
+      "original_sha256": "63a181a012943b81820dbedd377e6efd31dd3c7b1102aca3b0446403583d4143",
+      "published_sha256": "be7c4ae4e4c6b76cbbfb304fe043c9389ee103a57bb20da75b9bf3402fad74cd"
+    },
+    {
+      "file": "full-tests.txt",
+      "original_local_file": "billfit-espi-full-20261101.txt",
+      "original_sha256": "d5d93c18143c13e4a5b3f2f48cfd30761aca951a1f5409aebafa08afaba0f7ee",
+      "published_sha256": "68d555f36ccab530bf90d19075143730099fd91b43b1b4e834abbba044a1a8ce"
+    },
+    {
+      "file": "examples-cli.json",
+      "published_sha256": "02329e55e7e22116c395622270abf01c6bf2a41cd0474700f3e043d07114dcc1",
+      "original_local_file": "billfit-espi-examples-cli-original-20261101.json",
+      "original_sha256": "55043dda3cfd0e78c10336b6fb437cad90dcefa166186fb23f7b8f0f607d1f52"
+    }
+  ],
+  "public_log_redactions": "Workstation paths replaced in test logs and example responses; line endings normalized to LF and trailing log spaces trimmed. Outcomes retained; originals hashed separately.",
+  "official_input_sources": {
+    "observed_date": "2026-11-01",
+    "schema_visible_version": "3.3.20190408",
+    "urls": [
+      "https://dev.greenbuttonalliance.org/espiusecase.html",
+      "https://www.greenbuttonalliance.org/accuracy",
+      "https://www.greenbuttonalliance.org/poweroftenmultiplier"
+    ],
+    "latest_schema_or_complete_certification_claim": false
+  },
+  "new_model_calls": 0,
+  "customer_data_used": false,
+  "production_changes": false,
+  "independent_human_acceptance": false,
+  "tariff_values_or_verification_dates_changed": false,
+  "utility_rounding_certified": false,
+  "migration": "NONE",
+  "hosted_checks": "PENDING_AT_LOCAL_DELIVERY",
+  "remaining_limits": [
+    "Full ESPI schema/Atom multi-meter association unsupported",
+    "Missing meaning/quality remains review-required",
+    "Source authenticity not established",
+    "Exact utility rounding and residential Saturday holiday observance unresolved",
+    "Complete historical tariffs and real customer/independent-user acceptance unavailable"
+  ],
+  "prepublication_path_check": "An absolute path in the actual example response was caught locally and replaced before staging; original remains in task-local evidence."
+}
