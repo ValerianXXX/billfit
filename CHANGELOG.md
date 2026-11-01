@@ -2,6 +2,16 @@
 
 ## Unreleased — 2026-11-01
 
+- Recognize qualified official CARE program names using a separate exact-name
+  resolver. Preserve original input positions, canonical pathways and explicit
+  confirmation for unknown/ambiguous names; reject malformed/bounded input with
+  structured errors. Income, tariff and enrollment boundaries remain unchanged.
+- The fixed real CLI comparison improves from 4/15 to 15/15 qualified names;
+  10 unresolved names are now visible, six malformed inputs return domain errors,
+  and six income controls retain their decisions. All 214 tests pass, including
+  actual SDK recovery in both existing profiles. No new model calls or customer
+  qualification claim. [Evidence and compatibility](docs/care-program-names-2026-11-01.md).
+
 - Verify the existing parser on native Windows with a pinned, separately acquired
   Tesseract runtime. Preserve the fixed 6/8 default and 8/8 prepared observations,
   original evidence overlays, actual CLI/SDK recovery and 200 passing regressions.

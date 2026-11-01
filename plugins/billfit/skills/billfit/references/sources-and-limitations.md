@@ -83,6 +83,31 @@ does not change packaged `verified_on` dates or approve new program rules.
 
 Medical Baseline is not income-based. A user-reported medical need can only produce a possible-candidate result; an eligible medical practitioner must certify it.
 
+Program names checked November 1, 2026 against the
+[PG&E CARE eligibility list](https://www.pge.com/en/account/billing-and-assistance/financial-assistance/care-eligibility.html)
+and the CPUC list above now map to existing categorical identifiers. PG&E names
+Healthy Families A & B as Medi-Cal for Families; that maps to the existing
+Medicaid/Medi-Cal pathway. CPUC specifies free lunch for NSLP while PG&E's bullet
+does not repeat that qualifier. Bare NSLP therefore remains for confirmation;
+the resolver does not silently broaden the existing supported path. Similarly,
+it preserves the Tribal/income-eligible qualifier and does not infer a specific
+enrollment from a combined CalWORKs-or-Tribal label. This is a conservative input
+interpretation, not a utility denial rule. Unknown names have their own review
+gate while independently established income paths remain available.
+
+The name-mapping date is separate from the unchanged October 27 income/rate
+verification date. Historical candidate scenarios use the current name resolver
+with explicitly dated income snapshots; they do not reconstruct historical
+program policy. Name matching, content hashes and successful tests establish
+neither current enrollment nor final eligibility. Complete account, usage,
+documentation and utility-review requirements remain outside this screen.
+
+Native Windows OCR was subsequently exercised on November 1 with the same eight
+synthetic inputs, passing 8/8 with optional preparation. That observation updates
+the earlier platform gap without changing its historical results. Customer
+input, independent layouts and the acquired package's signing limitation remain
+separate; see the repository's `docs/native-windows-ocr-2026-11-01.md`.
+
 ## Human boundary
 
 BillFit intentionally leaves these actions waiting for a person:

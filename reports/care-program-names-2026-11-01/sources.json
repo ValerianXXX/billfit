@@ -1,0 +1,37 @@
+{
+  "observed_at_utc": "2026-11-01T07:30:52.820883+00:00",
+  "review_scope": "Published categorical program labels only; not tariff values, income tables, enrollment or policy approval",
+  "sources": [
+    {
+      "url": "https://www.pge.com/en/account/billing-and-assistance/financial-assistance/care-eligibility.html",
+      "checked_at_utc": "2026-11-01T07:30:51.912993+00:00",
+      "status": "FETCHED",
+      "http_status": 200,
+      "final_url": "https://www.pge.com/en/account/billing-and-assistance/financial-assistance/care-eligibility.html",
+      "bytes": 157153,
+      "html_sha256": "0145eefab8161ca4a4a9990c561f90d3107e4316e0dce906d935c751cf31928e"
+    },
+    {
+      "url": "https://www.cpuc.ca.gov/care/",
+      "checked_at_utc": "2026-11-01T07:30:52.093427+00:00",
+      "status": "FETCHED",
+      "http_status": 200,
+      "final_url": "https://www.cpuc.ca.gov/care/",
+      "bytes": 60160,
+      "html_sha256": "2fdeb696831d512365f2bfc82816ccb5213f2d4687112b7173a8d003647e478c"
+    }
+  ],
+  "manual_source_mapping": [
+    "PG&E CARE Eligibility: Qualify based on other programs lists expanded names for the already supported categorical pathways.",
+    "PG&E explicitly identifies Healthy Families A and B as Medi-Cal for Families; these names retain the existing medicaid_medi_cal canonical identifier.",
+    "CPUC lists a free-lunch qualifier for NSLP while the PG&E bullet omits it; unqualified NSLP is left for confirmation instead of silently broadening scope.",
+    "Both descriptions retain the income-eligible Tribal qualifier for the Head Start path.",
+    "Combined CalWORKs-or-Tribal wording does not establish which reported enrollment applies; the user can select a specific supported name."
+  ],
+  "observation_method": "Official rendered page text inspected independently of these bounded raw HTML hashes; hashes do not authenticate interpretation.",
+  "income_and_tariff_json_changed": false,
+  "packaged_verified_on_changed": false,
+  "customer_records_used": false,
+  "new_model_calls": 0,
+  "release_approval": null
+}

@@ -1,0 +1,8 @@
+{
+  "household_size": 2,
+  "gross_annual_household_income": 999999,
+  "enrolled_public_programs": [
+    "Women, Infants, and Children (WIC)",
+    "National School Lunch Program (NSLP)"
+  ]
+}

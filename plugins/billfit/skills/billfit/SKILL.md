@@ -118,6 +118,17 @@ Call `billfit_screen_assistance` or run the CLI `assistance` operation with hous
 - If CARE or FERA looks likely, leave `ASSISTANCE_APPLICATION` for the user.
 - If a medical need is indicated, leave `MEDICAL_CERTIFICATION` for the user and practitioner.
 
+Preserve `categorical_program_review`, its original input positions and the
+`ASSISTANCE_PROGRAM_CONFIRMATION` gate. An unrecognized name is unresolved, not
+proof of ineligibility; an income-only negative does not resolve that pathway.
+Ask for the specific currently enrolled program without requesting documents.
+Do not map Medicare to Medicaid, ordinary Head Start to income-eligible Tribal
+Head Start, or general school meals to the qualified free-lunch program. A
+combined CalWORKs-or-Tribal label needs a specific choice. Exact qualified names
+and existing abbreviations are supported; do not infer missing qualifiers or
+use fuzzy matches. Recognized names still do not verify enrollment. Names are
+bounded to 32 entries of 160 characters each; never truncate an entry to qualify.
+
 For `FRACTIONAL_INCOME_BOUNDARY`, preserve the user's original amount and the
 `INCOME_BOUNDARY_CONFIRMATION` gate. The result falls between the published
 whole-dollar CARE maximum and FERA minimum; the maintained sources do not

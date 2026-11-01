@@ -1,0 +1,260 @@
+{
+  "observed_at_utc": "2026-11-01T07:38:30.807013+00:00",
+  "base_commit": "28159261f0ef4bb3411d8902eadfb705ac977f68",
+  "frozen_protocol_commit": "5942f3663b847b70d0bb3b7dc0ff00cebd47a87b",
+  "runtime_commit": "d485c526f996e41cd07511c878ac13d2c12c5b5a",
+  "baseline_full_suite": "Previously verified unchanged base: 200 passed, zero skips; not rerun as a new observation",
+  "frozen_tests": {
+    "methods": 14,
+    "before_failures_including_subtests": 20,
+    "before_errors_including_subtests": 23,
+    "before_seconds": 4.362,
+    "after_passed": 14,
+    "after_seconds": 4.57,
+    "sources_unchanged": true
+  },
+  "full_suite": {
+    "tests": 214,
+    "passed": 214,
+    "skipped": 0,
+    "seconds": 51.937,
+    "platform": "Windows",
+    "python": "3.11.3",
+    "status": "PASS"
+  },
+  "versions": {
+    "mcp": "2.3.0",
+    "Pillow": "13.0.0",
+    "pypdf": "6.21.3",
+    "jsonschema": "4.26.0"
+  },
+  "dependency_check": "PASS_NO_NEW_DEPENDENCIES",
+  "additional_windows_no_site_packages_probe": {
+    "command": "python -S .../billfit_cli.py scope",
+    "baseline_exit": 1,
+    "candidate_exit": 1,
+    "error": "ZoneInfoNotFoundError: America/Los_Angeles",
+    "interpretation": "Disabling site packages also removes required Windows tzdata. Same failure on unchanged base; normal installed-requirements CLI and full suite pass. Not a dependency-free Windows acceptance."
+  },
+  "cli": {
+    "same_requests": 37,
+    "before": {
+      "qualified_label": {
+        "total": 15,
+        "passed": 4
+      },
+      "unresolved_label": {
+        "total": 10,
+        "passed": 0
+      },
+      "invalid_input": {
+        "total": 6,
+        "passed": 0
+      },
+      "income_control": {
+        "total": 6,
+        "passed": 6
+      }
+    },
+    "after": {
+      "qualified_label": {
+        "total": 15,
+        "passed": 15
+      },
+      "unresolved_label": {
+        "total": 10,
+        "passed": 10
+      },
+      "invalid_input": {
+        "total": 6,
+        "passed": 6
+      },
+      "income_control": {
+        "total": 6,
+        "passed": 6
+      }
+    },
+    "unresolved_controls_auto_eligible_before": 0,
+    "unresolved_controls_auto_eligible_after": 0,
+    "scope": "Fixed exposed synthetic program labels and input boundaries, not population accuracy"
+  },
+  "actual_sdk_profiles": [
+    "2026-07-28",
+    "legacy"
+  ],
+  "new_hermes_or_model_selected_observation": false,
+  "synthetic_example": {
+    "status": "PASS",
+    "care_path": "wic",
+    "unresolved": "National School Lunch Program (NSLP)"
+  },
+  "new_model_calls": 0,
+  "total_cost_usd": null,
+  "customer_enrollment_actions": 0,
+  "independent_human": false,
+  "ai_quality_gain_measured": false,
+  "income_and_rate_files_byte_identical_to_base": true,
+  "income_and_rate_verified_on_unchanged": true,
+  "new_configuration": false,
+  "migration_required": false,
+  "production_actions": [],
+  "public_copy_transforms": [
+    "Selected fixed synthetic observations",
+    "Local path prefixes redacted",
+    "UTF-8 LF with trailing whitespace removed from copied logs; local originals retained",
+    "Evaluator stderr replaces only checkout/temporary path prefixes and retains its original digest"
+  ],
+  "relative_links_checked": 26,
+  "changed_markdown_english_check": "PASS",
+  "runtime_and_frozen_sources": [
+    {
+      "file": "plugins/billfit/skills/billfit/scripts/assistance_programs.py",
+      "sha256": "e55878841f968013ebf4ac60873f76550664e52fd863a66cd561c6befae4833e"
+    },
+    {
+      "file": "plugins/billfit/skills/billfit/scripts/billfit_core.py",
+      "sha256": "4338a96c274ebbd6faebe32e691e340685596b59ab8947575ed039f47bac29e1",
+      "observed_windows_bytes_sha256": "f36d81f190b164a952bc0c6a1b40faddfb2dc8fcaf0961d59454798e64274777",
+      "transform": "CRLF to LF only"
+    },
+    {
+      "file": "plugins/billfit/skills/billfit/scripts/mcp_server.py",
+      "sha256": "5013eeacbcb5db53ed8456356c70e687c9f7a911268552b61056f559ba7f19cd",
+      "observed_windows_bytes_sha256": "a6190271c2effb98523776b46851b869d7b51f58a318fe26facf6db562bc72e7",
+      "transform": "CRLF to LF only"
+    },
+    {
+      "file": "plugins/billfit/skills/billfit/scripts/tariff_review_bundle.py",
+      "sha256": "aeb6d78ed4936b1c0ab328423001381d48a81d114860845ee7cde0b398ab8378",
+      "observed_windows_bytes_sha256": "0039b837e6d35650592029e3d89f32d82ffe1b03c83eddda4059c83a6fd169db",
+      "transform": "CRLF to LF only"
+    },
+    {
+      "file": "plugins/billfit/tests/fixtures/care-program-names-v1.json",
+      "sha256": "4f30c8369bf82950d445bcfbac55da907cf93da8dd6ea4409f63955086acb2e0"
+    },
+    {
+      "file": "plugins/billfit/tests/test_care_program_names.py",
+      "sha256": "5d886bcef64001a0a64ba6a8aba944a5200dd85bd1f021a29b2ebb71e6b35020"
+    },
+    {
+      "file": "scripts/verify-care-program-names.py",
+      "sha256": "124e867bb75db14cd5825af3eb443a7c42b1d096569165ccae304f9929244e30"
+    },
+    {
+      "file": "plugins/billfit/skills/billfit/data/care_fera_2026-06-01.json",
+      "sha256": "1ff88ab2bc8f8ebbe12e78a3590d1de1ce54626ff0a2b689fc23774ea4b85618",
+      "observed_windows_bytes_sha256": "087246bab7df312cedcee607c7d880f96604574a35e48f87fb29bf10f2e5b26b",
+      "transform": "CRLF to LF only"
+    },
+    {
+      "file": "plugins/billfit/skills/billfit/data/pge_residential_rates_2026-03-01.json",
+      "sha256": "cff04fb40659084260afab13b99bab5cb6dd3a6a77eb8490b05c0e89bbf7e53b",
+      "observed_windows_bytes_sha256": "2475f673017cfe20d9272c20e1e13e3506da6c47f99bbb685278c029ad25d9b8",
+      "transform": "CRLF to LF only"
+    }
+  ],
+  "copies": [
+    {
+      "file": "before-cli.json",
+      "original_file": "billfit-care-programs-cli-before-20261101.json",
+      "original_sha256": "f5642057e2bbb5d12da24b456389b6574898bcbc60fc1ae0a2ae49b7af189a99",
+      "published_sha256": "f5642057e2bbb5d12da24b456389b6574898bcbc60fc1ae0a2ae49b7af189a99"
+    },
+    {
+      "file": "after-cli.json",
+      "original_file": "billfit-care-programs-cli-after-20261101.json",
+      "original_sha256": "b48c3ead420f103f3cb5d596709a2c297e95ff768ad7e13d97ca8599be936814",
+      "published_sha256": "b48c3ead420f103f3cb5d596709a2c297e95ff768ad7e13d97ca8599be936814"
+    },
+    {
+      "file": "sources.json",
+      "original_file": "billfit-care-programs-sources-20261101.json",
+      "original_sha256": "0c2e4463050deef5cc87390673a52537057a95f02b1c764457d0e8e85041dffe",
+      "published_sha256": "0c2e4463050deef5cc87390673a52537057a95f02b1c764457d0e8e85041dffe"
+    },
+    {
+      "file": "example.json",
+      "original_file": "billfit-care-programs-example-20261101.json",
+      "original_sha256": "ae05578538532bc11a25a501b87abd991f4c978cd37d32c61cc3ed79bb2a5709",
+      "published_sha256": "43aef9e9dfc90cc068f20bb59edcf81402089ddb08249d017ca353ab74b5cc3e"
+    },
+    {
+      "file": "before-tests.txt",
+      "original_file": "billfit-care-programs-before-20261101.log",
+      "original_sha256": "4acbda9f5956332b09dc47d0a952fbbb8e34bcd23485bdde44cd4cc95da685f9",
+      "published_sha256": "ba1088ffd41b65ce33ad08282cdb6fc87558c551e754f3f7b34a3e677d39237f"
+    },
+    {
+      "file": "after-tests.txt",
+      "original_file": "billfit-care-programs-after-first-20261101.log",
+      "original_sha256": "e68fa618261e84bcbdb8f7f8235e7ffd86b314bd1d717d97529c0251c076a298",
+      "published_sha256": "c26fc93d4f5bb4ae7339692aecafb686818a3601234300e23c631075b054a9d8"
+    },
+    {
+      "file": "full-tests.txt",
+      "original_file": "billfit-care-programs-full-20261101.log",
+      "original_sha256": "1df5f1233d41de7de686ebddce42b381c8fd95fbf48208f020f31a9872387f31",
+      "published_sha256": "88c54b67a92ea310ce57d1532c622425547fc0a776ab3f3d1634f6c25ca7e037"
+    },
+    {
+      "file": "windows-no-site-packages-base.txt",
+      "original_file": "billfit-care-programs-stdlib-scope-base-20261101.log",
+      "original_sha256": "cf8ec31ee2a7c9e598cba4cb84adb92ec6da6b984da2aa5fdba89db803d24f7d",
+      "published_sha256": "911102ff55337d086f840d3e076f4fe95693ce2bd24de6f2cd335a1d8b97dc43"
+    },
+    {
+      "file": "windows-no-site-packages-candidate.txt",
+      "original_file": "billfit-care-programs-stdlib-scope-20261101.json",
+      "original_sha256": "c4ec6406040a20b93a1e3091b907088de1ea58ecaba1ee3967091818ae669503",
+      "published_sha256": "b426aad127fefbddf369aa3a32c49c07b6d12d7853e4b6d1ad8c431a21c3ecb3"
+    }
+  ],
+  "remaining": [
+    "Real enrollment and account-specific eligibility are external utility decisions",
+    "Unqualified NSLP and combined CalWORKs-or-Tribal input require confirmation",
+    "Official fractional-income rounding, exact utility rounding and complete historical tariff coverage",
+    "Customer bills, independent first users, exact-version publishing and operational rollout"
+  ],
+  "rollback": "Reviewed revert restores earlier name/error behavior; preserve complete snapshots and dated evidence; no user-data migration",
+  "whole_goal_complete": false,
+  "hosted_status_at_delivery_preparation": "NOT_YET_STARTED",
+  "artifacts": [
+    {
+      "file": "after-cli.json",
+      "sha256": "b48c3ead420f103f3cb5d596709a2c297e95ff768ad7e13d97ca8599be936814"
+    },
+    {
+      "file": "after-tests.txt",
+      "sha256": "c26fc93d4f5bb4ae7339692aecafb686818a3601234300e23c631075b054a9d8"
+    },
+    {
+      "file": "before-cli.json",
+      "sha256": "f5642057e2bbb5d12da24b456389b6574898bcbc60fc1ae0a2ae49b7af189a99"
+    },
+    {
+      "file": "before-tests.txt",
+      "sha256": "ba1088ffd41b65ce33ad08282cdb6fc87558c551e754f3f7b34a3e677d39237f"
+    },
+    {
+      "file": "example.json",
+      "sha256": "43aef9e9dfc90cc068f20bb59edcf81402089ddb08249d017ca353ab74b5cc3e"
+    },
+    {
+      "file": "full-tests.txt",
+      "sha256": "88c54b67a92ea310ce57d1532c622425547fc0a776ab3f3d1634f6c25ca7e037"
+    },
+    {
+      "file": "sources.json",
+      "sha256": "0c2e4463050deef5cc87390673a52537057a95f02b1c764457d0e8e85041dffe"
+    },
+    {
+      "file": "windows-no-site-packages-base.txt",
+      "sha256": "911102ff55337d086f840d3e076f4fe95693ce2bd24de6f2cd335a1d8b97dc43"
+    },
+    {
+      "file": "windows-no-site-packages-candidate.txt",
+      "sha256": "b426aad127fefbddf369aa3a32c49c07b6d12d7853e4b6d1ad8c431a21c3ecb3"
+    }
+  ]
+}
